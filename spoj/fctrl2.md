@@ -1,4 +1,4 @@
-```
+```c
 /*
 http://www.codechef.com/problems/FCTRL2
 */

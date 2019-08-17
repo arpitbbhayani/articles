@@ -1,4 +1,4 @@
-```
+```c
 def func(x,n):
 	an = x
 	a0 = n

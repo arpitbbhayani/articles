@@ -1,4 +1,4 @@
-```
+```c
 class Solution {
 public:
     vector<vector<int> > subsetsWithDup(vector<int> &S) {

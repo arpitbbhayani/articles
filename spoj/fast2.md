@@ -1,4 +1,4 @@
-```
+```c
 # AC, ALGO : High School Maths., Big Integer.
 
 # Helpful Link : http://en.wikipedia.org/wiki/Geometric_progression

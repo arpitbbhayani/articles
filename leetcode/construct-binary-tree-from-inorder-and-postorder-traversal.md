@@ -1,4 +1,4 @@
-```
+```c
 /**
  * Definition for binary tree
  * struct TreeNode {

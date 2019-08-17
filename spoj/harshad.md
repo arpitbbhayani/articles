@@ -1,4 +1,4 @@
-```
+```c
 /*
 	Sieve , sieve , prime
 	digit

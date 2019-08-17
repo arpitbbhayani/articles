@@ -1,4 +1,4 @@
-```
+```c
 #include <stdio.h>
 char stack[10000];
 int top;

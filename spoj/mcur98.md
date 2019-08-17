@@ -1,4 +1,4 @@
-```
+```c
 #include <stdio.h>
 #define SIZE 1000010
 

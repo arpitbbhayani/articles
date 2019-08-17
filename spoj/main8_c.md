@@ -1,4 +1,4 @@
-```
+```c
 #include <algorithm>
 #include <cctype>
 #include <climits>

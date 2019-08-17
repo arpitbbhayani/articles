@@ -1,4 +1,4 @@
-```
+```c
 class Solution {
 public:
     int removeDuplicates(int A[], int n) {

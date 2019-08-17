@@ -1,4 +1,4 @@
-```
+```c
 #
 #  Author: Arpit Bhayani
 #  https://arpitbhayani.me

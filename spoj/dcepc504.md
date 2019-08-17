@@ -1,4 +1,4 @@
-```
+```c
 /*
 	One half is the binary negation of other.
 */

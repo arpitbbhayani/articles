@@ -1,4 +1,4 @@
-```
+```c
 package main
 
 import (

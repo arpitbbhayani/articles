@@ -1,4 +1,4 @@
-```
+```c
 #include <stdio.h>
 #define DEBUG 0
 

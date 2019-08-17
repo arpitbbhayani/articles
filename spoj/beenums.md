@@ -1,4 +1,4 @@
-```
+```c
 /*
  * BEENUMS.cpp
  * http://codegeeksblog.wordpress.com/2013/06/01/spoj-beenums-beehive-numbers/

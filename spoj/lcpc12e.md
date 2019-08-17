@@ -1,4 +1,4 @@
-```
+```c
 from math import sqrt
 
 # Using Cosine rule for triangles

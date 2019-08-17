@@ -1,4 +1,4 @@
-```
+```c
 #include <stdio.h>
 
 void readline ( char * str ) {

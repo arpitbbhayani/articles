@@ -1,4 +1,4 @@
-```
+```c
 class Solution {
     public:
         int jump(int A[], int n) {

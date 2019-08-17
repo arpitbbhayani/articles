@@ -1,4 +1,4 @@
-```
+```c
 #include <cstdio>
 #include <cstring>
 #include <iostream>

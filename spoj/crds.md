@@ -1,4 +1,4 @@
-```
+```c
 #include <stdio.h>
 #define MOD 1000007
 int main ( void ) {
