@@ -1,3 +1,4 @@
+```
 /*
  * GNY07H.cpp
  *
@@ -57,3 +58,4 @@ int main(int argc, char * argv[]) {
 		printf("%d %.0f\n", r++, ans);
 	}
 }
+```

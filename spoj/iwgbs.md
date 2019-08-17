@@ -1,3 +1,4 @@
+```
 N = int (input());
 A = [0,1];
 B = [0,1];
@@ -8,3 +9,4 @@ while i <= N:
     B.append(A[i-1]);
     i = i+1;
 print(A[N]+B[N]);
+```

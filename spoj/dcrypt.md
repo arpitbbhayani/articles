@@ -1,3 +1,4 @@
+```
 #include <stdio.h>
 
 void readline ( char * str ) {
@@ -50,3 +51,4 @@ int main( int argc, char * argv[] ) {
 	
 	return 0;
 }
+```

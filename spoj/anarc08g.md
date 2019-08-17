@@ -1,3 +1,4 @@
+```
 /**
  *	Total money transfer is the sum of all the money
  *	Net flow is the minimum transfer that is to be done
@@ -72,3 +73,4 @@ int main ( int argc , char * argv[] ) {
 
 	return 0;
 }
+```

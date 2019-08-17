@@ -1,3 +1,4 @@
+```
 from math import sqrt
 
 # Using Cosine rule for triangles
@@ -25,3 +26,4 @@ def main():
 
 if __name__ == '__main__':
 	main()
+```

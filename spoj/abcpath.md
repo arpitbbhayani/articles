@@ -1,3 +1,4 @@
+```
 #include <iostream>
 #include <cstdio>
 #include <queue>
@@ -100,3 +101,4 @@ int main( int argc , char * argv[] ) {
 
 	return 0;
 }
+```

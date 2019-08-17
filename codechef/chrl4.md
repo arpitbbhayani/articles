@@ -1,3 +1,4 @@
+```
 /*
  *  Author: Arpit Bhayani
  *  https://arpitbhayani.me
@@ -53,3 +54,4 @@ int main(int argc, char *argv[]) {
     printf("%d\n", answer[n-1]);
     return 0;
 }
+```

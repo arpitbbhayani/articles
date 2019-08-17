@@ -1,3 +1,4 @@
+```
 /*
 	One half is the binary negation of other.
 */
@@ -59,3 +60,4 @@ int main ( int argc , char * argv[] ) {
 	}
 	return 0;
 }
+```

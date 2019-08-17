@@ -1,3 +1,4 @@
+```
 a=int(raw_input())
 for i in range(0,a):
 	b=int(raw_input())
@@ -14,3 +15,4 @@ for i in range(0,a):
 	else:
 		str2=str((b-1)/4)
 		print str2+str1
+```

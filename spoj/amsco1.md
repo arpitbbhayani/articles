@@ -1,3 +1,4 @@
+```
 #include <iostream>
 #include <cstdio>
 #include <cstring>
@@ -80,3 +81,4 @@ int main ( int argc , char * argv[] ) {
 
 	return 0;
 }
+```

@@ -1,3 +1,4 @@
+```
 #include <algorithm>
 #include <bitset>
 #include <cmath>
@@ -74,3 +75,4 @@ int main(){
     cout << max_costs[0][numbers_total-1] << " " << min_costs[0][numbers_total-1] << endl;
   }
 }
+```

@@ -1,3 +1,4 @@
+```
 /*
 http://www.codechef.com/problems/ONP
 */
@@ -91,3 +92,4 @@ int main ( int argc , char * argv[] ) {
 
 	return 0;
 }
+```

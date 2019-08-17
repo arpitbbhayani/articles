@@ -1,3 +1,4 @@
+```
 #include <stdio.h>
 
 int eval(int , int * );
@@ -69,3 +70,4 @@ int eval(int num , int * ele) {
 
 	return 0;
 }
+```

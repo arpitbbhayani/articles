@@ -1,3 +1,4 @@
+```
 def func(x,n):
 	an = x
 	a0 = n
@@ -14,3 +15,4 @@ while i <= t:
 	items += func(x,n)
 	print items
 	i += 1
+```

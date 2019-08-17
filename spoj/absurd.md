@@ -1,3 +1,4 @@
+```
 /*
  * ABSURD.c
  *
@@ -135,3 +136,4 @@ int absurdity(int n1) {
 
 	return val;
 }
+```

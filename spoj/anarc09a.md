@@ -1,3 +1,4 @@
+```
 #include <stdio.h>
 char stack[10000];
 int top;
@@ -71,3 +72,4 @@ int main( int argc , char * argv[] ) {
 	}
 	return 0;
 }
+```

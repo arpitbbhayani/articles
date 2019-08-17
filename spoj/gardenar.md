@@ -1,3 +1,4 @@
+```
 /*
 	http://www.gogeometry.com/problem/p103_equilateral_triangle_heron_area_elearning.htm
 */
@@ -25,3 +26,4 @@ int main ( int argc , char * argv[] ) {
 
 	return 0;
 }
+```

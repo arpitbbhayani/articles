@@ -1,3 +1,4 @@
+```
 #include <stdio.h>
 
 long long int gcd ( long long int a , long long int b ) {
@@ -24,3 +25,4 @@ int main ( int argc , char * argv[] ) {
 	}
 	return 0;
 }
+```

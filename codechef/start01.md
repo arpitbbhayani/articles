@@ -1,3 +1,4 @@
+```
 /*
  *  Author: Arpit Bhayani
  *  https://arpitbhayani.me
@@ -14,3 +15,4 @@ int main(int argc, char *argv[]) {
     printf("%lld\n", n);
     return 0;
 }
+```

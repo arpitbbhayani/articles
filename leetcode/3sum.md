@@ -1,3 +1,4 @@
+```
 class Solution {
 public:
     vector<vector<int> > threeSum(vector<int> &num) {
@@ -69,3 +70,4 @@ public:
         return ans;
     }
 };
+```

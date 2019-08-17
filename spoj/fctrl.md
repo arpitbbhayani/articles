@@ -1,3 +1,4 @@
+```
 /*
 http://www.codechef.com/problems/FCTRL
 */
@@ -30,3 +31,4 @@ int main ( int argc , char * argv[] ) {
 
 	return 0;
 }
+```

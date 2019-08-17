@@ -1,3 +1,4 @@
+```
 t = 10
 while t :
  t -= 1
@@ -7,3 +8,4 @@ while t :
  print z
  z = x - z
  print z
+```

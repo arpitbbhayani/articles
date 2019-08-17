@@ -1,3 +1,4 @@
+```
 ####
 #	Python2.7
 ####
@@ -12,3 +13,4 @@ n , w , t , r = ( int(x) for x in raw_input().split() )
 ans = fact[n] / ( fact[w] * fact[t] * fact[r] )
 ans = ans % 1000000007
 print ans
+```

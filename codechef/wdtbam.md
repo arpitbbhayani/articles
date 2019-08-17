@@ -1,3 +1,4 @@
+```
 /*
  *  Author: Arpit Bhayani
  *  https://arpitbhayani.me
@@ -58,3 +59,4 @@ int main(int argc, char *argv[]) {
     }
     return 0;
 }
+```

@@ -1,3 +1,4 @@
+```
 #include <stdio.h>
 #define SIZE 1000010
 
@@ -24,3 +25,4 @@ int main( int argc , char * argv[] ) {
 	}
 	return 0;
 }
+```

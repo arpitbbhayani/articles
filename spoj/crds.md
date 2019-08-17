@@ -1,3 +1,4 @@
+```
 #include <stdio.h>
 #define MOD 1000007
 int main ( void ) {
@@ -13,3 +14,4 @@ int main ( void ) {
 	}
 	return 0;
 }
+```
