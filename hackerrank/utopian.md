@@ -23,35 +23,34 @@
 
 using namespace std;
 
+int readline(char *str) {
+    int i = 0;
+    char ch;
+    while((ch = getchar()) != '\n') {
+        str[i++] = ch;
+    }
+    str[i] = '\0';
+    return i;
+}
+
 int main(int argc, char *argv[]) {
     int t;
     scanf("%d", &t);
 
-    while( t-- ) {
+    while(t--) {
+        int n;
+        ll int h = 1;
 
-        char str[100010];
-        scanf("%s", str);
-
-        int balance = 0;
-        int max_balance = 0;
-        for( int i = 0 ; str[i]; i++ ) {
-            if(str[i] == '(') {
-                balance ++;
+        cin >> n;
+        for(int i = 1 ; i <= n ; i++) {
+            if(i & 1) {
+                h <<= 1;
             }
             else {
-                balance --;
+                h++;
             }
-            max_balance = MAX(max_balance, balance);
         }
-
-        for(int i = 0 ; i < max_balance; i++) {
-            printf("(");
-        }
-        for(int i = 0 ; i < max_balance; i++) {
-            printf(")");
-        }
-        printf("\n");
-
+        cout << h << endl;
     }
     return 0;
 }

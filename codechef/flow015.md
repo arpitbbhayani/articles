@@ -19,39 +19,35 @@
 #define ll long long
 
 #define MIN(a, b) a < b ? a : b
-#define MAX(a, b) a > b ? a : b
 
 using namespace std;
+
+char array[7][16] = {"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"};
 
 int main(int argc, char *argv[]) {
     int t;
     scanf("%d", &t);
 
     while( t-- ) {
+        int n;
+        scanf("%d", &n);
 
-        char str[100010];
-        scanf("%s", str);
-
-        int balance = 0;
-        int max_balance = 0;
-        for( int i = 0 ; str[i]; i++ ) {
-            if(str[i] == '(') {
-                balance ++;
+        int offset = n - 1900;
+        for( int i = 1900; i < n; i++ ) {
+            if( i % 4 == 0 ) {
+                if( i % 100 == 0 && i % 400 != 0 ) {
+                    offset += 0;
+                }
+                else {
+                    offset += 1;
+                }
             }
             else {
-                balance --;
+                offset += 0;
             }
-            max_balance = MAX(max_balance, balance);
         }
-
-        for(int i = 0 ; i < max_balance; i++) {
-            printf("(");
-        }
-        for(int i = 0 ; i < max_balance; i++) {
-            printf(")");
-        }
-        printf("\n");
-
+        offset = offset % 7;
+        printf("%s\n", array[offset]);
     }
     return 0;
 }

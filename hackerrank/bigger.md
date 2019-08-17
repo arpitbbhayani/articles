@@ -5,6 +5,7 @@
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
 #include <climits>
 #include <deque>
 #include <iostream>
@@ -15,6 +16,7 @@
 #include <set>
 #include <stack>
 #include <vector>
+#include <algorithm>
 
 #define ll long long
 
@@ -23,35 +25,31 @@
 
 using namespace std;
 
+int readline(char *str) {
+    int i = 0;
+    char ch;
+    while((ch = getchar()) != '\n') {
+        str[i++] = ch;
+    }
+    str[i] = '\0';
+    return i;
+}
+
 int main(int argc, char *argv[]) {
+    char str[128];
     int t;
     scanf("%d", &t);
 
-    while( t-- ) {
-
-        char str[100010];
+    while(t--) {
         scanf("%s", str);
-
-        int balance = 0;
-        int max_balance = 0;
-        for( int i = 0 ; str[i]; i++ ) {
-            if(str[i] == '(') {
-                balance ++;
-            }
-            else {
-                balance --;
-            }
-            max_balance = MAX(max_balance, balance);
+        int x = next_permutation(str, str + strlen(str));
+        if(x) {
+            cout << str << endl;
         }
-
-        for(int i = 0 ; i < max_balance; i++) {
-            printf("(");
+        else {
+            cout << "no answer" << endl;
         }
-        for(int i = 0 ; i < max_balance; i++) {
-            printf(")");
-        }
-        printf("\n");
-
     }
+
     return 0;
 }

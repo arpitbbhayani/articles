@@ -19,7 +19,6 @@
 #define ll long long
 
 #define MIN(a, b) a < b ? a : b
-#define MAX(a, b) a > b ? a : b
 
 using namespace std;
 
@@ -28,30 +27,13 @@ int main(int argc, char *argv[]) {
     scanf("%d", &t);
 
     while( t-- ) {
-
-        char str[100010];
+        int answer = 0;
+        char str[1024];
         scanf("%s", str);
-
-        int balance = 0;
-        int max_balance = 0;
         for( int i = 0 ; str[i]; i++ ) {
-            if(str[i] == '(') {
-                balance ++;
-            }
-            else {
-                balance --;
-            }
-            max_balance = MAX(max_balance, balance);
+            answer += (str[i] == '4');
         }
-
-        for(int i = 0 ; i < max_balance; i++) {
-            printf("(");
-        }
-        for(int i = 0 ; i < max_balance; i++) {
-            printf(")");
-        }
-        printf("\n");
-
+        printf("%d\n", answer);
     }
     return 0;
 }

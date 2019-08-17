@@ -19,36 +19,33 @@
 #define ll long long
 
 #define MIN(a, b) a < b ? a : b
-#define MAX(a, b) a > b ? a : b
 
 using namespace std;
+
+int gcd(int a, int b) {
+    if(b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
 
 int main(int argc, char *argv[]) {
     int t;
     scanf("%d", &t);
 
     while( t-- ) {
-
-        char str[100010];
-        scanf("%s", str);
-
-        int balance = 0;
-        int max_balance = 0;
-        for( int i = 0 ; str[i]; i++ ) {
-            if(str[i] == '(') {
-                balance ++;
-            }
-            else {
-                balance --;
-            }
-            max_balance = MAX(max_balance, balance);
+        int n, g;
+        scanf("%d", &n);
+        int * array = (int *) malloc(n * sizeof(int));
+        for(int i = 0 ; i < n ; i++ ) {
+            scanf("%d", &array[i]);
         }
-
-        for(int i = 0 ; i < max_balance; i++) {
-            printf("(");
+        g = array[0];
+        for(int i = 1; i < n; i++) {
+            g = gcd(g, array[i]);
         }
-        for(int i = 0 ; i < max_balance; i++) {
-            printf(")");
+        for(int i = 0 ; i < n; i++) {
+            printf("%d ", array[i]/g);
         }
         printf("\n");
 
