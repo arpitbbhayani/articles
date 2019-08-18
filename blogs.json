@@ -55,8 +55,18 @@
     "description": "Have multiple MySQL versions running on same server within 5 minutes.",
     "image": "https://user-images.githubusercontent.com/4745789/63222993-74e27c80-c1cc-11e9-8229-dd7e5d4f1173.png",
     "gif": "https://media.giphy.com/media/GIrIC3g657AYg/giphy.gif",
-    "categories": ["mysql", "database", "docker"],
+    "categories": ["mysql", "database", "docker", "devops"],
     "tags": ["devops", "database", "docker", "mysql", "running mysql using docker"],
     "published_at": "2016-05-13"
+  },
+  {
+    "id": "setting-up-graphite-using-nginx-on-ubuntu",
+    "title": "Setting up Graphite using Nginx on an Ubuntu server",
+    "description": "Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.",
+    "image": "https://user-images.githubusercontent.com/4745789/63223138-c68c0680-c1ce-11e9-942b-60b92d3f8a28.png",
+    "gif": "https://media.giphy.com/media/l4FGzAPvg5PbZrVlK/giphy.gif",
+    "categories": ["devops"],
+    "tags": ["devops", "ubuntu", "graphite on ubuntu", "graphite and nginx on ubuntu"],
+    "published_at": "2015-12-14"
   }
 ]
