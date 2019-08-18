@@ -380,7 +380,7 @@ Login to the system with credentials that you provided while creating the superu
 
 Once you are logged in, you should see a screen like this.
 
-[Landing page of Graphite](https://user-images.githubusercontent.com/4745789/63223185-5af66900-c1cf-11e9-9379-4de15f80ef93.png)
+![Landing page of Graphite](https://user-images.githubusercontent.com/4745789/63223185-5af66900-c1cf-11e9-9379-4de15f80ef93.png)
 
 First we need to add data into the system. Remember we added a pattern matcher in Storage Schema, according to which any pattern that starts with **test.** will be recorded as our pattern. Lets add some random data
 
@@ -401,6 +401,6 @@ Now you should see something like this.
 
 **I already had some data in the system, your graph will look a bit different but should be similar**
 
-[test.count graph in Graphite](https://user-images.githubusercontent.com/4745789/63223192-795c6480-c1cf-11e9-9323-e5a91c767ec9.png)
+![test.count graph in Graphite](https://user-images.githubusercontent.com/4745789/63223192-795c6480-c1cf-11e9-9323-e5a91c767ec9.png)
 
 This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.
