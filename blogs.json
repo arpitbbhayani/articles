@@ -78,5 +78,15 @@
     "categories": ["devops"],
     "tags": ["devops", "ubuntu", "grafana", "graphite and grafana on ubuntu", "grafana and graphite and nginx on ubuntu"],
     "published_at": "2015-12-14"
+  },
+  {
+    "id": "publish-python-package-on-pypi",
+    "title": "Publish python package on PyPI",
+    "description": "If you have written something cool in Python and want to make it installable via pip and easy_install, this post will help you publish your python online.",
+    "image": "https://user-images.githubusercontent.com/4745789/63223433-e45b6a80-c1d2-11e9-921f-c2cc0153cf4a.png",
+    "gif": "https://media.giphy.com/media/TfKfqjt2i4GIM/giphy.gif",
+    "categories": ["python"],
+    "tags": ["python", "publish python package", "pypi"],
+    "published_at": "2015-11-10"
   }
 ]
