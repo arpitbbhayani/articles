@@ -64,8 +64,8 @@ This step involves releasing your package on github. This will create a download
 2. On top, you will see *Release link*. Click on it.
 3. Click on *Draft a new relase*
 4. Fill in all the details
-   * *Tag version* should be the version number of your package release
-   * *Release Title* can be anything you want.
+	*  *Tag version* should be the version number of your package release
+	*  *Release Title* can be anything you want.
 5. Click *Publish release* at the bottom of the page
 6. Now under *Releases* you can view all of your releases.
 7. Copy the download link (tar.gz) and save it somewhere.
