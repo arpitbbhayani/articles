@@ -5,8 +5,18 @@
     "description": "MongoDB is a document based data store and hence pagination is one of the most common use case of it. Find out how you can paginate the results ...",
     "image": "https://user-images.githubusercontent.com/4745789/63153080-1336dc80-c02b-11e9-931f-0c7552a63ebc.png",
     "gif": "https://media.giphy.com/media/lRnUWhmllPI9a/giphy.gif",
-    "categories": ["database"],
-    "tags": ["mongodb", "scalability", "pagination", "fast", "scale"],
+    "categories": ["database", "mongodb", "scale"],
+    "tags": ["mongodb", "scalability", "pagination", "fast", "scale", "mongodb skip limit", "mongodb skip limit fast pagination"],
     "published_at": "2017-06-06"
+  },
+  {
+    "id": "mongodb-cursor-skip-is-slow",
+    "title": "Why MongoDB's cursor.skip() is slow?",
+    "description": "MongoDB's cursor.skip() is very inefficient, why is that? Even though it is slow and inefficient,  team MongoDB wants to continue keeping it. Find out why ...",
+    "image": "https://user-images.githubusercontent.com/4745789/63220620-4d2ded00-c1a9-11e9-8eea-11766291e06f.png",
+    "gif": "https://media.giphy.com/media/nqIuAIxYebIt2/giphy.gif",
+    "categories": ["database", "mongodb"],
+    "tags": ["mongodb", "cursor", "slow", "mongodb cursor slow", "mongodb skip limit"],
+    "published_at": "2017-06-04"
   }
 ]
