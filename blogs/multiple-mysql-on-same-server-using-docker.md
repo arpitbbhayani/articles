@@ -8,40 +8,7 @@ Some situations are:
 ## Problem description
 I have a machine having 5 products already setup. All products are using MySQL 5.5 as its default database. Now its time to upgrade all but one product to use MySQL 5.6. The table below shows the before and after version requirements of MySQL for various products. Looking at the table we find that all products except product C wants to use MySQL 5.6.
 
-<table class="ui small table">
-<thead>
-    <th>Products</th>
-    <th>MySQL version before</th>
-    <th>MySQL version after</th>
-</thead>
-<tbody>
-     <tr>
-         <td>Product A</td>
-         <td>MySQL 5.5</td>
-         <td>MySQL 5.6</td>
-     </tr>
-     <tr>
-         <td>Product B</td>
-         <td>MySQL 5.5</td>
-         <td>MySQL 5.6</td>
-     </tr>
-     <tr class="negative">
-         <td>Product C</td>
-         <td>MySQL 5.5</td>
-         <td>MySQL 5.5</td>
-     </tr>
-     <tr>
-         <td>Product D</td>
-         <td>MySQL 5.5</td>
-         <td>MySQL 5.6</td>
-     </tr>
-     <tr>
-         <td>Product E</td>
-         <td>MySQL 5.5</td>
-         <td>MySQL 5.6</td>
-     </tr>
-</tbody>
-</table>
+![multiple-mysql-requirement](https://user-images.githubusercontent.com/4745789/63223049-85472700-c1cd-11e9-88bb-5d3123b412ad.png)
 
 Since all but one products require MySQL 5.6, so lets install it first and then we will work to figure out a way to install MySQL 5.5 as well.
 
