@@ -28,5 +28,15 @@
     "categories": ["database", "mongodb"],
     "tags": ["mongodb", "cursor", "slow", "mongodb cursor slow", "mongodb skip limit"],
     "published_at": "2017-06-04"
+  },
+  {
+    "id": "how-sleepsort-helped-me-understand-concurrency-in-golang",
+    "title": "How Sleepsort helped me understand concurrency in Golang",
+    "description": "For me learning concurrency have always been tricky; Every language has a different way to handle/emulate concurrency, for example, old languages like Java uses Threads and modern languages like NodeJS and Python uses something called as event loops for its asynchronous IO which is there to make IO based things concurrent.",
+    "image": "https://user-images.githubusercontent.com/4745789/63222328-203b0380-c1c4-11e9-9dd0-34c4bd9d1c6b.png",
+    "gif": "https://media.giphy.com/media/QmJ3e9So5M9NdNkOGo/giphy.gif",
+    "categories": ["golang", "programming", "concurrency"],
+    "tags": ["golang", "programming", "concurrency", "sleepsort", "concurrency in golang", "sleepsort in golang"],
+    "published_at": "2017-07-16"
   }
 ]
