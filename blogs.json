@@ -10,6 +10,16 @@
     "published_at": "2017-06-06"
   },
   {
+    "id": "benchmark-and-compare-pagination-approach-in-mongodb",
+    "title": "Benchmark and compare the two approaches to paginate in MongoDB",
+    "description": "Benchmark results for two pagination approaches for MongoDB.",
+    "image": "https://user-images.githubusercontent.com/4745789/63220759-d514f680-c1ab-11e9-8a38-7b1828946b74.png",
+    "gif": "https://media.giphy.com/media/c5eqVJN7oNLTq/giphy.gif",
+    "categories": ["database", "mongodb", "benchmark"],
+    "tags": ["mongodb", "scalability", "pagination", "fast", "scale", "mongodb skip limit", "mongodb skip limit fast pagination", "benchmark results"],
+    "published_at": "2017-06-02"
+  },
+  {
     "id": "mongodb-cursor-skip-is-slow",
     "title": "Why MongoDB's cursor.skip() is slow?",
     "description": "MongoDB's cursor.skip() is very inefficient, why is that? Even though it is slow and inefficient,  team MongoDB wants to continue keeping it. Find out why ...",
