@@ -48,5 +48,15 @@
     "categories": ["python", "programming"],
     "tags": ["netcat", "python", "flask", "netcat with flask"],
     "published_at": "2017-07-05"
+  },
+  {
+    "id": "multiple-mysql-on-same-server-using-docker",
+    "title": "Multiple MySQL server running on same Ubuntu server",
+    "description": "Have multiple MySQL versions running on same server within 5 minutes.",
+    "image": "https://user-images.githubusercontent.com/4745789/63222993-74e27c80-c1cc-11e9-8229-dd7e5d4f1173.png",
+    "gif": "https://media.giphy.com/media/GIrIC3g657AYg/giphy.gif",
+    "categories": ["mysql", "database", "docker"],
+    "tags": ["devops", "database", "docker", "mysql", "running mysql using docker"],
+    "published_at": "2016-05-13"
   }
 ]
