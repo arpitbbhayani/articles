@@ -38,5 +38,15 @@
     "categories": ["golang", "programming", "concurrency"],
     "tags": ["golang", "programming", "concurrency", "sleepsort", "concurrency in golang", "sleepsort in golang"],
     "published_at": "2017-07-16"
+  },
+  {
+    "id": "making-http-requests-using-netcat",
+    "title": "Make HTTP requests using netcat",
+    "description": "All our lives we have been hitting REST APIs with libraries and utilities like curl and postman. Its time we do it the hard way with netcat, just for fun!",
+    "image": "https://user-images.githubusercontent.com/4745789/63222693-a5c0b280-c1c8-11e9-9cd4-808225e579f3.png",
+    "gif": "https://media.giphy.com/media/2tSodgDfwCjIMCBY8h/giphy.gif",
+    "categories": ["python", "programming"],
+    "tags": ["netcat", "python", "flask", "netcat with flask"],
+    "published_at": "2017-07-05"
   }
 ]
