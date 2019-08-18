@@ -62,11 +62,21 @@
   {
     "id": "setting-up-graphite-using-nginx-on-ubuntu",
     "title": "Setting up Graphite using Nginx on an Ubuntu server",
-    "description": "Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.",
+    "description": "Part 1: Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.",
     "image": "https://user-images.githubusercontent.com/4745789/63223138-c68c0680-c1ce-11e9-942b-60b92d3f8a28.png",
     "gif": "https://media.giphy.com/media/l4FGzAPvg5PbZrVlK/giphy.gif",
     "categories": ["devops"],
     "tags": ["devops", "ubuntu", "graphite on ubuntu", "graphite and nginx on ubuntu"],
+    "published_at": "2015-12-14"
+  },
+  {
+    "id": "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+    "title": "Setting up Graphite and Grafana on an Ubuntu server",
+    "description": "Part 2: Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.",
+    "image": "https://user-images.githubusercontent.com/4745789/63223314-e58b9800-c1d0-11e9-83d8-e263ce3eb874.png",
+    "gif": "https://media.giphy.com/media/Me1GB9z50XUKQ/giphy.gif",
+    "categories": ["devops"],
+    "tags": ["devops", "ubuntu", "grafana", "graphite and grafana on ubuntu", "grafana and graphite and nginx on ubuntu"],
     "published_at": "2015-12-14"
   }
 ]
