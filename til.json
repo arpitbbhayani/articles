@@ -1,1 +1,1 @@
-{"text":"Europa, one of the 79 known moons of Jupiter, was discovered by Galileo in 1610.\n\nIt was the first moon to have been be discovered after our own moon.\n\n#TIL #Astronomy"}
+{"text":"Solving 1/998001 will generate all the three digit numbers from 000 to 999 = 0.000 001 002 003 .... 998 999 000 001 002 ...\n \nNeatly explained by the power series expansion \n\n1/(1-x)^2 = 1 + 2x + 3x^2 + 4x^3 + ...\nwhen |x| &lt; 1\n\nsubstitute: x = 1/1000\n\n#TIL #Mathematics"}
