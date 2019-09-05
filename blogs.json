@@ -2,7 +2,7 @@
   {
     "id": "efficient-way-to-stop-an-iterating-loop",
     "title": "An efficient way to stop an iterating loop",
-    "description": "There is a significant performance gain in choosing the way we stop iterations of our loop? Let's find out which we should use.",
+    "description": "There are two ways through which we can stop an iterating loop, first by using break statement or second by making loop condition false. Let's see if one is better than the other.",
     "image": "https://user-images.githubusercontent.com/4745789/64327846-02ee9d80-cfea-11e9-8698-4a18bfe76068.png",
     "gif": "https://media.giphy.com/media/cKKXNlTYino7hWNXwl/giphy.gif",
     "categories": ["programming", "benchmark"],
