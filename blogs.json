@@ -1,9 +1,9 @@
 [
   {
-    "id": "efficient-stop-loop-iteration",
-    "title": "An efficient way to get out of an iterating loop ",
-    "description": "There is a significant performance gain in choosing the way we stop iterations of our loop? Let's find out which one is efficient.",
-    "image": "https://user-images.githubusercontent.com/4745789/64258425-ddf41f00-cf44-11e9-924f-b3d89a2b9e71.png",
+    "id": "efficient-way-to-stop-an-iterating-loop",
+    "title": "An efficient way to stop an iterating loop",
+    "description": "There is a significant performance gain in choosing the way we stop iterations of our loop? Let's find out which we should use.",
+    "image": "https://user-images.githubusercontent.com/4745789/64327846-02ee9d80-cfea-11e9-8698-4a18bfe76068.png",
     "gif": "https://media.giphy.com/media/cKKXNlTYino7hWNXwl/giphy.gif",
     "categories": ["programming", "benchmark"],
     "tags": ["programming", "benchmark", "efficient way to stop loop", "break or condition", "efficient for loop"],
