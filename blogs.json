@@ -7,7 +7,7 @@
     "gif": "https://media.giphy.com/media/cKKXNlTYino7hWNXwl/giphy.gif",
     "categories": ["programming", "benchmark"],
     "tags": ["programming", "benchmark", "efficient way to stop loop", "break or condition", "efficient for loop"],
-    "published_at": "2019-09-08"
+    "published_at": "2019-09-06"
   },
   {
     "id": "fast-and-efficient-pagination-in-mongodb",
