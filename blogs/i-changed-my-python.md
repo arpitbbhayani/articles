@@ -1,12 +1,10 @@
-This week I decided to play with python's source code, the code that makes python what it is, and see how it is implemented and in the process learn some internals. To make things fun I decided to change how addition work by making it incorrect and unpredictable which means `a + b` will internally do one of the following operations, at random
+Did you ever take a peek at Python's source code? I didn't and hence I decided to have some fun with it this week. After cloning the repository I realized the how well written is the code that makes python what it is. In the process of exploring the codebase I thought of making some changes, not big optimizations but some minor tweaks that will help me understand how python is implemented in C and along the course learn some internals. To make things fun I thought of changing how addition work by making it incorrect and unpredictable which means `a + b` will internally do one of the following operations, at random
 
  - `a + b`
  - `a - b`
  - `a * b`
  - `a / b`
  - `a ** b`
-
-I know it makes no sense, but all I wanted to do is understand the internals and have fun while doing it.
 
 After forking and cloning the source code of [python](https://github.com/python/cpython), I broke down the task into following sub tasks
 
@@ -25,7 +23,7 @@ You would see how performing addition on numbers `4` and `6` evaluates to `0`, `
 > Note, the change I made will only work when one of the operand is a variable. If the entire expression contains constants then it will be evaluated as regular infix expression.
 
 # Implementation
-Operations in python works on opcodes very similar to one that a microprocessor has. Depending on opcodes that the code is translated to, the operation is performed using operands (if required). The addition operation of python requires two operands and opcode is named `BINARY_ADD` and has value `23`. Wshen the executor encounters this opcode, it fetches the two operands from top of the stack, performs addition and then pushes back the result on the stack. The code snippet below will give you a good idea on what python does when it encounters `BINARY_ADD`.
+Operations in python works on opcodes very similar to one that a microprocessor has. Depending on opcodes that the code is translated to, the operation is performed using operands (if required). The addition operation of python requires two operands and opcode is named `BINARY_ADD` and has value `23`. When the executor encounters this opcode, it fetches the two operands from top of the stack, performs addition and then pushes back the result on the stack. The code snippet below will give you a good idea on what python does when it encounters `BINARY_ADD`.
 
 ```c
 case TARGET(BINARY_ADD): {
