@@ -1,5 +1,15 @@
 [
   {
+    "id": "i-changed-my-python",
+    "title": "I changed my Python and made it dubious",
+    "description": "I changed the Python's source code to make addition operation on two variables unpredictable. The Addition operation will at random be replaced with either Subtraction. Multiplication, Floor Division or Power.",
+    "image": "https://user-images.githubusercontent.com/4745789/71662123-60b3ac00-2d76-11ea-8018-f558cef93a59.png",
+    "gif": "https://media.giphy.com/media/aZ5wedD7Jtazm/giphy.gif",
+    "categories": ["programming", "python"],
+    "tags": ["programming", "python", "cpython source code", "python internals", "understanding python source code", "coding", "developer", "technology", "code", "pythonprogramming", "python programming", "data science", "tech"],
+    "published_at": "2020-01-03"
+  },
+  {
     "id": "efficient-way-to-stop-an-iterating-loop",
     "title": "An efficient way to stop an iterating loop",
     "description": "There are two ways through which we can stop an iterating loop, first by using break statement and second by making loop condition false. Let's see if one is better than the other.",
