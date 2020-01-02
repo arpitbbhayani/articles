@@ -1,4 +1,4 @@
-This week I decided to play with Python's source code, the code that makes Python what it is, and see how it is implemented and in the process learn some internals.  To make learning fun I decided to change how addition of two numbers work by adding randomness to it; which means when you perform `a + b` it will internally do one of the following operations
+This week I decided to play with python's source code, the code that makes python what it is, and see how it is implemented and in the process learn some internals.  To make learning fun I decided to change how addition of two numbers work by adding randomness to it; which means when you perform `a + b` it will internally do one of the following operations
 
  - `a + b`
  - `a - b`
@@ -6,9 +6,9 @@ This week I decided to play with Python's source code, the code that makes Pytho
  - `a / b`
  - `a ** b`
 
-Although this makes my Python unpredictable and makes no sense, but all I wanted to do is understand the internals of it and have fun while doing it.
+Although this makes my python unpredictable and makes no sense, but all I wanted to do is understand the internals of it and have fun while doing it.
 
-After forking and cloning the source code of [Python](https://github.com/python/cpython), I broke down the task into following sub tasks
+After forking and cloning the source code of [python](https://github.com/python/cpython), I broke down the task into following sub tasks
 
  - find the entry point (the main function) of python
  - find where addition happens
@@ -44,7 +44,7 @@ case TARGET(BINARY_ADD): {
 }
 ```
 
-> One thing to observe here is how Python does concatenation when both operands are unicode/string.
+> One thing to observe here is how python does concatenation when both operands are unicode/string.
 
 ### Checking if operands are numbers
 
@@ -124,7 +124,7 @@ case TARGET(BINARY_ADD): {
 ```
 
 # Challenges
-As soon as I had everything I required, I started making changes and once I was done, I ran `make` to create my new Python build and to my surprise, the code wouldn't build. It turned out that the function where I made the changes was called during build and initialization phases and due to my randomness now things started breaking due to __Segmentation Faults__ that it got when the function which was expected to add two numbers is now subtracting, multiplying, dividing at random.
+As soon as I had everything I required, I started making changes and once I was done, I ran `make` to create my new python build and to my surprise, the code wouldn't build. It turned out that the function where I made the changes was called during build and initialization phases and due to my randomness now things started breaking due to __Segmentation Faults__ that it got when the function which was expected to add two numbers is now subtracting, multiplying, dividing at random.
 
 To fix this issue I had to ensure that the randomness that I was adding should be added only when the operation is asked from an interactive shell and should do usual addition when called from any other source. Hence I traced the function that gets called during interactive shell, `PyRun_InteractiveLoopFlags`, and made changes to pass a flag called `source` to all the functions till my trail reaches the opcode evaluation flow. Once I had this `source` field in place, everything worked like a charm and I was able to randomly do subtraction, multiplication, division and power during addition.
 
@@ -132,8 +132,8 @@ You can find the detailed diff at [github.com/arpitbbhayani/cpython/pull/1/files
 
 # Conclusion
 
-It was fun to change the Python's source code, I would recommend you to do this as well. It is always better if you know how things work internally and more importantly understand the complexities that are abstracted to make Python developer's experience seamless.
+It was fun to change the python's source code, I would recommend you to do this as well. It is always better if you know how things work internally and more importantly understand the complexities that are abstracted to make python developer's experience seamless.
 
 You can find the source code at [github.com/arpitbbhayani/cpython/tree/01-randomized-math-operators](https://github.com/arpitbbhayani/cpython/tree/01-randomized-math-operators). Feel free to fork it and make some changes of you own and share it with me. I will be thrilled to learn what you did with it.
 
-If you want to dive deep into Python's source I highly recommend you to read [realpython.com/cpython-source-code-guide/](https://realpython.com/cpython-source-code-guide/). It is an excellent guide to get you started and understand semantics and practices of core python developer. Once you know the basics, navigating through the codebase is a walk in the park.
+If you want to dive deep into python's source I highly recommend you to read [realpython.com/cpython-source-code-guide/](https://realpython.com/cpython-source-code-guide/). It is an excellent guide to get you started and understand semantics and practices of core python developer. Once you know the basics, navigating through the codebase is a walk in the park.
