@@ -9,7 +9,7 @@ This triggered me to benchmark different ways to get out of an iterating loop. T
 
 Everything is better with an example. Let's say we need to find if character `a` is present in the array and we need to set the value of `bool` variable `a_found` accordingly.
 
-## Using break statement
+### Using break statement
 
 ```cpp
 bool a_found = false;
@@ -22,7 +22,7 @@ for (int i = 0 ; i < n ; i++) {
 }
 ```
 
-## Using loop condition
+### Using loop condition
 
 ```cpp
 bool a_found = false;
@@ -36,7 +36,7 @@ for (int i = 0 ; a_found == false && i < n ; i++) {
 
 Should there be considerable difference in performance? My efforts to write an article about this gives you the obvious answer. YES! there is a significant difference.
 
-## Benchmark
+# Benchmark
 
 The code to benchmark iterates over a string to see if `a` is present or not.  The length of the string is variable and goes from 500 to 1000000000. We measure the time taken for each approach - standard benchmark practice. You can find the code here - [code to benchmark stopping the loop iteration](https://gist.github.com/arpitbbhayani/d06cb7f4bb0cfdc8daa596dd77e8de10)
 
