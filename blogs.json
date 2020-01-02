@@ -2,7 +2,7 @@
   {
     "id": "i-changed-my-python",
     "title": "I changed my Python and made it dubious",
-    "description": "I changed the Python's source code to make addition operation on two variables unpredictable. The Addition operation will at random be replaced with either Subtraction. Multiplication, Floor Division or Power.",
+    "description": "I changed the Python's source code and made addition incorrect and unpredictable. The addition operation will internally perform either Subtraction. Multiplication, Floor Division or Power at random.",
     "image": "https://user-images.githubusercontent.com/4745789/71662123-60b3ac00-2d76-11ea-8018-f558cef93a59.png",
     "gif": "https://media.giphy.com/media/aZ5wedD7Jtazm/giphy.gif",
     "categories": ["programming", "python"],
