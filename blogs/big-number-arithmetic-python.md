@@ -38,13 +38,7 @@ struct _longobject {
 };
 ```
 
-`PyObject_VAR_HEAD` is a macro defined as
-
-```c
-#define PyObject_VAR_HEAD      PyVarObject ob_base;
-```
-
-and `PyVarObject` is defined as
+`PyObject_VAR_HEAD` is a macro that expands into a `PyVarObject` that has the following structure
 
 ```c
 typedef struct {
@@ -77,11 +71,15 @@ struct _longobject {
 
 Generally, In low-level languages like C, the precision of integers is limited to 64-bit, but Python has built-in support for [Arbitrary-precision integers](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic). Since Python 3 all integers are represented as a bignum and these are limited only by the available memory of the host system.
 
-# Understanding storage
+# Understanding storage of integers
 
 A naive way of storing a digit is by actually storing a decimal digit of the number in one item of the array. But this is really inefficient because representing a digit that ranges from 0 to 10, which could be represented by max 4 bits is given 32 bits of space. Once this type of storage is implemented performing operations like addition subtraction will be like high school maths.
 
-But is python storing digits like this?
+With this approach, a number `5238` will be stored as
+
+![representation of 5238 in naive way](https://user-images.githubusercontent.com/4745789/71898122-824dd280-317e-11ea-906a-07a4ef105dbf.png)
+
+But is python storing digits like this? in some way the answer to this is Yes and No.
 
 ---
 
@@ -91,9 +89,9 @@ Basically Python longs are implemented as an array of digits. So, for example, 1
 
 (note, though: the "digits" are actually uint32s, and have the range 0..230 (or 0..215 on some platforms) instead of 0..9, and they are actually stored least-significant-digit first, so internally the above example would be [4, 3, 2, 1]).
 
-longs are imiplemented in longobject.c: https://github.com/python-git/python/blob/master/Objects/longobject.c
+longs are implemented in longobject.c: https://github.com/python-git/python/blob/master/Objects/longobject.c
 
-For example, take a look at the x_add function (which actaully adds the numbers, as opposed to long_add which sets up the call to x_add or x_sub):
+For example, take a look at the x_add function (which actually adds the numbers, as opposed to long_add which sets up the call to x_add or x_sub):
 
 # Undertanding Storage
 
