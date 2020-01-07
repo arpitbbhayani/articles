@@ -77,7 +77,7 @@ A naive way to store an integer digit-wise is by actually storing a decimal digi
 
 With this approach, a number `5238` will be stored as
 
-![representation of 5238 in a naive way](https://user-images.githubusercontent.com/4745789/71900621-28e8a200-3184-11ea-9132-ccdf4e00ec44.png)
+![representation of 5238 in a naive way](https://user-images.githubusercontent.com/4745789/71915727-5e03ed00-31a2-11ea-99c1-cdf28e74b595.png)
 
 This approach is inefficient as we will be using up 32 bits to store a decimal digit that actually ranges only from 0 to 9 and could have been easily represented by mere 4 bits, and while writing something as versatile as python, a core developer has to be more resourceful.
 
@@ -85,9 +85,34 @@ So, can we do better? for sure, otherwise, this article should hold no place on 
 
 ## The pythonic way
 
-Instead of storing just one decimal digit in each item of array `ob_digit`, python converts the number from base 10 to base 2<sup>30</sup> and calls each of element as `digit` which ranges from 0 to 2<sup>30</sup> - 1.
+Instead of storing just one decimal digit in each item of the array `ob_digit`, python converts the number from base 10 to base 2<sup>30</sup> and calls each of element as `digit` which ranges from 0 to 2<sup>30</sup> - 1.
 
-> Depending on the platform, Python uses either 32-bit unsigned integer arrays with 30-bit digits or 16-bit unsigned integer arrays with 15-bit digits.
+> Depending on the platform, Python uses either 32-bit unsigned integer arrays with 30-bit digits or 16-bit unsigned integer arrays with 15-bit digits. It requires a couple of bits to perform operations that will be discussed in some future articles.
+
+You could try a live demo [here](https://repl.it/@arpitbbhayani/super-long-int?language=python3)
+
+### Lets see how python stores a number like 1152921504606846976
+
+As for mentioned for Python "digit" is base 2<sup>30</sup> hence if you convert 1152921504606846976 you get `0 0 1`.
+
+1152921504606846976 = __0__ * 2<sup>30<sup>0</sup></sup> + __0__ * 2<sup>30<sup>1</sup></sup> + __1__ * 2<sup>30<sup>2</sup></sup>
+
+The `_longobject` struct for this value will hold
+
+ - `ob_size` as `3`
+ - `ob_digit` as `[0, 0, 1]`
+
+![representation of 1152921504606846976 in a pythonic way](https://user-images.githubusercontent.com/4745789/71915782-7a078e80-31a2-11ea-8da6-6e86197ad5a7.png)
+
+> The 0<sup>th</sup> index of the `ob_digit` array will hold the least significant digit hence reversed.
+
+---
+
+
+
+# Operations on super long integers
+
+## Addition
 
 For example, take a look at the x_add function (which actually adds the numbers, as opposed to long_add which sets up the call to x_add or x_sub):
 
@@ -116,29 +141,7 @@ The comment from the source code describes it as follows:
    CAUTION:  Generic code manipulating subtypes of PyVarObject has to aware that integers abuse  ob_size's sign bit.
 */
 
-The representation of 123456789101112131415 will look as follows:
-ob_size	3
-ob_digit	437976919	87719511	107
 
-
-Algorithm of converting our representation back:
-(437976919∗230∗0)+(87719511∗230∗1)+(107∗230∗2)
-
-```
-import ctypes
-
-class PyLongObject(ctypes.Structure):
-    _fields_ = [("ob_refcnt", ctypes.c_long),
-                ("ob_type", ctypes.c_void_p),
-                ("ob_size", ctypes.c_ulong),
-                ("ob_digit", ctypes.c_uint * 3)]
-
-
-bignum = 18446744073709551615
-
-for d in PyLongObject.from_address(id(bignum)).ob_digit:
-    print(d)
-```
 
 # How different operations fare
 
