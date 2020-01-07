@@ -68,19 +68,24 @@ struct _longobject {
 };
 ```
 
-These are some meta fields in the `PyObject` struct but that we shall discuss some time in the future. The fields that we will focus on are `ob_digit[1]` and `ob_size`.
-
-`ob_size` is something that stores the `len` of the object.
-
+> These are some meta fields in the `PyObject` struct but that we shall discuss some time in the future. The field that we will focus on is `ob_digit[1]`.
 
 
 ### Decoding `digit ob_digit[1];`
 
-`typedef uint32_t digit;`
+`ob_digit` is an array of `digit` by statically allocated size `1` and if required could be malloced to any length. Judging by this variable we can say that this array will store digits of the integer but we are not sure how it is actually storing it.
 
-`ob_digit` thus is an array by default allocated to size `1` which means it can be extended as required through `malloc`
+---Generally, In languages like C/C++, the precision of integers is limited to 64-bit, but Python has built-in support for Arbitrary-precision integers. Since Python 3 there is no longer a simple integer type, and all integers are represented as a bignum. calculations are performed on numbers whose digits of precision are limited only by the available memory of the host system.
 
-Generally, In languages like C/C++, the precision of integers is limited to 64-bit, but Python has built-in support for Arbitrary-precision integers. Since Python 3 there is no longer simple integer type, and all integers are represented as a bignum. calculations are performed on numbers whose digits of precision are limited only by the available memory of the host system.
+# Understanding storage
+
+A naive way of storing a digit is by actually storing a decimal digit of the number in one item of the array. But this is really inefficient because representing a digit that ranges from 0 to 10, which could be represented by max 4 bits is given 32 bits of space. Once this type of storage is implemented performing operations like addition subtraction will be like high school maths.
+
+But is python storing digits like this?
+
+---
+
+
 
 Basically Python longs are implemented as an array of digits. So, for example, 1234 might be represented using [1, 2, 3, 4], then mathematical operations are done using the standard grade-school formulas for, ex, adding, subtracting, and multiplying large numbers by hand.
 
