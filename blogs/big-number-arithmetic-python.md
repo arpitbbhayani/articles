@@ -73,15 +73,13 @@ Generally, In low-level languages like C, the precision of integers is limited t
 
 # Understanding storage of integers
 
-A naive way of storing a digit is by actually storing a decimal digit of the number in one item of the array. But this is really inefficient because representing a digit that ranges from 0 to 10, which could be represented by max 4 bits is given 32 bits of space. Once this type of storage is implemented performing operations like addition subtraction will be like high school maths.
+A naive way to store an integer digit-wise is by actually storing a decimal digit in one item of the array and then performing operations like addition subtraction will be like high school maths.
 
 With this approach, a number `5238` will be stored as
 
-![representation of 5238 in naive way](https://user-images.githubusercontent.com/4745789/71898122-824dd280-317e-11ea-906a-07a4ef105dbf.png)
+![representation of 5238 in a naive way](https://user-images.githubusercontent.com/4745789/71898122-824dd280-317e-11ea-906a-07a4ef105dbf.png)
 
-But is python storing digits like this? in some way the answer to this is Yes and No.
-
----
+But this approach is inefficient as we will be using up 32bits of space to store a decimal digit that actually ranges from only 0 to 9 and could be easily represented by 4 bits of space. So can we do better? yes, we can do better and Python is doing it.
 
 
 
