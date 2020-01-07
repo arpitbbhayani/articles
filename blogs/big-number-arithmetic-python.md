@@ -69,7 +69,7 @@ struct _longobject {
 
 `ob_digit` is an array of `digit`, typedef'ed from `uint32_t`, by statically allocating size of `1` item and if required could be malloced to any length.
 
-Generally, In low-level languages like C, the precision of integers is limited to 64-bit, but Python has built-in support for [Arbitrary-precision integers](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic). Since Python 3 all integers are represented as a bignum and these are limited only by the available memory of the host system.
+Generally, In low-level languages like C, the precision of integers is limited to 64-bit, but Python implements [Arbitrary-precision integers](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic). Since Python 3 all integers are represented as a bignum and these are limited only by the available memory of the host system.
 
 # Understanding storage of integers
 
@@ -79,17 +79,19 @@ With this approach, a number `5238` will be stored as
 
 ![representation of 5238 in a naive way](https://user-images.githubusercontent.com/4745789/71900621-28e8a200-3184-11ea-9132-ccdf4e00ec44.png)
 
-This approach is highly inefficient as we will be using up 32 bits of space to store a decimal digit that actually ranges only from 0 to 9 and could have been easily represented by mere 4 bits, and wasting 28 bits.
+This approach is inefficient as we will be using up 32 bits to store a decimal digit that actually ranges only from 0 to 9 and could have been easily represented by mere 4 bits, and while writing something as versatile as python, a core developer has to be more resourceful.
 
-Can we do better? yes, and Python is doing it. Instead of storing just one decimal digit in each item of array `ob_digit`, python converts the number from base 10 to base 2<sup>30</sup> and calls each of element as `digit` which ranges from 0 to 2<sup>30</sup> - 1.
+So, can we do better? for sure, otherwise, this article should hold no place on the internet. Let's dive into how python actually stores a super long integer.
+
+## The pythonic way
+
+Instead of storing just one decimal digit in each item of array `ob_digit`, python converts the number from base 10 to base 2<sup>30</sup> and calls each of element as `digit` which ranges from 0 to 2<sup>30</sup> - 1.
 
 > Depending on the platform, Python uses either 32-bit unsigned integer arrays with 30-bit digits or 16-bit unsigned integer arrays with 15-bit digits.
 
-# TODO: Why python does not use up all 32 bits?
-
 For example, take a look at the x_add function (which actually adds the numbers, as opposed to long_add which sets up the call to x_add or x_sub):
 
-Using such approach introduces additional requirements, that's why we can't use all bits of the integer.
+Using such approach introduces additional requirements, that's why we can't use all bits of an integer.
 
 To eliminate unnecessary computation CPython has a "fast path" implementation for integers in a range of −230
 to 230
