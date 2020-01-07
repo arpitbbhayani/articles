@@ -77,25 +77,19 @@ A naive way to store an integer digit-wise is by actually storing a decimal digi
 
 With this approach, a number `5238` will be stored as
 
-![representation of 5238 in a naive way](https://user-images.githubusercontent.com/4745789/71898122-824dd280-317e-11ea-906a-07a4ef105dbf.png)
+![representation of 5238 in a naive way](https://user-images.githubusercontent.com/4745789/71900621-28e8a200-3184-11ea-9132-ccdf4e00ec44.png)
 
-But this approach is inefficient as we will be using up 32bits of space to store a decimal digit that actually ranges from only 0 to 9 and could be easily represented by 4 bits of space. So can we do better? yes, we can do better and Python is doing it.
+This approach is highly inefficient as we will be using up 32 bits of space to store a decimal digit that actually ranges only from 0 to 9 and could have been easily represented by mere 4 bits, and wasting 28 bits.
 
+Can we do better? yes, and Python is doing it. Instead of storing just one decimal digit in each item of array `ob_digit`, python converts the number from base 10 to base 2<sup>30</sup> and calls each of element as `digit` which ranges from 0 to 2<sup>30</sup> - 1.
 
+> Depending on the platform, Python uses either 32-bit unsigned integer arrays with 30-bit digits or 16-bit unsigned integer arrays with 15-bit digits.
 
-Basically Python longs are implemented as an array of digits. So, for example, 1234 might be represented using [1, 2, 3, 4], then mathematical operations are done using the standard grade-school formulas for, ex, adding, subtracting, and multiplying large numbers by hand.
-
-(note, though: the "digits" are actually uint32s, and have the range 0..230 (or 0..215 on some platforms) instead of 0..9, and they are actually stored least-significant-digit first, so internally the above example would be [4, 3, 2, 1]).
-
-longs are implemented in longobject.c: https://github.com/python-git/python/blob/master/Objects/longobject.c
+# TODO: Why python does not use up all 32 bits?
 
 For example, take a look at the x_add function (which actually adds the numbers, as opposed to long_add which sets up the call to x_add or x_sub):
 
-# Undertanding Storage
-
-One of the solutions is to represent the integer as an array of digits. To do it in an efficient way we need to convert our number from base 10 to base 230 numeral system, where each element represents a single 'digit' in a range from 0 to 230−1
-
-. Depending on the platform, Python uses either 32-bit unsigned integer arrays with 30-bit digits or 16-bit unsigned integer arrays with 15-bit digits. Using such approach introduces additional requirements, that's why we can't use all bits of the integer. The ob_digit field in a structure above is responsible for such arrays.
+Using such approach introduces additional requirements, that's why we can't use all bits of the integer.
 
 To eliminate unnecessary computation CPython has a "fast path" implementation for integers in a range of −230
 to 230
