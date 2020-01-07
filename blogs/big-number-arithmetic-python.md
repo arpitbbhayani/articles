@@ -1,6 +1,6 @@
 When you code in a low-level language like C, you worry about picking the right data type for your integer; at every step, you need to think if `int` would suffice or should you go for `long` or even higher to `long double`. But while coding in Python, you need not worry about these "trivial" things because python supports integers of any size.
 
-In C language you cannot compute 2 ^ 20000, when you try it gives you `inf` as the output.
+In C language you cannot compute   2<sup>20000</sup>, when you try it gives you `inf` as the output.
 
 ```c
 #include <stdio.h>
@@ -29,6 +29,7 @@ But for Python, it is a piece of cake 🎂
 Python must be doing something beautiful internally to support integers of any size and today we find out what's under the hood!
 
 # Representation of integer in Python
+An integer in Python is a C struct defined as following
 
 ```c
 struct _longobject {
@@ -37,20 +38,13 @@ struct _longobject {
 };
 ```
 
-### Decoding `PyObject_VAR_HEAD`
-
-`PyObject_VAR_HEAD` implies that this object will have a variable length. This is how we know that something about `_longobject` is variable in size. The first clue!
-
-Other types that has `PyObject_VAR_HEAD`
- - `PyBytesObject`
- - `PyTupleObject`
- - `PyListObject`
+`PyObject_VAR_HEAD` is a macro defined as
 
 ```c
 #define PyObject_VAR_HEAD      PyVarObject ob_base;
 ```
 
-`PyVarObject` is a struct
+and `PyVarObject` is defined as
 
 ```c
 typedef struct {
@@ -58,6 +52,23 @@ typedef struct {
     Py_ssize_t ob_size; /* Number of items in variable part */
 } PyVarObject;
 ```
+
+Other types that has `PyObject_VAR_HEAD` are
+ - `PyBytesObject`
+ - `PyTupleObject`
+ - `PyListObject`
+
+This indicates that the integer object, just like a `tuple` or a `list`, is variable in length and gives us our first insight into how it could support gigantically long integers. The `_longobject` now roughly is represented as
+
+```c
+struct _longobject {
+    PyObject ob_base;
+    Py_ssize_t ob_size; /* Number of items in variable part */
+    digit ob_digit[1];
+};
+```
+
+These are some meta fields in the `PyObject` struct but that we shall discuss some time in the future. The fields that we will focus on are `ob_digit[1]` and `ob_size`.
 
 `ob_size` is something that stores the `len` of the object.
 
