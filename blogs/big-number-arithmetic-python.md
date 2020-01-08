@@ -75,7 +75,7 @@ Generally, In low-level languages like C, the precision of integers is limited t
 
 # Understanding storage of integers
 
-A naive way to store an integer digit-wise is by actually storing a decimal digit in one item of the array and then performing operations like addition subtraction will be like high school maths.
+A naive way to store an integer digit-wise is by actually storing a decimal digit in one item of the array and then performing operations like addition subtraction will be like school maths.
 
 With this approach, a number `5238` will be stored as
 
@@ -108,44 +108,31 @@ I have created a [demo REPL]((https://repl.it/@arpitbbhayani/super-long-int?lang
 
 # Operations on super long integers
 
-Now we have a fair idea on how arbitrary precision integers are stored in python.
+Now that we have a fair idea on how integers in python are arbitrary precision integers and their persistence we should also understand how various mathematical operations happen on them.
 
 ## Addition
 
-For example, take a look at the x_add function (which actually adds the numbers, as opposed to long_add which sets up the call to x_add or x_sub):
+Integers are persisted "digit-wise", this means addition is just like how we used to do in school. The function named [x_add](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3116) in file [x_add](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] performs addition of two numbers.
 
-Using such approach introduces additional requirements, that's why we can't use all bits of an integer.
+```c
+...
+    for (i = 0; i < size_b; ++i) {
+        carry += a->ob_digit[i] + b->ob_digit[i];
+        z->ob_digit[i] = carry & PyLong_MASK;
+        carry >>= PyLong_SHIFT;
+    }
+    for (; i < size_a; ++i) {
+        carry += a->ob_digit[i];
+        z->ob_digit[i] = carry & PyLong_MASK;
+        carry >>= PyLong_SHIFT;
+    }
+    z->ob_digit[i] = carry;
+...
+```
 
-To eliminate unnecessary computation CPython has a "fast path" implementation for integers in a range of −230
-to 230
+The code snippet above is taken from `x_add` function and you could see how it actually iterates over the digits and performs addition and computes carry. Just the way we did it in school.
 
-. Such integers are stored as an array of one element and if it's possible treated as fixed 32-bit integers.
-
-Note that, unlike classical approach, the sign of an integer is stored separately in ob_size field. This field stores the size of the ob_digit array. So if you want to change the sign of an array of size 2 you need to set ob_size to -2.
-
-The comment from the source code describes it as follows:
-
-/* Long integer representation.
-   The absolute value of a number is equal to
-    SUM(for i=0 through abs(ob_size)-1) ob_digit[i] * 2**(SHIFT*i)
-   Negative numbers are represented with ob_size < 0;
-   zero is represented by ob_size == 0.
-   In a normalized number, ob_digit[abs(ob_size)-1] (the most significant
-   digit) is never zero.  Also, in all cases, for all valid i,
-    0 <= ob_digit[i] <= MASK.
-   The allocation function takes care of allocating extra memory
-   so that ob_digit[0] ... ob_digit[abs(ob_size)-1] are actually available.
-
-   CAUTION:  Generic code manipulating subtypes of PyVarObject has to aware that integers abuse  ob_size's sign bit.
-*/
-
-
-
-# How different operations fare
-
-### Addition
-
-show malloc and point.
+> The sign of the integer is the sign of `ob_size` which means, if you have a negative number then `ob_size` will be negative. The absolute value of `ob_size` will determine the number of digits in `ob_digit`.
 
 ### Subtaction
 
