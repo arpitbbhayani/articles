@@ -130,13 +130,35 @@ Integers are persisted "digit-wise", this means addition is just like how we use
 ...
 ```
 
-The code snippet above is taken from `x_add` function and you could see how it actually iterates over the digits and performs addition and computes carry. Just the way we did it in school.
+The code snippet above is taken from `x_add` function and you could see how it actually iterates over the digits and performs addition and computes and propagates carry. Just the way we did it in school.
 
 > The sign of the integer is the sign of `ob_size` which means, if you have a negative number then `ob_size` will be negative. The absolute value of `ob_size` will determine the number of digits in `ob_digit`.
 
 ### Subtaction
 
-show malloc and point.
+Similar to how addition is performed, subtraction is also performed just the way we did it in school. The function named [x_sub](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3150) in file [x_sub](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] performs subtraction of two numbers.
+
+```c
+...
+    for (i = 0; i < size_b; ++i) {
+        /* The following assumes unsigned arithmetic
+           works module 2**N for some N>PyLong_SHIFT. */
+        borrow = a->ob_digit[i] - b->ob_digit[i] - borrow;
+        z->ob_digit[i] = borrow & PyLong_MASK;
+        borrow >>= PyLong_SHIFT;
+        borrow &= 1; /* Keep only one sign bit */
+    }
+    for (; i < size_a; ++i) {
+        borrow = a->ob_digit[i] - borrow;
+        z->ob_digit[i] = borrow & PyLong_MASK;
+        borrow >>= PyLong_SHIFT;
+        borrow &= 1; /* Keep only one sign bit */
+    }
+...
+```
+
+The code snippet above is taken from `x_sub` function and you could see how it actually iterates over the digits and performs subtraction and computes and propagates burrow.
+
 
 ### Multiplication
 
