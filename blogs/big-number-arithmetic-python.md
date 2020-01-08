@@ -91,14 +91,13 @@ Instead of storing just one decimal digit in each item of the array `ob_digit`, 
 
 In the hexadecimal number system, the base is 16 ~ 2<sup>4</sup> this means each "digit" of a hexadecimal number ranges from 0 to 15 of the decimal system. Similarly for python, "digit" is in base 2<sup>30</sup> which means it will range from  0 to 2<sup>30</sup> = 1073741823 of the decimal system.
 
-This way python efficiently uses almost all of the allocated space of 32 bits and keeps itself resourceful and still performs operations like addition and subtraction like grade school maths.
+This way python efficiently uses almost all of the allocated space of 32 bits per digit and keeps itself resourceful and still performs operations such as addition and subtraction like grade school maths.
 
 > Depending on the platform, Python uses either 32-bit unsigned integer arrays with 30-bit digits or 16-bit unsigned integer arrays with 15-bit digits. It requires a couple of bits to perform operations that will be discussed in some future articles.
 
-### Lets see how python stores a number like 1152921504606846976
+### Example: 1152921504606846976
 
-
-As mentioned, for Python a "digit" is base 2<sup>30</sup> hence if you convert `1152921504606846976` you get `001`.
+As mentioned, for Python a "digit" is base 2<sup>30</sup> hence if you convert `1152921504606846976` into base 2<sup>30</sup> you get `001`.
 
 __1152921504606846976__ = __0__ * 2<sup>30<sup>0</sup></sup> + __0__ * 2<sup>30<sup>1</sup></sup> + __1__ * 2<sup>30<sup>2</sup></sup>
 
@@ -109,7 +108,7 @@ The `_longobject` struct for this value will hold
 
 ![representation of 1152921504606846976 in a pythonic way](https://user-images.githubusercontent.com/4745789/71915782-7a078e80-31a2-11ea-8da6-6e86197ad5a7.png)
 
-I have created a [demo REPL]((https://repl.it/@arpitbbhayani/super-long-int?language=python3)) that will output how python is storing integers internally and creates reference points for all struct members like `ob_size`, `ob_refcount`, etc.
+I have created a [demo REPL]((https://repl.it/@arpitbbhayani/super-long-int?language=python3)) that will output the way python is storing integers internally and also has reference to struct members like `ob_size`, `ob_refcount`, etc.
 
 # Operations on super long integers
 
