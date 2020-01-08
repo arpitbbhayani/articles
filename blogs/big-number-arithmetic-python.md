@@ -138,7 +138,7 @@ The code snippet above is taken from `x_add` function and you could see that it 
 
 > Things become interesting when result of addition is a negative number. The sign of `ob_size` is the sign of the integer, which means, if you have a negative number then `ob_size` will be negative. The absolute value of `ob_size` will determine the number of digits in `ob_digit`.
 
-## Subtaction
+## Subtraction
 
 Similar to how addition is implemented, subtraction also happens digit-wise. The function named [x_sub](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3150) in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] performs subtraction of two numbers.
 
