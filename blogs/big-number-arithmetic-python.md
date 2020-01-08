@@ -182,10 +182,6 @@ This way python saves a lot of space and computation for commonly used integers.
 
 Small integer objects in a range of -5 to 256 are always pre-allocated during initialization. Because Python integers are immutable, we can use them as singletons. Every time you need to create small integer instead of creating new object Python just points to already allocated one. Thereby it saves a lot of space and computation for commonly-used integers.
 
-# Space inefficiency
-
-Interestingly enough, the PyLongObject structure takes at least 28 bytes for every allocated integer and therefore takes three times as much memory as a simple 64-bit C integer.
-
 # Conclusion
 
 This is the second part of the Python Internals series. The first article written here was How I changed my Python and made it dubious. I highly recommend that you read it because it may give you a .
