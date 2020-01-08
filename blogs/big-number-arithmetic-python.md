@@ -112,11 +112,11 @@ I have created a [demo REPL](https://repl.it/@arpitbbhayani/super-long-int?langu
 
 # Operations on super long integers
 
-Now that we have a fair idea on how integers in python are arbitrary precision integers and their persistence we should also understand how various mathematical operations happen on them.
+Now that we have a fair idea on how python supports and implements arbitrary precision integers its time to understand how various mathematical operations happen on them.
 
 ## Addition
 
-Integers are persisted "digit-wise", this means addition is just like how we used to do in school. The function named [x_add](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3116) in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] performs addition of two numbers.
+Integers are persisted "digit-wise", this means the addition is just like grade school. The function named [x_add](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3116) in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] performs the addition of two numbers.
 
 ```c
 ...
