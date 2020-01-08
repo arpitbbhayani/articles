@@ -116,7 +116,7 @@ Now that we have a fair idea on how python supports and implements arbitrary pre
 
 ## Addition
 
-Integers are persisted "digit-wise", this means the addition is just like grade school. The function named [x_add](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3116) in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] performs the addition of two numbers.
+Integers are persisted "digit-wise", this means the addition is as simple as what we learned in the grade school and python's source code shows us that this is exactly how it is implemented as well. The function named [x_add](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3116) in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c) performs the addition of two numbers.
 
 ```c
 ...
@@ -134,19 +134,17 @@ Integers are persisted "digit-wise", this means the addition is just like grade 
 ...
 ```
 
-The code snippet above is taken from `x_add` function and you could see how it actually iterates over the digits and performs addition and computes and propagates carry. Just the way we did it in school.
+The code snippet above is taken from `x_add` function and you could see that it actually iterates over the digits and performs addition digit-wise and computes and propagates carry.
 
-> The sign of the integer is the sign of `ob_size` which means, if you have a negative number then `ob_size` will be negative. The absolute value of `ob_size` will determine the number of digits in `ob_digit`.
+> Things become interesting when result of addition is a negative number. The sign of `ob_size` is the sign of the integer, which means, if you have a negative number then `ob_size` will be negative. The absolute value of `ob_size` will determine the number of digits in `ob_digit`.
 
 ## Subtaction
 
-Similar to how addition is implemented, subtraction also happens the way we did it in school. The function named [x_sub](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3150) in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] performs subtraction of two numbers.
+Similar to how addition is implemented, subtraction also happens digit-wise. The function named [x_sub](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3150) in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] performs subtraction of two numbers.
 
 ```c
 ...
     for (i = 0; i < size_b; ++i) {
-        /* The following assumes unsigned arithmetic
-           works module 2**N for some N>PyLong_SHIFT. */
         borrow = a->ob_digit[i] - b->ob_digit[i] - borrow;
         z->ob_digit[i] = borrow & PyLong_MASK;
         borrow >>= PyLong_SHIFT;
@@ -161,18 +159,18 @@ Similar to how addition is implemented, subtraction also happens the way we did 
 ...
 ```
 
-The code snippet above is taken from `x_sub` function and you could see how it actually iterates over the digits and performs subtraction and computes and propagates burrow.
+The code snippet above is taken from `x_sub` function and you could see how it actually iterates over the digits and performs subtraction and computes and propagates burrow. Very similar to addition indeed.
 
 ## Multiplication
 
-Again a naive way to implement multiplication will be what we learned in school math but it won't be very efficient. Python, in order to keep things efficient implements the [Karatsuba algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) that multiplies two n-digit numbers in O ( n<sup>log<sub>2</sub>3</sup> ) elementary steps.
+Again a naive way to implement multiplication will be what we learned in grade school math but it won't be very efficient. Python, in order to keep things efficient implements the [Karatsuba algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) that multiplies two n-digit numbers in O ( n<sup>log<sub>2</sub>3</sup> ) elementary steps.
 
 The algorithm is slightly complicated is out of the scope of this article  but you can find its implementation in [k_mul](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3397) and
 [k_lopsided_mul](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3618) functions in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c].
 
 ## Division and other operations
 
-All operations on integers are defined in the file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] and it is extremely simple to locate each one. Warning: it will take some time to understand each one in detail so grab some popcorn before you start reading.
+All operations on integers are defined in the file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] and it is very simple to locate and trace each one. Warning: it will take some time to understand each one in detail so grab some popcorn before you start skimming.
 
 # Optimization of commonly-used integers
 
