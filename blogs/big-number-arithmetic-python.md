@@ -1,6 +1,6 @@
-When you code in a low-level language like C, you worry about picking the right data type and qualifiers for your integer; at every step, you need to think if `int` would suffice or should you go for a `long` or even higher to a `long double`. But while coding in python, you need not worry about these "trivial" things because python supports integers of arbitrary size.
+When you code in a low-level language like C, you worry about picking the right data type and qualifiers for your integers; at every step, you need to think if `int` would suffice or should you go for a `long` or even higher to a `long double`. But while coding in python, you need not worry about these "trivial" things because python supports integers of arbitrary size.
 
-In C you cannot compute   2<sup>20000</sup> when you do try to compute, it gives you `inf` as the output.
+In C, when you try to compute 2<sup>20000</sup> using builtin `powl` function it gives you `inf` as the output.
 
 ```c
 #include <stdio.h>
@@ -28,7 +28,7 @@ But for python, it is a piece of cake 🎂
 
 Python must be doing something beautiful internally to support integers of arbitrary sizes and today we find out what's under the hood!
 
-# How integers are represented in python?
+# How integers are defined in python?
 An integer in Python is a C struct defined as following
 
 ```c
@@ -52,7 +52,7 @@ Other types that has `PyObject_VAR_HEAD` are
  - `PyTupleObject`
  - `PyListObject`
 
-This indicates that an integer, just like a `tuple` or a `list`, is variable in length and gives us our first insight into how it could support gigantically long integers. The `_longobject` now is represented as
+This indicates that an integer, just like a `tuple` or a `list`, is variable in length and this is our first insight into how it could support gigantically long integers. The `_longobject` after macro expansion could be roughly seen as
 
 ```c
 struct _longobject {
@@ -62,7 +62,7 @@ struct _longobject {
 };
 ```
 
-> These are some meta fields in the `PyObject` struct but that we shall discuss some time in the future. The field that we will focus on is `ob_digit[1]` and to some extent `ob_size`.
+> These are some meta fields in the `PyObject` struct, used for reference counting (garbage collection), but that we would require a separate article. The field that we will focus on is `ob_digit` and to some extent `ob_size`.
 
 ### Decoding `ob_digit`
 
