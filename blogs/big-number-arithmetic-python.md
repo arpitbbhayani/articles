@@ -106,9 +106,9 @@ The `_longobject` struct for this value will hold
  - `ob_size` as `3`
  - `ob_digit` as `[0, 0, 1]`
 
-![representation of 1152921504606846976 in a pythonic way](https://user-images.githubusercontent.com/4745789/71915782-7a078e80-31a2-11ea-8da6-6e86197ad5a7.png)
+![representation of 1152921504606846976 in a pythonic way](https://user-images.githubusercontent.com/4745789/72000622-b5b95b80-3269-11ea-9e76-1755cd648f0d.png)
 
-I have created a [demo REPL]((https://repl.it/@arpitbbhayani/super-long-int?language=python3)) that will output the way python is storing integers internally and also has reference to struct members like `ob_size`, `ob_refcount`, etc.
+I have created a [demo REPL](https://repl.it/@arpitbbhayani/super-long-int?language=python3) that will output the way python is storing integers internally and also has reference to struct members like `ob_size`, `ob_refcount`, etc.
 
 # Operations on super long integers
 
