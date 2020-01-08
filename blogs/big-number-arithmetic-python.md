@@ -140,7 +140,7 @@ The code snippet above is taken from `x_add` function and you could see that it 
 
 ## Subtraction
 
-Similar to how addition is implemented, subtraction also happens digit-wise. The function named [x_sub](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3150) in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] performs subtraction of two numbers.
+Similar to how addition is implemented, subtraction also happens digit-wise. The function named [x_sub](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3150) in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c) performs subtraction of two numbers.
 
 ```c
 ...
