@@ -134,7 +134,7 @@ The code snippet above is taken from `x_add` function and you could see how it a
 
 > The sign of the integer is the sign of `ob_size` which means, if you have a negative number then `ob_size` will be negative. The absolute value of `ob_size` will determine the number of digits in `ob_digit`.
 
-### Subtaction
+## Subtaction
 
 Similar to how addition is implemented, subtraction also happens the way we did it in school. The function named [x_sub](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3150) in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] performs subtraction of two numbers.
 
@@ -159,17 +159,22 @@ Similar to how addition is implemented, subtraction also happens the way we did 
 
 The code snippet above is taken from `x_sub` function and you could see how it actually iterates over the digits and performs subtraction and computes and propagates burrow.
 
-### Multiplication
+## Multiplication
 
 Again a naive way to implement multiplication will be what we learned in school math but it won't be very efficient. Python, in order to keep things efficient implements the [Karatsuba algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) that multiplies two n-digit numbers in O ( n<sup>log<sub>2</sub>3</sup> ) elementary steps.
 
 The algorithm is slightly complicated is out of the scope of this article  but you can find its implementation in [k_mul](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3397) and
 [k_lopsided_mul](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3618) functions in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c].
 
+## Division and other operations
+
+All operations on integers are defined in the file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] and it is extremely simple to locate each one. Warning: it will take some time to understand each one in detail so grab some popcorn before you start reading.
 
 # Optimization of commonly-used integers
 
 Small integer objects in a range of -5 to 256 are always pre-allocated during initialization. Because Python integers are immutable, we can use them as singletons. Every time you need to create small integer instead of creating new object Python just points to already allocated one. Thereby it saves a lot of space and computation for commonly-used integers.
+
+# Space inefficiency
 
 Interestingly enough, the PyLongObject structure takes at least 28 bytes for every allocated integer and therefore takes three times as much memory as a simple 64-bit C integer.
 
