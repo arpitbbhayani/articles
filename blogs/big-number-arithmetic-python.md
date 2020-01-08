@@ -28,7 +28,7 @@ But for python, it is a piece of cake 🎂
 
 Python must be doing something beautiful internally to support integers of arbitrary sizes and today we find out what's under the hood!
 
-# How integers are defined in python?
+# Representation and definition
 An integer in Python is a C struct defined as following
 
 ```c
@@ -71,29 +71,34 @@ struct _longobject {
 Generally, In low-level languages like C, the precision of integers is limited to 64-bit, but Python implements [Arbitrary-precision integers](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic). Since Python 3 all integers are represented as a bignum and these are limited only by the available memory of the host system.
 
 ### Decoding `ob_size`
-`ob_size` holds the count of elements in `ob_digit`. To be more efficient while allocating the memory to array `ob_digit`, python overprovisions and then relies on the value of `ob_size` to determine the actual number of elements held by the array.
+`ob_size` holds the count of elements in `ob_digit`. To be more efficient while allocating the memory to array `ob_digit`, python overprovisions and then relies on the value of `ob_size` to determine the actual number of elements held int the array.
 
-# Understanding storage of integers
+# Storage
 
-A naive way to store an integer digit-wise is by actually storing a decimal digit in one item of the array and then performing operations like addition subtraction will be like school maths.
+A naive way to store an integer digit-wise is by actually storing a decimal digit in one item of the array and then operations like addition and subtraction could be performed just like grade school maths.
 
 With this approach, a number `5238` will be stored as
 
 ![representation of 5238 in a naive way](https://user-images.githubusercontent.com/4745789/71915727-5e03ed00-31a2-11ea-99c1-cdf28e74b595.png)
 
-This approach is inefficient as we will be using up 32 bits to store a decimal digit that actually ranges only from 0 to 9 and could have been easily represented by mere 4 bits, and while writing something as versatile as python, a core developer has to be more resourceful.
+This approach is inefficient as we will be using up 32 bits to store a decimal digit that actually ranges only from 0 to 9 and could have been easily represented by mere 4 bits, and while writing something as versatile as python, a core developer has to be more resourceful than this.
 
 So, can we do better? for sure, otherwise, this article should hold no place on the internet. Let's dive into how python actually stores a super long integer.
 
-## The pythonic way
+## The pythonic way of storage
 
 Instead of storing just one decimal digit in each item of the array `ob_digit`, python converts the number from base 10 to base 2<sup>30</sup> and calls each of element as `digit` which ranges from 0 to 2<sup>30</sup> - 1.
+
+In the hexadecimal number system, the base is 16 ~ 2<sup>4</sup> this means each "digit" of a hexadecimal number ranges from 0 to 15 of the decimal system. Similarly for python, "digit" is in base 2<sup>30</sup> which means it will range from  0 to 2<sup>30</sup> = 1073741823 of the decimal system.
+
+This way python efficiently uses almost all of the allocated space of 32 bits and keeps itself resourceful and still perform operations like addition and subtraction like grade school maths.
 
 > Depending on the platform, Python uses either 32-bit unsigned integer arrays with 30-bit digits or 16-bit unsigned integer arrays with 15-bit digits. It requires a couple of bits to perform operations that will be discussed in some future articles.
 
 ### Lets see how python stores a number like 1152921504606846976
 
-As for mentioned for Python "digit" is base 2<sup>30</sup> hence if you convert `1152921504606846976` you get `001`.
+
+As mentioned, for Python a "digit" is base 2<sup>30</sup> hence if you convert `1152921504606846976` you get `001`.
 
 __1152921504606846976__ = __0__ * 2<sup>30<sup>0</sup></sup> + __0__ * 2<sup>30<sup>1</sup></sup> + __1__ * 2<sup>30<sup>2</sup></sup>
 
