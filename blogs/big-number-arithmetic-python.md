@@ -181,3 +181,5 @@ Small integer objects in a range of -5 to 256 are always pre-allocated during in
 Interestingly enough, the PyLongObject structure takes at least 28 bytes for every allocated integer and therefore takes three times as much memory as a simple 64-bit C integer.
 
 # Conclusion
+
+This is the second part in Python Internals series. The first article writtn here was How I changed my Python and made it dubious. I highly recommend that you read it because it may give you a .
