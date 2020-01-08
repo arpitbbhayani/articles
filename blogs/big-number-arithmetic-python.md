@@ -166,11 +166,11 @@ The code snippet above is taken from `x_sub` function and you could see how it a
 Again a naive way to implement multiplication will be what we learned in grade school math but it won't be very efficient. Python, in order to keep things efficient implements the [Karatsuba algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) that multiplies two n-digit numbers in O ( n<sup>log<sub>2</sub>3</sup> ) elementary steps.
 
 The algorithm is slightly complicated is out of the scope of this article  but you can find its implementation in [k_mul](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3397) and
-[k_lopsided_mul](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3618) functions in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c].
+[k_lopsided_mul](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L3618) functions in file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c).
 
 ## Division and other operations
 
-All operations on integers are defined in the file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c] and it is very simple to locate and trace each one. Warning: it will take some time to understand each one in detail so grab some popcorn before you start skimming.
+All operations on integers are defined in the file [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c) and it is very simple to locate and trace each one. Warning: it will take some time to understand each one in detail so grab some popcorn before you start skimming.
 
 # Optimization of commonly-used integers
 
@@ -182,4 +182,4 @@ Interestingly enough, the PyLongObject structure takes at least 28 bytes for eve
 
 # Conclusion
 
-This is the second part in Python Internals series. The first article writtn here was How I changed my Python and made it dubious. I highly recommend that you read it because it may give you a .
+This is the second part of the Python Internals series. The first article written here was How I changed my Python and made it dubious. I highly recommend that you read it because it may give you a .
