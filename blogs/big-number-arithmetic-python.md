@@ -91,8 +91,6 @@ Instead of storing just one decimal digit in each item of the array `ob_digit`, 
 
 > Depending on the platform, Python uses either 32-bit unsigned integer arrays with 30-bit digits or 16-bit unsigned integer arrays with 15-bit digits. It requires a couple of bits to perform operations that will be discussed in some future articles.
 
-You could try a live demo [here](https://repl.it/@arpitbbhayani/super-long-int?language=python3)
-
 ### Lets see how python stores a number like 1152921504606846976
 
 As for mentioned for Python "digit" is base 2<sup>30</sup> hence if you convert 1152921504606846976 you get `0 0 1`.
@@ -106,13 +104,11 @@ The `_longobject` struct for this value will hold
 
 ![representation of 1152921504606846976 in a pythonic way](https://user-images.githubusercontent.com/4745789/71915782-7a078e80-31a2-11ea-8da6-6e86197ad5a7.png)
 
-> The 0<sup>th</sup> index of the `ob_digit` array will hold the least significant digit hence reversed.
-
----
-
-
+I have created a [demo REPL]((https://repl.it/@arpitbbhayani/super-long-int?language=python3)) that will output how python is storing integers internally and creates reference points for all struct members like `ob_size`, `ob_refcount`, etc.
 
 # Operations on super long integers
+
+Now we have a fair idea on how arbitrary precision integers are stored in python.
 
 ## Addition
 
