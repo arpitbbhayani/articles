@@ -71,7 +71,7 @@ struct _longobject {
 Generally, In low-level languages like C, the precision of integers is limited to 64-bit, but Python implements [Arbitrary-precision integers](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic). Since Python 3 all integers are represented as a bignum and these are limited only by the available memory of the host system.
 
 ### Decoding `ob_size`
-`ob_size` holds the count of elements in `ob_digit`. To be more efficient while allocating memory to array `ob_digit`, python overprovisions and then relies on `ob_size` to hold the actual number of elements in use.
+`ob_size` holds the count of elements in `ob_digit`. To be more efficient while allocating the memory to array `ob_digit`, python overprovisions and then relies on the value of `ob_size` to determine the actual number of elements held by the array.
 
 # Understanding storage of integers
 
