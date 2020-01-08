@@ -1,6 +1,6 @@
-When you code in a low-level language like C, you worry about picking the right data type for your integer; at every step, you need to think if `int` would suffice or should you go for `long` or even higher to `long double`. But while coding in Python, you need not worry about these "trivial" things because python supports integers of any size.
+When you code in a low-level language like C, you worry about picking the right data type and qualifiers for your integer; at every step, you need to think if `int` would suffice or should you go for a `long` or even higher to a `long double`. But while coding in python, you need not worry about these "trivial" things because python supports integers of arbitrary size.
 
-In C language you cannot compute   2<sup>20000</sup>, when you try it gives you `inf` as the output.
+In C you cannot compute   2<sup>20000</sup> when you do try to compute, it gives you `inf` as the output.
 
 ```c
 #include <stdio.h>
@@ -15,7 +15,7 @@ $ ./a.out
 inf
 ```
 
-But for Python, it is a piece of cake 🎂
+But for python, it is a piece of cake 🎂
 
 ```
 >>> 2 ** 20000
@@ -26,9 +26,9 @@ But for Python, it is a piece of cake 🎂
 6309376
 ```
 
-Python must be doing something beautiful internally to support integers of any size and today we find out what's under the hood!
+Python must be doing something beautiful internally to support integers of arbitrary sizes and today we find out what's under the hood!
 
-# Representation of integer in Python
+# How integers are represented in python?
 An integer in Python is a C struct defined as following
 
 ```c
@@ -52,7 +52,7 @@ Other types that has `PyObject_VAR_HEAD` are
  - `PyTupleObject`
  - `PyListObject`
 
-This indicates that the integer object, just like a `tuple` or a `list`, is variable in length and gives us our first insight into how it could support gigantically long integers. The `_longobject` now roughly is represented as
+This indicates that an integer, just like a `tuple` or a `list`, is variable in length and gives us our first insight into how it could support gigantically long integers. The `_longobject` now is represented as
 
 ```c
 struct _longobject {
@@ -62,14 +62,16 @@ struct _longobject {
 };
 ```
 
-> These are some meta fields in the `PyObject` struct but that we shall discuss some time in the future. The field that we will focus on is `ob_digit[1]`.
+> These are some meta fields in the `PyObject` struct but that we shall discuss some time in the future. The field that we will focus on is `ob_digit[1]` and to some extent `ob_size`.
 
-
-### Decoding `digit ob_digit[1];`
+### Decoding `ob_digit`
 
 `ob_digit` is an array of `digit`, typedef'ed from `uint32_t`, by statically allocating size of `1` item and if required could be malloced to any length.
 
 Generally, In low-level languages like C, the precision of integers is limited to 64-bit, but Python implements [Arbitrary-precision integers](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic). Since Python 3 all integers are represented as a bignum and these are limited only by the available memory of the host system.
+
+### Decoding `ob_size`
+`ob_size` holds the count of elements in `ob_digit`. To be more efficient while allocating memory to array `ob_digit`, python overprovisions and then relies on `ob_size` to hold the actual number of elements in use.
 
 # Understanding storage of integers
 
