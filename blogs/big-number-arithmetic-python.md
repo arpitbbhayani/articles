@@ -91,7 +91,7 @@ Instead of storing just one decimal digit in each item of the array `ob_digit`, 
 
 In the hexadecimal number system, the base is 16 ~ 2<sup>4</sup> this means each "digit" of a hexadecimal number ranges from 0 to 15 of the decimal system. Similarly for python, "digit" is in base 2<sup>30</sup> which means it will range from  0 to 2<sup>30</sup> = 1073741823 of the decimal system.
 
-This way python efficiently uses almost all of the allocated space of 32 bits and keeps itself resourceful and still perform operations like addition and subtraction like grade school maths.
+This way python efficiently uses almost all of the allocated space of 32 bits and keeps itself resourceful and still performs operations like addition and subtraction like grade school maths.
 
 > Depending on the platform, Python uses either 32-bit unsigned integer arrays with 30-bit digits or 16-bit unsigned integer arrays with 15-bit digits. It requires a couple of bits to perform operations that will be discussed in some future articles.
 
