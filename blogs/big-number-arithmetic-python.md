@@ -136,7 +136,7 @@ Integers are persisted "digit-wise", this means the addition is as simple as wha
 
 The code snippet above is taken from `x_add` function and you could see that it actually iterates over the digits and performs addition digit-wise and computes and propagates carry.
 
-> Things become interesting when result of addition is a negative number. The sign of `ob_size` is the sign of the integer, which means, if you have a negative number then `ob_size` will be negative. The absolute value of `ob_size` will determine the number of digits in `ob_digit`.
+> Things become interesting when the result of the addition is a negative number. The sign of `ob_size` is the sign of the integer, which means, if you have a negative number then `ob_size` will be negative. The absolute value of `ob_size` will determine the number of digits in `ob_digit`.
 
 ## Subtraction
 
