@@ -184,4 +184,4 @@ This is the second article in the Python Internals series. The first article was
 
 If you liked what you read, subscribe to my newsletter and get the post delivered directly to your inbox and give me a shout-out [@arpit_bhayani](https://twitter.com/arpit_bhayani). I write about Engineering, System Design and a bit of programming, every Friday. Checkout my previous articles [@arpitbhayani.me/blogs](https://arpitbhayani.me/blogs).
 
-[![Subscribe to Arpit's newsletter](https://user-images.githubusercontent.com/4745789/71688569-0fcba400-2dc6-11ea-90f7-82ebdcbfc734.png)](https://arpit.substack.com/subscribe)
+[![Subscribe to Arpit's newsletter](https://user-images.githubusercontent.com/4745789/72035280-6e5cba80-32bd-11ea-9eed-dd31983a59ba.png)](https://arpit.substack.com/subscribe)
