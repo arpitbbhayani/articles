@@ -71,11 +71,11 @@ struct _longobject {
 Generally, In low-level languages like C, the precision of integers is limited to 64-bit, but Python implements [Arbitrary-precision integers](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic). Since Python 3 all integers are represented as a bignum and these are limited only by the available memory of the host system.
 
 ### Decoding `ob_size`
-`ob_size` holds the count of elements in `ob_digit`. To be more efficient while allocating the memory to array `ob_digit`, python overprovisions and then relies on the value of `ob_size` to determine the actual number of elements held int the array.
+`ob_size` holds the count of elements in `ob_digit`. To be more efficient while allocating the memory to array `ob_digit`, python over-provisions and then relies on the value of `ob_size` to determine the actual number of elements held int the array.
 
 # Storage
 
-A naive way to store an integer digit-wise is by actually storing a decimal digit in one item of the array and then operations like addition and subtraction could be performed just like grade school maths.
+A naive way to store an integer digit-wise is by actually storing a decimal digit in one item of the array and then operations like addition and subtraction could be performed just like grade school mathematics.
 
 With this approach, a number `5238` will be stored as
 
@@ -91,7 +91,7 @@ Instead of storing just one decimal digit in each item of the array `ob_digit`, 
 
 In the hexadecimal number system, the base is 16 ~ 2<sup>4</sup> this means each "digit" of a hexadecimal number ranges from 0 to 15 of the decimal system. Similarly for python, "digit" is in base 2<sup>30</sup> which means it will range from  0 to 2<sup>30</sup> = 1073741823 of the decimal system.
 
-This way python efficiently uses almost all of the allocated space of 32 bits per digit and keeps itself resourceful and still performs operations such as addition and subtraction like grade school maths.
+This way python efficiently uses almost all of the allocated space of 32 bits per digit and keeps itself resourceful and still performs operations such as addition and subtraction like grade school mathematics.
 
 > Depending on the platform, Python uses either 32-bit unsigned integer arrays with 30-bit digits or 16-bit unsigned integer arrays with 15-bit digits. It requires a couple of bits to perform operations that will be discussed in some future articles.
 
