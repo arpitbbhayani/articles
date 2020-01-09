@@ -81,7 +81,7 @@ With this approach, a number `5238` will be stored as
 
 ![representation of 5238 in a naive way](https://user-images.githubusercontent.com/4745789/71915727-5e03ed00-31a2-11ea-99c1-cdf28e74b595.png)
 
-This approach is inefficient as we will be using up 32 bits to store a decimal digit that actually ranges only from 0 to 9 and could have been easily represented by mere 4 bits, and while writing something as versatile as python, a core developer has to be more resourceful than this.
+This approach is inefficient as we will be using up 32 bits of digit (`uint32_t`) to store a decimal digit that actually ranges only from 0 to 9 and could have been easily represented by mere 4 bits, and while writing something as versatile as python, a core developer has to be more resourceful than this.
 
 So, can we do better? for sure, otherwise, this article should hold no place on the internet. Let's dive into how python actually stores a super long integer.
 
