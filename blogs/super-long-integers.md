@@ -83,9 +83,9 @@ With this approach, a number `5238` will be stored as
 
 This approach is inefficient as we will be using up 32 bits of digit (`uint32_t`) to store a decimal digit that actually ranges only from 0 to 9 and could have been easily represented by mere 4 bits, and while writing something as versatile as python, a core developer has to be more resourceful than this.
 
-So, can we do better? for sure, otherwise, this article should hold no place on the internet. Let's dive into how python actually stores a super long integer.
+So, can we do better? for sure, otherwise, this article should hold no place on the internet. Let's dive into how python stores a super long integer.
 
-## The pythonic way
+## The pythonic way
 
 Instead of storing just one decimal digit in each item of the array `ob_digit`, python converts the number from base 10 to base 2³⁰ and calls each of element as `digit` which ranges from 0 to 2³⁰ - 1.
 
@@ -134,7 +134,7 @@ Integers are persisted "digit-wise", this means the addition is as simple as wha
 ...
 ```
 
-The code snippet above is taken from `x_add` function and you could see that it actually iterates over the digits and performs addition digit-wise and computes and propagates carry.
+The code snippet above is taken from `x_add` function and you could see that it iterates over the digits and performs addition digit-wise and computes and propagates carry.
 
 > Things become interesting when the result of the addition is a negative number. The sign of `ob_size` is the sign of the integer, which means, if you have a negative number then `ob_size` will be negative. The absolute value of `ob_size` will determine the number of digits in `ob_digit`.
 
@@ -159,7 +159,7 @@ Similar to how addition is implemented, subtraction also happens digit-wise. The
 ...
 ```
 
-The code snippet above is taken from `x_sub` function and you could see how it actually iterates over the digits and performs subtraction and computes and propagates burrow. Very similar to addition indeed.
+The code snippet above is taken from `x_sub` function and you could see how it iterates over the digits and performs subtraction and computes and propagates burrow. Very similar to addition indeed.
 
 ## Multiplication
 
