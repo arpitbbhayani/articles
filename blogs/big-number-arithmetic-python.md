@@ -178,6 +178,10 @@ Python [preallocates](https://docs.python.org/3/c-api/long.html#c.PyLong_FromLon
 
 This optimization can be traced in the macro `IS_SMALL_INT` and the function [get_small_int](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L43) in (longobject.c)[https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L35]. This way python saves a lot of space and computation for commonly used integers.
 
-# Conclusion
+#
 
-This is the second part of the Python Internals series. The first article written here was How I changed my Python and made it dubious. I highly recommend that you read it because it may give you a .
+This is the second article in the Python Internals series. The first article was [How I changed my Python and made it dubious](https://arpitbhayani.me/blogs/i-changed-my-python). The article will help you take your first steps in Python's source code and may pave the way for you to become a Python Core Developer.
+
+If you liked what you read, subscribe to my newsletter and get the post delivered directly to your inbox and give me a shout-out [@arpit_bhayani](https://twitter.com/arpit_bhayani). I write about Engineering, System Design and a bit of programming, every Friday. Checkout my previous articles [@arpitbhayani.me/blogs](https://arpitbhayani.me/blogs).
+
+[![Subscribe to Arpit's newsletter](https://user-images.githubusercontent.com/4745789/71688569-0fcba400-2dc6-11ea-90f7-82ebdcbfc734.png)](https://arpit.substack.com/subscribe)
