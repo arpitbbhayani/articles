@@ -2,7 +2,7 @@
   {
     "id": "super-long-integers",
     "title": "How python implements super long integers?",
-    "description": "Python must be doing something beautiful internally to support super long integers and today we find out what's under the hood. The articles goes in depth to explain design, storage and operations on super long integers as implemented by Python.",
+    "description": "Python must be doing something beautiful internally to support super long integers and today we find out what's under the hood. The article goes in-depth to explain design, storage, and operations on super long integers as implemented by Python.",
     "image": "https://user-images.githubusercontent.com/4745789/72040055-55f49c00-32cd-11ea-9190-8f5a67c2f3d9.png",
     "gif": "https://media.giphy.com/media/SKGo6OYe24EBG/giphy.gif",
     "categories": ["programming", "python", "python internals"],
