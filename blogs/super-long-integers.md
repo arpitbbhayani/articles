@@ -85,7 +85,7 @@ This approach is inefficient as we will be using up 32 bits of digit (`uint32_t`
 
 So, can we do better? for sure, otherwise, this article should hold no place on the internet. Let's dive into how python actually stores a super long integer.
 
-## The pythonic way of storage
+## The pythonic way
 
 Instead of storing just one decimal digit in each item of the array `ob_digit`, python converts the number from base 10 to base 2³⁰ and calls each of element as `digit` which ranges from 0 to 2³⁰ - 1.
 
