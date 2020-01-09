@@ -1,11 +1,11 @@
 [
   {
-    "id": "big-number-arithmetic-python",
-    "title": "Big number arithmetic in Python | Python Internals",
-    "description": "Big number arithmetic in Python | Python Internals",
-    "image": "https://user-images.githubusercontent.com/4745789/71662123-60b3ac00-2d76-11ea-8018-f558cef93a59.png",
-    "gif": "https://media.giphy.com/media/aZ5wedD7Jtazm/giphy.gif",
-    "categories": ["programming", "python"],
+    "id": "super-long-integers",
+    "title": "Super long integers | Python Internals",
+    "description": "Python must be doing something beautiful internally to support super long integers and today we find out what's under the hood. The articles goes in depth to explain design, storage and operations on super long integers as implemented by Python.",
+    "image": "https://user-images.githubusercontent.com/4745789/72040055-55f49c00-32cd-11ea-9190-8f5a67c2f3d9.png",
+    "gif": "https://media.giphy.com/media/SKGo6OYe24EBG/giphy.gif",
+    "categories": ["programming", "python", "python internals"],
     "tags": ["programming", "python", "cpython source code", "python internals", "understanding python source code", "coding", "developer", "technology", "code", "pythonprogramming", "python programming", "data science", "tech"],
     "published_at": "2020-01-10"
   },
@@ -15,7 +15,7 @@
     "description": "I changed the Python's source code and made addition incorrect and unpredictable. The addition operation will internally perform either Subtraction. Multiplication, Floor Division or Power at random.",
     "image": "https://user-images.githubusercontent.com/4745789/71662123-60b3ac00-2d76-11ea-8018-f558cef93a59.png",
     "gif": "https://media.giphy.com/media/aZ5wedD7Jtazm/giphy.gif",
-    "categories": ["programming", "python"],
+    "categories": ["programming", "python", "python internals"],
     "tags": ["programming", "python", "cpython source code", "python internals", "understanding python source code", "coding", "developer", "technology", "code", "pythonprogramming", "python programming", "data science", "tech"],
     "published_at": "2020-01-03"
   },
