@@ -66,7 +66,7 @@ struct _longobject {
 
 ### Decoding `ob_digit`
 
-`ob_digit` is an array of type `digit`, typedef'ed from `uint32_t`, statically allocated to size `1`. Since it is an array, `ob_digit` primarily is a `digit *`, pointer to `digit`, and hence if required could be malloced to any length. This makes it possible for python to represent and handle gigantically long integers.
+`ob_digit` is an array of type `digit`, typedef'ed from `uint32_t`, statically allocated to length `1`. Since it is an array, `ob_digit` primarily is a `digit *`, pointer to `digit`, and hence if required could be malloced to any length. This makes it possible for python to represent and handle gigantically long integers.
 
 Generally, In low-level languages like C, the precision of integers is limited to 64-bit, but Python implements [Arbitrary-precision integers](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic). Since Python 3 all integers are represented as a bignum and these are limited only by the available memory of the host system.
 
