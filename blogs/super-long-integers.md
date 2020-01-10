@@ -97,9 +97,11 @@ This way python efficiently uses almost all of the allocated space of 32 bits pe
 
 ### Example: 1152921504606846976
 
-As mentioned, for Python a "digit" is base 2<sup>30</sup> hence if you convert `1152921504606846976` into base 2<sup>30</sup> you get `001`.
+As mentioned, for Python a "digit" is base 2<sup>30</sup> hence if you convert `1152921504606846976` into base 2<sup>30</sup> you get `100`
 
-__1152921504606846976__ = __0__ * (2<sup>30</sup>)<sup>0</sup> + __0__ * (2<sup>30</sup>)<sup>1</sup> + __1__ * (2<sup>30</sup>)<sup>2</sup>
+__1152921504606846976__ = __1__ * (2<sup>30</sup>)<sup>2</sup> + __0__ * (2<sup>30</sup>)<sup>1</sup> + __0__ * (2<sup>30</sup>)<sup>0</sup>
+
+Since `ob_digit` persists it least significant digit first, it gets stored as `001` in 3 different digits.
 
 The `_longobject` struct for this value will hold
 
