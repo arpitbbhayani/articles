@@ -1,6 +1,6 @@
 When you code in a low-level language like C, you worry about picking the right data type and qualifiers for your integers; at every step, you need to think if `int` would suffice or should you go for a `long` or even higher to a `long double`. But while coding in python, you need not worry about these "trivial" things because python supports integers of arbitrary size.
 
-In C, when you try to compute 2²⁰⁰⁰⁰ using builtin `powl` function it gives you `inf` as the output.
+In C, when you try to compute 2<sup>20000</sup> using builtin `powl` function it gives you `inf` as the output.
 
 ```c
 #include <stdio.h>
@@ -87,9 +87,9 @@ So, can we do better? for sure, otherwise, this article should hold no place on 
 
 ## The pythonic way
 
-Instead of storing just one decimal digit in each item of the array `ob_digit`, python converts the number from base 10 to base 2³⁰ and calls each of element as `digit` which ranges from 0 to 2³⁰ - 1.
+Instead of storing just one decimal digit in each item of the array `ob_digit`, python converts the number from base 10 to base 2<sup>30</sup> and calls each of element as `digit` which ranges from 0 to 2<sup>30</sup> - 1.
 
-In the hexadecimal number system, the base is 16 ~ 2⁴ this means each "digit" of a hexadecimal number ranges from 0 to 15 of the decimal system. Similarly for python, "digit" is in base 2³⁰ which means it will range from  0 to 2³⁰ - 1 = 1073741823 of the decimal system.
+In the hexadecimal number system, the base is 16 ~ 2⁴ this means each "digit" of a hexadecimal number ranges from 0 to 15 of the decimal system. Similarly for python, "digit" is in base 2<sup>30</sup> which means it will range from  0 to 2<sup>30</sup> - 1 = 1073741823 of the decimal system.
 
 This way python efficiently uses almost all of the allocated space of 32 bits per digit and keeps itself resourceful and still performs operations such as addition and subtraction like grade school mathematics.
 
@@ -97,9 +97,9 @@ This way python efficiently uses almost all of the allocated space of 32 bits pe
 
 ### Example: 1152921504606846976
 
-As mentioned, for Python a "digit" is base 2³⁰ hence if you convert `1152921504606846976` into base 2³⁰ you get `001`.
+As mentioned, for Python a "digit" is base 2<sup>30</sup> hence if you convert `1152921504606846976` into base 2<sup>30</sup> you get `001`.
 
-__1152921504606846976__ = __0__ * (2³⁰)⁰ + __0__ * (2³⁰)¹ + __1__ * (2³⁰)²
+__1152921504606846976__ = __0__ * (2<sup>30</sup>)<sup>0</sup> + __0__ * (2<sup>30</sup>)<sup>1</sup> + __1__ * (2<sup>30</sup>)<sup>2</sup>
 
 The `_longobject` struct for this value will hold
 
