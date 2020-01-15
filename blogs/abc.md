@@ -12,7 +12,7 @@ A digital carrier is just a bunch of 1's and 0's arranged in some particular ord
 
 A character `B` has ASCII code of `66` which on disk is stored as `01000010` now if we change even one bit of this sequence, it will no longer represent `B` but some other character. This change will make our text erroneous and we will easily sense something is wrong.
 
-But for an image the output
+But can you spot the difference in the image when one bit of one pixel is changed? It is impossible to spot this with naked eye.
 
 Changing a 1 to a 0 will make it a completely different thing. For example, the character `B` is `066` which on disk will be stored as `01000010`. Now if we change even 1 bit of this the sequence will now represent some other character. Let's say we change the least significant bit from `0` to `1` we get `01000011` which now represents character `C`.
 
