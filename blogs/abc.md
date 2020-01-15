@@ -10,7 +10,7 @@ Post the digital revolution, we started manipulating media like Images, Audio, V
 
 An image is composed of pixels and each pixel has 3 component for 3 primary colors Red, Blue and Green. Depending on the intensity of each color their superposition determines the final color of the pixel. For example: to get nice pink shade we need to mix r, g and b in proportion. Red plus blue gives yellow.
 
-![rgb superposition](https://user-images.githubusercontent.com/4745789/72423143-c6a62780-37a9-11ea-9ea9-0c3af74f98d0.png)
+![rgb superposition](https://user-images.githubusercontent.com/4745789/72423888-12a59c00-37ab-11ea-851b-78564c48536c.png)
 
 We perceive image as a whole, we never do it pixel by pixel. Hence unless there is huge difference between pixel we cannot comprehend the difference.
 Image steganography uses this to conceal information within an image. There are various method to do that. we will look at LSB substitution in depth and will walk you through the other methods as well. LSB is the easiest of all and is an excellent way to get started with Image steganography.
