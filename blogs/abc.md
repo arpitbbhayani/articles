@@ -8,34 +8,23 @@ Post the digital revolution, we started manipulating media/carriers like Images,
 
 # Image Steganography
 
-An image is just a bunch of 1's and 0's arranged in some particular order, an image previewer reads this sequence, understands the semantic and then renders it. There are typically 3 types of image file formats.
-
- - raw
- - lossy-compressionn
- - lossless-compression
-
-
-A character `B` has ASCII code of `66` which on disk is stored as `01000010` now if we change even one bit of this sequence, it will no longer represent `B` but some other character. This change will make our text erroneous and we will easily sense something is wrong.
-
-But can you spot the difference in the image when one bit of one pixel is changed? It is impossible to spot this with naked eye.
-
-Changing a 1 to a 0 will make it a completely different thing. For example, the character `B` is `066` which on disk will be stored as `01000010`. Now if we change even 1 bit of this the sequence will now represent some other character. Let's say we change the least significant bit from `0` to `1` we get `01000011` which now represents character `C`.
-
-An image, as we know has some resolution which defines the number of pixels
-
-
-A typical resolution of an image 640 x 480px which means there are more than 307K pixels and each pixel constitutes 3 values one for each red, blue and green component and each component is 8 bit long.
-
-
-When it comes to digital images, specifically in regards to steganography, there are three primary classes. Their file types are those with lossy-compression, those with lossless-compression, and raw file types. We will be working with lossless-compression file types. Lossless and lossy compressed file types are most common in the world today because of their compact size.
-
-Of these, raw files are typically the easiest to work with. However they tend to be very large files, are not commonly used by most consumers, and often require special software used professional photographers or enthusiasts in order to view and edit. Some examples of raw image file formats are RAW and DNG.
-
-Lossless-compression means that the files are stored in a compressed format, but that this compression does not result in the actual data being modified when the file is opened, transported, or decompressed. For lossless files steganography is often accomplished by manipulating the least-significant bits (LSB) of the carrier file. Some examples of lossless-compression image file formats are PNG, TIFF, an BMP.
-
-Lossy-compression is the opposite of lossless-compression. When lossy compression is used there is no guarantee that the file will not be modified slightly when subjected to storage, transmission, or decompression. In nearly all cases this modification will be imperceptible to the end user, otherwise it wouldn’t be very popular. However, since LSB steganography will modify these “unimportant” bits that can be lost during compression doing steganography on files with lossy-compression is more complex. This means we can’t risk using lossy compression that may not preserve our modifications. Some examples of lossy-compression image file formats are JPEG and BPG.
+An image contains pixels and is perceived by human eye. we cannot tell difference if it is not "huge". Image steganography uses this to conceal information within an image. There are various method to do that. we will look at LSB substitution in depth and will walk you through the other methods as well. LSB is the easiest of all and is an excellent way to get started with Image steganography.
 
 ## LSB Substitution
+
+An image is rendered using pixels and each pixel contains 3 primary color components - red, blue and green. A pixel is rendered as a combination of color intensity of these 3 components. Intensity of each primary color ranges from 0 to 255 (both inclusive); which means each will take up 8 bits thus each pixel takes up 3 x 8 = 24 bits of space.
+
+GIF OF COLOR WHEEL SHOWCASING EACH COLOR GOES HERE.
+
+When intensity of a primary color within a pixel is changed it results in a new color, but if this alteration is by a very small delta then our eye cannot tell the difference as the new color will be very very close to old color.
+
+DEMO - pick a color. -10 to + 10 range render.
+
+Image steganography uses this to conceal information in image pixel by altering each pixel by a very very small delta.
+
+The binary representation of this intensity 0 - 255 is an 8 bit sequence. If we alter the least significant bit all we are doing it +- 1 which means the resulting color will be very close to original.
+
+Example
 
 ### Code
 
