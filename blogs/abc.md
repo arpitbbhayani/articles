@@ -8,15 +8,15 @@ Post the digital revolution, we started manipulating media like Images, Audio, V
 
 # Image Steganography
 
-An image is composed of pixels and each pixel has 3 components for 3 primary colors Red, Blue and Green. The perceived superposition of intensities of 3 primary colors determines the final color of the pixel. For example: When pure red is mixed with pure green we get yellow; or as shown in diagran below, when we want an intermediary pale greenis shade we have mix red, blue and green in right proportion.
+An image is composed of pixels and each pixel has 3 components for 3 primary colors Red, Blue, and Green. The perceived superposition of intensities of 3 primary colors determines the final color of the pixel. For example: When pure red is mixed with pure green we get yellow; or as shown in diagram below, when we want an intermediary pale greenish shade we have mix red, blue and green in the right proportion.
 
 ![rgb superposition](https://user-images.githubusercontent.com/4745789/72423997-454f9480-37ab-11ea-9ffc-1513db5715ef.png)
 
-We perceive image as a whole, we never do it pixel by pixel. Unless there is a difference above certain threshold we cannot comprehend the change. Image steganography uses this to conceal information. To understand steganography in detail we take a look at Least Significant Bit (LSB) substitution method which is one of the easiest technique to understand and implement.
+We perceive an image as a whole, we never do it pixel by pixel. Unless there is a difference above a certain threshold we cannot comprehend the change. Image steganography uses this to conceal information. To understand steganography in detail we take a look at Least Significant Bit (LSB) substitution method which is one of the easiest technique to understand and implement.
 
 ## LSB Substitution
 
-An image is rendered using pixels and each pixel contains 3 primary color components - red, blue and green. A pixel is rendered as a combination of color intensity of these 3 components. Intensity of each primary color ranges from 0 to 255 (both inclusive); which means each will take up 8 bits thus each pixel takes up 3 x 8 = 24 bits of space.
+An image is rendered using pixels and each pixel contains 3 primary color components - red, blue and green. A pixel is rendered as a combination of the color intensity of these 3 components. The intensity of each primary color ranges from 0 to 255 (both inclusive); which means each will take up 8 bits thus each pixel takes up 3 x 8 = 24 bits of space.
 
 GIF OF COLOR WHEEL SHOWCASING EACH COLOR GOES HERE.
 
