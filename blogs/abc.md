@@ -2,24 +2,9 @@ Would you shave your head and get it tattooed? Probably no, but a slave in ancie
 
 This art of concealing message is called Steganography. The word is derived from the Greek word “στεγαυω” which means "secret writing". In modern times, steganography can be looked into as the study of the art and science of communicating in a way that hides the presence of the communication.
 
-There are
-In this article, we will focus solely on Image Steganography.
+Steganography continued over time to develop into new levels. Physical Steganography in which information is hidden in some physical form ex: Invisible Ink, Microdot, Postal Stamps, etc.
 
-# Physical Steganography
-
-As you have seen from the example above, Steganography is not something new but has been around for thousands of years. Let me walk you through some of the fascinating examples:
-
-### World War II
-
-In WWII, the French Resistance sent some messages written on the backs of couriers using invisible ink.
-
-### German Microdots
-During and after World War II, espionage agents used photographically produced microdots to send information back and forth.Microdots were typically minute, approximately less than the size of the period produced by a typewriter. WWII microdots needed to be embedded in the paper and covered with an adhesive (such as collodion). This was reflective and thus detectable by viewing against glancing light. Alternative techniques included inserting microdots into slits cut into the edge of postcards.
-
-During World War II the Germans introduced microdots. The microdots were complete documents, pictures, and plans reduced in size to the size of a period and attached to common paperwork
-
-### Secret Ink
-Invisible Ink involved common sources, this included milk, vinegar, fruit juice, and urine, for the hidden text.  To decipher these hidden messages required light or heat.
+Digital steganography manipulates digital medium/carrier like Images, Audio, Video, Network Packets, DNA, Quantum, etc to conceal information. There are a bunch of techniques in each of the mentioned segment but in this article, we will focus on Image Steganography.
 
 # Image Steganography
 
@@ -45,4 +30,4 @@ Invisible Ink involved common sources, this included milk, vinegar, fruit juice,
 
 # Conclusion
 
-Future series. Watch this space.
+This is the first article in the series of Steganography that detailed out Image Steganography. I hope you reaped some benefits out of it. The future articles on Steganography will talk about Audio Steganography, DNA Steganography and one of the most interesting applications of Steganography - a Steganographic File System. So stay tuned and watch this space for more.
