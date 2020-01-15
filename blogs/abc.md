@@ -20,13 +20,7 @@ An image is made up of pixels and each pixel contains 3 primary color components
 
 ![Color +-5 for RGB](https://user-images.githubusercontent.com/4745789/72420704-37971080-37a5-11ea-9d28-54cce1efaae7.png)
 
-The binary representation of this intensity 0 - 255 is an 8-bit sequence. If we alter the least significant bit all we are doing it +- 1 which means the resulting color will be very close to original.
-
-Example
-
-Instead of doing it for LSB. do it for 2-3 bits in one primary color.
-
-Example of how color gets affected.
+Now as we have seen that altering the LSB of any color does not drastically change the colors, we can use the LSB to store one bit of information from the secret data (payload); and this is exactly was LSB Substitution does, it reads the payload bit by bit and updates the LSB of each primary color of pixel and thus without making any substantial changes to the image, conceals the information.
 
 ### How to do it
 
