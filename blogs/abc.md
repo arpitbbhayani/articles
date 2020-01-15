@@ -26,11 +26,45 @@ The binary representation of this intensity 0 - 255 is an 8 bit sequence. If we 
 
 Example
 
-### Code
+Instead of doing it for LSB. do it for 2-3 bits in one primary color.
+
+Example of how color gets affected.
+
+### How to do it
+
+Take an image in which you want to conceal information. This cat image looks purrrfect for that
+
+Get a text file with your secret in it
+
+### Concealing the data
+
+Code to get bit stream from it
+
+Code to update image and save
+
+IMAGE THAT SHOWS THE DIFFERENCE
+
+### REtrieving the data
+
+Read first 2 bits that suggest length
+
+Itereate and compose bit stream
+
+bits to text
 
 ### Finding limits
 
+Find amount of data you could cenceal in an image.
+
+And distortion you get in image due to it.
+
+What happens when you do it for 2 bits
+
+What happens when you do it for 3 bits
+
 ## Randomized LSB Substitution
+
+Upgrade over predictable LSB
 
 ## Other methods in image
 
