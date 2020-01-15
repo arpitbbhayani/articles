@@ -54,7 +54,7 @@ bits to text
 
 ### Finding limits
 
-Find amount of data you could cenceal in an image.
+Find amount of data you could conceal in an image.
 
 And distortion you get in image due to it.
 
@@ -66,11 +66,18 @@ What happens when you do it for 3 bits
 
 Upgrade over predictable LSB
 
+[a](https://pdfs.semanticscholar.org/c3c9/9ceaffb05c380b9953933945a9cd6fc1f707.pdf)
+[b](https://www.lirmm.fr/~wpuech/enseignement/master_informatique/Compression_Insertion/articles/10_article_examen_PUECH_compression.pdf)
+
 ## Other methods in image
+
+[](https://pdfs.semanticscholar.org/bb26/1e7f02f8597b37a2f71e55c2e2c21aa7575f.pdf)
+[](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.364.3275&rep=rep1&type=pdf)
+[](http://bit.kuas.edu.tw/~jihmsp/2011/vol2/JIH-MSP-2011-03-005.pdf)
 
 # Other steganography in Digital Space
 
-### Audio Steganography
+### Audio
 
 ### Video
 
