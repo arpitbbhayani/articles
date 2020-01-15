@@ -8,7 +8,12 @@ Post the digital revolution, we started manipulating media/carriers like Images,
 
 # Image Steganography
 
-A digital carrier is just a bunch of 1's and 0's arranged in some particular order, which when processed by some program makes some sense.
+An image is just a bunch of 1's and 0's arranged in some particular order, an image previewer reads this sequence, understands the semantic and then renders it. There are typically 3 types of image file formats.
+
+ - raw
+ - lossy-compressionn
+ - lossless-compression
+
 
 A character `B` has ASCII code of `66` which on disk is stored as `01000010` now if we change even one bit of this sequence, it will no longer represent `B` but some other character. This change will make our text erroneous and we will easily sense something is wrong.
 
