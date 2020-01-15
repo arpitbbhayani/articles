@@ -2,9 +2,9 @@ Would you shave your head and get it tattooed? Probably no, but a slave in ancie
 
 This art of concealing message is called Steganography. The word is derived from the Greek word “στεγαυω” which means "secret writing". In modern times, steganography can be looked into as the study of the art and science of communicating in a way that hides the presence of the communication.
 
-Steganography continued over time to develop into new levels. Physical Steganography in which information is hidden in some physical form ex: Invisible Ink, Microdot, Postal Stamps, etc.
+Steganography continued over time to develop into new levels. Physical Steganography is where the information is hidden in some physical form ex: Invisible Ink, Microdot, Postal Stamps, etc. The early developments of this type happened during World War where everyone was trying to outsmart each other.
 
-Digital steganography manipulates digital medium/carrier like Images, Audio, Video, Network Packets, DNA, Quantum, etc to conceal information. There are a bunch of techniques in each of the mentioned segment but in this article, we will focus on Image Steganography.
+Post the digital revolution, we started manipulated media/carriers like Images, Audio, Video, Network Packets, DNA, Quantum, etc to conceal information. There are a bunch of techniques in each of the mentioned segment but in this article, we will focus on Image Steganography; other techniques will be covered in future articles.
 
 # Image Steganography
 
