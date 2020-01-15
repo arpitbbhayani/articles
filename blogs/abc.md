@@ -42,7 +42,7 @@ The next step is to read image and access pixels, for this we will use PIL libra
 
 ```py
 def read_image(path):
-    """The function read_image, reads the image from the path `path`
+  """The function read_image, reads the image from the path `path`
   and returns the pixel map loaded in memory.
 
   Any exceptions raised by PIL library are unhandled.
@@ -55,9 +55,9 @@ def read_image(path):
   pixel_map = im.load()
 
   # log some meta information about the image
-  print 'the image read from path {} has following properties'.format(path)
-  print 'size: {} x {}'.format(*im.size)
-  print 'format: {}'.format(im.format)
+  print('the image read from path {} has following properties'.format(path))
+  print('size: {} x {}'.format(*im.size))
+  print('format: {}'.format(im.format))
 
   # close the file. always.
   im.close()
@@ -65,6 +65,16 @@ def read_image(path):
   # return the pixel map.
   return pixel_map
 ```
+
+to access pixel in 11th row and 21st column all we have to do is
+
+```py
+>>> pixel_map = read_image("path to the image.png")
+>>> print(pixel_map[10,20])
+(4, 6, 70)
+```
+
+The output we see above is the RGB value of the pixel.
 
 Code to get bit stream from it
 
