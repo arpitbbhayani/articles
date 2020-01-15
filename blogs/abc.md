@@ -26,11 +26,45 @@ Take an image in which you want to conceal information. This cat image looks pur
 
 ![cat](https://user-images.githubusercontent.com/4745789/72431117-0ecd4600-37ba-11ea-9674-f108827de7e7.png)
 
-and the secret text that we want to conceal is
-
-"I am not a cat I am a Flerken and I am the gateway to pocket dimensions."
+and the secret text that we want to conceal is "I am not a cat I am a Flerken and I am the gateway to pocket dimensions.".
 
 ### Concealing the data
+
+Given the `text` to conceal, the following function converts the string into bytes, then into bits and finally returns it as a list.
+
+```py
+def get_bits(text):
+    return list(''.join([bin(b)[2:].zfill(8) for b in
+                bytes(text.encode('utf-8'))]))
+```
+
+The next step is to read image and access pixels, for this we will use PIL library. Following code reads the image and returns the pixel access object. Using this object we can access any pixel and extract its RGB values.
+
+```py
+def read_image(path):
+    """The function read_image, reads the image from the path `path`
+  and returns the pixel map loaded in memory.
+
+  Any exceptions raised by PIL library are unhandled.
+  """
+
+  # open the image given the path
+  im = Image.open(path)
+
+  # load the pixel map.
+  pixel_map = im.load()
+
+  # log some meta information about the image
+  print 'the image read from path {} has following properties'.format(path)
+  print 'size: {} x {}'.format(*im.size)
+  print 'format: {}'.format(im.format)
+
+  # close the file. always.
+  im.close()
+
+  # return the pixel map.
+  return pixel_map
+```
 
 Code to get bit stream from it
 
