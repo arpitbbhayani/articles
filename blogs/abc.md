@@ -30,4 +30,4 @@ Digital steganography manipulates digital medium/carrier like Images, Audio, Vid
 
 # Conclusion
 
-This is the first article in the series of Steganography that detailed out Image Steganography. I hope you reaped some benefits out of it. The future articles on Steganography will talk about Audio Steganography, DNA Steganography and one of the most interesting applications of Steganography - a Steganographic File System. So stay tuned and watch this space for more.
+This is the first article in the series of Steganography that detailed out Image Steganography. I hope you reaped some benefits out of it. The future articles on Steganography will talk about how Steganography is done on carriers like Audio, Network, DNA and Quantum states and will also dive into one of the most interesting applications of Steganography - a Steganographic File System. So stay tuned and watch this space for more.
