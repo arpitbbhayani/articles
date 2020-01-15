@@ -1,10 +1,10 @@
-Would you shave your head and get it tattooed? Probably no, but a slave in ancient Greece was made to do so in the 440 BCE by a ruler named [Histiaeus](https://en.wikipedia.org/wiki/Histiaeus). The text that was tattooed was a secret message that Histiaeus wanted to send to his son-in-law Aristagoras in Miletus. The slave was made to go to Miletus only after his hair grew back. Upon his arrival, the head was shaved again and the message was revealed which told Aristagoras to revolt against the Persians and start the [Ionian revolt](https://en.wikipedia.org/wiki/Ionian_Revolt).
+Would you shave your head and get it tattooed? Probably no, but a slave in ancient Greece was made to do so in the 440 BCE by a ruler named [Histiaeus](https://en.wikipedia.org/wiki/Histiaeus). The text that was tattooed was a secret message that Histiaeus wanted to send to his son-in-law Aristagoras in Miletus. After letting his hair grow back the slave left for Miletus and upon his arrival, the head was shaved again and the message was revealed which told Aristagoras to revolt against the Persians and start the [Ionian revolt](https://en.wikipedia.org/wiki/Ionian_Revolt).
 
 This art of concealing message is called Steganography. The word is derived from the Greek word “στεγαυω” which means "secret writing". In modern times, steganography can be looked into as the study of the art and science of communicating in a way that hides the presence of the communication.
 
-Steganography continued over time to develop into new levels. Physical Steganography is where the information is hidden in some physical form ex: Invisible Ink, Microdot, Postal Stamps, etc. The early developments of this type happened during World War where everyone was trying to outsmart each other.
+Steganography continued over time to develop into new levels. Invisible inks, microdots, writing behind postal stamps are all examples of Steganography in its physical form. Most of these early developments happened during World War I and II where everyone was trying to outsmart each other.
 
-Post the digital revolution, we started manipulating media/carriers like Images, Audio, Video, Network Packets, DNA, Quantum, etc to conceal information since 1985. There are a bunch of techniques in each of the mentioned segment but in this article, we will focus on Image Steganography; other techniques will be covered in future articles.
+Post the digital revolution, we started manipulating media like Images, Audio, Video, Network Packets, DNA, Quantum, etc to conceal information. There are a bunch of techniques in each of the mentioned segment but in this article, we will focus on Image Steganography.
 
 # Image Steganography
 
@@ -18,7 +18,7 @@ GIF OF COLOR WHEEL SHOWCASING EACH COLOR GOES HERE.
 
 When intensity of a primary color within a pixel is changed it results in a new color, but if this alteration is by a very small delta then our eye cannot tell the difference as the new color will be very very close to old color.
 
-DEMO - pick a color. -10 to + 10 range render.
+![Color +-5 for RGB](https://user-images.githubusercontent.com/4745789/72420704-37971080-37a5-11ea-9d28-54cce1efaae7.png)
 
 Image steganography uses this to conceal information in image pixel by altering each pixel by a very very small delta.
 
