@@ -22,11 +22,17 @@ An image is made up of pixels and each pixel contains 3 primary color components
 
 Now as we have seen that altering the LSB of any color does not drastically change the colors, we can use the LSB to store one bit of information from the secret data (payload); and this is exactly was LSB Substitution does, it reads the payload bit by bit and updates the LSB of each primary color of pixel and thus without making any substantial changes to the image, conceals the information.
 
-### How to do it
+### Let's see it working
 
-Take an image in which you want to conceal information. This cat image looks purrrfect for that
+_MCU spoilers ahead_
 
-Get a text file with your secret in it
+Take an image in which you want to conceal information. This cat image looks purrrfect for concealing information
+
+![cat](https://user-images.githubusercontent.com/4745789/72431117-0ecd4600-37ba-11ea-9674-f108827de7e7.png)
+
+and the secret text that we want to conceal is
+
+> I am not a cat I am a Flerken and I am the gateway to pocket dimensions.
 
 ### Concealing the data
 
