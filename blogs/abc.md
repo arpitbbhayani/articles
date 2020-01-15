@@ -1,6 +1,9 @@
-Would you shave your head and get it tattooed? Probably no, but a slave in ancient Greece was made to do so in the 440 BCE by Histiaeus. The text that was tattooed was a secret message that Histiaeus wanted to send to his son-in-law Aristagoras in Miletus. The slave was made to go to Miletus only after his hair grew back. upon his arrival, the head was again shaved and the message was revealed. This was one of the earliest records of steganography - the art of hiding message.
+Would you shave your head and get it tattooed? Probably no, but a slave in ancient Greece was made to do so in the 440 BCE by a ruler named Histiaeus. The text that was tattooed was a secret message that Histiaeus wanted to send to his son-in-law Aristagoras in Miletus. The slave was made to go to Miletus only after his hair grew back. Upon his arrival, the head was shaved again and the message was revealed which told Aristagoras to revolt against the Persians and start the Ionian revolt.
 
-The word “steganography” can be defined as “covered writing” or the technique of hiding messages inside other messages. It is derived from the Greek word “στεγαυω”. In modern times, steganography can be looked into as the study of the art and science of communicating in a way that hides the presence of the communication.
+This art of concealing message is called Steganography. The word is derived from the Greek word “στεγαυω” which means "secret writing". In modern times, steganography can be looked into as the study of the art and science of communicating in a way that hides the presence of the communication.
+
+There are
+In this article, we will focus solely on Image Steganography.
 
 # Physical Steganography
 
@@ -17,9 +20,6 @@ During World War II the Germans introduced microdots. The microdots were complet
 
 ### Secret Ink
 Invisible Ink involved common sources, this included milk, vinegar, fruit juice, and urine, for the hidden text.  To decipher these hidden messages required light or heat.
-
-# Stenography Techniques in a Digital Age
-
 
 # Image Steganography
 
