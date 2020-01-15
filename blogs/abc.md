@@ -28,7 +28,7 @@ Take an image in which you want to conceal information. This cat image looks pur
 
 and the secret text that we want to conceal is "I am not a cat I am a Flerken and I am the gateway to pocket dimensions.".
 
-### Concealing the data
+### Concealing the payload
 
 Given the `text` to conceal, the following function converts the string into bytes, then into bits and finally returns it as a list.
 
