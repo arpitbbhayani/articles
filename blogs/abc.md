@@ -8,25 +8,19 @@ Post the digital revolution, we started manipulating media like Images, Audio, V
 
 # Image Steganography
 
-An image is composed of pixels and each pixel has 3 components for 3 primary colors Red, Blue, and Green. The perceived superposition of intensities of 3 primary colors determines the final color of the pixel. For example: When pure red is mixed with pure green we get yellow; or as shown in diagram below, when we want an intermediary pale greenish shade we have mix red, blue and green in the right proportion.
+An image is composed of pixels and each pixel has 3 components for 3 primary colors Red, Blue, and Green. The perceived superposition of intensities of 3 primary colors determines the final color of the pixel. For example: When pure red is mixed with pure green we get yellow; or as shown in the diagram below, when we want an intermediary pale greenish shade we have mix red, blue and green in the right proportion.
 
 ![rgb superposition](https://user-images.githubusercontent.com/4745789/72423997-454f9480-37ab-11ea-9ffc-1513db5715ef.png)
 
-We perceive an image as a whole, we never do it pixel by pixel. Unless there is a difference above a certain threshold we cannot comprehend the change. Image steganography uses this to conceal information. To understand steganography in detail we take a look at Least Significant Bit (LSB) substitution method which is one of the easiest technique to understand and implement.
+We perceive an image as a whole, we never do it pixel by pixel. Unless there is a difference above a certain threshold we cannot comprehend the change. Image steganography uses this to conceal information. To understand steganography in detail we take a look at the Least Significant Bit (LSB) substitution method which is one of the easiest techniques to understand and implement.
 
 ## LSB Substitution
 
-An image is rendered using pixels and each pixel contains 3 primary color components - red, blue and green. A pixel is rendered as a combination of the color intensity of these 3 components. The intensity of each primary color ranges from 0 to 255 (both inclusive); which means each will take up 8 bits thus each pixel takes up 3 x 8 = 24 bits of space.
-
-GIF OF COLOR WHEEL SHOWCASING EACH COLOR GOES HERE.
-
-When intensity of a primary color within a pixel is changed it results in a new color, but if this alteration is by a very small delta then our eye cannot tell the difference as the new color will be very very close to old color.
+An image is made up of pixels and each pixel contains 3 primary color components - red, blue and green. The intensity of each primary color ranges from 0 to 255 (both inclusive) which means each takes up 8 bits thus each pixel takes up 3 x 8 = 24 bits of space. In LSB substitution we alter the last bit of each primary color of each pixel and when we do so the intensity alters by +-1 and our eye cannot perceive the difference. The following image shows 10 shades of red, blue and green, each differs from its neighbors by 1.
 
 ![Color +-5 for RGB](https://user-images.githubusercontent.com/4745789/72420704-37971080-37a5-11ea-9d28-54cce1efaae7.png)
 
-Image steganography uses this to conceal information in image pixel by altering each pixel by a very very small delta.
-
-The binary representation of this intensity 0 - 255 is an 8 bit sequence. If we alter the least significant bit all we are doing it +- 1 which means the resulting color will be very close to original.
+The binary representation of this intensity 0 - 255 is an 8-bit sequence. If we alter the least significant bit all we are doing it +- 1 which means the resulting color will be very close to original.
 
 Example
 
