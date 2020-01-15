@@ -76,9 +76,13 @@ to access pixel in 11th row and 21st column all we have to do is
 (4, 6, 70)
 ```
 
-The output we see above is the RGB value of the pixel. Now we itereate over pixel map and bit stream from the payload and perform substitution.
+The output we see above is the RGB value of the pixel. Next stuff is to write the core function that creates a new pixel map from original pixel map having LSB set with payload's bit stream. If we start substituting bits from the first pixel, how will the reader know where to stop. If there is no stop mark then reader will continue to read the last bits from the entire image which will be gibberish. To solve this we perform LSB with bit stream that represents length of the payload's bit stream. This way the reader will have to read the first 64 bits separately and consider it as the length of the payload and then read that many least significant bits.
 
-Code to update image and save
+```py
+
+```
+
+Now we store this pixel map on disk and this gives the image with our payload concealed in it. Here are two images, left one is the original one while the other one is the one with our payload concealed. Can you spot any difference?
 
 IMAGE THAT SHOWS THE DIFFERENCE
 
