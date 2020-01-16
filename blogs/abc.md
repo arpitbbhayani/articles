@@ -78,12 +78,13 @@ If we sort the pallette then this will make adjecent lookup table entries simila
 ### Add new colors to pallette
 If original image has fewer colors then we could add similar colors in color pallete/lookup table and then perform regular LSB substitution.
 
+## Other techniques
+Apart from above mentioned LSB substitution technique there are several other techniques that exploits some aspect of image and embeds data. I would highly recommend you at least give a skim to each of the following below:
 
-## Other notable techniques are:
-- Edges based data embedding method (EBE)
-- Random pixel embedding method (RPE)
-- Mapping pixel to hidden data method
-- Labeling or connectivity method
+ - Edges based data embedding method (EBE)
+ - Random pixel embedding method (RPE)
+ - Mapping pixel to hidden data method
+ - Labeling or connectivity method
 
 # Frequency Domain Techniques
 In these techniques images are first transformed and then the message is embedded in the image.
