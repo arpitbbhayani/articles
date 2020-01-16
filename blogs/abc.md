@@ -2,9 +2,17 @@ Would you shave your head and get it tattooed? Probably no, but a slave in ancie
 
 This art of concealing message is called Steganography. The word is derived from the Greek word “στεγαυω” which means "secret writing". In modern times, steganography can be looked into as the study of the art and science of communicating in a way that hides the presence of the communication.
 
-Steganography continued over time to develop into new levels. Invisible inks, microdots, writing behind postal stamps are all examples of Steganography in its physical form. Most of these early developments happened during World War I and II where everyone was trying to outsmart each other.
+Steganography continued over time to develop into new levels. Invisible inks, microdots, writing behind postal stamps are all examples of steganography in its physical form. Most of these early developments happened during World War I and II where everyone was trying to outsmart each other.
 
-Post the digital revolution, we started manipulating media like Images, Audio, Video, Network Packets, DNA, Quantum, etc to conceal information. There are a bunch of techniques in each of the mentioned segment but in this article, we will focus on Image Steganography.
+![Microdots and Microdot Camera](https://user-images.githubusercontent.com/4745789/72494721-c6119d80-384a-11ea-87d9-edba6a83ac85.png)
+
+### Steganography and Cryptography
+
+Since the rise of the Internet, one main concern was security of communication; which gave rise to Cryptography. It deals with hiding the meaning of message which means even if the message goes into wrong hands, it should be next to impossible to extract the true meaning of the message.
+
+Sometimes, it becomes necessary to hide the existence of the message/communication and this is Steganography. Both of the techniques are important and each protect information from unwanted parties in its own way but neither technique alone is perfect and can be compromised. Once the presence of hidden information is revealed or even suspected, the purpose of steganography is partly defeated. The strength of steganography can thus be amplified by combining it with cryptography.
+
+Today steganography is mostly used on computers with digital data, like Image, Audio, Video, Network packets, etc, being the carriers and networks being the high speed delivery channels. There are a bunch of techniques for each of the mentioned carrier but this article will provide an exhaustive overview of Image Steganography.
 
 # Image Steganography
 
