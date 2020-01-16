@@ -106,19 +106,18 @@ This is the first stage of JPEG compression which is lossy. Now this image data 
 ### JPEG Steganography
 Since JPEG images are already lossy compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if would try to hide/embed any message in it, it might get lost/destroyed/altered during compression or worse it might make noticeable changes in the image. But there is one ray of hope ... rounding error during DCT.
 
-During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information.
+During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information. Steganography can take place between these two stages. The same principle of LSB substitution is used to embed message in the image. Once the LSBs are updated, the usual Huffman encoding will do its lossless compression and prepare the final compressed image.
 
-Thus it is important to recognize that the JPEG compression algorithm is actually divided into lossy and lossless stages. The DCT and the quantization phase form part of the lossy stage, while the Huffman encoding used to further compress the data is lossless.  Steganography can take place between these two stages
 
-Using the same principles of LSB insertion the message can be embedded into the least significant bits of the coefficients before applying the Huffman encoding.  By embedding the information at this stage, in the transform domain, it is extremely difficult to detect, since it is not in the visual domain.
+## Other techniques
+Apart from the above-mentioned DCT technique, there are several other techniques that uses different form of transform signal and embeds data. I would highly recommend you at least give a skim to each of the following below:
 
-## Discrete Fourier transformation technique (DFT).
-## Discrete cosine transformation technique (DCT)
-## Discrete Wavelet transformation technique (DWT)
-## Lossless or reversible method (DCT)
-## Embedding in coefficient bits
+ - Discrete Fourier transformation technique (DFT)
+ - Discrete Wavelet transformation technique (DWT)
+ - Lossless or reversible method (DCT)
+ - Embedding in coefficient bits
 
-# Spacial or Freq domain technique
+# Techniques that are both Spatial and Frequency domain
 
 ## Patchwork
 Patchwork is a statistical technique that uses redundant pattern encoding to embed a message in an image
