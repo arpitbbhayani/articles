@@ -45,10 +45,7 @@ Lossless compression never removes any information from the original image, but 
 Steganographic techniques take into consideration the file format, compression method and picture semantic and look to exploit them by finding redundancies and using it to conceal extra information. Steganographic techniques can be broadly classified into two: spatial domain and frequency domain; we take a deeper look into both.
 
 # Spatial Domain Techniques
-These techniques embed messages in the intensity of the pixels directly.
-bit-wise methods that apply bit insertion and noise manipulation
-lossless images are best suited
-techniques are typically dependent on the image format.
+Spatial domain techniques embeds the secret message/payload in the intensity of the pixels directly; which means they update the pixel data by either inserting or substituting bits or manipulating noise in the image. Lossless images are best suited for these techniques as compression would not alter the embedded data. These techniques have to be aware of the image format to make concealing information fool-proof.
 
 ## LSB Substitution
 The least significant bit (in other words, the 8th bit) of some or all of the bytes inside an image is changed to a bit of the secret message.
