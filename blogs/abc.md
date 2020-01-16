@@ -116,7 +116,7 @@ Apart from the above-mentioned DCT technique, there are several other techniques
  - [Lossless or reversible method (DCT)](https://www.researchgate.net/publication/330565811_Hiding_data_in_images_using_DCT_steganography_techniques_with_compression_algorithms)
  - [Embedding in coefficient bits](http://www.ijcee.org/papers/533-P0025.pdf)
 
-# Techniques that are both Spatial and Frequency domain
+# Techniques that are neither Spatial nor Frequency domain
 
 ## Patchwork
 Patchwork is a statistical technique that uses redundant pattern encoding to embed a message in an image
