@@ -6,43 +6,43 @@ Steganography continued over time to develop into new levels. Invisible inks, mi
 
 ![Microdots and Microdot Camera](https://user-images.githubusercontent.com/4745789/72497176-da0ccd80-3851-11ea-96b0-759d7e62f451.png)
 
-Above image shows imcrodots and camera that generated microdots.
+The above image shows microdots and camera that generated them.
 
 ### Steganography and Cryptography
 
-Since the rise of the Internet, the main concern has been security of communication. The sole focus on making everything more secure by the day lead to development of field of Cryptography that deals with hiding the meaning of message. The techniques of cryptography tries to ensure that even when the message goes into wrong hands. it is extremely difficult to extract the true meaning of the message.
+Since the rise of the Internet, the main concern has been the security of communication. The sole focus on making everything more secure by the day leads to the development of the field of Cryptography that deals with hiding the meaning of a message. The techniques of cryptography try to ensure that even when the message goes into the wrong hands. it is extremely difficult to extract the true meaning of the message.
 
-Sometimes, it becomes necessary to not only hide the meaning of the message but also hide its existence, and the field that deals with this is called Steganography. Both the fields protect the information in its own way but neither alone is perfect and can be compromised. Hence a hybrid approach where we encrypt the message and then hide its presence, amplifies the security.
+Sometimes, it becomes necessary to not only hide the meaning of the message but also hide its existence, and the field that deals with this is called Steganography. Both the fields protect the information in their own way but neither alone is perfect and can be compromised. Hence a hybrid approach where we encrypt the message and then hide its presence amplifies the security.
 
 Today steganography is mostly used on computers with digital data, like Image, Audio, Video, Network packets, etc, acting as the carriers/cover. There are a bunch of techniques for each of the mentioned carrier but this article only aims to provide an exhaustive overview of Image Steganography.
 
 # Image Steganography
 
-Images are an excellent medium for concealing information because they provide a high degree of redundancy - which means that there are a lots of bits that provide accuracy far greater than necessary for object's use (display). Steganography techniques exploits these redundant bits to hide the information/payload by altering them in such a way that alterations cannot be detected easily.
+Images are an excellent medium for concealing information because they provide a high degree of redundancy - which means that there are lots of bits that provide accuracy far greater than necessary for object's use (display). Steganography techniques exploit these redundant bits to hide the information/payload by altering them in such a way that alterations cannot be detected easily.
 
 ## Color depth and definition
 
-An image is a collection of numbers that defines color intensities in different areas of the image. It is arranged in a gird, which determines the resolution of the image, and each point on the grid is called a pixel. Each pixel is defined by a fixed number of bits and this is its color scheme. The smallest color depth is 8 bit, in monochrome and greyscale images, and it displays 256 different colours or shades of grey as shown below.
+An image is a collection of numbers that defines color intensities in different areas of the image. It is arranged in a gird, which determines the resolution of the image, and each point on the grid is called a pixel. Each pixel is defined by a fixed number of bits and this is its color scheme. The smallest color depth is 8 bit, in monochrome and greyscale images, and it displays 256 different colors or shades of grey as shown below.
 
-![8 bit grayscale monochrome image](https://user-images.githubusercontent.com/4745789/72497072-8e5a2400-3851-11ea-9b28-8705bbfea070.png)
+![8-bit grayscale monochrome image](https://user-images.githubusercontent.com/4745789/72497072-8e5a2400-3851-11ea-9b28-8705bbfea070.png)
 
-Digital colour images are typically stored in 24-bit pixel depth and use the RGB colour model. All colour variations for the pixels of a 24-bit image are derived from three primary colours: red, green and blue, and each primary colour is represented by 8 bits. Thus each pixel can take of one color from a pallete of 16-million colours.
+Digital color images are typically stored in 24-bit pixel depth and use the RGB color model. All color variations for the pixels of a 24-bit image are derived from three primary colors: red, green and blue, and each primary color is represented by 8 bits. Thus each pixel can take of one color from a palette of 16-million colors.
 
-![24 bit color palette](https://user-images.githubusercontent.com/4745789/72497287-23f5b380-3852-11ea-96e8-e5c8ffca0c9f.png)
+![24-bit color palette](https://user-images.githubusercontent.com/4745789/72497287-23f5b380-3852-11ea-96e8-e5c8ffca0c9f.png)
 
 ## Compression
 
-When working with larger images and greater color depth, the size of raw file can become really really big and it becomes impossible to transmit it over standard internet connection. To remedy this, compressed image formats were developed which, as you would have guessed, compresses the pixel information keeping file sizes fairly small making it efficient for transmission.
+When working with larger images and greater color depth, the size of the raw file can become really really big and it becomes impossible to transmit it over a standard internet connection. To remedy this, compressed image formats were developed which, as you would have guessed, compresses the pixel information keeping file sizes fairly small making it efficient for transmission.
 
 There are two types of compression techniques:
 
 ### Lossy Compression
-Lossy compression removes redundancies that are too small for human eye to differentiate and hence the compressed files are in close approximations of the original image, but not an exact duplicate. A famous file format that does lossy compression is [JPEG](https://en.wikipedia.org/wiki/JPEG).
+Lossy compression removes redundancies that are too small for the human eye to differentiate and hence the compressed files are in close approximations of the original image, but not an exact duplicate. A famous file format that does lossy compression is [JPEG](https://en.wikipedia.org/wiki/JPEG).
 
 ### Lossless Compression
-Lossless compression never removes any information from the original image, but instead represents data in mathematical formulas maintaining the integrity of original image; which means when uncompressed the file is be a bit-by-bit copy of the original. Formats that do lossless compression are [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics), [GIF](https://en.wikipedia.org/wiki/GIF) and [BMP](https://en.wikipedia.org/wiki/BMP_file_format).
+Lossless compression never removes any information from the original image, but instead represents data in mathematical formulas maintaining the integrity of the original image; which means when uncompressed the file is a bit-by-bit copy of the original. Formats that do lossless compression are [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics), [GIF](https://en.wikipedia.org/wiki/GIF) and [BMP](https://en.wikipedia.org/wiki/BMP_file_format).
 
-Steganographic techniques take into consideration the file format, compression method and picture semantic and look to exploit them by finding redundancies and using it to conceal extra information. Steganographic techniques can be boradly classified into two: spatial domain and frequency domain; we take a deeper look into both.
+Steganographic techniques take into consideration the file format, compression method and picture semantic and look to exploit them by finding redundancies and using it to conceal extra information. Steganographic techniques can be broadly classified into two: spatial domain and frequency domain; we take a deeper look into both.
 
 # Spatial Domain Techniques
 These techniques embed messages in the intensity of the pixels directly.
