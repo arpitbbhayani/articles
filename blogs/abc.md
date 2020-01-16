@@ -48,19 +48,16 @@ Steganographic techniques take into consideration the file format, compression m
 Spatial domain techniques embeds the secret message/payload in the intensity of the pixels directly; which means they update the pixel data by either inserting or substituting bits or manipulating noise in the image. Lossless images are best suited for these techniques as compression would not alter the embedded data. These techniques have to be aware of the image format to make concealing information fool-proof.
 
 ## LSB Substitution
-The least significant bit (in other words, the 8th bit) of some or all of the bytes inside an image is changed to a bit of the secret message.
-When using a 24-bit image, a bit of each of the red, green and blue colour components can be used, since they are each represented by a byte.
-In other words, one can store 3 bits in each pixel.  An 800 × 600 pixel image, can thus store a total amount of 1,440,000 bits or 180,000 bytes of embedded data [19].  For example a grid for 3 pixels of a 24-bit image can be as follows
+This technique converts the secret message/payload into bit stream and substitutes them into least significant bit (the 8th bit) of some or all bytes inside an image. When using a 24-bit image, a bit of each of the red, green and blue colour components is substituted. Since there are 256 possible intensities of each primary colour, changing the LSB of a pixel results in small changes in the intensity of the colours and this change cannot be perceived by the human eye. See the comparison below.
 
 IMAGE FOR LSB subs.
 
-Since there are 256 possible intensities of each primary colour, changing the LSB of a pixel results in small changes in the intensity of the colours.
-changes cannot be perceived by the human eye - thus the message is successfully hidden.
-With a well-chosen image, one can even hide the message in the least as well as second to least significant bit and still not see the difference
+In a 24 bit image we can store 3 bits in each pixel hence an 800 × 600 pixel image, can thus store a total amount of 1,440,000 bits or 180,000 bytes ~ 175KB of embedded data.
 
+### Extending LSB to k-LSB
+To hold more data into the image we can substitute not `1` but `k` least significant bits. But we do so the image starts to distort which is never a good sign but a well-chosen image could do the trick and you wouldn't notice any difference.
 
-This approach is very easy to detect.
-A slightly more secure system is for the sender and receiver to share a secret key that specifies only certain pixels to be changed
+IMAGES for multiple k
 
 ## Randomized LSB
 A slightly more secure system is for the sender and receiver to share a secret key that specifies only certain pixels to be changed
@@ -81,14 +78,10 @@ Hiding data in the LSBs of the pixels of a gray-valued image is a common informa
 https://people.cs.nctu.edu.tw/~whtsai/Journal%20Paper%20PDFs/Wu_&_Tsai_PRL_2003.pdf
 
 
-
-
 ## LSB and Palette Based Images
 By definition a GIF image cannot have a bit depth greater than 8, thus the maximum number of colours that a GIF can store is 256
 GIF images are indexed images where the colours used in the image are stored in a palette, sometimes referred to as a colour lookup table
 Each pixel is represented as a single byte and the pixel data is an index to the colour palette
-
-
 
 The problem with the palette approach used with GIF images is that should one change the least significant bit of a pixel, it can result in a completely different colour since the index to the colour palette is changed
 If adjacent palette entries are similar, there might be little or no noticeable change, but should the adjacent palette entries be very dissimilar, the change would be eviden
@@ -96,12 +89,11 @@ One possible solution is to sort the palette so that the colour differences betw
 Another solution is to add new colours which are visually similar to the existing colours in the palette.  This requires the original image to have less unique colours than the maximum number of colour
 A final solution to the problem is to use greyscale images.  In an 8-bit greyscale GIF image, there are 256 different shades of grey [14].  The changes between the colours are very gradual, making it harder to detect.
 
-## Pixel value differencing (PVD)
-## Edges based data embedding method (EBE)
-## Random pixel embedding method (RPE)
-## Mapping pixel to hidden data method
-## Labeling or connectivity method
-In [10], authors have introduced a data hiding technique where it finds out the dark area of the  image  to  hide  the  data  using  LSB.  It  converts  it  to  binary  image  and  labels  each  object  using   8   pixel   connectivity   schemes   for   hiding   data   bits.   This   method   required   highcomputation  to  find  dark  region  its  connectivity  and  has  not  tested  on  high  texture  type  of  image. Its hiding capacity totally depends on texture of image.
+Other notable techniques are:
+- Edges based data embedding method (EBE)
+- Random pixel embedding method (RPE)
+- Mapping pixel to hidden data method
+- Labeling or connectivity method
 
 # Frequency Domain Techniques
 In these techniques images are first transformed and then the message is embedded in the image.
@@ -129,7 +121,7 @@ For JPEG, the Discrete Cosine Transform (DCT) is used, but similar transforms ar
 
 the strength of higher frequencies can be diminished, without changing the appearance of the image.
 
-### Steganography
+### JPEG Steganography
 Originally it was thought that steganography would not be possible to use with JPEG images.
 One of the major characteristics of steganography is the fact that information is hidden in the redundant bits of an object and since redundant bits are left out when using JPEG it was feared that the hidden message would be destroyed.
 somehow keep the message intact it would be difficult to embed the message without the changes being noticeable because of the harsh compression applied.
@@ -158,128 +150,5 @@ In spread spectrum techniques, hidden data is spread throughout the cover-image 
 
 message is embedded in noise and then combined with the cover image to produce the stego image. Since the power of the embedded signal is much lower than the power of the cover image, the embedded image is not perceptible to the human eye or by computer analysis without access to the original image.
 
-
----
-
-An image is composed of pixels and each pixel has 3 components for 3 primary colors Red, Blue, and Green. The perceived superposition of intensities of 3 primary colors determines the final color of the pixel. For example: When pure red is mixed with pure green we get yellow; or as shown in the diagram below, when we want an intermediary pale greenish shade we have mix red, blue and green in the right proportion.
-
-![rgb superposition](https://user-images.githubusercontent.com/4745789/72423997-454f9480-37ab-11ea-9ffc-1513db5715ef.png)
-
-We perceive an image as a whole, we never do it pixel by pixel. Unless there is a difference above a certain threshold we cannot comprehend the change. Image steganography uses this to conceal information. To understand steganography in detail we take a look at the Least Significant Bit (LSB) substitution method which is one of the easiest techniques to understand and implement.
-
-## LSB Substitution
-
-An image is made up of pixels and each pixel contains 3 primary color components - red, blue and green. The intensity of each primary color ranges from 0 to 255 (both inclusive) which means each takes up 8 bits thus each pixel takes up 3 x 8 = 24 bits of space. In LSB substitution we alter the last bit of each primary color of each pixel and when we do so the intensity alters by +-1 and our eye cannot perceive the difference. The following image shows 10 shades of red, blue and green, each differs from its neighbors by 1.
-
-![Color +-5 for RGB](https://user-images.githubusercontent.com/4745789/72420704-37971080-37a5-11ea-9d28-54cce1efaae7.png)
-
-Now as we have seen that altering the LSB of any color does not drastically change the colors, we can use the LSB to store one bit of information from the secret data (payload); and this is exactly was LSB Substitution does, it reads the payload bit by bit and updates the LSB of each primary color of pixel and thus without making any substantial changes to the image, conceals the information.
-
-Take an image in which you want to conceal information. This cat image looks purrrfect for concealing information
-
-![cat](https://user-images.githubusercontent.com/4745789/72431117-0ecd4600-37ba-11ea-9674-f108827de7e7.png)
-
-and the secret text that we want to conceal is "I am not a cat I am a Flerken and I am the gateway to pocket dimensions.".
-
-### Concealing the payload
-
-Given the `text` to conceal, the following function converts the string into bytes, then into bits and finally returns it as a list.
-
-```py
-def get_bits(text):
-    return list(''.join([bin(b)[2:].zfill(8) for b in
-                bytes(text.encode('utf-8'))]))
-```
-
-The next step is to read image and access pixels, for this we will use PIL library. Following code reads the image and returns the pixel access object. Using this object we can access any pixel and extract its RGB values.
-
-```py
-from PIL import Image
-
-def read_image(path):
-  """The function read_image, reads the image from the path `path`
-  and returns the pixel map loaded in memory.
-
-  Any exceptions raised by PIL library are unhandled.
-  """
-
-  # open the image given the path
-  im = Image.open(path)
-
-  # load the pixel map.
-  pixel_map = im.load()
-
-  # log some meta information about the image
-  print('the image read from path {} has following properties'.format(path))
-  print('size: {} x {}'.format(*im.size))
-  print('format: {}'.format(im.format))
-
-  # close the file. always.
-  im.close()
-
-  # return the pixel map.
-  return pixel_map
-```
-
-to access pixel in 11th row and 21st column all we have to do is
-
-```py
->>> pixel_map = read_image("path to the image.png")
->>> print(pixel_map[10,20])
-(4, 6, 70)
-```
-
-The output we see above is the RGB value of the pixel. Next stuff is to write the core function that creates a new pixel map from original pixel map having LSB set with payload's bit stream. If we start substituting bits from the first pixel, how will the reader know where to stop. If there is no stop mark then reader will continue to read the last bits from the entire image which will be gibberish. To solve this we perform LSB with bit stream that represents length of the payload's bit stream. This way the reader will have to read the first 64 bits separately and consider it as the length of the payload and then read that many least significant bits.
-
-```py
-
-```
-
-Now we store this pixel map on disk and this gives the image with our payload concealed in it. Here are two images, left one is the original one while the other one is the one with our payload concealed. Can you spot any difference?
-
-IMAGE THAT SHOWS THE DIFFERENCE
-
-### REtrieving the data
-
-Read first 2 bits that suggest length
-
-Itereate and compose bit stream
-
-bits to text
-
-### Finding limits
-
-Find amount of data you could conceal in an image.
-
-And distortion you get in image due to it.
-
-What happens when you do it for 2 bits
-
-What happens when you do it for 3 bits
-
-## Randomized LSB Substitution
-
-Upgrade over predictable LSB
-
-[a](https://pdfs.semanticscholar.org/c3c9/9ceaffb05c380b9953933945a9cd6fc1f707.pdf)
-[b](https://www.lirmm.fr/~wpuech/enseignement/master_informatique/Compression_Insertion/articles/10_article_examen_PUECH_compression.pdf)
-
-## Other methods in image
-
-[](https://pdfs.semanticscholar.org/bb26/1e7f02f8597b37a2f71e55c2e2c21aa7575f.pdf)
-[](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.364.3275&rep=rep1&type=pdf)
-[](http://bit.kuas.edu.tw/~jihmsp/2011/vol2/JIH-MSP-2011-03-005.pdf)
-
-# Other steganography in Digital Space
-
-### Audio
-
-### Video
-
-### DNA
-
-### Quantum
-
 # Conclusion
-
 This is the first article in the series of Steganography that detailed out Image Steganography. I hope you reaped some benefits out of it. The future articles on Steganography will talk about how Steganography is done on carriers like Audio, Network, DNA and Quantum states and will also dive into one of the most interesting applications of Steganography - a Steganographic File System. So stay tuned and watch this space for more.
