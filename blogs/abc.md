@@ -12,7 +12,7 @@ Above image shows imcrodots and camera that generated microdots.
 
 Since the rise of the Internet, the main concern has been security of communication. The sole focus on making everything more secure by the day lead to development of field of Cryptography that deals with hiding the meaning of message. The techniques of cryptography tries to ensure that even when the message goes into wrong hands. it is extremely difficult to extract the true meaning of the message.
 
-Sometimes, it becomes necessary to hide the existence of the message/communication and this is Steganography. Both of the techniques are important and each protect information from unwanted parties in its own way but neither technique alone is perfect and can be compromised. Once the presence of hidden information is revealed or even suspected, the purpose of steganography is partly defeated. The strength of steganography can thus be amplified by combining it with cryptography.
+Sometimes, it becomes necessary to not only hide the meaning of the message but also hide its existence, and the field that deals with this is called Steganography. Both the fields protect the information in its own way but neither alone is perfect and can be compromised. Hence a hybrid approach where we encrypt the message and then hide its presence, amplifies the security.
 
 Today steganography is mostly used on computers with digital data, like Image, Audio, Video, Network packets, etc, being the carriers and networks being the high speed delivery channels. There are a bunch of techniques for each of the mentioned carrier but this article will provide an exhaustive overview of Image Steganography.
 
