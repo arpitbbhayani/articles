@@ -50,7 +50,9 @@ Spatial domain techniques embeds the secret message/payload in the intensity of 
 ## LSB Substitution
 This technique converts the secret message/payload into bit stream and substitutes them into least significant bit (the 8th bit) of some or all bytes inside an image. When using a 24-bit image, a bit of each of the red, green and blue colour components is substituted. Since there are 256 possible intensities of each primary colour, changing the LSB of a pixel results in small changes in the intensity of the colours and this change cannot be perceived by the human eye. See the comparison below.
 
-IMAGE FOR LSB subs.
+![lsb cat diff](https://user-images.githubusercontent.com/4745789/72535218-31d12600-389e-11ea-9463-011fa42e430c.png)
+
+The image on the right has about 1KB long text message embedded through LSB substitution but can you spot any difference?
 
 In a 24 bit image we can store 3 bits in each pixel hence an 800 × 600 pixel image, can thus store a total amount of 1,440,000 bits or 180,000 bytes ~ 175KB of embedded data.
 
