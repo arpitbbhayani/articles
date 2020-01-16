@@ -32,7 +32,7 @@ Digital color images are typically stored in 24-bit pixel depth and use the RGB 
 
 ## Compression
 
-When working with larger images and greater color depth, the size of the raw file can become really really big and it becomes impossible to transmit it over a standard internet connection. To remedy this, compressed image formats were developed which, as you would have guessed, compresses the pixel information keeping file sizes fairly small making it efficient for transmission.
+When working with larger images and greater color depth, the size of the raw file can become big and it becomes impossible to transmit it over a standard internet connection. To remedy this, compressed image formats were developed which, as you would have guessed, compresses the pixel information keeping file sizes fairly small making it efficient for transmission.
 
 There are two types of compression techniques:
 
@@ -79,7 +79,7 @@ If we sort the pallette then this will make adjacent lookup table entries simila
 If the original image has fewer colors then we could add similar colors in color pallette/lookup table and then perform regular LSB substitution.
 
 ## Other techniques
-Apart from the above-mentioned LSB substitution technique, there are several other techniques that exploit some aspect of the image and embeds data. I would highly recommend you at least give a skim to each of the below:
+Apart from the above-mentioned LSB substitution technique, there are several techniques that exploit some aspect of the image and embeds data. I would highly recommend you at least give a skim to each of the below:
 
  - [Edges based data embedding method (EBE)](https://link.springer.com/article/10.1186/1687-417X-2014-8)
  - [Random pixel embedding method (RPE)](https://ieeexplore.ieee.org/abstract/document/8276335)
@@ -99,7 +99,7 @@ According to research, the human eye is more sensitive to changes in the brightn
 
 ![YCbCr transformation](https://user-images.githubusercontent.com/4745789/72549559-f1ca6d00-38b6-11ea-9760-bd1f35dbf455.png)
 
-Now the image in processed in blocks of 8 x 8 and we perform [Discrete Cosine Transform (DCT)](https://en.wikipedia.org/wiki/Discrete_cosine_transform) on each, then quantized (rounding) 64 values into 1 and eliminates small differences. To dive more into DCT on JPEG I would recommend you watch this [Computerphile video](https://www.youtube.com/watch?v=Q2aEzeMDHMA).
+Now the image is processed in blocks of 8 x 8 and we perform [Discrete Cosine Transform (DCT)](https://en.wikipedia.org/wiki/Discrete_cosine_transform) on each, then quantized (rounding) 64 values into 1 and eliminates small differences. To dive more into DCT on JPEG I would recommend you watch this [Computerphile video](https://www.youtube.com/watch?v=Q2aEzeMDHMA).
 
 This is the first stage of JPEG compression which is lossy. Now this image data is then losslessly compressed using the standard [Huffman encoding](https://en.wikipedia.org/wiki/Huffman_coding).
 
@@ -109,7 +109,7 @@ Since JPEG images are already lossily compressed (redundant bits are already thr
 During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information. Steganography can take place between these two stages. The same principle of LSB substitution is used to embed a message in the image. Once the LSBs are updated, the usual Huffman encoding will do its lossless compression and prepare the final compressed image.
 
 ## Other techniques
-Apart from the above-mentioned DCT technique, there are several other techniques that use a different form of transform signal and embeds data. I would highly recommend you at least give a skim to each of the following below:
+Apart from the above-mentioned DCT technique, there are several techniques that use a different form of transform signal and embeds data. I would highly recommend you at least give a skim to each of the below:
 
  - [Discrete Fourier transformation technique (DFT)](https://link.springer.com/chapter/10.1007/978-3-642-20998-7_39)
  - [Discrete Wavelet transformation technique (DWT)](https://www.insight-centre.org/sites/default/files/publications/17.197_a_steganography_technique_for_images_based_on_wavelet_transform.pdf)
