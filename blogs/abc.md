@@ -14,7 +14,7 @@ Since the rise of the Internet, the main concern has been security of communicat
 
 Sometimes, it becomes necessary to not only hide the meaning of the message but also hide its existence, and the field that deals with this is called Steganography. Both the fields protect the information in its own way but neither alone is perfect and can be compromised. Hence a hybrid approach where we encrypt the message and then hide its presence, amplifies the security.
 
-Today steganography is mostly used on computers with digital data, like Image, Audio, Video, Network packets, etc, being the carriers and networks being the high speed delivery channels. There are a bunch of techniques for each of the mentioned carrier but this article will provide an exhaustive overview of Image Steganography.
+Today steganography is mostly used on computers with digital data, like Image, Audio, Video, Network packets, etc, acting as the carriers/cover. There are a bunch of techniques for each of the mentioned carrier but this article only aims to provide an exhaustive overview of Image Steganography.
 
 # Image Steganography
 
