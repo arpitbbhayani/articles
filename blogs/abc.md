@@ -42,7 +42,7 @@ Lossy compression removes redundancies that are too small for human eye to diffe
 ### Lossless Compression
 Lossless compression never removes any information from the original image, but instead represents data in mathematical formulas maintaining the integrity of original image; which means when uncompressed the file is be a bit-by-bit copy of the original. Formats that do lossless compression are [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics), [GIF](https://en.wikipedia.org/wiki/GIF) and [BMP](https://en.wikipedia.org/wiki/BMP_file_format).
 
-Steganographic algorithms take into consideration the file format, compression method and picture semantic and look to exploit them by finding redundancies and using it to conceal extra information.
+Steganographic techniques take into consideration the file format, compression method and picture semantic and look to exploit them by finding redundancies and using it to conceal extra information. Steganographic techniques can be boradly classified into two: spatial domain and frequency domain; we take a deeper look into both.
 
 # Spatial Domain Techniques
 These techniques embed messages in the intensity of the pixels directly.
