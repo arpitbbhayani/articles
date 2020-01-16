@@ -92,12 +92,14 @@ Spatial domain techniques directly starts putting in data from payload into imag
 These techniques relative complex to comprehend and required a bit of advanced mathematics to understand thoroughly. Images with lossy compression are ideal candidates and hence we dive a little deep into how JPEG steganography works.
 
 ## JPEG steganography
-To compress an image into JPEG format, the RGB colour representation is first converted to a YUV representation. In this representation the Y component corresponds to the luminance (or brightness) and the U and V components stand for chrominance (or colour) [1]
+To understand how steganography works for JPEG files, we will look into: how the raw data is compressed by JPEG and then we see how we could hide data in it.
 
 ### JPEG Compression
+According to research the human eye is more sensitive to changes in the brightness (luminance) of a pixel than to changes in its colour. We interpret brightness and color by contrast with adjacent regions. The compression phase takes advantage of this insight and transforms image from RGB color to [YCbCr](https://en.wikipedia.org/wiki/YCbCr) - separating brightness from color. In YUV representation the Y component corresponds to luminance (brightness - black-white) and Cb and Cr components for chrominance (color). Now we discard the color part from brightness by downsampling the color data to half in both horizontal and vertical directions thus directly halving the size of the file. This is the first stage of JPEG compression which is lossy.
 
-According to research the human eye is more sensitive to changes in the brightness (luminance) of a pixel than to changes in its colour.
-This fact is exploited by the JPEG compression by downsampling the colour data to reduce the size of the file. The colour components (U and V) are halved in horizontal and vertical directions, thus decreasing the file size by a factor of 2.
+![YCbCr transformation](https://user-images.githubusercontent.com/4745789/72549559-f1ca6d00-38b6-11ea-9760-bd1f35dbf455.png)
+
+The second stage of compression is lossless.
 
 For JPEG, the Discrete Cosine Transform (DCT) is used, but similar transforms are for example the Discrete Fourier Transform (DFT).
 
