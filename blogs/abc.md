@@ -118,6 +118,8 @@ Apart from the above-mentioned DCT technique, there are several other techniques
 
 # Techniques that are neither Spatial nor Frequency domain
 
+There are techniques that are neither Spatial not Frequency domain, I'd like to mention them in this section.
+
 ## Patchwork
 Patchwork is a statistical technique that uses redundant pattern encoding to embed a message in an image
 The algorithm adds redundancy to the hidden information and then scatters it throughout the image.
