@@ -45,10 +45,10 @@ Lossless compression never removes any information from the original image, but 
 Steganographic techniques take into consideration the file format, compression method and picture semantic and look to exploit them by finding redundancies and using it to conceal extra information. Steganographic techniques can be broadly classified into two: spatial domain and frequency domain; we take a deeper look into both.
 
 # Spatial Domain Techniques
-Spatial domain techniques embeds the secret message/payload in the intensity of the pixels directly; which means they update the pixel data by either inserting or substituting bits or manipulating noise in the image. Lossless images are best suited for these techniques as compression would not alter the embedded data. These techniques have to be aware of the image format to make concealing information fool-proof.
+Spatial domain techniques embed the secret message/payload in the intensity of the pixels directly; which means they update the pixel data by either inserting or substituting bits or manipulating noise in the image. Lossless images are best suited for these techniques as compression would not alter the embedded data. These techniques have to be aware of the image format to make concealing information fool-proof.
 
 ## LSB Substitution
-This technique converts the secret message/payload into bit stream and substitutes them into least significant bit (the 8th bit) of some or all bytes inside an image. When using a 24-bit image, a bit of each of the red, green and blue colour components is substituted. Since there are 256 possible intensities of each primary colour, changing the LSB of a pixel results in small changes in the intensity of the colours and this change cannot be perceived by the human eye. See the comparison below.
+This technique converts the secret message/payload into a bitstream and substitutes them into a least significant bit (the 8th bit) of some or all bytes inside an image. When using a 24-bit image, a bit of each of the red, green and blue color components is substituted. Since there are 256 possible intensities of each primary color, changing the LSB of pixel results in small changes in the intensity of the colors and this change cannot be perceived by the human eye. See the comparison below.
 
 ![lsb cat diff](https://user-images.githubusercontent.com/4745789/72535218-31d12600-389e-11ea-9463-011fa42e430c.png)
 
@@ -63,23 +63,23 @@ To hold more data into the image we can substitute not `1` but `k` least signifi
 A regular LSB substitution technique starts substituting from pixel `0` and goes till `n`; this method is highly predictable. To make things slightly challenging sender and receiver could share a secret key through which they agree on the certain pixels that will be altered with LSB. This randomness makes LSB more secure and robust.
 
 ## Adaptive LSB
-Adaptive LSB uses k-bit LSB and varies `k` as per sensitivity of image region over which it is applied. The method analyzes the edges, brightness and texture of the image and calculates the value of `k` for that region and then does regular k-LSB on it. It keeps the value of `k` high at not-so-sensitive image region and low at sensitive region. This balances the overall quality of the image and makes it even more difficult to see distortions.
+Adaptive LSB uses k-bit LSB and varies `k` as per the sensitivity of the image region over which it is applied. The method analyzes the edges, brightness, and texture of the image and calculates the value of `k` for that region and then does regular k-LSB on it. It keeps the value of `k` high at not-so-sensitive image region and low at the sensitive region. This balances the overall quality of the image and makes it even more difficult to see distortions.
 
 Pixel-value differencing (PVD) scheme is a concrete implementation of adaptive LSB it uses the difference value between two consecutive pixels in a block to determine the number of secret bits to be embedded.
 
 ## LSB and Palette Based Images
-The persistence of Palette Based Images is very interesting. There is a color lookup table which holds all the colors that are used in the image. Each pixel is represented as a single byte and the pixel data is an index to the colour palette. This is usually the case with GIF images as it cannot have a bit depth greater than 8, thus the maximum number of colours that a GIF can store is 256.
+The persistence of Palette Based Images is very interesting. There is a color lookup table which holds all the colors that are used in the image. Each pixel is represented as a single byte and the pixel data is an index to the color palette. This is usually the case with GIF images as it cannot have a bit depth greater than 8, thus the maximum number of colors that a GIF can store is 256.
 
-The problem with pallet approach is that if we perform LSB to pixel then it changes the index in lookup table and the new value (after substitution) could point to a totally different color and the change will be evident. There are few solutions to tackle this:
+The problem with the pallet approach is that if we perform LSB to pixel then it changes the index in the lookup table and the new value (after substitution) could point to a totally different color and the change will be evident. There are few solutions to tackle this:
 
 ### Sorting the pallette
-If we sort the pallette then this will make adjecent lookup table entries similar thus we minimize the distortion.
+If we sort the pallette then this will make adjacent lookup table entries similar thus we minimize the distortion.
 
 ### Add new colors to pallette
-If original image has fewer colors then we could add similar colors in color pallete/lookup table and then perform regular LSB substitution.
+If the original image has fewer colors then we could add similar colors in color pallette/lookup table and then perform regular LSB substitution.
 
 ## Other techniques
-Apart from above mentioned LSB substitution technique there are several other techniques that exploits some aspect of image and embeds data. I would highly recommend you at least give a skim to each of the following below:
+Apart from the above-mentioned LSB substitution technique, there are several other techniques that exploit some aspect of the image and embeds data. I would highly recommend you at least give a skim to each of the following below:
 
  - Edges based data embedding method (EBE)
  - Random pixel embedding method (RPE)
