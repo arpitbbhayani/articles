@@ -10,7 +10,7 @@ Above image shows imcrodots and camera that generated microdots.
 
 ### Steganography and Cryptography
 
-Since the rise of the Internet, one main concern was security of communication; which gave rise to Cryptography. It deals with hiding the meaning of message which means even if the message goes into wrong hands, it should be next to impossible to extract the true meaning of the message.
+Since the rise of the Internet, the main concern has been security of communication. The sole focus on making everything more secure by the day lead to development of field of Cryptography that deals with hiding the meaning of message. The techniques of cryptography tries to ensure that even when the message goes into wrong hands. it is extremely difficult to extract the true meaning of the message.
 
 Sometimes, it becomes necessary to hide the existence of the message/communication and this is Steganography. Both of the techniques are important and each protect information from unwanted parties in its own way but neither technique alone is perfect and can be compromised. Once the presence of hidden information is revealed or even suspected, the purpose of steganography is partly defeated. The strength of steganography can thus be amplified by combining it with cryptography.
 
