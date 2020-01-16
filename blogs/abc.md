@@ -89,11 +89,7 @@ Apart from the above-mentioned LSB substitution technique, there are several oth
 # Frequency Domain Techniques
 Spatial domain techniques directly starts putting in data from payload into image but Frequency domain techniques will first transform the image and then embed the data. The transformation step ensures that the message are hidden in more significant/less sensitive areas of the image, making the hiding more robust and makes the entire process independent of the image format. The areas in which the information is hidden are usually less exposed to compression, cropping, and  image  processing.
 
-## Discrete Fourier transformation technique (DFT).
-## Discrete cosine transformation technique (DCT)
-## Discrete Wavelet transformation technique (DWT)
-## Lossless or reversible method (DCT)
-## Embedding in coefficient bits
+These techniques relative complex to comprehend and required a bit of advanced mathematics to understand thoroughly. Images with lossy compression are ideal candidates and hence we dive a little deep into how JPEG steganography works.
 
 ## JPEG steganography
 To compress an image into JPEG format, the RGB colour representation is first converted to a YUV representation. In this representation the Y component corresponds to the luminance (or brightness) and the U and V components stand for chrominance (or colour) [1]
@@ -120,6 +116,11 @@ Thus it is important to recognize that the JPEG compression algorithm is actuall
 
 Using the same principles of LSB insertion the message can be embedded into the least significant bits of the coefficients before applying the Huffman encoding.  By embedding the information at this stage, in the transform domain, it is extremely difficult to detect, since it is not in the visual domain.
 
+## Discrete Fourier transformation technique (DFT).
+## Discrete cosine transformation technique (DCT)
+## Discrete Wavelet transformation technique (DWT)
+## Lossless or reversible method (DCT)
+## Embedding in coefficient bits
 
 # Spacial or Freq domain technique
 
