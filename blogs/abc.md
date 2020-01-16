@@ -68,17 +68,18 @@ Adaptive LSB uses k-bit LSB and varies `k` as per sensitivity of image region ov
 Pixel-value differencing (PVD) scheme is a concrete implementation of adaptive LSB it uses the difference value between two consecutive pixels in a block to determine the number of secret bits to be embedded.
 
 ## LSB and Palette Based Images
-By definition a GIF image cannot have a bit depth greater than 8, thus the maximum number of colours that a GIF can store is 256
-GIF images are indexed images where the colours used in the image are stored in a palette, sometimes referred to as a colour lookup table
-Each pixel is represented as a single byte and the pixel data is an index to the colour palette
+The persistence of Palette Based Images is very interesting. There is a color lookup table which holds all the colors that are used in the image. Each pixel is represented as a single byte and the pixel data is an index to the colour palette. This is usually the case with GIF images as it cannot have a bit depth greater than 8, thus the maximum number of colours that a GIF can store is 256.
 
-The problem with the palette approach used with GIF images is that should one change the least significant bit of a pixel, it can result in a completely different colour since the index to the colour palette is changed
-If adjacent palette entries are similar, there might be little or no noticeable change, but should the adjacent palette entries be very dissimilar, the change would be eviden
-One possible solution is to sort the palette so that the colour differences between consecutive colours are minimize
-Another solution is to add new colours which are visually similar to the existing colours in the palette.  This requires the original image to have less unique colours than the maximum number of colour
-A final solution to the problem is to use greyscale images.  In an 8-bit greyscale GIF image, there are 256 different shades of grey [14].  The changes between the colours are very gradual, making it harder to detect.
+The problem with pallet approach is that if we perform LSB to pixel then it changes the index in lookup table and the new value (after substitution) could point to a totally different color and the change will be evident. There are few solutions to tackle this:
 
-Other notable techniques are:
+### Sorting the pallette
+If we sort the pallette then this will make adjecent lookup table entries similar thus we minimize the distortion.
+
+### Add new colors to pallette
+If original image has fewer colors then we could add similar colors in color pallete/lookup table and then perform regular LSB substitution.
+
+
+## Other notable techniques are:
 - Edges based data embedding method (EBE)
 - Random pixel embedding method (RPE)
 - Mapping pixel to hidden data method
