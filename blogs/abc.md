@@ -42,12 +42,24 @@ Lossy compression creates smaller files by discarding excess image data from the
 Example: JPEG
 
 ### Lossless Compression
-
 Lossless compression, on the other hand, never removes any information from the original image, but instead represents data in mathematical formulas [15].  The original image’s integrity is maintained and the decompressed image output is bit-by-bit identical to the original image input.
 
 Example: PNG, GIF and BMP
 
-Compression plays a very important role in choosing which steganographic algorithm to use.  Lossy compression techniques result in smaller image file sizes, but it increases the possibility that the embedded message may be partly lost due to the fact that excess image data will be removed [7].  Lossless compression though, keeps the original digital image intact without the chance of lost, although is does not compress the image to such a small file size [14].  Different steganographic algorithms have been developed for both of these compression types and will be explained in the following sections.
+Different steganographic algorithms have been developed for both of these compression types and will be explained in the following sections.
+
+# Spatial Domain Techniques
+These techniques embed messages in the intensity of the pixels directly.
+bit-wise methods that apply bit insertion and noise manipulation
+lossless images are best suited
+techniques are typically dependent on the image format
+
+# Frequency Domain Techniques
+In these techniques images are first transformed and then the message is embedded in the image.
+involves the manipulation of algorithms and image transforms
+These methods hide messages in more significant areas of the cover image, making it more robust.
+independent of the image format.
+
 
 ---
 
