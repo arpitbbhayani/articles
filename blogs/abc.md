@@ -26,11 +26,30 @@ An image is just a collection of numbers that constitute different intensities i
 
 ![8 bit grayscale monochrome image](https://user-images.githubusercontent.com/4745789/72497072-8e5a2400-3851-11ea-9b28-8705bbfea070.png)
 
-Digital colour images are typically stored in 24-bit files and use the RGB colour model. All colour variations for the pixels of a 24-bit image are derived from three primary colours: red, green and blue, and each primary colour is represented by 8 bits. Thus each pixel can take of one color from a pallete of 16-million colours.
+Digital colour images are typically stored in 24-bit pixel depth and use the RGB colour model. All colour variations for the pixels of a 24-bit image are derived from three primary colours: red, green and blue, and each primary colour is represented by 8 bits. Thus each pixel can take of one color from a pallete of 16-million colours.
 
 ![24 bit color palette](https://user-images.githubusercontent.com/4745789/72497287-23f5b380-3852-11ea-96e8-e5c8ffca0c9f.png)
 
-## ABC
+## Compression
+
+When working with larger images and greater color depth, the size of raw file can become really really huge and is not possible to transmit it over internet connection. To remedy this, compressed image formats were developed which as you guessed, compresses the pixel information keeping file sizes fairly small making it efficient to transmit it over standard internet connection.
+
+There are two types of compression techniques
+
+### Lossy Compression
+Lossy compression creates smaller files by discarding excess image data from the original image.  It removes details that are too small for the human eye to differentiate [15], resulting in close approximations of the original image, although not an exact duplicate
+
+Example: JPEG
+
+### Lossless Compression
+
+Lossless compression, on the other hand, never removes any information from the original image, but instead represents data in mathematical formulas [15].  The original image’s integrity is maintained and the decompressed image output is bit-by-bit identical to the original image input.
+
+Example: PNG, GIF and BMP
+
+Compression plays a very important role in choosing which steganographic algorithm to use.  Lossy compression techniques result in smaller image file sizes, but it increases the possibility that the embedded message may be partly lost due to the fact that excess image data will be removed [7].  Lossless compression though, keeps the original digital image intact without the chance of lost, although is does not compress the image to such a small file size [14].  Different steganographic algorithms have been developed for both of these compression types and will be explained in the following sections.
+
+---
 
 An image is composed of pixels and each pixel has 3 components for 3 primary colors Red, Blue, and Green. The perceived superposition of intensities of 3 primary colors determines the final color of the pixel. For example: When pure red is mixed with pure green we get yellow; or as shown in the diagram below, when we want an intermediary pale greenish shade we have mix red, blue and green in the right proportion.
 
