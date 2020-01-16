@@ -116,21 +116,5 @@ Apart from the above-mentioned DCT technique, there are several other techniques
  - [Lossless or reversible method (DCT)](https://www.researchgate.net/publication/330565811_Hiding_data_in_images_using_DCT_steganography_techniques_with_compression_algorithms)
  - [Embedding in coefficient bits](http://www.ijcee.org/papers/533-P0025.pdf)
 
-# Adhoc techniques
-There are techniques that are neither Spatial, not Frequency domain, I'd like to mention them in this section.
-
-## Patchwork
-Patchwork is a statistical technique that uses redundant pattern encoding to embed a message in an image
-The algorithm adds redundancy to the hidden information and then scatters it throughout the image.
-
-A pseudorandom generator is used to select two areas of the image (or patches), patch A and patch B [22].  All the pixels in patch A is lightened while the pixels in patch B is darkened [22].  In other words, the intensities of the pixels in the one patch are increased by a constant value, while the pixels of the other patch is decreased with the same constant value [6].  The contrast changes in this patch subset encode one bit and the changes are typically small and imperceptible, while not changing the average luminosity
-
-A disadvantage of the patchwork approach is that only one bit is embedded.  One can embed more bits by first dividing the image into sub-images and applying the embedding to each of them [23].  The advantage of using this technique is that the secret message is distributed over the entire image, so should one patch be destroyed, the others may still survive [17].  This, however, depends on the message size, since the message can only be repeated throughout the image if it is small enough.  If the message is too big, it can only be embedded once
-
-## Spread Spectrum
-In spread spectrum techniques, hidden data is spread throughout the cover-image making it harder to detect
-
-the message is embedded in noise and then combined with the cover image to produce the stego image. Since the power of the embedded signal is much lower than the power of the cover image, the embedded image is not perceptible to the human eye or by computer analysis without access to the original image.
-
 # Conclusion
 This is the first article in the series of Steganography that detailed out Image Steganography. I hope you reaped some benefits out of it. The future articles on Steganography will talk about how Steganography is done on carriers like Audio, Network, [DNA](https://www.sciencedirect.com/science/article/pii/S1877050917319804) and [Quantum](https://arxiv.org/abs/1006.1934) states and will also dive into one of the most interesting applications of Steganography - a [Steganographic File System](https://en.wikipedia.org/wiki/Steganographic_file_system). So stay tuned and watch this space for more.
