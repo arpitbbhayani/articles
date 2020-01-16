@@ -95,22 +95,20 @@ These techniques relative complex to comprehend and required a bit of advanced m
 To understand how steganography works for JPEG files, we will look into: how the raw data is compressed by JPEG and then we see how we could hide data in it.
 
 ### JPEG Compression
-According to research the human eye is more sensitive to changes in the brightness (luminance) of a pixel than to changes in its colour. We interpret brightness and color by contrast with adjacent regions. The compression phase takes advantage of this insight and transforms image from RGB color to [YCbCr](https://en.wikipedia.org/wiki/YCbCr) - separating brightness from color. In YUV representation the Y component corresponds to luminance (brightness - black-white) and Cb and Cr components for chrominance (color). Now we discard the color part from brightness by downsampling the color data to half in both horizontal and vertical directions thus directly halving the size of the file. This is the first stage of JPEG compression which is lossy.
+According to research the human eye is more sensitive to changes in the brightness (luminance) of a pixel than to changes in its colour. We interpret brightness and color by contrast with adjacent regions. The compression phase takes advantage of this insight and transforms image from RGB color to [YCbCr](https://en.wikipedia.org/wiki/YCbCr) - separating brightness from color. In YUV representation the Y component corresponds to luminance (brightness - black-white) and Cb and Cr components for chrominance (color). Now we discard the color part from brightness by downsampling the color data to half in both horizontal and vertical directions thus directly halving the size of the file.
 
 ![YCbCr transformation](https://user-images.githubusercontent.com/4745789/72549559-f1ca6d00-38b6-11ea-9760-bd1f35dbf455.png)
 
-The second stage of compression is lossless where processes the image in blocks of 8 x 8 and performs [Discrete Cosine Transform (DCT)](https://en.wikipedia.org/wiki/Discrete_cosine_transform) on each, then quantized 64 values into 1 and eliminates small differences. To dive more into DCT on JPEG I would recommend you to watch this [Computerphile video](https://www.youtube.com/watch?v=Q2aEzeMDHMA).
+Now the image in processed in blocks of 8 x 8 and we perform [Discrete Cosine Transform (DCT)](https://en.wikipedia.org/wiki/Discrete_cosine_transform) on each, then quantized (rounding) 64 values into 1 and eliminates small differences. To dive more into DCT on JPEG I would recommend you to watch this [Computerphile video](https://www.youtube.com/watch?v=Q2aEzeMDHMA).
+
+This is the first stage of JPEG compression which is lossy. Now this image data is then losslessly compressed using standard [Huffman encoding](https://en.wikipedia.org/wiki/Huffman_coding).
 
 ### JPEG Steganography
-Originally it was thought that steganography would not be possible to use with JPEG images.
-One of the major characteristics of steganography is the fact that information is hidden in the redundant bits of an object and since redundant bits are left out when using JPEG it was feared that the hidden message would be destroyed.
-somehow keep the message intact it would be difficult to embed the message without the changes being noticeable because of the harsh compression applied.
+Since JPEG images are already lossy compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if would try to hide/embed any message in it, it might get lost/destroyed/altered during compression or worse it might make noticeable changes in the image. But there is one ray of hope ... rounding error during DCT.
 
-It is neither feasible nor possible to embed information in an image that uses lossy compression, since the compression would destroy all information in the process
+During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information.
 
-One of these properties of JPEG is exploited to make the changes to the image invisible to the human eye.  During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable [14].  Although this property is what classifies the algorithm as being lossy,this property can also be used to hide messages.
-
-Thus it is important to recognize that the JPEG compression algorithm is actually divided into lossy and lossless stages.  The DCT and the quantization phase form part of the lossy stage, while the Huffman encoding used to further compress the data is lossless.  Steganography can take place between these two stages
+Thus it is important to recognize that the JPEG compression algorithm is actually divided into lossy and lossless stages. The DCT and the quantization phase form part of the lossy stage, while the Huffman encoding used to further compress the data is lossless.  Steganography can take place between these two stages
 
 Using the same principles of LSB insertion the message can be embedded into the least significant bits of the coefficients before applying the Huffman encoding.  By embedding the information at this stage, in the transform domain, it is extremely difficult to detect, since it is not in the visual domain.
 
