@@ -12,7 +12,7 @@ The above image shows microdots and camera that generated them.
 
 Since the rise of the Internet, the main concern has been the security of communication. The sole focus on making everything more secure by the day leads to the development of the field of Cryptography that deals with hiding the meaning of a message. The techniques of cryptography try to ensure that even when the message goes into the wrong hands. it is extremely difficult to extract the true meaning of the message.
 
-Sometimes, it becomes necessary to not only hide the meaning of the message but also hide its existence, and the field that deals with this is called Steganography. Both the fields protect the information in their own way but neither alone is perfect and can be compromised. Hence a hybrid approach where we encrypt the message and then hide its presence amplifies the security.
+Sometimes, it becomes necessary to not only hide the meaning of the message but also hide its existence, and the field that deals with this is called Steganography. Both the fields protect the information in their way but neither alone is perfect and can be compromised. Hence a hybrid approach where we encrypt the message and then hide its presence amplifies the security.
 
 Today steganography is mostly used on computers with digital data, like Image, Audio, Video, Network packets, etc, acting as the carriers/cover. There are a bunch of techniques for each of the mentioned carrier but this article only aims to provide an exhaustive overview of Image Steganography.
 
@@ -63,14 +63,14 @@ To hold more data into the image we can substitute not `1` but `k` least signifi
 A regular LSB substitution technique starts substituting from pixel `0` and goes till `n`; this method is highly predictable. To make things slightly challenging sender and receiver could share a secret key through which they agree on the certain pixels that will be altered with LSB. This randomness makes LSB more secure and robust.
 
 ## Adaptive LSB
-Adaptive LSB uses k-bit LSB and varies `k` as per the sensitivity of the image region over which it is applied. The method analyzes the edges, brightness, and texture of the image and calculates the value of `k` for that region and then does regular k-LSB on it. It keeps the value of `k` high at not-so-sensitive image region and low at the sensitive region. This balances the overall quality of the image and makes it even more difficult to see distortions.
+Adaptive LSB uses k-bit LSB and varies `k` as per the sensitivity of the image region over which it is applied. The method analyzes the edges, brightness, and texture of the image and calculates the value of `k` for that region and then does regular k-LSB on it. It keeps the value of `k` high at a not-so-sensitive image region and low at the sensitive region. This balances the overall quality of the image and makes it even more difficult to see distortions.
 
 Pixel-value differencing (PVD) scheme is a concrete implementation of adaptive LSB it uses the difference value between two consecutive pixels in a block to determine the number of secret bits to be embedded.
 
 ## LSB and Palette Based Images
 The persistence of Palette Based Images is very interesting. There is a color lookup table which holds all the colors that are used in the image. Each pixel is represented as a single byte and the pixel data is an index to the color palette. This is usually the case with GIF images as it cannot have a bit depth greater than 8, thus the maximum number of colors that a GIF can store is 256.
 
-The problem with the pallet approach is that if we perform LSB to pixel then it changes the index in the lookup table and the new value (after substitution) could point to a totally different color and the change will be evident. There are few solutions to tackle this:
+The problem with the pallet approach is that if we perform LSB to pixel then it changes the index in the lookup table and the new value (after substitution) could point to a different color and the change will be evident. There are few solutions to tackle this:
 
 ### Sorting the pallette
 If we sort the pallette then this will make adjacent lookup table entries similar thus we minimize the distortion.
@@ -79,7 +79,7 @@ If we sort the pallette then this will make adjacent lookup table entries simila
 If the original image has fewer colors then we could add similar colors in color pallette/lookup table and then perform regular LSB substitution.
 
 ## Other techniques
-Apart from the above-mentioned LSB substitution technique, there are several other techniques that exploit some aspect of the image and embeds data. I would highly recommend you at least give a skim to each of the following below:
+Apart from the above-mentioned LSB substitution technique, there are several other techniques that exploit some aspect of the image and embeds data. I would highly recommend you at least give a skim to each of the below:
 
  - [Edges based data embedding method (EBE)](https://link.springer.com/article/10.1186/1687-417X-2014-8)
  - [Random pixel embedding method (RPE)](https://ieeexplore.ieee.org/abstract/document/8276335)
@@ -87,7 +87,7 @@ Apart from the above-mentioned LSB substitution technique, there are several oth
  - [Labeling or connectivity method](https://www.researchgate.net/publication/239551978_Labeling_Method_in_Steganography)
 
 # Frequency Domain Techniques
-Spatial domain techniques directly starts putting in data from payload into image but Frequency domain techniques will first transform the image and then embed the data. The transformation step ensures that the message are hidden in more significant/less sensitive areas of the image, making the hiding more robust and makes the entire process independent of the image format. The areas in which the information is hidden are usually less exposed to compression, cropping, and  image  processing.
+Spatial domain techniques directly start putting in data from payload into an image but Frequency-domain techniques will first transform the image and then embed the data. The transformation step ensures that the message is hidden in more significant/less sensitive areas of the image, making the hiding more robust and makes the entire process independent of the image format. The areas in which the information is hidden are usually less exposed to compression, cropping, and image processing.
 
 These techniques relative complex to comprehend and required a bit of advanced mathematics to understand thoroughly. Images with lossy compression are ideal candidates and hence we dive a little deep into how JPEG steganography works.
 
@@ -95,21 +95,21 @@ These techniques relative complex to comprehend and required a bit of advanced m
 To understand how steganography works for JPEG files, we will look into: how the raw data is compressed by JPEG and then we see how we could hide data in it.
 
 ### JPEG Compression
-According to research the human eye is more sensitive to changes in the brightness (luminance) of a pixel than to changes in its colour. We interpret brightness and color by contrast with adjacent regions. The compression phase takes advantage of this insight and transforms image from RGB color to [YCbCr](https://en.wikipedia.org/wiki/YCbCr) - separating brightness from color. In YUV representation the Y component corresponds to luminance (brightness - black-white) and Cb and Cr components for chrominance (color). Now we discard the color part from brightness by downsampling the color data to half in both horizontal and vertical directions thus directly halving the size of the file.
+According to research, the human eye is more sensitive to changes in the brightness (luminance) of a pixel than to changes in its color. We interpret brightness and color by contrast with adjacent regions. The compression phase takes advantage of this insight and transforms the image from RGB color to [YCbCr](https://en.wikipedia.org/wiki/YCbCr) - separating brightness from color. In YUV representation the Y component corresponds to luminance (brightness - black-white) and Cb and Cr components for chrominance (color). Now we discard the color part from brightness by downsampling the color data to half in both horizontal and vertical directions thus directly halving the size of the file.
 
 ![YCbCr transformation](https://user-images.githubusercontent.com/4745789/72549559-f1ca6d00-38b6-11ea-9760-bd1f35dbf455.png)
 
-Now the image in processed in blocks of 8 x 8 and we perform [Discrete Cosine Transform (DCT)](https://en.wikipedia.org/wiki/Discrete_cosine_transform) on each, then quantized (rounding) 64 values into 1 and eliminates small differences. To dive more into DCT on JPEG I would recommend you to watch this [Computerphile video](https://www.youtube.com/watch?v=Q2aEzeMDHMA).
+Now the image in processed in blocks of 8 x 8 and we perform [Discrete Cosine Transform (DCT)](https://en.wikipedia.org/wiki/Discrete_cosine_transform) on each, then quantized (rounding) 64 values into 1 and eliminates small differences. To dive more into DCT on JPEG I would recommend you watch this [Computerphile video](https://www.youtube.com/watch?v=Q2aEzeMDHMA).
 
-This is the first stage of JPEG compression which is lossy. Now this image data is then losslessly compressed using standard [Huffman encoding](https://en.wikipedia.org/wiki/Huffman_coding).
+This is the first stage of JPEG compression which is lossy. Now this image data is then losslessly compressed using the standard [Huffman encoding](https://en.wikipedia.org/wiki/Huffman_coding).
 
 ### JPEG Steganography
-Since JPEG images are already lossy compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if would try to hide/embed any message in it, it might get lost/destroyed/altered during compression or worse it might make noticeable changes in the image. But there is one ray of hope ... rounding error during DCT.
+Since JPEG images are already lossily compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if would try to hide/embed any message in it, it might get lost/destroyed/altered during compression or worse it might make noticeable changes in the image. But there is one ray of hope ... rounding error during DCT.
 
-During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information. Steganography can take place between these two stages. The same principle of LSB substitution is used to embed message in the image. Once the LSBs are updated, the usual Huffman encoding will do its lossless compression and prepare the final compressed image.
+During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information. Steganography can take place between these two stages. The same principle of LSB substitution is used to embed a message in the image. Once the LSBs are updated, the usual Huffman encoding will do its lossless compression and prepare the final compressed image.
 
 ## Other techniques
-Apart from the above-mentioned DCT technique, there are several other techniques that uses different form of transform signal and embeds data. I would highly recommend you at least give a skim to each of the following below:
+Apart from the above-mentioned DCT technique, there are several other techniques that use a different form of transform signal and embeds data. I would highly recommend you at least give a skim to each of the following below:
 
  - [Discrete Fourier transformation technique (DFT)](https://link.springer.com/chapter/10.1007/978-3-642-20998-7_39)
  - [Discrete Wavelet transformation technique (DWT)](https://www.insight-centre.org/sites/default/files/publications/17.197_a_steganography_technique_for_images_based_on_wavelet_transform.pdf)
@@ -118,20 +118,20 @@ Apart from the above-mentioned DCT technique, there are several other techniques
 
 # Techniques that are neither Spatial nor Frequency domain
 
-There are techniques that are neither Spatial not Frequency domain, I'd like to mention them in this section.
+There are techniques that are neither Spatial, not Frequency domain, I'd like to mention them in this section.
 
 ## Patchwork
 Patchwork is a statistical technique that uses redundant pattern encoding to embed a message in an image
 The algorithm adds redundancy to the hidden information and then scatters it throughout the image.
 
-A pseudorandom generator is used to select two areas of the image (or patches), patch A and patch B [22].  All the pixels in patch A is lightened while the pixels in patch B is darkened [22].  In other words the intensities of the pixels in the one patch are increased by a constant value, while the pixels of the other patch are decreased with the same constant value [6].  The contrast changes in this patch subset encodes one bit and the changes are typically small and imperceptible, while not changing the average luminosity
+A pseudorandom generator is used to select two areas of the image (or patches), patch A and patch B [22].  All the pixels in patch A is lightened while the pixels in patch B is darkened [22].  In other words, the intensities of the pixels in the one patch are increased by a constant value, while the pixels of the other patch is decreased with the same constant value [6].  The contrast changes in this patch subset encode one bit and the changes are typically small and imperceptible, while not changing the average luminosity
 
-A disadvantage of the patchwork approach is that only one bit is embedded.  One can embed more bits by first dividing the image into sub-images and applying the embedding to each of them [23].  The advantage of using this technique is that the secret message is distributed over the entire image, so should one patch be destroyed, the others may still survive [17].  This however, depends on the message size, since the message can only be repeated throughout the image if it is small enough.  If the message is too big, it can only be embedded once
+A disadvantage of the patchwork approach is that only one bit is embedded.  One can embed more bits by first dividing the image into sub-images and applying the embedding to each of them [23].  The advantage of using this technique is that the secret message is distributed over the entire image, so should one patch be destroyed, the others may still survive [17].  This, however, depends on the message size, since the message can only be repeated throughout the image if it is small enough.  If the message is too big, it can only be embedded once
 
 ## Spread Spectrum
 In spread spectrum techniques, hidden data is spread throughout the cover-image making it harder to detect
 
-message is embedded in noise and then combined with the cover image to produce the stego image. Since the power of the embedded signal is much lower than the power of the cover image, the embedded image is not perceptible to the human eye or by computer analysis without access to the original image.
+the message is embedded in noise and then combined with the cover image to produce the stego image. Since the power of the embedded signal is much lower than the power of the cover image, the embedded image is not perceptible to the human eye or by computer analysis without access to the original image.
 
 # Conclusion
 This is the first article in the series of Steganography that detailed out Image Steganography. I hope you reaped some benefits out of it. The future articles on Steganography will talk about how Steganography is done on carriers like Audio, Network, [DNA](https://www.sciencedirect.com/science/article/pii/S1877050917319804) and [Quantum](https://arxiv.org/abs/1006.1934) states and will also dive into one of the most interesting applications of Steganography - a [Steganographic File System](https://en.wikipedia.org/wiki/Steganographic_file_system). So stay tuned and watch this space for more.
