@@ -59,15 +59,11 @@ In a 24 bit image we can store 3 bits in each pixel hence an 800 × 600 pixel im
 ### Extending LSB to k-LSB
 To hold more data into the image we can substitute not `1` but `k` least significant bits. But we do so the image starts to distort which is never a good sign but a well-chosen image could do the trick and you wouldn't notice any difference.
 
-IMAGES for multiple k
-
 ## Randomized LSB
-A slightly more secure system is for the sender and receiver to share a secret key that specifies only certain pixels to be changed
+A regular LSB substitution technique starts substituting from pixel `0` and goes till `n`; this method is highly predictable. To make things slightly challenging sender and receiver could share a secret key through which they agree on the certain pixels that will be altered with LSB. This randomness makes LSB more secure and robust.
 
 ## Adaptive LSB
-adaptive  LSB  substitution  based  data  hiding  method  for  image.
- it takes care of noise sensitive area for embedding
- This  method  analyzes  the  edges,  brightness  and  texture  masking  of  the cover image to calculate the number of k-bit LSB for secret data embedding. The value of k is high  at  non-sensitive  image  region  and  over  sensitive  image  area  k  value  remain  small  to  balance  overall  visual  quality  of  image.
+Adaptive LSB uses k-bit LSB and varies `k` as per sensitivity of image region over which it is applied. The method analyzes the edges, brightness and texture of the image and calculates the value of `k` for that region and then does regular k-LSB on it. It keeps the value of `k` high at not-so-sensitive image region and low at sensitive region. This balances the overall quality of the image and makes it even more difficult to see distortions.
 
 ## PVD
 The pixel-value differencing (PVD) scheme uses the difference value between two consecutive pixels in a block to determine how many secret bits should be embedded.
