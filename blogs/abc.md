@@ -37,16 +37,12 @@ When working with larger images and greater color depth, the size of raw file ca
 There are two types of compression techniques:
 
 ### Lossy Compression
-Lossy compression creates smaller files by discarding excess image data from the original image.  It removes details that are too small for the human eye to differentiate [15], resulting in close approximations of the original image, although not an exact duplicate
-
-Example: JPEG
+Lossy compression removes redundancies that are too small for human eye to differentiate and hence the compressed files are in close approximations of the original image, but not an exact duplicate. A famous file format that does lossy compression is [JPEG](https://en.wikipedia.org/wiki/JPEG).
 
 ### Lossless Compression
-Lossless compression, on the other hand, never removes any information from the original image, but instead represents data in mathematical formulas [15].  The original image’s integrity is maintained and the decompressed image output is bit-by-bit identical to the original image input.
+Lossless compression never removes any information from the original image, but instead represents data in mathematical formulas maintaining the integrity of original image; which means when uncompressed the file is be a bit-by-bit copy of the original. Formats that do lossless compression are [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics), [GIF](https://en.wikipedia.org/wiki/GIF) and [BMP](https://en.wikipedia.org/wiki/BMP_file_format).
 
-Example: PNG, GIF and BMP
-
-Different steganographic algorithms have been developed for both of these compression types and will be explained in the following sections.
+Steganographic algorithms take into consideration the file format, compression method and picture semantic and look to exploit them by finding redundancies and using it to conceal extra information.
 
 # Spatial Domain Techniques
 These techniques embed messages in the intensity of the pixels directly.
