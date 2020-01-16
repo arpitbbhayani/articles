@@ -87,12 +87,7 @@ Apart from the above-mentioned LSB substitution technique, there are several oth
  - Labeling or connectivity method
 
 # Frequency Domain Techniques
-In these techniques images are first transformed and then the message is embedded in the image.
-involves the manipulation of algorithms and image transforms
-These methods hide messages in more significant areas of the cover image, making it more robust.
-independent of the image format.
-
-Transform  domain  techniques  have  an  advantage  over  spatial  domain  techniques   as   they   hide   information   in   areas   of   the   image   that   are   less   exposed   to   compression,  cropping,  and  image  processing
+Spatial domain techniques directly starts putting in data from payload into image but Frequency domain techniques will first transform the image and then embed the data. The transformation step ensures that the message are hidden in more significant/less sensitive areas of the image, making the hiding more robust and makes the entire process independent of the image format. The areas in which the information is hidden are usually less exposed to compression, cropping, and  image  processing.
 
 ## Discrete Fourier transformation technique (DFT).
 ## Discrete cosine transformation technique (DCT)
