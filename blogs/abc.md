@@ -22,7 +22,7 @@ Images are an excellent medium for concealing information because they provide a
 
 ## Color depth and definition
 
-An image is just a collection of numbers that constitute different intensities in different areas of the image. It is arranged in a gird, which defines the resolution of the image, and each point on the grid is called a pixel. Each pixel is defined by a fixed number of bits and this determines its color scheme. The smallest bit depth is 8. Monochrome and greyscale images use 8 bits for each pixel and are able to display 256 different colours or shades of grey.
+An image is a collection of numbers that defines color intensities in different areas of the image. It is arranged in a gird, which determines the resolution of the image, and each point on the grid is called a pixel. Each pixel is defined by a fixed number of bits and this is its color scheme. The smallest color depth is 8 bit, in monochrome and greyscale images, and it displays 256 different colours or shades of grey as shown below.
 
 ![8 bit grayscale monochrome image](https://user-images.githubusercontent.com/4745789/72497072-8e5a2400-3851-11ea-9b28-8705bbfea070.png)
 
