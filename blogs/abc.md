@@ -52,13 +52,118 @@ Different steganographic algorithms have been developed for both of these compre
 These techniques embed messages in the intensity of the pixels directly.
 bit-wise methods that apply bit insertion and noise manipulation
 lossless images are best suited
-techniques are typically dependent on the image format
+techniques are typically dependent on the image format.
+
+## LSB Substitution
+The least significant bit (in other words, the 8th bit) of some or all of the bytes inside an image is changed to a bit of the secret message.
+When using a 24-bit image, a bit of each of the red, green and blue colour components can be used, since they are each represented by a byte.
+In other words, one can store 3 bits in each pixel.  An 800 × 600 pixel image, can thus store a total amount of 1,440,000 bits or 180,000 bytes of embedded data [19].  For example a grid for 3 pixels of a 24-bit image can be as follows
+
+IMAGE FOR LSB subs.
+
+Since there are 256 possible intensities of each primary colour, changing the LSB of a pixel results in small changes in the intensity of the colours.
+changes cannot be perceived by the human eye - thus the message is successfully hidden.
+With a well-chosen image, one can even hide the message in the least as well as second to least significant bit and still not see the difference
+
+
+This approach is very easy to detect.
+A slightly more secure system is for the sender and receiver to share a secret key that specifies only certain pixels to be changed
+
+## Randomized LSB
+A slightly more secure system is for the sender and receiver to share a secret key that specifies only certain pixels to be changed
+
+## Adaptive LSB
+adaptive  LSB  substitution  based  data  hiding  method  for  image.
+ it takes care of noise sensitive area for embedding
+ This  method  analyzes  the  edges,  brightness  and  texture  masking  of  the cover image to calculate the number of k-bit LSB for secret data embedding. The value of k is high  at  non-sensitive  image  region  and  over  sensitive  image  area  k  value  remain  small  to  balance  overall  visual  quality  of  image.
+
+## PVD
+The pixel-value differencing (PVD) scheme uses the difference value between two consecutive pixels in a block to determine how many secret bits should be embedded.
+hides large and adaptive k-LSB substitution at edge area of image and PVD for smooth region of  image.
+a cover image is partitioned into non-overlapping blocks of two consecutive pixels. A difference value is calculated from the values of the two pixels in each block. All possible difference values are classified into a number of ranges. The selection of the range intervals is based on the characteristics of human vision’s sensitivity to gray value variations from smoothness to contrast. The difference value then is replaced by a new value to embed the value of a sub-stream of the secret message. The number of bits which can be embedded in a pixel pair is decided by the width of the range that the difference value belongs to. The method is designed in such a way that the modification is never out of the range interval. This method provides an easy way to produce a more imperceptible result than those yielded by simple least-significant-bit replacement methods. The embedded secret message can be extracted from the resulting stego-image without referencing the original cover image. Moreover, a pseudo-random mechanism may be used to achieve secrecy
+
+
+Hiding data in the LSBs of the pixels of a gray-valued image is a common information hid-ing method that utilizes the characteristic of thehuman visionÕs insensitivity to small changes in theimage. This simple LSB embedding approach iseasy for computation, and a large amount of datacan be embedded without great quality loss. Themore LSBs are used for embedding, the moredistorted result will be produced. Not all pixels inan image can tolerate equal amounts of changeswithout causing notice to an observer. The largestnumber of LSBs whose gray values can be changedwithout producing a perceptible artifact in eachpixel is different. Changes of the gray values ofpixels in smooth areas in images are more easilynoticed by human eyes. In the embedding methodwe propose, we simply divide the cover image intoa number of non-overlapping two-pixel blocks.Each block is categorized according to the differ-ence of the gray values of the two pixels in theblock. A small difference value indicates that theblock is in a smooth area and a large one indicatesthat it is in an edged area. The pixels in edgedareas may, as mentioned previously, tolerate largerchanges of pixel values than those in the smoothareas. So, in the proposed method we embed moredata in edged areas than in the smooth areas. Andit is in this way that we keep the changes in theresulting stego-image unnoticeable.A flowchart of the proposed embedding methodis sketched in Fig. 1. The process of quantizationof the differences of the gray values of two-pixelblocks and the process of data embedding aredescribed subsequently.2.1. Quantizatio
+
+https://people.cs.nctu.edu.tw/~whtsai/Journal%20Paper%20PDFs/Wu_&_Tsai_PRL_2003.pdf
+
+
+
+
+## LSB and Palette Based Images
+By definition a GIF image cannot have a bit depth greater than 8, thus the maximum number of colours that a GIF can store is 256
+GIF images are indexed images where the colours used in the image are stored in a palette, sometimes referred to as a colour lookup table
+Each pixel is represented as a single byte and the pixel data is an index to the colour palette
+
+
+
+The problem with the palette approach used with GIF images is that should one change the least significant bit of a pixel, it can result in a completely different colour since the index to the colour palette is changed
+If adjacent palette entries are similar, there might be little or no noticeable change, but should the adjacent palette entries be very dissimilar, the change would be eviden
+One possible solution is to sort the palette so that the colour differences between consecutive colours are minimize
+Another solution is to add new colours which are visually similar to the existing colours in the palette.  This requires the original image to have less unique colours than the maximum number of colour
+A final solution to the problem is to use greyscale images.  In an 8-bit greyscale GIF image, there are 256 different shades of grey [14].  The changes between the colours are very gradual, making it harder to detect.
+
+## Pixel value differencing (PVD)
+## Edges based data embedding method (EBE)
+## Random pixel embedding method (RPE)
+## Mapping pixel to hidden data method
+## Labeling or connectivity method
+In [10], authors have introduced a data hiding technique where it finds out the dark area of the  image  to  hide  the  data  using  LSB.  It  converts  it  to  binary  image  and  labels  each  object  using   8   pixel   connectivity   schemes   for   hiding   data   bits.   This   method   required   highcomputation  to  find  dark  region  its  connectivity  and  has  not  tested  on  high  texture  type  of  image. Its hiding capacity totally depends on texture of image.
 
 # Frequency Domain Techniques
 In these techniques images are first transformed and then the message is embedded in the image.
 involves the manipulation of algorithms and image transforms
 These methods hide messages in more significant areas of the cover image, making it more robust.
 independent of the image format.
+
+Transform  domain  techniques  have  an  advantage  over  spatial  domain  techniques   as   they   hide   information   in   areas   of   the   image   that   are   less   exposed   to   compression,  cropping,  and  image  processing
+
+## Discrete Fourier transformation technique (DFT).
+## Discrete cosine transformation technique (DCT)
+## Discrete Wavelet transformation technique (DWT)
+## Lossless or reversible method (DCT)
+## Embedding in coefficient bits
+
+## JPEG steganography
+To compress an image into JPEG format, the RGB colour representation is first converted to a YUV representation. In this representation the Y component corresponds to the luminance (or brightness) and the U and V components stand for chrominance (or colour) [1]
+
+### JPEG Compression
+
+According to research the human eye is more sensitive to changes in the brightness (luminance) of a pixel than to changes in its colour.
+This fact is exploited by the JPEG compression by downsampling the colour data to reduce the size of the file. The colour components (U and V) are halved in horizontal and vertical directions, thus decreasing the file size by a factor of 2.
+
+For JPEG, the Discrete Cosine Transform (DCT) is used, but similar transforms are for example the Discrete Fourier Transform (DFT).
+
+the strength of higher frequencies can be diminished, without changing the appearance of the image.
+
+### Steganography
+Originally it was thought that steganography would not be possible to use with JPEG images.
+One of the major characteristics of steganography is the fact that information is hidden in the redundant bits of an object and since redundant bits are left out when using JPEG it was feared that the hidden message would be destroyed.
+somehow keep the message intact it would be difficult to embed the message without the changes being noticeable because of the harsh compression applied.
+
+It is neither feasible nor possible to embed information in an image that uses lossy compression, since the compression would destroy all information in the process
+
+One of these properties of JPEG is exploited to make the changes to the image invisible to the human eye.  During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable [14].  Although this property is what classifies the algorithm as being lossy,this property can also be used to hide messages.
+
+Thus it is important to recognize that the JPEG compression algorithm is actually divided into lossy and lossless stages.  The DCT and the quantization phase form part of the lossy stage, while the Huffman encoding used to further compress the data is lossless.  Steganography can take place between these two stages
+
+Using the same principles of LSB insertion the message can be embedded into the least significant bits of the coefficients before applying the Huffman encoding.  By embedding the information at this stage, in the transform domain, it is extremely difficult to detect, since it is not in the visual domain.
+
+
+# Spacial or Freq domain technique
+
+## Patchwork
+Patchwork is a statistical technique that uses redundant pattern encoding to embed a message in an image
+The algorithm adds redundancy to the hidden information and then scatters it throughout the image.
+
+A pseudorandom generator is used to select two areas of the image (or patches), patch A and patch B [22].  All the pixels in patch A is lightened while the pixels in patch B is darkened [22].  In other words the intensities of the pixels in the one patch are increased by a constant value, while the pixels of the other patch are decreased with the same constant value [6].  The contrast changes in this patch subset encodes one bit and the changes are typically small and imperceptible, while not changing the average luminosity
+
+A disadvantage of the patchwork approach is that only one bit is embedded.  One can embed more bits by first dividing the image into sub-images and applying the embedding to each of them [23].  The advantage of using this technique is that the secret message is distributed over the entire image, so should one patch be destroyed, the others may still survive [17].  This however, depends on the message size, since the message can only be repeated throughout the image if it is small enough.  If the message is too big, it can only be embedded once
+
+## Spread Spectrum
+In spread spectrum techniques, hidden data is spread throughout the cover-image making it harder to detect
+
+message is embedded in noise and then combined with the cover image to produce the stego image. Since the power of the embedded signal is much lower than the power of the cover image, the embedded image is not perceptible to the human eye or by computer analysis without access to the original image.
 
 
 ---
