@@ -18,6 +18,18 @@ Today steganography is mostly used on computers with digital data, like Image, A
 
 Images are an excellent medium for concealing information because they provide a high degree of redundancy - which means that there are a lots of bits that provide accuracy far greater than necessary for object's use (display). Image steganography techniques exploits these redundant bits to hide the information/payload by altering them in such a way that alterations are not detected easily.
 
+## Color depth and definition
+
+An image is just a collection of numbers that constitute different intensities in different areas of the image. It is arranged in a gird, which defines the resolution of the image, and each point on the grid is called a pixel. Each pixel is defined by a fixed number of bits and this determines its color scheme. The smallest bit depth is 8. Monochrome and greyscale images use 8 bits for each pixel and are able to display 256 different colours or shades of grey.
+
+![8 bit grayscale monochrome image](https://user-images.githubusercontent.com/4745789/72496682-59999d00-3850-11ea-874b-bca87b17822d.png)
+
+Digital colour images are typically stored in 24-bit files and use the RGB colour model. All colour variations for the pixels of a 24-bit image are derived from three primary colours: red, green and blue, and each primary colour is represented by 8 bits. Thus each pixel can take of one color from a pallete of 16-million colours.
+
+![24 bit color palette](https://user-images.githubusercontent.com/4745789/72496760-98c7ee00-3850-11ea-9f3c-63c1659d1901.jpg)
+
+## ABC
+
 An image is composed of pixels and each pixel has 3 components for 3 primary colors Red, Blue, and Green. The perceived superposition of intensities of 3 primary colors determines the final color of the pixel. For example: When pure red is mixed with pure green we get yellow; or as shown in the diagram below, when we want an intermediary pale greenish shade we have mix red, blue and green in the right proportion.
 
 ![rgb superposition](https://user-images.githubusercontent.com/4745789/72423997-454f9480-37ab-11ea-9ffc-1513db5715ef.png)
