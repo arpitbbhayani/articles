@@ -99,11 +99,7 @@ According to research the human eye is more sensitive to changes in the brightne
 
 ![YCbCr transformation](https://user-images.githubusercontent.com/4745789/72549559-f1ca6d00-38b6-11ea-9760-bd1f35dbf455.png)
 
-The second stage of compression is lossless.
-
-For JPEG, the Discrete Cosine Transform (DCT) is used, but similar transforms are for example the Discrete Fourier Transform (DFT).
-
-the strength of higher frequencies can be diminished, without changing the appearance of the image.
+The second stage of compression is lossless where processes the image in blocks of 8 x 8 and performs [Discrete Cosine Transform (DCT)](https://en.wikipedia.org/wiki/Discrete_cosine_transform) on each, then quantized 64 values into 1 and eliminates small differences. To dive more into DCT on JPEG I would recommend you to watch this [Computerphile video](https://www.youtube.com/watch?v=Q2aEzeMDHMA).
 
 ### JPEG Steganography
 Originally it was thought that steganography would not be possible to use with JPEG images.
