@@ -81,10 +81,10 @@ If the original image has fewer colors then we could add similar colors in color
 ## Other techniques
 Apart from the above-mentioned LSB substitution technique, there are several other techniques that exploit some aspect of the image and embeds data. I would highly recommend you at least give a skim to each of the following below:
 
- - Edges based data embedding method (EBE)
- - Random pixel embedding method (RPE)
- - Mapping pixel to hidden data method
- - Labeling or connectivity method
+ - [Edges based data embedding method (EBE)](https://link.springer.com/article/10.1186/1687-417X-2014-8)
+ - [Random pixel embedding method (RPE)](https://ieeexplore.ieee.org/abstract/document/8276335)
+ - [Mapping pixel to hidden data method](https://www.researchgate.net/publication/26623039_Image_Steganography_by_Mapping_Pixels_to_Letters)
+ - [Labeling or connectivity method](https://www.researchgate.net/publication/239551978_Labeling_Method_in_Steganography)
 
 # Frequency Domain Techniques
 Spatial domain techniques directly starts putting in data from payload into image but Frequency domain techniques will first transform the image and then embed the data. The transformation step ensures that the message are hidden in more significant/less sensitive areas of the image, making the hiding more robust and makes the entire process independent of the image format. The areas in which the information is hidden are usually less exposed to compression, cropping, and  image  processing.
@@ -108,14 +108,13 @@ Since JPEG images are already lossy compressed (redundant bits are already throw
 
 During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information. Steganography can take place between these two stages. The same principle of LSB substitution is used to embed message in the image. Once the LSBs are updated, the usual Huffman encoding will do its lossless compression and prepare the final compressed image.
 
-
 ## Other techniques
 Apart from the above-mentioned DCT technique, there are several other techniques that uses different form of transform signal and embeds data. I would highly recommend you at least give a skim to each of the following below:
 
- - Discrete Fourier transformation technique (DFT)
- - Discrete Wavelet transformation technique (DWT)
- - Lossless or reversible method (DCT)
- - Embedding in coefficient bits
+ - [Discrete Fourier transformation technique (DFT)](https://link.springer.com/chapter/10.1007/978-3-642-20998-7_39)
+ - [Discrete Wavelet transformation technique (DWT)](https://www.insight-centre.org/sites/default/files/publications/17.197_a_steganography_technique_for_images_based_on_wavelet_transform.pdf)
+ - [Lossless or reversible method (DCT)](https://www.researchgate.net/publication/330565811_Hiding_data_in_images_using_DCT_steganography_techniques_with_compression_algorithms)
+ - [Embedding in coefficient bits](http://www.ijcee.org/papers/533-P0025.pdf)
 
 # Techniques that are both Spatial and Frequency domain
 
