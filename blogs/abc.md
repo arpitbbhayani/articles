@@ -32,9 +32,9 @@ Digital colour images are typically stored in 24-bit pixel depth and use the RGB
 
 ## Compression
 
-When working with larger images and greater color depth, the size of raw file can become really really huge and is not possible to transmit it over internet connection. To remedy this, compressed image formats were developed which as you guessed, compresses the pixel information keeping file sizes fairly small making it efficient to transmit it over standard internet connection.
+When working with larger images and greater color depth, the size of raw file can become really really big and it becomes impossible to transmit it over standard internet connection. To remedy this, compressed image formats were developed which, as you would have guessed, compresses the pixel information keeping file sizes fairly small making it efficient for transmission.
 
-There are two types of compression techniques
+There are two types of compression techniques:
 
 ### Lossy Compression
 Lossy compression creates smaller files by discarding excess image data from the original image.  It removes details that are too small for the human eye to differentiate [15], resulting in close approximations of the original image, although not an exact duplicate
