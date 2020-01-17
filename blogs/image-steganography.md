@@ -110,7 +110,7 @@ This is the first stage of JPEG compression which is lossy. Now this image data 
 ### JPEG Steganography
 Since JPEG images are already lossily compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if we would try to hide or embed any message in it, it might get either lost, destroyed or altered during compression adding some noticeable changes to the image. The complete JPEG encoding process is as shown in the diagram below
 
-![JPEG Process](https://user-images.githubusercontent.com/4745789/72601948-672c5100-393c-11ea-9f07-abc5b18e1d53.png)
+![JPEG Process](https://user-images.githubusercontent.com/4745789/72615006-a87f2980-3959-11ea-872f-733c9523a411.png)
 
 The entire process could be split into two stages, the first is where redundancy is removed and the second is where the data is encoded using Huffman encoding. During the DCT transformation phase, rounding errors occur in the coefficient data that are not noticeable and this makes the algorithm lossy. Once this stage is over we have a change to perform usual LSB substitution and embed the message. Since stage 2 of JPEG compression is lossless, due to Huffman encoding, we are sure that none of our substituted data will be lost. Thus we sandwich the steganography between the lossy and lossless stages of JPEG compression.
 
