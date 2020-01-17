@@ -16,7 +16,7 @@ Today steganography is mostly used on computers with digital data, like Image, A
 
 # Image Steganography
 
-Images are an excellent medium for concealing information because they provide a high degree of redundancy - which means that there are lots of bits that provide accuracy far greater than necessary for object's use (display). Steganography techniques exploit these redundant bits to hide the information/payload by altering them in such a way that alterations cannot be detected easily.
+Images are an excellent medium for concealing information because they provide a high degree of redundancy - which means that there are lots of bits that are there to provide accuracy far greater than necessary for object's use (or display). Steganography techniques exploit these redundant bits to hide the information/payload by altering them in such a way that alterations cannot be detected easily by humans or computers.
 
 ## Color depth and definition
 
