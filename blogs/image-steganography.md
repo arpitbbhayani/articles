@@ -114,6 +114,8 @@ This is the first stage of JPEG compression which is lossy. Now this image data 
 ### JPEG Steganography
 Since JPEG images are already lossily compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if would try to hide/embed any message in it, it might get lost/destroyed/altered during compression or worse it might make noticeable changes in the image. But there is one ray of hope ... rounding error during DCT.
 
+![JPEG Process](https://user-images.githubusercontent.com/4745789/72601716-f5540780-393b-11ea-9e86-ff3a92455bc8.png)
+
 During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information. Steganography can take place between these two stages. The same principle of LSB substitution is used to embed a message in the image. Once the LSBs are updated, the usual Huffman encoding will do its lossless compression and prepare the final compressed image.
 
 ## Other techniques
