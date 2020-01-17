@@ -30,12 +30,12 @@ Digital color images are typically stored in 24-bit pixel depth and use RGB colo
 
 ## Compression
 
-When working with larger images and greater color depth, the size of the raw file can become big and it becomes impossible to transmit it over a standard internet connection. To remedy this, compressed image formats were developed which, as you would have guessed, compresses the pixel information keeping file sizes fairly small making it efficient for transmission.
+When working with high resolution images with a greater color depth, the size of the raw file can become big and it becomes impossible to transmit it over a standard internet connection. To remedy this, compressed image formats were developed which, as you would have guessed, compresses the pixel information and keeps file sizes fairly small, making it efficient for transmission.
 
 Compression techniques can be broadly classified into the following two classes
 
 ### Lossy Compression
-Lossy compression removes redundancies that are too small for the human eye to differentiate and hence the compressed files are in close approximations of the original image, but not an exact duplicate. A famous file format that does lossy compression is [JPEG](https://en.wikipedia.org/wiki/JPEG).
+Lossy compression removes redundancies that are too small for the human eye to differentiate which makes the compressed files a close approximate, but not an exact duplicate of the original one. A famous file format that does lossy compression is [JPEG](https://en.wikipedia.org/wiki/JPEG).
 
 ### Lossless Compression
 Lossless compression never removes any information from the original image, but instead represents data in mathematical formulas maintaining the integrity of the original image; which means when uncompressed the file is a bit-by-bit copy of the original. Formats that do lossless compression are [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics), [GIF](https://en.wikipedia.org/wiki/GIF) and [BMP](https://en.wikipedia.org/wiki/BMP_file_format).
