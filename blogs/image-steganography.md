@@ -67,22 +67,20 @@ To hold more data into the image we can substitute not `1` but `k` least signifi
 A regular LSB substitution technique starts substituting from pixel `0` and goes till `n` making this method highly predictable. To make things slightly challenging sender and receiver could share a secret key through which they agree on the certain pixels that will be altered making the technique more robust.
 
 ## Adaptive LSB
-Adaptive LSB uses k-bit LSB and varies `k` as per the sensitivity of the image region over which it is applied. The method analyzes the edges, brightness, and texture of the image and calculates the value of `k` for that region and then does regular k-LSB on it. It keeps the value of `k` high at a not-so-sensitive image region and low at the sensitive region. This balances the overall quality of the image and makes it even more difficult to see distortions.
+Adaptive LSB uses k-bit LSB and varies `k` as per the sensitivity of the image region over which it is applied. The method analyzes the edges, brightness, and texture of the image and calculates the value of `k` for that region and then does regular k-LSB substitution on it. It keeps the value of `k` high at a not-so-sensitive image region and low at the sensitive region. These alterations ensure that the overall quality of the image is balanced and distortions harder to detect.
 
-**Pixel-value differencing (PVD)** scheme is a concrete implementation of adaptive LSB it uses the difference value between two consecutive pixels in a block to determine the number of secret bits to be embedded.
+**Pixel-value differencing (PVD)** scheme is a concrete implementation of adaptive LSB and it uses the difference of values between two consecutive pixels in a block to determine the number of secret bits to be embedded.
 
 ## LSB and Palette Based Images
-The persistence of Palette Based Images is very interesting. There is a color lookup table which holds all the colors that are used in the image. Each pixel is represented as a single byte and the pixel data is an index to the color palette. This is usually the case with GIF images as it cannot have a bit depth greater than 8, thus the maximum number of colors that a GIF can store is 256.
-
-The problem with the pallet approach is that if we perform LSB to pixel then it changes the index in the lookup table and the new value (after substitution) could point to a different color and the change will be evident. There are few ways to tackle this
+The persistence of Palette Based Images is very interesting. There is a color lookup table which holds all the colors that are used in the image. Each pixel is represented as a single byte and the pixel data is an index to the color palette. GIF images work on this principle; it cannot have a bit depth greater than 8, thus the maximum number of colors that a GIF can store is 256. Now if we perform LSB substitution to pixel data then it changes the index in the lookup table (palette) and the new value (after substitution), that points to the index on lookup table (palette), could point to a different color and the change will be evident. We could still do steganographyy on palette based images using following workarounds
 
 ![pallette based image](https://user-images.githubusercontent.com/4745789/72600791-4ebb3700-393a-11ea-8e3e-2ddf389e85d1.png)
 
 ### Sorting the pallette
-If we sort the pallette then this will make adjacent lookup table entries similar thus we minimize the distortion.
+The LSB substitution alters the value by +-1 and hence it will always point to neighboring entry in table. Hence we sort the pallette by color then this will make adjacent lookup table entries similar to each other and minimize the distortion.
 
 ### Add new colors to pallette
-If the original image has fewer colors then we could add similar colors in color pallette/lookup table and then perform regular LSB substitution.
+If the original image has fewer colors then we could add similar colors in color pallette/lookup table and then perform regular LSB substitution. Again the +-1 alteration will make that pixel point to some similar color in the lookup table.
 
 ## Other techniques
 Apart from the above-mentioned LSB substitution technique, there are techniques that exploit some aspect of the image and embeds data. I would highly recommend you at least give a skim to each of the below:
