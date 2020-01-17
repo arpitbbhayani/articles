@@ -48,11 +48,17 @@ Steganographic techniques take into consideration the file format, compression m
 Spatial domain techniques embed the secret message/payload in the intensity of the pixels directly; which means they update the pixel data by either inserting or substituting bits or manipulating noise in the image. Lossless images are best suited for these techniques as compression would not alter the embedded data. These techniques have to be aware of the image format to make concealing information fool-proof.
 
 ## LSB Substitution
-This technique converts the secret message/payload into a bitstream and substitutes them into a least significant bit (the 8th bit) of some or all bytes inside an image. When using a 24-bit image, a bit of each of the red, green and blue color components is substituted. Since there are 256 possible intensities of each primary color, changing the LSB of pixel results in small changes in the intensity of the colors and this change cannot be perceived by the human eye. See the comparison below.
+This technique converts the secret message/payload into a bitstream and substitutes them into a least significant bit (the 8th bit) of some or all bytes inside an image. The alterations happen on the least significant bit which changes the intensity by +-1 which is extremely difficult for human eye to detect.
+
+![lsb diagram](https://user-images.githubusercontent.com/4745789/72587393-1eb06b80-391b-11ea-89ce-eb72be220a89.png)
+
+When using a 24-bit image, a bit of each of the red, green and blue color components is substituted. Since there are 256 possible intensities of each primary color, changing the LSB of pixel results in small changes in the intensity of the colors.
+
+![24 bit image LSB substitution](https://user-images.githubusercontent.com/4745789/72589054-2de5e800-3920-11ea-9c0a-c9f878fcd525.png)
+
+See if you can spot what has changed in the images below. The image on the right has about 1KB long text message embedded through LSB substitution, but looks same as the original image.
 
 ![lsb cat diff](https://user-images.githubusercontent.com/4745789/72535218-31d12600-389e-11ea-9463-011fa42e430c.png)
-
-The image on the right has about 1KB long text message embedded through LSB substitution but can you spot any difference?
 
 In a 24 bit image we can store 3 bits in each pixel hence an 800 × 600 pixel image, can thus store a total amount of 1,440,000 bits or 180,000 bytes ~ 175KB of embedded data.
 
