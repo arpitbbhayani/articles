@@ -20,11 +20,11 @@ Images are an excellent medium for concealing information because they provide a
 
 ## Color depth and definition
 
-An image is a collection of numbers that defines color intensities in different areas of the image. It is arranged in a gird, which determines the resolution of the image, and each point on the grid is called a pixel. Each pixel is defined by a fixed number of bits and this is its color scheme. The smallest color depth is 8 bit, in monochrome and greyscale images, and it displays 256 different colors or shades of grey as shown below.
+An image is a collection of numbers that defines color intensities in different areas of the image. It is arranged in a gird, which is the resolution of the image, and each point on the grid is called a pixel. Each pixel is defined by a fixed number of bits and this is its color scheme. The smallest color depth is 8 bit (in monochrome and greyscale images) and it displays 256 different colors or shades of grey as shown below.
 
 ![8-bit grayscale monochrome image](https://user-images.githubusercontent.com/4745789/72497072-8e5a2400-3851-11ea-9b28-8705bbfea070.png)
 
-Digital color images are typically stored in 24-bit pixel depth and use the RGB color model. All color variations for the pixels of a 24-bit image are derived from three primary colors: red, green and blue, and each primary color is represented by 8 bits. Thus each pixel can take of one color from a palette of 16-million colors.
+Digital color images are typically stored in 24-bit pixel depth and use RGB color model. All color variations for the pixels of a 24-bit image are derived from three primary colors: red, green and blue, and each primary color is represented by 8 bits. Thus each pixel takes of one from a palette of 16-million colors.
 
 ![24-bit color palette](https://user-images.githubusercontent.com/4745789/72497287-23f5b380-3852-11ea-96e8-e5c8ffca0c9f.png)
 
