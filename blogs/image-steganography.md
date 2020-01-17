@@ -34,7 +34,7 @@ Digital color images are typically stored in 24-bit pixel depth and use the RGB 
 
 When working with larger images and greater color depth, the size of the raw file can become big and it becomes impossible to transmit it over a standard internet connection. To remedy this, compressed image formats were developed which, as you would have guessed, compresses the pixel information keeping file sizes fairly small making it efficient for transmission.
 
-Compression techniques can be broadly classified into following two classes
+Compression techniques can be broadly classified into the following two classes
 
 ### Lossy Compression
 Lossy compression removes redundancies that are too small for the human eye to differentiate and hence the compressed files are in close approximations of the original image, but not an exact duplicate. A famous file format that does lossy compression is [JPEG](https://en.wikipedia.org/wiki/JPEG).
@@ -48,7 +48,7 @@ Steganographic techniques take into consideration the file format, compression m
 Spatial domain techniques embed the secret message/payload in the intensity of the pixels directly; which means they update the pixel data by either inserting or substituting bits or manipulating noise in the image. Lossless images are best suited for these techniques as compression would not alter the embedded data. These techniques have to be aware of the image format to make concealing information fool-proof.
 
 ## LSB Substitution
-This technique converts the secret message/payload into a bitstream and substitutes them into a least significant bit (the 8th bit) of some or all bytes inside an image. The alterations happen on the least significant bit which changes the intensity by +-1 which is extremely difficult for human eye to detect.
+This technique converts the secret message/payload into a bitstream and substitutes them into a least significant bit (the 8th bit) of some or all bytes inside an image. The alterations happen on the least significant bit which changes the intensity by +-1 which is extremely difficult for the human eye to detect.
 
 ![lsb diagram](https://user-images.githubusercontent.com/4745789/72587393-1eb06b80-391b-11ea-89ce-eb72be220a89.png)
 
@@ -56,7 +56,7 @@ When using a 24-bit image, a bit of each of the red, green and blue color compon
 
 ![24 bit image LSB substitution](https://user-images.githubusercontent.com/4745789/72589054-2de5e800-3920-11ea-9c0a-c9f878fcd525.png)
 
-See if you can spot what has changed in the images below. The image on the right has about 1KB long text message embedded through LSB substitution, but looks same as the original image.
+See if you can spot what has changed in the images below. The image on the right has about 1KB long text message embedded through LSB substitution but looks the same as the original image.
 
 ![lsb cat diff](https://user-images.githubusercontent.com/4745789/72535218-31d12600-389e-11ea-9463-011fa42e430c.png)
 
@@ -112,11 +112,11 @@ Now the image is processed in blocks of 8 x 8 and we perform [Discrete Cosine Tr
 This is the first stage of JPEG compression which is lossy. Now this image data is then losslessly compressed using the standard [Huffman encoding](https://en.wikipedia.org/wiki/Huffman_coding).
 
 ### JPEG Steganography
-Since JPEG images are already lossily compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if would try to hide/embed any message in it, it might get lost/destroyed/altered during compression or worse it might make noticeable changes in the image. But there is one ray of hope ... rounding error during DCT.
+Since JPEG images are already lossily compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if we would try to hide or embed any message in it, it might get either lost, destroyed or altered during compression or worse it might make some noticeable changes in the image. But we could still hide some information in the JPEG image once the step of compression is done and just before final lossless encoding.
 
 ![JPEG Process](https://user-images.githubusercontent.com/4745789/72601948-672c5100-393c-11ea-9f07-abc5b18e1d53.png)
 
-During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information. Steganography can take place between these two stages. The same principle of LSB substitution is used to embed a message in the image. Once the LSBs are updated, the usual Huffman encoding will do its lossless compression and prepare the final compressed image.
+During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information. Steganography is sandwiched between these two stages. The same principle of LSB substitution is used to embed a message in the image. Once the LSBs are updated, the usual Huffman encoding will do its lossless compression and prepare the final compressed image.
 
 ## Other techniques
 Apart from the above-mentioned DCT technique, there are several techniques that use a different form of transform signal and embeds data. I would highly recommend you at least give a skim to each of the below:
