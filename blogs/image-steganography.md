@@ -103,19 +103,19 @@ According to research, the human eye is more sensitive to changes in the brightn
 
 ![YCbCr transformation](https://user-images.githubusercontent.com/4745789/72549559-f1ca6d00-38b6-11ea-9760-bd1f35dbf455.png)
 
-Now the image is processed in blocks of 8 x 8 and we perform [Discrete Cosine Transform (DCT)](https://en.wikipedia.org/wiki/Discrete_cosine_transform) on each, then quantized (rounding) 64 values into 1 and eliminates small differences. To dive more into DCT on JPEG I would recommend you watch this [Computerphile video](https://www.youtube.com/watch?v=Q2aEzeMDHMA).
+Now the image, in YCbCr representation, is processed in blocks of 8 x 8 and we perform [Discrete Cosine Transform (DCT)](https://en.wikipedia.org/wiki/Discrete_cosine_transform) on each, then quantized (rounding) 64 values into 1 by taking average. The quantization step is the one that remove redundant information from the image. To dive more into DCT on JPEG, I would recommend you watch this [Computerphile video](https://www.youtube.com/watch?v=Q2aEzeMDHMA).
 
 This is the first stage of JPEG compression which is lossy. Now this image data is then losslessly compressed using the standard [Huffman encoding](https://en.wikipedia.org/wiki/Huffman_coding).
 
 ### JPEG Steganography
-Since JPEG images are already lossily compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if we would try to hide or embed any message in it, it might get either lost, destroyed or altered during compression or worse it might make some noticeable changes in the image. But we could still hide some information in the JPEG image once the step of compression is done and just before final lossless encoding.
+Since JPEG images are already lossily compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if we would try to hide or embed any message in it, it might get either lost, destroyed or altered during compression adding some noticeable changes to the image. Complete JPEG encoding process is as shown in the diagram below
 
 ![JPEG Process](https://user-images.githubusercontent.com/4745789/72601948-672c5100-393c-11ea-9f07-abc5b18e1d53.png)
 
-During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information. Steganography is sandwiched between these two stages. The same principle of LSB substitution is used to embed a message in the image. Once the LSBs are updated, the usual Huffman encoding will do its lossless compression and prepare the final compressed image.
+The entire process could be split into two stages, the first is where redundancy is removed and the second is where the data is encoded using Huffman encoding. During the DCT transformation phase, rounding errors occur in the coefficient data that are not noticeable and this makes the algorithm lossy. Once this stage is over we have a change to perform usual LSB substitution and embed the message. Since stage 2 of JPEG compression is lossless, due to Huffman encoding, we are sure that none of our substituted data will be lost. Thus we sandwich the steganography between the lossy and lossless stages of JPEG compression.
 
 ## Other techniques
-Apart from the above-mentioned DCT technique, there are techniques that use a different form of transform signal and embeds data. I would highly recommend you at least give a skim to each of the below:
+Apart from the above-mentioned DCT technique, there are techniques that use a different form of transform signal and embeds secret data. To name a few
 
  - [Discrete Fourier transformation technique (DFT)](https://link.springer.com/chapter/10.1007/978-3-642-20998-7_39)
  - [Discrete Wavelet transformation technique (DWT)](https://www.insight-centre.org/sites/default/files/publications/17.197_a_steganography_technique_for_images_based_on_wavelet_transform.pdf)
@@ -123,4 +123,4 @@ Apart from the above-mentioned DCT technique, there are techniques that use a di
  - [Embedding in coefficient bits](http://www.ijcee.org/papers/533-P0025.pdf)
 
 # Conclusion
-This is the first article in the series of Steganography that detailed out Image Steganography. I hope you reaped some benefits out of it. The future articles on Steganography will talk about how Steganography is done on carriers like Audio, Network, [DNA](https://www.sciencedirect.com/science/article/pii/S1877050917319804) and [Quantum](https://arxiv.org/abs/1006.1934) states and will also dive into one of the most interesting applications of Steganography - a [Steganographic File System](https://en.wikipedia.org/wiki/Steganographic_file_system). So stay tuned and watch this space for more.
+This is the first article in the series of Steganography that detailed out Image Steganography. I hope you reaped some benefits out of it. The future articles on Steganography will talk about how it is done on carriers like Audio, Network, [DNA](https://www.sciencedirect.com/science/article/pii/S1877050917319804) and [Quantum states](https://arxiv.org/abs/1006.1934) and will also dive into one of the most interesting applications of Steganography - a [Steganographic File System](https://en.wikipedia.org/wiki/Steganographic_file_system). So stay tuned and watch this space for more.
