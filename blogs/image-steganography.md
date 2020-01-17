@@ -93,7 +93,7 @@ Apart from the above-mentioned LSB substitution technique, there are techniques 
 # Frequency Domain Techniques
 Spatial domain techniques directly start putting in data from payload into an image but Frequency-domain techniques will first transform the image and then embed the data. The transformation step ensures that the message is hidden in less sensitive areas of the image, making the hiding more robust and makes the entire process independent of the image format. The areas in which the information is hidden are usually less exposed to compression, cropping, and image processing.
 
-These techniques are relatively complex to comprehend and requires a bit of advanced mathematics to understand thoroughly. Images with lossy compression are ideal candidates and hence we dive a little deep into how JPEG steganography works.
+These techniques are relatively complex to comprehend and require a bit of advanced mathematics to understand thoroughly. Images with lossy compression are ideal candidates and hence we dive a little deep into how JPEG steganography works.
 
 ## JPEG steganography
 To understand how steganography works for JPEG files, we will look into: how the raw data is compressed by JPEG and then we see how we could hide data in it.
