@@ -56,7 +56,7 @@ The image on the right has about 1KB long text message embedded through LSB subs
 
 In a 24 bit image we can store 3 bits in each pixel hence an 800 × 600 pixel image, can thus store a total amount of 1,440,000 bits or 180,000 bytes ~ 175KB of embedded data.
 
-### Extending LSB to k-LSB
+## Extending LSB to k-LSB
 To hold more data into the image we can substitute not `1` but `k` least significant bits. But we do so the image starts to distort which is never a good sign but a well-chosen image could do the trick and you wouldn't notice any difference.
 
 ## Randomized LSB
