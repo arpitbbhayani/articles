@@ -2,7 +2,7 @@ Would you shave your head and get it tattooed? Probably no, but a slave in ancie
 
 This art of concealing message is called Steganography. The word is derived from the Greek word “στεγαυω” which means "secret or covered writing". In modern times, steganography can be looked into as the study of the art and science of communicating in a way that hides the presence of the communication.
 
-Steganography continued over time to develop into new levels. Invisible inks, microdots, writing behind postal stamps are all examples of steganography in its physical form. Most of these early developments happened during World War I and II where everyone was trying to outsmart each other. The left half of the image below are a bunch of microdots, sent by German spies and intercepted by Allied intelligence, and the right half is the camera that was used to print such microdots.
+Steganography continued over time to develop into new levels. Invisible inks, microdots, writing behind postal stamps are all examples of steganography in its physical form. Most of these early developments happened during World War I and II where everyone was trying to outsmart each other. The left half of the image below is a bunch of microdots, sent by German spies and intercepted by Allied intelligence, and the right half is the camera that was used to print such microdots.
 
 ![Microdots and Microdot Camera](https://user-images.githubusercontent.com/4745789/72497176-da0ccd80-3851-11ea-96b0-759d7e62f451.png)
 
@@ -38,7 +38,7 @@ Compression techniques can be broadly classified into the following two classes
 Lossy compression removes redundancies that are too small for the human eye to differentiate which makes the compressed files a close approximate, but not an exact duplicate of the original one. A famous file format that does lossy compression is [JPEG](https://en.wikipedia.org/wiki/JPEG).
 
 ### Lossless Compression
-Lossless compression never removes any information from the original image, but instead represents data in mathematical formulas maintaining the integrity of the original image and when uncompressed, the file is a bit-by-bit copy of the original. Formats that do lossless compression are [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics), [GIF](https://en.wikipedia.org/wiki/GIF) and [BMP](https://en.wikipedia.org/wiki/BMP_file_format).
+Lossless compression never removes any information from the original image, but instead represents data in mathematical formulas maintaining the integrity of the original image and when uncompressed, the file is a bit-by-bit copy of the original. Formats that do lossless compression are [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics), [GIF](https://en.wikipedia.org/wiki/GIF), and [BMP](https://en.wikipedia.org/wiki/BMP_file_format).
 
 Steganographic techniques take into account file formats, compression methods, and picture semantics and exploit them to find redundancies and use them to conceal secret information and can be broadly classified into two: spatial domain and frequency domain techniques, and we take a deeper look into both.
 
@@ -48,15 +48,15 @@ Spatial domain techniques embed the secret message/payload in the intensity of t
 ## LSB Substitution
 This technique converts the secret message/payload into a bitstream and substitutes them into a least significant bit (the 8th bit) of some or all bytes inside an image. The alterations happen on the least significant bit which changes the intensity by +-1 which is extremely difficult for the human eye to detect.
 
-![lsb diagram](https://user-images.githubusercontent.com/4745789/72587393-1eb06b80-391b-11ea-89ce-eb72be220a89.png)
+![LSB substitution](https://user-images.githubusercontent.com/4745789/72587393-1eb06b80-391b-11ea-89ce-eb72be220a89.png)
 
 When using a 24-bit image, a bit of each of the red, green and blue color components is substituted. Since there are 256 possible intensities of each primary color, changing the LSB of pixel results in small changes in the intensity of the colors.
 
-![24 bit image LSB substitution](https://user-images.githubusercontent.com/4745789/72589054-2de5e800-3920-11ea-9c0a-c9f878fcd525.png)
+![24-bit image LSB substitution](https://user-images.githubusercontent.com/4745789/72589054-2de5e800-3920-11ea-9c0a-c9f878fcd525.png)
 
 See if you can spot what has changed in the images below. The image on the right has about 1KB long text message embedded through LSB substitution but looks the same as the original image.
 
-![lsb cat diff](https://user-images.githubusercontent.com/4745789/72535218-31d12600-389e-11ea-9463-011fa42e430c.png)
+![LSB substitution cat image difference](https://user-images.githubusercontent.com/4745789/72535218-31d12600-389e-11ea-9463-011fa42e430c.png)
 
 In a 24 bit image we can store 3 bits in each pixel hence an 800 × 600 pixel image, can thus store a total amount of 1,440,000 bits or 180,000 bytes ~ 175KB of embedded data.
 
@@ -74,12 +74,12 @@ Adaptive LSB uses k-bit LSB and varies `k` as per the sensitivity of the image r
 ## LSB and Palette Based Images
 The persistence of Palette Based Images is very interesting. There is a color lookup table which holds all the colors that are used in the image. Each pixel is represented as a single byte and the pixel data is an index to the color palette. [GIF](https://en.wikipedia.org/wiki/GIF) images work on this principle; it cannot have a bit depth greater than 8, thus the maximum number of colors that a GIF can store is 256. Now if we perform LSB substitution to pixel data then it changes the index in the lookup table (palette) and the new value (after substitution), that points to the index on the lookup table (palette), could point to a different color and the change will be evident. We could still do steganography on palette-based images using following workarounds
 
-![palette based image](https://user-images.githubusercontent.com/4745789/72600791-4ebb3700-393a-11ea-8e3e-2ddf389e85d1.png)
+![palette-based image](https://user-images.githubusercontent.com/4745789/72600791-4ebb3700-393a-11ea-8e3e-2ddf389e85d1.png)
 
 ### Sorting the palette
 The LSB substitution alters the value by +-1 and hence it will always point to a neighboring entry in the table. Hence we sort the palette by color then this will make adjacent lookup table entries similar to each other and minimize the distortion.
 
-### Add new colors to palette
+### Add new colors to the palette
 If the original image has fewer colors then we could add similar colors in color palette/lookup table and then perform regular LSB substitution. Again the +-1 alteration will make that pixel point to some similar color in the lookup table.
 
 ## Other techniques
