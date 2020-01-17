@@ -2,7 +2,7 @@ Would you shave your head and get it tattooed? Probably no, but a slave in ancie
 
 This art of concealing message is called Steganography. The word is derived from the Greek word “στεγαυω” which means "secret or covered writing". In modern times, steganography can be looked into as the study of the art and science of communicating in a way that hides the presence of the communication.
 
-Steganography continued over time to develop into new levels. Invisible inks, microdots, writing behind postal stamps are all examples of steganography in its physical form. Most of these early developments happened during World War I and II where everyone was trying to outsmart each other. The left half of the image below are bunch of microdots, sent by German spies and intercepted by Allied intelligence, and the right half is the camera that was used to print such microdots.
+Steganography continued over time to develop into new levels. Invisible inks, microdots, writing behind postal stamps are all examples of steganography in its physical form. Most of these early developments happened during World War I and II where everyone was trying to outsmart each other. The left half of the image below are a bunch of microdots, sent by German spies and intercepted by Allied intelligence, and the right half is the camera that was used to print such microdots.
 
 ![Microdots and Microdot Camera](https://user-images.githubusercontent.com/4745789/72497176-da0ccd80-3851-11ea-96b0-759d7e62f451.png)
 
@@ -40,7 +40,7 @@ Lossy compression removes redundancies that are too small for the human eye to d
 ### Lossless Compression
 Lossless compression never removes any information from the original image, but instead represents data in mathematical formulas maintaining the integrity of the original image and when uncompressed, the file is a bit-by-bit copy of the original. Formats that do lossless compression are [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics), [GIF](https://en.wikipedia.org/wiki/GIF) and [BMP](https://en.wikipedia.org/wiki/BMP_file_format).
 
-Steganographic techniques takes into account file formats, compression methods, and picture semantics and exploit them to find redundancies and use them to conceal secret information and can be broadly classified into two: spatial domain and frequency domain techniques, and we take a deeper look into both.
+Steganographic techniques take into account file formats, compression methods, and picture semantics and exploit them to find redundancies and use them to conceal secret information and can be broadly classified into two: spatial domain and frequency domain techniques, and we take a deeper look into both.
 
 # Spatial Domain Techniques
 Spatial domain techniques embed the secret message/payload in the intensity of the pixels directly; which means they update the pixel data by either inserting or substituting bits. Lossless images are best suited for these techniques as compression would not alter the embedded data. These techniques have to be aware of the image format to make concealing information fool-proof.
@@ -99,7 +99,7 @@ These techniques are relatively complex to comprehend and require a bit of advan
 To understand how steganography works for JPEG files, we will look into: how the raw data is compressed by JPEG and then we see how we could hide data in it.
 
 ### JPEG Compression
-According to research, the human eye is more sensitive to changes in the brightness (luminance) of a pixel than to changes in its color. We interpret brightness and color by contrast with adjacent regions. The compression phase takes advantage of this insight and transforms the image from RGB color to [YCbCr](https://en.wikipedia.org/wiki/YCbCr) representation - separating brightness from color. In YCbCr representation, the Y component corresponds to luminance (brightness - black-white) and Cb (yellow-blue) and Cr (green-red) components for chrominance (color). Now we discard some of the color data by downsampling the it to half in both horizontal and vertical directions thus directly reducing the size of the file by a factor of 2.
+According to research, the human eye is more sensitive to changes in the brightness (luminance) of a pixel than to changes in its color. We interpret brightness and color by contrast with adjacent regions. The compression phase takes advantage of this insight and transforms the image from RGB color to [YCbCr](https://en.wikipedia.org/wiki/YCbCr) representation - separating brightness from color. In YCbCr representation, the Y component corresponds to luminance (brightness - black-white) and Cb (yellow-blue) and Cr (green-red) components for chrominance (color). Now we discard some of the color data by downsampling it to half in both horizontal and vertical directions thus directly reducing the size of the file by a factor of 2.
 
 ![YCbCr transformation](https://user-images.githubusercontent.com/4745789/72549559-f1ca6d00-38b6-11ea-9760-bd1f35dbf455.png)
 
