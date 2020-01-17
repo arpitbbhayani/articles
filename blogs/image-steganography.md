@@ -24,13 +24,13 @@ An image is a collection of numbers that defines color intensities in different 
 
 ![8-bit grayscale monochrome image](https://user-images.githubusercontent.com/4745789/72497072-8e5a2400-3851-11ea-9b28-8705bbfea070.png)
 
-Digital color images are typically stored in 24-bit pixel depth and use RGB color model. All color variations for the pixels of a 24-bit image are derived from three primary colors: red, green and blue, and each primary color is represented by 8 bits. Thus each pixel takes of one from a palette of 16-million colors.
+Digital color images are typically stored in 24-bit pixel depth and use the RGB color model. All color variations for the pixels of a 24-bit image are derived from three primary colors: red, green and blue, and each primary color is represented by 8 bits. Thus each pixel takes one from a palette of 16-million colors.
 
 ![24-bit color palette](https://user-images.githubusercontent.com/4745789/72497287-23f5b380-3852-11ea-96e8-e5c8ffca0c9f.png)
 
 ## Compression
 
-When working with high resolution images with a greater color depth, the size of the raw file can become big and it becomes impossible to transmit it over a standard internet connection. To remedy this, compressed image formats were developed which, as you would have guessed, compresses the pixel information and keeps file sizes fairly small, making it efficient for transmission.
+When working with high-resolution images with greater color depth, the size of the raw file can become big and it becomes impossible to transmit it over a standard internet connection. To remedy this, compressed image formats were developed which, as you would have guessed, compresses the pixel information and keeps file sizes fairly small, making it efficient for transmission.
 
 Compression techniques can be broadly classified into the following two classes
 
@@ -40,7 +40,7 @@ Lossy compression removes redundancies that are too small for the human eye to d
 ### Lossless Compression
 Lossless compression never removes any information from the original image, but instead represents data in mathematical formulas maintaining the integrity of the original image and when uncompressed, the file is a bit-by-bit copy of the original. Formats that do lossless compression are [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics), [GIF](https://en.wikipedia.org/wiki/GIF) and [BMP](https://en.wikipedia.org/wiki/BMP_file_format).
 
-Steganographic techniques considers file formats, compression methods and picture semantics and exploits them to find redundancies and use it to conceal secret information. Steganographic techniques can be broadly classified into two: spatial domain and frequency domain and we take a deeper look into both.
+Steganographic techniques consider file formats, compression methods, and picture semantics and exploit them to find redundancies and use them to conceal secret information. Steganographic techniques can be broadly classified into two: spatial domain and frequency domain and we take a deeper look into both.
 
 # Spatial Domain Techniques
 Spatial domain techniques embed the secret message/payload in the intensity of the pixels directly; which means they update the pixel data by either inserting or substituting bits or manipulating noise in the image. Lossless images are best suited for these techniques as compression would not alter the embedded data. These techniques have to be aware of the image format to make concealing information fool-proof.
