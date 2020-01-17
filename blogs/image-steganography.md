@@ -43,7 +43,7 @@ Lossless compression never removes any information from the original image, but 
 Steganographic techniques consider file formats, compression methods, and picture semantics and exploit them to find redundancies and use them to conceal secret information. Steganographic techniques can be broadly classified into two: spatial domain and frequency domain and we take a deeper look into both.
 
 # Spatial Domain Techniques
-Spatial domain techniques embed the secret message/payload in the intensity of the pixels directly; which means they update the pixel data by either inserting or substituting bits or manipulating noise in the image. Lossless images are best suited for these techniques as compression would not alter the embedded data. These techniques have to be aware of the image format to make concealing information fool-proof.
+Spatial domain techniques embed the secret message/payload in the intensity of the pixels directly; which means they update the pixel data by either inserting or substituting bits. Lossless images are best suited for these techniques as compression would not alter the embedded data. These techniques have to be aware of the image format to make concealing information fool-proof.
 
 ## LSB Substitution
 This technique converts the secret message/payload into a bitstream and substitutes them into a least significant bit (the 8th bit) of some or all bytes inside an image. The alterations happen on the least significant bit which changes the intensity by +-1 which is extremely difficult for the human eye to detect.
@@ -61,10 +61,10 @@ See if you can spot what has changed in the images below. The image on the right
 In a 24 bit image we can store 3 bits in each pixel hence an 800 × 600 pixel image, can thus store a total amount of 1,440,000 bits or 180,000 bytes ~ 175KB of embedded data.
 
 ## Extending LSB to k-LSB
-To hold more data into the image we can substitute not `1` but `k` least significant bits. But we do so the image starts to distort which is never a good sign but a well-chosen image could do the trick and you wouldn't notice any difference.
+To hold more data into the image we can substitute not `1` but `k` least significant bits. But when we do so the image starts to distort which is never a good sign but a well-chosen image could do the trick and you wouldn't notice any difference.
 
 ## Randomized LSB
-A regular LSB substitution technique starts substituting from pixel `0` and goes till `n` making this method highly predictable. To make things slightly challenging sender and receiver could share a secret key through which they agree on the certain pixels that will be altered with LSB. This randomness makes LSB more secure and robust.
+A regular LSB substitution technique starts substituting from pixel `0` and goes till `n` making this method highly predictable. To make things slightly challenging sender and receiver could share a secret key through which they agree on the certain pixels that will be altered making the technique more robust.
 
 ## Adaptive LSB
 Adaptive LSB uses k-bit LSB and varies `k` as per the sensitivity of the image region over which it is applied. The method analyzes the edges, brightness, and texture of the image and calculates the value of `k` for that region and then does regular k-LSB on it. It keeps the value of `k` high at a not-so-sensitive image region and low at the sensitive region. This balances the overall quality of the image and makes it even more difficult to see distortions.
