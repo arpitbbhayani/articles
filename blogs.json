@@ -1,5 +1,15 @@
 [
   {
+    "id": "image-steganography",
+    "title": "The science behind hiding secret messages in images - Image Steganography",
+    "description": "Steganography has been around since at least 440 BCE but with the rise of computers, the techniques have evolved to handle digital data. In this article, we see the science behind image steganography, how it exploits various properties of images to hide secrets and walkthrough a few techniques in detail.",
+    "image": "https://user-images.githubusercontent.com/4745789/72580476-362f2a80-3902-11ea-8ae9-31122f11a239.png",
+    "gif": "https://media.giphy.com/media/V1NxC1YoNEHBe/giphy.gif",
+    "categories": ["steganography", "image"],
+    "tags": ["steganography", "image steganography", "DCT JPEG", "JPEG", "LSB", "Least Significant Bit Substitution", "Adaptive Least Significant Bit Substitution", "ancient greece", "Discrete Cosine Transform", "Discrete Fourier Transform", "Lossy and Lossless image formats", "rgb color model", "YCbCr color model", "technology", "code", "data science", "tech"],
+    "published_at": "2020-01-17"
+  },
+  {
     "id": "super-long-integers",
     "title": "How python implements super long integers?",
     "description": "Python must be doing something beautiful internally to support super long integers and today we find out what's under the hood. The article goes in-depth to explain design, storage, and operations on super long integers as implemented by Python.",
