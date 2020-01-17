@@ -87,7 +87,7 @@ If we sort the pallette then this will make adjacent lookup table entries simila
 If the original image has fewer colors then we could add similar colors in color pallette/lookup table and then perform regular LSB substitution.
 
 ## Other techniques
-Apart from the above-mentioned LSB substitution technique, there are several techniques that exploit some aspect of the image and embeds data. I would highly recommend you at least give a skim to each of the below:
+Apart from the above-mentioned LSB substitution technique, there techniques that exploit some aspect of the image and embeds data. I would highly recommend you at least give a skim to each of the below:
 
  - [Edges based data embedding method (EBE)](https://link.springer.com/article/10.1186/1687-417X-2014-8)
  - [Random pixel embedding method (RPE)](https://ieeexplore.ieee.org/abstract/document/8276335)
@@ -119,7 +119,7 @@ Since JPEG images are already lossily compressed (redundant bits are already thr
 During the DCT transformation phase of the compression algorithm, rounding errors occur in the coefficient data that are not noticeable. This rounding is what makes the algorithm lossy but could be used to hide information. Steganography is sandwiched between these two stages. The same principle of LSB substitution is used to embed a message in the image. Once the LSBs are updated, the usual Huffman encoding will do its lossless compression and prepare the final compressed image.
 
 ## Other techniques
-Apart from the above-mentioned DCT technique, there are several techniques that use a different form of transform signal and embeds data. I would highly recommend you at least give a skim to each of the below:
+Apart from the above-mentioned DCT technique, there are techniques that use a different form of transform signal and embeds data. I would highly recommend you at least give a skim to each of the below:
 
  - [Discrete Fourier transformation technique (DFT)](https://link.springer.com/chapter/10.1007/978-3-642-20998-7_39)
  - [Discrete Wavelet transformation technique (DWT)](https://www.insight-centre.org/sites/default/files/publications/17.197_a_steganography_technique_for_images_based_on_wavelet_transform.pdf)
