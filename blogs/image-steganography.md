@@ -72,12 +72,12 @@ Adaptive LSB uses k-bit LSB and varies `k` as per the sensitivity of the image r
 **Pixel-value differencing (PVD)** scheme is a concrete implementation of adaptive LSB and it uses the difference of values between two consecutive pixels in a block to determine the number of secret bits to be embedded.
 
 ## LSB and Palette Based Images
-The persistence of Palette Based Images is very interesting. There is a color lookup table which holds all the colors that are used in the image. Each pixel is represented as a single byte and the pixel data is an index to the color palette. [GIF](https://en.wikipedia.org/wiki/GIF) images work on this principle; it cannot have a bit depth greater than 8, thus the maximum number of colors that a GIF can store is 256. Now if we perform LSB substitution to pixel data then it changes the index in the lookup table (palette) and the new value (after substitution), that points to the index on the lookup table (palette), could point to a different color and the change will be evident. We could still do steganography on palette based images using following workarounds
+The persistence of Palette Based Images is very interesting. There is a color lookup table which holds all the colors that are used in the image. Each pixel is represented as a single byte and the pixel data is an index to the color palette. [GIF](https://en.wikipedia.org/wiki/GIF) images work on this principle; it cannot have a bit depth greater than 8, thus the maximum number of colors that a GIF can store is 256. Now if we perform LSB substitution to pixel data then it changes the index in the lookup table (palette) and the new value (after substitution), that points to the index on the lookup table (palette), could point to a different color and the change will be evident. We could still do steganography on palette-based images using following workarounds
 
 ![pallette based image](https://user-images.githubusercontent.com/4745789/72600791-4ebb3700-393a-11ea-8e3e-2ddf389e85d1.png)
 
 ### Sorting the pallette
-The LSB substitution alters the value by +-1 and hence it will always point to neighboring entry in the table. Hence we sort the pallette by color then this will make adjacent lookup table entries similar to each other and minimize the distortion.
+The LSB substitution alters the value by +-1 and hence it will always point to a neighboring entry in the table. Hence we sort the pallette by color then this will make adjacent lookup table entries similar to each other and minimize the distortion.
 
 ### Add new colors to pallette
 If the original image has fewer colors then we could add similar colors in color pallette/lookup table and then perform regular LSB substitution. Again the +-1 alteration will make that pixel point to some similar color in the lookup table.
@@ -93,22 +93,22 @@ Apart from the above-mentioned LSB substitution technique, there are techniques 
 # Frequency Domain Techniques
 Spatial domain techniques directly start putting in data from payload into an image but Frequency-domain techniques will first transform the image and then embed the data. The transformation step ensures that the message is hidden in less sensitive areas of the image, making the hiding more robust and makes the entire process independent of the image format. The areas in which the information is hidden are usually less exposed to compression, cropping, and image processing.
 
-These techniques relatively complex to comprehend and requires a bit of advanced mathematics to understand thoroughly. Images with lossy compression are ideal candidates and hence we dive a little deep into how JPEG steganography works.
+These techniques are relatively complex to comprehend and requires a bit of advanced mathematics to understand thoroughly. Images with lossy compression are ideal candidates and hence we dive a little deep into how JPEG steganography works.
 
 ## JPEG steganography
 To understand how steganography works for JPEG files, we will look into: how the raw data is compressed by JPEG and then we see how we could hide data in it.
 
 ### JPEG Compression
-According to research, the human eye is more sensitive to changes in the brightness (luminance) of a pixel than to changes in its color. We interpret brightness and color by contrast with adjacent regions. The compression phase takes advantage of this insight and transforms the image from RGB color to [YCbCr](https://en.wikipedia.org/wiki/YCbCr) representation - separating brightness from color. In YCbCr representation the Y component corresponds to luminance (brightness - black-white) and Cb (yellow-blue) and Cr (green-red) components for chrominance (color). Now we discard some of the color part by downsampling the color data to half in both horizontal and vertical directions thus directly reducing the size of the file by a factor of 2.
+According to research, the human eye is more sensitive to changes in the brightness (luminance) of a pixel than to changes in its color. We interpret brightness and color by contrast with adjacent regions. The compression phase takes advantage of this insight and transforms the image from RGB color to [YCbCr](https://en.wikipedia.org/wiki/YCbCr) representation - separating brightness from color. In YCbCr representation, the Y component corresponds to luminance (brightness - black-white) and Cb (yellow-blue) and Cr (green-red) components for chrominance (color). Now we discard some of the color data by downsampling the it to half in both horizontal and vertical directions thus directly reducing the size of the file by a factor of 2.
 
 ![YCbCr transformation](https://user-images.githubusercontent.com/4745789/72549559-f1ca6d00-38b6-11ea-9760-bd1f35dbf455.png)
 
-Now the image, in YCbCr representation, is processed in blocks of 8 x 8 and we perform [Discrete Cosine Transform (DCT)](https://en.wikipedia.org/wiki/Discrete_cosine_transform) on each, then quantized (rounding) 64 values into 1 by taking average. The quantization step is the one that remove redundant information from the image. To dive more into DCT on JPEG, I would recommend you watch this [Computerphile video](https://www.youtube.com/watch?v=Q2aEzeMDHMA).
+Now the image, in YCbCr representation, is processed in blocks of 8 x 8 and we perform [Discrete Cosine Transform (DCT)](https://en.wikipedia.org/wiki/Discrete_cosine_transform) on each, then quantized (rounding) 64 values into 1 by taking the average. The quantization step is the one that removes redundant information from the image. To dive more into DCT on JPEG, I would recommend you watch this [Computerphile video](https://www.youtube.com/watch?v=Q2aEzeMDHMA).
 
 This is the first stage of JPEG compression which is lossy. Now this image data is then losslessly compressed using the standard [Huffman encoding](https://en.wikipedia.org/wiki/Huffman_coding).
 
 ### JPEG Steganography
-Since JPEG images are already lossily compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if we would try to hide or embed any message in it, it might get either lost, destroyed or altered during compression adding some noticeable changes to the image. Complete JPEG encoding process is as shown in the diagram below
+Since JPEG images are already lossily compressed (redundant bits are already thrown out) it was thought that steganography would not be possible on it. So if we would try to hide or embed any message in it, it might get either lost, destroyed or altered during compression adding some noticeable changes to the image. The complete JPEG encoding process is as shown in the diagram below
 
 ![JPEG Process](https://user-images.githubusercontent.com/4745789/72601948-672c5100-393c-11ea-9f07-abc5b18e1d53.png)
 
