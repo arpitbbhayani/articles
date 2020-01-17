@@ -76,7 +76,9 @@ Adaptive LSB uses k-bit LSB and varies `k` as per the sensitivity of the image r
 ## LSB and Palette Based Images
 The persistence of Palette Based Images is very interesting. There is a color lookup table which holds all the colors that are used in the image. Each pixel is represented as a single byte and the pixel data is an index to the color palette. This is usually the case with GIF images as it cannot have a bit depth greater than 8, thus the maximum number of colors that a GIF can store is 256.
 
-The problem with the pallet approach is that if we perform LSB to pixel then it changes the index in the lookup table and the new value (after substitution) could point to a different color and the change will be evident. There are few solutions to tackle this:
+The problem with the pallet approach is that if we perform LSB to pixel then it changes the index in the lookup table and the new value (after substitution) could point to a different color and the change will be evident. There are few ways to tackle this
+
+![pallette based image](https://user-images.githubusercontent.com/4745789/72600791-4ebb3700-393a-11ea-8e3e-2ddf389e85d1.png)
 
 ### Sorting the pallette
 If we sort the pallette then this will make adjacent lookup table entries similar thus we minimize the distortion.
