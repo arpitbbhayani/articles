@@ -6,7 +6,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/72580476-362f2a80-3902-11ea-8ae9-31122f11a239.png",
     "gif": "https://media.giphy.com/media/V1NxC1YoNEHBe/giphy.gif",
     "categories": ["steganography", "image"],
-    "tags": ["steganography", "image steganography", "DCT JPEG", "JPEG", "LSB", "Least Significant Bit Substitution", "Adaptive Least Significant Bit Substitution", "ancient greece", "Discrete Cosine Transform", "Discrete Fourier Transform", "Lossy and Lossless image formats", "rgb color model", "YCbCr color model", "technology", "code", "data science", "tech"],
+    "tags": ["steganography", "image steganography", "image steganography internals", "DCT JPEG", "JPEG", "LSB", "Least Significant Bit Substitution", "Adaptive Least Significant Bit Substitution", "ancient greece", "Discrete Cosine Transform", "Discrete Fourier Transform", "Lossy and Lossless image formats", "rgb color model", "YCbCr color model", "technology", "code", "data science", "tech"],
     "published_at": "2020-01-17"
   },
   {
