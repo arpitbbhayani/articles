@@ -34,7 +34,7 @@ Digital color images are typically stored in 24-bit pixel depth and use the RGB 
 
 When working with larger images and greater color depth, the size of the raw file can become big and it becomes impossible to transmit it over a standard internet connection. To remedy this, compressed image formats were developed which, as you would have guessed, compresses the pixel information keeping file sizes fairly small making it efficient for transmission.
 
-There are two types of compression techniques:
+Compression techniques can be broadly classified into following two classes
 
 ### Lossy Compression
 Lossy compression removes redundancies that are too small for the human eye to differentiate and hence the compressed files are in close approximations of the original image, but not an exact duplicate. A famous file format that does lossy compression is [JPEG](https://en.wikipedia.org/wiki/JPEG).
