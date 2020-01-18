@@ -1,9 +1,9 @@
 [
   {
     "id": "image-steganography",
-    "title": "Internals of image steganography",
+    "title": "Everything that you need to know about Image Steganography",
     "description": "Steganography has been around since at least 440 BCE but with the rise of computers, the techniques have evolved to handle digital data. In this article, we see the science behind image steganography, how it exploits various properties of images to hide secrets and walkthrough a few techniques in detail.",
-    "image": "https://user-images.githubusercontent.com/4745789/72581001-ce79df00-3903-11ea-875c-7a778774c2a5.png",
+    "image": "https://user-images.githubusercontent.com/4745789/72659471-2a1c9900-39e6-11ea-9b93-c11bf3eefc43.png",
     "gif": "https://media.giphy.com/media/V1NxC1YoNEHBe/giphy.gif",
     "categories": ["steganography", "image"],
     "tags": ["steganography", "image steganography", "image steganography internals", "DCT JPEG", "JPEG", "LSB", "Least Significant Bit Substitution", "Adaptive Least Significant Bit Substitution", "ancient greece", "Discrete Cosine Transform", "Discrete Fourier Transform", "Lossy and Lossless image formats", "rgb color model", "YCbCr color model", "technology", "code", "data science", "tech"],
