@@ -10,14 +10,18 @@ Anomaly detection is identification of something that is not "normal"; the defin
 
 Since anomalies deviates from normal it means they are few in numbers (minority) and have attribute values that are very different from those of normal. The paper nicely puts it as: anomalies are **few and different**. These characteristics of anomalies make them more susceptible to isolation than normal points.
 
-# The usual approach
-Most existing model-based approaches to anomaly de-tection construct a profile of normal instances, then iden-tify instances that do not conform to the normal profile as anomalies.
+# The usual approach for detecting anomalies
 
-statistical methods[11], classification-based methods [1], and clustering-basedmethods [5] all use this general approach.
+The existing models train to see what constitutes "normal" and then considers everything that does not conform to this definition as anomalies. To name a few mthods that does this, and very widely used, are:
+
+ - statistical methods - , , ,
+ - classification-based methods - , , ,
+ - clustering-based methods - , , ,
 
 Two major draw-backs of this approach are: (i) the anomaly detector is opti-mized to profile normal instances, but not optimized to de-tect anomalies—as a consequence, the results of anomalydetection might not be as good as expected, causing toomany false alarms (having normal instances identified asanomalies) or too few anomalies being detected; (ii) manyexisting methods are constrained to low dimensional dataand small data size because of their high computationalcomplexity.
 
-# The Isolation Tree and Forest
+# The algorithm
+## The Isolation Tree and Forest
 explicitly isolates anomalies rather than profiles normal instances
 Because of their susceptibility to isolation,anomalies are isolated closer to the root of the tree; whereasnormal points are isolated at the deeper end of the tree.
 Thisisolation characteristic of tree forms the basis of our methodto detect anomalies, and we call this tree Isolation Tree oriTree.
@@ -35,7 +39,7 @@ a split value between the maximum and minimum values ofthe selected attribute.
 
 Since recursive partitioning can berepresented by a tree structure, the number of partitions re-quired to isolate a point is equivalent to the path length fromthe root node to a terminating node. In this example, thepath length ofxiis greater than the path length ofxo.
 
-## The binary search tree
+### The binary search tree
 Since each partition is randomly generated, individualtrees are generated with different sets of partitions. We av-erage path lengths over a number of trees to find the ex-pected path length.
 Using1000trees, the average path lengths ofxoandxiconverge to4.02and12.82respectively. It showsthat anomalies are having path lengths shorter than normalinstances.
 
@@ -45,7 +49,7 @@ An iTree is aproper binary tree where each node in the tree has exactly zero or 
 
 when an iTree is fully grown, inwhich case the number of external nodes isnand the num-ber of internal nodes isn−1; the total number of nodesof an iTrees is2n−1; and thus the memory requirement isbounded and only grows linearly with n.
 
-## Scoring
+### Scoring
 
 Path Lengthh(x)of a pointxis measured bythe number of edgesxtraverses an iTree from the root nodeuntil the traversal is terminated at an external node
 
@@ -56,14 +60,14 @@ sis monotonic toh(x). Figure 2 illustrates the relationshipbetweenE(h(x))ands, a
 
 s≥0.6, which are potential anomalies
 
-# Why this algorithm?
+## Why this algorithm?
 
 build partial models and exploit sub-sampling to anextent that is not feasible in existing methods
 a large part of an iTree that isolates normal points isnot needed for anomaly detection; it does not need tobe constructed
 iForest utilizes no distance or density measures to de-tect anomalies. This eliminates major computationalcost of distance calculation in all distance-based meth-ods and density-based methods.
 iForest has a linear time complexity with a lowconstant and a low memory requirement
 
-## Details
+### Details
 
 Since iForest does not need to iso-late all of normal instances – the majority of the trainingsample,iForest is able to work well with a partial modelwithout isolating all normal points and builds models usinga small sample size.
 
@@ -71,7 +75,7 @@ isolation method works best when thesampling size is kept small
 
 large sampling size reducesiForest’s ability to isolate anomalies as normal instances caninterfere with the isolation process and therefore reducesits ability to clearly isolate anomalies.
 
-## Swamping and Masking
+### Swamping and Masking
 
 Swamping: wrongly identifying normal instances as anomalies
 Whennormal instances are too close to anomalies, the number ofpartitions required to separate anomalies increases – whichmakes it harder to distinguish anomalies from normal in-stances
@@ -80,25 +84,25 @@ Masking is the existence of too many anomaliesconcealing their own presence. Whe
 
 The unique characteristic ofisolation trees allows iForest to build a partial model bysub-sampling which incidentally alleviates the effects ofswamping and masking. It is because: 1) sub-sampling con-trols data size, which helps iForest better isolate examplesof anomalies and 2) each isolation tree can be specialised,as each sub-sample includes different set of anomalies or even no anomaly.
 
-## Other reasons
+### Other reasons
 
 https://blog.easysol.net/using-isolation-forests-anamoly-detection/
 
-# The Algorithm
+## The Algorithm
 Anomaly detection using iForest is a two-stage process.The first (training) stage builds isolation trees using sub-samples of the training set.  The second (testing) stagepasses the test instances through isolation trees to obtainan anomaly score for each instance
 
-## Training
+### Training
 In the training stage, iTrees are constructed by recur-sively partitioning the given training set until instances areisolated or a specific tree height is reached of which resultsa partial model. Note that the tree height limitlis automat-ically set by the sub-sampling sizeψ:l=ceiling(log2ψ) which is approximately the average tree heigh.
 
 The ra-tionale of growing trees up to the average tree height is thatwe are only interested in data points that have shorter-than-average path lengths, as those points are more likely to beanomalies.
 
-## Evaluation
+### Evaluation
 
 In the evaluating stage, an anomaly scoresis derivedfrom the expected path lengthE(h(x))for each test in-stance.E(h(x))are derived by passing instances througheach iTree in an iForest. UsingPathLengthfunction, asingle path lengthh(x)is derived by counting the numberof edgesefrom the root node to a terminating node as in-stancextraverses through an iTree. Whenxis terminatedat an external node, whereSize >1, the return value iseplus an adjustmentc(Size). The adjustment accounts foran unbuilt subtree beyond the tree height limit.
 
 ...
 
-# Advantages
+## Advantages
 
 One of the important challenges in anomaly detection ishigh dimensional data. For distance-based methods, everypoint is equally sparse in high dimensional space — render-ing distance a useless measure. For iForest, it also suffersfrom the same ‘curse of dimensionality’
 Forest hasa significant advantage in processing time
