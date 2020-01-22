@@ -2,16 +2,13 @@ Anomaly detection is identification of something that is not "normal"; the defin
 
 ### Why should we detect anomalies?
 
- - anomalies in credit card transactions could signifyfraudulent use of credit cards
- - An anomalous spot in an as-tronomy image could indicate the discovery of a new star
- - An unusual computer network traffic pattern could standfor an unauthorised access
+ - anomalies in credit card transactions could signify fraudulent use
+ - anomalous spot in an astronomy image could indicate a new star
+ - anomalous network traffic pattern could stand for an attack or an unauthorized access
 
 # Characteristics of anomalies
 
- - they are the minority consisting of fewer instances
- - hey have attribute-values that are very different fromthose of normal instance
-
-In other words, anomalies are‘few and different’, which make them more susceptible to isolation than normal points.
+Since anomalies deviates from normal it means they are few in numbers (minority) and have attribute values that are very different from those of normal. The paper nicely puts it as: anomalies are **few and different**. These characteristics of anomalies make them more susceptible to isolation than normal points.
 
 # The usual approach
 Most existing model-based approaches to anomaly de-tection construct a profile of normal instances, then iden-tify instances that do not conform to the normal profile as anomalies.
