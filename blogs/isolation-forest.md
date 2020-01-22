@@ -21,12 +21,19 @@ The existing models train to see what constitutes "normal" and then considers ev
 Since these methods are not optimized detect anomalies, instead are optimized to find normal instances, the results of anomaly detection contains too many false positives or might detect too few anomalies. Many of these methods are computationally complex and hence suits low dimensional and/or small sized data. Isolation Forest algorithm fixes both of the above issues and provides highly efficient and accurate way to detect anomalies.
 
 # The algorithm
-## The Isolation Tree and Forest
-explicitly isolates anomalies rather than profiles normal instances
-Because of their susceptibility to isolation,anomalies are isolated closer to the root of the tree; whereasnormal points are isolated at the deeper end of the tree.
-Thisisolation characteristic of tree forms the basis of our methodto detect anomalies, and we call this tree Isolation Tree oriTree.
+Now we take a look at the algorithm, what it does, how it does and the math behind it. Fasten your seatbelts; it's going to be a bumpy ride.
 
-The proposed method, called Isolation Forest or iFor-est, builds an ensemble of iTrees for a given data set, thenanomalies are those instances which have short average pathlengths on the iTrees.
+## The core principle
+The core of the algorithm is to "isolate" anomalies by creating a decision tree on points over a particular attribute. Since anomalies are susceptible to isolation, they isolate closer to the root while normal points isolate at deeper levels.
+
+DIAGRAM goes here.
+
+In the diagram above you could see how anomalies are isolated closer to the root of the tree; and we see how the principle explicitly isolates anomalies rather than profiles normal instances.
+
+Since by creating one decision tree we cannot for sure say that a point is an anomaly, this process is repeated multiple times and split happen over random attribute and attribute value. Thus a set of tree is maintained (forest) and average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower level/depth/height. Hence this method is called Isolation Forest method.
+
+
+
 There are only two variables in thismethod: the number of trees to build and the sub-samplingsize.
 itonly requires a small sub-sampling size to achieve high de-tection performance with high efficiency
 
