@@ -12,13 +12,13 @@ Since anomalies deviates from normal it means they are few in numbers (minority)
 
 # The usual approach for detecting anomalies
 
-The existing models train to see what constitutes "normal" and then considers everything that does not conform to this definition as anomalies. To name a few mthods that does this, and very widely used, are:
+The existing models train to see what constitutes "normal" and then considers everything that does not conform to this definition as anomalies. To name a few methods that does this, and very widely used, are:
 
  - statistical methods - , , ,
  - classification-based methods - , , ,
  - clustering-based methods - , , ,
 
-Two major draw-backs of this approach are: (i) the anomaly detector is opti-mized to profile normal instances, but not optimized to de-tect anomalies—as a consequence, the results of anomalydetection might not be as good as expected, causing toomany false alarms (having normal instances identified asanomalies) or too few anomalies being detected; (ii) manyexisting methods are constrained to low dimensional dataand small data size because of their high computationalcomplexity.
+Since these methods are not optimized detect anomalies, instead are optimized to find normal instances, the results of anomaly detection contains too many false positives or might detect too few anomalies. Many of these methods are computationally complex and hence suits low dimensional and/or small sized data. Isolation Forest algorithm fixes both of the above issues and provides highly efficient and accurate way to detect anomalies.
 
 # The algorithm
 ## The Isolation Tree and Forest
