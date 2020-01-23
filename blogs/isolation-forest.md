@@ -54,10 +54,6 @@ DIAGRAM
 
 Since anomalies are susceptible to isolation and have a tendency to reside closer to the root of the decision tree, we could just construct the decision tree till it reaches a certain height. This height is the height post which which we are sure that there could not be any anomalies. In order to estimate this height we compare this decision tree to a BST.
 
-
-
-
-
 The pseudo-code for tree construction looks something like this.
 
 ```py
@@ -94,6 +90,35 @@ def construct_tree(X, current_height, max_height):
     split_attribute=attribute,
     split_value=split_value,
   )
+```
+
+HERE
+
+## Constructing the forest
+
+The pseudo-code for tree construction looks something like this.
+
+```py
+def construct_forest(X, trees_count, subsample_count):
+  """The function constructs a forest from given inputs/data points X.
+  """
+  forest = []
+  for i in range(0, trees_count):
+    # compute max_height to which we construct the decision tree.
+    # we assume that post this height/level we will not not discover
+    # any anomalies.
+    max_height = math.ceil(math.log2(subsample_count))
+
+    # create a sample with cardinality of `subsample_count` from X
+    X_sample = get_sample(X, subsample_count)
+
+    # construct the decision tree from the sample
+    tree = construct_tree(X_sample, 0, max_height)
+
+    # add tree to the forest
+    forest.append(tree)
+
+  return forest
 ```
 
 ----
