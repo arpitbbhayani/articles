@@ -124,15 +124,15 @@ def construct_forest(X, trees_count, subsample_count):
 
 ## Scoring anomalies
 
-Every anomaly detection algorithm has to score its candidate anomalies and the score should be bounded and comparable. In Isolation Forest algorithm we say that anomalies stay closer to the root node, this does not mean we pick `k` closest external nodes to the root and call them anomalies; anomalies are not relative. Hence we need to define a fool proof scoring mechanism that states instances score above/below a certain score are definitely anomalies.
+Every anomaly detection algorithm has to score its potential anomalies and it should be bounded and comparable. In Isolation Forest algorithm we say that anomalies stay closer to the root node, this does not mean we pick `k` closest external nodes to the root and call them anomalies; anomalies are not relative. Hence we need to define a fool proof scoring mechanism that states instances score above/below a certain score are definitely anomalies.
 
 Since we have already established that anomalies are closer to the root, the anomaly score will be derived from the distance of the instance from the root node, call it Path Length.
 
 > Path Length `h(x)` of a point `x` is the number of edges `x` traverses from the root node.
 
-The maximum possible height of the tree grows by order of `n` while average height grows by `log(n)`, hence normalizing `h(x)` is tricky; but since the tree is structuraly similar to a BST we draw comparisons.
+The maximum possible height of the tree grows by order of `n` while average height grows by `log(n)`, hence normalizing `h(x)` is tricky; but since the tree is structurally similar to a BST we draw comparisons.
 
-
+Average
 
 ----
 
