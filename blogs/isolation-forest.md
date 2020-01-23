@@ -94,8 +94,6 @@ def construct_tree(X, current_height, max_height):
 
 ## Constructing the forest
 
-
-
 The pseudo-code for tree construction looks something like this.
 
 ```py
@@ -120,6 +118,10 @@ def construct_forest(X, trees_count, subsample_count):
 
   return forest
 ```
+
+## Finding the anomalies
+
+
 
 ----
 
