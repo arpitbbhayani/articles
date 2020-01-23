@@ -30,7 +30,7 @@ DIAGRAM goes here.
 
 In the diagram above you could see how anomalies are isolated closer to the root of the tree; and we see how the principle explicitly isolates anomalies rather than profiles normal instances.
 
-Since by creating one decision tree we cannot for sure say that a point is an anomaly, this process is repeated multiple times and split happen over random attribute and attribute value. Thus a set of tree is maintained (forest) and average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower level/depth/height. Hence this method is called Isolation Forest method.
+Since by creating one decision tree we cannot for sure say that a point is an anomaly, this process is repeated multiple times and split happen over random attribute and attribute value. Thus a set of tree is maintained (forest) and average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower level/depth/heightl and hence this method is called Isolation Forest method.
 
 ----
 
