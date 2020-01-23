@@ -92,9 +92,9 @@ def construct_tree(X, current_height, max_height):
   )
 ```
 
-HERE
-
 ## Constructing the forest
+
+
 
 The pseudo-code for tree construction looks something like this.
 
