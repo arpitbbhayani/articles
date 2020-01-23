@@ -30,7 +30,47 @@ DIAGRAM goes here.
 
 In the diagram above you could see how anomalies are isolated closer to the root of the tree; and we see how the principle explicitly isolates anomalies rather than profiles normal instances.
 
-Since by creating one decision tree we cannot for sure say that a point is an anomaly, this process is repeated multiple times and split happen over random attribute and attribute value. Thus a set of tree is maintained (forest) and average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower level/depth/heightl and hence this method is called Isolation Forest method.
+Since by creating one decision tree we cannot for sure say that a point is an anomaly, this process is repeated multiple times and split happen over random attribute and attribute value. Thus a set of tree is maintained (forest) and average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower level/depth/height and hence this method is called Isolation Forest method.
+
+## Construction of decision tree
+
+
+
+```py
+def construct_tree(X, current_height, max_height):
+  """The function constructs a tree/sub-tree on points X.
+
+  current_height: represents the height which the tree will exist to the root.
+  max_height: the max height of the tree.
+
+  The current_height and max_height only exists to make algorithm efficient
+  as we assume that no anomalies exists at depth >= max_height.
+  """
+  if current_height >= max_height:
+    # here we are sure that no anomalies exist hence we
+    # directly construct the external node.
+    return new_external_node(X)
+
+  # pick any attribute at random.
+  attribute = get_random_attribute(X)
+
+  # for set of inputs X, for the tree we get a random value
+  # for the chosen attribute. preferably around the median.
+  split_value = get_random_value(max_value, min_value)
+
+  # split X instances based on `split_values` into Xl and Xr
+  Xl = filter(X, lambda x: X[attribute] < split_value)
+  Xr = filter(X, lambda x: X[attribute] >= split_value)
+
+  # build an internal node with its left subtree created from Xl
+  # and right subtree created from Xr, recursively.
+  return new_internal_node(
+    left=construct_tree(Xl, current_height + 1, max_height),
+    right=construct_tree(Xr, current_height + 1, max_height),
+    split_attribute=attribute,
+    split_value=split_value,
+  )
+```
 
 ----
 
