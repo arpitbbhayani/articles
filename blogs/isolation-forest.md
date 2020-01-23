@@ -94,6 +94,9 @@ def construct_tree(X, current_height, max_height):
 
 ## Constructing the forest
 
+There are only two variables in thismethod: the number of trees to build and the sub-samplingsize.
+itonly requires a small sub-sampling size to achieve high de-tection performance with high efficiency
+
 The pseudo-code for tree construction looks something like this.
 
 ```py
@@ -119,14 +122,21 @@ def construct_forest(X, trees_count, subsample_count):
   return forest
 ```
 
-## Finding the anomalies
+## Scoring anomalies
+
+Every anomaly detection algorithm has to score its candidate anomalies and the score should be bounded and comparable. In Isolation Forest algorithm we say that anomalies stay closer to the root node, this does not mean we pick `k` closest external nodes to the root and call them anomalies; anomalies are not relative. Hence we need to define a fool proof scoring mechanism that states instances score above/below a certain score are definitely anomalies.
+
+Since we have already established that anomalies are closer to the root, the anomaly score will be derived from the distance of the instance from the root node, call it Path Length.
+
+> Path Length `h(x)` of a point `x` is the number of edges `x` traverses from the root node.
+
+The maximum possible height of the tree grows by order of `n` while average height grows by `log(n)`, hence normalizing `h(x)` is tricky; but since the tree is structuraly similar to a BST we draw comparisons.
 
 
 
 ----
 
-There are only two variables in thismethod: the number of trees to build and the sub-samplingsize.
-itonly requires a small sub-sampling size to achieve high de-tection performance with high efficiency
+
 
 
 partitioning ofinstances are repeated recursively until all instances are iso-lated
