@@ -143,6 +143,21 @@ where `E(h(x))` is the average of `h(x)` from a collection of isolation trees. F
 
 GRAPH OF VARIATION OF score with `E(h(x))`
 
+## Evaluating anomalies
+
+In evaluation stage, an anomaly scores is derived from the expected path length `E(h(x))` for each test instance. Using `PathLength` function (pseudocode below), a single path length `h(x)` is calculated by traversing through the decision tree.
+
+If iteration terminates at an external node where `size > 1` then the return value is `e` plus an adjustment `c(Size)`. This adjustment is for the unbuilt decision tree (for efficiency) beyond the max height. When `h(x)` is obtained for each tree, an anomaly score is produced by computing `s(x, sample_size)`. Sorting instances by the score `s` in decending order and getting top `m` will yield us `m` anomalies.
+
+```py
+
+```
+
+## Why sub-samples
+
+GRAPH SHOWING SUBSAMPLING IMPORTANCE
+
+
 ----
 
 
