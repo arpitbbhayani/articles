@@ -124,15 +124,20 @@ def construct_forest(X, trees_count, subsample_count):
 
 ## Scoring anomalies
 
-Every anomaly detection algorithm has to score its potential anomalies and it should be bounded and comparable. In Isolation Forest algorithm we say that anomalies stay closer to the root node, this does not mean we pick `k` closest external nodes to the root and call them anomalies; anomalies are not relative. Hence we need to define a fool proof scoring mechanism that states instances score above/below a certain score are definitely anomalies.
-
-Since we have already established that anomalies are closer to the root, the anomaly score will be derived from the distance of the instance from the root node, call it Path Length.
+Every anomaly detection algorithm has to score its potential anomalies and the generated score should be bounded and comparable. In Isolation Forest algorithm we know that anomalies stay closer to the root node, and this becomes our guiding and defining insight that will help us build a scoring function. Thus the anomaly score will be derived from the distance of the instance from the root node, call it Path Length.
 
 > Path Length `h(x)` of a point `x` is the number of edges `x` traverses from the root node.
 
-The maximum possible height of the tree grows by order of `n` while average height grows by `log(n)`, hence normalizing `h(x)` is tricky; but since the tree is structurally similar to a BST we draw comparisons.
+The maximum possible height of the tree grows by order of `n` while average height grows by `log(n)`. The tree is structurally similar to a BST and can draw the following conclusions.
 
-Average
+> The average path length `h(x)` for external node termination is same as the average path length of unsuccessful search in BST.
+
+In a BST, an unsuccessful search always terminates at a `NULL` pointer and if we treat external node of the decision tree as `NULL` of BST then we could say that average path length of external node termination is same as average path length of unsuccessful search in BST.
+
+We know that average path length of unsuccessful search in BST is given by
+
+c(n) = 2H(n−1)−(2(n−1)/n)
+
 
 ----
 
