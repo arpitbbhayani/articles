@@ -187,12 +187,13 @@ def get_path_length(x, T, e):
     return get_path_length(x, T.right, e + 1)
 ```
 
-## Why this algorithm?
-
-build partial models and exploit sub-sampling to anextent that is not feasible in existing methods
-a large part of an iTree that isolates normal points isnot needed for anomaly detection; it does not need tobe constructed
-iForest utilizes no distance or density measures to de-tect anomalies. This eliminates major computationalcost of distance calculation in all distance-based meth-ods and density-based methods.
-iForest has a linear time complexity with a lowconstant and a low memory requirement
+## Efficiency
+Isolation forest algorithm
+ - thrives on sub-sampled data
+ - does not really need to build tree from complete data
+ - does not need to build tree taller than `max_height` which can be estimated very quickly
+ - does not use any computationally expensive operation like distance or density calculaion
+ - has low memory footprint and a linear time complexity with low constant for training
 
 ## Swamping and Masking
 
