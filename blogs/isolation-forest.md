@@ -115,19 +115,18 @@ Every anomaly detection algorithm has to score its data points/instances and qua
 
 > Path Length `h(x)` of a point `x` is the number of edges `x` traverses from the root node.
 
-The maximum possible height of the tree grows by order of `n` while average height grows by `log(n)`. The tree is structurally similar to a BST and can draw the following conclusions.
+As the maximum possible height of the tree grows by order of `n`, the average height grows by `log(n)` - this makes normalizing the scoring function a little tricky. To remedy this we use the insights from the structure of the decision tree. The decision tree has two type of nodes internal and external such that external has no child while internal is parent to exactly two nodes - which means the decision tree is a proper binary tree and hence we conclude
 
 > The average path length `h(x)` for external node termination is same as the average path length of unsuccessful search in BST.
 
-In a BST, an unsuccessful search always terminates at a `NULL` pointer and if we treat external node of the decision tree as `NULL` of BST then we could say that average path length of external node termination is same as average path length of unsuccessful search in BST.
-
-We know that average path length of unsuccessful search in BST is given by
+In a BST, an unsuccessful search always terminates at a `NULL` pointer and if we treat external node of the decision tree as `NULL` (of BST) then we could say that average path length of external node termination is same as average path length of unsuccessful search in BST (constructed only from internal nodes of the decision tree), and is given by
 
 c(n) = 2H(n−1)−(2(n−1)/n)
+IMAGE WITH FORMULA
 
-whereH(i)is the harmonic number and it can be estimated by ln(i)+0.5772156649
+where H(y) is the harmonic number and it can be estimated by ln(y) + 0.5772156649
 
-You can read the proof HERE.
+To understand the derivation in detail refer link1 and link2.
 
 c(n) is the average of h(x) given n, we use it to normalise h(x)
 
