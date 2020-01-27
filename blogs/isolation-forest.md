@@ -126,9 +126,9 @@ IMAGE WITH FORMULA
 
 where H(y) is the harmonic number and it can be estimated by ln(y) + 0.5772156649
 
-To understand the derivation in detail refer link1 and link2.
+To understand the derivation in detail refer [Page 7 of this file](https://cse.iitkgp.ac.in/~pb/algo-1-pb-10.pdf), [slide 13 of this presentation](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/trees.pdf), [proof a) of this link](https://www.cise.ufl.edu/~sahni/dsaac/public/exer/c18/e47.htm), [this link](https://www.cs.csustan.edu/~john/classes/previous_semesters/cs3100_datastructures/2000_04_Fall/Examples/Trees/averageSearchInBST.html).
 
-c(n) is the average of h(x) given n, we use it to normalise h(x)
+c(n) is the average of h(x) given n, we use it to normalize h(x)
 
 Theanomaly scoresof an instancexis defined as
 
