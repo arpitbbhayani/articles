@@ -160,11 +160,13 @@ def get_path_length(x, T, e):
   if is_external_node(T):
     # when T is the root of an external node subtree
     # then we estimate path length and return.
+
+    # here c is the function which estimates the average path length
+    # for external node termination.
     return e + c(len(T))
 
   # T is the root of an internal node then we
-  split_attribute = T.split_attribute
-  if x[split_attribute] < T[split_value]:
+  if x[T.split_attribute] < T[split_value]:
     # instance x may lie in left subtree
     return get_path_length(x, T.left, e + 1)
   else:
