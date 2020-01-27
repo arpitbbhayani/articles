@@ -122,7 +122,7 @@ def construct_forest(X, trees_count, subsample_count):
   return forest
 ```
 
-## Scoring anomalies
+## Scoring
 
 Every anomaly detection algorithm has to score its potential anomalies and the generated score should be bounded and comparable. In Isolation Forest algorithm we know that anomalies stay closer to the root node, and this becomes our guiding and defining insight that will help us build a scoring function. Thus the anomaly score will be derived from the distance of the instance from the root node, call it Path Length.
 
@@ -138,6 +138,21 @@ We know that average path length of unsuccessful search in BST is given by
 
 c(n) = 2H(n−1)−(2(n−1)/n)
 
+whereH(i)is the harmonic number and it can be estimated by ln(i)+0.5772156649
+
+You can read the proof HERE.
+
+c(n) is the average of h(x) given n, we use it to normalise h(x)
+
+Theanomaly scoresof an instancexis defined as
+
+s(x,n) = 2−E(h(x))c(n),
+
+whereE(h(x))is the average ofh(x)from a collection ofisolation trees
+
+ - if instances returnsvery close to1, then they aredefinitely anomalies
+ - if instances havesmuch smaller than 0.5, then theyare quite safe to be regarded as normal instances, and
+ - if all the instances returns around 0.5, then the entiresample does not really have any distinct anomaly
 
 ----
 
