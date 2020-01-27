@@ -198,5 +198,4 @@ Isolation forest algorithm
  - could be used in an online system with low memory footprint (near real-time)
 
 # Conclusion
-
-This is the first article in series of Algorithms.
+I really hope this article helped you to understand Isolation Forest, an unsupervised anomaly detection algorithm. I stumbled upon this through an engineering [blog](https://lambda.grofers.com/anomaly-detection-using-isolation-forest-80b3a3d1a9d8) of [Grofers](https://grofers.com/). I found this algorithm to be really interesting because of its novel approach and hence thought of diving deep into it. This algorithm was [extended](https://arxiv.org/pdf/1811.02141.pdf) in 2018 making it better.
