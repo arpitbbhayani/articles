@@ -126,10 +126,10 @@ In a BST, an unsuccessful search always terminates at a `NULL` pointer and if we
 where `H(i)` is the [harmonic number](https://en.wikipedia.org/wiki/Harmonic_number) and it can be estimated by `ln(i) + 0.5772156649` ([Euler–Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant)). `c(n)` is the average of `h(x)` given `n`, we use it to normalize `h(x)`.
 
 To understand the derivation in detail refer
- - [Page 7 of this file](https://cse.iitkgp.ac.in/~pb/algo-1-pb-10.pdf)
- - [slide 13 of this presentation](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/trees.pdf)
- - [proof a) of this link](https://www.cise.ufl.edu/~sahni/dsaac/public/exer/c18/e47.htm)
- - [this link](https://www.cs.csustan.edu/~john/classes/previous_semesters/cs3100_datastructures/2000_04_Fall/Examples/Trees/averageSearchInBST.html).
+ - [IIT KGP, Algorithms, Lecture Notes - Page 7](https://cse.iitkgp.ac.in/~pb/algo-1-pb-10.pdf)
+ - [What is real big-O of search in BST?](https://www.cs.csustan.edu/~john/classes/previous_semesters/cs3100_datastructures/2000_04_Fall/Examples/Trees/averageSearchInBST.html)
+ - [CMU CMSC 420: Lecture 5 - Slide 13](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/trees.pdf)
+ - [CISE UFL: Data Structures, Algorithms, & Applications - 1st Proof](https://www.cise.ufl.edu/~sahni/dsaac/public/exer/c18/e47.htm)
 
 The anomaly scores of an instance `x` is defined as
 
