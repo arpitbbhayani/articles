@@ -21,13 +21,18 @@ Isolation Forest algorithm fixes both of the above issues and provides highly ef
 Now we take a look at the algorithm, what it does, how it does and the math behind it. Fasten your seat belts, it's going to be a bumpy ride.
 
 ## The core principle
-The core of the algorithm is to "isolate" anomalies by creating a decision tree on points over random attributes. Anomalies, being more susceptible than normal points, isolate closer to the root.
+The core of the algorithm is to "isolate" anomalies by creating a decision tree on points over random attributes. The random partitioning produces noticeable shorter paths for anomalies since
+
+ - fewer instances result in smaller partitions
+ - distingusable attribute values are more likely to be separated in early partitioning
+
+Hence, when a forest of random trees collectively produce shorter path lengths for some particular points, then they are highly likely to be anomalies.
 
 DIAGRAM goes here.
 
 The diagram above shows how isolation pattern of anomalies.
 
-It will be stupid if we conclude and label anomalies by just creating one decision tree, hence the process is repeated multiple times and split happen over random attribute and attribute value. The points that isolate closer to the root, more often than not are labeled as anomalies. Hence a set of tree (forest) is maintained and the average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower height.
+The process is repeated multiple times and split happen over random attribute and attribute value.The points that isolate closer to the root, more often than not are labeled as anomalies. Hence a set of tree (forest) is maintained and the average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower height.
 
 ## Construction of decision tree
 The decision tree is constructed by splitting the sub-sample points/instances over a split value such that the instances whose corresponding attribute value is smaller than the split value goes left and the others go right; and the process is continued recursively until the tree is fully constructed. The split value is selected at random between the minimum and maximum values of the selected attribute.
@@ -189,14 +194,6 @@ large sampling size reducesiForest’s ability to isolate anomalies as normal in
 Since iForest does not need to iso-late all of normal instances – the majority of the trainingsample,iForest is able to work well with a partial modelwithout isolating all normal points and builds models usinga small sample size.
 
 GRAPH SHOWING SUBSAMPLING IMPORTANCE
-
-## Why anomalies reside closer to the root node?
-
-partitioning ofinstances are repeated recursively until all instances are iso-lated
-This random partitioning produces noticeable shorterpaths for anomalies since (a) the fewer instances of anoma-lies result in a smaller number of partitions – shorter pathsin a tree structure, and (b) instances with distinguishableattribute-values are more likely to be separated in early par-titioning. Hence, when a forest of random trees collectivelyproduce shorter path lengths for some particular points, thenthey are highly likely to be anomalies.
-
-Since each partition is randomly generated, individualtrees are generated with different sets of partitions. We av-erage path lengths over a number of trees to find the ex-pected path length.
-Using1000trees, the average path lengths ofxoandxiconverge to4.02and12.82respectively. It showsthat anomalies are having path lengths shorter than normalinstances.
 
 ## Why this algorithm?
 
