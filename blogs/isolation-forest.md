@@ -110,9 +110,8 @@ def construct_forest(X, trees_count, subsample_count):
   return forest
 ```
 
-## Scoring
-
-Every anomaly detection algorithm has to score its potential anomalies and the generated score should be bounded and comparable. In Isolation Forest algorithm we know that anomalies stay closer to the root node, and this becomes our guiding and defining insight that will help us build a scoring function. Thus the anomaly score will be derived from the distance of the instance from the root node, call it Path Length.
+## Scoring the anomalies
+Every anomaly detection algorithm has to score its data points/instances and quantify the confidence the algorithm has on its potential anomalies; and it should be bounded and comparable. In Isolation Forest we know that anomalies always stay closer to the root, and this becomes our guiding and defining insight that will help us build a scoring function. Hence the anomaly score will a function of path length which is defined as
 
 > Path Length `h(x)` of a point `x` is the number of edges `x` traverses from the root node.
 
