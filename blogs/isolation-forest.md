@@ -195,15 +195,6 @@ Isolation forest algorithm
  - does not use any computationally expensive operation like distance or density calculaion
  - has low memory footprint and a linear time complexity with low constant for training
 
-## Swamping and Masking
-
-Swamping: wrongly identifying normal instances as anomalies
-Whennormal instances are too close to anomalies, the number ofpartitions required to separate anomalies increases – whichmakes it harder to distinguish anomalies from normal in-stances
-
-Masking is the existence of too many anomaliesconcealing their own presence. When an anomaly cluster islarge and dense, it also increases the number of partitionsto isolate each anomaly.
-
-The unique characteristic ofisolation trees allows iForest to build a partial model bysub-sampling which incidentally alleviates the effects ofswamping and masking. It is because: 1) sub-sampling con-trols data size, which helps iForest better isolate examplesof anomalies and 2) each isolation tree can be specialised,as each sub-sample includes different set of anomalies or even no anomaly.
-
 ## Other reasons
 
 https://blog.easysol.net/using-isolation-forests-anamoly-detection/
