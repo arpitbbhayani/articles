@@ -123,17 +123,19 @@ In a BST, an unsuccessful search always terminates at a `NULL` pointer and if we
 
 ![BST unsuccessful search estimation](https://user-images.githubusercontent.com/4745789/73191802-198ac200-414e-11ea-9500-039483b6e780.png)
 
-where `H(i)` is the [harmonic number](https://en.wikipedia.org/wiki/Harmonic_number) and it can be estimated by `ln(i) + 0.5772156649` ([Euler–Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant))
+where `H(i)` is the [harmonic number](https://en.wikipedia.org/wiki/Harmonic_number) and it can be estimated by `ln(i) + 0.5772156649` ([Euler–Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant)). `c(n)` is the average of `h(x)` given `n`, we use it to normalize `h(x)`.
 
-To understand the derivation in detail refer [Page 7 of this file](https://cse.iitkgp.ac.in/~pb/algo-1-pb-10.pdf), [slide 13 of this presentation](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/trees.pdf), [proof a) of this link](https://www.cise.ufl.edu/~sahni/dsaac/public/exer/c18/e47.htm), [this link](https://www.cs.csustan.edu/~john/classes/previous_semesters/cs3100_datastructures/2000_04_Fall/Examples/Trees/averageSearchInBST.html).
+To understand the derivation in detail refer
+ - [Page 7 of this file](https://cse.iitkgp.ac.in/~pb/algo-1-pb-10.pdf)
+ - [slide 13 of this presentation](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/trees.pdf)
+ - [proof a) of this link](https://www.cise.ufl.edu/~sahni/dsaac/public/exer/c18/e47.htm)
+ - [this link](https://www.cs.csustan.edu/~john/classes/previous_semesters/cs3100_datastructures/2000_04_Fall/Examples/Trees/averageSearchInBST.html).
 
-c(n) is the average of h(x) given n, we use it to normalize h(x)
-
-Theanomaly scoresof an instancexis defined as
+The anomaly scores of an instance `x` is defined as
 
 ![scoring function](https://user-images.githubusercontent.com/4745789/73192432-075d5380-414f-11ea-86dc-ae6acda7b7d4.png)
 
-whereE(h(x))is the average ofh(x)from a collection ofisolation trees
+where `E(h(x))` is the average of `h(x)` from a collection of isolation trees.
 
  - if instances returnsvery close to1, then they aredefinitely anomalies
  - if instances havesmuch smaller than 0.5, then theyare quite safe to be regarded as normal instances, and
