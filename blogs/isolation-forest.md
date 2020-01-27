@@ -1,24 +1,21 @@
-Anomaly detection is identification of something that is not "normal"; the definition of what "normal" is, depends on what is observed and its properties. In this article we go in-depth of a popular unsupervised anomaly detection algorithm named [Isolation Forest](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf). This algorithm beautifully exploits the properties and characteristics of anomalies and keeps it independent of data distributions, and ...
+Anomaly detection is identification of something that could be stated as "normal"; the definition of what "normal" is, depends on the phenomenon that is being is observed and the properties it bears. In this article we go in-depth of an unsupervised anomaly detection algorithm called [Isolation Forest](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf). This algorithm beautifully exploits the characteristics of anomalies, keeping it independent of data distributions.
 
-### Why should we detect anomalies?
-
- - anomalies in credit card transactions could signify fraudulent use
- - anomalous spot in an astronomy image could indicate a new star
- - anomalous network traffic pattern could stand for an attack or an unauthorized access
-
-# Characteristics of anomalies
-
-Since anomalies deviates from normal it means they are few in numbers (minority) and have attribute values that are very different from those of normal. The paper nicely puts it as: anomalies are **few and different**. These characteristics of anomalies make them more susceptible to isolation than normal points.
+### Characteristics of anomalies
+Since anomalies deviates from normal it implies that they are few in numbers (minority) and have attribute values that are very different from those of normal. The paper nicely puts it as: 'anomalies are **few and different**'. These characteristic of anomalies make them more susceptible to isolation than normal points and this algorithm puts it to good use.
 
 # The usual approach for detecting anomalies
-
-The existing models train to see what constitutes "normal" and then considers everything that does not conform to this definition as anomalies. To name a few methods that does this, and very widely used, are:
+The existing models train to see what constitutes "normal" and then considers everything that does not conform to this definition as anomalies. Almost every single algorithm has its own way of defining what is normal and then loops to data points and filters out those who do not satisfy the constraint. To name a few methods that does this, and very widely used, are:
 
  - statistical methods - , , ,
  - classification-based methods - , , ,
  - clustering-based methods - , , ,
 
-Since these methods are not optimized detect anomalies, instead are optimized to find normal instances, the results of anomaly detection contains too many false positives or might detect too few anomalies. Many of these methods are computationally complex and hence suits low dimensional and/or small sized data. Isolation Forest algorithm fixes both of the above issues and provides highly efficient and accurate way to detect anomalies.
+### The issue with usual approach
+Since these methods are not optimized to detect anomalies, instead are optimized to find normal instances, the results of anomaly detection either contains too many false positives or might detect too few anomalies.
+
+Many of these methods are computationally complex and hence suits low dimensional and/or small sized data.
+
+Isolation Forest algorithm fixes both of the above issues and provides highly efficient and accurate way to detect anomalies.
 
 # The algorithm
 Now we take a look at the algorithm, what it does, how it does and the math behind it. Fasten your seatbelts; it's going to be a bumpy ride.
