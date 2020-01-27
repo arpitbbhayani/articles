@@ -85,10 +85,7 @@ def construct_tree(X, current_height, max_height):
 
 ## Constructing the forest
 
-There are only two variables in thismethod: the number of trees to build and the sub-samplingsize.
-itonly requires a small sub-sampling size to achieve high de-tection performance with high efficiency
-
-The pseudo-code for tree construction looks something like this.
+We get to choose the number of trees we want in the forest, there is no specific way to do this; but in general: more the merrier. Not only we get to choose the number of trees, but we also choose the number of nodes in each tree - sub-sample size. The algorithm requires a sub-sample to operate efficiently and yields a very high performance while doing so.
 
 ```py
 def construct_forest(X, trees_count, subsample_count):
