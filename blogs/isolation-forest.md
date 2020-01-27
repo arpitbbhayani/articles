@@ -135,11 +135,13 @@ The anomaly scores of an instance `x` is defined as
 
 ![scoring function](https://user-images.githubusercontent.com/4745789/73192432-075d5380-414f-11ea-86dc-ae6acda7b7d4.png)
 
-where `E(h(x))` is the average of `h(x)` from a collection of isolation trees.
+where `E(h(x))` is the average of `h(x)` from a collection of isolation trees. From the scoring function defined above we could deduce that if
 
- - if instances returnsvery close to1, then they aredefinitely anomalies
- - if instances havesmuch smaller than 0.5, then theyare quite safe to be regarded as normal instances, and
- - if all the instances returns around 0.5, then the entiresample does not really have any distinct anomaly
+ - score is very close to 1, then they are definitely anomalies
+ - score is much smaller than 0.5, then they are quite safe to be regarded as normal instances, and
+ - all the instances returns around 0.5, then the entire sample does not really have any distinct anomaly
+
+GRAPH OF VARIATION OF score with `E(h(x))`
 
 ----
 
