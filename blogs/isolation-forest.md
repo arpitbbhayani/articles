@@ -93,9 +93,11 @@ def construct_forest(X, trees_count, subsample_count):
   """
   forest = []
   for i in range(0, trees_count):
-    # compute max_height to which we construct the decision tree.
-    # we assume that post this height/level we will not not discover
-    # any anomalies.
+    # max_height is in fact the average height of the tree that would be
+    # constructed from given points. This acts as max_height for the
+    # construction because we are only interested in data points that have
+    # shorter-than-average path lengths, as those points are more likely
+    # to be anomalies.
     max_height = math.ceil(math.log2(subsample_count))
 
     # create a sample with cardinality of `subsample_count` from X
@@ -174,7 +176,10 @@ def get_path_length(x, T, e):
     return get_path_length(x, T.right, e + 1)
 ```
 
-## Why sub-samples
+# Some key insights and highlights
+Here are some key insights and highlights about Isolation trees, Efficiency, Subsampling from the paper that I would like to mention
+
+## Why sub-sampling?
 
 GRAPH SHOWING SUBSAMPLING IMPORTANCE
 
@@ -201,17 +206,6 @@ Isolation Tree.LetTbe a node of an isola-tion tree.Tis either an external-node w
 An iTree is aproper binary tree where each node in the tree has exactly zero or two daughternodes.
 
 when an iTree is fully grown, inwhich case the number of external nodes isnand the num-ber of internal nodes isn−1; the total number of nodesof an iTrees is2n−1; and thus the memory requirement isbounded and only grows linearly with n.
-
-### Scoring
-
-Path Lengthh(x)of a pointxis measured bythe number of edgesxtraverses an iTree from the root nodeuntil the traversal is terminated at an external node
-
-the estimation of aver-ageh(x)for external node terminations is the same as the unsuccessful search in BST.
-Given adata set ofninstances, Section 10.3.3 of [9] gives the aver-age path length of unsuccessful search in BST as:c(n) = 2H(n−1)−(2(n−1)/n),(1)whereH(i)is the harmonic number and it can be estimatedbyln(i)+0.5772156649(Euler’s constant). Asc(n)is theaverage ofh(x)givenn, we use it to normaliseh(x). Theanomaly scoresof an instancexis defined as:s(x,n) = 2−E(h(x))c(n),(2)whereE(h(x))is the average ofh(x)from a collection ofisolation trees. In Equation (2):•whenE(h(x))→c(n),s→0.5;•whenE(h(x))→0,s→1;•and whenE(h(x))→n−1,s→0.
-
-sis monotonic toh(x). Figure 2 illustrates the relationshipbetweenE(h(x))ands, and the following conditions ap-plied where0< s≤1for0< h(x)≤n−1. Using theanomaly scores, we are able to make the following assess-ment:•(a) if instances returnsvery close to1, then they aredefinitely anomalies,•(b) if instances havesmuch smaller than 0.5, then theyare quite safe to be regarded as normal instances, and•(c) if all the instances returns≈0.5, then the entiresample does not really have any distinct anomaly
-
-s≥0.6, which are potential anomalies
 
 ## Why this algorithm?
 
@@ -240,20 +234,6 @@ The unique characteristic ofisolation trees allows iForest to build a partial mo
 ### Other reasons
 
 https://blog.easysol.net/using-isolation-forests-anamoly-detection/
-
-## The Algorithm
-Anomaly detection using iForest is a two-stage process.The first (training) stage builds isolation trees using sub-samples of the training set.  The second (testing) stagepasses the test instances through isolation trees to obtainan anomaly score for each instance
-
-### Training
-In the training stage, iTrees are constructed by recur-sively partitioning the given training set until instances areisolated or a specific tree height is reached of which resultsa partial model. Note that the tree height limitlis automat-ically set by the sub-sampling sizeψ:l=ceiling(log2ψ) which is approximately the average tree heigh.
-
-The ra-tionale of growing trees up to the average tree height is thatwe are only interested in data points that have shorter-than-average path lengths, as those points are more likely to beanomalies.
-
-### Evaluation
-
-In the evaluating stage, an anomaly scoresis derivedfrom the expected path lengthE(h(x))for each test in-stance.E(h(x))are derived by passing instances througheach iTree in an iForest. UsingPathLengthfunction, asingle path lengthh(x)is derived by counting the numberof edgesefrom the root node to a terminating node as in-stancextraverses through an iTree. Whenxis terminatedat an external node, whereSize >1, the return value iseplus an adjustmentc(Size). The adjustment accounts foran unbuilt subtree beyond the tree height limit.
-
-...
 
 ## Advantages
 
