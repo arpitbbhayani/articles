@@ -49,6 +49,11 @@ Internal nodes are non-leaf and contains data points/instances and the split con
 
 External nodes are leaf nodes that could not be split further and reside at the bottom of the tree. An external node will always have a sibling node (either internal or external).
 
+## Why sub-sampling helps
+The Isolation Forest algorithm works well when the trees are created, not from the entire dataset, but from a subsampled data set. This is contrary to the almost all other techniques where every other techniques thrievs on data and demands more of it for greater accuracy. Subsampling works wonders in this algorithm because normal instances can interfere with isolation process by being little closer to the actual anomalies. This is very evident from the diagram below.
+
+DIAGRAM SHOWING SUBSAMPLING IMPORTANCE
+
 ### Optimizing decision tree construction
 
 Since anomalies are susceptible to isolation and have a tendency to reside closer to the root of the decision tree, we could just construct the decision tree till it reaches a certain height and not split points further. This height is the height post which which we are (almost) sure that there could not be any anomalies.
@@ -181,19 +186,6 @@ def get_path_length(x, T, e):
     # instance x may lie in right subtree
     return get_path_length(x, T.right, e + 1)
 ```
-
-# Some key insights and highlights
-Here are some key insights and highlights about Isolation trees, Efficiency, Subsampling from the paper that I would like to mention
-
-## Why sub-sampling?
-
-isolation method works best when thesampling size is kept small
-
-large sampling size reducesiForest’s ability to isolate anomalies as normal instances caninterfere with the isolation process and therefore reducesits ability to clearly isolate anomalies.
-
-Since iForest does not need to iso-late all of normal instances – the majority of the trainingsample,iForest is able to work well with a partial modelwithout isolating all normal points and builds models usinga small sample size.
-
-GRAPH SHOWING SUBSAMPLING IMPORTANCE
 
 ## Why this algorithm?
 
