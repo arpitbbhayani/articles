@@ -194,17 +194,8 @@ Isolation forest algorithm
  - does not need to build tree taller than `max_height` which can be estimated very quickly
  - does not use any computationally expensive operation like distance or density calculaion
  - has low memory footprint and a linear time complexity with low constant for training
-
-## Other reasons
-
-https://blog.easysol.net/using-isolation-forests-anamoly-detection/
-
-## Advantages
-
-One of the important challenges in anomaly detection ishigh dimensional data. For distance-based methods, everypoint is equally sparse in high dimensional space — render-ing distance a useless measure. For iForest, it also suffersfrom the same ‘curse of dimensionality’
-Forest hasa significant advantage in processing time
-
-The implication of using a small sub-sample size is thatone can easily host an online anomaly detection system with minimal memory footprint
+ - handles multi-dimensional data efficiently
+ - could be used in an online system with low memory footprint (near real-time)
 
 # Conclusion
 
