@@ -31,27 +31,21 @@ It will be stupid if we conclude and label anomalies by just creating one decisi
 
 ## Construction of decision tree
 
-The decision tree is constructed by splitting the given points/instances over a split value such that the instances whose corresponding attribute value is smaller than the split value goes left and the others go right; and the process is continued recursively until the tree is fully constructed; which means all nodes contain just 1 element.
+The decision tree is constructed by splitting the given points/instances over a split value such that the instances whose corresponding attribute value is smaller than the split value goes left and the others go right; and the process is continued recursively until the tree is fully constructed; which means all nodes contain just 1 element. There are two types of node in the decision tree
 
-There are two types of node in the decision tree:
+DIAGRAM OF INTERNAL AND EXTERNAL NODES
 
 ### Internal Node
 
 Internal nodes are non-leaf and contains data points/instances and the split condition; depending on the split condition it will be parent to two sub-trees or two external nodes.
 
-DIAGRAM
-
 ### External Node
 
 External nodes are leaf nodes that could not be split further and reside at the bottom of the tree. An external node will always have a sibling node (either internal or external).
 
-DIAGRAM
-
 ### Optimizing decision tree construction
 
-Since anomalies are susceptible to isolation and have a tendency to reside closer to the root of the decision tree, we could just construct the decision tree till it reaches a certain height. This height is the height post which which we are sure that there could not be any anomalies. In order to estimate this height we compare this decision tree to a BST.
-
-The pseudo-code for tree construction looks something like this.
+Since anomalies are susceptible to isolation and have a tendency to reside closer to the root of the decision tree, we could just construct the decision tree till it reaches a certain height and not split points further. This height is the height post which which we are (almost) sure that there could not be any anomalies.
 
 ```py
 def construct_tree(X, current_height, max_height):
