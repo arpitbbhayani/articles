@@ -121,10 +121,9 @@ As the maximum possible height of the tree grows by order of `n`, the average he
 
 In a BST, an unsuccessful search always terminates at a `NULL` pointer and if we treat external node of the decision tree as `NULL` (of BST) then we could say that average path length of external node termination is same as average path length of unsuccessful search in BST (constructed only from internal nodes of the decision tree), and is given by
 
-c(n) = 2H(n−1)−(2(n−1)/n)
-IMAGE WITH FORMULA
+![BST unsuccessful search estimation](https://user-images.githubusercontent.com/4745789/73191487-949fa880-414d-11ea-888e-3cc863c325a2.png)
 
-where H(y) is the harmonic number and it can be estimated by ln(y) + 0.5772156649
+where `H(i)` is the [harmonic number](https://en.wikipedia.org/wiki/Harmonic_number) and it can be estimated by `ln(i) + 0.5772156649` ([Euler–Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant))
 
 To understand the derivation in detail refer [Page 7 of this file](https://cse.iitkgp.ac.in/~pb/algo-1-pb-10.pdf), [slide 13 of this presentation](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/trees.pdf), [proof a) of this link](https://www.cise.ufl.edu/~sahni/dsaac/public/exer/c18/e47.htm), [this link](https://www.cs.csustan.edu/~john/classes/previous_semesters/cs3100_datastructures/2000_04_Fall/Examples/Trees/averageSearchInBST.html).
 
