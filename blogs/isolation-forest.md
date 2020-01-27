@@ -121,7 +121,7 @@ As the maximum possible height of the tree grows by order of `n`, the average he
 
 In a BST, an unsuccessful search always terminates at a `NULL` pointer and if we treat external node of the decision tree as `NULL` (of BST) then we could say that average path length of external node termination is same as average path length of unsuccessful search in BST (constructed only from internal nodes of the decision tree), and is given by
 
-![BST unsuccessful search estimation](https://user-images.githubusercontent.com/4745789/73191487-949fa880-414d-11ea-888e-3cc863c325a2.png)
+![BST unsuccessful search estimation](https://user-images.githubusercontent.com/4745789/73191802-198ac200-414e-11ea-9500-039483b6e780.png)
 
 where `H(i)` is the [harmonic number](https://en.wikipedia.org/wiki/Harmonic_number) and it can be estimated by `ln(i) + 0.5772156649` ([Euler–Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant))
 
@@ -131,7 +131,7 @@ c(n) is the average of h(x) given n, we use it to normalize h(x)
 
 Theanomaly scoresof an instancexis defined as
 
-s(x,n) = 2−E(h(x))c(n),
+![scoring function](https://user-images.githubusercontent.com/4745789/73192432-075d5380-414f-11ea-86dc-ae6acda7b7d4.png)
 
 whereE(h(x))is the average ofh(x)from a collection ofisolation trees
 
