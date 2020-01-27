@@ -18,16 +18,16 @@ Many of these methods are computationally complex and hence suits low dimensiona
 Isolation Forest algorithm fixes both of the above issues and provides highly efficient and accurate way to detect anomalies.
 
 # The algorithm
-Now we take a look at the algorithm, what it does, how it does and the math behind it. Fasten your seatbelts; it's going to be a bumpy ride.
+Now we take a look at the algorithm, what it does, how it does and the math behind it. Fasten your seat belts, it's going to be a bumpy ride.
 
 ## The core principle
-The core of the algorithm is to "isolate" anomalies by creating a decision tree on points over a particular attribute. Since anomalies are susceptible to isolation, they isolate closer to the root while normal points isolate at deeper levels.
+The core of the algorithm is to "isolate" anomalies by creating a decision tree on points over random attributes. Anomalies, being more susceptible than normal points, isolate closer to the root.
 
 DIAGRAM goes here.
 
-In the diagram above you could see how anomalies are isolated closer to the root of the tree; and we see how the principle explicitly isolates anomalies rather than profiles normal instances.
+The diagram above shows how isolation pattern of anomalies.
 
-Since by creating one decision tree we cannot for sure say that a point is an anomaly, this process is repeated multiple times and split happen over random attribute and attribute value. Thus a set of tree is maintained (forest) and average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower level/depth/height and hence this method is called Isolation Forest method.
+It will be stupid if we conclude and label anomalies by just creating one decision tree, hence the process is repeated multiple times and split happen over random attribute and attribute value. The points that isolate closer to the root, more often than not are labeled as anomalies. Hence a set of tree (forest) is maintained and the average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower height.
 
 ## Construction of decision tree
 
