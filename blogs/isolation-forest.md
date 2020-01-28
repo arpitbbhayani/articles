@@ -8,8 +8,8 @@ The existing models train to see what constitutes "normal" and then labels every
 
 ### The issue with the usual approach
 
- - The usual methods are not optimized to detect anomalies, instead they are optimized to find normal instances, because of which the result of anomaly detection either contains too many false positives or might detect too few anomalies.
- - Many of these methods are computationally complex and hence suit low dimensional and/or small-sized data.
+The usual methods are not optimized to detect anomalies, instead they are optimized to find normal instances, because of which the result of anomaly detection either contains too many false positives or might detect too few anomalies.
+Many of these methods are computationally complex and hence suit low dimensional and/or small-sized data.
 
 Isolation Forest algorithm fixes both of the above issues and provides a highly efficient and accurate way to detect anomalies.
 
