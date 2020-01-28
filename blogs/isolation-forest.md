@@ -17,18 +17,18 @@ Isolation Forest algorithm addresses both of the above concerns and provides an 
 Now we take a go through the algorithm, and dissect it stage by stage and in the process understand the math behind it. Fasten your seat belts, it's going to be a bumpy ride.
 
 ## The core principle
-The core of the algorithm is to "isolate" anomalies by creating a decision tree on points over random attributes. The random partitioning produces noticeable shorter paths for anomalies since
+The core of the algorithm is to "isolate" anomalies by creating a decision trees over random attributes. The random partitioning produces noticeable shorter paths for anomalies since
 
- - fewer instances result in smaller partitions
+ - fewer instances (of anomalies) result in smaller partitions
  - distinguishable attribute values are more likely to be separated in early partitioning
 
 Hence, when a forest of random trees collectively produces shorter path lengths for some particular points, then they are highly likely to be anomalies.
 
 ![Decision tree splits for normal points and anomalies](https://user-images.githubusercontent.com/4745789/73243800-804fc000-41ce-11ea-826f-14cbc407af99.png)
 
-The diagram above shows the number of splits required to isolate a normal point and an anomaly. Splits are represented through blue lines which happens at random on a random attribute and it essentially creates the decision tree. The number of splits determines the level at which the isolation happened and will be used to generate the anomaly score.
+The diagram above shows the number of splits required to isolate a normal point and an anomaly. Splits, represented through blue lines, happens at random on a random attribute and in the process building a decision tree. The number of splits determines the level at which the isolation happened and will be used to generate the anomaly score.
 
-The process is repeated multiple times and the level at which isolation happens for a point is noted. Once all the iterations are over, we generate an anomaly score for each point/instance, which suggests its likeliness to be an anomaly. The score is computed as a function of the average level at which the point was isolated. The top `m` gathered, on the basis of the score, are labeled as anomalies.
+The process is repeated multiple times and we note the isolation level for each point/instance. Once the iterations are over, we generate an anomaly score for each point/instance, suggesting its likeliness to be an anomaly. The score is a function of the average level at which the point was isolated. The top `m` gathered on the basis of the score, are labeled as anomalies.
 
 ## Construction of decision tree
 The decision tree is constructed by splitting the sub-sample points/instances over a split value such that the instances whose corresponding attribute value is smaller than the split value goes left and the others go right, and the process is continued recursively until the tree is fully constructed. The split value is selected at random between the minimum and maximum values of the selected attribute.
