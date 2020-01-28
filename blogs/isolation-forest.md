@@ -54,14 +54,15 @@ The image above shows how sub-sampling actually makes a clear separation between
 
 ### Optimizing decision tree construction
 
-Since anomalies are susceptible to isolation and have a tendency to reside closer to the root of the decision tree, we could just construct the decision tree till it reaches a certain height and not split points further. This height is the height post which we are (almost) sure that there could not be any anomalies.
+Since anomalies are susceptible to isolation and have a tendency to reside closer to the root of the decision tree, we construct the decision tree till it reaches a certain height `max_height` and not split points further. This height is the height post which we are (almost) sure that there could not be any anomalies.
 
 ```py
 def construct_tree(X, current_height, max_height):
   """The function constructs a tree/sub-tree on points X.
 
-  current_height: represents the height of the current tree to the root of the decision tree.
-  max_height: the max height of the tree.
+  current_height: represents the height of the current tree to
+    the root of the decision tree.
+  max_height: the max height of the tree that should be constructed.
 
   The current_height and max_height only exists to make the algorithm efficient
   as we assume that no anomalies exist at depth >= max_height.
