@@ -156,7 +156,7 @@ where `E(h(x))` is the average path length (average of `h(x)`) from a collection
 
 In the evaluation stage, an anomaly score is derived from the expected path length `E(h(x))` for each test instance. Using `get_path_length` function (pseudocode below), a single path length `h(x)` is calculated by traversing through the decision tree.
 
-If iteration terminates at an external node where `size > 1` then the return value is `e` (edge count traversed till current node) plus an adjustment `c(Size)`. This adjustment is for the unbuilt decision tree (for efficiency) beyond the max height. When `h(x)` is obtained for each tree, an anomaly score is produced by computing `s(x, sample_size)`. Sorting instances by the score `s` in descending order and getting top `m` will yield us `m` anomalies.
+If iteration terminates at an external node where `size > 1` then the return value is `e` (number of edges traversed till current node) plus an adjustment `c(size)`, estimated from the formula above. This adjustment is for the unbuilt decision tree (for efficiency) beyond the max height. When `h(x)` is obtained for each node of each tree, an anomaly score is produced by computing `s(x, sample_size)`. Sorting instances by the score `s` in descending order and getting top `m` will yield us `m` anomalies.
 
 ```py
 def get_path_length(x, T, e):
@@ -168,7 +168,7 @@ def get_path_length(x, T, e):
   """
   if is_external_node(T):
     # when T is the root of an external node subtree
-    # then we estimate path length and return.
+    # we estimate path length and return.
 
     # here c is the function which estimates the average path length
     # for external node termination.
