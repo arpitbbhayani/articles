@@ -154,8 +154,6 @@ where `E(h(x))` is the average of `h(x)` from a collection of isolation trees. F
  - the score is much smaller than 0.5, then they are quite safe to be regarded as normal instances, and
  - all the instances return around 0.5, then the entire sample does not really have any distinct anomaly
 
-GRAPH OF VARIATION OF score with `E(h(x))`
-
 ## Evaluating anomalies
 
 In the evaluation stage, an anomaly score is derived from the expected path length `E(h(x))` for each test instance. Using `get_path_length` function (pseudocode below), a single path length `h(x)` is calculated by traversing through the decision tree.
