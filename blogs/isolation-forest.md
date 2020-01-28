@@ -130,15 +130,15 @@ Every anomaly detection algorithm has to score its data points/instances and qua
 
 > Path Length `h(x)` of a point `x` is the number of edges `x` traverses from the root node.
 
-As the maximum possible height of the tree grows by order of `n`, the average height grows by `log(n)` - this makes normalizing the scoring function a little tricky. To remedy this we use the insights from the structure of the decision tree. The decision tree has two types of nodes internal and external such that external has no child while internal is a parent to exactly two nodes - which means the decision tree is a proper binary tree and hence we conclude
+As the maximum possible height of the tree grows by order of `n`, the average height grows by `log(n)` - this makes normalizing of the scoring function a little tricky. To remedy this we use the insights from the structure of the decision tree. The decision tree has two types of nodes internal and external such that external has no child while internal is a parent to exactly two nodes - which means the decision tree is a proper binary tree and hence we conclude
 
 > The average path length `h(x)` for external node termination is the same as the average path length of unsuccessful search in BST.
 
-In a BST, an unsuccessful search always terminates at a `NULL` pointer and if we treat external node of the decision tree as `NULL` (of BST) then we could say that average path length of external node termination is same as average path length of unsuccessful search in BST (constructed only from internal nodes of the decision tree), and is given by
+In a BST, an unsuccessful search always terminates at a `NULL` pointer and if we treat external node of the decision tree as `NULL` of BST, then we could say that average path length of external node termination is same as average path length of unsuccessful search in BST (constructed only from internal nodes of the decision tree), and it is given by
 
 ![BST unsuccessful search estimation](https://user-images.githubusercontent.com/4745789/73191802-198ac200-414e-11ea-9500-039483b6e780.png)
 
-where `H(i)` is the [harmonic number](https://en.wikipedia.org/wiki/Harmonic_number) and it can be estimated by `ln(i) + 0.5772156649` ([Euler–Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant)). `c(n)` is the average of `h(x)` given `n`, we use it to normalize `h(x)`.
+where `H(i)` is the [harmonic number](https://en.wikipedia.org/wiki/Harmonic_number) and it can be estimated by `ln(i) + 0.5772156649` ([Euler–Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant)). `c(n)` is the average of path length `h(x)` given `n`, we use it to normalize `h(x)`.
 
 To understand the derivation in detail refer
  - [IIT KGP, Algorithms, Lecture Notes - Page 7](https://cse.iitkgp.ac.in/~pb/algo-1-pb-10.pdf)
