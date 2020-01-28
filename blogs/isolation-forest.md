@@ -30,7 +30,7 @@ Hence, when a forest of random trees collectively produces shorter path lengths 
 
 ![Decision tree splits for normal points and anomalies](https://user-images.githubusercontent.com/4745789/73243800-804fc000-41ce-11ea-826f-14cbc407af99.png)
 
-The diagram above shows the isolation pattern for normal points and anomalies. The number of splits (blue lines) happeneing to construct a decision tree are more in case of normal points and fewer for anomalies. These splits determine the edges to be traversed to reach the isolated node.
+The diagram above shows the number of splits required to isolate a normal point and an anomaly. Splits are represented through blue lines which happens at random on a random attribute and it essentially creates the decision tree. The number of splits determine the level at which the isolation happened and will be used to generate anomaly score.
 
 The process is repeated multiple times and split happens over random attribute and attribute value. The points that isolate closer to the root, more often than not are labeled as anomalies. Hence a set of trees (forest) is maintained and the average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower height.
 
