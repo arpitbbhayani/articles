@@ -1,10 +1,10 @@
-Anomaly detection is the identification of something that could be stated as "normal"; the definition of what "normal" is, depends on the phenomenon that is being observed and the properties it bears. In this article, we go in-depth of an unsupervised anomaly detection algorithm called [Isolation Forest](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf). This algorithm beautifully exploits the characteristics of anomalies, keeping it independent of data distributions.
+Anomaly detection is the identification of something that could be stated as "normal"; the definition of what "normal" is, depends on the phenomenon that is being observed and the properties it bears. In this article, we go in-depth on an unsupervised anomaly detection algorithm called [Isolation Forest](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf). This algorithm beautifully exploits the characteristics of anomalies, keeping it independent of data distributions.
 
 ### Characteristics of anomalies
 Since anomalies deviate from normal it implies that they are few in numbers (minority) and have attribute values that are very different from those of normal. The paper nicely puts it as: 'anomalies are **few and different**'. These characteristics of anomalies make them more susceptible to isolation than normal points and this algorithm puts it to good use.
 
 # The usual approach for detecting anomalies
-The existing models train to see what constitutes "normal" and then considers everything that does not conform to this definition as anomalies. Almost every single algorithm has its own way of defining what is normal and then loops to data points and filters out those who do not satisfy the constraint. These methods usually exploit of the following methods to define what's normal,
+The existing models train to see what constitutes "normal" and then considers everything that does not conform to this definition as anomalies. Almost every single algorithm has its own way of defining what is normal and then loops to data points and filters out those who do not satisfy the constraint. These methods usually exploit the following methods to define what's normal,
 
  - statistical methods
  - classification-based methods
@@ -30,12 +30,12 @@ Hence, when a forest of random trees collectively produces shorter path lengths 
 
 ![Decision tree splits for normal points and anomalies](https://user-images.githubusercontent.com/4745789/73243800-804fc000-41ce-11ea-826f-14cbc407af99.png)
 
-The diagram above shows the number of splits required to isolate a normal point and an anomaly. Splits are represented through blue lines which happens at random on a random attribute and it essentially creates the decision tree. The number of splits determine the level at which the isolation happened and will be used to generate anomaly score.
+The diagram above shows the number of splits required to isolate a normal point and an anomaly. Splits are represented through blue lines which happens at random on a random attribute and it essentially creates the decision tree. The number of splits determines the level at which the isolation happened and will be used to generate the anomaly score.
 
-The process is repeated multiple times and level at which isolation happens for a point is noted. Once all the iterations are over, we generate an anomaly score for each point/instance, which suggests its likeliness to be an anomaly. The score is computed as a function of the average level at which the point was isolated. The top `m` gathered, on the basis of score, are labeled as anomalies.
+The process is repeated multiple times and the level at which isolation happens for a point is noted. Once all the iterations are over, we generate an anomaly score for each point/instance, which suggests its likeliness to be an anomaly. The score is computed as a function of the average level at which the point was isolated. The top `m` gathered, on the basis of the score, are labeled as anomalies.
 
 ## Construction of decision tree
-The decision tree is constructed by splitting the sub-sample points/instances over a split value such that the instances whose corresponding attribute value is smaller than the split value goes left and the others go right; and the process is continued recursively until the tree is fully constructed. The split value is selected at random between the minimum and maximum values of the selected attribute.
+The decision tree is constructed by splitting the sub-sample points/instances over a split value such that the instances whose corresponding attribute value is smaller than the split value goes left and the others go right, and the process is continued recursively until the tree is fully constructed. The split value is selected at random between the minimum and maximum values of the selected attribute.
 
 There are two types of node in the decision tree
 
@@ -43,14 +43,14 @@ There are two types of node in the decision tree
 
 ### Internal Node
 
-Internal nodes are non-leaf and contain data points/instances and the split condition; depending on the split condition it will be parent to two sub-trees or two external nodes.
+Internal nodes are non-leaf and contain data points/instances and the split condition; depending on the split condition it will be a parent to two sub-trees or two external nodes.
 
 ### External Node
 
 External nodes are leaf nodes that could not be split further and reside at the bottom of the tree. An external node will always have a sibling node (either internal or external).
 
 ## Why sub-sampling helps
-The Isolation Forest algorithm works well when the trees are created, not from the entire dataset, but from a subsampled data set. This is contrary to almost all other techniques where every other technique thrievs on data and demands more of it for greater accuracy. Sub-sampling works wonders in this algorithm because normal instances can interfere with the isolation process by being a little closer to the actual anomalies. This is very evident from the diagram below.
+The Isolation Forest algorithm works well when the trees are created, not from the entire dataset, but from a subsampled data set. This is contrary to almost all other techniques where every other technique thrives on data and demands more of it for greater accuracy. Sub-sampling works wonder in this algorithm because normal instances can interfere with the isolation process by being a little closer to the actual anomalies. This is very evident from the diagram below.
 
 ![Importance of sub-sampling in Isolation Forest](https://user-images.githubusercontent.com/4745789/73273766-81064780-420a-11ea-9004-ed6f644af292.png)
 
@@ -62,10 +62,10 @@ Since anomalies are susceptible to isolation and have a tendency to reside close
 def construct_tree(X, current_height, max_height):
   """The function constructs a tree/sub-tree on points X.
 
-  current_height: represents the height which the tree will exist to the root.
+  current_height: represents the height of the current tree to the root of the decision tree.
   max_height: the max height of the tree.
 
-  The current_height and max_height only exists to make algorithm efficient
+  The current_height and max_height only exists to make the algorithm efficient
   as we assume that no anomalies exist at depth >= max_height.
   """
   if current_height >= max_height:
@@ -117,7 +117,7 @@ def construct_forest(X, trees_count, subsample_count):
     # construct the decision tree from the sample
     tree = construct_tree(X_sample, 0, max_height)
 
-    # add tree to the forest
+    # add the tree to the forest
     forest.append(tree)
 
   return forest
@@ -191,7 +191,7 @@ Isolation forest algorithm
  - does not really need to build the tree from complete data
  - does not need to build tree taller than `max_height` which can be estimated very quickly
  - does not use any computationally expensive operation like distance or density calculation
- - has low memory footprint and linear time complexity with low constant for training
+ - has low memory footprint and linear time complexity with a low constant for training
  - handles multi-dimensional data efficiently
  - could be used in an online system with low memory footprint (near real-time)
 
