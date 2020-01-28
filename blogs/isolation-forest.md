@@ -140,17 +140,13 @@ In a BST, an unsuccessful search always terminates at a `NULL` pointer and if we
 
 where `H(i)` is the [harmonic number](https://en.wikipedia.org/wiki/Harmonic_number) and it can be estimated by `ln(i) + 0.5772156649` ([Euler–Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant)). `c(n)` is the average of path length `h(x)` given `n`, we use it to normalize `h(x)`.
 
-To understand the derivation in detail refer
- - [IIT KGP, Algorithms, Lecture Notes - Page 7](https://cse.iitkgp.ac.in/~pb/algo-1-pb-10.pdf)
- - [What is real big-O of search in BST?](https://www.cs.csustan.edu/~john/classes/previous_semesters/cs3100_datastructures/2000_04_Fall/Examples/Trees/averageSearchInBST.html)
- - [CMU CMSC 420: Lecture 5 - Slide 13](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/trees.pdf)
- - [CISE UFL: Data Structures, Algorithms, & Applications - 1st Proof](https://www.cise.ufl.edu/~sahni/dsaac/public/exer/c18/e47.htm)
+_To understand the derivation in detail refer to the references at the end of this article._
 
 The anomaly score of an instance `x` is defined as
 
 ![scoring function](https://user-images.githubusercontent.com/4745789/73192432-075d5380-414f-11ea-86dc-ae6acda7b7d4.png)
 
-where `E(h(x))` is the average of `h(x)` from a collection of isolation trees. From the scoring function defined above, we could deduce that if
+where `E(h(x))` is the average path length (average of `h(x)`) from a collection of isolation trees. From the scoring function defined above, we could deduce that if
 
  - the score is very close to 1, then they are definitely anomalies
  - the score is much smaller than 0.5, then they are quite safe to be regarded as normal instances, and
@@ -186,6 +182,13 @@ def get_path_length(x, T, e):
     # instance x may lie in right subtree
     return get_path_length(x, T.right, e + 1)
 ```
+
+# References
+ - [IIT KGP, Algorithms, Lecture Notes - Page 7](https://cse.iitkgp.ac.in/~pb/algo-1-pb-10.pdf)
+ - [What is real big-O of search in BST?](https://www.cs.csustan.edu/~john/classes/previous_semesters/cs3100_datastructures/2000_04_Fall/Examples/Trees/averageSearchInBST.html)
+ - [CMU CMSC 420: Lecture 5 - Slide 13](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/trees.pdf)
+ - [CISE UFL: Data Structures, Algorithms, & Applications - 1st Proof](https://www.cise.ufl.edu/~sahni/dsaac/public/exer/c18/e47.htm)
+
 
 # Conclusion
 The isolation forest algorithm thrives on sub-sampled data and does not really need to build the tree from the entire data set. Also while constructing the tree, we need not build tree taller than `max_height` which is also very cheap to compute; making it low on memory footprint. Since the algorithm does not depend on computationally expensive operations like distance or density calculation, it executes really fast. The training stage has a linear time complexity with a low constant and hence could be used in a real-time online system.
