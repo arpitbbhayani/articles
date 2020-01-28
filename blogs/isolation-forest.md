@@ -183,7 +183,7 @@ def get_path_length(x, T, e):
     return get_path_length(x, T.right, e + 1)
 ```
 
-# References
+## References for BST unsuccessful search estimation
  - [IIT KGP, Algorithms, Lecture Notes - Page 7](https://cse.iitkgp.ac.in/~pb/algo-1-pb-10.pdf)
  - [What is real big-O of search in BST?](https://www.cs.csustan.edu/~john/classes/previous_semesters/cs3100_datastructures/2000_04_Fall/Examples/Trees/averageSearchInBST.html)
  - [CMU CMSC 420: Lecture 5 - Slide 13](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/trees.pdf)
