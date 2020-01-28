@@ -1,5 +1,15 @@
 [
   {
+    "id": "isolation-forest",
+    "title": "Isolation Forest algorithm for Anomaly Detection",
+    "description": "Anomaly detection is an age-old problem and in this article, we dive deep into an unsupervised algorithm, Isolation Forest, that beautifully exploits the characteristics of anomalies. Instead of profiling normal points and labeling others as anomalies, the algorithm is actually is tuned to detect anomalies.",
+    "image": "https://user-images.githubusercontent.com/4745789/73280907-34743980-4215-11ea-89f0-eac4a71df6e5.png",
+    "gif": "https://media.giphy.com/media/xGdvlOVSWaDvi/giphy.gif",
+    "categories": ["algorithm", "data science"],
+    "tags": [],
+    "published_at": "2020-01-28"
+  },
+  {
     "id": "image-steganography",
     "title": "Everything that you need to know about Image Steganography",
     "description": "Steganography has been around since at least 440 BCE but with the rise of computers, the techniques have evolved to handle digital data. In this article, we see the science behind image steganography, how it exploits various properties of images to hide secrets and walkthrough a few techniques in detail.",
