@@ -43,7 +43,7 @@ Internal nodes are non-leaf and contain the split value, split attribute and poi
 
 ### External Node
 
-External nodes are leaf nodes that could not be split further and reside at the bottom of the tree. An external node will always have a sibling node (either internal or external).
+External nodes are leaf nodes that could not be split further and reside at the bottom of the tree. Each external node will hold the size of the un-built subtree which is used to calculate the anomaly score.
 
 ## Why sub-sampling helps
 The Isolation Forest algorithm works well when the trees are created, not from the entire dataset, but from a subsampled data set. This is contrary to almost all other techniques where every other technique thrives on data and demands more of it for greater accuracy. Sub-sampling works wonder in this algorithm because normal instances can interfere with the isolation process by being a little closer to the actual anomalies. This is very evident from the diagram below.
