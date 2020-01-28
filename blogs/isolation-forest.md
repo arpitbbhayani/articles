@@ -35,8 +35,6 @@ The decision tree is constructed by splitting the sub-sample points/instances ov
 
 There are two types of node in the decision tree
 
-![Decision tree with internal and external nodes](https://user-images.githubusercontent.com/4745789/73272711-d5a8c300-4208-11ea-9bb7-80894312f16c.png)
-
 ### Internal Node
 
 Internal nodes are non-leaf and contain the split value, split attribute and pointers to two child sub-trees. Internal node is always a parent to two child sub-trees making the entire decision tree a proper binary tree.
@@ -45,10 +43,14 @@ Internal nodes are non-leaf and contain the split value, split attribute and poi
 
 External nodes are leaf nodes that could not be split further and reside at the bottom of the tree. Each external node will hold the size of the un-built subtree which is used to calculate the anomaly score.
 
+![Decision tree with internal and external nodes](https://user-images.githubusercontent.com/4745789/73272711-d5a8c300-4208-11ea-9bb7-80894312f16c.png)
+
 ## Why sub-sampling helps
-The Isolation Forest algorithm works well when the trees are created, not from the entire dataset, but from a sub-sampled data set. This is contrary to almost all other techniques where every other technique thrives on data and demands more of it for greater accuracy. Sub-sampling works wonder in this algorithm because normal instances can interfere with the isolation process by being a little closer to the actual anomalies. This is very evident from the diagram below.
+The Isolation Forest algorithm works well when the trees are created, not from the entire dataset, but from a sub-sampled data set. This is very different from almost all other techniques where they thrive on data and demands more of it for greater accuracy. Sub-sampling works wonder in this algorithm because normal instances can interfere with the isolation process by being a little closer to the anomalies.
 
 ![Importance of sub-sampling in Isolation Forest](https://user-images.githubusercontent.com/4745789/73273766-81064780-420a-11ea-9004-ed6f644af292.png)
+
+The image above shows how sub-sampling actually makes a clear separation between normal points and anomalies. In the original dataset we see that normal points and very close to anomalies making detection tougher and inaccurate (with lot of false negatives). Because of sub-sampling, we could see a clear separation of anomalies and normal instances. This makes the entire process of anomaly detection efficient and accurate.
 
 ### Optimizing decision tree construction
 
