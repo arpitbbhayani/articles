@@ -52,7 +52,7 @@ External nodes are leaf nodes that could not be split further and reside at the 
 ## Why sub-sampling helps
 The Isolation Forest algorithm works well when the trees are created, not from the entire dataset, but from a subsampled data set. This is contrary to almost all other techniques where every other technique thrievs on data and demands more of it for greater accuracy. Subsampling works wonders in this algorithm because normal instances can interfere with the isolation process by being a little closer to the actual anomalies. This is very evident from the diagram below.
 
-DIAGRAM SHOWING SUBSAMPLING IMPORTANCE
+![Importance of sub-sampling in Isolation Forest](https://user-images.githubusercontent.com/4745789/73273426-f1609900-4209-11ea-9625-c3ddb3d1ed33.png)
 
 ### Optimizing decision tree construction
 
