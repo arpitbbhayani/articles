@@ -31,7 +31,7 @@ The diagram above shows the number of splits required to isolate a normal point 
 The process is repeated multiple times and we note the isolation level for each point/instance. Once the iterations are over, we generate an anomaly score for each point/instance, suggesting its likeliness to be an anomaly. The score is a function of the average level at which the point was isolated. The top `m` gathered on the basis of the score, are labeled as anomalies.
 
 ## Construction of decision tree
-The decision tree is constructed by splitting the sub-sample points/instances over a split value such that the instances whose corresponding attribute value is smaller than the split value goes left and the others go right, and the process is continued recursively until the tree is fully constructed. The split value is selected at random between the minimum and maximum values of the selected attribute.
+The decision tree is constructed by splitting the sub-sample points/instances over a split value of a randomly selected attribute such that the instances whose corresponding attribute value is smaller than the split value goes left and the others go right, and the process is continued recursively until the tree is fully constructed. The split value is selected at random between the minimum and maximum values of the selected attribute.
 
 There are two types of node in the decision tree
 
@@ -39,7 +39,7 @@ There are two types of node in the decision tree
 
 ### Internal Node
 
-Internal nodes are non-leaf and contain data points/instances and the split condition; depending on the split condition it will be a parent to two sub-trees or two external nodes.
+Internal nodes are non-leaf and contain the split value, split attribute and pointers to two child sub-trees. Internal node is always a parent of two child sub-trees making the entire decision tree a proper binary tree.
 
 ### External Node
 
