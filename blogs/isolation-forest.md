@@ -14,7 +14,7 @@ Many of these methods are computationally complex and hence suit low dimensional
 Isolation Forest algorithm addresses both of the above concerns and provides an efficient and accurate way to detect anomalies.
 
 # The algorithm
-Now we take a look at the algorithm, what it does, how it does and the math behind it. Fasten your seat belts, it's going to be a bumpy ride.
+Now we take a go through the algorithm, and dissect it stage by stage and in the process understand the math behind it. Fasten your seat belts, it's going to be a bumpy ride.
 
 ## The core principle
 The core of the algorithm is to "isolate" anomalies by creating a decision tree on points over random attributes. The random partitioning produces noticeable shorter paths for anomalies since
