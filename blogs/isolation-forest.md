@@ -32,7 +32,7 @@ Hence, when a forest of random trees collectively produces shorter path lengths 
 
 The diagram above shows the number of splits required to isolate a normal point and an anomaly. Splits are represented through blue lines which happens at random on a random attribute and it essentially creates the decision tree. The number of splits determine the level at which the isolation happened and will be used to generate anomaly score.
 
-The process is repeated multiple times and split happens over random attribute and attribute value. The points that isolate closer to the root, more often than not are labeled as anomalies. Hence a set of trees (forest) is maintained and the average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower height.
+The process is repeated multiple times and level at which isolation happens for a point is noted. Once all the iterations are over, we generate an anomaly score for each point/instance, which suggests its likeliness to be an anomaly. The score is computed as a function of the average level at which the point was isolated. The top `m` gathered, on the basis of score, are labeled as anomalies.
 
 ## Construction of decision tree
 The decision tree is constructed by splitting the sub-sample points/instances over a split value such that the instances whose corresponding attribute value is smaller than the split value goes left and the others go right; and the process is continued recursively until the tree is fully constructed. The split value is selected at random between the minimum and maximum values of the selected attribute.
