@@ -1,14 +1,14 @@
-Anomaly detection is the identifying something that could not be stated as "normal"; the definition of "normal" depends on the phenomenon that is being observed and the properties it bears. In this article, we dive deep into an unsupervised anomaly detection algorithm called [Isolation Forest](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf). This algorithm beautifully exploits the characteristics of anomalies, keeping it independent of data distributions making the approach novel.
+Anomaly detection is identifying something that could not be stated as "normal"; the definition of "normal" depends on the phenomenon that is being observed and the properties it bears. In this article, we dive deep into an unsupervised anomaly detection algorithm called [Isolation Forest](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf). This algorithm beautifully exploits the characteristics of anomalies, keeping it independent of data distributions making the approach novel.
 
 ### Characteristics of anomalies
-Since anomalies deviate from normal, they are few in numbers (minority) and/or have attribute values that are very different from those of normal. The paper nicely puts it as: **few and different**. These characteristics of anomalies make them more susceptible to isolation than normal points and forms the guiding principle of the Isolation Forest algorithm.
+Since anomalies deviate from normal, they are few in numbers (minority) and/or have attribute values that are very different from those of normal. The paper nicely puts it as **few and different**. These characteristics of anomalies make them more susceptible to isolation than normal points and form the guiding principle of the Isolation Forest algorithm.
 
 # The usual approach for detecting anomalies
-The existing models train to see what constitutes "normal" and then labels everything that does not conform to this definition as anomalies. Almost every single algorithm has its own way of defining a normal point/instance; some does it through statistical methods, some uses classification or clustering but in the end the process remains same - define normal and filter out everything else.
+The existing models train to see what constitutes "normal" and then label everything that does not conform to this definition as anomalies. Almost every single algorithm has its own way of defining a normal point/instance; some do it through statistical methods, some use classification or clustering but in the end, the process remains the same - define normal and filter out everything else.
 
 ### The issue with the usual approach
 
-The usual methods are not optimized to detect anomalies, instead they are optimized to find normal instances, because of which the result of anomaly detection either contains too many false positives or might detect too few anomalies.
+The usual methods are not optimized to detect anomalies, instead, they are optimized to find normal instances, because of which the result of anomaly detection either contains too many false positives or might detect too few anomalies.
 Many of these methods are computationally complex and hence suit low dimensional and/or small-sized data.
 
 Isolation Forest algorithm addresses both of the above concerns and provides an efficient and accurate way to detect anomalies.
@@ -17,7 +17,7 @@ Isolation Forest algorithm addresses both of the above concerns and provides an 
 Now we take a go through the algorithm, and dissect it stage by stage and in the process understand the math behind it. Fasten your seat belts, it's going to be a bumpy ride.
 
 ## The core principle
-The core of the algorithm is to "isolate" anomalies by creating a decision trees over random attributes. The random partitioning produces noticeable shorter paths for anomalies since
+The core of the algorithm is to "isolate" anomalies by creating decision trees over random attributes. The random partitioning produces noticeable shorter paths for anomalies since
 
  - fewer instances (of anomalies) result in smaller partitions
  - distinguishable attribute values are more likely to be separated in early partitioning
@@ -37,7 +37,7 @@ There are two types of node in the decision tree
 
 ### Internal Node
 
-Internal nodes are non-leaf and contain the split value, split attribute and pointers to two child sub-trees. Internal node is always a parent to two child sub-trees making the entire decision tree a proper binary tree.
+Internal nodes are non-leaf and contain the split value, split attribute and pointers to two child sub-trees. An internal node is always a parent to two child sub-trees making the entire decision tree a proper binary tree.
 
 ### External Node
 
@@ -50,7 +50,7 @@ The Isolation Forest algorithm works well when the trees are created, not from t
 
 ![Importance of sub-sampling in Isolation Forest](https://user-images.githubusercontent.com/4745789/73296518-df91ec80-422f-11ea-8c6b-2a2fcbf8afc8.png)
 
-The image above shows how sub-sampling actually makes a clear separation between normal points and anomalies. In the original dataset we see that normal points and very close to anomalies making detection tougher and inaccurate (with lot of false negatives). Because of sub-sampling, we could see a clear separation of anomalies and normal instances. This makes the entire process of anomaly detection efficient and accurate.
+The image above shows how sub-sampling actually makes a clear separation between normal points and anomalies. In the original dataset, we see that normal points and very close to anomalies making detection tougher and inaccurate (with a lot of false negatives). Because of sub-sampling, we could see a clear separation of anomalies and normal instances. This makes the entire process of anomaly detection efficient and accurate.
 
 ### Optimizing decision tree construction
 
@@ -94,7 +94,7 @@ def construct_tree(X, current_height, max_height):
 ```
 
 ## Constructing the forest
-The process of tree construction is repeated multiple times and each time we pick a random sub-sample and construct the tree. There are no strict rules to determine the number of iterations, but in general we could say the more the merrier. The sub-sampling count is also a parameter and could change depending on the data set.
+The process of tree construction is repeated multiple times and each time we pick a random sub-sample and construct the tree. There are no strict rules to determine the number of iterations, but in general, we could say the more the merrier. The sub-sampling count is also a parameter and could change depending on the data set.
 
 The pseudocode for forest construction is as follows
 
@@ -126,7 +126,7 @@ def construct_forest(X, trees_count, subsample_count):
 While constructing the tree we pass `max_height` as `log2(nodes_count)` as that is the average height of a proper binary tree that could be constructed from `nodes_count` number of nodes. Since anomalies reside closer to the root node it is highly unlikely that any anomaly will isolate after the tree has reached height `max_height`. This helps us save a lot of computation and tree construction making it computationally and memory efficient.
 
 ## Scoring the anomalies
-Every anomaly detection algorithm has to score its data points/instances and quantify the confidence the algorithm has on its potential anomalies. The generated anomaly score has to be bounded and comparable. In Isolation Forest that fact that anomalies always stay closer to the root, becomes our guiding and defining insight that will help us build a scoring function. The anomaly score will a function of path length which is defined as
+Every anomaly detection algorithm has to score its data points/instances and quantify the confidence the algorithm has on its potential anomalies. The generated anomaly score has to be bounded and comparable. In Isolation Forest, that fact that anomalies always stay closer to the root, becomes our guiding and defining insight that will help us build a scoring function. The anomaly score will a function of path length which is defined as
 
 > Path Length `h(x)` of a point `x` is the number of edges `x` traverses from the root node.
 
