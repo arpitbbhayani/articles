@@ -185,15 +185,8 @@ def get_path_length(x, T, e):
     return get_path_length(x, T.right, e + 1)
 ```
 
-## Efficiency
-Isolation forest algorithm
- - thrives on sub-sampled data
- - does not really need to build the tree from complete data
- - does not need to build tree taller than `max_height` which can be estimated very quickly
- - does not use any computationally expensive operation like distance or density calculation
- - has low memory footprint and linear time complexity with a low constant for training
- - handles multi-dimensional data efficiently
- - could be used in an online system with low memory footprint (near real-time)
+## Algorithm is super efficient
+Isolation forest algorithm thrives on sub-sampled data and does not really need to build the tree from entire data set. Also while constructing the tree, we need not build tree taller than `max_height` which is also very cheap to compute; making it low on memory footprint. Since the algorithm does not depend on computationally expensive operations like distance or density calculation, it executes really fast. The training stage has a linear time complexity with a low constant and hence could be used in a real-time online system.
 
 # Conclusion
 I really hope this article helped you to understand Isolation Forest, an unsupervised anomaly detection algorithm. I stumbled upon this through an engineering [blog](https://lambda.grofers.com/anomaly-detection-using-isolation-forest-80b3a3d1a9d8) of [Grofers](https://grofers.com/). This algorithm was very interesting to me because of its novel approach and hence I dove deep into it. In 2018, Isolation Forest was extended by [Sahand Hariri, Matias Carrasco Kind, Robert J. Brunner](https://arxiv.org/pdf/1811.02141.pdf). I didn't read the extended Isolation Forest algorithm but have surely added it to my reading list and encourage you to do so.
