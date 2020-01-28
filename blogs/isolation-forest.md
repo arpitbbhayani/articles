@@ -94,8 +94,9 @@ def construct_tree(X, current_height, max_height):
 ```
 
 ## Constructing the forest
+We get to choose the number of trees we want in the forest, there is no specific way to do this; but in general: more the merrier. We also choose the number of nodes in each tree - sub-sample size. The algorithm requires a sub-sample to operate efficiently and yields a very high accuracy and efficiency while doing so.
 
-We get to choose the number of trees we want in the forest, there is no specific way to do this; but in general: more the merrier. Not only we get to choose the number of trees, but we also choose the number of nodes in each tree - sub-sample size. The algorithm requires a sub-sample to operate efficiently and yields a very high performance while doing so.
+Thus we repeat the process of constructing the decision tree by sub-sampling the data. The pseudocode for forest construction is as follows
 
 ```py
 def construct_forest(X, trees_count, subsample_count):
@@ -121,6 +122,8 @@ def construct_forest(X, trees_count, subsample_count):
 
   return forest
 ```
+
+While constructing the tree we pass `max_height` as `ln(nodes_count)` because that is the average height of the proper binary tree that could be constructed from `nodes_count` number of nodes. Since anomalies reside closer to the root node it is highly unlikely that any anomaly will isolate after height `max_height`. This helps us save a lot of computation and tree construction.
 
 ## Scoring the anomalies
 Every anomaly detection algorithm has to score its data points/instances and quantify the confidence the algorithm has on its potential anomalies, and it should be bounded and comparable. In Isolation Forest, we know that anomalies always stay closer to the root, and this becomes our guiding and defining insight that will help us build a scoring function. Hence the anomaly score will a function of path length which is defined as
