@@ -28,9 +28,9 @@ The core of the algorithm is to "isolate" anomalies by creating a decision tree 
 
 Hence, when a forest of random trees collectively produces shorter path lengths for some particular points, then they are highly likely to be anomalies.
 
-DIAGRAM goes here.
+![Decision tree splits for normal points and anomalies](https://user-images.githubusercontent.com/4745789/73243800-804fc000-41ce-11ea-826f-14cbc407af99.png)
 
-The diagram above shows how isolation pattern of anomalies.
+The diagram above shows the isolation pattern of anomalies.
 
 The process is repeated multiple times and split happens over random attribute and attribute value. The points that isolate closer to the root, more often than not are labeled as anomalies. Hence a set of trees (forest) is maintained and the average level of each point across forest gives its likeliness to be isolated. The true anomalous points will more often than note have lower height.
 
