@@ -4,11 +4,11 @@ Anomaly detection is the identification of something that could be stated as "no
 Since anomalies deviate from normal it implies that they are few in numbers (minority) and have attribute values that are very different from those of normal. The paper nicely puts it as: 'anomalies are **few and different**'. These characteristics of anomalies make them more susceptible to isolation than normal points and this algorithm puts it to good use.
 
 # The usual approach for detecting anomalies
-The existing models train to see what constitutes "normal" and then considers everything that does not conform to this definition as anomalies. Almost every single algorithm has its own way of defining what is normal and then loops to data points and filters out those who do not satisfy the constraint. To name a few methods that do this, and very widely used, are:
+The existing models train to see what constitutes "normal" and then considers everything that does not conform to this definition as anomalies. Almost every single algorithm has its own way of defining what is normal and then loops to data points and filters out those who do not satisfy the constraint. These methods usually exploit of the following methods to define what's normal,
 
- - statistical methods - , , ,
- - classification-based methods - , , ,
- - clustering-based methods - , , ,
+ - statistical methods
+ - classification-based methods
+ - clustering-based methods
 
 ### The issue with the usual approach
 Since these methods are not optimized to detect anomalies, instead are optimized to find normal instances, the results of anomaly detection either contains too many false positives or might detect too few anomalies.
