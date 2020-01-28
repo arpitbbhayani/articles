@@ -4,11 +4,7 @@ Anomaly detection is the identifying something that could not be stated as "norm
 Since anomalies deviate from normal, they are few in numbers (minority) and/or have attribute values that are very different from those of normal. The paper nicely puts it as: **few and different**. These characteristics of anomalies make them more susceptible to isolation than normal points and forms the guiding principle of the Isolation Forest algorithm.
 
 # The usual approach for detecting anomalies
-The existing models train to see what constitutes "normal" and then considers everything that does not conform to this definition as anomalies. Almost every single algorithm has its own way of defining what is normal and then loops to data points and filters out those who do not satisfy the constraint. These methods usually exploit the following methods to define what's normal,
-
- - statistical methods
- - classification-based methods
- - clustering-based methods
+The existing models train to see what constitutes "normal" and then labels everything that does not conform to this definition as anomalies. Almost every single algorithm has its own way of defining a normal point/instance; some does it through statistical methods, some uses classification or clustering but in the end the process remains same - define normal and filter out everything else.
 
 ### The issue with the usual approach
 Since these methods are not optimized to detect anomalies, instead are optimized to find normal instances, the results of anomaly detection either contains too many false positives or might detect too few anomalies.
