@@ -2,12 +2,12 @@
   {
     "id": "isolation-forest",
     "title": "Isolation Forest algorithm for anomaly detection",
-    "description": "Isolation Forest algorithm for anomaly detection",
-    "image": "https://user-images.githubusercontent.com/4745789/72659471-2a1c9900-39e6-11ea-9b93-c11bf3eefc43.png",
-    "gif": "https://media.giphy.com/media/V1NxC1YoNEHBe/giphy.gif",
+    "description": "Anomaly detection is an age old problem and in this article we dive deep into an unsupervised algorithm which beautifully exploits the characteristics of anomalies. Instead of profiling normal points and labelling others as anomalies, the algorithm is actually tuned to detect anomalies.",
+    "image": "https://user-images.githubusercontent.com/4745789/73280907-34743980-4215-11ea-89f0-eac4a71df6e5.png",
+    "gif": "https://media.giphy.com/media/xGdvlOVSWaDvi/giphy.gif",
     "categories": ["algorithm", "data science"],
     "tags": [],
-    "published_at": "2020-01-24"
+    "published_at": "2020-01-28"
   },
   {
     "id": "image-steganography",
