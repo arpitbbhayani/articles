@@ -39,7 +39,7 @@ The decision tree is constructed by splitting the sub-sample points/instances ov
 
 There are two types of node in the decision tree
 
-DIAGRAM OF INTERNAL AND EXTERNAL NODES
+![Decision tree with internal and external nodes](https://user-images.githubusercontent.com/4745789/73272711-d5a8c300-4208-11ea-9bb7-80894312f16c.png)
 
 ### Internal Node
 
