@@ -7,9 +7,9 @@ Since anomalies deviate from normal, they are few in numbers (minority) and/or h
 The existing models train to see what constitutes "normal" and then labels everything that does not conform to this definition as anomalies. Almost every single algorithm has its own way of defining a normal point/instance; some does it through statistical methods, some uses classification or clustering but in the end the process remains same - define normal and filter out everything else.
 
 ### The issue with the usual approach
-Since these methods are not optimized to detect anomalies, instead are optimized to find normal instances, the results of anomaly detection either contains too many false positives or might detect too few anomalies.
 
-Many of these methods are computationally complex and hence suit low dimensional and/or small-sized data.
+ - The usual methods are not optimized to detect anomalies, instead they are optimized to find normal instances, because of which the result of anomaly detection either contains too many false positives or might detect too few anomalies.
+ - Many of these methods are computationally complex and hence suit low dimensional and/or small-sized data.
 
 Isolation Forest algorithm fixes both of the above issues and provides a highly efficient and accurate way to detect anomalies.
 
