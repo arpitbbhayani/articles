@@ -48,7 +48,7 @@ External nodes are leaf nodes that could not be split further and reside at the 
 ## Why sub-sampling helps
 The Isolation Forest algorithm works well when the trees are created, not from the entire dataset, but from a sub-sampled data set. This is very different from almost all other techniques where they thrive on data and demands more of it for greater accuracy. Sub-sampling works wonder in this algorithm because normal instances can interfere with the isolation process by being a little closer to the anomalies.
 
-![Importance of sub-sampling in Isolation Forest](https://user-images.githubusercontent.com/4745789/73273766-81064780-420a-11ea-9004-ed6f644af292.png)
+![Importance of sub-sampling in Isolation Forest](https://user-images.githubusercontent.com/4745789/73296518-df91ec80-422f-11ea-8c6b-2a2fcbf8afc8.png)
 
 The image above shows how sub-sampling actually makes a clear separation between normal points and anomalies. In the original dataset we see that normal points and very close to anomalies making detection tougher and inaccurate (with lot of false negatives). Because of sub-sampling, we could see a clear separation of anomalies and normal instances. This makes the entire process of anomaly detection efficient and accurate.
 
