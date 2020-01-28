@@ -123,7 +123,7 @@ def construct_forest(X, trees_count, subsample_count):
   return forest
 ```
 
-While constructing the tree we pass `max_height` as `ln(nodes_count)` because that is the average height of the proper binary tree that could be constructed from `nodes_count` number of nodes. Since anomalies reside closer to the root node it is highly unlikely that any anomaly will isolate after height `max_height`. This helps us save a lot of computation and tree construction making it computationally and memory efficient.
+While constructing the tree we pass `max_height` as `log2(nodes_count)` because that is the average height of the proper binary tree that could be constructed from `nodes_count` number of nodes. Since anomalies reside closer to the root node it is highly unlikely that any anomaly will isolate after height `max_height`. This helps us save a lot of computation and tree construction making it computationally and memory efficient.
 
 ## Scoring the anomalies
 Every anomaly detection algorithm has to score its data points/instances and quantify the confidence the algorithm has on its potential anomalies, and it should be bounded and comparable. In Isolation Forest, we know that anomalies always stay closer to the root, and this becomes our guiding and defining insight that will help us build a scoring function. Hence the anomaly score will a function of path length which is defined as
