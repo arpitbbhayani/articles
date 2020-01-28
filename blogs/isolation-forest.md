@@ -39,7 +39,7 @@ There are two types of node in the decision tree
 
 ### Internal Node
 
-Internal nodes are non-leaf and contain the split value, split attribute and pointers to two child sub-trees. Internal node is always a parent of two child sub-trees making the entire decision tree a proper binary tree.
+Internal nodes are non-leaf and contain the split value, split attribute and pointers to two child sub-trees. Internal node is always a parent to two child sub-trees making the entire decision tree a proper binary tree.
 
 ### External Node
 
