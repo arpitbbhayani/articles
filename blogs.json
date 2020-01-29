@@ -6,7 +6,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/73280907-34743980-4215-11ea-89f0-eac4a71df6e5.png",
     "gif": "https://media.giphy.com/media/xGdvlOVSWaDvi/giphy.gif",
     "categories": ["algorithm", "data science"],
-    "tags": [],
+    "tags": ["algorithm", "machine learning", "anomaly detection", "data science", "artificial intelligence", "ml", "ds", "ai", "unsupervised algorithm", "fast anomaly detection", "efficient anomaly detection"],
     "published_at": "2020-01-28"
   },
   {
