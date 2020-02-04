@@ -43,7 +43,78 @@ We know why Python does not support Function Overloading and how it manages name
 ### The scope
 In this article we will implement function overloading in Python; where for the functions with same name the distinguishing criteria will be the **number of arguments** it accepts.
 
+## Wrapping the function
+We create a class called `Function` that wraps any python function and exposes few useful methods for a function. We define this class such that an instance of this class could be invoked like a function, using `()` and it would internally invoke the wrapped function and return the value.
+
+```py
+class Function(object):
+  """Function is a wrap over standard python function.
+  """
+  def __init__(self, fn):
+    self.fn = fn
+
+  def __call__(self, *args, **kwargs):
+    """when invoked like a function it internally invokes
+    the wrapped function and returns the returned value.
+    """
+    return self.fn(*args, **kwargs)
+
+  def key(self, args=None):
+    """Returns the key that will uniquely identifies
+    a function (even when it is overloaded).
+    """
+    return tuple([
+      self.fn.__module__,
+      self.fn.__class__,
+      self.fn.__name__,
+      len(args or []),
+    ])
+```
+
+We create this class `Function` so that we could add more information and computation to this class
+makes things simple like writing `key` method.
+
+## Building the registry
+Registry, we build here, will stores functions in a "unique" way in a virtual namespace, registry. Hence be build a singleton class (a class that is instantiated exactly once) which will hold our function dictionary. This dictionary should not use function name as key; instead should create a composite key using function name and number of arguments as unique key. We define `Registry` as follow
+
+```py
+class Registry(object):
+  """Registry is the singleton class that is responsible
+  for holding all the functions.
+  """
+  __instance = None
+
+  def __init__(self):
+    if self.__instance is None:
+      self.function_map = dict()
+      Registry.__instance = self
+    else:
+      raise Exception("cannot instantiate Registry again")
+
+  @staticmethod
+  def get_instance():
+    if Registry.__instance is None:
+      Registry()
+    return Registry.__instance
+
+  def register(self, fn):
+    """registers the function in the registry and returns
+    an instance of callable Function that wraps the
+    function fn.
+    """
+    func = Function(fn)
+    specs = getfullargspec(fn)
+    self.function_map[func.key(args=specs.args)] = fn
+    return func
+```
+
+The `Registry` class will have function `register` that takes function as argument and using function `inspect.getfullargspec` extracts the arguments the function would take and uses it to define unique key for that function.
+
+
 ## Using decorators as a hook
+When a function is decorated with a decorator, the decorator function gets executed during function definition; which means this
+
+
 Decorators execute on every function definition and we use them to persist function definitions in our registry.
 
 ## The registry
