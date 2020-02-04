@@ -35,13 +35,10 @@ Challenge accepted!
 
 # Implementing Function Overloading in Python
 
-Since we know why Python does not support Function Overloading and how it manages namespaces we could come up with an approach that helps us overload Python functions.
+We know why Python does not support Function Overloading and how it manages namespaces we could come up with an approach that helps us overload Python functions by
 
-## Rough Idea
-To give Python an ability to overload functions, we need to
-
- - manage function definitions in a user maintained registry
- - return the function that matches from the registry (as per the arguments type)
+ - managing the function definitions in a maintained registry (acting as virtual namespace)
+ - invoking the correct function as per the arguments passed to it
 
 ## Hook on function definition
 
