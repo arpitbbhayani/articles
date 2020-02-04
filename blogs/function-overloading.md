@@ -14,7 +14,7 @@ In above example, the function `area` is overloaded with two implementations; on
 
 When some code calls the function `area` like `area(7)`, the runtime checks the number of arguments and types associated with each, and decides to call the second `area` function.
 
-### Python and Function Overloading
+### Why no Function Overloading in Python?
 Python does not have function overloading. In Python, if we define two functions with same name, the second definition override the first. Python manages local and global namespaces and we could access it through `locals()` and `globals()` function calls.
 
 ```py
@@ -31,19 +31,9 @@ def area(radius):
 
 Calling the `locals()` function after defining a function we see that it returns a dictionary of all variables defined in local namespace. The key of the dictionary is the name of the variable and value is the reference or value of that variable. When the runtime encounters another function with the same name it updates the entry in the local namespace and thus removes the possibility of two functions co-existing.
 
+Challenge accepted!
 
-
-Python stores functions in `locals()`. When a function is defined it looks like this
-
-```
-LOCALS output
-```
-
-If you look closely, locals is a dictionary where function name is key and this restrains us from having multiple functions.
-
-When we define another function with same name, the second one will take place of the first.
-
-# Implementing It
+# Implementing Function Overloading in Python
 
 ## Rough Idea
 The rough idea is to maintain `locals` and anytime
