@@ -40,9 +40,14 @@ We know why Python does not support Function Overloading and how it manages name
  - managing the function definitions in a maintained registry (acting as virtual namespace)
  - invoking the correct function as per the arguments passed to it
 
-## Hook on function definition
+### The scope
+In this article we will implement function overloading in Python; where for the functions with same name the distinguishing criteria will be the **number of arguments** it accepts.
 
-## Store definitions
+## Using decorators as a hook
+Decorators execute on every function definition and we use them to persist function definitions in our registry.
+
+## The registry
+We define a singleton registry that will store all of our functions.
 
 # Next steps
 
