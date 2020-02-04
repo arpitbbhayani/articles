@@ -13,13 +13,16 @@ If you look closely, locals is a dictionary where function name is key and this 
 
 When we define another function with same name, the second one will take place of the first.
 
-# Implementing Function Overloading in Python
+# Implementing It
 
 ## Rough Idea
+The rough idea is to maintain `locals` and anytime
 
 ## Decorators
 
 ## Registry
+
+## Function
 
 ---
 
