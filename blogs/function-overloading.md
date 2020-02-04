@@ -1,4 +1,18 @@
-Function overloading is the ability to create multiple functions with the same name but with different signatures. Thus depending of the arguments/parameters through which a function call will dictate which implementation is executed.
+Function overloading is the ability to have multiple functions with the same name but with different signatures. When an overloaded function `fn` is called, the runtime first sees the arguments/parameters passed to the function call and judging by this executes the corresponding implementation.
+
+```cpp
+int area(int length, int breadth) {
+  return length * breadth;
+}
+
+float area(int radius) {
+  return 3.14 * radius * radius;
+}
+```
+
+In above example, the function `area` is overloaded with two implementations; one accepts two arguments (both integers) representing the length and the breadth of a rectangle and returns the area; while the other `area` function accepts an integer radius of a circle and returns the area.
+
+When some code calls the function `area` like `area(7)`, the runtime checks the number of arguments and types associated with each, and decides to call the second `area` function.
 
 ### Python and Function Overloading
 Python does not have function overloading. When we define two functions with same name, the second implementation will override the first one.
