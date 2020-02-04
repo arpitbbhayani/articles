@@ -117,8 +117,7 @@ When a function is decorated with a decorator, the decorator function gets execu
 
 Decorators execute on every function definition and we use them to persist function definitions in our registry.
 
-## The registry
-We define a singleton registry that will store all of our functions.
+## Invoking the correct function from Registry
 
 # Next steps
 
