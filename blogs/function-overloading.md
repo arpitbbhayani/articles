@@ -40,17 +40,12 @@ Since we know why Python does not support Function Overloading and how it manage
 ## Rough Idea
 To give Python an ability to overload functions, we need to
 
- - maintain and manage a virtual registry of functions
- - persist keep all the function definition
- - return the function that matches the one from the registry depending on the arguments type
+ - manage function definitions in a user maintained registry
+ - return the function that matches from the registry (as per the arguments type)
 
-If we are able to achieve the above, we implement function overloading in Python.
+## Hook on function definition
 
-## Decorators
-
-## Registry
-
-## Function
+## Store definitions
 
 ---
 
