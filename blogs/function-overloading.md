@@ -80,8 +80,6 @@ class Function(object):
 
 In the snippet above, the `__call__` invokes the wrapped function and returns the values (nothing fancy here right now). The `key` function returns a tuple which has module, class, function name and the number of arguments it accepts. This tuple can unique identify the wrapped function in the codebase.
 
-Sample example goes here.
-
 ```py
 def area(l, b):
   return l * b
@@ -92,6 +90,8 @@ def area(l, b):
 >>> func(3, 4)
 12
 ```
+
+In the example above we could see the tuple that is returned from the `key` function for the wrapped function `area`. The first element of tuple is the module name `__main__`, second is the class `<class 'function'>`, the third is the function name `area` while the fourth is the number of arguments that function `area` accepts which is `2`. The example also shows how we could just invoke the instance `func`, just like usual `area` function with arguments `3` and `4` and get the expected response `12` in return.
 
 ## Building the registry
 Registry, we build here, will stores functions in a "unique" way in a virtual namespace, registry. Hence be build a singleton class (a class that is instantiated exactly once) which will hold our function dictionary. This dictionary should not use function name as key; instead should create a composite key using function name and number of arguments as unique key. We define `Registry` as follow
