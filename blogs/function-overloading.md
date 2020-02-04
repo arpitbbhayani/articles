@@ -37,7 +37,7 @@ Challenge accepted!
 
 We know why Python does not support Function Overloading and how it manages namespaces we could come up with an approach that helps us overload Python functions by
 
- - managing the function definitions in a maintained registry (acting as virtual namespace)
+ - managing the function definitions in a maintained virtual namespace
  - invoking the correct function as per the arguments passed to it
 
 ### The scope
@@ -93,12 +93,12 @@ def area(l, b):
 
 In the example above we could see the tuple that is returned from the `key` function for the wrapped function `area`. The first element of tuple is the module name `__main__`, second is the class `<class 'function'>`, the third is the function name `area` while the fourth is the number of arguments that function `area` accepts which is `2`. The example also shows how we could just invoke the instance `func`, just like usual `area` function with arguments `3` and `4` and get the expected response `12` in return.
 
-## Building the registry
-Registry, we build here, will stores functions in a "unique" way in a virtual namespace, registry. Hence be build a singleton class (a class that is instantiated exactly once) which will hold our function dictionary. This dictionary should not use function name as key; instead should create a composite key using function name and number of arguments as unique key. We define `Registry` as follow
+## Building the virtual Namespace
+Virtual Namespace, we build here, will stores all the functions we gather during definition phase. Hence be build a singleton class (a class that is instantiated exactly once) which will hold our function dictionary. This dictionary should not use function name as key; instead should create a composite key using function name and number of arguments as unique key. We define `Namespace` as follow
 
 ```py
-class Registry(object):
-  """Registry is the singleton class that is responsible
+class Namespace(object):
+  """Namespace is the singleton class that is responsible
   for holding all the functions.
   """
   __instance = None
@@ -106,18 +106,18 @@ class Registry(object):
   def __init__(self):
     if self.__instance is None:
       self.function_map = dict()
-      Registry.__instance = self
+      Namespace.__instance = self
     else:
-      raise Exception("cannot instantiate Registry again")
+      raise Exception("cannot instantiate a virtual Namespace again")
 
   @staticmethod
   def get_instance():
-    if Registry.__instance is None:
-      Registry()
-    return Registry.__instance
+    if Namespace.__instance is None:
+      Namespace()
+    return Namespace.__instance
 
   def register(self, fn):
-    """registers the function in the registry and returns
+    """registers the function in the virtual namespace and returns
     an instance of callable Function that wraps the
     function fn.
     """
@@ -126,16 +126,16 @@ class Registry(object):
     return func
 ```
 
-The `Registry` class will have function `register` that takes function as argument and using function `inspect.getfullargspec` extracts the arguments the function would take and uses it to define unique key for that function.
+The `Namespace` class will have function `register` that takes function as argument and using function `inspect.getfullargspec` extracts the arguments the function would take and uses it to define unique key for that function.
 
 
 ## Using decorators as a hook
 When a function is decorated with a decorator, the decorator function gets executed during function definition; which means this
 
 
-Decorators execute on every function definition and we use them to persist function definitions in our registry.
+Decorators execute on every function definition and we use them to persist function definitions in our virtual namespace.
 
-## Invoking the correct function from Registry
+## Invoking the correct function from the virtual Namespace
 
 # Next steps
 
