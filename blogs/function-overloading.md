@@ -44,9 +44,11 @@ We know why Python does not support Function Overloading and how it manages name
 In this article we will implement function overloading in Python; where for the functions with same name the distinguishing criteria will be the **number of arguments** it accepts.
 
 ## Wrapping the function
-We create a class called `Function` that wraps any python function and exposes few useful methods for a function. We define this class such that an instance of this class could be invoked like a function, using `()` and it would internally invoke the wrapped function and return the value.
+We create a class called `Function` that wraps any python function and makes it callable through `__call__` and exposes a methods `key` that returns a key that makes this function unique.
 
 ```py
+from inspect import getfullargspec
+
 class Function(object):
   """Function is a wrap over standard python function.
   """
@@ -63,6 +65,11 @@ class Function(object):
     """Returns the key that will uniquely identifies
     a function (even when it is overloaded).
     """
+    # if args not specified, extract the arguments from the
+    # function definition
+    if args is None:
+      args = getfullargspec(self.fn).args
+
     return tuple([
       self.fn.__module__,
       self.fn.__class__,
@@ -71,8 +78,20 @@ class Function(object):
     ])
 ```
 
-We create this class `Function` so that we could add more information and computation to this class
-makes things simple like writing `key` method.
+In the snippet above, the `__call__` invokes the wrapped function and returns the values (nothing fancy here right now). The `key` function returns a tuple which has module, class, function name and the number of arguments it accepts. This tuple can unique identify the wrapped function in the codebase.
+
+Sample example goes here.
+
+```py
+def area(l, b):
+  return l * b
+
+>>> func = Function(area)
+>>> func.key()
+('__main__', <class 'function'>, 'area', 2)
+>>> func(3, 4)
+12
+```
 
 ## Building the registry
 Registry, we build here, will stores functions in a "unique" way in a virtual namespace, registry. Hence be build a singleton class (a class that is instantiated exactly once) which will hold our function dictionary. This dictionary should not use function name as key; instead should create a composite key using function name and number of arguments as unique key. We define `Registry` as follow
