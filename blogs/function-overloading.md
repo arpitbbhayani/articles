@@ -122,8 +122,7 @@ class Registry(object):
     function fn.
     """
     func = Function(fn)
-    specs = getfullargspec(fn)
-    self.function_map[func.key(args=specs.args)] = fn
+    self.function_map[func.key()] = fn
     return func
 ```
 
