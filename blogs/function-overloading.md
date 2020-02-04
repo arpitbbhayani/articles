@@ -47,6 +47,12 @@ To give Python an ability to overload functions, we need to
 
 ## Store definitions
 
+# Next steps
+
+ - right now arg count based
+ - defined types based
+ - annotation based
+
 ---
 
 _This article was originally published on my blog [Function Overloading in Python](https://arpitbhayani.me/blogs/function-overloading)._
