@@ -129,7 +129,7 @@ class Namespace(object):
     return func
 ```
 
-The `Namespace` has a method `register` that takes function `fn` as an argument, creates a unique key for it, stores it in the dictionary and returns `fn` wrapped within an instance of `Function`. This means the return value from `register` function is also callable and (till now) its behavior is exactly the same as the wrapped function `fn`.
+The `Namespace` has a method `register` that takes function `fn` as an argument, creates a unique key for it, stores it in the dictionary and returns `fn` wrapped within an instance of `Function`. This means the return value from the `register` function is also callable and (till now) its behavior is exactly the same as the wrapped function `fn`.
 
 ```py
 def area(l, b):
@@ -209,7 +209,7 @@ def get(self, fn, *args):
 The `get` function creates an instance of `Function` just so that it could use `key` function to get unique key and not replicate the logic. The key is then used to fetch the appropriate function from the function registry.
 
 ## Invoking the function
-As stated above, the `__call__` method within class `Function` is invoked every time a function decorated with `overload` decorator is called. We use this function to fetch the appropriate function using `get` function of namespace and invoke the required implementation of the overloaded function. The `__call__` method is implemented as follows
+As stated above, the `__call__` method within class `Function` is invoked every time a function decorated with `overload` decorator is called. We use this function to fetch the appropriate function using the `get` function of namespace and invoke the required implementation of the overloaded function. The `__call__` method is implemented as follows
 
 ```py
 def __call__(self, *args, **kwargs):
@@ -226,10 +226,10 @@ def __call__(self, *args, **kwargs):
   return fn(*args, **kwargs)
 ```
 
-The method fetches the appropriate function from the virtual namespace and if it did not find any function it raises an `Exception` and if it does then it invokes it and returns the value; and this is how we have implemented Function overloading in python.
+The method fetches the appropriate function from the virtual namespace and if it did not find any function it raises an `Exception` and if it does then it invokes it and returns the value, and this is how we have implemented Function overloading in python.
 
 ## Function overloading in action
-Once all the code is put into place we define two functions named `area` that calculates area; one calculates area of rectangle while other calculates the area of circle. Both functions are defined below and decorated with `overload` decorator.
+Once all the code is put into place we define two functions named `area` that calculates area; one calculates area of rectangle while other calculates the area of circle. Both functions are defined below and decorated with an `overload` decorator.
 
 ```py
 @overload
@@ -248,7 +248,7 @@ def area(r):
 153.93804002589985
 ```
 
-When we invoke `area` with one argument it returns the area of a circle and when we pass two arguments it invokes the function that computes area of rectangle; and thus we have overloaded `area` function in Python and defined two implementations with different arguments. You can find entire working demo [here](https://repl.it/@arpitbbhayani/Python-Function-Overloading).
+When we invoke `area` with one argument it returns the area of a circle and when we pass two arguments it invokes the function that computes the area of a rectangle, and thus we have overloaded `area` function in Python and defined two implementations with different arguments. You can find the entire working demo [here](https://repl.it/@arpitbbhayani/Python-Function-Overloading).
 
 # Conclusion
 
