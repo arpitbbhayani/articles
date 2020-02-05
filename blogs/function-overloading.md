@@ -94,7 +94,7 @@ def area(l, b):
 In the example above we could see the tuple that is returned from the `key` function for the wrapped function `area`. The first element of tuple is the module name `__main__`, second is the class `<class 'function'>`, the third is the function name `area` while the fourth is the number of arguments that function `area` accepts which is `2`. The example also shows how we could just invoke the instance `func`, just like usual `area` function with arguments `3` and `4` and get the expected response `12` in return.
 
 ## Building the virtual Namespace
-Virtual Namespace, we build here, will stores all the functions we gather during definition phase. Hence be build a singleton class (a class that is instantiated exactly once) which will hold our function dictionary. This dictionary should not use function name as key; instead should create a composite key using function name and number of arguments as unique key. We define `Namespace` as follow
+Virtual Namespace, we build here, will stores all the functions we gather during definition phase. Since we want that there exists only one registry we create a singleton class which holds the function registry in a dictionary. Instead of using function name as the key, we use the tuple we get from `key()` function of `Function` as the key that enables us to hold every single function definition.
 
 ```py
 class Namespace(object):
@@ -126,8 +126,7 @@ class Namespace(object):
     return func
 ```
 
-The `Namespace` class will have function `register` that takes function as argument and using function `inspect.getfullargspec` extracts the arguments the function would take and uses it to define unique key for that function.
-
+The `Namespace` will have function `register` that takes function `fn` as argument, creates unique key for it and stores it in the dictionary. Thus given the function to be executed and arguments we could fetch the correct function to be invoked.
 
 ## Using decorators as a hook
 When a function is decorated with a decorator, the decorator function gets executed during function definition; which means this
