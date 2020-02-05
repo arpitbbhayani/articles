@@ -94,10 +94,10 @@ def area(l, b):
 
 In the example above, the function `area` is wrapped in `Function` instantiated in `func`. The `key()` returns the tuple whose first element is the module name `__main__`, second is the class `<class 'function'>`, the third is the function name `area` while the fourth is the number of arguments that function `area` accepts which is `2`.
 
-The example also shows how we could just call the instance `func`, just like the usual `area` function, with arguments `3` and `4` and get the response `12`, which is exactly what we'd get is we would have called `area(3, 4)`. This behaviour would come in handy in the later stage when we play with decorators.
+The example also shows how we could just call the instance `func`, just like the usual `area` function, with arguments `3` and `4` and get the response `12`, which is exactly what we'd get is we would have called `area(3, 4)`. This behavior would come in handy in the later stage when we play with decorators.
 
 ## Building the virtual Namespace
-Virtual Namespace, we build here, will stores all the functions we gather during definition phase. As there be only one namespace/registry we create a singleton class that holds the functions in a dictionary whose key will not be just a function name but the tuple we get from the `key` function, which contains elements that uniquely identify function in the entire codebase. Through this, we will be able to hold functions in the registry even if they have the same name (but different arguments) and thus facilitating function overloading.
+Virtual Namespace, we build here, will store all the functions we gather during the definition phase. As there be only one namespace/registry we create a singleton class that holds the functions in a dictionary whose key will not be just a function name but the tuple we get from the `key` function, which contains elements that uniquely identify function in the entire codebase. Through this, we will be able to hold functions in the registry even if they have the same name (but different arguments) and thus facilitating function overloading.
 
 ```py
 class Namespace(object):
@@ -129,7 +129,7 @@ class Namespace(object):
     return func
 ```
 
-The `Namespace` has a method `register` that takes function `fn` as an argument, creates a unique key for it, stores it in the dictionary and returns `fn` wrapped within an instance of `Function`. This means the return value from `register` function is also callable and (till now) its behavior is exactly same as the wrapped function `fn`.
+The `Namespace` has a method `register` that takes function `fn` as an argument, creates a unique key for it, stores it in the dictionary and returns `fn` wrapped within an instance of `Function`. This means the return value from `register` function is also callable and (till now) its behavior is exactly the same as the wrapped function `fn`.
 
 ```py
 def area(l, b):
@@ -189,9 +189,9 @@ def overload(fn):
   return Namespace.get_instance().register(fn)
 ```
 
-The `overload` decorator returns an instance of `Function`, as returned by `.register()` function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation. Now what remains is implementing `__call__` method in class `Function` such that it invokes the appropriate function given the arguments passed during invocation.
+The `overload` decorator returns an instance of `Function`, as returned by `.register()` the function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation. Now what remains is implementing `__call__` method in class `Function` such that it invokes the appropriate function given the arguments passed during invocation.
 
-## Finding the right function from namespace
+## Finding the right function from the namespace
 The scope of disambiguation of function, apart from the usuals module class and name, is the number of arguments it accepts and hence we define a function called `get` in our virtual namespace that accepts the function from the python's namespace (the last overridden - as we did not alter that behavior) and the arguments passed during invocation (our disambiguation factor) and returns the actual disambiguated function to be invoked.
 
 The role of this `get` function is to decide which implementation of a function (if overloaded) is to be invoked. The process of getting the appropriate function is pretty simple - from the function and arguments create the unique key using `key` function (as was done while registering) and see if it exists in the function registry; if it does the fetch the implementation stored against it.
@@ -209,7 +209,7 @@ def get(self, fn, *args):
 The `get` function creates an instance of `Function` just so that it could use `key` function to get unique key and not replicate the logic. The key is then used to fetch the appropriate function from the function registry.
 
 ## Invoking the function
-As stated above, the `__call__` method within class `Function` is invoked every time a function decorated with `overload` decorator is called. We use this function to fetch the appropriate function using `get` function of namespace and invoke it and this invokes the required implementation of overloaded function. The `__call__` method is implemented as follows
+As stated above, the `__call__` method within class `Function` is invoked every time a function decorated with `overload` decorator is called. We use this function to fetch the appropriate function using `get` function of namespace and invoke it and this invokes the required implementation of the overloaded function. The `__call__` method is implemented as follows
 
 ```py
 def __call__(self, *args, **kwargs):
@@ -226,7 +226,7 @@ def __call__(self, *args, **kwargs):
   return fn(*args, **kwargs)
 ```
 
-The method fetches the appropriate function from the virtual namespace and if it does not find any function it raises an `Exception`; if it does then it simple invokes it and returns the value. This way get invoke an overloaded function using number of arguments as distinguishing factor.
+The method fetches the appropriate function from the virtual namespace and if it does not find any function it raises an `Exception`; if it does then it invokes it and returns the value. This way `get` invoke an overloaded function using the number of arguments as the distinguishing factor.
 
 ## Function overloading in action
 Once all the code is put into place we could see function overloading in action. We define two area functions and decorate each using `overload` decorator, as shown below
@@ -247,7 +247,7 @@ def area(r):
 22
 ```
 
-When we invoke `area` with one argument it returns area of circle and when we pass two arguments it invokes the function that computes area of rectangle. You could see entire working demo [here](https://repl.it/@arpitbbhayani/Python-Function-Overloading).
+When we invoke `area` with one argument it returns the area of a circle and when we pass two arguments it invokes the function that computes area of rectangle. You could see entire working demo [here](https://repl.it/@arpitbbhayani/Python-Function-Overloading).
 
 # Conclusion
 
