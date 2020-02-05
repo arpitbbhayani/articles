@@ -10,10 +10,10 @@ float area(int radius) {
 }
 ```
 
-In above example (written in C++), the function `area` is overloaded with two implementations; one accepts two arguments (both integers) representing the length and the breadth of a rectangle and returns the area; while the other function accepts an integer radius of a circle. When we call the function `area` like `area(7)` it invokes the second function while `area(3, 4)` invokes the first.
+In the above example (written in C++), the function `area` is overloaded with two implementations; one accepts two arguments (both integers) representing the length and the breadth of a rectangle and returns the area; while the other function accepts an integer radius of a circle. When we call the function `area` like `area(7)` it invokes the second function while `area(3, 4)` invokes the first.
 
 ### Why no Function Overloading in Python?
-Python does not support function overloading. When we define multiple functions with same name, the later one always overrides the prior and thus, in the namespace, there will always be a single entry against each function name. We see what exists in Python namespaces by invoking functions `locals()` and `globals()`, which returns local and global namespace respectively.
+Python does not support function overloading. When we define multiple functions with the same name, the later one always overrides the prior and thus, in the namespace, there will always be a single entry against each function name. We see what exists in Python namespaces by invoking functions `locals()` and `globals()`, which returns local and global namespace respectively.
 
 ```py
 def area(radius):
@@ -27,7 +27,7 @@ def area(radius):
 }
 ```
 
-Calling the function `locals()` after defining a function we see that it returns a dictionary of all variables defined in local namespace. The key of the dictionary is the name of the variable and value is the reference/value of that variable. When the runtime encounters another function with the same name it updates the entry in the local namespace and thus removes the possibility of two functions co-existing. Hence python does not support Function overloading. It was the design decision made while creating language but this does not stop us from implementing it, so let's overload some functions.
+Calling the function `locals()` after defining a function we see that it returns a dictionary of all variables defined in the local namespace. The key of the dictionary is the name of the variable and value is the reference/value of that variable. When the runtime encounters another function with the same name it updates the entry in the local namespace and thus removes the possibility of two functions co-existing. Hence python does not support Function overloading. It was the design decision made while creating language but this does not stop us from implementing it, so let's overload some functions.
 
 # Implementing Function Overloading in Python
 We know how Python manages namespaces and if we would want to implement function overloading, we would need to
@@ -35,7 +35,7 @@ We know how Python manages namespaces and if we would want to implement function
  - manage the function definitions in a maintained virtual namespace
  - find a way to invoke the appropriate function as per the arguments passed to it
 
-To keep things simple, we will implement function overloading where for the functions with same name are distinguished by the **number of arguments** it accepts.
+To keep things simple, we will implement function overloading where the functions with the same name are distinguished by the **number of arguments** it accepts.
 
 ## Wrapping the function
 We create a class called `Function` that wraps any function and makes it callable through an overridden `__call__` method and also exposes a method called `key` that returns a tuple which makes this function unique in entire codebase.
@@ -56,7 +56,7 @@ class Function(object):
     return self.fn(*args, **kwargs)
 
   def key(self, args=None):
-    """Returns the key that will uniquely identifies
+    """Returns the key that will uniquely identify
     a function (even when it is overloaded).
     """
     # if args not specified, extract the arguments from the
@@ -74,7 +74,7 @@ class Function(object):
 
 In the snippet above, the `key` function returns a tuple that uniquely identifies the function in the codebase and holds
 
- - module of the function
+ - the module of the function
  - class to which the function belongs
  - name of the function
  - number of arguments the function accepts
@@ -92,12 +92,12 @@ def area(l, b):
 12
 ```
 
-In the example the function `area` is wrapped in `Function` instantiated in `func`. The `key()` returns the tuple whose first element is the module name `__main__`, second is the class `<class 'function'>`, the third is the function name `area` while the fourth is the number of arguments that function `area` accepts which is `2`.
+In the example above, the function `area` is wrapped in `Function` instantiated in `func`. The `key()` returns the tuple whose first element is the module name `__main__`, second is the class `<class 'function'>`, the third is the function name `area` while the fourth is the number of arguments that function `area` accepts which is `2`.
 
 The example also shows how we could just call the instance `func`, just like the usual `area` function, with arguments `3` and `4` and get the response `12`, which is exactly what we'd get is we would have called `area(3, 4)`. This behaviour would come in handy in the later stage when we play with decorators.
 
 ## Building the virtual Namespace
-Virtual Namespace, we build here, will stores all the functions we gather during definition phase. As there be only one namespace/registry we create a singleton class which holds the functions in a dictionary whose key will not be just a function name but the tuple we get from the `key` function, which contains elements that uniquely identifies function in the entire codebase. Through this we will be able to hold functions in the registry even if they have same name (but different arguments) and thus facilitating function overloading.
+Virtual Namespace, we build here, will stores all the functions we gather during definition phase. As there be only one namespace/registry we create a singleton class that holds the functions in a dictionary whose key will not be just a function name but the tuple we get from the `key` function, which contains elements that uniquely identify function in the entire codebase. Through this, we will be able to hold functions in the registry even if they have the same name (but different arguments) and thus facilitating function overloading.
 
 ```py
 class Namespace(object):
@@ -129,7 +129,7 @@ class Namespace(object):
     return func
 ```
 
-The `Namespace` has a method `register` that takes function `fn` as argument, creates unique key for it, stores it in the dictionary and returns `fn` wrapped within an instance of `Function`. This means the return value from `register` function is also callable and (till now) its behavior is exactly same as the wrapped function `fn`.
+The `Namespace` has a method `register` that takes function `fn` as an argument, creates a unique key for it, stores it in the dictionary and returns `fn` wrapped within an instance of `Function`. This means the return value from `register` function is also callable and (till now) its behavior is exactly same as the wrapped function `fn`.
 
 ```py
 def area(l, b):
@@ -142,9 +142,9 @@ def area(l, b):
 ```
 
 ## Using decorators as a hook
-Now that we have defined a virtual namespace with an ability to register a function, we need a hook that gets called during function definition; and here use Python decorators. In Python, a decorator wraps a function and allows us to add new functionality to an existing function without modifying its structure. A decorator accepts the wrapped function `fn` as argument and return another function that gets invoked instead. This function accepts `args` and `kwargs` passed during function invocation and returns the value.
+Now that we have defined a virtual namespace with an ability to register a function, we need a hook that gets called during function definition; and here use Python decorators. In Python, a decorator wraps a function and allows us to add new functionality to an existing function without modifying its structure. A decorator accepts the wrapped function `fn` as an argument and returns another function that gets invoked instead. This function accepts `args` and `kwargs` passed during function invocation and returns the value.
 
-A sample decorator that times an execution of a function is demonstrated below
+A sample decorator that times execution of a function is demonstrated below
 
 ```py
 import time
