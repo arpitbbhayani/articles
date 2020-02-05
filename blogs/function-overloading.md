@@ -233,7 +233,7 @@ Once all the code is put into place we define two functions named `area`: one ca
 
 ```py
 @overload
-def area(l * b):
+def area(l, b):
   return l * b
 
 @overload
