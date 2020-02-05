@@ -27,9 +27,7 @@ def area(radius):
 }
 ```
 
-Calling the `locals()` function after defining a function we see that it returns a dictionary of all variables defined in local namespace. The key of the dictionary is the name of the variable and value is the reference or value of that variable. When the runtime encounters another function with the same name it updates the entry in the local namespace and thus removes the possibility of two functions co-existing.
-
-Challenge accepted!
+Calling the function `locals()` after defining a function we see that it returns a dictionary of all variables defined in local namespace. The key of the dictionary is the name of the variable and value is the reference/value of that variable. When the runtime encounters another function with the same name it updates the entry in the local namespace and thus removes the possibility of two functions co-existing. Hence python does not support Function overloading. It was the design decision made while creating language but this does not stop us from implementing it, so let's overload some functions.
 
 # Implementing Function Overloading in Python
 
