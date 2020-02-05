@@ -189,7 +189,7 @@ def overload(fn):
   return Namespace.get_instance().register(fn)
 ```
 
-The `overload` decorator is defined as above; it returns an instance of `Function` as returned by `.register()` function of namespace. No whenever the function decorated by `overload` is called, it will invoke the function that was returned by the `.register()` function - which is an instance of `Function` and `__call__` gets executed with specified `args` and `kwargs`.
+The `overload` decorator returns an instance of `Function`, as returned by `.register()` function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation.
 
 ## Invoking the right function from namespace
 
