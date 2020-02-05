@@ -189,7 +189,7 @@ def overload(fn):
   return Namespace.get_instance().register(fn)
 ```
 
-The `overload` decorator returns an instance of `Function`, as returned by `.register()` function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation. Now what remains is implementing `__call__` function in class `Function` such that it invokes the appropriate function given the arguments passed during invocation.
+The `overload` decorator returns an instance of `Function`, as returned by `.register()` function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation. Now what remains is implementing `__call__` method in class `Function` such that it invokes the appropriate function given the arguments passed during invocation.
 
 ## Finding the right function from namespace
 The scope of disambiguation of function, apart from the usuals module class and name, is the number of arguments it accepts and hence we define a function called `get` in our virtual namespace that accepts the function from the python's namespace (the last overridden - as we did not alter that behavior) and the arguments passed during invocation (our disambiguation factor) and returns the actual disambiguated function to be invoked.
@@ -209,7 +209,7 @@ def get(self, fn, *args):
 The `get` function creates an instance of `Function` just so that it could use `key` function to get unique key and not replicate the logic. The key is then used to fetch the appropriate function from the function registry.
 
 ## Invoking the function
-The function `__call__` gets invoked when we invoke an instance of class `Function` and it holds the wrapped function `fn`. Now we
+As stated above, the `__call__` method within class `Function` is invoked every time a function decorated with `overload` decorator is called. We use this function to fetch the appropriate function using `get` function of namespace and invoke it and this invokes the required implementation of overloaded function. The `__call__` method is implemented as follows
 
 ```py
 def __call__(self, *args, **kwargs):
@@ -226,7 +226,10 @@ def __call__(self, *args, **kwargs):
   return fn(*args, **kwargs)
 ```
 
+The method fetches the appropriate function from the virtual namespace and if it does not find any function it raises an `Exception`; if it does then it simple invokes it and returns the value. This way get invoke an overloaded function using number of arguments as distinguishing factor.
+
 ## Function overloading in action
+Once all the code is put into place we could see function overloading in action. We define two area functions and decorate each using `overload` decorator, as shown below
 
 ```py
 @overload
@@ -244,7 +247,7 @@ def area(r):
 22
 ```
 
-https://repl.it/@arpitbbhayani/Python-Function-Overloading
+When we invoke `area` with one argument it returns area of circle and when we pass two arguments it invokes the function that computes area of rectangle. You could see entire working demo [here](https://repl.it/@arpitbbhayani/Python-Function-Overloading).
 
 # Conclusion
 
