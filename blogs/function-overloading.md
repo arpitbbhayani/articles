@@ -30,14 +30,12 @@ def area(radius):
 Calling the function `locals()` after defining a function we see that it returns a dictionary of all variables defined in local namespace. The key of the dictionary is the name of the variable and value is the reference/value of that variable. When the runtime encounters another function with the same name it updates the entry in the local namespace and thus removes the possibility of two functions co-existing. Hence python does not support Function overloading. It was the design decision made while creating language but this does not stop us from implementing it, so let's overload some functions.
 
 # Implementing Function Overloading in Python
+We know how Python manages namespaces and if we would want to implement function overloading, we would need to
 
-We know why Python does not support Function Overloading and how it manages namespaces we could come up with an approach that helps us overload Python functions by
+ - manage the function definitions in a maintained virtual namespace
+ - find a way to invoke the correct function as per the arguments passed to it
 
- - managing the function definitions in a maintained virtual namespace
- - invoking the correct function as per the arguments passed to it
-
-### The scope
-In this article we will implement function overloading in Python; where for the functions with same name the distinguishing criteria will be the **number of arguments** it accepts.
+To keep things simple, we will implement function overloading where for the functions with same name are distinguished by the **number of arguments** it accepts.
 
 ## Wrapping the function
 We create a class called `Function` that wraps any python function and makes it callable through `__call__` and exposes a methods `key` that returns a key that makes this function unique.
