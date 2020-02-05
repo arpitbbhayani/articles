@@ -33,7 +33,7 @@ Calling the function `locals()` after defining a function we see that it returns
 We know how Python manages namespaces and if we would want to implement function overloading, we would need to
 
  - manage the function definitions in a maintained virtual namespace
- - find a way to invoke the correct function as per the arguments passed to it
+ - find a way to invoke the appropriate function as per the arguments passed to it
 
 To keep things simple, we will implement function overloading where for the functions with same name are distinguished by the **number of arguments** it accepts.
 
@@ -189,18 +189,24 @@ def overload(fn):
   return Namespace.get_instance().register(fn)
 ```
 
-The `overload` decorator returns an instance of `Function`, as returned by `.register()` function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation. Now what remains is implementing `__call__` function in class `Function` such that it invokes the correct function given the arguments passed during invocation.
+The `overload` decorator returns an instance of `Function`, as returned by `.register()` function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation. Now what remains is implementing `__call__` function in class `Function` such that it invokes the appropriate function given the arguments passed during invocation.
 
 ## Finding the right function from namespace
+We decided that the scope of disambiguation of function would be the number of arguments it accepts and hence we define a function called `get` in our virtual namespace that accepts the function from the python's namespace (function we get from usual call) and the arguments passed during invocation (our disambiguation factor) and returns the actual function (disambiguated) to be invoked.
+
+The role of this `get` function is to decide which implementation of a function (if overloaded) is to be invoked and the decision is made by using argument count as disambiguation factor. The `get` function is defined as follows
+
 ```py
 def get(self, fn, *args):
   """get returns the matching function from the virtual namespace.
 
-  raises exception when no matching function found.
+  return None if it did not fund any matching function.
   """
   func = Function(fn)
   return self.function_map.get(func.key(args=args))
 ```
+
+The `get` function creates an instance of `Function` just so that that it creates the unique key of the function using `key` function and this keyis used to fetch the appropriate function from the function registry.
 
 ## Invoking the function
 The function `__call__` gets invoked when we invoke an instance of class `Function` and it holds the wrapped function `fn`. Now we
