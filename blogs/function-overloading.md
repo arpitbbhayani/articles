@@ -1,4 +1,4 @@
-Function overloading is the ability to have multiple functions with the same name but with different signatures. When an overloaded function `fn` is called, the runtime first sees the arguments/parameters passed to the function call and judging by this executes the corresponding implementation.
+Function overloading is the ability to have multiple functions with the same name but with different signatures/implementations. When an overloaded function `fn` is called, the runtime first evaluates the arguments/parameters passed to the function call and judging by this invokes the corresponding implementation.
 
 ```cpp
 int area(int length, int breadth) {
@@ -10,12 +10,10 @@ float area(int radius) {
 }
 ```
 
-In above example, the function `area` is overloaded with two implementations; one accepts two arguments (both integers) representing the length and the breadth of a rectangle and returns the area; while the other `area` function accepts an integer radius of a circle and returns the area.
-
-When some code calls the function `area` like `area(7)`, the runtime checks the number of arguments and types associated with each, and decides to call the second `area` function.
+In above example (written in C++), the function `area` is overloaded with two implementations; one accepts two arguments (both integers) representing the length and the breadth of a rectangle and returns the area; while the other function accepts an integer radius of a circle. When we call the function `area` like `area(7)` it invokes the second function while `area(3, 4)` invokes the first.
 
 ### Why no Function Overloading in Python?
-Python does not have function overloading. In Python, if we define two functions with same name, the second definition override the first. Python manages local and global namespaces and we could access it through `locals()` and `globals()` function calls.
+Python does not support function overloading. When we define multiple functions with same name, the later one always overrides the prior and thus, in the namespace, there will always be a single entry against each function name. We see what exists in Python namespaces by invoking functions `locals()` and `globals()`, which returns local and global namespace respectively.
 
 ```py
 def area(radius):
