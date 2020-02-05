@@ -126,11 +126,21 @@ class Namespace(object):
     return func
 ```
 
-The `Namespace` will have function `register` that takes function `fn` as argument, creates unique key for it and stores it in the dictionary. Thus given the function to be executed and arguments we could fetch the correct function to be invoked.
+The `Namespace` will have function `register` that takes function `fn` as argument, creates unique key for it, stores it in the dictionary and returns `fn` wrapped within an instance of `Function` which means when the instance, as returned by `register` function, is invoked it will internally invoke the wrapped function.
+
+```py
+def area(l, b):
+  return l * b
+
+>>> namespace = Namespace.get_instance()
+>>> func = namespace.register(area)
+>>> func(3, 4)
+12
+```
 
 ## Using decorators as a hook
+Now that we have defined a virtual namespace with register function
 When a function is decorated with a decorator, the decorator function gets executed during function definition; which means this
-
 
 Decorators execute on every function definition and we use them to persist function definitions in our virtual namespace.
 
