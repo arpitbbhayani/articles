@@ -97,7 +97,7 @@ In the example the function `area` is wrapped in `Function` instantiated in `fun
 The example also shows how we could just call the instance `func`, just like the usual `area` function, with arguments `3` and `4` and get the response `12`, which is exactly what we'd get is we would have called `area(3, 4)`. This behaviour would come in handy in the later stage when we play with decorators.
 
 ## Building the virtual Namespace
-Virtual Namespace, we build here, will stores all the functions we gather during definition phase. Since we want that there exists only one registry we create a singleton class which holds the function registry in a dictionary. Instead of using function name as the key, we use the tuple we get from `key()` function of `Function` as the key that enables us to hold every single function definition.
+Virtual Namespace, we build here, will stores all the functions we gather during definition phase. As there be only one namespace/registry we create a singleton class which holds the functions in a dictionary whose key will not be just a function name but the tuple we get from the `key` function, which contains elements that uniquely identifies function in the entire codebase. Through this we will be able to hold functions in the registry even if they have same name (but different arguments) and thus facilitating function overloading.
 
 ```py
 class Namespace(object):
@@ -129,7 +129,7 @@ class Namespace(object):
     return func
 ```
 
-The `Namespace` will have function `register` that takes function `fn` as argument, creates unique key for it, stores it in the dictionary and returns `fn` wrapped within an instance of `Function` which means when the instance, as returned by `register` function, is invoked it will internally invoke the wrapped function.
+The `Namespace` has a method `register` that takes function `fn` as argument, creates unique key for it, stores it in the dictionary and returns `fn` wrapped within an instance of `Function`. This means the return value from `register` function is also callable and (till now) its behavior is exactly same as the wrapped function `fn`.
 
 ```py
 def area(l, b):
