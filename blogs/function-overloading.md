@@ -179,7 +179,7 @@ the function execution took: 9.5367431640625e-07 seconds
 
 In the example above we define a decorator named `my_decorator` that wraps function `area` and prints on `stdout` the time it took for the execution.
 
-The decorator function `my_decorator` is called every time (so that it could wrap the store this new function in its namespace) the interpreter encounters a function definition, and it is an ideal hook, for us, to register the function in our virtual namespace. Hence we create our decorator named `overload` which registers the function in virtual namespace and return a callable to be invoked.
+The decorator function `my_decorator` is called every time (so that it wraps the decorated function and store this new wrapper function in Python's local or global namespace) the interpreter encounters a function definition, and it is an ideal hook, for us, to register the function in our virtual namespace. Hence we create our decorator named `overload` which registers the function in virtual namespace and returns a callable to be invoked.
 
 ```py
 def overload(fn):
@@ -206,10 +206,10 @@ def get(self, fn, *args):
   return self.function_map.get(func.key(args=args))
 ```
 
-The `get` function creates an instance of `Function` just so that it could use `key` function to get unique key and not replicate the logic. The key is then used to fetch the appropriate function from the function registry.
+The `get` function creates an instance of `Function` just so that it could use the `key` function to get unique key and not replicate the logic. The key is then used to fetch the appropriate function from the function registry.
 
 ## Invoking the function
-As stated above, the `__call__` method within class `Function` is invoked every time a function decorated with `overload` decorator is called. We use this function to fetch the appropriate function using the `get` function of namespace and invoke the required implementation of the overloaded function. The `__call__` method is implemented as follows
+As stated above, the `__call__` method within class `Function` is invoked every time a function decorated with an `overload` decorator is called. We use this function to fetch the appropriate function using the `get` function of namespace and invoke the required implementation of the overloaded function. The `__call__` method is implemented as follows
 
 ```py
 def __call__(self, *args, **kwargs):
@@ -226,10 +226,10 @@ def __call__(self, *args, **kwargs):
   return fn(*args, **kwargs)
 ```
 
-The method fetches the appropriate function from the virtual namespace and if it did not find any function it raises an `Exception` and if it does then it invokes it and returns the value, and this is how we have implemented Function overloading in python.
+The method fetches the appropriate function from the virtual namespace and if it did not find any function it raises an `Exception` and if it does, it invokes that function and returns the value.
 
 ## Function overloading in action
-Once all the code is put into place we define two functions named `area` that calculates area; one calculates area of rectangle while other calculates the area of circle. Both functions are defined below and decorated with an `overload` decorator.
+Once all the code is put into place we define two functions named `area`: one calculates the area of rectangle and the other calculate the area of a circle. Both functions are defined below and decorated with an `overload` decorator.
 
 ```py
 @overload
@@ -248,7 +248,7 @@ def area(r):
 153.93804002589985
 ```
 
-When we invoke `area` with one argument it returns the area of a circle and when we pass two arguments it invokes the function that computes the area of a rectangle, and thus we have overloaded `area` function in Python and defined two implementations with different arguments. You can find the entire working demo [here](https://repl.it/@arpitbbhayani/Python-Function-Overloading).
+When we invoke `area` with one argument it returns the area of a circle and when we pass two arguments it invokes the function that computes the area of a rectangle thus overloading the function `area`. You can find the entire working demo [here](https://repl.it/@arpitbbhayani/Python-Function-Overloading).
 
 # Conclusion
 
