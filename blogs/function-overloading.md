@@ -189,7 +189,7 @@ def overload(fn):
   return Namespace.get_instance().register(fn)
 ```
 
-The `overload` decorator returns an instance of `Function`, as returned by `.register()` the function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation. Now what remains is implementing `__call__` method in class `Function` such that it invokes the appropriate function given the arguments passed during invocation.
+The `overload` decorator returns an instance of `Function`, as returned by `.register()` the function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation. Now what remains is implementing the `__call__` method in class `Function` such that it invokes the appropriate function given the arguments passed during invocation.
 
 ## Finding the right function from the namespace
 The scope of disambiguation, apart from the usuals module class and name, is the number of arguments the function accepts and hence we define a method called `get` in our virtual namespace that accepts the function from the python's namespace (will be the last definition for the same name - as we did not alter the default behavior of Python's namespace) and the arguments passed during invocation (our disambiguation factor) and returns the disambiguated function to be invoked.
@@ -206,7 +206,7 @@ def get(self, fn, *args):
   return self.function_map.get(func.key(args=args))
 ```
 
-The `get` function creates an instance of `Function` just so that it could use the `key` function to get unique key and not replicate the logic. The key is then used to fetch the appropriate function from the function registry.
+The `get` function creates an instance of `Function` just so that it could use the `key` function to get a unique key and not replicate the logic. The key is then used to fetch the appropriate function from the function registry.
 
 ## Invoking the function
 As stated above, the `__call__` method within class `Function` is invoked every time a function decorated with an `overload` decorator is called. We use this function to fetch the appropriate function using the `get` function of namespace and invoke the required implementation of the overloaded function. The `__call__` method is implemented as follows
@@ -229,7 +229,7 @@ def __call__(self, *args, **kwargs):
 The method fetches the appropriate function from the virtual namespace and if it did not find any function it raises an `Exception` and if it does, it invokes that function and returns the value.
 
 ## Function overloading in action
-Once all the code is put into place we define two functions named `area`: one calculates the area of rectangle and the other calculate the area of a circle. Both functions are defined below and decorated with an `overload` decorator.
+Once all the code is put into place we define two functions named `area`: one calculates the area of a rectangle and the other calculate the area of a circle. Both functions are defined below and decorated with an `overload` decorator.
 
 ```py
 @overload
@@ -251,7 +251,7 @@ def area(r):
 When we invoke `area` with one argument it returns the area of a circle and when we pass two arguments it invokes the function that computes the area of a rectangle thus overloading the function `area`. You can find the entire working demo [here](https://repl.it/@arpitbbhayani/Python-Function-Overloading).
 
 # Conclusion
-Python do not support function overloading but by using simple and common language constructs we hacked a solution to it. We used decorators and an user maintained namespace to overload functions and used the number of arguments as an disambiguation factor. We could also use data types (defined in decorator) of arguments for disambiguation - which allows functions with the same number of arguments but different types to overload. The granularity of overload is only limited by function `getfullargspec` and our imagination. A neater, cleaner and more efficient approach is also possible with above constructs so feel free to implement one and tweet me [@arpit_bhayani](https://twitter.com/arpit_bhayani), I will be thrilled to learn what you have done with it.
+Python does not support function overloading but by using simple and common language constructs we hacked a solution to it. We used decorators and a user-maintained namespace to overload functions and used the number of arguments as a disambiguation factor. We could also use data types (defined in decorator) of arguments for disambiguation - which allows functions with the same number of arguments but different types to overload. The granularity of overload is only limited by function `getfullargspec` and our imagination. A neater, cleaner and more efficient approach is also possible with the above constructs so feel free to implement one and tweet me [@arpit_bhayani](https://twitter.com/arpit_bhayani), I will be thrilled to learn what you have done with it.
 
 ---
 
