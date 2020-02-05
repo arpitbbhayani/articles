@@ -38,7 +38,7 @@ We know how Python manages namespaces and if we would want to implement function
 To keep things simple, we will implement function overloading where for the functions with same name are distinguished by the **number of arguments** it accepts.
 
 ## Wrapping the function
-We create a class called `Function` that wraps any python function and makes it callable through `__call__` and exposes a methods `key` that returns a key that makes this function unique.
+We create a class called `Function` that wraps any function and makes it callable through an overridden `__call__` method and also exposes a method called `key` that returns a tuple which makes this function unique in entire codebase.
 
 ```py
 from inspect import getfullargspec
@@ -72,7 +72,14 @@ class Function(object):
     ])
 ```
 
-In the snippet above, the `__call__` invokes the wrapped function and returns the values (nothing fancy here right now). The `key` function returns a tuple which has module, class, function name and the number of arguments it accepts. This tuple can unique identify the wrapped function in the codebase.
+In the snippet above, the `key` function returns a tuple that uniquely identifies the function in the codebase and holds
+
+ - module of the function
+ - class to which the function belongs
+ - name of the function
+ - number of arguments the function accepts
+
+The overridden `__call__` method invokes the wrapped function and returns the computed value (nothing fancy here right now). This makes the instance callable just like the function and it behaves exactly like the wrapped function.
 
 ```py
 def area(l, b):
@@ -85,7 +92,7 @@ def area(l, b):
 12
 ```
 
-In the example above we could see the tuple that is returned from the `key` function for the wrapped function `area`. The first element of tuple is the module name `__main__`, second is the class `<class 'function'>`, the third is the function name `area` while the fourth is the number of arguments that function `area` accepts which is `2`. The example also shows how we could just invoke the instance `func`, just like usual `area` function with arguments `3` and `4` and get the expected response `12` in return.
+In the example above we see the tuple that is returned from the `key` function for the wrapped function `area`. The first element of tuple is the module name `__main__`, second is the class `<class 'function'>`, the third is the function name `area` while the fourth is the number of arguments that function `area` accepts which is `2`. The example also shows how we could just invoke the instance `func`, just like usual `area` function with arguments `3` and `4` and get the expected response `12` in return.
 
 ## Building the virtual Namespace
 Virtual Namespace, we build here, will stores all the functions we gather during definition phase. Since we want that there exists only one registry we create a singleton class which holds the function registry in a dictionary. Instead of using function name as the key, we use the tuple we get from `key()` function of `Function` as the key that enables us to hold every single function definition.
