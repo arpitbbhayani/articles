@@ -192,9 +192,9 @@ def overload(fn):
 The `overload` decorator returns an instance of `Function`, as returned by `.register()` the function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation. Now what remains is implementing `__call__` method in class `Function` such that it invokes the appropriate function given the arguments passed during invocation.
 
 ## Finding the right function from the namespace
-The scope of disambiguation of function, apart from the usuals module class and name, is the number of arguments it accepts and hence we define a function called `get` in our virtual namespace that accepts the function from the python's namespace (the last overridden - as we did not alter that behavior) and the arguments passed during invocation (our disambiguation factor) and returns the actual disambiguated function to be invoked.
+The scope of disambiguation, apart from the usuals module class and name, is the number of arguments the function accepts and hence we define a method called `get` in our virtual namespace that accepts the function from the python's namespace (will be the last definition for the same name - as we did not alter the default behavior of Python's namespace) and the arguments passed during invocation (our disambiguation factor) and returns the disambiguated function to be invoked.
 
-The role of this `get` function is to decide which implementation of a function (if overloaded) is to be invoked. The process of getting the appropriate function is pretty simple - from the function and arguments create the unique key using `key` function (as was done while registering) and see if it exists in the function registry; if it does the fetch the implementation stored against it.
+The role of this `get` function is to decide which implementation of a function (if overloaded) is to be invoked. The process of getting the appropriate function is pretty simple - from the function and the arguments create the unique key using `key` function (as was done while registering) and see if it exists in the function registry; if it does then fetch the implementation stored against it.
 
 ```py
 def get(self, fn, *args):
@@ -209,7 +209,7 @@ def get(self, fn, *args):
 The `get` function creates an instance of `Function` just so that it could use `key` function to get unique key and not replicate the logic. The key is then used to fetch the appropriate function from the function registry.
 
 ## Invoking the function
-As stated above, the `__call__` method within class `Function` is invoked every time a function decorated with `overload` decorator is called. We use this function to fetch the appropriate function using `get` function of namespace and invoke it and this invokes the required implementation of the overloaded function. The `__call__` method is implemented as follows
+As stated above, the `__call__` method within class `Function` is invoked every time a function decorated with `overload` decorator is called. We use this function to fetch the appropriate function using `get` function of namespace and invoke the required implementation of the overloaded function. The `__call__` method is implemented as follows
 
 ```py
 def __call__(self, *args, **kwargs):
@@ -226,10 +226,10 @@ def __call__(self, *args, **kwargs):
   return fn(*args, **kwargs)
 ```
 
-The method fetches the appropriate function from the virtual namespace and if it does not find any function it raises an `Exception`; if it does then it invokes it and returns the value. This way `get` invoke an overloaded function using the number of arguments as the distinguishing factor.
+The method fetches the appropriate function from the virtual namespace and if it did not find any function it raises an `Exception` and if it does then it invokes it and returns the value; and this is how we have implemented Function overloading in python.
 
 ## Function overloading in action
-Once all the code is put into place we could see function overloading in action. We define two area functions and decorate each using `overload` decorator, as shown below
+Once all the code is put into place we define two functions named `area` that calculates area; one calculates area of rectangle while other calculates the area of circle. Both functions are defined below and decorated with `overload` decorator.
 
 ```py
 @overload
@@ -238,16 +238,17 @@ def area(l * b):
 
 @overload
 def area(r):
-  return 3.14 * r ** 2
+  import math
+  return math.pi * r ** 2
 
 
 >>> area(3, 4)
 12
 >>> area(7)
-22
+153.93804002589985
 ```
 
-When we invoke `area` with one argument it returns the area of a circle and when we pass two arguments it invokes the function that computes area of rectangle. You could see entire working demo [here](https://repl.it/@arpitbbhayani/Python-Function-Overloading).
+When we invoke `area` with one argument it returns the area of a circle and when we pass two arguments it invokes the function that computes area of rectangle; and thus we have overloaded `area` function in Python and defined two implementations with different arguments. You can find entire working demo [here](https://repl.it/@arpitbbhayani/Python-Function-Overloading).
 
 # Conclusion
 
