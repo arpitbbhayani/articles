@@ -192,9 +192,9 @@ def overload(fn):
 The `overload` decorator returns an instance of `Function`, as returned by `.register()` function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation. Now what remains is implementing `__call__` function in class `Function` such that it invokes the appropriate function given the arguments passed during invocation.
 
 ## Finding the right function from namespace
-We decided that the scope of disambiguation of function would be the number of arguments it accepts and hence we define a function called `get` in our virtual namespace that accepts the function from the python's namespace (function we get from usual call) and the arguments passed during invocation (our disambiguation factor) and returns the actual function (disambiguated) to be invoked.
+The scope of disambiguation of function, apart from the usuals module class and name, is the number of arguments it accepts and hence we define a function called `get` in our virtual namespace that accepts the function from the python's namespace (the last overridden - as we did not alter that behavior) and the arguments passed during invocation (our disambiguation factor) and returns the actual disambiguated function to be invoked.
 
-The role of this `get` function is to decide which implementation of a function (if overloaded) is to be invoked and the decision is made by using argument count as disambiguation factor. The `get` function is defined as follows
+The role of this `get` function is to decide which implementation of a function (if overloaded) is to be invoked. The process of getting the appropriate function is pretty simple - from the function and arguments create the unique key using `key` function (as was done while registering) and see if it exists in the function registry; if it does the fetch the implementation stored against it.
 
 ```py
 def get(self, fn, *args):
@@ -206,7 +206,7 @@ def get(self, fn, *args):
   return self.function_map.get(func.key(args=args))
 ```
 
-The `get` function creates an instance of `Function` just so that that it creates the unique key of the function using `key` function and this keyis used to fetch the appropriate function from the function registry.
+The `get` function creates an instance of `Function` just so that it could use `key` function to get unique key and not replicate the logic. The key is then used to fetch the appropriate function from the function registry.
 
 ## Invoking the function
 The function `__call__` gets invoked when we invoke an instance of class `Function` and it holds the wrapped function `fn`. Now we
