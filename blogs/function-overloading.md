@@ -92,7 +92,9 @@ def area(l, b):
 12
 ```
 
-In the example above we see the tuple that is returned from the `key` function for the wrapped function `area`. The first element of tuple is the module name `__main__`, second is the class `<class 'function'>`, the third is the function name `area` while the fourth is the number of arguments that function `area` accepts which is `2`. The example also shows how we could just invoke the instance `func`, just like usual `area` function with arguments `3` and `4` and get the expected response `12` in return.
+In the example the function `area` is wrapped in `Function` instantiated in `func`. The `key()` returns the tuple whose first element is the module name `__main__`, second is the class `<class 'function'>`, the third is the function name `area` while the fourth is the number of arguments that function `area` accepts which is `2`.
+
+The example also shows how we could just call the instance `func`, just like the usual `area` function, with arguments `3` and `4` and get the response `12`, which is exactly what we'd get is we would have called `area(3, 4)`. This behaviour would come in handy in the later stage when we play with decorators.
 
 ## Building the virtual Namespace
 Virtual Namespace, we build here, will stores all the functions we gather during definition phase. Since we want that there exists only one registry we create a singleton class which holds the function registry in a dictionary. Instead of using function name as the key, we use the tuple we get from `key()` function of `Function` as the key that enables us to hold every single function definition.
