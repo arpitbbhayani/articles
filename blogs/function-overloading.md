@@ -191,7 +191,19 @@ def overload(fn):
 
 The `overload` decorator returns an instance of `Function`, as returned by `.register()` function of the namespace. Now whenever the function (decorated by `overload`) is called, it invokes the function returned by the `.register()` function - an instance of `Function` and the `__call__` method gets executed with specified `args` and `kwargs` passed during invocation. Now what remains is implementing `__call__` function in class `Function` such that it invokes the correct function given the arguments passed during invocation.
 
-## Invoking the right function from namespace
+## Finding the right function from namespace
+```py
+def get(self, fn, *args):
+  """get returns the matching function from the virtual namespace.
+
+  raises exception when no matching function found.
+  """
+  func = Function(fn)
+  return self.function_map.get(func.key(args=args))
+```
+
+## Invoking the function
+The function `__call__` gets invoked when we invoke an instance of class `Function` and it holds the wrapped function `fn`. Now we
 
 ```py
 def __call__(self, *args, **kwargs):
@@ -208,7 +220,7 @@ def __call__(self, *args, **kwargs):
   return fn(*args, **kwargs)
 ```
 
-## In action
+## Function overloading in action
 
 ```py
 @overload
@@ -226,7 +238,7 @@ def area(r):
 22
 ```
 
-# Next steps
+# Conclusion
 
  - right now arg count based
  - defined types based
