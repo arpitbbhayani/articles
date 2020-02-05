@@ -251,10 +251,7 @@ def area(r):
 When we invoke `area` with one argument it returns the area of a circle and when we pass two arguments it invokes the function that computes the area of a rectangle thus overloading the function `area`. You can find the entire working demo [here](https://repl.it/@arpitbbhayani/Python-Function-Overloading).
 
 # Conclusion
-
- - right now arg count based
- - defined types based
- - annotation based
+Python do not support function overloading but by using simple and common language constructs we hacked a solution to it. We used decorators and an user maintained namespace to overload functions and used the number of arguments as an disambiguation factor. We could also use data types (defined in decorator) of arguments for disambiguation - which allows functions with the same number of arguments but different types to overload. The granularity of overload is only limited by function `getfullargspec` and our imagination. A neater, cleaner and more efficient approach is also possible with above constructs so feel free to implement one and tweet me [@arpit_bhayani](https://twitter.com/arpit_bhayani), I will be thrilled to learn what you have done with it.
 
 ---
 
