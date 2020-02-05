@@ -139,7 +139,7 @@ def area(l, b):
 ```
 
 ## Using decorators as a hook
-Now that we have defined a virtual namespace with an ability to register a function, we need a hook that gets called during function definition; and here decorators come to our rescue. In Python, decorator wraps a function and allows us to add new functionality to an existing function without modifying its structure. It is usually applied on top of a function definition; check sample code below
+Now that we have defined a virtual namespace with an ability to register a function, we need a hook that gets called during function definition; and here decorators come to our rescue. In Python, decorator wraps a function and allows us to add new functionality to an existing function without modifying its structure.
 
 ```py
 import time
@@ -172,13 +172,54 @@ the function execution took: 9.5367431640625e-07 seconds
 12
 ```
 
-In the example above we have defined a decorator named `my_decorator` which wraps function `area` and prints on `stdout` the time it took for the execution. The decorator we define should accept wrapped function `fn` as argument and return another function, example `wrapper_function`, that accepts `args` and `kwargs`
+In the example above we have defined a decorator named `my_decorator` which wraps function `area` and prints on `stdout` the time it took for the execution. The decorator we define should accept wrapped function `fn` as argument and return another function, example `wrapper_function`, that accepts `args` and `kwargs` - passed during function invocation - and returns the value to be returned post invocation.
 
-When a function is decorated with a decorator, the decorator function gets executed during function definition; which means this
+The decorator function `my_decorator` everytime the Python interpreter encounters a function definition making it the ideal hook to register the function in our virtual namespace. Hence create our decorator named `overload` whose job would register the function in virtual namespace and return a callable to be invoked.
 
-Decorators execute on every function definition and we use them to persist function definitions in our virtual namespace.
+```py
+def overload(fn):
+  """overload is the decorator that wraps the function
+  and returns a callable object of type Function.
+  """
+  return Namespace.get_instance().register(fn)
+```
 
-## Invoking the correct function from the virtual Namespace
+Our `overload` decorator is defined as above; it returns an instance of `Function` as returned by `.register()` function of namespace. Thus Python's local namespace will have an entry.
+
+## Invoking the right function from namespace
+
+```py
+def __call__(self, *args, **kwargs):
+  """Overriding the __call__ function which makes the
+  instance callable.
+  """
+  # fetching the function to be invoked from the virtual namespace
+  # through the arguments.
+  fn = Namespace.get_instance().get(self.fn, *args)
+  if not fn:
+    raise Exception("no matching function found.")
+
+  # invoking the wrapped function and returning the value.
+  return fn(*args, **kwargs)
+```
+
+## In action
+
+```py
+@overload
+def area(l * b):
+  return l * b
+
+@overload
+def area(r):
+  return 3.14 * r ** 2
+
+
+>>> area(3, 4)
+12
+>>> area(7)
+22
+```
 
 # Next steps
 
