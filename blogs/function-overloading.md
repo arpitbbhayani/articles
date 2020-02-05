@@ -139,7 +139,41 @@ def area(l, b):
 ```
 
 ## Using decorators as a hook
-Now that we have defined a virtual namespace with register function
+Now that we have defined a virtual namespace with an ability to register a function, we need a hook that gets called during function definition; and here decorators come to our rescue. In Python, decorator wraps a function and allows us to add new functionality to an existing function without modifying its structure. It is usually applied on top of a function definition; check sample code below
+
+```py
+import time
+
+
+def my_decorator(fn):
+  """my_decorator is a custom decorator that wraps any function
+  and prints on stdout the time for execution.
+  """
+  def wrapper_function(*args, **kwargs):
+    start_time = time.time()
+
+    # invoking the wrapped function and getting the return value.
+    value = fn(*args, **kwargs)
+    print("the function execution took:", time.time() - start_time, "seconds")
+
+    # returning the value got after invoking the wrapped function
+    return value
+
+  return wrapper_function
+
+
+@my_decorator
+def area(l, b):
+  return l * b
+
+
+>>> area(3, 4)
+the function execution took: 9.5367431640625e-07 seconds
+12
+```
+
+In the example above we have defined a decorator named `my_decorator` which wraps function `area` and prints on `stdout` the time it took for the execution. The decorator we define should accept wrapped function `fn` as argument and return another function, example `wrapper_function`, that accepts `args` and `kwargs`
+
 When a function is decorated with a decorator, the decorator function gets executed during function definition; which means this
 
 Decorators execute on every function definition and we use them to persist function definitions in our virtual namespace.
