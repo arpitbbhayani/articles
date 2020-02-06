@@ -252,11 +252,3 @@ When we invoke `area` with one argument it returns the area of a circle and when
 
 # Conclusion
 Python does not support function overloading but by using common language constructs we hacked a solution to it. We used decorators and a user-maintained namespace to overload functions and used the number of arguments as a disambiguation factor. We could also use data types (defined in decorator) of arguments for disambiguation - which allows functions with the same number of arguments but different types to overload. The granularity of overload is only limited by function `getfullargspec` and our imagination. A neater, cleaner and more efficient approach is also possible with the above constructs so feel free to implement one and tweet me [@arpit_bhayani](https://twitter.com/arpit_bhayani), I will be thrilled to learn what you have done with it.
-
----
-
-_This article was originally published on my blog [Function Overloading in Python](https://arpitbhayani.me/blogs/function-overloading)._
-
-_If you liked what you read, subscribe to my newsletter and get the post delivered directly to your inbox and give me a shout-out [@arpit_bhayani](https://twitter.com/arpit_bhayani)._
-
-[![Subscribe to Arpit's newsletter](https://user-images.githubusercontent.com/4745789/72035595-56396b00-32be-11ea-8199-121d0808a53a.png)](https://arpit.substack.com)
