@@ -1,5 +1,15 @@
 [
   {
+    "id": "function-overloading",
+    "title": "Overload Functions in Python",
+    "description": "Python does not support function overloading - having multiple functions with the same name. Today we see how we can implement and add this functionality to Python by using common language constructs like decorators and dictionaries.",
+    "image": "https://user-images.githubusercontent.com/4745789/73905191-7e6bb800-48c4-11ea-966f-8827fc51cab9.png",
+    "gif": "https://media.giphy.com/media/WtCHRSPCuqS8E/giphy.gif",
+    "categories": ["python"],
+    "tags": ["python", "function overloading", "language constructs"],
+    "published_at": "2020-02-07"
+  },
+  {
     "id": "isolation-forest",
     "title": "Isolation Forest algorithm for anomaly detection",
     "description": "Anomaly detection is an age-old problem and in this article, we dive deep into an unsupervised algorithm, Isolation Forest, that beautifully exploits the characteristics of anomalies. Instead of profiling normal points and labeling others as anomalies, the algorithm is actually is tuned to detect anomalies.",
