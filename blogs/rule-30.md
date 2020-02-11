@@ -1,4 +1,4 @@
-Generating Pseudorandom numbers using Rule 30
+Pseudorandom numbers using Rule 30
 
 ### What are Pseudo random numbers
 
