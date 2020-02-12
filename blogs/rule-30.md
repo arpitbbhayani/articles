@@ -1,13 +1,9 @@
-Pseudorandom number generator produces numbers that seem random but are generated deterministically.
+A pseudorandom number generator produces numbers deterministically but they seem aperiodic (random) for most use cases. The generator accepts (ideally a true random number) a seed number and starts producing the sequence as a function of seed and/or previous number in the sequence. This sequence exhibits a lot of properties of true random numbers like:
 
-a sequence of numbers whose properties approximate the properties of sequences of random numbers.
+The `random` function that we use while programming generate Pseudorandom numbers and not true random numbers. A true random numbers are generated through hardware, natural phenomenon like atmospheric pressure. etc.
 
-The PRNG-generated sequence is not truly random, because it is completely determined by an initial value, called the PRNG's seed (which may include truly random values)
+There are lots of techniques to generate Pseudorandom numbers like: a,b,c. Today we dive deep into [Rule 30](HERE) that uses Cellular Automata to generate random numbers. This was used in Wolfram.
 
-Random number generators can be true hardware random-number generators
-
-Good statistical properties are a central requirement for the output of a PRNG.
-https://en.wikipedia.org/wiki/Statistical_randomness intended to measure how unpredictable their results are
 
 ### What is rule 30
 A cellular automaton (pl. cellular automata, abbrev. CA) is a discrete model studied in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. Cellular automata are also called cellular spaces, tessellation automata, homogeneous structures, cellular structures, tessellation structures, and iterative arrayss
@@ -82,3 +78,8 @@ https://www.wolframscience.com/nks/notes-10-9--tests-of-randomness/
 
 # References
  - https://www.stephenwolfram.com/publications/academic/random-sequence-generation-cellular-automata.pdf
+ - www.cs.indiana.edu/~dgerman/2005midwestNKSconference/dgelbm.pdf
+ - https://rosettacode.org/wiki/Elementary_cellular_automaton/Random_Number_Generator
+ - http://www.prism.gatech.edu/~kshah84/CAPaper.pdf
+ - https://rosettacode.org/wiki/Elementary_cellular_automaton/Random_Number_Generator#Python
+ - https://www.quora.com/How-can-I-generate-random-numbers-using-the-Rule-30-Cellular-Automaton
