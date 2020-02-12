@@ -5,11 +5,11 @@ There are lots of [techniques](https://en.wikipedia.org/wiki/List_of_random_numb
 # Cellular Automaton
 Before we dive into Rule 30, we will spend some time understanding [Cellular Automaton](https://en.wikipedia.org/wiki/Cellular_automaton). A Cellular Automaton is a discrete model consisting of a regular grid, of any dimension, and each cell of the grid has a finite number of states and a neighborhood definition. There are rules that determine how these cells interact and transition into the next generation. The rules are mostly mathematical/programmable functions that depend on the current state of the cell and its neighborhood.
 
-![Cellular Automata](https://user-images.githubusercontent.com/4745789/74357609-2a8e3100-4de6-11ea-9742-5c87d9988136.png)
+![Cellular Automata](https://user-images.githubusercontent.com/4745789/74360178-9bcfe300-4dea-11ea-8c87-91005e89c881.png)
 
 In the above Cellular Automaton we see each cell has 2 finite states `0` (denoted by red), `1` (denoted by black). Each cell transitions into next generation by XORing the state values of all its 8 neighbors. The first generation of the grid is populated at random. The cell transitioning from one generation to next could be visualized as below:
 
-![Cellular Automata Demo](https://user-images.githubusercontent.com/4745789/74355897-77bcd380-4de3-11ea-9bca-00c63d27f489.gif)
+![Cellular Automata Demo](https://user-images.githubusercontent.com/4745789/74360198-a5f1e180-4dea-11ea-811b-e3db9b38df93.gif)
 
 Cellular Automata was originally conceptualized in the 1940s by [Stanislaw Ulam](https://en.wikipedia.org/wiki/Stanislaw_Ulam) and [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann); it finds its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) did a systematic study of one-dimensional cellular automata (elementary cellular automata) on which Rule 30 is based.
 
