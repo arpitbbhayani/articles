@@ -10,7 +10,7 @@ Before we dive into Rule 30, we spend some time understanding Cellular Automaton
 
 In the diagram above ...
 
-Cellular Automata was originally conceptualized in 1940s by Stanislaw Ulam and John von Neumann find its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, Stephen Wolfram did a systematic study of one-dimensional cellular automata (elementary cellular automata) on which Rule 30 is based.
+Cellular Automata was originally conceptualized in 1940s by [Stanislaw Ulam](https://en.wikipedia.org/wiki/Stanislaw_Ulam) and [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann); it find its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) did a systematic study of one-dimensional cellular automata (elementary cellular automata) on which Rule 30 is based.
 
 # Rule 30
 
