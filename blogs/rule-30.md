@@ -1,15 +1,18 @@
-A pseudorandom number generator produces numbers deterministically but they seem aperiodic (random) for most use cases. The generator accepts (ideally a true random number) a seed number and starts producing the sequence as a function of seed and/or previous number in the sequence. This sequence exhibits a lot of properties of true random numbers like:
+A pseudorandom number generator produces numbers deterministically but they seem aperiodic (random) most of the times. The generator accepts (ideally a true random number) a seed value and starts producing the sequence as a function of this seed and/or previous number in the sequence. The numbers are called Pseudorandom because they are not truly random generated from blood volume pulse, respiration pattern, atmospheric pressure, thermal noise, quantum phenomenon etc. but exhibit some of their properties.
 
-The `random` function that we use while programming generate Pseudorandom numbers and not true random numbers. A true random numbers are generated through hardware, natural phenomenon like atmospheric pressure. etc.
+There are lots of techniques to generate Pseudorandom numbers like: [Blum Blum Shub algorithm](https://en.wikipedia.org/wiki/Blum_Blum_Shub), [Middle-square method](https://en.wikipedia.org/wiki/Middle-square_method), [Lagged Fibonacci generator](https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator), etc. Today we dive deep into [Rule 30](https://en.wikipedia.org/wiki/Rule_30) that uses Cellular Automata to generate random numbers. This was used in Wolfram.
 
-There are lots of techniques to generate Pseudorandom numbers like: a,b,c. Today we dive deep into [Rule 30](HERE) that uses Cellular Automata to generate random numbers. This was used in Wolfram.
+# Cellular Automaton
 
+Before we dive into Rule 30, we spend some time understanding Cellular Automaton.
 
-# Rule 30
+IMAGE OF CELLULAR AUTOMATA
 
-Before we dive into Rule 30, we see what exactly is a Cellular Automaton.
+A cellular automaton is a discrete model studied in. It find its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. A cellular automaton consists of a regular grid of cells, each in one of a finite number of states. The grid can be in any finite number of dimensions. For each cell, a set of cells called its neighborhood is defined relative to the specified cell. An initial state (time t = 0) is selected by assigning a state for each cell. A new generation is created (advancing t by 1), according to some fixed rule (generally, a mathematical function) that determines the new state of each cell in terms of the current state of the cell and the states of the cells in its neighborhood.
 
-A cellular automaton (pl. cellular automata, abbrev. CA) is a discrete model studied in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. Cellular automata are also called cellular spaces, tessellation automata, homogeneous structures, cellular structures, tessellation structures, and iterative arrayss
+The concept was originally discovered in the 1940s by Stanislaw Ulam and John von Neumann. it was not until the 1970s and Conway's Game of Life, a two-dimensional cellular automaton, that interest in the subject expanded beyond academia. In the 1980s, Stephen Wolfram engaged in a systematic study of one-dimensional cellular automata, or what he calls elementary cellular automata; his research assistant Matthew Cook showed that one of these rules is Turing-complete.
+
+# The Rule 30
 
 Rule 30 is an elementary cellular automaton introduced by Stephen Wolfram in 1983
 elementary cellular automaton is a one-dimensional cellular automaton where there are two possible states (labeled 0 and 1) and the rule to determine the state of a cell in the next generation depends only on the current state of the cell and its two immediate neighbors.
