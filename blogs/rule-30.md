@@ -1,13 +1,13 @@
-A pseudorandom number generator produces numbers deterministically but they behave aperiodic (random) most of the times for most use-cases. The generator accepts a seed value (ideally a true random number) and starts producing the sequence as a function of this seed and/or previous number of the sequence. These are Pseudorandom because they are not truly random as they can be determined algorithmically if seed value is known. True random numbers are generated from blood volume pulse, atmospheric pressure, thermal noise, quantum phenomenon etc.
+A pseudorandom number generator produces numbers deterministically but they behave aperiodic (random) most of the time for most use-cases. The generator accepts a seed value (ideally a true random number) and starts producing the sequence as a function of this seed and/or a previous number of the sequence. These are Pseudorandom because they are not truly random as they can be determined algorithmically if seed value is known. True random numbers are generated from blood volume pulse, atmospheric pressure, thermal noise, quantum phenomenon, etc.
 
-There are lots of [techniques](https://en.wikipedia.org/wiki/List_of_random_number_generators#Pseudorandom_number_generators_(PRNGs)) to generate Pseudorandom numbers like: [Blum Blum Shub algorithm](https://en.wikipedia.org/wiki/Blum_Blum_Shub), [Middle-square method](https://en.wikipedia.org/wiki/Middle-square_method), [Lagged Fibonacci generator](https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator), etc. Today we dive deep into [Rule 30](https://en.wikipedia.org/wiki/Rule_30) that uses Cellular Automata. This method passes many standard tests for randomness, and was used in [Mathematica](https://www.wolfram.com/mathematica/online/) for generating random integers.
+There are lots of [techniques](https://en.wikipedia.org/wiki/List_of_random_number_generators#Pseudorandom_number_generators_(PRNGs)) to generate Pseudorandom numbers like: [Blum Blum Shub algorithm](https://en.wikipedia.org/wiki/Blum_Blum_Shub), [Middle-square method](https://en.wikipedia.org/wiki/Middle-square_method), [Lagged Fibonacci generator](https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator), etc. Today we dive deep into [Rule 30](https://en.wikipedia.org/wiki/Rule_30) that uses Cellular Automata. This method passes many standard tests for randomness and was used in [Mathematica](https://www.wolfram.com/mathematica/online/) for generating random integers.
 
 # Cellular Automaton
-Before we dive into Rule 30, we will spend some time understanding [Cellular Automaton](https://en.wikipedia.org/wiki/Cellular_automaton). A Cellular Automaton is a discrete model consisting a regular grid, of any dimension, and each cell of the grid has finite number of states and a neighborhood definition. There are rules that determines how these cells interact and transitions into next generation. The rules are mostly mathematical/programmable functions that depends on current state of the cell and its neighbourhood.
+Before we dive into Rule 30, we will spend some time understanding [Cellular Automaton](https://en.wikipedia.org/wiki/Cellular_automaton). A Cellular Automaton is a discrete model consisting of a regular grid, of any dimension, and each cell of the grid has a finite number of states and a neighborhood definition. There are rules that determine how these cells interact and transition into the next generation. The rules are mostly mathematical/programmable functions that depend on the current state of the cell and its neighborhood.
 
 ![Cellular Automata](https://user-images.githubusercontent.com/4745789/74338745-c610a900-4dc8-11ea-8060-d6999fd18cc8.png)
 
-In above Cellular Automaton we see each cell has 3 finite states `0` (red), `1` (black) and unoccupied `-1` (grey) and grid is a finite grid of size 9 x 9. The first generation of grid is populated at random and the rules of transitioning into next generation are
+In the above Cellular Automaton we see each cell has 3 finite states `0` (red), `1` (black) and unoccupied `-1` (grey) and grid is a finite grid of size 9 x 9. The first generation of the grid is populated at random and the rules of transitioning into next-generation are
 
  - `0` (red) transitions into `1` (black)
  - `1` (black) transitions into `0` (red)
@@ -15,11 +15,11 @@ In above Cellular Automaton we see each cell has 3 finite states `0` (red), `1` 
 
 From the rules we see above we deduce that the transition function does not take into consideration the neighbours of a particular cell rather it solely depends on the current state of the cell.
 
-The diagram also shows sample neighboods (green) of a cell (black) but the rules we define do not consider it. When cells transitions from one generation to the next they oscillate between red and green and could be seen as below.
+The diagram also shows sample neighbors (green) of a cell (black) but the rules we define do not consider it. When cells transitions from one generation to the next they oscillate between red and green and could be seen as below.
 
 GIF WITH DEMO.
 
-Cellular Automata was originally conceptualized in 1940s by [Stanislaw Ulam](https://en.wikipedia.org/wiki/Stanislaw_Ulam) and [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann); it find its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) did a systematic study of one-dimensional cellular automata (elementary cellular automata) on which Rule 30 is based.
+Cellular Automata was originally conceptualized in the 1940s by [Stanislaw Ulam](https://en.wikipedia.org/wiki/Stanislaw_Ulam) and [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann); it finds its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) did a systematic study of one-dimensional cellular automata (elementary cellular automata) on which Rule 30 is based.
 
 # Rule 30
 Rule 30 is an elementary (one-dimensional) cellular automaton where each cell has two possible states (labeled `0` (grey) and `1`
