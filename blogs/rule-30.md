@@ -7,7 +7,15 @@ Before we dive into Rule 30, we will spend some time understanding [Cellular Aut
 
 ![Cellular Automata](https://user-images.githubusercontent.com/4745789/74338745-c610a900-4dc8-11ea-8060-d6999fd18cc8.png)
 
-In the diagram above we see cells with 3 finite states `0` (red), `1` (black) and unoccupied `-1` (grey). The state transistions from generation `t` to `t+1` is simple inversion rule in which `0` turns `1`, `1` becomes `0` while unoccupied stays unchanged. The two sample neighborhood functions are shown in a way that green cells are neighborhood of black. Here is how the generations would look like.
+In above Cellular Automaton we see each cell has 3 finite states `0` (red), `1` (black) and unoccupied `-1` (grey) and grid is a finite grid of size 9 x 9. The first generation of grid is populated at random and the rules of transitioning into next generation are
+
+ - `0` (red) transitions into `1` (black)
+ - `1` (black) transitions into `0` (red)
+ - `-1` (grey) stays `-1` (grey)
+
+From the rules we see above we deduce that the transition function does not take into consideration the neighbours of a particular cell rather it solely depends on the current state of the cell.
+
+The diagram also shows sample neighboods (green) of a cell (black) but the rules we define do not consider it. When cells transitions from one generation to the next they oscillate between red and green and could be seen as below.
 
 GIF WITH DEMO.
 
