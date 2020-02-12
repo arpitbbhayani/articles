@@ -5,7 +5,7 @@ There are lots of [techniques](https://en.wikipedia.org/wiki/List_of_random_numb
 # Cellular Automaton
 Before we dive into Rule 30, we will spend some time understanding [Cellular Automaton](https://en.wikipedia.org/wiki/Cellular_automaton). A Cellular Automaton is a discrete model consisting of a regular grid, of any dimension, and each cell of the grid has a finite number of states and a neighborhood definition. There are rules that determine how these cells interact and transition into the next generation. The rules are mostly mathematical/programmable functions that depend on the current state of the cell and its neighborhood.
 
-![Cellular Automata](https://user-images.githubusercontent.com/4745789/74338745-c610a900-4dc8-11ea-8060-d6999fd18cc8.png)
+![Cellular Automata](https://user-images.githubusercontent.com/4745789/74357609-2a8e3100-4de6-11ea-9742-5c87d9988136.png)
 
 In the above Cellular Automaton we see each cell has 3 finite states `0` (red), `1` (black) and unoccupied `-1` (grey) and grid is a finite grid of size 9 x 9. The first generation of the grid is populated at random and the rules of transitioning into next-generation are
 
