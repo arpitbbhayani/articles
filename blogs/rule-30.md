@@ -4,13 +4,11 @@ There are lots of techniques to generate Pseudorandom numbers like: [Blum Blum S
 
 # Cellular Automaton
 
-Before we dive into Rule 30, we spend some time understanding Cellular Automaton.
+Before we dive into Rule 30, we spend some time understanding Cellular Automaton. A Cellular Automaton is a discrete model that consists a regular grid (of any dimension) with cells and each cell has finite number of states and a neighborhood. Using some pre-defined rules (usually some mathematical function) of interaction between these cells, the grid transitions into next generation. The new state of each cell in terms of the current state of the cell and the states of the cells in its neighborhood
 
 IMAGE OF CELLULAR AUTOMATA
 
-A cellular automaton is a discrete model studied in. It find its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. A cellular automaton consists of a regular grid of cells, each in one of a finite number of states. The grid can be in any finite number of dimensions. For each cell, a set of cells called its neighborhood is defined relative to the specified cell. An initial state (time t = 0) is selected by assigning a state for each cell. A new generation is created (advancing t by 1), according to some fixed rule (generally, a mathematical function) that determines the new state of each cell in terms of the current state of the cell and the states of the cells in its neighborhood.
-
-The concept was originally discovered in the 1940s by Stanislaw Ulam and John von Neumann. it was not until the 1970s and Conway's Game of Life, a two-dimensional cellular automaton, that interest in the subject expanded beyond academia. In the 1980s, Stephen Wolfram engaged in a systematic study of one-dimensional cellular automata, or what he calls elementary cellular automata; his research assistant Matthew Cook showed that one of these rules is Turing-complete.
+Cellular Automata was originally conceptualized in 1940s by Stanislaw Ulam and John von Neumann find its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, Stephen Wolfram did a systematic study of one-dimensional cellular automata (elementary cellular automata) on which Rule 30 is based.
 
 # The Rule 30
 
