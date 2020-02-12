@@ -17,7 +17,7 @@ From the rules we see above we deduce that the transition function does not take
 
 The diagram also shows sample neighbors (green) of a cell (black) but the rules we define do not consider it. When cells transitions from one generation to the next they oscillate between red and green and could be seen as below.
 
-GIF WITH DEMO.
+![Cellular Automata Demo](https://user-images.githubusercontent.com/4745789/74355897-77bcd380-4de3-11ea-9bca-00c63d27f489.gif)
 
 Cellular Automata was originally conceptualized in the 1940s by [Stanislaw Ulam](https://en.wikipedia.org/wiki/Stanislaw_Ulam) and [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann); it finds its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) did a systematic study of one-dimensional cellular automata (elementary cellular automata) on which Rule 30 is based.
 
