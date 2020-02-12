@@ -5,7 +5,10 @@ The `random` function that we use while programming generate Pseudorandom number
 There are lots of techniques to generate Pseudorandom numbers like: a,b,c. Today we dive deep into [Rule 30](HERE) that uses Cellular Automata to generate random numbers. This was used in Wolfram.
 
 
-### What is rule 30
+# Rule 30
+
+Before we dive into Rule 30, we see what exactly is a Cellular Automaton.
+
 A cellular automaton (pl. cellular automata, abbrev. CA) is a discrete model studied in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. Cellular automata are also called cellular spaces, tessellation automata, homogeneous structures, cellular structures, tessellation structures, and iterative arrayss
 
 Rule 30 is an elementary cellular automaton introduced by Stephen Wolfram in 1983
