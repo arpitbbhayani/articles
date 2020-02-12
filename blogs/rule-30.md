@@ -6,7 +6,9 @@ There are lots of techniques to generate Pseudorandom numbers like: [Blum Blum S
 
 Before we dive into Rule 30, we spend some time understanding Cellular Automaton. A Cellular Automaton is a discrete model that consists a regular grid (of any dimension) with cells and each cell has finite number of states and a neighborhood. Using some pre-defined rules (usually some mathematical function) of interaction between these cells, the grid transitions into next generation. The new state of each cell in terms of the current state of the cell and the states of the cells in its neighborhood.
 
-IMAGE OF CELLULAR AUTOMATA
+![Cellular Automata](https://user-images.githubusercontent.com/4745789/74319937-c64b7d00-4da5-11ea-8109-3debaf8b5466.png)
+
+In the diagram above ...
 
 Cellular Automata was originally conceptualized in 1940s by Stanislaw Ulam and John von Neumann find its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, Stephen Wolfram did a systematic study of one-dimensional cellular automata (elementary cellular automata) on which Rule 30 is based.
 
