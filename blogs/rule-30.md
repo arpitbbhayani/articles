@@ -11,7 +11,7 @@ In the above Cellular Automaton each cell has 2 finite states `0` (denoted by re
 
 ![Cellular Automata Demo](https://media.giphy.com/media/J27aUn6QIWZFnVWzEB/giphy.gif)
 
-Cellular Automata was originally conceptualized in the 1940s by [Stanislaw Ulam](https://en.wikipedia.org/wiki/Stanislaw_Ulam) and [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann); it finds its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) did a systematic study of one-dimensional cellular automata (elementary cellular automata) on which Rule 30 is based.
+Cellular Automata was originally conceptualized in the 1940s by [Stanislaw Ulam](https://en.wikipedia.org/wiki/Stanislaw_Ulam) and [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann); it finds its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) did a systematic study of one-dimensional cellular automata (also called elementary cellular automata) on which Rule 30 is based.
 
 # Rule 30
 Rule 30 is an elementary (one-dimensional) cellular automaton where each cell has two possible states `0` (red) and `1` (black). Neighbourhood of a cell is its two immediate neighbours (on its left and right). The next state (generation) of the cell depends on its current state and its neighbourhood determined by the following rule
