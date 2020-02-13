@@ -7,26 +7,18 @@ Before we dive into Rule 30, we will spend some time understanding [Cellular Aut
 
 ![Cellular Automata](https://user-images.githubusercontent.com/4745789/74360178-9bcfe300-4dea-11ea-8c87-91005e89c881.png)
 
-In the above Cellular Automaton we see each cell has 2 finite states `0` (denoted by red), `1` (denoted by black). Each cell transitions into next generation by XORing the state values of all its 8 neighbors. The first generation of the grid is populated at random. The cell transitioning from one generation to next could be visualized as below:
+In the above Cellular Automaton each cell has 2 finite states `0` (denoted by red), `1` (denoted by black). Each cell transitions into next generation by XORing the state values of its 8 neighbors. The first generation of the grid is populated at random. The generation transitions could be visualized as below:
 
-![Cellular Automata Demo](https://user-images.githubusercontent.com/4745789/74360198-a5f1e180-4dea-11ea-811b-e3db9b38df93.gif)
+![Cellular Automata Demo](https://media.giphy.com/media/J27aUn6QIWZFnVWzEB/giphy.gif)
 
 Cellular Automata was originally conceptualized in the 1940s by [Stanislaw Ulam](https://en.wikipedia.org/wiki/Stanislaw_Ulam) and [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann); it finds its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) did a systematic study of one-dimensional cellular automata (elementary cellular automata) on which Rule 30 is based.
 
 # Rule 30
-Rule 30 is an elementary (one-dimensional) cellular automaton where each cell has two possible states (labeled `0` (grey) and `1`
-(black)). Neighbourhood of a cell is its two immediate neighbours (on its left and right). The next state (generation) of the cell depends on its current state and its neighbourhood adhereing the following rule.
+Rule 30 is an elementary (one-dimensional) cellular automaton where each cell has two possible states `0` (red) and `1` (black). Neighbourhood of a cell is its two immediate neighbours (on its left and right). The next state (generation) of the cell depends on its current state and its neighbourhood determined by the following rule
 
-RULE IMAGE
-
-This rule is called rule 30 because above.
-
-current pattern 	111 	110 	101 	100 	011 	010 	001 	000
-new state for center cell 	0 	0 	0 	1 	1 	1 	1 	0
+![Rule 30](https://user-images.githubusercontent.com/4745789/74396927-78805480-4e39-11ea-8349-b6774d05a600.png)
 
 The corresponding formula is [left_cell XOR (central_cell OR right_cell)]
-
-Example for few iterations
 
 IMAGE
 
