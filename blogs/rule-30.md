@@ -37,13 +37,13 @@ As established earlier, Rule 30 is exhibits an aperiodic and chaotic behaviour a
 
 If we always start from the first row, the sequence of random number is predictable, which is not what we want. To make things pseudorandom, we take a random seed value (ex: current timestamp) and skip that number of bits and then pick batchess of `n` and build random numbers.
 
-The Pseudorandom numbers generated using Rule 30 are not cryptographically secure but are suitable for simulation as long as we do not use bad seed like `0`.
+> The pseudorandom numbers generated using Rule 30 are not cryptographically secure but are suitable for simulation as long as we do not use bad seed like `0`.
 
-## Something extra
+## Rule 30 in real world
 
-Rule 30 is also seen on the shell of code snail species Conus textile. The Cambridge North railway station is decorated with architectural panels displaying the evolution of Rule 30. Similar to Rule 30, we could also see the patterns that emerge from other rules. Some are random, some are pictureesque while some converge to fixed pattern.
+Rule 30 is also seen in nature, on the shell of code snail species [Conus textile](https://en.wikipedia.org/wiki/Conus_textile). The [Cambridge North railway station](https://en.wikipedia.org/wiki/Cambridge_North_railway_station#Facilities) is decorated with architectural panels displaying the evolution of Rule 30.
 
 # Conclusion
-If you found Rule 30 interesting I urge you to write your own simulation of using [p5 library](https://p5js.org/) and make it generic enough to generate patterns for different rules like 90, 110, 117, etc. The patterns generated using it are quite interesting and you could take this to the next level and extend rule to work in 3D. Programming is fun when it is visual.
+If you found Rule 30 interesting I urge you to write your own simulation of using [p5 library](https://p5js.org/); you could keep it generic enough to so that the program could generate patterns for different rules like 90, 110, 117, etc. The patterns generated using these rules are quite interesting. If you want, you could things to the next level and extend rule to work in 3 dimensions and see how patterns evolves. I believe programming is fun when it is visual.
 
-It is exciting when two seemingly unrelated fields, Cellular Automata and Cryptography, comes together and create something wonderful. Although this algorithm is not widely used anymore, because of more efficient solutions, it urges us to be creative in using Cellular Automata in more ways than one. This article is first in the series of Cellular Automata, so stay tuned and watch this space for more.
+It is exciting when two seemingly unrelated fields, Cellular Automata and Cryptography, come together and create something wonderful. Although this algorithm is not widely used anymore, because of more efficient algorithms, it urges us to be creative in using Cellular Automata in more ways than one. This article is first in the series of Cellular Automata, so stay tuned and watch this space for more.
