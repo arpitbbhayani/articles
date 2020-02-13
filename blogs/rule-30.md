@@ -18,57 +18,22 @@ Rule 30 is an elementary (one-dimensional) cellular automaton where each cell ha
 
 ![Rule 30](https://user-images.githubusercontent.com/4745789/74396927-78805480-4e39-11ea-8349-b6774d05a600.png)
 
-The corresponding formula is [left_cell XOR (central_cell OR right_cell)]
+The corresponding formula is `left_cell XOR (central_cell OR right_cell)`
 
-The cellular automata we are discussing have a state consisting of a row of cells; each cell can be in either of two states, 0 or 1. Unlike the cellular automata of the previous exercise, the row contains a finite number of cells and is considered to “wrap around” at the ends. A new state is generated based on the current state by assigning to each cell in the new state a value determined by the same-indexed cell in the previous state as well as the two cells immediately adjacent to it. The chart below shows the rule that determines the cell value in the new state
-
-an infinite one-dimensional array of cellular automaton cells with only two states is considered, with each cell in some initial state
-At discrete time intervals, every cell spontaneously changes state based on its current state and the state of its two neighbors
+Rule 30 is visualized in a 2D grid where each row represents one generation (state). Next generation (state) of the cells is computed and populated in the row below. Each row contains a finite number of cells which “wrap around” at the ends. Rule could be seen in action below
 
 ![Rule 30 in action](https://media.giphy.com/media/d9YuURGwsOD8qVt8uE/giphy.gif)
 
-The following pattern emerges from an initial state in a single cell with state 1 (shown as black) is surrounded by cells with state 0 (white).
+The above pattern emerges from an initial state (row 0) in a single cell with state 1 (shown as black) surrounded by cells with state 0 (red). The next generation (as seen in row 1) is computed using the rule chart shown above. The vertical axis represents time and any horizontal cross-section of the image represents the state of all the cells in the array at a specific point in the pattern's evolution.
 
-BIG IMAGE
+![Chaos in Rule 30](https://user-images.githubusercontent.com/4745789/74433188-f1a59900-4e85-11ea-970d-c60af22568ea.png)
 
-the vertical axis represents time
-any horizontal cross-section of the image represents the state of all the cells in the array at a specific point in the pattern's evolution
+The frequent appearance of white triangles and a well-defined striped pattern on the left side. The structure as a whole has no discernible pattern. This property is exploited to generate Pseudo random numbers.
 
-such as the frequent appearance of white triangles and a well-defined striped pattern on the left side;
-
-however the structure as a whole has no discernible pattern
-
-
-### Extra crunch
+## Pseudorandom Number Generation
 Rule 30 displayssx aperiodic, chaotic behaviour.
 This rule is of particular interest because it produces complex, seemingly random patterns from simple, well-defined rules
-It shows how simple rules produce complex structures and behaviour in nature.
 
-a pattern resembling Rule 30 appears on the shell of the widespread cone snail species Conus textile
-Rule 30 has also been used as a random number generator in Mathematica,[3] a
+![Pseudorandom Number Rule 30](https://user-images.githubusercontent.com/4745789/74435575-c2455b00-4e8a-11ea-835b-ca5f722dae9e.png)
 
-it is not cryptographically secure, but is suitable for simulation, as long as you avoid the occasional bad seed, like 0.
-
-The Cambridge North railway station is decorated with architectural panels displaying the evolution of Rule 30
-https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Cmglee_Cambridge_North_cladding_detail.jpg/500px-Cmglee_Cambridge_North_cladding_detail.jpgs
-
-https://writings.stephenwolfram.com/2017/06/oh-my-gosh-its-covered-in-rule-30s/
-
-https://writings.stephenwolfram.com/data/uploads/2017/05/1.png
-
-
-# Example
-
-https://www.wolframcloud.com/objects/demonstrations/UsingRule30ToGeneratePseudorandomRealNumbers
-
-### Test of random ness
-
-https://www.wolframscience.com/nks/notes-10-9--tests-of-randomness/
-
-# References
- - https://www.stephenwolfram.com/publications/academic/random-sequence-generation-cellular-automata.pdf
- - www.cs.indiana.edu/~dgerman/2005midwestNKSconference/dgelbm.pdf
- - https://rosettacode.org/wiki/Elementary_cellular_automaton/Random_Number_Generator
- - http://www.prism.gatech.edu/~kshah84/CAPaper.pdf
- - https://rosettacode.org/wiki/Elementary_cellular_automaton/Random_Number_Generator#Python
- - https://www.quora.com/How-can-I-generate-random-numbers-using-the-Rule-30-Cellular-Automaton
+Note: it is not cryptographically secure, but is suitable for simulation, as long as you avoid the occasional bad seed, like 0.
