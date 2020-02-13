@@ -1,4 +1,4 @@
-A pseudorandom number generator produces numbers deterministically but they seem aperiodic (random) most of the time for most use-cases. The generator accepts a seed value (ideally a true random number) and starts producing the sequence as a function of this seed and/or a previous number of the sequence. These are Pseudorandom (not true random) because if seed value is known they can be determined algorithmically. True random numbers are hardware generated or generated from blood volume pulse, atmospheric pressure, thermal noise, quantum phenomenon, etc.
+A pseudorandom number generator produces numbers deterministically but they seem aperiodic (random) most of the time for most use-cases. The generator accepts a seed value (ideally a true random number) and starts producing the sequence as a function of this seed and/or a previous number of the sequence. These are Pseudorandom (not truly random) because if seed value is known they can be determined algorithmically. True random numbers are hardware generated or generated from blood volume pulse, atmospheric pressure, thermal noise, quantum phenomenon, etc.
 
 There are lots of [techniques](https://en.wikipedia.org/wiki/List_of_random_number_generators#Pseudorandom_number_generators_(PRNGs)) to generate Pseudorandom numbers, namely: [Blum Blum Shub algorithm](https://en.wikipedia.org/wiki/Blum_Blum_Shub), [Middle-square method](https://en.wikipedia.org/wiki/Middle-square_method), [Lagged Fibonacci generator](https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator), etc. Today we dive deep into [Rule 30](https://en.wikipedia.org/wiki/Rule_30) that uses a controversial science called [Cellular Automaton](https://en.wikipedia.org/wiki/Cellular_automaton). This method passes many standard tests for randomness and was used in [Mathematica](https://www.wolfram.com/mathematica/online/) for generating random integers.
 
@@ -7,20 +7,20 @@ Before we dive into Rule 30, we will spend some time understanding [Cellular Aut
 
 ![Cellular Automata](https://user-images.githubusercontent.com/4745789/74360178-9bcfe300-4dea-11ea-8c87-91005e89c881.png)
 
-In the above Cellular Automaton each cell has 2 finite states `0` (shown in red), `1` (shown in black). Each cell transitions into next generation by XORing the state values of its 8 neighbors. The first generation (initial state) of the grid is alloted at random and the state transitions, of entire grid, is as below
+In the above Cellular Automaton, each cell has 2 finite states `0` (shown in red), `1` (shown in black). Each cell transitions into the next generation by XORing the state values of its 8 neighbors. The first generation (initial state) of the grid is allocated at random and the state transitions, of the entire grid, is as below
 
 ![Cellular Automata Demo](https://media.giphy.com/media/J27aUn6QIWZFnVWzEB/giphy.gif)
 
 Cellular Automata was originally conceptualized in the 1940s by [Stanislaw Ulam](https://en.wikipedia.org/wiki/Stanislaw_Ulam) and [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann); it finds its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) did a systematic study of one-dimensional cellular automata (also called elementary cellular automata) on which Rule 30 is based.
 
 # Rule 30
-Rule 30 is an elementary (one-dimensional) cellular automaton where each cell has two possible states `0` (shown in red) and `1` (shown in black). Neighbourhood of a cell is its two immediate neighbours, one on its left and other on right. The next state (generation) of the cell depends on its current state and the state of its neighbours; the transition rules are as illustrated below
+Rule 30 is an elementary (one-dimensional) cellular automaton where each cell has two possible states `0` (shown in red) and `1` (shown in black). The neighborhood of a cell is its two immediate neighbors, one on its left and other on right. The next state (generation) of the cell depends on its current state and the state of its neighbors; the transition rules are as illustrated below
 
 ![Rule 30](https://user-images.githubusercontent.com/4745789/74396927-78805480-4e39-11ea-8349-b6774d05a600.png)
 
-Above transition rules could be simplified as `left XOR (central OR right)`.
+The above transition rules could be simplified as `left XOR (central OR right)`.
 
-We visualize Rule 30 in a 2 dimensional grid where each row represents one generation (state). Next generation (state) of the cells is computed and populated in the row below. Each row contains a finite number of cells which "wraps around" at the end.
+We visualize Rule 30 in a 2-dimensional grid where each row represents one generation (state). The next generation (state) of the cells is computed and populated in the row below. Each row contains a finite number of cells which "wraps around" at the end.
 
 ![Rule 30 in action](https://media.giphy.com/media/d9YuURGwsOD8qVt8uE/giphy.gif)
 
@@ -28,7 +28,7 @@ The above pattern emerges from an initial state (row 0) in a single cell with st
 
 ![Chaos in Rule 30](https://user-images.githubusercontent.com/4745789/74433188-f1a59900-4e85-11ea-970d-c60af22568ea.png)
 
-As the pattern evolves, frequent red triangles of varying sizes pop up but the structure as a whole has no recognizable pattern. Above snapshot of grid was taken at a random point of time and we could observe chaos and aperiodicity. This property is exploited to generate Pseudo random numbers.
+As the pattern evolves, frequent red triangles of varying sizes pop up but the structure as a whole has no recognizable pattern. The above snapshot of the grid was taken at a random point of time and we could observe chaos and aperiodicity. This property is exploited to generate pseudorandom numbers.
 
 ## Pseudorandom Number Generation
 Rule 30 displayssx aperiodic, chaotic behaviour.
