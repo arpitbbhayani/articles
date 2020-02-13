@@ -39,6 +39,10 @@ If we always start from the first row, the sequence of the numbers we generate w
 
 > The pseudorandom numbers generated using Rule 30 are not cryptographically secure but are suitable for simulation as long as we do not use bad seed like `0`.
 
+One major advantage of using Rule 30 to generate pseudorandom numbers is that we could generate multiple random numbers in parallel by picking multiple columns to batch `n` bits each at random. A sample 8-bit random integer sequence generated using this method with seed `0` is `220`, `197`, `147`, `174`, `117`, `97`, `149`, `171`, `240`, `241`, etc.
+
+The seed value could also be used as the initial state (row 0) for Rule 30 and random numbers are then simply the `n` bits batches picked from the center column starting from row 0. This approach is more efficient but is heavily dependent on the quality of seed value, as a bad seed value could make things extremely predictable. A demonstration of this approach could be found on [Wolfram Cloud](https://demonstrations.wolfram.com/UsingRule30ToGeneratePseudorandomRealNumbers/).
+
 ## Rule 30 in real world
 
 Rule 30 is also seen in nature, on the shell of code snail species [Conus textile](https://en.wikipedia.org/wiki/Conus_textile). The [Cambridge North railway station](https://en.wikipedia.org/wiki/Cambridge_North_railway_station#Facilities) is decorated with architectural panels displaying the evolution of Rule 30.
