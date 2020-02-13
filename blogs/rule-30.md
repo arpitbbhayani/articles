@@ -36,31 +36,13 @@ This rule is of particular interest because it produces complex, seemingly rando
 
 ![Pseudorandom Number Rule 30](https://user-images.githubusercontent.com/4745789/74435575-c2455b00-4e8a-11ea-835b-ca5f722dae9e.png)
 
-Note: it is not cryptographically secure, but is suitable for simulation, as long as you avoid the occasional bad seed, like 0.
+The Pseudorandom numbers generated using Rule 30 are not cryptographically secure but are suitable for simulation as long as we do not use bad seed like `0`.
+
+## Something extra
+
+Rule 30 is also seen on the shell of code snail species Conus textile. The Cambridge North railway station is decorated with architectural panels displaying the evolution of Rule 30. Similar to Rule 30, we could also see the patterns that emerge from other rules. Some are random, some are pictureesque while some converge to fixed pattern.
 
 # Conclusion
+If you found Rule 30 interesting I urge you to write your own simulation of using [p5 library](https://p5js.org/) and make it generic enough to generate patterns for different rules like 90, 110, 117, etc. The patterns generated using it are quite interesting and you could take this to the next level and extend rule to work in 3D. Programming is fun when it is visual.
 
-Rule 30 in nature.
-The Cambridge North railway station is decorated with architectural panels displaying the evolution of Rule 30
-https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Cmglee_Cambridge_North_cladding_detail.jpg/500px-Cmglee_Cambridge_North_cladding_detail.jpgs
-
-https://writings.stephenwolfram.com/2017/06/oh-my-gosh-its-covered-in-rule-30s/
-
-https://writings.stephenwolfram.com/data/uploads/2017/05/1.png
-
-
-# Example
-
-https://www.wolframcloud.com/objects/demonstrations/UsingRule30ToGeneratePseudorandomRealNumbers
-
-### Test of random ness
-
-https://www.wolframscience.com/nks/notes-10-9--tests-of-randomness/
-
-# References
- - https://www.stephenwolfram.com/publications/academic/random-sequence-generation-cellular-automata.pdf
- - www.cs.indiana.edu/~dgerman/2005midwestNKSconference/dgelbm.pdf
- - https://rosettacode.org/wiki/Elementary_cellular_automaton/Random_Number_Generator
- - http://www.prism.gatech.edu/~kshah84/CAPaper.pdf
- - https://rosettacode.org/wiki/Elementary_cellular_automaton/Random_Number_Generator#Python
- - https://www.quora.com/How-can-I-generate-random-numbers-using-the-Rule-30-Cellular-Automaton
+It is exciting when two seemingly unrelated fields, Cellular Automata and Cryptography, comes together and create something wonderful. Although this algorithm is not widely used anymore, because of more efficient solutions, it urges us to be creative in using Cellular Automata in more ways than one. This article is first in the series of Cellular Automata, so stay tuned and watch this space for more.
