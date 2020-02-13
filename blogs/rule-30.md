@@ -7,7 +7,7 @@ Before we dive into Rule 30, we will spend some time understanding [Cellular Aut
 
 ![Cellular Automata](https://user-images.githubusercontent.com/4745789/74360178-9bcfe300-4dea-11ea-8c87-91005e89c881.png)
 
-In the above Cellular Automaton each cell has 2 finite states `0` (denoted by red), `1` (denoted by black). Each cell transitions into next generation by XORing the state values of its 8 neighbors. The first generation of the grid is populated at random. The generation transitions could be visualized as below:
+In the above Cellular Automaton each cell has 2 finite states `0` (denoted by red), `1` (denoted by black). Each cell transitions into next generation by XORing the state values of its 8 neighbors. The first generation (initial state) of the grid is alloted at random and the state transitions, of entire grid, is as below
 
 ![Cellular Automata Demo](https://media.giphy.com/media/J27aUn6QIWZFnVWzEB/giphy.gif)
 
