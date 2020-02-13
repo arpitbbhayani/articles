@@ -28,7 +28,7 @@ The above pattern emerges from an initial state (row 0) in a single cell with st
 
 ![Chaos in Rule 30](https://user-images.githubusercontent.com/4745789/74433188-f1a59900-4e85-11ea-970d-c60af22568ea.png)
 
-The frequent appearance of white triangles and a well-defined striped pattern on the left side. The structure as a whole has no discernible pattern. This property is exploited to generate Pseudo random numbers.
+As the pattern evolves, frequent red triangles of varying sizes pop up but the structure as a whole has no recognizable pattern. Above snapshot of grid was taken at a random point of time and we could observe chaos and aperiodicity. This property is exploited to generate Pseudo random numbers.
 
 ## Pseudorandom Number Generation
 Rule 30 displayssx aperiodic, chaotic behaviour.
