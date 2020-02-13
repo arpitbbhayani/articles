@@ -20,14 +20,12 @@ Rule 30 is an elementary (one-dimensional) cellular automaton where each cell ha
 
 The corresponding formula is [left_cell XOR (central_cell OR right_cell)]
 
-IMAGE
-
 The cellular automata we are discussing have a state consisting of a row of cells; each cell can be in either of two states, 0 or 1. Unlike the cellular automata of the previous exercise, the row contains a finite number of cells and is considered to “wrap around” at the ends. A new state is generated based on the current state by assigning to each cell in the new state a value determined by the same-indexed cell in the previous state as well as the two cells immediately adjacent to it. The chart below shows the rule that determines the cell value in the new state
 
 an infinite one-dimensional array of cellular automaton cells with only two states is considered, with each cell in some initial state
 At discrete time intervals, every cell spontaneously changes state based on its current state and the state of its two neighbors
 
-### Properties
+![Rule 30 in action](https://media.giphy.com/media/d9YuURGwsOD8qVt8uE/giphy.gif)
 
 The following pattern emerges from an initial state in a single cell with state 1 (shown as black) is surrounded by cells with state 0 (white).
 
@@ -39,12 +37,6 @@ any horizontal cross-section of the image represents the state of all the cells 
 such as the frequent appearance of white triangles and a well-defined striped pattern on the left side;
 
 however the structure as a whole has no discernible pattern
-The number of black cells at generation n {\displaystyle n} n is given by the sequence
-
-    1, 3, 3, 6, 4, 9, 5, 12, 7, 12, 11, 14, 12, 19, 13, 22, 15, 19, ... (sequence A070952 in the OEIS)
-
-and is approximately n {\displaystyle n} n.
-
 
 
 ### Extra crunch
