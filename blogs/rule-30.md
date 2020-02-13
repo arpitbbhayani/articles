@@ -31,8 +31,7 @@ The above pattern emerges from an initial state (row 0) in a single cell with st
 As the pattern evolves, frequent red triangles of varying sizes pop up but the structure as a whole has no recognizable pattern. The above snapshot of the grid was taken at a random point of time and we could observe chaos and aperiodicity. This property is exploited to generate pseudorandom numbers.
 
 ## Pseudorandom Number Generation
-Rule 30 displayssx aperiodic, chaotic behaviour.
-This rule is of particular interest because it produces complex, seemingly random patterns from simple, well-defined rules
+As established earlier, Rule 30 is exhibits an aperiodic and chaotic behaviour and hence it produces complex, seemingly random patterns from simple, well-defined rules. To generate random numbers from Rule 30 we use the center column and pick batch of `n` random bits and form the required `n` bit random number from it. The next random number is built using next `n` bits from the column.
 
 ![Pseudorandom Number Rule 30](https://user-images.githubusercontent.com/4745789/74435575-c2455b00-4e8a-11ea-835b-ca5f722dae9e.png)
 
