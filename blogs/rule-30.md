@@ -14,11 +14,11 @@ In the above Cellular Automaton each cell has 2 finite states `0` (denoted by re
 Cellular Automata was originally conceptualized in the 1940s by [Stanislaw Ulam](https://en.wikipedia.org/wiki/Stanislaw_Ulam) and [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann); it finds its application in computer science, mathematics, physics, complexity science, theoretical biology and microstructure modeling. In the 1980s, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) did a systematic study of one-dimensional cellular automata (also called elementary cellular automata) on which Rule 30 is based.
 
 # Rule 30
-Rule 30 is an elementary (one-dimensional) cellular automaton where each cell has two possible states `0` (red) and `1` (black). Neighbourhood of a cell is its two immediate neighbours (on its left and right). The next state (generation) of the cell depends on its current state and its neighbourhood determined by the following rule
+Rule 30 is an elementary (one-dimensional) cellular automaton where each cell has two possible states `0` (red) and `1` (black). Neighbourhood of a cell is its two immediate neighbours, one on its left and other on right. The next state (generation) of the cell depends on its current state and the state of its neighbours; the transition rules are as illustrated below
 
 ![Rule 30](https://user-images.githubusercontent.com/4745789/74396927-78805480-4e39-11ea-8349-b6774d05a600.png)
 
-The corresponding formula is `left_cell XOR (central_cell OR right_cell)`
+Above transition rules could be simplified as `left XOR (central OR right)`.
 
 Rule 30 is visualized in a 2D grid where each row represents one generation (state). Next generation (state) of the cells is computed and populated in the row below. Each row contains a finite number of cells which “wrap around” at the ends. Rule could be seen in action below
 
