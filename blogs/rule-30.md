@@ -31,11 +31,11 @@ The above pattern emerges from an initial state (row 0) in a single cell with st
 As the pattern evolves, frequent red triangles of varying sizes pop up but the structure as a whole has no recognizable pattern. The above snapshot of the grid was taken at a random point of time and we could observe chaos and aperiodicity. This property is exploited to generate pseudorandom numbers.
 
 ## Pseudorandom Number Generation
-As established earlier, Rule 30 is exhibits an aperiodic and chaotic behaviour and hence it produces complex, seemingly random patterns from simple, well-defined rules. To generate random numbers from using Rule 30 we use the center column and pick batch of `n` random bits and form the required `n` bit random number from it. The next random number is built using next `n` bits from the column.
+As established earlier, Rule 30 is exhibits aperiodic and chaotic behavior and hence it produces complex, seemingly random patterns from simple, well-defined rules. To generate random numbers from using Rule 30 we use the center column and pick a batch of `n` random bits and form the required `n` bit random number from it. The next random number is built using the next `n` bits from the column.
 
 ![Pseudorandom Number Rule 30](https://user-images.githubusercontent.com/4745789/74435575-c2455b00-4e8a-11ea-835b-ca5f722dae9e.png)
 
-If we always start from the first row, the sequence of random number is predictable, which is not what we want. To make things pseudorandom, we take a random seed value (ex: current timestamp) and skip that number of bits and then pick batchess of `n` and build random numbers.
+If we always start from the first row, the sequence of the numbers we generate will always be predictable - which is not what we want. To make things pseudorandom, we take a random seed value (ex: current timestamp) and skip that number of bits and then pick batches of `n` and build random numbers.
 
 > The pseudorandom numbers generated using Rule 30 are not cryptographically secure but are suitable for simulation as long as we do not use bad seed like `0`.
 
@@ -44,6 +44,6 @@ If we always start from the first row, the sequence of random number is predicta
 Rule 30 is also seen in nature, on the shell of code snail species [Conus textile](https://en.wikipedia.org/wiki/Conus_textile). The [Cambridge North railway station](https://en.wikipedia.org/wiki/Cambridge_North_railway_station#Facilities) is decorated with architectural panels displaying the evolution of Rule 30.
 
 # Conclusion
-If you found Rule 30 interesting I urge you to write your own simulation of using [p5 library](https://p5js.org/); you could keep it generic enough to so that the program could generate patterns for different rules like 90, 110, 117, etc. The patterns generated using these rules are quite interesting. If you want, you could things to the next level and extend rule to work in 3 dimensions and see how patterns evolves. I believe programming is fun when it is visual.
+If you found Rule 30 interesting I urge you to write your own simulation of using [p5 library](https://p5js.org/); you could keep it generic enough to so that the program could generate patterns for different rules like 90, 110, 117, etc. The patterns generated using these rules are quite interesting. If you want, you could things to the next level and extend rule to work in 3 dimensions and see how patterns evolve. I believe programming is fun when it is visual.
 
 It is exciting when two seemingly unrelated fields, Cellular Automata and Cryptography, come together and create something wonderful. Although this algorithm is not widely used anymore, because of more efficient algorithms, it urges us to be creative in using Cellular Automata in more ways than one. This article is first in the series of Cellular Automata, so stay tuned and watch this space for more.
