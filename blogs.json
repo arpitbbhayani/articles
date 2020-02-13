@@ -3,8 +3,8 @@
     "id": "rule-30",
     "title": "Pseudorandom numbers using Rule 30",
     "description": "Generating pseudorandom numbers is an interesting problem in Computer Science. In this article, we dive deep into an algorithm for generating pseudorandom numbers using Rule 30 of Cellular Automaton.",
-    "image": "https://user-images.githubusercontent.com/4745789/73909201-04423000-48d2-11ea-8bd0-d7c25f6435c1.png",
-    "gif": "https://media.giphy.com/media/WtCHRSPCuqS8E/giphy.gif",
+    "image": "https://user-images.githubusercontent.com/4745789/74463822-6e516b00-4eb8-11ea-8a3d-6e7027aafd19.png",
+    "gif": "https://media.giphy.com/media/26uflDxU6cEhrhmUg/giphy.gif",
     "categories": ["algorithm"],
     "tags": ["algorithm"],
     "published_at": "2020-02-14"
