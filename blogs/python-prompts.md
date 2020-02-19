@@ -88,4 +88,10 @@ So we dump the code snippet in a file, say `myprompt.py` and export `PYTHONSTART
 export PYTHONSTARTUP="~/myprompt.py"
 ```
 
-Now everytime, you start your Python interactive shell, it will execute the file `myprompt.py` and set the prompt strings.
+Now every time, you start your Python interactive shell, it will execute the file `myprompt.py` and set the prompt strings.
+
+# PyPrompt
+
+# Conclusion
+
+It is fun to
