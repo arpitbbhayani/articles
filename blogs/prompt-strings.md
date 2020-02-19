@@ -43,20 +43,41 @@ From the example above we see that changing the value of `sys.ps1` to `::: ` cha
 
 Let's be creative with this and add some colors. We could use [bash color format](https://misc.flogisoft.com/bash/tip_colors_and_formatting) to color the prompt strings.
 
-```
->>> import sys
->>> sys.ps1 = "\033[1;33m>>>\033[0m "
->>> sys.ps2 = "\033[1;34m...\033[0m "
+```py
+import sys
+sys.ps1 = "\033[1;33m>>>\033[0m "
+sys.ps2 = "\033[1;34m...\033[0m "
 ```
 
-The code snippet below makes your primary prompt string yellow and secondary prompt string blue. Here's how it looks
+The code snippet above makes your primary prompt string yellow and secondary prompt string blue. Here's how it looks
 
 ![Python colored prompt](https://user-images.githubusercontent.com/4745789/74809433-2a74c080-5313-11ea-9cc5-640c68521c8a.png)
 
 ### Dynamic prompt strings
-The documentation states
 
-> If you bind either attribute to a non-string object, Python prompts by calling `str()` on the object each time a prompt is output. This feature lets you create dynamic prompting by coding a class that defines __str__ and assigning an instance of that class to sys.ps1 and/or sys.ps2.
+The [documentation](https://docs.python.org/3/library/sys.html#sys.ps2) states that if we assign a non-string object to `ps1` or `ps2` then Python prompts by calling `str()` on the object every time a prompt is shown. This means we could define a class with `__str__` and set an instance of it to `sys.ps1` and we could implement all sorts of stateful functionalities.
+
+We could implement [IPython](https://ipython.org/) like prompt through code below
+
+```py
+# -*- coding: utf-8 -*-
+import sys
+
+class IPythonPromptPS1(object):
+  def __init__(self):
+    self.line = 0
+
+  def __str__(self):
+    self.line += 1
+    return "\033[92mIn [%d]:\033[0m " % (self.line)
+
+sys.ps1 = IPythonPromptPS1()
+sys.ps2 = "    \033[91m...\033[0m "
+```
+
+The above code snippet makes prompt look like this
+
+![ipython prompt](https://user-images.githubusercontent.com/4745789/74816659-92ca9e80-5321-11ea-84be-5eccd9497438.png)
 
 # Setting new prompt strings every time the shell starts
 When we want to do this everytime the interactive shell starts i.e. on startup Pyython provides an environment variable named `PYTHONSTARTUP` which accepts any readble Python file and executes it when shell starts.
