@@ -80,4 +80,12 @@ The above code snippet makes prompt look like this
 ![ipython prompt](https://user-images.githubusercontent.com/4745789/74816659-92ca9e80-5321-11ea-84be-5eccd9497438.png)
 
 # Setting new prompt strings every time the shell starts
-When we want to do this everytime the interactive shell starts i.e. on startup Pyython provides an environment variable named `PYTHONSTARTUP` which accepts any readble Python file and executes it when shell starts.
+It will be pretty annoying if we would have to manually copy-paste and run the snippet of code, every time we start our Python shell, yes you guessed it - we automate it. Python uses an environment variable [PYTHONSTARTUP](https://docs.python.org/3/using/cmdline.html#envvar-PYTHONSTARTUP) which should be the path of a readable file and the file is executed before the first prompt is displayed in interactive mode.
+
+So we dump the code snippet in a file, say `myprompt.py` and export `PYTHONSTARTUP` as
+
+```sh
+export PYTHONSTARTUP="~/myprompt.py"
+```
+
+Now everytime, you start your Python interactive shell, it will execute the file `myprompt.py` and set the prompt strings.
