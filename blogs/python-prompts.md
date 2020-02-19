@@ -95,6 +95,7 @@ Once I knew the exact steps to have a prettier Python prompt, I wrote a few them
 a handy utility called [py-prompts](https://github.com/arpitbbhayani/py-prompts). The package already holds a few themes that
 I wrote and it is super easy to create a new one.
 
+![Pretty Python Prompts GIF](https://media.giphy.com/media/YRziAoR66L8DtMt0Jx/giphy.gif)
 
 # Conclusion
 In conclusion, I would just like to say, make your Python interpreter prettier and have fun.
