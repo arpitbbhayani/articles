@@ -51,7 +51,7 @@ sys.ps2 = "\033[1;34m...\033[0m "
 
 The code snippet above makes your primary prompt string yellow and secondary prompt string blue. Here's how it looks
 
-![Python colored prompt](https://user-images.githubusercontent.com/4745789/74809433-2a74c080-5313-11ea-9cc5-640c68521c8a.png)
+![Python colored prompt](https://user-images.githubusercontent.com/4745789/74848367-9c71f780-535d-11ea-907d-0b4b93198251.png)
 
 ### Dynamic prompt strings
 
@@ -77,7 +77,7 @@ sys.ps2 = "    \033[91m...\033[0m "
 
 The above code snippet makes prompt look like this
 
-![ipython prompt](https://user-images.githubusercontent.com/4745789/74816659-92ca9e80-5321-11ea-84be-5eccd9497438.png)
+![ipython prompt](https://user-images.githubusercontent.com/4745789/74848261-8401dd00-535d-11ea-8b43-206e2cf4d08a.png)
 
 # Setting new prompt strings every time the shell starts
 It will be pretty annoying if we would have to manually copy-paste and run the snippet of code, every time we start our Python shell, yes you guessed it - we automate it. Python uses an environment variable [PYTHONSTARTUP](https://docs.python.org/3/using/cmdline.html#envvar-PYTHONSTARTUP) which should be the path of a readable file and the file is executed before the first prompt is displayed in interactive mode.
@@ -95,7 +95,7 @@ Once I knew the exact steps to have a prettier Python prompt, I wrote a few them
 a handy utility called [py-prompts](https://github.com/arpitbbhayani/py-prompts). The package already holds a few themes that
 I wrote and it is super easy to create a new one.
 
-![Pretty Python Prompts GIF](https://media.giphy.com/media/YRziAoR66L8DtMt0Jx/giphy.gif)
+![Pretty Python Prompts GIF](https://user-images.githubusercontent.com/4745789/74848437-ad226d80-535d-11ea-8565-8a734de29bc1.gif)
 
 # Conclusion
 In conclusion, I would just like to say, make your Python interpreter prettier and have fun.
