@@ -31,7 +31,7 @@ The prompt strings are defined in the [sys](https://docs.python.org/3/library/sy
 '... '
 ```
 
-To render the prompt string Python prints the value given in `sys.ps1` and `sys.ps2` which means changing value of these variables should change the prompt string right away.
+To render the prompt string Python prints the value given in `sys.ps1` and `sys.ps2` which means changing the value of these variables should change the prompt string right away.
 
 ```py
 >>> import sys
@@ -91,10 +91,10 @@ export PYTHONSTARTUP="~/myprompt.py"
 Now every time, you start your Python interactive shell, it will execute the file `myprompt.py` and set the prompt strings.
 
 # Taking it to the next level
-Once I knew the exact steps to have a prettier Python prompt, I wrote few themes and automated the entire process and created
-a handy utility called [py-prompts](https://github.com/arpitbbhayani/py-prompts). The package already holds few themes that
+Once I knew the exact steps to have a prettier Python prompt, I wrote a few themes and automated the entire process and created
+a handy utility called [py-prompts](https://github.com/arpitbbhayani/py-prompts). The package already holds a few themes that
 I wrote and it is super easy to create a new one.
 
 
 # Conclusion
-In conclusion I would just like say, make your Python interpreter prettier.
+In conclusion, I would just like to say, make your Python interpreter prettier and have fun.
