@@ -90,8 +90,11 @@ export PYTHONSTARTUP="~/myprompt.py"
 
 Now every time, you start your Python interactive shell, it will execute the file `myprompt.py` and set the prompt strings.
 
-# py-prompts
+# Taking it to the next level
+Once I knew the exact steps to have a prettier Python prompt, I wrote few themes and automated the entire process and created
+a handy utility called [py-prompts](https://github.com/arpitbbhayani/py-prompts). The package already holds few themes that
+I wrote and it is super easy to create a new one.
+
 
 # Conclusion
-
-It is fun to
+In conclusion I would just like say, make your Python interpreter prettier.
