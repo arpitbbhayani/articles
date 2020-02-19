@@ -90,7 +90,7 @@ export PYTHONSTARTUP="~/myprompt.py"
 
 Now every time, you start your Python interactive shell, it will execute the file `myprompt.py` and set the prompt strings.
 
-# PyPrompt
+# py-prompts
 
 # Conclusion
 
