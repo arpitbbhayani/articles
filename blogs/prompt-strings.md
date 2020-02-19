@@ -1,4 +1,4 @@
-When Python interactive shell starts, it prints some details about environment, version, OS and then it prints `>>> ` and we understand that it is now ready to take commands.
+When Python interactive shell starts, it prints some details about the environment, version, OS and then it prints `>>> ` and we understand that it is now ready to take commands.
 
 ```py
 Python 2.7.10 (default, Feb 22 2019, 21:55:15)
@@ -7,9 +7,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-The `>>>` is called the primary prompt string (`PS1`) which suggests the user that the interactive shell is now
+The `>>>` is called the primary prompt string (PS1) which suggests the user that the interactive shell is now
 ready to accept the next command and execute it. Python has 2 prompt strings, one primary and another secondary,
-with default values being `>>> ` and `... ` and are called `ps1` and `ps2`.
+with default values being `>>> ` and `... ` and are called ps1 and ps2.
 
 The secondary interpreter prompt string `... ` is seen when an execution unit (statement) spans multiline, for example: defining a function
 
