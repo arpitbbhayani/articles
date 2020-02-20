@@ -2,7 +2,7 @@
   {
     "id": "python-prompts",
     "title": "Personalize your python prompt",
-    "description": "We, developers, love to personalize tools of our daily use. In this article we take a look at how we could customize and personalize the Python interpreter prompt, which by default is >>>",
+    "description": "Personalization is what we all love. In this article we find how we could personalize the Python interpreter prompt >>>",
     "image": "https://user-images.githubusercontent.com/4745789/74850923-8ade1f00-5360-11ea-8ed5-1072c8a718c2.png",
     "gif": "https://media.giphy.com/media/TFTqzyOQwT2zS/giphy.gif",
     "categories": ["python"],
