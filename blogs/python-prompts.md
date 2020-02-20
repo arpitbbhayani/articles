@@ -41,9 +41,9 @@ The code snippet above makes our primary prompt string yellow and secondary prom
 
 ## Dynamic prompt strings
 
-The [documentation](https://docs.python.org/3/library/sys.html#sys.ps2) states that if we assign a non-string object to `ps1` or `ps2` then Python prompts by calling `str()` on the object every time a prompt is shown. This means we could define a class with `__str__` and set an instance of it to `sys.ps1` and we could implement all sorts of stateful functionalities.
+The [documentation](https://docs.python.org/3/library/sys.html#sys.ps2) states that if we assign a non-string object to `ps1` or `ps2` then Python prompts by calling `str()` on the object every time a prompt is shown. Now we create some stateful and dynamic prompt by defining a class and overriding `__str__` method.
 
-We could implement [IPython](https://ipython.org/) like prompt through code below
+Below we implement [IPython](https://ipython.org/) like prompt where execution statement number is stored in member `line` of the class and is incremented every time the primary prompt renders.
 
 ```py
 # -*- coding: utf-8 -*-
@@ -66,17 +66,17 @@ The above code snippet makes prompt look like this
 ![ipython prompt](https://user-images.githubusercontent.com/4745789/74897125-18029180-53bc-11ea-86e6-9d0ca6753fb9.png)
 
 # Setting new prompt strings every time the shell starts
-It will be pretty annoying if we would have to manually copy-paste and run the snippet of code, every time we start our Python shell, yes you guessed it - we automate it. Python uses an environment variable [PYTHONSTARTUP](https://docs.python.org/3/using/cmdline.html#envvar-PYTHONSTARTUP) which should be the path of a readable file and the file is executed before the first prompt is displayed in interactive mode.
+We would not want to run this code snippet every time we start the shell and hence we use an environment variable [PYTHONSTARTUP](https://docs.python.org/3/using/cmdline.html#envvar-PYTHONSTARTUP) which holds the path of a readable file and is executed before the first prompt is displayed in interactive mode.
 
-So we dump the code snippet in a file, say `myprompt.py` and export `PYTHONSTARTUP` as
+So we dump the code snippet in a file, say `ipython.py` and export `PYTHONSTARTUP` as
 
 ```sh
-export PYTHONSTARTUP="~/myprompt.py"
+export PYTHONSTARTUP="$HOME/ipython.py"
 ```
 
-Now every time, you start your Python interactive shell, it will execute the file `myprompt.py` and set the prompt strings.
+Now every time, we start our Python interactive shell, it will execute the file `ipython.py` and set the required prompt strings.
 
-# Taking it to the next level
+# Taking things to the next level
 Combining everything mentioned above a utility is created called [py-prompts](https://github.com/arpitbbhayani/py-prompts) which holds few themes and makes the entire process of setting a theme seamless. Here is a glimpse of the themes that the package holds.
 
 ![Pretty Python Prompts GIF](https://user-images.githubusercontent.com/4745789/74897216-539d5b80-53bc-11ea-8cdd-91177b6553b5.gif)
