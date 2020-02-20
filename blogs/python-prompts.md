@@ -53,7 +53,7 @@ The code snippet above makes your primary prompt string yellow and secondary pro
 
 ![Python colored prompt](https://user-images.githubusercontent.com/4745789/74897098-03be9480-53bc-11ea-8395-7b3bbb1814dd.png)
 
-### Dynamic prompt strings
+## Dynamic prompt strings
 
 The [documentation](https://docs.python.org/3/library/sys.html#sys.ps2) states that if we assign a non-string object to `ps1` or `ps2` then Python prompts by calling `str()` on the object every time a prompt is shown. This means we could define a class with `__str__` and set an instance of it to `sys.ps1` and we could implement all sorts of stateful functionalities.
 
@@ -91,11 +91,11 @@ export PYTHONSTARTUP="~/myprompt.py"
 Now every time, you start your Python interactive shell, it will execute the file `myprompt.py` and set the prompt strings.
 
 # Taking it to the next level
-Once I knew the exact steps to have a prettier Python prompt, I wrote a few themes and automated the entire process and created
-a handy utility called [py-prompts](https://github.com/arpitbbhayani/py-prompts). The package already holds a few themes that
-I wrote and it is super easy to create a new one.
+Combining everything mentioned above a utility is created called [py-prompts](https://github.com/arpitbbhayani/py-prompts) which holds few themes and makes the entire process of setting a theme seamless. Here is a glimpse of the themes that the package holds.
 
 ![Pretty Python Prompts GIF](https://user-images.githubusercontent.com/4745789/74897216-539d5b80-53bc-11ea-8cdd-91177b6553b5.gif)
 
+If you want to create your own theme and add it to [py-prompts](https://github.com/arpitbbhayani/py-prompts), then create the python file (that updates `sys.ps1` and/or `sys.ps2`) in [themes](https://github.com/arpitbbhayani/py-prompts/tree/master/themes) folder.
+
 # Conclusion
-In conclusion, I would just like to say, make your Python interpreter prettier and have fun.
+I hope you found this piece interesting. Python being an exhaustively extensible language made it super-easy for us to change the prompt strings and be creative with it. If you have a theme idea or have already personalized your prompt, share it with me [@arpit_bhayani](https://twitter.com/arpit_bhayani), I will be thrilled to learn more about it.
