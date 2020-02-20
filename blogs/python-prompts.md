@@ -1,4 +1,4 @@
-When Python interactive shell starts, it prints some details about the environment, version, OS and then it prints `>>> ` and we understand that it is now ready to take commands.
+The `>>> ` we see when the Python interactive shell starts is called the Prompt String. Usually the prompt string suggests us that the interactive shell is now ready to take new commands.
 
 ```py
 Python 2.7.10 (default, Feb 22 2019, 21:55:15)
@@ -7,11 +7,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-The `>>>` is called the primary prompt string (PS1) which suggests the user that the interactive shell is now
-ready to accept the next command and execute it. Python has 2 prompt strings, one primary and another secondary,
-with default values being `>>> ` and `... ` and are called ps1 and ps2.
-
-The secondary interpreter prompt string `... ` is seen when an execution unit (statement) spans multiline, for example: defining a function
+Python has 2 prompt strings, one primary `>>>` and one secondary `...` which we usually see when an execution unit (statement) spans multiline, for example: while defining a function
 
 ```py
 >>> def foo(a, b):
@@ -21,17 +17,7 @@ The secondary interpreter prompt string `... ` is seen when an execution unit (s
 ```
 
 # Personalizing the prompt strings
-The prompt strings are defined in the [sys](https://docs.python.org/3/library/sys.html) module as [ps1](https://docs.python.org/3/library/sys.html#sys.ps1) and [ps2](https://docs.python.org/3/library/sys.html#sys.ps2). You can see the values set
-
-```py
->>> import sys
->>> sys.ps1
-'>>> '
->>> sys.ps2
-'... '
-```
-
-To render the prompt string Python prints the value given in `sys.ps1` and `sys.ps2` which means changing the value of these variables should change the prompt string right away.
+The prompt strings are defined in the [sys](https://docs.python.org/3/library/sys.html) module as [ps1](https://docs.python.org/3/library/sys.html#sys.ps1) and [ps2](https://docs.python.org/3/library/sys.html#sys.ps2) and just like any other attribute we can change the values of `sys.ps1` and `sys.ps2` and the changes take effect immediately and as a result the prompt we see in the shell changes to the new value.
 
 ```py
 >>> import sys
@@ -41,7 +27,7 @@ To render the prompt string Python prints the value given in `sys.ps1` and `sys.
 
 From the example above we see that changing the value of `sys.ps1` to `::: ` changes the prompt to `::: `.
 
-Let's be creative with this and add some colors. We could use [bash color format](https://misc.flogisoft.com/bash/tip_colors_and_formatting) to color the prompt strings.
+As the interactive shell runs in a terminal, we can color and format it using [bash color format](https://misc.flogisoft.com/bash/tip_colors_and_formatting) as shown below
 
 ```py
 import sys
@@ -49,7 +35,7 @@ sys.ps1 = "\033[1;33m>>>\033[0m "
 sys.ps2 = "\033[1;34m...\033[0m "
 ```
 
-The code snippet above makes your primary prompt string yellow and secondary prompt string blue. Here's how it looks
+The code snippet above makes our primary prompt string yellow and secondary prompt string blue. Here's how it looks
 
 ![Python colored prompt](https://user-images.githubusercontent.com/4745789/74897098-03be9480-53bc-11ea-8395-7b3bbb1814dd.png)
 
