@@ -76,12 +76,9 @@ export PYTHONSTARTUP="$HOME/ipython.py"
 
 Now every time, we start our Python interactive shell, it will execute the file `ipython.py` and set the required prompt strings.
 
-# Taking things to the next level
-Combining everything mentioned above a utility is created called [py-prompts](https://github.com/arpitbbhayani/py-prompts) which holds few themes and makes the entire process of setting a theme seamless. Here is a glimpse of the themes that the package holds.
+# Conclusion
+Combining everything mentioned above I have created a utility called [py-prompts](https://github.com/arpitbbhayani/py-prompts). Here is a glimpse of the themes that the package holds.
 
 ![Pretty Python Prompts GIF](https://user-images.githubusercontent.com/4745789/74897216-539d5b80-53bc-11ea-8cdd-91177b6553b5.gif)
 
-If you want to create your own theme and add it to [py-prompts](https://github.com/arpitbbhayani/py-prompts), then create the python file (that updates `sys.ps1` and/or `sys.ps2`) in [themes](https://github.com/arpitbbhayani/py-prompts/tree/master/themes) folder.
-
-# Conclusion
 I hope you found this piece interesting. Python being an exhaustively extensible language made it super-easy for us to change the prompt strings and be creative with it. If you have a theme idea or have already personalized your prompt, share it with me [@arpit_bhayani](https://twitter.com/arpit_bhayani), I will be thrilled to learn more about it.
