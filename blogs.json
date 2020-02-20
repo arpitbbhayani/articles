@@ -1,12 +1,22 @@
 [
   {
+    "id": "python-prompts",
+    "title": "Personalize your python prompt",
+    "description": "We, developers, love to personalize tools of our daily use. In this article we take a look at how we could customize and personalize the Python interpreter prompt which by default is >>>",
+    "image": "https://user-images.githubusercontent.com/4745789/74850923-8ade1f00-5360-11ea-8ed5-1072c8a718c2.png",
+    "gif": "https://media.giphy.com/media/TFTqzyOQwT2zS/giphy.gif",
+    "categories": ["python"],
+    "tags": ["python", "interpreter", "prompt", "customize", "personalize", "colorize", "ps1", "ps2", "fun"],
+    "published_at": "2020-02-21"
+  },
+  {
     "id": "rule-30",
-    "title": "Pseudorandom numbers using Rule 30",
+    "title": "Pseudorandom numbers using Cellular Automata - Rule 30",
     "description": "Generating pseudorandom numbers is an interesting problem in Computer Science. In this article, we dive deep into an algorithm for generating pseudorandom numbers using Rule 30 of Cellular Automaton.",
     "image": "https://user-images.githubusercontent.com/4745789/74463952-b07aac80-4eb8-11ea-8d8e-6f286767ec7e.png",
     "gif": "https://media.giphy.com/media/26uflDxU6cEhrhmUg/giphy.gif",
     "categories": ["algorithm"],
-    "tags": ["algorithm"],
+    "tags": ["algorithm", "cellular automata", "rule 30", "pseudorandom number generator", "random numbers", "elementary cellular automata", "1d cellular automata"],
     "published_at": "2020-02-14"
   },
   {
@@ -16,7 +26,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/73909201-04423000-48d2-11ea-8bd0-d7c25f6435c1.png",
     "gif": "https://media.giphy.com/media/WtCHRSPCuqS8E/giphy.gif",
     "categories": ["python"],
-    "tags": ["python", "function overloading", "language constructs"],
+    "tags": ["python", "function overloading", "language constructs", "decorator", "function", "namespace", "advanced python"],
     "published_at": "2020-02-07"
   },
   {
