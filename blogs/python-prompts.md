@@ -1,4 +1,4 @@
-The `>>> ` we see when the Python interactive shell starts is called the Prompt String. Usually the prompt string suggests us that the interactive shell is now ready to take new commands.
+The `>>> ` we see when the Python interactive shell starts, is called the Prompt String. Usually, the prompt string suggests that the interactive shell is now ready to take new commands.
 
 ```py
 Python 2.7.10 (default, Feb 22 2019, 21:55:15)
@@ -17,7 +17,7 @@ Python has 2 prompt strings, one primary `>>>` and one secondary `...` which we 
 ```
 
 # Personalizing the prompt strings
-The prompt strings are defined in the [sys](https://docs.python.org/3/library/sys.html) module as [ps1](https://docs.python.org/3/library/sys.html#sys.ps1) and [ps2](https://docs.python.org/3/library/sys.html#sys.ps2) and just like any other attribute we can change the values of `sys.ps1` and `sys.ps2` and the changes take effect immediately and as a result the prompt we see in the shell changes to the new value.
+The prompt strings are defined in the [sys](https://docs.python.org/3/library/sys.html) module as [ps1](https://docs.python.org/3/library/sys.html#sys.ps1) and [ps2](https://docs.python.org/3/library/sys.html#sys.ps2) and just like any other attribute we can change the values of `sys.ps1` and `sys.ps2` and the changes take effect immediately and as a result, the prompt we see in the shell changes to the new value.
 
 ```py
 >>> import sys
@@ -41,7 +41,7 @@ The code snippet above makes our primary prompt string yellow and secondary prom
 
 ## Dynamic prompt strings
 
-The [documentation](https://docs.python.org/3/library/sys.html#sys.ps2) states that if we assign a non-string object to `ps1` or `ps2` then Python prompts by calling `str()` on the object every time a prompt is shown. Now we create some stateful and dynamic prompt by defining a class and overriding `__str__` method.
+The [documentation](https://docs.python.org/3/library/sys.html#sys.ps2) states that if we assign a non-string object to `ps1` or `ps2` then Python prompts by calling `str()` on the object every time a prompt is shown. Now we create some stateful and dynamic prompt by defining a class and overriding the `__str__` method.
 
 Below we implement [IPython](https://ipython.org/) like prompt where execution statement number is stored in member `line` of the class and is incremented every time the primary prompt renders.
 
