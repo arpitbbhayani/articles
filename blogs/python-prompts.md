@@ -98,4 +98,4 @@ Combining everything mentioned above a utility is created called [py-prompts](ht
 If you want to create your own theme and add it to [py-prompts](https://github.com/arpitbbhayani/py-prompts), then create the python file (that updates `sys.ps1` and/or `sys.ps2`) in [themes](https://github.com/arpitbbhayani/py-prompts/tree/master/themes) folder.
 
 # Conclusion
-I hope you found this piece interesting. Python being an exhaustively extensible language made it super-easy for us to change the prompt strings and be creative with it. If you have a theme idea or have already personalized your prompt share it with me [@arpit_bhayani](https://twitter.com/arpit_bhayani), I will be thrilled to learn.
+I hope you found this piece interesting. Python being an exhaustively extensible language made it super-easy for us to change the prompt strings and be creative with it. If you have a theme idea or have already personalized your prompt, share it with me [@arpit_bhayani](https://twitter.com/arpit_bhayani), I will be thrilled to learn more about it.
