@@ -1,12 +1,12 @@
 [
   {
     "id": "tfidf",
-    "title": "The math behind TF-IDF",
+    "title": "Dissecting TF-IDF",
     "description": "TFIDF",
     "image": "https://user-images.githubusercontent.com/4745789/74850923-8ade1f00-5360-11ea-8ed5-1072c8a718c2.png",
     "gif": "https://media.giphy.com/media/TFTqzyOQwT2zS/giphy.gif",
     "categories": ["algorithm"],
-    "tags": [],
+    "tags": ["tfidf", "tf-idf", "math", "search engine internals"],
     "published_at": "2020-02-28"
   },
   {
