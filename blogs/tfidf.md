@@ -39,6 +39,36 @@ IDF shows if it's common or rare across all documents
 tf-idf
 A high weight in tf–idf is reached by a high term frequency (in the given document) and a low document frequency of the term in the whole collection of documents
 
+The intuition for this measure is : If a word appears frequently in a document, then it should be important and we should give that word a high score. But if a word appears in too many other documents, it's probably not a unique identifier, therefore we should assign a lower score to that word. In short, it is a feature representation that penalizes words that are too common.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+find specific words that a person uses
+anonymity is not so anonymous
+find similar articles
+extract keywords
+
+
+https://programminghistorian.org/en/lessons/analyzing-documents-with-tfidf
+
+https://programminghistorian.org/en/lessons/analyzing-documents-with-tfidf#fn:11
+
+
 ---
 
 Different IDF
