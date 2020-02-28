@@ -34,7 +34,7 @@ Solving programming questions is about developing logic but things become a litt
 
  - build one complex system every 4 months
 
-# Once a while build something inspired by the real world
+# Build something inspired by the real world
 After a certain stage writing programs restricted to computer science domain (like Data Structures and Algorithms or some Management systems) does not challenge you anymore then to spice things up a bit you should model something from the real world like
 
   - [projectile motion](https://en.wikipedia.org/wiki/Projectile_motion)
