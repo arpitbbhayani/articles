@@ -35,7 +35,7 @@ Solving programming questions is about developing logic but things become a litt
  - build one complex system every 4 months
 
 # Once a while build something inspired from real world
-After a certain stage writing programs restricted to computer science domain (like Data Structures and Algorithms or some Management systems) becomes a piece of cake. To take your programming to the next level you should model something from the real world like
+After a certain stage writing programs restricted to computer science domain (like Data Structures and Algorithms or some Management systems) does not challenge you anymore then to spice things up a bit you should model something from the real world like
 
   - [projectile motion](https://en.wikipedia.org/wiki/Projectile_motion)
   - [double pendulum](https://en.wikipedia.org/wiki/Double_pendulum)
@@ -43,16 +43,14 @@ After a certain stage writing programs restricted to computer science domain (li
 
 ### Action Items
 
+ - Once every 6 months try to model a physical phenomenon
+
 # Read twice shit ton of code
-Contrary to popular opinion, it is not only writing but also reading quality code by expert programmer helps a lot. I would recommend, you
+It is not only writing that improves your programming skills but reading some quality code written by expert programmer helps a ton. The best way to start doing it is by picking up an open source project (in your favourite programming language) and just start going through it. It is okay to not understand it fully but skimming it a few times will improve your programming vocabulary and broaden your horizon. By doing this you
 
- - read open-source code
-
-This helps you
-
- - discover new programming paradigms that you could later use in your code,
- - find ways to structure code for extensibility
- - learn best practices while writing code
+ - discover new programming paradigms
+ - find ways to properly structure your code for extensibility
+ - learn best programming practices
 
 ### Action Items
 
