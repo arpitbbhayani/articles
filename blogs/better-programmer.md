@@ -9,8 +9,8 @@ Doing something repeatedly always helps and writing a lot of code will develop a
 
 ### Action Items
 
- - One significant contribution to any one of your project in a week
- - Solve 3 programming questions (on sites like Codechef, Spoj, Leetcode, etc) every week, till you solve at least 300 questions
+ - One significant contribution to any one of your project in two weeks
+ - Solve 2 programming questions (on sites like Codechef, Spoj, Leetcode, etc) every week, till you solve at least 300 questions
 
 # Write code consistently
 If you don't do something repeatedly, it become extremely hard to get good at it. Writing code consistently helps you
@@ -48,33 +48,37 @@ After a certain stage writing programs restricted to computer science domain (li
 # Read twice shit ton of code
 It is not only writing that improves your programming skills but reading some quality code written by expert programmer helps a ton. The best way to start doing it is by picking up an open source project (in your favourite programming language) and just start going through it. It is okay to not understand it fully but skimming it a few times will improve your programming vocabulary and broaden your horizon. By doing this you
 
+ - learn best programming practices
  - discover new programming paradigms
  - find ways to properly structure your code for extensibility
- - learn best programming practices
 
 ### Action Items
+
+ - Pick a popular open source project every 6 months and skim its code once every two months
+ - Pick a tiny open source utility every month, from an experienced developer and skim its once every month
 
 # Collaborate with peers
-It is always adisable to do pair programming or collaborate on a same project with someone who stays on the other side of the globe. This is important because you will learn a ton of new things when you do so. There is always something that your peers know better; learn from them ask for help. This is a quick way to learn and get your doubts fixed and build relationships.
-
-Lately I have been collaborating with @burnns and I have learned so many new nthings and practices from him and it has helped me
+There is always someone sitting on the other side of the globe, who knows a thing or two more than you. Find that person and collaborate on a project of your choice. Developer community is superb and everyone loves to share and collaborate. Use communities like Dev.To and Hashnode to find like-minded people.
 
 ### Action Items
+
+ - Be active on platforms like Dev.To and Hashnode
+ - Collaborate with someone on a small utility project once a year
 
 # Fundamentals go a long way
-Learningg program is not vbounded by a particular language. So learn fundamentals and make language a tool. It will go the long wayy. You could crossapply your learnings.
-
- - using callback pattern from Javascript into Python
+Programming language is just a tool to express your logic so while learning the programming language we should also understand the constructs and paradigms. We could pick constructs from one language and use it in another. For example: using Callback pattern from Javascript into Python for writing generic action functions.
 
 ### Action Items
+
+ - Learn one design pattern every month and build some simulation with it
+ - Pick a language construct and implement it in some other language
 
 # Thinking it through
-Given a problem statement, do not just dive to write program. Think. Fir finalize the requirement, draw rough sketch of the system. see if you make something better. And then code.
-
-A well planned implementation makes your coding phase a breeze.
+As a developer we like to code, but writing code without putting in much of a thought worsens it - the code loses its reusability and becomes spaghetti. Spending some time thinking about problem statement or task at hand and creating a rough plan always helps.
 
 ### Action Items
 
+ - Before implementing, define scope of implementation, create a rough roadmap and then code
 
 # Conclusion
-Just compete with yourself and see that you are improving. Steady growth is important. Preefer consistency than bursty behaviour.
+Programming is simple but being good at it is difficult. The path to become a better programmer is never bursty rather steady. I hope these points help you be a better programmer; it surely has helped me a lot.
