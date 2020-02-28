@@ -23,12 +23,12 @@ If you don't do something repeatedly, it become extremely hard to get good at it
  - Make one small contribution to any of your project a day
 
 # Build complex systems
-Solving programming questions is about developing logic but things become a little trickier when you'll have to build complex systems and this requires your programming to go up a notch. For examples of complex systems are: a Library management system, a Twitter clone, an Instagram clone, etc. Building a complex system is essential and it makes you
+Solving programming questions is about developing logic but things become a little trickier when you'll have to build complex systems and this requires your programming to go up a notch. For examples of complex systems are: a Library management system, a Twitter clone, an Instagram clone, etc. Building a complex system is essential and it
 
- - widen yout tech stack
- - keep your code flexible and extensible
- - write and structure your code such that it is reusable
- - understand how different segments of your code work in harmony
+ - widens your tech stack
+ - makes you keep your code flexible and extensible
+ - forces you to write and structure your code such that it is reusable
+ - helps you understand how different segments of your code work in harmony
 
 ### Action Items
 
