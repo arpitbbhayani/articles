@@ -1,4 +1,4 @@
-"How to get better at programming?" is the question I had been asked quite a few times, and today I lay down the principles I have been following, and action items against each, since 2012 to be good and get better at what I do.
+"How to get better at programming?" is the question I had been asked quite a few times, and today I lay down the 8 rituals I have been following, and action items for each, to be good and get better at programming.
 
 # Code exhaustively
 Doing something repeatedly always helps and writing a lot of code will develop our ability to
@@ -22,7 +22,7 @@ If we don't do something repeatedly, it becomes extremely hard to get good at it
 
  - make one small contribution to anyone project every three days
 
-# Build complex systems
+# Once a while build a complex system
 Solving programming questions is about developing logic but things become a little trickier when we build a complex system, as it requires us to take our programming skills to go up a notch. Some examples of complex systems are - a Library management system, a [Twitter](https://twitter.com) clone, an [Instagram](https://www.instagram.com/) clone, etc. Building a complex system
 
  - widens our tech stack
@@ -33,7 +33,7 @@ Solving programming questions is about developing logic but things become a litt
 
  - build one complex system every 4 months
 
-# Build something inspired by the real world
+# Once a while build something inspired by the real world
 After we spend some time writing programs and solving problems, things become monotonous and do not seem to challenge us anymore, so to spice things up a bit we should model something from the real world, like
 
   - [projectile motion](https://en.wikipedia.org/wiki/Projectile_motion)
@@ -84,4 +84,4 @@ Writing code before putting in some thought is degraded the code more often than
  - always define the scope of implementation, create an execution plan and then code
 
 # Conclusion
-These principles have helped me get better at programming with time and in parallel, I pick at max 3 and act on the action items. Programming is simple but being better than most is difficult. Doing it consistently makes one get better by the day.
+These rituals have helped me get better at programming with time and in parallel, I pick at max 3 and act on the action items. Programming is simple but being better than most is difficult. Doing it consistently makes one get better by the day.
