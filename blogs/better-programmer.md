@@ -34,15 +34,17 @@ Solving programming questions is about developing logic but things become a litt
  - build one complex system every 4 months
 
 # Build something inspired by the real world
-After a certain stage writing programs restricted to computer science domain (like Data Structures and Algorithms or some Management systems) does not challenge you anymore then to spice things up a bit you should model something from the real world like
+After we spend some time writing programs and solving problems, things become monotonus and does not seem to challenge us anymore, so to spice things up a bit we should model something from the real world, like
 
   - [projectile motion](https://en.wikipedia.org/wiki/Projectile_motion)
   - [double pendulum](https://en.wikipedia.org/wiki/Double_pendulum)
   - [solar system simulation](https://en.wikipedia.org/wiki/Numerical_model_of_the_Solar_System)
 
+There are lots of libraries and framework like [p5.js](https://p5js.org) that makes visual programming simple.
+
 ### Action Items
 
- - Once every 6 months try to model a physical phenomenon
+ - once every 6 months model a physical phenomenon
 
 # Read thrice the amount of code you write
 It is not only writing that improves your programming skills but reading some quality code written by an expert programmer helps a ton. The best way to start doing it is by picking up an open-source project (in your favorite programming language) and just start going through it. It is okay to not understand it fully but skimming it a few times will improve your programming vocabulary and broaden your horizon. By doing this you
