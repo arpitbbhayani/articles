@@ -1,4 +1,4 @@
-"How do I become a better programmer?" is the question that has been asked the most; and today I want to lay down the principles I have been following, and action items against each, for the last 10 years to be good and get better at what I do.
+"How to get better at programming?" was the question I had been asked quite a few times, and today I lay down the principles I have been following, and action items against each, since 2012 to be good and get better at what I do.
 
 # Write a lot
 Doing something repeatedly always helps and writing a lot of code will develop an ability to
