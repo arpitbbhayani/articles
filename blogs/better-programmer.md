@@ -1,11 +1,11 @@
 "How to get better at programming?" was the question I had been asked quite a few times, and today I lay down the principles I have been following, and action items against each, since 2012 to be good and get better at what I do.
 
-# Write a lot
-Doing something repeatedly always helps and writing a lot of code will develop an ability to
+# Code exhaustively
+Doing something repeatedly always helps and writing a lot of code will develop our ability to
 
+ - write code while we think
  - think faster, think better
- - foresee requirement changes and possible extensions
- - write code while you think (for simpler business logic)
+ - foresee requirement changes and possible logic extensions
 
 ### Action Items
 
