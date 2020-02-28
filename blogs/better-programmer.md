@@ -23,7 +23,7 @@ If we don't do something repeatedly, it becomes extremely hard to get good at it
  - Make one small contribution to any one project every three days
 
 # Build complex systems
-Solving programming questions is about developing logic but things become a little trickier when you'll have to build complex systems and this requires your programming to go up a notch. For examples of complex systems are - a Library management system, a Twitter clone, an Instagram clone, etc. Building a complex system is essential and it
+Solving programming questions is about developing logic but things become a little trickier when we build a complex system, as it requires us to take our programming skills go up a notch. Some examples of complex systems are - a Library management system, a [Twitter](https://twitter.com) clone, an [Instagram](https://www.instagram.com/) clone, etc. Building a complex system is essential and it
 
  - widens your tech stack
  - makes you keep your code flexible and extensible
@@ -82,3 +82,5 @@ As a developer, we like to code, but writing code without putting in much of a t
 
 # Conclusion
 It is not necessary to act on every single action item specified. It totally depends on what interests you. Programming is simple but being good at it is difficult. The path to becoming a better programmer is never bursty rather steady. I hope these points help you be a better programmer; it surely has helped me a lot.
+
+Pick multiple principle to follow
