@@ -61,12 +61,12 @@ The best way to start doing it is by picking up an open-source project and start
  - pick a tiny open-source utility, from an experienced developer, every month and skim it
 
 # Collaborate with a stranger
-There is always someone sitting on the other side of the globe, who knows a thing or two more than you. Find that person and collaborate on a project of your choice. The developer community is superb and everyone loves to share and collaborate. Use communities like Dev.to and Hashnode to find like-minded people.
+There is always someone sitting on the other side of the globe, who knows a thing or two more than us. Look for them and collaborate on a project. The developer community is filled with super smart and super enthusiastic developers who love to share and collaborate. Use websites like [Dev.to](https://dev.to/), [Hashnode](https://hashnode.com/) and [Twitter](https://twitter.com/) to find and interact with like-minded people.
 
 ### Action Items
 
- - Be active on platforms like Dev.to and Hashnode
- - Collaborate with someone on a small utility project once a year
+ - collaborate on a project once a year
+ - be active on platforms like [Dev.to](https://dev.to/), [Hashnode](https://hashnode.com/) and [Twitter](https://twitter.com/)
 
 # Fundamentals go a long way
 A programming language is just a tool to express your logic so while learning the programming language we should also understand the constructs and paradigms. We could pick constructs from one language and use it in another. For example: using Callback pattern from Javascript into Python for writing generic action functions.
