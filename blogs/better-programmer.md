@@ -46,19 +46,21 @@ There are lots of libraries and framework like [p5.js](https://p5js.org) that ma
 
  - once every 6 months model a physical phenomenon
 
-# Read thrice the amount of code you write
-It is not only writing that improves your programming skills but reading some quality code written by an expert programmer helps a ton. The best way to start doing it is by picking up an open-source project (in your favorite programming language) and just start going through it. It is okay to not understand it fully but skimming it a few times will improve your programming vocabulary and broaden your horizon. By doing this you
+# Read super exhaustively
+It is not only writing code that improves our programming skills but it is reading some quality code written by expert programmers that makes the difference. Reading code written by experts improve our programming vocabulary and by doing this we
 
- - learn best programming practices
- - discover new programming paradigms
- - find ways to properly structure your code for extensibility
+ - learn the best programming practices
+ - discover the new programming paradigms
+ - find ways to properly structure our code for extensibility
+
+The best way to start doing it is by picking up an open-source project and start skimming the code. It is okay to not understand it in the first go but it is important to skim it a few times and get acquainted. After a few skims, everything will fall in place, the code becomes familiar and we start to understand the flow and business logic.
 
 ### Action Items
 
- - Pick a popular open-source project every 6 months and skim its code once every two months
- - Pick a tiny open-source utility every month, from an experienced developer and skim its once every month
+ - pick an open-source project every 6 months and skim its code once every two months
+ - pick a tiny open-source utility, from an experienced developer, every month and skim it
 
-# Collaborate with stranger
+# Collaborate with a stranger
 There is always someone sitting on the other side of the globe, who knows a thing or two more than you. Find that person and collaborate on a project of your choice. The developer community is superb and everyone loves to share and collaborate. Use communities like Dev.to and Hashnode to find like-minded people.
 
 ### Action Items

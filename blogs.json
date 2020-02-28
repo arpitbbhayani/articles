@@ -1,5 +1,15 @@
 [
   {
+    "id": "better-programmer",
+    "title": "Action items to be a better programmer",
+    "description": "Personalization is what we all love. In this article we find how we could personalize the Python interpreter prompt >>>",
+    "image": "https://user-images.githubusercontent.com/4745789/74850923-8ade1f00-5360-11ea-8ed5-1072c8a718c2.png",
+    "gif": "https://media.giphy.com/media/TFTqzyOQwT2zS/giphy.gif",
+    "categories": ["python"],
+    "tags": ["better programmer", "todo of better programmer", "good programmer"],
+    "published_at": "2020-02-28"
+  },
+  {
     "id": "python-prompts",
     "title": "Personalize your python prompt",
     "description": "Personalization is what we all love. In this article we find how we could personalize the Python interpreter prompt >>>",
