@@ -85,19 +85,3 @@ Writing code before putting in some thought is degraded the code more often than
 
 # Conclusion
 These rituals have helped me get better at programming with time and in parallel, I pick at max 3 and act on the action items. Programming is simple but being better than most is difficult. Doing it consistently makes one get better by the day.
-
----
-
-_Other articles you might like:_
-
-[Personalize your python prompt](https://arpitbhayani.me/blogs/python-prompts)
-[Pseudorandom numbers using Cellular Automata - Rule 30](https://arpitbhayani.me/blogs/rule-30)
-[Overload Functions in Python](https://arpitbhayani.me/blogs/function-overloading)
-[Isolation Forest algorithm for anomaly detection](https://arpitbhayani.me/blogs/isolation-forest)
-[Everything that you need to know about Image Steganography](https://arpitbhayani.me/blogs/image-steganography)
-
-_This article was originally published on my [blog - Action items to be a better programmer](https://arpitbhayani.me/blogs/better-programmer)._
-
-_If you liked what you read, subscribe to my newsletter and get the post delivered directly to your inbox and give me a shout-out [@arpit_bhayani](https://twitter.com/arpit_bhayani)._
-
-[![Subscribe to Arpit's newsletter](https://user-images.githubusercontent.com/4745789/74005152-fc4fc200-499d-11ea-9df7-9f6733a06aa8.png)](https://arpit.substack.com)
