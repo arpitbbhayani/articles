@@ -7,7 +7,7 @@ Doing something repeatedly always helps and writing a lot of code will develop a
  - foresee requirement changes and possible extensions
  - write code while you think (for simpler business logic)
 
-## Action Items
+### Action Items
 
  - One significant contribution to anyone of your project in two weeks
  - Solve 2 programming questions (on sites like Codechef, Spoj, Leetcode, etc) every week, till you solve at least 300 questions
@@ -18,7 +18,7 @@ If you don't do something repeatedly, it becomes extremely hard to get good at i
  - builds a habit of programming
  - tune left half of your brain for programming constructs and analytical thinking
 
-## Action Items
+### Action Items
 
  - Make one small contribution to any of your project a day
 
@@ -30,18 +30,18 @@ Solving programming questions is about developing logic but things become a litt
  - forces you to write and structure your code such that it is reusable
  - helps you understand how different segments of your code work in harmony
 
-## Action Items
+### Action Items
 
  - build one complex system every 4 months
 
-# Once a while build something inspired from the real world
+# Once a while build something inspired by the real world
 After a certain stage writing programs restricted to computer science domain (like Data Structures and Algorithms or some Management systems) does not challenge you anymore then to spice things up a bit you should model something from the real world like
 
   - [projectile motion](https://en.wikipedia.org/wiki/Projectile_motion)
   - [double pendulum](https://en.wikipedia.org/wiki/Double_pendulum)
   - [solar system](https://en.wikipedia.org/wiki/Numerical_model_of_the_Solar_System) simulation
 
-## Action Items
+### Action Items
 
  - Once every 6 months try to model a physical phenomenon
 
@@ -52,7 +52,7 @@ It is not only writing that improves your programming skills but reading some qu
  - discover new programming paradigms
  - find ways to properly structure your code for extensibility
 
-## Action Items
+### Action Items
 
  - Pick a popular open-source project every 6 months and skim its code once every two months
  - Pick a tiny open-source utility every month, from an experienced developer and skim its once every month
@@ -60,7 +60,7 @@ It is not only writing that improves your programming skills but reading some qu
 # Collaborate with peers
 There is always someone sitting on the other side of the globe, who knows a thing or two more than you. Find that person and collaborate on a project of your choice. The developer community is superb and everyone loves to share and collaborate. Use communities like Dev.to and Hashnode to find like-minded people.
 
-## Action Items
+### Action Items
 
  - Be active on platforms like Dev.to and Hashnode
  - Collaborate with someone on a small utility project once a year
@@ -68,7 +68,7 @@ There is always someone sitting on the other side of the globe, who knows a thin
 # Fundamentals go a long way
 A programming language is just a tool to express your logic so while learning the programming language we should also understand the constructs and paradigms. We could pick constructs from one language and use it in another. For example: using Callback pattern from Javascript into Python for writing generic action functions.
 
-## Action Items
+### Action Items
 
  - Learn one design pattern every month and build some simulation with it
  - Pick a language construct and implement it in some other language
@@ -76,7 +76,7 @@ A programming language is just a tool to express your logic so while learning th
 # Thinking it through
 As a developer, we like to code, but writing code without putting in much of a thought worsens it - the code loses its reusability and becomes spaghetti. Spending some time thinking about problem statement or task at hand and creating a rough plan always helps.
 
-## Action Items
+### Action Items
 
  - Before implementing, define the scope of implementation, create a rough roadmap and then code
 
