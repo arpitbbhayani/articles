@@ -69,19 +69,19 @@ There is always someone sitting on the other side of the globe, who knows a thin
  - be active on platforms like [Dev.to](https://dev.to/), [Hashnode](https://hashnode.com/) and [Twitter](https://twitter.com/)
 
 # Fundamentals go a long way
-A programming language is just a tool to express your logic so while learning the programming language we should also understand the constructs and paradigms. We could pick constructs from one language and use it in another. For example: using Callback pattern from Javascript into Python for writing generic action functions.
+A programming language is just a tool to express a business logic. While learning a programming language we should try to understand the constructs and paradigms used - for example: [Functional programming](https://en.wikipedia.org/wiki/Functional_programming), [Polymorphism](https://en.wikipedia.org/wiki/Polymorphism_(computer_science)), [Event driven programming](https://en.wikipedia.org/wiki/Event-driven_programming), [Actor model](https://en.wikipedia.org/wiki/Actor_model), etc. It is important to do so because we could pick constructs from one language and use it in another to solve our problem. For example: picking Functional programming (Callbacks) from Javascript and using it in Python to create generic action functions.
 
 ### Action Items
 
- - Learn one design pattern every month and build some simulation with it
- - Pick a language construct and implement it in some other language
+ - learn one design pattern every month and build an simulation around it
+ - pick a language construct and implement it in some other language
 
-# Think before you code
-As a developer, we like to code, but writing code without putting in much of a thought worsens it - the code loses its reusability and becomes spaghetti. Spending some time thinking about problem statement or task at hand and creating a rough plan always helps.
+# We think before we code
+Writing code before putting in some thought is degrades the code more often than not. The code written like this lacks simplicity, reusability and extensibility. Spending some time thinking about problem statement or task at hand and having a rough execution plan always helps.
 
 ### Action Items
 
- - Before implementing, define the scope of implementation, create a rough roadmap and then code
+ - always define the scope of implementation, create an execution plan and and then code
 
 # Conclusion
 It is not necessary to act on every single action item specified. It totally depends on what interests you. Programming is simple but being good at it is difficult. The path to becoming a better programmer is never bursty rather steady. I hope these points help you be a better programmer; it surely has helped me a lot.
