@@ -15,20 +15,20 @@ Doing something repeatedly always helps and writing a lot of code will develop o
 # Code consistently
 If we don't do something repeatedly, it becomes extremely hard to get good at it. Writing code consistently helps us
 
- - build a habit of programming and thinking analytically
  - define the programatic and algorithmic flow quickly
+ - build a habit of programming and thinking analytically
 
 ### Action Items
 
- - Make one small contribution to any one project every three days
+ - make one small contribution to any one project every three days
 
 # Build complex systems
-Solving programming questions is about developing logic but things become a little trickier when we build a complex system, as it requires us to take our programming skills go up a notch. Some examples of complex systems are - a Library management system, a [Twitter](https://twitter.com) clone, an [Instagram](https://www.instagram.com/) clone, etc. Building a complex system is essential and it
+Solving programming questions is about developing logic but things become a little trickier when we build a complex system, as it requires us to take our programming skills go up a notch. Some examples of complex systems are - a Library management system, a [Twitter](https://twitter.com) clone, an [Instagram](https://www.instagram.com/) clone, etc. Building a complex system
 
- - widens your tech stack
- - makes you keep your code flexible and extensible
- - forces you to write and structure your code such that it is reusable
- - helps you understand how different segments of your code work in harmony
+ - widens our tech stack
+ - makes us keep your code flexible and extensible
+ - forces us to write and structure our code such that it is reusable
+ - helps us understand how different segments of our code work in harmony
 
 ### Action Items
 
