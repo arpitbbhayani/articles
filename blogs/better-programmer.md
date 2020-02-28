@@ -9,18 +9,18 @@ Doing something repeatedly always helps and writing a lot of code will develop o
 
 ### Action Items
 
- - One significant contribution to a project in two weeks
- - Solve at least 2 programming questions (from [Codechef](https://www.codechef.com/), [Spoj](https://www.spoj.com/) or [HackerRank](https://www.hackerrank.com/)) every week, till we solve at least 300 questions
+ - One significant contribution to a project every two weeks
+ - Solve at least two programming questions (from [Codechef](https://www.codechef.com/), [Spoj](https://www.spoj.com/) or [HackerRank](https://www.hackerrank.com/)) every week, till we solve at least 300 questions
 
 # Code consistently
-If you don't do something repeatedly, it becomes extremely hard to get good at it. Writing code consistently helps you
+If we don't do something repeatedly, it becomes extremely hard to get good at it. Writing code consistently helps us
 
- - builds a habit of programming
- - tune left half of your brain for programming constructs and analytical thinking
+ - build a habit of programming and thinking analytically
+ - define the programatic and algorithmic flow quickly
 
 ### Action Items
 
- - Make one small contribution to any of your project a day
+ - Make one small contribution to any one project every three days
 
 # Build complex systems
 Solving programming questions is about developing logic but things become a little trickier when you'll have to build complex systems and this requires your programming to go up a notch. For examples of complex systems are - a Library management system, a Twitter clone, an Instagram clone, etc. Building a complex system is essential and it
@@ -81,4 +81,4 @@ As a developer, we like to code, but writing code without putting in much of a t
  - Before implementing, define the scope of implementation, create a rough roadmap and then code
 
 # Conclusion
-Programming is simple but being good at it is difficult. The path to becoming a better programmer is never bursty rather steady. I hope these points help you be a better programmer; it surely has helped me a lot.
+It is not necessary to act on every single action item specified. It totally depends on what interests you. Programming is simple but being good at it is difficult. The path to becoming a better programmer is never bursty rather steady. I hope these points help you be a better programmer; it surely has helped me a lot.
