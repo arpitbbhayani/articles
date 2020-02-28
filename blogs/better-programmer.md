@@ -84,6 +84,4 @@ Writing code before putting in some thought is degrades the code more often than
  - always define the scope of implementation, create an execution plan and and then code
 
 # Conclusion
-It is not necessary to act on every single action item specified. It totally depends on what interests you. Programming is simple but being good at it is difficult. The path to becoming a better programmer is never bursty rather steady. I hope these points help you be a better programmer; it surely has helped me a lot.
-
-Pick multiple principle to follow
+These principles has helped me get better at programming with time and in parallel I pick at the max 3 and act on the action items. Programming is simple but being better than most is difficult. Doing it consistently makes one get better by the day.
