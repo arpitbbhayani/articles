@@ -9,8 +9,8 @@ Doing something repeatedly always helps and writing a lot of code will develop o
 
 ### Action Items
 
- - One significant contribution to anyone of your project in two weeks
- - Solve 2 programming questions (on sites like Codechef, Spoj, Leetcode, etc) every week, till you solve at least 300 questions
+ - One significant contribution to a project in two weeks
+ - Solve at least 2 programming questions (from [Codechef](https://www.codechef.com/), [Spoj](https://www.spoj.com/) or [HackerRank](https://www.hackerrank.com/)) every week, till we solve at least 300 questions
 
 # Code consistently
 If you don't do something repeatedly, it becomes extremely hard to get good at it. Writing code consistently helps you
