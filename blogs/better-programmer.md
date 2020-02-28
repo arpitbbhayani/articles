@@ -26,9 +26,8 @@ If we don't do something repeatedly, it becomes extremely hard to get good at it
 Solving programming questions is about developing logic but things become a little trickier when we build a complex system, as it requires us to take our programming skills go up a notch. Some examples of complex systems are - a Library management system, a [Twitter](https://twitter.com) clone, an [Instagram](https://www.instagram.com/) clone, etc. Building a complex system
 
  - widens our tech stack
- - makes us keep your code flexible and extensible
- - forces us to write and structure our code such that it is reusable
- - helps us understand how different segments of our code work in harmony
+ - makes us keep our code flexible, extensible and reusable
+ - helps us understand how to split our code into independent segments that work in harmony
 
 ### Action Items
 
