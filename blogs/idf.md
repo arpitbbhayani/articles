@@ -1,21 +1,13 @@
 TF-IDF is one of the most popular measure that quantifies document relevance for a term. It is often used in Search Engines (Information Retrieval), Text Mining and Text Heavy Machine Learning use cases. Today we take a deeper look into the IDF part of TF-IDF and dissect it in greater detail.
 
+Inverse Document Frequency is measure of term rarity and was first proposed in the paper “Astatistical interpretation of term specificity and its application in retrieval” (Sparck Jones,1972) and was originallyy called Term Specificity. IDF has proved to be a giant leap in the field of information retrieval but It was more of a heuristic measure of rarity and it does not have a tehoretical explaination.
 
-Inverse document frequency, the term we usually hear along side Term Frequency, is a measure of the rareness of a term. This rarity measure along with term frequencyy gives u
+# The intuition behind IDF
+The intuition was that a query term which occurs in many documents is not a good discriminator,and should be given less weight than one which occurs in few documents, and the measure was an heuristic implementation of this intuition.
 
-
-Inversedocument frequency is a statis
-proved to be a giant leap in the fieldof information retrieval
-
-DF was proposed in 1972,
-usually as part of a TF*IDF function
-
-In 1972, Karen Sp ̈arck Jones published in theJournal of Documentationa paper called “Astatistical interpretation of term specificity and its application in retrieval” (Sparck Jones,1972). The measure of term specificity first proposed in that paper later became known asinverse document frequency, or IDF;
 
 based on counting the number of documents inthe collection being searched which contain (or are indexed by) the term in question
 
-IDF downscales unimportant word
-Theintuition was that a query term which occurs in many documents is not a good discriminator,and should be given less weight than one which occurs in few documents, and the measurewas an heuristic implementation of this intuition.
 
 
 Coupled with TF (the frequency of the term in the document itself,in this case, the more the better), it found its way into almost every term weighting scheme
@@ -48,6 +40,11 @@ One important feature of term weighting schemes is that it is frequently assumed
 We can combine the probabilistic interpretation of IDF and the idea of an addition-basedscoring function very simply and elegantly: if we assume that the occurrences of differentterms in documents are statistically independent, then addition is the correct thing to dowith the logs. That is,idf(t1∧t2)  =−logP(t1∧t2)=−log(P(t1)P(t2))=−(logP(t1) + logP(t2))=idf(t1) +idf(t2)
 
 Heret1∧t2represents the ‘term’ which is the Booleanandoft1andt2. The same argumentapplies to any number of terms. Thus taking logs and then adding the weights is exactly theright thing to do. We may also note that if the reason for taking logs is to be able to addthem, then the base of the logarithm does not matter.Of course we do not really assume that the terms are statistically independent. Neverthe-less, that simplifying assumption at least suggests strongly that we should use the log ratherthan (say) a linear function of the fractionN/ni, which would be equally compatible with theoriginal intuition.
+
+---
+
+Role in TF-IDF
+IDF downscales unimportant word
 
 ---
 
