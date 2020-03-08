@@ -5,28 +5,17 @@ Inverse Document Frequency is measure of term rarity and was first proposed in t
 # The intuition behind IDF
 The intuition was that a query term which occurs in many documents is not a good discriminator,and should be given less weight than one which occurs in few documents, and the measure was an heuristic implementation of this intuition.
 
+This means it has to be inverselyy proportional to frequency
 
 based on counting the number of documents inthe collection being searched which contain (or are indexed by) the term in question
 
-
-
-Coupled with TF (the frequency of the term in the document itself,in this case, the more the better), it found its way into almost every term weighting scheme
-
-
----
-
-The basic IDF
-
+# The basic IDF
 Assume there areNdocuments in the collection, and that termtioccurs inniof them. (Whatmight constitute a ‘term’ is not of concern to us here, but we may assume that terms arewords, or possibly phrases or word stems. ‘Occurs in’ is taken as shorthand for ‘is an indexterm for’, again ignoring all the difficulties or subtleties of either automatic indexing fromnatural language text, or human assignment of index terms.) Then the measure proposed bySparck Jones, as a weight to be applied to termti, is essentiallyidf(ti) = logNni(1)Actually this is not quite accurate – the original measure was an integer approximation tothis formula, and the logarithm was specifically to the base 2. However, as will be seen below,the base of the logarithm is not in general important.
 
----
-
-Dissecting IDF
+# Dissecting IDF
 
 
----
-
-IDF's connection with probability
+# IDF's connection with probability
 
 The fraction inside the logarithm in equation 1 looks like it might represent a probability(actually inverted).
 hus we can consider the probability that a random documentdwould contain the term (Robertson, 1972). This probability has an obvious estimate, namely theinverse of the fraction in the IDF equatio
