@@ -1,3 +1,9 @@
+TF-IDF is one of the most popular measure that quantifies document relevance for a term. It is often used in Search Engines (Information Retrieval), Text Mining and Text Heavy Machine Learning use cases. Today we take a deeper look into the IDF part of TF-IDF and dissect it in greater detail.
+
+
+Inverse document frequency, the term we usually hear along side Term Frequency, is a measure of the rareness of a term. This rarity measure along with term frequencyy gives u
+
+
 Inversedocument frequency is a statis
 proved to be a giant leap in the fieldof information retrieval
 
