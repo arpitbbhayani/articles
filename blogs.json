@@ -1,5 +1,15 @@
 [
   {
+    "id": "idf",
+    "title": "Understanding Inverse Document Frequency",
+    "description": "\"How to get better at programming?\" is the question I had been asked quite a few times, and today I lay down the 8 rituals I have been following, and action items for each, to be good and get better at programming.",
+    "image": "https://user-images.githubusercontent.com/4745789/75548769-0cfecf80-5a54-11ea-8dd2-1e452ba1298b.png",
+    "gif": "https://media.giphy.com/media/14gQ5vtwD050LC/giphy.gif",
+    "categories": ["productivity"],
+    "tags": ["better programmer", "todo of better programmer", "good programmer", "get better at programming", "top coder", "codechef", "hackerrank"],
+    "published_at": "2020-02-28"
+  }
+  {
     "id": "better-programmer",
     "title": "Eight rituals to be a better programmer",
     "description": "\"How to get better at programming?\" is the question I had been asked quite a few times, and today I lay down the 8 rituals I have been following, and action items for each, to be good and get better at programming.",
