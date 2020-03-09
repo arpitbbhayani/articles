@@ -7,11 +7,11 @@ The IDF was heuristically proposed in the paper "[A statistical interpretation o
 # The intuition behind IDF
 In order to quantify the term rarity we need to give higher weight to the term that occurs in fewer document and lesser weights to the frequent terms. Thus this measure (weight) `w` of the term is inversely proportional to the number of documents in which it is present (called Document Frequency) - and hence referred as Inverse Document Frequency.
 
-IDF INVERSELY PROPORTIONAL TO DOCUMENTS IN WHICH WORD IS PRESENT
+![IDF Inversely proportional to Document Frequency](https://user-images.githubusercontent.com/4745789/76211536-85237d00-622c-11ea-82f5-c0b655634839.png)
 
 Any function that adheres to the requirement of being inversely proportional to the document frequency would do the job; it may not be optimal for the use case but could bu used as an IDF. Some function plots that could fit as an IDF are shown below
 
-SAMPLE INVERWSE FUNCTIONS
+![Decreasing functions](https://user-images.githubusercontent.com/4745789/76213296-63c49000-6230-11ea-9d24-94ce048732bc.png)
 
 Since the words like `a`, `an` and `the` occurs in a lot of documents, they are assigned a very small weight. Picking the right function depends on the use case but since IDF is usually used for a text-heavy problem and since almost all text heavy systems follow [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law), a common IDF measure (elaborated below) is adapted widely and performs better in most use cases.
 
