@@ -1,6 +1,8 @@
-TF-IDF is one of the most popular measure that quantifies document relevance for a term. It is often used in Search Engines (Information Retrieval), Text Mining and Text Heavy Machine Learning use cases. Today we take a deeper look into the IDF part of TF-IDF and dissect it in greater detail.
+TF-IDF is one of the most popular measure that quantifies document relevance for a term. It is extensively used in Information Retrieval (Search Engines), Text Mining and for Text-heavy Machine Learning use cases. Today we take a deeper look into the better half of TF-IDF - IDF and dissect it ...
 
-Inverse Document Frequency is measure of term rarity and was first proposed in the paper “Astatistical interpretation of term specificity and its application in retrieval” (Sparck Jones,1972) and was originallyy called Term Specificity. IDF has proved to be a giant leap in the field of information retrieval but It was more of a heuristic measure of rarity and it does not have a tehoretical explaination.
+Inverse Document Frequency (IDF) is a measure of _term rarity_ and it suggests how rare the term is in the corpus. By intuition, this term rarity is proportional to the information the word contributes to the corpus. If a word is occurring in nearly all the documents - it is not rare and it would not provided sufficient information to distinguish/rank different documents.
+
+It was first proposed in the paper "[A statistical interpretation of term specificity and its application in retrieval](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.115.8343&rep=rep1&type=pdf)" (Spärck Jones, 1972)  was originally called Term Specificity. IDF has proved to be a giant leap in the field of information retrieval but It was more of a heuristic measure of rarity and it does not have a tehoretical explaination.
 
 # The intuition behind IDF
 The intuition was that a query term which occurs in many documents is not a good discriminator,and should be given less weight than one which occurs in few documents, and the measure was an heuristic implementation of this intuition.
