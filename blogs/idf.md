@@ -1,8 +1,8 @@
 TF-IDF is one of the most popular measure that quantifies document relevance for a term. It is extensively used in Information Retrieval (Search Engines), Text Mining and for Text-heavy Machine Learning use cases. Today we take a deeper look into the better half of TF-IDF - IDF and dissect it ...
 
-Inverse Document Frequency (IDF) is a measure of _term rarity_ and it suggests how rare the term is in the corpus. By intuition, this term rarity is proportional to the information the word contributes to the corpus. If a word is occurring in nearly all the documents - it is not rare and it would not provided sufficient information to distinguish/rank different documents.
+Inverse Document Frequency (IDF) is a measure of _term rarity_ which means it suggests how rare the term is in the corpus. By intuition, this term rarity is proportional to the information the word contributes to the corpus. We could say, if a word is present in nearly all the documents (not rare) it could not provide sufficient information to distinguish, discriminate or rank documents.
 
-It was first proposed in the paper "[A statistical interpretation of term specificity and its application in retrieval](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.115.8343&rep=rep1&type=pdf)" (Spärck Jones, 1972)  was originally called Term Specificity. IDF has proved to be a giant leap in the field of information retrieval but It was more of a heuristic measure of rarity and it does not have a tehoretical explaination.
+The IDF was heuristically proposed in the paper "[A statistical interpretation of term specificity and its application in retrieval](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.115.8343&rep=rep1&type=pdf)" (Spärck Jones, 1972)  was originally called Term Specificity.
 
 # The intuition behind IDF
 The intuition was that a query term which occurs in many documents is not a good discriminator,and should be given less weight than one which occurs in few documents, and the measure was an heuristic implementation of this intuition.
