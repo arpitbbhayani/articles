@@ -48,11 +48,10 @@ Clearly scoring functions can beconsiderably more complex than this, and we will
 if the reason for taking logs is to be able to addthem, then the base of the logarithm does not matter.
 if the reason for taking logs is to be able to addthem, then the base of the logarithm does not matter.
 
-# Role of IDF in TF-IDF
-IDF downscales unimportant word
-
 # Other measures of IDF
 
+# Role of IDF in TF-IDF
+IDF downscales unimportant word
 
 ---
 
