@@ -71,6 +71,9 @@ A high weight in tf–idf is reached by a high term frequency (in the given docu
 
 ---
 
+It helps search engines identify what it is that makes a given document special.
+
+
 REferences
  - https://pdfs.semanticscholar.org/8397/ab573dd6c97a39ff4feb9c2d9b3c1e16c705.pdf?_ga=2.255772288.944438221.1583673396-1263237981.1583673396
 
