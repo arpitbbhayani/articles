@@ -2,7 +2,7 @@
   {
     "id": "idf",
     "title": "Understanding Inverse Document Frequency",
-    "description": "TF-IDF is extensively used in Search Engines and Machine Learning. Today we explore the better half of TF-IDF and its connection with Probability and the role it plays in TF-IDF.",
+    "description": "TF-IDF is extensively used in search engines and various document classification and clustering techniques. Today we explore the better half of TF-IDF, its connection with Probability, the role it plays in document relevance and the intuition behind it.",
     "image": "https://user-images.githubusercontent.com/4745789/76207579-10e4db80-6224-11ea-91ba-b67359125156.png",
     "gif": "https://media.giphy.com/media/3ornjWIRSzXEw61KH6/giphy.gif",
     "categories": ["algorithm"],
