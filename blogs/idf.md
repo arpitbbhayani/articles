@@ -54,7 +54,9 @@ Thus we see that by using IDF the document scoring function scores a document by
 # Other measures of IDF
 Apart from common IDF function as seen above there are other IDF measures that are widely used, they are:
 
-IDF MEASUREES AND PLOT
+![Other IDF Measures](https://user-images.githubusercontent.com/4745789/76232678-0db21580-624d-11ea-864c-1094559e0790.png)
+
+![Plot IDF Functions](https://user-images.githubusercontent.com/4745789/76232756-2de1d480-624d-11ea-81cb-8d29109bd594.png)
 
 # Role of IDF in TF-IDF
 TF-IDF suggests how important a word is to a document in a collection or corpus and is primarily the product of Term Frequency and Inverse Document Frequency. It helps search engines identify what it is that makes a given document special. For the document to have a high TF-IDF score it needs to have high term frequency and a low document frequency of the term. This IDF primarily down scales the frequent occuring (high term frequency) of common words and boosts high term frequency of infrequent words.
@@ -66,6 +68,8 @@ EXAMPLE
 
 # References
  - [TF-IDF - Wikipedia](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
- - [Understanding Inverse Document Frequency:On theoretical arguments for IDF](https://pdfs.semanticscholar.org/8397/ab573dd6c97a39ff4feb9c2d9b3c1e16c705.pdf?_ga=2.255772288.944438221.1583673396-1263237981.1583673396)
+ - [Understanding Inverse Document Frequency: On theoretical arguments for IDF](https://pdfs.semanticscholar.org/8397/ab573dd6c97a39ff4feb9c2d9b3c1e16c705.pdf?_ga=2.255772288.944438221.1583673396-1263237981.1583673396)
  - [Inverse Document Frequency and the Importance of Uniqueness](https://moz.com/blog/inverse-document-frequency-and-the-importance-of-uniqueness)
  - http://latex2png.com/
+
+Images used in other measures of IDF are taken from [Wikipedia page of TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) and the derivation equation of IDF in conjugation is taken from the paper [Understanding Inverse Document Frequency: On theoretical arguments for IDF](https://pdfs.semanticscholar.org/8397/ab573dd6c97a39ff4feb9c2d9b3c1e16c705.pdf?_ga=2.255772288.944438221.1583673396-1263237981.1583673396).
