@@ -25,14 +25,16 @@ where
  - N -> documents in the corpus,
  - term ti occurs in ni of them
 
-The original measure, suggested in the paper, was an integer approximation to this formula, and the logarithm was specifically to the base 2. However, as will be seen below,the base of the logarithm is not in general important.
+The plot of the IDF curve for above function vs document frequency shows the decay in weight as the document frequency increases. It is bounded by .... and reaches minimum at _-----.
 
 # IDF's connection with probability
 Probability that a document of the corpus contains the term ti is given by DTi/N where
 
 PROBABILITY FORMULA
 
-The fraction inside the logarithm in the common IDF function is inverse of the above probaility fraction and this helps us define IDF as a probability. And this heuristic beautifully binds with Probability and helps us redefine IDF in terms of the probability, andregard the observed IDF as an estimate of the true IDF. (Robertson, 1972)
+The fraction inside the logarithm in IDF function is oddly similar to the above probability estimation function. Observing closely we see that the fraction inside the logarithm is inverse of the probability defined above and hence we could redefine IDF using this probability (Robertson, 1972) as 
+
+IDF AS PROBABILITY
 
 # IDF of multiple terms
 What would be the IDF of t1 and t2?
