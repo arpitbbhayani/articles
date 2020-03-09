@@ -55,21 +55,15 @@ Apart from common IDF function as seen above there are other IDF measures that a
 IDF MEASUREES AND PLOT
 
 # Role of IDF in TF-IDF
-TF-IDF suggests important a word is to a document in a collection or corpus.
-The tf–idf value increases proportionally to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word, which helps to adjust for the fact that some words appear more frequently in general
+TF-IDF suggests how important a word is to a document in a collection or corpus and is primarily the product of Term Frequency and Inverse Document Frequency. It helps search engines identify what it is that makes a given document special. For the document to have a high TF-IDF score it needs to have high term frequency and a low document frequency of the term. This IDF primarily down scales the frequent occuring (high term frequency) of common words and boosts high term frequency of infrequent words.
 
-IDF downscales unimportant word
+the weights hence tend to filter out common terms. 
+For a sample document in Harry Potter Corpus see what happens.
 
-A high weight in tf–idf is reached by a high term frequency (in the given document) and a low document frequency of the term in the whole collection of documents; the weights hence tend to filter out common terms. 
+EXAMPLE
 
----
-
-It helps search engines identify what it is that makes a given document special.
-
-
-REferences
- - https://pdfs.semanticscholar.org/8397/ab573dd6c97a39ff4feb9c2d9b3c1e16c705.pdf?_ga=2.255772288.944438221.1583673396-1263237981.1583673396
-
-Tools:
+# References
+ - [TF-IDF - Wikipedia](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+ - [Understanding Inverse Document Frequency:On theoretical arguments for IDF](https://pdfs.semanticscholar.org/8397/ab573dd6c97a39ff4feb9c2d9b3c1e16c705.pdf?_ga=2.255772288.944438221.1583673396-1263237981.1583673396)
+ - [Inverse Document Frequency and the Importance of Uniqueness](https://moz.com/blog/inverse-document-frequency-and-the-importance-of-uniqueness)
  - http://latex2png.com/
- 
