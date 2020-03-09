@@ -24,23 +24,29 @@ where
 
  N -> documents in the corpus,
  term ti occurs in ni of them
- 
 
 the original measure was an integer approximation tothis formula, and the logarithm was specifically to the base 2. However, as will be seen below,the base of the logarithm is not in general important.
 
 # IDF's connection with probability
-The fraction inside the logarithm in equation 1 looks like it might represent a probability(actually inverted).
-hus we can consider the probability that a random documentdwould contain the term (Robertson, 1972). This probability has an obvious estimate, namely theinverse of the fraction in the IDF equatio
+Probability that a document contains a term ti is given by DTi/N.
 
-In the light of this relation, we can reasonably redefine IDF in terms of the probability, andregard the observed IDF as an estimate of the true IDF
+This is inverse of The fraction inside the logarithm in equation 1 of IDF.
 
-# Combined IDF
+Another way to put IDF becomes: Thus we can consider the probability that a random documentd would contain the term (Robertson, 1972). This probability has an obvious estimate, namely theinverse of the fraction in the IDF equatio.s In the light of this relation, we can reasonably redefine IDF in terms of the probability, andregard the observed IDF as an estimate of the true IDF
 
-One important feature of term weighting schemes is that it is frequently assumed thatdocument scoring functions will be essentially additive. Thus if for example we have threequery termst1,t2,t3, and we give them simple weightsw1,w2,w3, then a common simplescoring function would score a document by the sum of the weights of the query terms itcontains. So a document containing all three terms would scorew1+w2+w3, while onecontaining only termst1andt3would scorew1+w3.  Clearly scoring functions can beconsiderably more complex than this, and we will encounter some below, but most are basedon the addition of separate term components as a basic assumption
+# Additivity of IDF
+What would be the IDF of t1 and t2?
+LEts derive.
+
+
+document scoring functions will be essentially additive. simplescoring function would score a document by the sum of the weights of the query terms itcontains So a document containing all three terms would scorew1+w2+w3, while onecontaining only termst1andt3would scorew1+w3.
 
 We can combine the probabilistic interpretation of IDF and the idea of an addition-basedscoring function very simply and elegantly: if we assume that the occurrences of differentterms in documents are statistically independent, then addition is the correct thing to dowith the logs. That is,idf(t1∧t2)  =−logP(t1∧t2)=−log(P(t1)P(t2))=−(logP(t1) + logP(t2))=idf(t1) +idf(t2)
 
-Heret1∧t2represents the ‘term’ which is the Booleanandoft1andt2. The same argumentapplies to any number of terms. Thus taking logs and then adding the weights is exactly theright thing to do. We may also note that if the reason for taking logs is to be able to addthem, then the base of the logarithm does not matter.Of course we do not really assume that the terms are statistically independent. Neverthe-less, that simplifying assumption at least suggests strongly that we should use the log ratherthan (say) a linear function of the fractionN/ni, which would be equally compatible with theoriginal intuition.
+Clearly scoring functions can beconsiderably more complex than this, and we will encounter some below, but most are basedon the addition of separate term components as a basic assumption
+
+if the reason for taking logs is to be able to addthem, then the base of the logarithm does not matter.
+if the reason for taking logs is to be able to addthem, then the base of the logarithm does not matter.
 
 # Role of IDF in TF-IDF
 IDF downscales unimportant word
