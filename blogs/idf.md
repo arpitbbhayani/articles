@@ -1,8 +1,8 @@
-TF-IDF is one of the most popular measure that quantifies document relevance for a term. It is extensively used in Information Retrieval (ex: Search Engines), Text Mining and for Text-heavy Machine Learning use cases. Today we explore the better half of TF-IDF and see the intuition behind it, its connection with Probability and its role in TF-IDF.
+TF-IDF is one of the most popular measure that quantifies document relevance for a term. It is extensively used in Information Retrieval (ex: Search Engines), Text Mining and even for Text-heavy Machine Learning use cases like Classification and Clustering. Today we explore the better half of TF-IDF and see the intuition behind it, its connection with Probability and the role it plays in TF-IDF.
 
-Inverse Document Frequency (IDF) is a measure of term rarity which means it quantifies how rare the term is in the corpus (document collection). The heuristic tells that rarer the term, the better it helps in discriminating, distinguishing and ranking documents and it contributes more information to the corpus than some frequent terms (like `a`, `the`, `and` etc).
+Inverse Document Frequency (IDF) is a measure of term rarity which means it quantifies how rare the term is in the corpus (document collection) - higher the IDF, rarer the term. The heuristic tells that a rare term helps in discriminating, distinguishing and ranking documents and contributes more information to the corpus than a frequent term (like `a`, `the` and `and`).
 
-The IDF was heuristically proposed in the paper "[A statistical interpretation of term specificity and its application in retrieval](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.115.8343&rep=rep1&type=pdf)" (Spärck Jones, 1972)  was originally called Term Specificity.
+The IDF was heuristically proposed in the paper "[A statistical interpretation of term specificity and its application in retrieval](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.115.8343&rep=rep1&type=pdf)" (Spärck Jones, 1972) and was originally called Term Specificity.
 
 # The intuition behind IDF
 A term that occurs in many documents should be given lesser weight than the one that occurs in a fewer documents. This measure is thus inversely proportional to the document frequency (number of documents in which the term is present) - and hence referred as Inverse Document Frequency.
