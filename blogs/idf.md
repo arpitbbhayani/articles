@@ -69,17 +69,16 @@ By observing the plots of 3 different IDF functions it becomes clear that we sho
 Similarly we could define our own IDF function by deciding when and how the penalty to be applied and defining the parameters accordingly.
 
 # Role of IDF in TF-IDF
-TF-IDF suggests how important a word is to a document in a collection or corpus and is primarily the product of Term Frequency and Inverse Document Frequency. It helps search engines identify what it is that makes a given document special. For the document to have a high TF-IDF score it needs to have high term frequency and a low document frequency of the term. This IDF primarily downscales the frequent occurring (high term frequency) of common words and boosts high term frequency of infrequent words.
+TF-IDF suggests how important a word is to a document in a collection (corpus). It helps search engines identify what it is that makes a given document special for a given query. It is defined as the product of Term Frequency (number of occurrences of the term in the document) and Inverse Document Frequency.
 
-the weights hence tend to filter out common terms. 
-For a sample document in Harry Potter Corpus see what happens.
-
-EXAMPLE
+For the document to have a high TF-IDF score (high relevance) it needs to have high term frequency and a high inverse document frequency (i.e. low document frequency) of the term. Thus IDF primarily downscales the frequent occurring of common words and boosts the infrequent words with high term frequency.
 
 # References
- - [TF-IDF - Wikipedia](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
- - [Understanding Inverse Document Frequency: On theoretical arguments for IDF](https://pdfs.semanticscholar.org/8397/ab573dd6c97a39ff4feb9c2d9b3c1e16c705.pdf?_ga=2.255772288.944438221.1583673396-1263237981.1583673396)
- - [Inverse Document Frequency and the Importance of Uniqueness](https://moz.com/blog/inverse-document-frequency-and-the-importance-of-uniqueness)
- - http://latex2png.com/
+This article is mostly based on the wonderful paper [Understanding Inverse Document Frequency: On theoretical arguments for IDF](https://pdfs.semanticscholar.org/8397/ab573dd6c97a39ff4feb9c2d9b3c1e16c705.pdf) by Stephen Robertson.
 
-Images used in other measures of IDF are taken from [Wikipedia page of TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) and the derivation equation of IDF in conjunction is taken from the paper [Understanding Inverse Document Frequency: On theoretical arguments for IDF](https://pdfs.semanticscholar.org/8397/ab573dd6c97a39ff4feb9c2d9b3c1e16c705.pdf?_ga=2.255772288.944438221.1583673396-1263237981.1583673396).
+Other references:
+
+ - [TF-IDF - Wikipedia](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+ - [Inverse Document Frequency and the Importance of Uniqueness](https://moz.com/blog/inverse-document-frequency-and-the-importance-of-uniqueness)
+
+Images used in other measures of IDF are taken from [Wikipedia page of TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
