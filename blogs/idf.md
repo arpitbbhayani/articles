@@ -13,19 +13,21 @@ Any function that adheres to the requirement of being inversely proportional to 
 
 ![Decreasing functions](https://user-images.githubusercontent.com/4745789/76213296-63c49000-6230-11ea-9d24-94ce048732bc.png)
 
-Since the words like `a`, `an` and `the` occurs in a lot of documents, they are assigned a very small weight. Picking the right function depends on the use case but since IDF is usually used for a text-heavy problem and since almost all text heavy systems follow [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law), a common IDF measure (elaborated below) is adapted widely and performs better in most use cases.
+Since the words like `a`, `an` and `the` occurs in a lot of documents, they are assigned a very small weight and hence they exist in the far right of the curve. Picking the right function depends on the use case but since IDF is usually used for a text-heavy problem and since almost all text heavy systems follow [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law), a common IDF measure (elaborated below) is adapted widely and performs better in most use cases.
 
 # The most common IDF
 The most common IDF function is defined as
 
-IDF FUNCTION
+![common idf function](https://user-images.githubusercontent.com/4745789/76215222-4bef0b00-6234-11ea-8d03-3ad9663837da.png)
 
 where
 
- - N -> documents in the corpus,
- - term ti occurs in ni of them
+ - N is the number of documents in the corpus
+ - term t occurs in df_t documents
 
 The plot of the IDF curve for above function vs document frequency shows the decay in weight as the document frequency increases. It is bounded by .... and reaches minimum at _-----.
+
+![IDF Graph](https://user-images.githubusercontent.com/4745789/76215908-ae94d680-6235-11ea-8e50-498aae029ea2.png)
 
 # IDF's connection with probability
 Probability that a document of the corpus contains the term ti is given by DTi/N where
