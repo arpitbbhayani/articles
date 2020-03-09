@@ -3,8 +3,8 @@
     "id": "idf",
     "title": "Understanding Inverse Document Frequency",
     "description": "TF-IDF is extensively used in Search Engines and Machine Learning. Today we explore the better half of TF-IDF and its connection with Probability and the role it plays in TF-IDF.",
-    "image": "https://user-images.githubusercontent.com/4745789/75548769-0cfecf80-5a54-11ea-8dd2-1e452ba1298b.png",
-    "gif": "https://media.giphy.com/media/14gQ5vtwD050LC/giphy.gif",
+    "image": "https://user-images.githubusercontent.com/4745789/76207579-10e4db80-6224-11ea-91ba-b67359125156.png",
+    "gif": "https://media.giphy.com/media/3ornjWIRSzXEw61KH6/giphy.gif",
     "categories": ["algorithm"],
     "tags": ["tfidf", "idf", "inverse document frequency", "term frequency inverse document frequency", "term frequency", "understanding tfidf", "understanding idf", "math behind tfidf", "math behind idf", "idf as probability"],
     "published_at": "2020-03-06"
