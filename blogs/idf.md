@@ -64,7 +64,9 @@ Most of the IDF functions only differ in the bounds they produce for a given ran
 
 ![Plot IDF Functions](https://user-images.githubusercontent.com/4745789/76232756-2de1d480-624d-11ea-81cb-8d29109bd594.png)
 
-By observing the plots of 3 different IDF functions it becomes clear that we should use Probabilistic IDF function when we want to penalize a term, by giving it negative weight, that occurs in more than 50% of document. Similarly we could define our own IDF function by deciding the penalty to be applied as a function of Document Frequency and defining the parameters accordingly.
+By observing the plots of 3 different IDF functions it becomes clear that we should use Probabilistic IDF function when we want to penalize a term that occurs in more than 50% of document by giving it a negative weight; and use a Smooth IDF when we do not want a bounded IDF value and not `undefined` (for `DF(t) = 0`) and `0` (for `DF(t) = N`) as such values ruins a function where IDF is multiplied with some other scalar (like Term Frequency).
+
+Similarly we could define our own IDF function by deciding when and how the penalty to be applied and defining the parameters accordingly.
 
 # Role of IDF in TF-IDF
 TF-IDF suggests how important a word is to a document in a collection or corpus and is primarily the product of Term Frequency and Inverse Document Frequency. It helps search engines identify what it is that makes a given document special. For the document to have a high TF-IDF score it needs to have high term frequency and a low document frequency of the term. This IDF primarily downscales the frequent occurring (high term frequency) of common words and boosts high term frequency of infrequent words.
