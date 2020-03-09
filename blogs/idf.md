@@ -1,4 +1,4 @@
-[TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) is one of the most popular measures that quantifies document relevance for a given term. It is extensively used in [Information Retrieval](https://en.wikipedia.org/wiki/Information_retrieval) (ex: Search Engines), Text Mining and even for text-heavy Machine Learning use cases like Document Classification and Clustering. Today we explore the better half of TF-IDF and see its connection with Probability, role it plays in TF-IDF and even the intuition behind it.
+[TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) is one of the most popular measures that quantify document relevance for a given term. It is extensively used in [Information Retrieval](https://en.wikipedia.org/wiki/Information_retrieval) (ex: Search Engines), Text Mining and even for text-heavy Machine Learning use cases like Document Classification and Clustering. Today we explore the better half of TF-IDF and see its connection with Probability, the role it plays in TF-IDF and even the intuition behind it.
 
 Inverse Document Frequency (IDF) is a measure of term rarity which means it quantifies how rare the term, in the corpus, really is (document collection); higher the IDF, rarer the term. A rare term helps in discriminating, distinguishing and ranking documents and it contributes more information to the corpus than what a more frequent term (like `a`, `and` and `the`) does.
 
@@ -13,7 +13,7 @@ Any function that adheres to the requirement of being inversely proportional to 
 
 ![Decreasing functions](https://user-images.githubusercontent.com/4745789/76213296-63c49000-6230-11ea-9d24-94ce048732bc.png)
 
-The more frequent words, like `a`, `and` and `the` will lie on the far right of the plot and will have smaller value of IDF.
+The more frequent words, like `a`, `and` and `the` will lie on the far right of the plot and will have a smaller value of IDF.
 
 # The most common IDF
 A widely adapted IDF measure that performs better in most use cases is defined below
@@ -34,14 +34,14 @@ What would be the probability that a random document picked from a corpus of `N`
 
 ![Probability](https://user-images.githubusercontent.com/4745789/76229411-29ff8380-6248-11ea-9518-6cbc4c6947da.png)
 
-The fraction inside the logarithm in the IDF function is oddly similar to the above probability in fact it is the inverse of probability defined above. Hence we could redefine IDF using this probability as 
+The fraction inside the logarithm in the IDF function is oddly similar to the above probability, in fact, it is the inverse of probability defined above. Hence we could redefine IDF using this probability as 
 
 ![IDF as probability](https://user-images.githubusercontent.com/4745789/76229704-a09c8100-6248-11ea-9960-0cfd5f45dcce.png)
 
 By defining IDF as a probability, we could now estimate the true IDF of a term by observing a random sample instead and computing IDF on this sampled data.
 
 # IDF of conjunction
-Computing IDF for a single term is fine but what happens when we have multiple terms? How would that fare out? This is a very common usecase in Information Retrieval where we need to rank documents for a given search query; and the search query more often than not contains multiple terms.
+Computing IDF for a single term is fine but what happens when we have multiple terms? How would that fare out? This is a very common use case in Information Retrieval where we need to rank documents for a given search query, and the search query more often than not contains multiple terms.
 
 For finding IDF of multiple terms in conjunction we make an assumption - the occurrences of terms are statistically independent and because of this the equation below holds true
 
@@ -56,17 +56,17 @@ From the derivation above we see that the IDF of conjunction is just the summati
 > Note: IDF on conjunction could be made much more complex by not assuming statistical independence.
 
 # Other measures of IDF
-The decreasing functions we see in the first section of this article were just some examples of possible IDF functions. But there are IDF functions that are not just examples but are also used in some specific usecases and some of them are:
+The decreasing functions we see in the first section of this article were just some examples of possible IDF functions. But there are IDF functions that are not just examples but are also used in some specific use cases and some of them are:
 
 ![Other IDF Measures](https://user-images.githubusercontent.com/4745789/76232678-0db21580-624d-11ea-864c-1094559e0790.png)
 
-Most of the IDF functions only differ in the bounds they produce for a given range of document frequency. The plots of 3 IDF functions namely - Common IDF, Smooth IDF and Probabilistic IDF, are shown below:
+Most of the IDF functions only differ in the bounds they produce for a given range of document frequency. The plots of 3 IDF functions namely - Common IDF, Smooth IDF, and Probabilistic IDF, are shown below:
 
 ![Plot IDF Functions](https://user-images.githubusercontent.com/4745789/76232756-2de1d480-624d-11ea-81cb-8d29109bd594.png)
 
 By observing the plots of 3 different IDF functions it becomes clear that we should use Probabilistic IDF function when we want to penalize a term that occurs in more than 50% of document by giving it a negative weight; and use a Smooth IDF when we do not want a bounded IDF value and not `undefined` (for `DF(t) = 0`) and `0` (for `DF(t) = N`) as such values ruins a function where IDF is multiplied with some other scalar (like Term Frequency).
 
-Similarly we could define our own IDF function by deciding when and how the penalty to be applied and defining the parameters accordingly.
+Similarly, we could define our own IDF function by deciding when and how the penalty to be applied and defining the parameters accordingly.
 
 # Role of IDF in TF-IDF
 TF-IDF suggests how important a word is to a document in a collection (corpus). It helps search engines identify what it is that makes a given document special for a given query. It is defined as the product of Term Frequency (number of occurrences of the term in the document) and Inverse Document Frequency.
