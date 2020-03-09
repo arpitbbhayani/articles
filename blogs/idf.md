@@ -53,6 +53,8 @@ if the reason for taking logs is to be able to addthem, then the base of the log
 # Role of IDF in TF-IDF
 IDF downscales unimportant word
 
+A high weight in tf–idf is reached by a high term frequency (in the given document) and a low document frequency of the term in the whole collection of documents; the weights hence tend to filter out common terms. 
+
 ---
 
 REferences
