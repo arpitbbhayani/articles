@@ -29,7 +29,6 @@ where
 the original measure was an integer approximation tothis formula, and the logarithm was specifically to the base 2. However, as will be seen below,the base of the logarithm is not in general important.
 
 # IDF's connection with probability
-
 The fraction inside the logarithm in equation 1 looks like it might represent a probability(actually inverted).
 hus we can consider the probability that a random documentdwould contain the term (Robertson, 1972). This probability has an obvious estimate, namely theinverse of the fraction in the IDF equatio
 
@@ -43,16 +42,13 @@ We can combine the probabilistic interpretation of IDF and the idea of an additi
 
 Heret1∧t2represents the ‘term’ which is the Booleanandoft1andt2. The same argumentapplies to any number of terms. Thus taking logs and then adding the weights is exactly theright thing to do. We may also note that if the reason for taking logs is to be able to addthem, then the base of the logarithm does not matter.Of course we do not really assume that the terms are statistically independent. Neverthe-less, that simplifying assumption at least suggests strongly that we should use the log ratherthan (say) a linear function of the fractionN/ni, which would be equally compatible with theoriginal intuition.
 
----
 # Role of IDF in TF-IDF
 IDF downscales unimportant word
 
----
-Other measures of IDF
+# Other measures of IDF
 
 
 ---
-
 
 REferences
  - https://pdfs.semanticscholar.org/8397/ab573dd6c97a39ff4feb9c2d9b3c1e16c705.pdf?_ga=2.255772288.944438221.1583673396-1263237981.1583673396
