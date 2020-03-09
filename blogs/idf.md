@@ -32,22 +32,22 @@ The plot of the IDF curve for above function vs document frequency shows the dec
 # IDF's connection with probability
 Probability that a document of the corpus contains the term ti is given by DTi/N where
 
-PROBABILITY FORMULA
+![Probability](https://user-images.githubusercontent.com/4745789/76229411-29ff8380-6248-11ea-9518-6cbc4c6947da.png)
 
 The fraction inside the logarithm in IDF function is oddly similar to the above probability estimation function. Observing closely we see that the fraction inside the logarithm is inverse of the probability defined above and hence we could redefine IDF using this probability (Robertson, 1972) as 
 
-IDF AS PROBABILITY
+![IDF as probability](https://user-images.githubusercontent.com/4745789/76229704-a09c8100-6248-11ea-9960-0cfd5f45dcce.png)
 
 # IDF of multiple terms
 Computing IDf for a single term is fine but what happens when we have multiple terms? This is a very common usecase in Information Retrieval where we need to rank documents for a given search query containing multiple terms.
 
 For finding IDF of multiple terms in conjugation we assume that the occurances of terms are statistically independent and hence 
 
-PROBABILITY OF TeRM IN CONJUGATION IS MULTIPLICATION OF BOTH
+![Probability of conjugation](https://user-images.githubusercontent.com/4745789/76231077-b317ba00-624a-11ea-86f4-4b517fb5799c.png)
 
 We could derive the IDF of two terms in conjugation as follows
 
-DERIVATION
+![IDF derivation](https://user-images.githubusercontent.com/4745789/76232475-c2980280-624c-11ea-8a3a-37d17704a221.png)
 
 Thus we see that by using IDF the document scoring function scores a document by the sum of the weights of the query terms it contains. Although this could be made much more complex by not assuming statistical independence.
 
