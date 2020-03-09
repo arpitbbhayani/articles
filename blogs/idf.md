@@ -56,11 +56,15 @@ From the derivation above we see that the IDF of conjunction is just the summati
 > Note: IDF on conjunction could be made much more complex by not assuming statistical independence.
 
 # Other measures of IDF
-Apart from common IDF function as seen above there are other IDF measures that are widely used, they are:
+The decreasing functions we see in the first section of this article were just some examples of possible IDF functions. But there are IDF functions that are not just examples but are also used in some specific usecases and some of them are:
 
 ![Other IDF Measures](https://user-images.githubusercontent.com/4745789/76232678-0db21580-624d-11ea-864c-1094559e0790.png)
 
+Most of the IDF functions only differ in the bounds they produce for a given range of document frequency. The plots of 3 IDF functions namely - Common IDF, Smooth IDF and Probabilistic IDF, are shown below:
+
 ![Plot IDF Functions](https://user-images.githubusercontent.com/4745789/76232756-2de1d480-624d-11ea-81cb-8d29109bd594.png)
+
+By observing the plots of 3 different IDF functions it becomes clear that we should use Probabilistic IDF function when we want to penalize a term, by giving it negative weight, that occurs in more than 50% of document. Similarly we could define our own IDF function by deciding the penalty to be applied as a function of Document Frequency and defining the parameters accordingly.
 
 # Role of IDF in TF-IDF
 TF-IDF suggests how important a word is to a document in a collection or corpus and is primarily the product of Term Frequency and Inverse Document Frequency. It helps search engines identify what it is that makes a given document special. For the document to have a high TF-IDF score it needs to have high term frequency and a low document frequency of the term. This IDF primarily downscales the frequent occurring (high term frequency) of common words and boosts high term frequency of infrequent words.
