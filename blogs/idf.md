@@ -16,13 +16,17 @@ Any function that meets this criteria could be used in this regard few sample fu
 SAMPLE INVERWSE FUNCTIONS
 
 # The most common IDF
-Assume there areNdocuments in the collection, and that termtioccurs inniof them. (Whatmight constitute a ‘term’ is not of concern to us here, but we may assume that terms arewords, or possibly phrases or word stems. ‘Occurs in’ is taken as shorthand for ‘is an indexterm for’, again ignoring all the difficulties or subtleties of either automatic indexing fromnatural language text, or human assignment of index terms.) Then the measure proposed bySparck Jones, as a weight to be applied to termti, is essentiallyidf(ti) = logNni(1)Actually this is not quite accurate – the original measure was an integer approximation tothis formula, and the logarithm was specifically to the base 2. However, as will be seen below,the base of the logarithm is not in general important.
+The most common IDF function is
 
-any function is bounded and decreases with increase in x could be used instead of IDF
+IDF FUNCTION
 
--Df
--Df/N
-N/Df
+where
+
+ N -> documents in the corpus,
+ term ti occurs in ni of them
+ 
+
+the original measure was an integer approximation tothis formula, and the logarithm was specifically to the base 2. However, as will be seen below,the base of the logarithm is not in general important.
 
 # IDF's connection with probability
 
