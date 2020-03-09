@@ -9,11 +9,11 @@ In order to quantify the term rarity, the heuristic says we need to give higher 
 
 ![IDF Inversely proportional to Document Frequency](https://user-images.githubusercontent.com/4745789/76211536-85237d00-622c-11ea-82f5-c0b655634839.png)
 
-Any function that adheres to the requirement of being inversely proportional to the document frequency would do the job; it may not be optimal for the use case but could be used as an IDF. Some function plots that could fit as an IDF are shown below
+Any function that adheres to the requirement of being inversely proportional to the document frequency i.e. a decreasing function, would do the job; it may not yield optimality but could be used as an IDF for some use cases. Some decreasing functions that could be used as an IDF for some use cases are shown below
 
 ![Decreasing functions](https://user-images.githubusercontent.com/4745789/76213296-63c49000-6230-11ea-9d24-94ce048732bc.png)
 
-Since words like `a`, `an` and `the` occur in a lot of documents, they are assigned a very small weight and hence they exist in the far right of the curve. Picking the right function depends on the use case but since IDF is usually used for a text-heavy problem and since almost all text-heavy systems follow [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law), a common IDF measure (elaborated below) is adapted widely and performs better in most use cases.
+Since words like `a`, `and` and `the` occur in a lot of documents, they are assigned a very small weight and hence they exist in the far right of the curve. Picking the right function depends on the use case but since IDF is usually used for a text-heavy problem and since almost all text-heavy systems follow [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law), a common IDF measure (elaborated below) is adapted widely and performs better in most use cases.
 
 # The most common IDF
 The most common IDF function is defined as
