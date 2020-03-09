@@ -29,7 +29,7 @@ If we plot the above IDF function against the document frequency we get a nice s
 
 ![IDF Graph](https://user-images.githubusercontent.com/4745789/76215908-ae94d680-6235-11ea-8e50-498aae029ea2.png)
 
-# IDF's connection with probability
+# IDF and Probability
 The probability that a document of the corpus contains the term ti is given by DTi/N where
 
 ![Probability](https://user-images.githubusercontent.com/4745789/76229411-29ff8380-6248-11ea-9518-6cbc4c6947da.png)
