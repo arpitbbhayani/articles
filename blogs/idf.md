@@ -1,6 +1,6 @@
 [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) is one of the most popular measures that quantifies document relevance for a given term. It is extensively used in [Information Retrieval](https://en.wikipedia.org/wiki/Information_retrieval) (ex: Search Engines), Text Mining and even for text-heavy Machine Learning use cases like Document Classification and Clustering. Today we explore the better half of TF-IDF and see its connection with Probability, role it plays in TF-IDF and even the intuition behind it.
 
-Inverse Document Frequency (IDF) is a measure of term rarity which means it quantifies how rare the term is in the corpus (document collection) - higher the IDF, rarer the term. The heuristic tells that a rare term helps in discriminating, distinguishing and ranking documents and contributes more information to the corpus than a frequent term (like `a`, `the` and `and`).
+Inverse Document Frequency (IDF) is a measure of term rarity which means it quantifies how rare the term, in the corpus, really is (document collection); higher the IDF, rarer the term. A rare term helps in discriminating, distinguishing and ranking documents and it contributes more information to the corpus than what a more frequent term (like `a`, `and` and `the`) does.
 
 The IDF was heuristically proposed in the paper "[A statistical interpretation of term specificity and its application in retrieval](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.115.8343&rep=rep1&type=pdf)" (Spärck Jones, 1972) and was originally called Term Specificity.
 
