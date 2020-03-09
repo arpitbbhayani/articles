@@ -30,29 +30,41 @@ where
 The original measure, suggested in the paper, was an integer approximation to this formula, and the logarithm was specifically to the base 2. However, as will be seen below,the base of the logarithm is not in general important.
 
 # IDF's connection with probability
-Probability that a document contains a term ti is given by DTi/N.
+Probability that a document of the corpus contains the term ti is given by DTi/N where
 
-This is inverse of The fraction inside the logarithm in equation 1 of IDF.
+PROBABILITY FORMULA
 
-Another way to put IDF becomes: Thus we can consider the probability that a random documentd would contain the term (Robertson, 1972). This probability has an obvious estimate, namely theinverse of the fraction in the IDF equatio.s In the light of this relation, we can reasonably redefine IDF in terms of the probability, andregard the observed IDF as an estimate of the true IDF
+The fraction inside the logarithm in the common IDF function is inverse of the above probaility fraction and this helps us define IDF as a probability. And this heuristic beautifully binds with Probability and helps us redefine IDF in terms of the probability, andregard the observed IDF as an estimate of the true IDF. (Robertson, 1972)
 
-# Additivity of IDF
+# IDF of multiple terms
 What would be the IDF of t1 and t2?
 LEts derive.
 
+Assume
+ - occurrences of different terms in documents are statistically independent
+
+We can combine the probabilistic interpretation of IDF and the idea of an addition-basedscoring function very simply and elegantly: if we assume that the , then addition is the correct thing to dowith the logs. That is,idf(t1∧t2)  =−logP(t1∧t2)=−log(P(t1)P(t2))=−(logP(t1) + logP(t2))=idf(t1) +idf(t2)
 
 document scoring functions will be essentially additive. simplescoring function would score a document by the sum of the weights of the query terms itcontains So a document containing all three terms would scorew1+w2+w3, while onecontaining only termst1andt3would scorew1+w3.
 
-We can combine the probabilistic interpretation of IDF and the idea of an addition-basedscoring function very simply and elegantly: if we assume that the occurrences of differentterms in documents are statistically independent, then addition is the correct thing to dowith the logs. That is,idf(t1∧t2)  =−logP(t1∧t2)=−log(P(t1)P(t2))=−(logP(t1) + logP(t2))=idf(t1) +idf(t2)
 
 Clearly scoring functions can beconsiderably more complex than this, and we will encounter some below, but most are basedon the addition of separate term components as a basic assumption
 
 if the reason for taking logs is to be able to addthem, then the base of the logarithm does not matter.
-if the reason for taking logs is to be able to addthem, then the base of the logarithm does not matter.
 
 # Other measures of IDF
+Other popular measures of IDFs are:
+
+ - A
+ - B
+ - C
+
+When plotted looks like this.
 
 # Role of IDF in TF-IDF
+TF-IDF suggests important a word is to a document in a collection or corpus.
+The tf–idf value increases proportionally to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word, which helps to adjust for the fact that some words appear more frequently in general
+
 IDF downscales unimportant word
 
 A high weight in tf–idf is reached by a high term frequency (in the given document) and a low document frequency of the term in the whole collection of documents; the weights hence tend to filter out common terms. 
