@@ -13,10 +13,10 @@ Any function that adheres to the requirement of being inversely proportional to 
 
 ![Decreasing functions](https://user-images.githubusercontent.com/4745789/76213296-63c49000-6230-11ea-9d24-94ce048732bc.png)
 
-The more frequent words, like `a`, `and` and `the` will lie on the far right of the plot and will have smaller value of IDF. Since IDF is usually used for a text-heavy problem statement and almost all text-heavy systems follow [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law), a widely adapted IDF measure (elaborated below) performs better in most use cases.
+The more frequent words, like `a`, `and` and `the` will lie on the far right of the plot and will have smaller value of IDF.
 
 # The most common IDF
-The most common IDF function is defined as
+A widely adapted IDF measure that performs better in most use cases is defined below
 
 ![common idf function](https://user-images.githubusercontent.com/4745789/76215222-4bef0b00-6234-11ea-8d03-3ad9663837da.png)
 
