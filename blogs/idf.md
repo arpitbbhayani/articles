@@ -18,12 +18,12 @@ The more frequent words, like `a`, `and` and `the` will lie on the far right of 
 # The most common IDF
 A widely adapted IDF measure that performs better in most use cases is defined below
 
-![common idf function](https://user-images.githubusercontent.com/4745789/76215222-4bef0b00-6234-11ea-8d03-3ad9663837da.png)
+![common idf function](https://user-images.githubusercontent.com/4745789/76239930-633fef80-6258-11ea-823a-2011c04a1e97.png)
 
 where
 
- - N is the number of documents in the corpus
- - term t occurs in df_t documents
+ - `N` is the number of documents in the corpus
+ - term `t` occurs in `df(t)` documents
 
 The plot of the IDF curve for the above function vs document frequency shows the decay in weight as the document frequency increases. It is bounded by .... and reaches a minimum at _-----.
 
@@ -43,7 +43,8 @@ Computing IDF for a single term is fine but what happens when we have multiple t
 
 For finding IDF of multiple terms in conjugation we assume that the occurrences of terms are statistically independent and hence 
 
-![Probability of conjugation](https://user-images.githubusercontent.com/4745789/76231077-b317ba00-624a-11ea-86f4-4b517fb5799c.png)
+![Probability of conjugation](https://user-images.githubusercontent.com/4745789/76239792-2d9b0680-6258-11ea-8da2-56899540cab0.png)
+
 
 We could derive the IDF of two terms in conjugation as follows
 
