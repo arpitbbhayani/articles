@@ -23,9 +23,9 @@ A widely adapted IDF measure that performs better in most use cases is defined b
 where
 
  - `N` is the number of documents in the corpus
- - term `t` occurs in `df(t)` documents
+ - `df(t)` is the number of documents that has an occurrence of term `t`
 
-The plot of the IDF curve for the above function vs document frequency shows the decay in weight as the document frequency increases. It is bounded by .... and reaches a minimum at _-----.
+If we plot the above IDF function against the document frequency we get a nice smooth decreasing function as shown below. For lower values of X i.e. Document Frequency we see the IDF is very high as it suggests a good discriminator and as the Document Frequency increases the plot smoothly descends and reaches 0 for `df(t) = N`.
 
 ![IDF Graph](https://user-images.githubusercontent.com/4745789/76215908-ae94d680-6235-11ea-8e50-498aae029ea2.png)
 
