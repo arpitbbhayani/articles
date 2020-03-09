@@ -41,18 +41,19 @@ The fraction inside the logarithm in the IDF function is oddly similar to the ab
 By defining IDF as a probability, we could now estimate the true IDF of a term by observing a random sample instead and computing IDF on this sampled data.
 
 # IDF of conjunction
-Computing IDF for a single term is fine but what happens when we have multiple terms? This is a very common use-case in Information Retrieval where we need to rank documents for a given search query containing multiple terms.
+Computing IDF for a single term is fine but what happens when we have multiple terms? How would that fare out? This is a very common usecase in Information Retrieval where we need to rank documents for a given search query; and the search query more often than not contains multiple terms.
 
-For finding IDF of multiple terms in conjunction we assume that the occurrences of terms are statistically independent and hence 
+For finding IDF of multiple terms in conjunction we make an assumption - the occurrences of terms are statistically independent and because of this the equation below holds true
 
 ![Probability of conjunction](https://user-images.githubusercontent.com/4745789/76239792-2d9b0680-6258-11ea-8da2-56899540cab0.png)
 
-
-We could derive the IDF of two terms in conjunction as follows
+Given this we could derive the IDF of two terms in conjunction as follows
 
 ![IDF derivation](https://user-images.githubusercontent.com/4745789/76232475-c2980280-624c-11ea-8a3a-37d17704a221.png)
 
-Thus we see that by using IDF the document scoring function scores a document by the sum of the weights of the query terms it contains. Although this could be made much more complex by not assuming statistical independence.
+From the derivation above we see that the IDF of conjunction is just the summation of IDF of individual terms. Extending this to search engines we could say that the score of a document for a given search query is the summation of scores that document gets for individual terms of the query.
+
+> Note: IDF on conjunction could be made much more complex by not assuming statistical independence.
 
 # Other measures of IDF
 Apart from common IDF function as seen above there are other IDF measures that are widely used, they are:
