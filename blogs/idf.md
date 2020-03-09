@@ -47,7 +47,7 @@ For finding IDF of multiple terms in conjunction we make an assumption - the occ
 
 ![Probability of conjunction](https://user-images.githubusercontent.com/4745789/76239792-2d9b0680-6258-11ea-8da2-56899540cab0.png)
 
-Given this we could derive the IDF of two terms in conjunction as follows
+Given this, we could derive the IDF of two terms in conjunction as follows
 
 ![IDF derivation](https://user-images.githubusercontent.com/4745789/76232475-c2980280-624c-11ea-8a3a-37d17704a221.png)
 
