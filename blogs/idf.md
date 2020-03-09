@@ -5,27 +5,25 @@ Inverse Document Frequency (IDF) is a measure of term rarity which means it quan
 The IDF was heuristically proposed in the paper "[A statistical interpretation of term specificity and its application in retrieval](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.115.8343&rep=rep1&type=pdf)" (Spärck Jones, 1972) and was originally called Term Specificity.
 
 # The intuition behind IDF
-A term that occurs in many documents should be given lesser weight than the one that occurs in a fewer documents. This measure is thus inversely proportional to the document frequency (number of documents in which the term is present) - and hence referred as Inverse Document Frequency.
+In order to quantify the term rarity we need to give higher weight to the term that occurs in fewer document and lesser weights to the frequent terms. Thus this measure (weight) `w` of the term is inversely proportional to the number of documents in which it is present (called Document Frequency) - and hence referred as Inverse Document Frequency.
 
 IDF INVERSELY PROPORTIONAL TO DOCUMENTS IN WHICH WORD IS PRESENT
 
-This means the words like `a`, `an`, `the`, etc that occurs in a lot of documents should be assigned a very small weight as compared to a term that occurs in a fewer document.
-
-So any function that is inversely proportional to the document frequency could be used here. Some sample plots of function are shown below
+Any function that adheres to the requirement of being inversely proportional to the document frequency would do the job; it may not be optimal for the use case but could bu used as an IDF. Some function plots that could fit as an IDF are shown below
 
 SAMPLE INVERWSE FUNCTIONS
 
-Depending on the nature of data we are playing with, the use case and how we want to decay the weight propertional to document frequency we could pick the function.
+Since the words like `a`, `an` and `the` occurs in a lot of documents, they are assigned a very small weight. Picking the right function depends on the use case but since IDF is usually used for a text-heavy problem and since almost all text heavy systems follow [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law), a common IDF measure (elaborated below) is adapted widely and performs better in most use cases.
 
 # The most common IDF
-There are quite a few number of functions that fir the definition of IDF but the most common IDF function is
+The most common IDF function is defined as
 
 IDF FUNCTION
 
 where
 
- N -> documents in the corpus,
- term ti occurs in ni of them
+ - N -> documents in the corpus,
+ - term ti occurs in ni of them
 
 The original measure, suggested in the paper, was an integer approximation to this formula, and the logarithm was specifically to the base 2. However, as will be seen below,the base of the logarithm is not in general important.
 
