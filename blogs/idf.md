@@ -37,29 +37,22 @@ The fraction inside the logarithm in IDF function is oddly similar to the above 
 IDF AS PROBABILITY
 
 # IDF of multiple terms
-What would be the IDF of t1 and t2?
-LEts derive.
+Computing IDf for a single term is fine but what happens when we have multiple terms? This is a very common usecase in Information Retrieval where we need to rank documents for a given search query containing multiple terms.
 
-Assume
- - occurrences of different terms in documents are statistically independent
+For finding IDF of multiple terms in conjugation we assume that the occurances of terms are statistically independent and hence 
 
-We can combine the probabilistic interpretation of IDF and the idea of an addition-basedscoring function very simply and elegantly: if we assume that the , then addition is the correct thing to dowith the logs. That is,idf(t1∧t2)  =−logP(t1∧t2)=−log(P(t1)P(t2))=−(logP(t1) + logP(t2))=idf(t1) +idf(t2)
+PROBABILITY OF TeRM IN CONJUGATION IS MULTIPLICATION OF BOTH
 
-document scoring functions will be essentially additive. simplescoring function would score a document by the sum of the weights of the query terms itcontains So a document containing all three terms would scorew1+w2+w3, while onecontaining only termst1andt3would scorew1+w3.
+We could derive the IDF of two terms in conjugation as follows
 
+DERIVATION
 
-Clearly scoring functions can beconsiderably more complex than this, and we will encounter some below, but most are basedon the addition of separate term components as a basic assumption
-
-if the reason for taking logs is to be able to addthem, then the base of the logarithm does not matter.
+Thus we see that by using IDF the document scoring function scores a document by the sum of the weights of the query terms it contains. Although this could be made much more complex by not assuming statistical independence.
 
 # Other measures of IDF
-Other popular measures of IDFs are:
+Apart from common IDF function as seen above there are other IDF measures that are widely used, they are:
 
- - A
- - B
- - C
-
-When plotted looks like this.
+IDF MEASUREES AND PLOT
 
 # Role of IDF in TF-IDF
 TF-IDF suggests important a word is to a document in a collection or corpus.
