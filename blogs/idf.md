@@ -5,7 +5,7 @@ Inverse Document Frequency (IDF) is a measure of term rarity which means it quan
 The IDF was heuristically proposed in the paper "[A statistical interpretation of term specificity and its application in retrieval](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.115.8343&rep=rep1&type=pdf)" (Spärck Jones, 1972) and was originally called Term Specificity.
 
 # The intuition behind IDF
-In order to quantify the term rarity, we need to give higher weight to the term that occurs in fewer documents and lesser weights to the frequent terms. Thus this measure (weight) `w` of the term is inversely proportional to the number of documents in which it is present (called Document Frequency) - and hence referred to as Inverse Document Frequency.
+In order to quantify the term rarity, the heuristic says we need to give higher weight to the term that occurs in fewer documents and lesser weights to the frequent ones. Thus this measure (weight) `w` of the term is __inversely proportional__ to the number of documents in which it is present (called Document Frequency) - and hence the measure is called Inverse Document Frequency.
 
 ![IDF Inversely proportional to Document Frequency](https://user-images.githubusercontent.com/4745789/76211536-85237d00-622c-11ea-82f5-c0b655634839.png)
 
