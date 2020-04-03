@@ -1,18 +1,35 @@
-A rate limiter is an engine that ensures your are neither serving nor invoking a lot of requests in a short span. A production system has a capacity if it receives more requests that its capacity, the system fails and goes down. To prevent this a rate limiter acts as a gatekeeper and regulates the number of requests that flows into your system and once the number of request reaches capacity all other requests are discarded.
+A rate limiter restricts intended or unintended execssive usage of a system by regulating the number of requests made to/from it by discarding the surplus ones. In this article we dive deep into a intuitive and heuristic approach for rate limiting using sliding window; other approaches include "", "" and "".
 
-protect themselves from excessive use (weather intended or unintended) to maintain service availability
-defensive measure for services
+Rate limiting is usually applied per access token or per user or per region/ip. For a generic rate limiting system this is abstracted by a `key` on which the limit will be configured; the key could hold any of the aforementioned value. The limit is defined as the number of requests `nr` allowed within a time window `tw` (defined in seconds).
 
-Why it is important to rate limit
+# The algorithm
+The algorithm is pretty intuitive, and could be summarized as follow
 
- - Preventing resource starvation
- - Managing policies and quotas
- - Avoiding excess costs
- - Controlling flow
+> If the number of requests served on key `key` in last `tw` seconds is more than `nr` then block or else the the request go through and update the counter.
 
-There are lots of algorithms for rate limiting: ---, -- , --- and here we dive deep into Sliding window based approach to rate limit.
+Although the above gist of the algorithm looks very close to the core definition of any rate limiter, it becomes important to visualize what is happening here and implement it in an extremely efficinet and resourceful manner.
 
-# Temrinologies and 
+## Visualizing sliding window
+Everytime we get a request and we have to make a decision we check.
+
+## The pseudocode
+
+A python pseudocode outlining the algorithm is shown below
+```py
+def is_allowed(key)
+"""The function checks the number of requests served
+"""
+```
+
+The algorithm seems intuitive enough the the challenging part here is to implement all the helper functions and model the data such that things are horizontally scalable and super-efficient in terms of its memory footprint and CPU utilization.
+
+
+A rate limiter is defined by its ability to quickly compute if a system is being overwhelmend. The defition 
+ - 
+# The algorithm
+
+# Data models
+
 ## Capacity
 The capacity is usually defined per API or Per user or per access token and is usually stored as a configuration in a persistent data store.
 
@@ -31,3 +48,6 @@ The core of the algorithm comes from a very basic heuristic intuition where we
 
 # Scaling the system using Golang and Redis
 arlt added.
+
+# References
+ - [Rate-limiting strategies and techniques](https://cloud.google.com/solutions/rate-limiting-strategies-techniques)
