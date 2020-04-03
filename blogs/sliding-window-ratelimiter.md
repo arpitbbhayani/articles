@@ -41,7 +41,10 @@ def is_allowed(key:str) -> Bool:
 
 A naive implementation of above pseudocode is pretty trivial but the challenge lies in making the implementation horizontally scalable, with low meomery footprint and low CPU utilization and low time complexity.
 
-# Data models
+# High level design
+
+
+# Low level design
 
 ## Capacity
 The capacity is usually defined per API or Per user or per access token and is usually stored as a configuration in a persistent data store.
