@@ -1,7 +1,7 @@
 [
   {
-    "id": "rate-limiter",
-    "title": "Designing a sliding window based rate limiter",
+    "id": "sliding-window-ratelimiter",
+    "title": "Sliding window based rate limiter",
     "description": "A rate limiter is used to control the rate of traffic sent or received on the network and in this article we dive deep into sliding window based rate limiter.",
     "image": "https://user-images.githubusercontent.com/4745789/78276848-3c13cf80-7531-11ea-8186-99cb1da58e50.png",
     "gif": "https://media.giphy.com/media/MTKpZ9rSgYYthtxf4e/giphy.gif",
