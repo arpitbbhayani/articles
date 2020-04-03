@@ -48,8 +48,19 @@ Now we take a deeper look in the design of this Sliding window rate limiter. We 
 Picking the right datastore for the use case is extremely important. The kind of datastore we choose determines the performance of the system like this.
 
 ### Rate Limit Configuration
-The rate limit confguration could be stored in any relational or non-relational database. We would not wat to store the configuration in memory because if memory is volatile (and not disk-backed) then in case of machine failure we would loose all the configuration.
+The rate limit confguration could be stored in any relational or non-relational database. We would not wat to store the configuration in memory because if memory is volatile (and not disk-backed) then in case of machine failure we would loose all the configuration. To keep things simple the rate limit configuration will be created against a key
 
+We assume that we are using a SQL based database like Postgres or MySQL; schema for Rate Limit Configurtation will look like this
+
+```
+Table: configuration
+Columns:
+ - key: char(128)
+ - time_window_sec: int
+ - capacity: int
+
+Primary Key: key
+```
 
 ## Capacity
 The capacity is usually defined per API or Per user or per access token and is usually stored as a configuration in a persistent data store.
