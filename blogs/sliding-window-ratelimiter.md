@@ -10,7 +10,9 @@ The algorithm is pretty intuitive, and could be summarized as follow
 Although the above gist of the algorithm looks very close to the core definition of any rate limiter, it becomes important to visualize what is happening here and implement it in an extremely efficinet and resourceful manner.
 
 ## Visualizing sliding window
-Everytime we get a request and we have to make a decision we check.
+Everytime we get a request, we make a decision to either serve it or not; hence we check the number of requests `nr` made in last `tw` seconds. When the next request comes, say at the next second, we check again for the number of requests served in last `tw` seconds; thus we slide the window. This way we keep on computing the number of requests served in the time window and check for the condition as per configuration. This approach could be visualized as follows
+
+![Sliding window visualization](https://user-images.githubusercontent.com/4745789/78364339-eac01a80-75da-11ea-8f65-633fd779afac.png)
 
 ## The pseudocode
 
