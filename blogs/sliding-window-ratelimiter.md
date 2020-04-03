@@ -62,17 +62,8 @@ Columns:
 Primary Key: key
 ```
 
-## Capacity
-The capacity is usually defined per API or Per user or per access token and is usually stored as a configuration in a persistent data store.
+`key` is the unique key for which the rate limit is to be defined. If the ratelimit is to be applied per user then key becomes user id, if per access token then key holds the access token. For a generic rate limiter the key is something on which the defined limit will ve applied.
 
-The capacity (the limit) is usually defined as a configuration and is defined in terms of number of requests in a time window.
-
-If the request count exceeds the number agreed by the service owner and the user (in a decided window time), the rate limiter blocks all the excess calls(say by throwing exceptions). The user can be a human or any other service(ex: in a micro service based architecture)
-
-Rate limiting is important not only for incoming requests but also for outgoing requests.
-
-# The sliding window algorithm
-The core of the algorithm comes from a very basic heuristic intuition where we
 
 # Potential issues and performance
  - atomic counters
