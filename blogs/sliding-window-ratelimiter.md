@@ -39,12 +39,7 @@ def is_allowed(key:str) -> Bool:
     return True
 ```
 
-The algorithm seems intuitive enough the the challenging part here is to implement all the helper functions and model the data such that things are horizontally scalable and super-efficient in terms of its memory footprint and CPU utilization.
-
-
-A rate limiter is defined by its ability to quickly compute if a system is being overwhelmend. The defition 
- - 
-# The algorithm
+A naive implementation of above pseudocode is pretty trivial but the challenge lies in making the implementation horizontally scalable, with low meomery footprint and low CPU utilization and low time complexity.
 
 # Data models
 
