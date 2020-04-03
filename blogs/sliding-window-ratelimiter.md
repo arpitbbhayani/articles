@@ -1,16 +1,16 @@
 A rate limiter restricts intended or unintended execssive usage of a system by regulating the number of requests made to/from it by discarding the surplus ones. In this article we dive deep into a intuitive and heuristic approach for rate limiting using sliding window; other approaches include "", "" and "".
 
-Rate limiting is usually applied per access token or per user or per region/ip. For a generic rate limiting system this is abstracted by a `key` on which the limit will be configured; the key could hold any of the aforementioned value. The limit is defined as the number of requests `nr` allowed within a time window `tw` (defined in seconds).
+Rate limiting is usually applied per access token or per user or per region/ip. For a generic rate limiting system this is abstracted by a `key` on which the limit will be configured; the key could hold any of the aforementioned value. The limit is defined as the number of requests `number_of_requests` allowed within a time window `time_window_sec` (defined in seconds).
 
 # The algorithm
 The algorithm is pretty intuitive, and could be summarized as follow
 
-> If the number of requests served on key `key` in last `tw` seconds is more than `nr` then block or else the the request go through and update the counter.
+> If the number of requests served on key `key` in last `time_window_sec` seconds is more than `number_of_requests` then block or else the the request go through and update the counter.
 
 Although the above gist of the algorithm looks very close to the core definition of any rate limiter, it becomes important to visualize what is happening here and implement it in an extremely efficinet and resourceful manner.
 
 ## Visualizing sliding window
-Everytime we get a request, we make a decision to either serve it or not; hence we check the number of requests `nr` made in last `tw` seconds. So this process of checking for a fixed window of `tw` seconds on every request, makes this approach a sliding window where the window of size `tw` seconds is moving forward with each request. The entire approach could be visualized as follows
+Everytime we get a request, we make a decision to either serve it or not; hence we check the number of requests `number_of_requests` made in last `time_window_sec` seconds. So this process of checking for a fixed window of `time_window_sec` seconds on every request, makes this approach a sliding window where the window of size `time_window_sec` seconds is moving forward with each request. The entire approach could be visualized as follows
 
 ![Sliding window visualization](https://user-images.githubusercontent.com/4745789/78364339-eac01a80-75da-11ea-8f65-633fd779afac.png)
 
