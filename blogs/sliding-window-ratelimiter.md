@@ -44,11 +44,28 @@ A naive implementation of above pseudocode is pretty trivial but the challenge l
 # Design
 Now we take a deeper look in the design of this Sliding window rate limiter. We shall dive deep into low level data models, data stores, data structures and high level contructs to ensure horizontal scalability.
 
-## Deciding the datastores
+## Deciding the datastores and schema
 Picking the right datastore for the use case is extremely important. The kind of datastore we choose determines the performance of the system like this.
 
 ### Rate Limit Configuration
-The rate limit confguration could be stored in any relational or non-relational database. We would not wat to store the configuration in memory because if memory is volatile (and not disk-backed) then in case of machine failure we would loose all the configuration. To keep things simple the rate limit configuration will be created against a key
+The rate limit confguration could be stored in any relational or non-relational database. We would not wat to store the configuration in memory because if memory is volatile (and not disk-backed) then in case of machine failure we would loose all the configuration.
+
+### Requests Store
+The requests store will hold the requests serverd against each key. The most frequent operations on this store will be
+ - registering requests served against each key (write heavy)
+ - summing all the requests server in a given time window (read and compute heavy)
+
+We chose an in-memory store for storing requests because
+ - we need fast aggregation (summation) of items in window
+ - read and write both are very frequent, and
+ - it is okay to loss request count data since the time window is usually small enough
+
+To gain deeper understanding of the core implementation we will not use existing in-memory store like Redis, but we shall manage the data using raw composite types provided by the language.
+
+## Schema
+
+### Rate Limit Configuration
+To keep things simple the rate limit configuration will be created against a key
 
 We assume that we are using a SQL based database like Postgres or MySQL; schema for Rate Limit Configurtation will look like this
 
@@ -64,8 +81,21 @@ Primary Key: key
 
 `key` is the unique key for which the rate limit is to be defined. If the ratelimit is to be applied per user then key becomes user id, if per access token then key holds the access token. For a generic rate limiter the key is something on which the defined limit will ve applied.
 
+## Request Store
 
-# Potential issues and performance
+A request store is a simple Ordered dictionary that holds.
+Here we assume the finest granularity we work is is `seconds`.
+
+## Implementation
+Now we implement all the helper functions we saw in pseudocode.
+
+### Getting the ratelimit configuration
+
+### Getting current window
+
+### Registering the request
+
+## Potential issues and performance bottlenecks
  - atomic counters
  - sharding
 
