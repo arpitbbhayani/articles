@@ -47,7 +47,7 @@ Now we take a deeper look in the design of this Sliding window rate limiter. We 
 ## Deciding the datastores and schema
 Picking the right datastore for the use case is extremely important. The kind of datastore we choose determines the performance of the system like this.
 
-### Rate Limit Configuration
+### Configuration Store
 The rate limit confguration could be stored in any relational or non-relational database. We would not wat to store the configuration in memory because if memory is volatile (and not disk-backed) then in case of machine failure we would loose all the configuration.
 
 ### Requests Store
@@ -64,7 +64,7 @@ To gain deeper understanding of the core implementation we will not use existing
 
 ## Schema
 
-### Rate Limit Configuration
+### Configuration Store
 An SQL schema, for using a database likePostgres or MySQL, for Rate Limit Configurtation would be as follows
 
 ```
@@ -91,9 +91,53 @@ A request store is a nested dictionary where outer dictionary maps the configura
 Now that we have defined and designed the data store it is time that we implement all the helper functions we see in the pseudocode.
 
 ### Getting the rate limit configuration
-Getting the rate limit configuration is a simple get.
+Getting the rate limit configuration is a simple get on the configuration store. If it is SQL then a simple `SELECT` on `key` would do the job, if NoSQL then make approriate call on the key to get the detailed configuration.
+
+Since the information does not change often and making a disk read everytime is expensive, we cache the results in memory for faster access.
+
+```py
+class Configuration:
+    def __init__(self, capacity, time_window_sec):
+        self.capacity = capacity
+        self.time_window_sec = time_window_sec
+
+    @classmethod
+    def from_resultset(cls, r)
+        return cls()
+
+def get_ratelimit_config(key):
+    results = sql.execute("""
+        SELECT time_window_sec, capacity from configuration
+        WHERE key = %s;
+    """, key)
+    return Configuration.from_resultset(results[0])
+```
 
 ### Getting current window
+
+```python
+from collections import defaultdict
+
+store = defaultdict(lambda: defaultdict(int))
+
+class Window:
+    def __init__(self, number_of_requests):
+        self.number_of_requests = number_of_requests
+
+def get_current_window(key, start_time):
+    ts_data = store.get(key)
+    if not key:
+        raise Exception("invalid key")
+    
+    total_requests = 0
+    for ts, count in ts_data.items():
+        if ts > start_time:
+            total_requests += count
+        else:
+            del ts_data[ts]
+
+    return Window(total_requests)
+```
 
 ### Registering the request
 
