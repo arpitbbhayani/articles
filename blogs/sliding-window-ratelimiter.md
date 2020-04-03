@@ -41,10 +41,15 @@ def is_allowed(key:str) -> Bool:
 
 A naive implementation of above pseudocode is pretty trivial but the challenge lies in making the implementation horizontally scalable, with low meomery footprint and low CPU utilization and low time complexity.
 
-# High level design
+# Design
+Now we take a deeper look in the design of this Sliding window rate limiter. We shall dive deep into low level data models, data stores, data structures and high level contructs to ensure horizontal scalability.
 
+## Deciding the datastores
+Picking the right datastore for the use case is extremely important. The kind of datastore we choose determines the performance of the system like this.
 
-# Low level design
+### Rate Limit Configuration
+The rate limit confguration could be stored in any relational or non-relational database. We would not wat to store the configuration in memory because if memory is volatile (and not disk-backed) then in case of machine failure we would loose all the configuration.
+
 
 ## Capacity
 The capacity is usually defined per API or Per user or per access token and is usually stored as a configuration in a persistent data store.
