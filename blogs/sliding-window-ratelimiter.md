@@ -65,9 +65,7 @@ To gain deeper understanding of the core implementation we will not use existing
 ## Schema
 
 ### Rate Limit Configuration
-To keep things simple the rate limit configuration will be created against a key
-
-We assume that we are using a SQL based database like Postgres or MySQL; schema for Rate Limit Configurtation will look like this
+An SQL schema, for using a database likePostgres or MySQL, for Rate Limit Configurtation would be as follows
 
 ```
 Table: configuration
@@ -79,17 +77,18 @@ Columns:
 Primary Key: key
 ```
 
-`key` is the unique key for which the rate limit is to be defined. If the ratelimit is to be applied per user then key becomes user id, if per access token then key holds the access token. For a generic rate limiter the key is something on which the defined limit will ve applied.
+`key` is the unique configuration key for which the rate limit is to be defined. If the rate limit is to be applied per user then key becomes `user:user_id`, if per access token then key holds the `token:access_token`. For a generic rate limiter the key is something on which the defined limit will be applied.
 
 ## Request Store
+A request store is a nested dictionary where outer dictionary maps the configuration key to inner dictionary while the inner dicitonary maps the epoch second to the request counter. The inner dictionary primarily holds the number of requests serverd during the corresponding epoch second. This in memory structure will help us update and aggregate faster.
 
-A request store is a simple Ordered dictionary that holds.
-Here we assume the finest granularity we work is is `seconds`.
+![Requests store for sliding window rate limiter](https://user-images.githubusercontent.com/4745789/78384914-b0657600-75f8-11ea-8158-981ac3ecd46d.png)
+
 
 ## Implementation
 Now we implement all the helper functions we saw in pseudocode.
 
-### Getting the ratelimit configuration
+### Getting the rate limit configuration
 
 ### Getting current window
 
