@@ -28,7 +28,7 @@ def is_allowed(key:str) -> Bool:
 
     # Fetch the current window for the key
     # The window returned holds the number of requests served from the start_time
-    start_time = datetime.now() - timedelta(seconds=config.time_window_sec)
+    start_time = int(time.time()) - config.time_window_sec
     window = get_current_window(key, start_time)
 
     if window.number_of_requests > config.capacity:
@@ -141,11 +141,26 @@ def get_current_window(key, start_time):
 
 ### Registering the request
 
-## Potential issues and performance bottlenecks
- - atomic counters
- - sharding
+```python
+def register_request(key):
+    current_time = int(time.time())
+    store[key][current_time] += 1
+```
 
-# Scaling the system using Golang and Redis
+## Potential issues and performance bottlenecks
+
+### Atomic counters
+
+## Scaling the solution
+
+### Single instance of in-memory store
+
+### Horizontal scaling
+
+## High level design
+
+## Deploying in production
+Using golang and Redis
 arlt added.
 
 # References
