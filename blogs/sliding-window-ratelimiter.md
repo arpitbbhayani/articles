@@ -79,6 +79,8 @@ Primary Key: key
 
 `key` is the unique configuration key for which the rate limit is to be defined. If the rate limit is to be applied per user then key becomes `user:user_id`, if per access token then key holds the `token:access_token`. For a generic rate limiter the key is something on which the defined limit will be applied.
 
+This could well be stored in a persistent key value NoSQL store like MongoDB or DynamoDB.
+
 ## Request Store
 A request store is a nested dictionary where outer dictionary maps the configuration key to inner dictionary while the inner dicitonary maps the epoch second to the request counter. The inner dictionary primarily holds the number of requests serverd during the corresponding epoch second. This in memory structure will help us update and aggregate faster.
 
@@ -86,9 +88,10 @@ A request store is a nested dictionary where outer dictionary maps the configura
 
 
 ## Implementation
-Now we implement all the helper functions we saw in pseudocode.
+Now that we have defined and designed the data store it is time that we implement all the helper functions we see in the pseudocode.
 
 ### Getting the rate limit configuration
+Getting the rate limit configuration is a simple get.
 
 ### Getting current window
 
