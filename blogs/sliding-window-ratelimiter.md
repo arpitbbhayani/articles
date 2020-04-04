@@ -65,7 +65,7 @@ To gain deeper understanding of the core implementation we will not use existing
 ## Schema
 
 ### Configuration Store
-An SQL schema, for using a database likePostgres or MySQL, for Rate Limit Configurtation would be as follows
+SQL schema, for using a database like Postgres or MySQL, for Rate Limit Configurtation would be as follows
 
 ```
 Table: configuration
@@ -148,20 +148,39 @@ def register_request(key):
 ```
 
 ## Potential issues and performance bottlenecks
+Although the above code elaborates the overall low level implemetation details of the aglorithm, it is not something that we would want to put in production.
 
-### Atomic counters
+### Need of atomic counters
+While we register a request in the request store we increment the request counter by 1. While running this in a multithreaded environment where multiple threads are incrementing the same valuraible we need to ensure the counter increment is atomic.
+
+For this we could use one of the following
+
+ - optimistic locking
+ - pessimistic locks before update
+ - utilize atomic hardware instructions
+
+### Locking while reading
+Since we are deleting the timestamps from the inner dictionary that are older than the `start_time`, it is possible that a request with older `start_time` is executed before a request with newer `start_time`. Because of this the request that should have been blocked actually went through because the newer start_time request deleted that entry and hence that it did not reflect in the summation.
+
+Solution:
+ - delete entries from inner dictionary older than start_time - buffer (say 10 seconds).
+ - take locks while reading and aggregating so that deletion does not happen.
 
 ## Scaling the solution
 
 ### Single instance of in-memory store
+Till now everything we are dealing with resides in a single machine in a single process, ideally we would want to central system to deal with this. Hence the request store needs to be defined in a separate machine and should expose APIs for communicating.
 
 ### Horizontal scaling
+Sharding by hash of `key` would do the job.
 
 ## High level design
+High level design of entire system looks like this
 
 ## Deploying in production
-Using golang and Redis
-arlt added.
+We might not prefer Python while deploying this service to production, rather we would prefer a language that is more performant w.r.t parallelism and concurrency like Golang or Java.
+
+An in-memory self managed store could be replaced with an in-memory db like Redis.
 
 # References
  - [Rate-limiting strategies and techniques](https://cloud.google.com/solutions/rate-limiting-strategies-techniques)
