@@ -182,13 +182,17 @@ The scaling policy of the decision engine will be kept on following metrics
 ### Scaling the Requests store
 Since the requests store is doing all the heavy lifting and storing a lot of data in memory, this would not scale if kept ona single instance. We would need to horizontally scale this system and for that we shard the store using configuration key `key` and use consistent hashing to find the machine that holds the data for the key.
 
+To facilitate sharding and making things seamless for the decision engine we will have a Request store proxy which will act as the only entry point to access request store. It will abstract out all the complexities of distributed request stores, replication and failures.
+
 ### Scaling the Configuration store
 The number of configurations would be high but relatively simple to scale since we are using a NoSQL solution, sharding on configuration key `key` would help us achive horizontal scalability.
+
+Similar to Request store proxy we will have a proxy for Configuration store that would be an abstraction over the distributed configuration stores.
 
 ## High level design
 The overall high level design of the entire system looks something like this
 
-IMAGE
+![Rate limiter high level design diagram](https://user-images.githubusercontent.com/4745789/78459007-8d5bc480-76d3-11ea-8159-c2029e50173b.png)
 
 ## Deploying in production
 We might not prefer Python while deploying this service to production, rather we would prefer a language that is more performant w.r.t parallelism and concurrency like Golang or Java.
