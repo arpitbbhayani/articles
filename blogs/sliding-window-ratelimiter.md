@@ -51,18 +51,24 @@ Designing a rate limiter has to be super efficient because the rate limiter deci
 ## Components of the Rate limiter
 The Rate limiter has the following components
 
- - Configuration store - to keep all the configurations
+ - Configuration store - to keep all the rate limit configurations
  - Requests store - to keep all the requests made against one configuration key
- - Decicion Engine - it uses data from configuration and request store and makes the decision
+ - Decision Engine - it uses data from configuration store and request store and makes the decision
 
-## Deciding the datastores and schema
-Picking the right datastore for the use case is extremely important. The kind of datastore we choose determines the core performance of the system like this.
+## Deciding the datastores
+Picking the right datastore for the use case is extremely important. The kind of datastore we choose determines the core performance of a system like this.
 
 ### Configuration Store
-The rate limit confguration could be stored in any relational or non-relational database. We would not wat to store the configuration in memory because if memory is volatile (and not disk-backed) then in case of machine failure we would loose all the configuration.
+The primary role of the configuration store would be to
+
+ - efficiently store configuration for a key
+ - efficiently retrieve the configuration for a key
+
+In case of machine failure we would not want to lose all the configurations created, hence we choose a disk-backed data store that has an efficient `get` and `put` operation for a key. Since there would be billions of entires in this configuration store, using a SQL DB to hold these entires will lead to performance bottleneck and hence we go with a simple key-value NoSQL database like MongoDB or DynamoDB for this usecase. // TODO
 
 ### Requests Store
 The requests store will hold the requests serverd against each key. The most frequent operations on this store will be
+
  - registering requests served against each key (write heavy)
  - summing all the requests server in a given time window (read and compute heavy)
 
