@@ -1,40 +1,44 @@
-A rate limiter restricts intended or unintended execssive usage of a system by regulating the number of requests made to/from it by discarding the surplus ones. In this article we dive deep into a intuitive and heuristic approach for rate limiting using sliding window; other approaches include "", "" and "".
+A rate limiter restricts the intended or unintended execssive usage of a system by regulating the number of requests made to/from it by discarding the surplus ones. In this article we dive deep into an intuitive and heuristic approach for rate limiting that uses sliding window. The other algorithms and approaches include [Leaky Bucket](https://en.wikipedia.org/wiki/Leaky_bucket), [Token Bucket](https://en.wikipedia.org/wiki/Token_bucket) and Fixed Window.
 
-Rate limiting is usually applied per access token or per user or per region/ip. For a generic rate limiting system this is abstracted by a `key` on which the limit will be configured; the key could hold any of the aforementioned value. The limit is defined as the number of requests `number_of_requests` allowed within a time window `time_window_sec` (defined in seconds).
+Rate limiting is usually applied per access token or per user or per region/ip. For a generic rate limiting system that we intend to design here, this is abstracted by a configuration key `key` on which the capacity (limit) will be configured; the key could hold any of the aforementioned value or its combinations. The limit is defined as the number of requests `number_of_requests` allowed within a time window `time_window_sec` (defined in seconds).
 
 # The algorithm
 The algorithm is pretty intuitive, and could be summarized as follow
 
-> If the number of requests served on key `key` in last `time_window_sec` seconds is more than `number_of_requests` then block or else the the request go through and update the counter.
+> If the number of requests served on configuration key `key` in the last `time_window_sec` seconds is more than `number_of_requests` configured for it then discard, else the request goes through while we update the counter.
 
 Although the above gist of the algorithm looks very close to the core definition of any rate limiter, it becomes important to visualize what is happening here and implement it in an extremely efficinet and resourceful manner.
 
 ## Visualizing sliding window
-Everytime we get a request, we make a decision to either serve it or not; hence we check the number of requests `number_of_requests` made in last `time_window_sec` seconds. So this process of checking for a fixed window of `time_window_sec` seconds on every request, makes this approach a sliding window where the window of size `time_window_sec` seconds is moving forward with each request. The entire approach could be visualized as follows
+Everytime we get a request, we make a decision to either serve it or not; hence we check the `number_of_requests` made in last `time_window_sec` seconds. So this process of checking for a fixed window of `time_window_sec` seconds on every request, makes this approach a sliding window where the fixed window of size `time_window_sec` seconds is moving forward with each request. The entire approach could be visualized as follows
 
 ![Sliding window visualization](https://user-images.githubusercontent.com/4745789/78364339-eac01a80-75da-11ea-8f65-633fd779afac.png)
 
 ## The pseudocode
-
-The core of the algorithm could be summarized into the following Python pseudocode.
+The core of the algorithm could be summarized into the following Python pseudocode. It is not recommended to put this or similar code in production as it has a lot of limitations (discussed later), but the idea here is to design the rate limiter ground up including low level data models, schema, data structures and a rough algorithm.
 
 ```py
 def is_allowed(key:str) -> Bool:
-"""The function checks the number of requests served
+"""The function decides is the current request should be served ot nor.
+It accepts the configuration key `key` and checks the number of requests made against it
+as per the configuration.
+
+The function returns True if the request goes through and False otherwise.
 """
-    # Fetch the rate limit configuration for the given key
+    # Fetch the configuration for the given key
     # the configuration holds the number of requests allowed in a time window.
     config = get_ratelimit_config(key)
 
     # Fetch the current window for the key
-    # The window returned holds the number of requests served from the start_time
+    # The window returned, holds the number of requests served since the start_time
+    # provided as the argument.
     start_time = int(time.time()) - config.time_window_sec
     window = get_current_window(key, start_time)
 
     if window.number_of_requests > config.capacity:
         return False
     
-    # Since the request could go through, register it.
+    # Since the request goes through, register it.
     register_request(key)
     return True
 ```
@@ -184,3 +188,5 @@ An in-memory self managed store could be replaced with an in-memory db like Redi
 
 # References
  - [Rate-limiting strategies and techniques](https://cloud.google.com/solutions/rate-limiting-strategies-techniques)
+ - [Rate limiting - Wikipedia](https://en.wikipedia.org/wiki/Rate_limiting)
+ - 
