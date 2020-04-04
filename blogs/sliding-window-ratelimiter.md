@@ -156,12 +156,11 @@ While we register a request in the request store we increment the request counte
  - pessimistic locks (always taking lock before incrementing)
  - utilize atomic hardware instructions (fetch-and-add instruction)
 
-### Locking while reading
-Since we are deleting the timestamps from the inner dictionary that are older than the `start_time`, it is possible that a request with older `start_time` is executed before a request with newer `start_time`. Because of this the request that should have been blocked actually went through because the newer start_time request deleted that entry and hence that it did not reflect in the summation.
+### Accurately computing Total Requests
+Since we are deleting the keys from the inner dictionary referring to old timestamps (older than the `start_time`), it is possible that a request with older `start_time` is executing while a request with newer `start_time` deleted the entry and lead to incorrect `total_request` calculation. To remedy this we could either
 
-Solution:
- - delete entries from inner dictionary older than start_time - buffer (say 10 seconds).
- - take locks while reading and aggregating so that deletion does not happen.
+ - delete entries from inner dictionary with a buffer (say older than start_time - 10 seconds),
+ - take locks while reading and block the deletions
 
 ### Aggregations
 The aggregations instead of storing epoch seconds we could aggregate by minute or even hour if the `tine_Window_sec` is high. The granularity could be made dynamic.
