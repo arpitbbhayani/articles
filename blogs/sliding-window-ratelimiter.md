@@ -69,16 +69,11 @@ In case of machine failure we would not want to lose all the configurations crea
 ### Requests Store
 The requests store will hold the count of requests serverd against each key per unit time. The most frequent operations on this store will be
 
- - registering (storing) requests count served against each key - _write heavy_
- - summing all the requests server in a given time window - _read and compute heavy_
- - cleaning up the requests count - _write heavy_
+ - registering (storing and updating) requests count served against each key - _write heavy_
+ - summing all the requests served in a given time window - _read and compute heavy_
+ - cleaning up the obselete requests count - _write heavy_
 
-We chose an in-memory store for storing requests because
- - we need fast aggregation (summation) of items in window
- - read and write both are very frequent, and
- - it is okay to loss request count data since the time window is usually small enough
-
-To gain deeper understanding of the core implementation we will not use existing in-memory store like Redis, but we shall manage the data using raw composite types provided by the language.
+Since the operations are both read and write heavy and will ve very frequent (on every request call), we chose an an in-memory store for persisting it. A good choice for such operation will be a datastore like [Redis](https://redis.io) but since we would love to dive deep with the core implementation, we would store everything using data common data structures available.
 
 ## Schema
 
