@@ -162,8 +162,10 @@ Since we are deleting the keys from the inner dictionary referring to old timest
  - delete entries from inner dictionary with a buffer (say older than start_time - 10 seconds),
  - take locks while reading and block the deletions
 
-### Aggregations
-The aggregations instead of storing epoch seconds we could aggregate by minute or even hour if the `tine_Window_sec` is high. The granularity could be made dynamic.
+### Dynamic sliding window
+There would be cases where the `time_window_sec` is large, suppose it is an hour, so if in the request store we store requests count against the epoch seconds there will be 3600 entries for that key and on every requests we will be iterating over atleast 3600 keys and computing the sum. A faster way to do this is instead of keeping granularity at seconds we could do it at minute. This means we sub-aggregate the requests count at per minute and not we only need to iterate over about 60 entires to get total number of requests and this also means our window slides not per second but per minute.
+
+The granulaity configuration could be store in configuration as a new attribute which would help us take a call.
 
 ## Scaling the solution
 
