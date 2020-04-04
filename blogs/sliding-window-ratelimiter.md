@@ -75,24 +75,22 @@ The requests store will hold the count of requests serverd against each key per 
 
 Since the operations are both read and write heavy and will ve very frequent (on every request call), we chose an an in-memory store for persisting it. A good choice for such operation will be a datastore like [Redis](https://redis.io) but since we would love to dive deep with the core implementation, we would store everything using data common data structures available.
 
-## Schema
+## Data models and data structures
+Now we take a look at data models and data structures we would use to build this generic rate limiter.
 
 ### Configuration Store
-SQL schema, for using a database like Postgres or MySQL, for Rate Limit Configurtation would be as follows
+As decided before we would be using a NoSQL key-value store to hold the configuration data. In this store the key would be the configuration key (discussed above) which would identify the user/ip/token or any conbination of it; while the value will be a tuple/json document that holds `time_window_sec` and `capacity` (limit).
 
+```json
+{
+    "user:241531": {
+        "time_window_sec": 1,
+        "capacity": 5
+    }
+}
 ```
-Table: configuration
-Columns:
- - key: char(128)
- - time_window_sec: int
- - capacity: int
 
-Primary Key: key
-```
-
-`key` is the unique configuration key for which the rate limit is to be defined. If the rate limit is to be applied per user then key becomes `user:user_id`, if per access token then key holds the `token:access_token`. For a generic rate limiter the key is something on which the defined limit will be applied.
-
-This could well be stored in a persistent key value NoSQL store like MongoDB or DynamoDB.
+The above confoguration defines that the user with id `241531` would be allowed to make `5` requests in `1` second.
 
 ## Request Store
 A request store is a nested dictionary where outer dictionary maps the configuration key to inner dictionary while the inner dicitonary maps the epoch second to the request counter. The inner dictionary primarily holds the number of requests serverd during the corresponding epoch second. This in memory structure will help us update and aggregate faster.
