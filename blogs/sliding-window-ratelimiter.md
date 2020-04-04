@@ -203,7 +203,7 @@ The overall high level design of the entire system looks something like this
 ## Deploying in production
 While deploying it to production we could use a memoery store like Redis whose features, like Key expiration, transaction, locks, sorted, come in handy. The language we chose for explainging and pseudocode was Python but in production to make things super-fast and concurrent we would prefer a language like Java or Golang. Picking this stack will keep our server cost down and would also help us make optimum use of resources.
 
-## References
+# References
  - [Rate-limiting strategies and techniques](https://cloud.google.com/solutions/rate-limiting-strategies-techniques)
  - [An alternative approach to rate limiting](https://www.figma.com/blog/an-alternative-approach-to-rate-limiting/)
  - [Everything You Need To Know About API Rate Limiting](https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/)
