@@ -43,13 +43,20 @@ The function returns True if the request goes through and False otherwise.
     return True
 ```
 
-A naive implementation of above pseudocode is trivial but the true challenge lies in making the implementation horizontally scalable, with low meomery footprint, low CPU utilization and low time complexity. We tackle each of the requirement below.
+A naive implementation of above pseudocode is trivial but the true challenge lies in making the implementation horizontally scalable, with low meomery footprint, low CPU utilization and low time complexity.
 
 # Design
-Now we take a deeper look in the design of this Sliding window rate limiter. We shall dive deep into low level data models, data stores, data structures and high level contructs to ensure horizontal scalability.
+Designing a rate limiter has to be super efficient because the rate limiter decision engine will be invoked on every single request and if the engine takes a long time to decide this is will in turn reflect in the overall response time of the request. A better design will not only help us in keeping the response time to a bare minimum, but it also ensures that system is extensible with respect to future requreiments.
+
+## Components of the Rate limiter
+The Rate limiter has the following components
+
+ - Configuration store - to keep all the configurations
+ - Requests store - to keep all the requests made against one configuration key
+ - Decicion Engine - it uses data from configuration and request store and makes the decision
 
 ## Deciding the datastores and schema
-Picking the right datastore for the use case is extremely important. The kind of datastore we choose determines the performance of the system like this.
+Picking the right datastore for the use case is extremely important. The kind of datastore we choose determines the core performance of the system like this.
 
 ### Configuration Store
 The rate limit confguration could be stored in any relational or non-relational database. We would not wat to store the configuration in memory because if memory is volatile (and not disk-backed) then in case of machine failure we would loose all the configuration.
