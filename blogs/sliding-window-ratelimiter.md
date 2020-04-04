@@ -25,6 +25,8 @@ as per the configuration.
 
 The function returns True if the request goes through and False otherwise.
 """
+    current_time = int(time.time())
+
     # Fetch the configuration for the given key
     # the configuration holds the number of requests allowed in a time window.
     config = get_ratelimit_config(key)
@@ -32,14 +34,14 @@ The function returns True if the request goes through and False otherwise.
     # Fetch the current window for the key
     # The window returned, holds the number of requests served since the start_time
     # provided as the argument.
-    start_time = int(time.time()) - config.time_window_sec
+    start_time = current_time - config.time_window_sec
     window = get_current_window(key, start_time)
 
     if window.number_of_requests > config.capacity:
         return False
     
     # Since the request goes through, register it.
-    register_request(key)
+    register_request(key, current_time)
     return True
 ```
 
@@ -93,52 +95,38 @@ As decided before we would be using a NoSQL key-value store to hold the configur
 The above confoguration defines that the user with id `241531` would be allowed to make `5` requests in `1` second.
 
 ## Request Store
-A request store is a nested dictionary where outer dictionary maps the configuration key to inner dictionary while the inner dicitonary maps the epoch second to the request counter. The inner dictionary primarily holds the number of requests serverd during the corresponding epoch second. This in memory structure will help us update and aggregate faster.
+A request store is a nested dictionary where the outer dictionary maps the configuration key `key` to an inner dictionary; and the inner dicitonary maps the epoch second to the request counter. The inner dictionary is actually holding the number of requests serverd during the corresponding epoch second. This way we keep on aggregating the requests per second and then sum them all during to compute the number of requests served in a time range, making updations and computations faster.
 
 ![Requests store for sliding window rate limiter](https://user-images.githubusercontent.com/4745789/78384914-b0657600-75f8-11ea-8158-981ac3ecd46d.png)
 
 
 ## Implementation
-Now that we have defined and designed the data store it is time that we implement all the helper functions we see in the pseudocode.
+Now that we have defined and designed the data stores and structures, it is time that we implement all the helper functions we see in the pseudocode.
 
 ### Getting the rate limit configuration
-Getting the rate limit configuration is a simple get on the configuration store. If it is SQL then a simple `SELECT` on `key` would do the job, if NoSQL then make approriate call on the key to get the detailed configuration.
-
-Since the information does not change often and making a disk read everytime is expensive, we cache the results in memory for faster access.
+Getting the rate limit configuration is a simple get on the configuration store by `key`. Since the information does not change often and making a disk read everytime is expensive, we cache the results in memory for faster access.
 
 ```py
-class Configuration:
-    def __init__(self, capacity, time_window_sec):
-        self.capacity = capacity
-        self.time_window_sec = time_window_sec
-
-    @classmethod
-    def from_resultset(cls, r)
-        return cls()
-
 def get_ratelimit_config(key):
-    results = sql.execute("""
-        SELECT time_window_sec, capacity from configuration
-        WHERE key = %s;
-    """, key)
-    return Configuration.from_resultset(results[0])
+    value = cache.get(key)
+
+    if not value:
+        value = config_store.get(key)
+        cache.put(key, value)
+
+    return value
 ```
 
-### Getting current window
+### Getting requests in current window
+Now that we have the configuration for the given key, it we compute the `start_time` from which we want to count the requests that have been served by the system for the `key`. For this we iterate through the data from the inner dictionary second by second and keep on summing the requests count for the epoch seconds greater than the `start_time`. This way we get the total requests served from start_time till now. This would help us make the decision.
+
+In order to reduce the memory footprint we could delete the items from the inner dictionary against the time older than the `start_time` because we are sure that the requests for an older than `start_time` would never come in the future.
 
 ```python
-from collections import defaultdict
-
-store = defaultdict(lambda: defaultdict(int))
-
-class Window:
-    def __init__(self, number_of_requests):
-        self.number_of_requests = number_of_requests
-
 def get_current_window(key, start_time):
-    ts_data = store.get(key)
+    ts_data = requests_store.get(key)
     if not key:
-        raise Exception("invalid key")
+        return 0
     
     total_requests = 0
     for ts, count in ts_data.items():
@@ -147,15 +135,15 @@ def get_current_window(key, start_time):
         else:
             del ts_data[ts]
 
-    return Window(total_requests)
+    return total_requests
 ```
 
 ### Registering the request
+Once we have validated that the request is good to go through it is time to register it in the requests store and function `register_request` does exactly that.
 
 ```python
-def register_request(key):
-    current_time = int(time.time())
-    store[key][current_time] += 1
+def register_request(key, ts):
+    store[key][ts] += 1
 ```
 
 ## Potential issues and performance bottlenecks
@@ -176,6 +164,9 @@ Since we are deleting the timestamps from the inner dictionary that are older th
 Solution:
  - delete entries from inner dictionary older than start_time - buffer (say 10 seconds).
  - take locks while reading and aggregating so that deletion does not happen.
+
+### Aggregations
+The aggregations instead of storing epoch seconds we could aggregate by minute or even hour if the `tine_Window_sec` is high. The granularity could be made dynamic.
 
 ## Scaling the solution
 
