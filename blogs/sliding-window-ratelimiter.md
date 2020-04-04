@@ -147,10 +147,10 @@ def register_request(key, ts):
 ```
 
 ## Potential issues and performance bottlenecks
-Although the above code elaborates on the overall low level implementation details of the algorithm, it is not something that we would want to put in production as there are lots of improvements to be made.
+Although the above code elaborates on the overall low-level implementation details of the algorithm, it is not something that we would want to put in production as there are lots of improvements to be made.
 
 ### Atomic updates
-While we register a request in the request store we increment the request counter by 1. When the code runs in a multi-threaded environment, all the threads executing the function for the same `key` will try to increment the same counter. Thus there will be a classical problem where multiple writers reads the same old value and updates. To fix this we need to ensure that the increment is done atomically and to do this we could use one of the following approaches
+While we register a request in the request store we increment the request counter by 1. When the code runs in a multi-threaded environment, all the threads executing the function for the same `key` will try to increment the same counter. Thus there will be a classical problem where multiple writers read the same old value and updates. To fix this we need to ensure that the increment is done atomically and to do this we could use one of the following approaches
 
  - optimistic locking (compare and swap)
  - pessimistic locks (always taking lock before incrementing)
