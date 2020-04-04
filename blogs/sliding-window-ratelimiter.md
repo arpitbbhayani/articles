@@ -169,14 +169,26 @@ The granulaity configuration could be store in configuration as a new attribute 
 
 ## Scaling the solution
 
-### Single instance of in-memory store
-Till now everything we are dealing with resides in a single machine in a single process, ideally we would want to central system to deal with this. Hence the request store needs to be defined in a separate machine and should expose APIs for communicating.
+### Scaling the Decision engine
+Decision engine is the one making the call to each store and fetching the data and taking the to call to accept or discard the reqeust. Since decision engine is a typical service engine we would put it behind a load balancer and that would take take of distributing requests to decision engine instances in a round-robin facing and ensure it scales.
 
-### Horizontal scaling
-Sharding by hash of `key` would do the job.
+The scaling policy of the decision engine will be kept on following metrics
+
+ - number of requests received per second
+ - time to make the decision (response time)
+ - memory utilization
+ - CPU utilization
+
+### Scaling the Requests store
+Since the requests store is doing all the heavy lifting and storing a lot of data in memory, this would not scale if kept ona single instance. We would need to horizontally scale this system and for that we shard the store using configuration key `key` and use consistent hashing to find the machine that holds the data for the key.
+
+### Scaling the Configuration store
+The number of configurations would be high but relatively simple to scale since we are using a NoSQL solution, sharding on configuration key `key` would help us achive horizontal scalability.
 
 ## High level design
-High level design of entire system looks like this
+The overall high level design of the entire system looks something like this
+
+IMAGE
 
 ## Deploying in production
 We might not prefer Python while deploying this service to production, rather we would prefer a language that is more performant w.r.t parallelism and concurrency like Golang or Java.
