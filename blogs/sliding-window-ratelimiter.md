@@ -162,10 +162,16 @@ Since we are deleting the keys from the inner dictionary referring to old timest
  - delete entries from inner dictionary with a buffer (say older than start_time - 10 seconds),
  - take locks while reading and block the deletions
 
-### Dynamic sliding window
+### Non-static sliding window
 There would be cases where the `time_window_sec` is large, suppose it is an hour, so if in the request store we store requests count against the epoch seconds there will be 3600 entries for that key and on every requests we will be iterating over atleast 3600 keys and computing the sum. A faster way to do this is instead of keeping granularity at seconds we could do it at minute. This means we sub-aggregate the requests count at per minute and not we only need to iterate over about 60 entires to get total number of requests and this also means our window slides not per second but per minute.
 
 The granulaity configuration could be store in configuration as a new attribute which would help us take a call.
+
+### Other improvements
+The solution mentioned above is not the most optimal solution that could ever be but it aims to prove a rough idea on how we could implement a sliding window rate limiting algorithm. Apart from improvements mentioned above there some approaches that could well improve the performance
+
+ - use a data strucutre that is optimized for range sum, like segment tree
+ - use a running aggregation algorithm that would prevent from recomputing redundant sum
 
 ## Scaling the solution
 
@@ -195,11 +201,8 @@ The overall high level design of the entire system looks something like this
 ![Rate limiter high level design diagram](https://user-images.githubusercontent.com/4745789/78459007-8d5bc480-76d3-11ea-8159-c2029e50173b.png)
 
 ## Deploying in production
+While deploying it to production we could 
+
 We might not prefer Python while deploying this service to production, rather we would prefer a language that is more performant w.r.t parallelism and concurrency like Golang or Java.
 
 An in-memory self managed store could be replaced with an in-memory db like Redis.
-
-# References
- - [Rate-limiting strategies and techniques](https://cloud.google.com/solutions/rate-limiting-strategies-techniques)
- - [Rate limiting - Wikipedia](https://en.wikipedia.org/wiki/Rate_limiting)
- - 
