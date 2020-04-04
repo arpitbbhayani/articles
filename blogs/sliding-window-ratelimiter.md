@@ -198,14 +198,14 @@ Similar to Request store proxy we will have a proxy for Configuration store that
 ## High-level design
 The overall high-level design of the entire system looks something like this
 
-![Rate limiter high-level design diagram](https://user-images.githubusercontent.com/4745789/78459007-8d5bc480-76d3-11ea-8159-c2029e50173b.png)
+![Rate limiter high-level design diagram](https://user-images.githubusercontent.com/4745789/78460031-1cb8a600-76db-11ea-94f4-b821244993b3.png)
 
 ## Deploying in production
 While deploying it to production we could use a memory store like Redis whose features, like Key expiration, transaction, locks, sorted, come in handy. The language we chose for explaining and pseudocode was Python but in production to make things super-fast and concurrent we would prefer a language like Java or Golang. Picking this stack will keep our server cost down and would also help us make optimum use of resources.
 
 # References
+ - [Rate Limiting - Wikipedia](https://en.wikipedia.org/wiki/Rate_limiting)
  - [Rate-limiting strategies and techniques](https://cloud.google.com/solutions/rate-limiting-strategies-techniques)
  - [An alternative approach to rate limiting](https://www.figma.com/blog/an-alternative-approach-to-rate-limiting/)
- - [Everything You Need To Know About API Rate Limiting](https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/)
  - [Building a sliding window rate limiter with Redis](https://engagor.github.io/blog/2017/05/02/sliding-window-rate-limiter-redis/)
- - [Rate Limiting](https://en.wikipedia.org/wiki/Rate_limiting)
+ - [Everything You Need To Know About API Rate Limiting](https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/)
