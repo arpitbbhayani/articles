@@ -43,7 +43,7 @@ The function returns True if the request goes through and False otherwise.
     return True
 ```
 
-A naive implementation of above pseudocode is pretty trivial but the challenge lies in making the implementation horizontally scalable, with low meomery footprint and low CPU utilization and low time complexity.
+A naive implementation of above pseudocode is trivial but the true challenge lies in making the implementation horizontally scalable, with low meomery footprint, low CPU utilization and low time complexity. We tackle each of the requirement below.
 
 # Design
 Now we take a deeper look in the design of this Sliding window rate limiter. We shall dive deep into low level data models, data stores, data structures and high level contructs to ensure horizontal scalability.
