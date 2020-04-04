@@ -147,16 +147,14 @@ def register_request(key, ts):
 ```
 
 ## Potential issues and performance bottlenecks
-Although the above code elaborates the overall low level implemetation details of the aglorithm, it is not something that we would want to put in production.
+Although the above code elaborates the overall low level implemetation details of the algorithm, it is not something that we would want to put in production as there are lots of improvements to be made.
 
-### Need of atomic counters
-While we register a request in the request store we increment the request counter by 1. While running this in a multithreaded environment where multiple threads are incrementing the same valuraible we need to ensure the counter increment is atomic.
+### Atomic updates
+While we register a request in the request store we increment the request counter by 1. When the code runs in a multi-threaded environemnt, all the threads executing the function for the same `key` will try to increment the same counter. Thus there will be a classical problem where multiple writer reads same old value and updates. To fix this we need to ensure that the increment is done atomically and to do this we could use one of the following approaches
 
-For this we could use one of the following
-
- - optimistic locking
- - pessimistic locks before update
- - utilize atomic hardware instructions
+ - optimistic locking (compare and swap)
+ - pessimistic locks (always taking lock before incrementing)
+ - utilize atomic hardware instructions (fetch-and-add instruction)
 
 ### Locking while reading
 Since we are deleting the timestamps from the inner dictionary that are older than the `start_time`, it is possible that a request with older `start_time` is executed before a request with newer `start_time`. Because of this the request that should have been blocked actually went through because the newer start_time request deleted that entry and hence that it did not reflect in the summation.
