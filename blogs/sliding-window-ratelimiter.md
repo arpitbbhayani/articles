@@ -67,10 +67,11 @@ The primary role of the configuration store would be to
 In case of machine failure we would not want to lose all the configurations created, hence we choose a disk-backed data store that has an efficient `get` and `put` operation for a key. Since there would be billions of entires in this configuration store, using a SQL DB to hold these entires will lead to performance bottleneck and hence we go with a simple key-value NoSQL database like [MongoDB](https://mongodb.com) or [DynamoDB](https://aws.amazon.com/dynamodb/) for this usecase.
 
 ### Requests Store
-The requests store will hold the requests serverd against each key. The most frequent operations on this store will be
+The requests store will hold the count of requests serverd against each key per unit time. The most frequent operations on this store will be
 
- - registering requests served against each key (write heavy)
- - summing all the requests server in a given time window (read and compute heavy)
+ - registering (storing) requests count served against each key - _write heavy_
+ - summing all the requests server in a given time window - _read and compute heavy_
+ - cleaning up the requests count - _write heavy_
 
 We chose an in-memory store for storing requests because
  - we need fast aggregation (summation) of items in window
