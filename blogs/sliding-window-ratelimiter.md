@@ -48,7 +48,7 @@ The function returns True if the request goes through and False otherwise.
 A naive implementation of the above pseudocode is trivial but the true challenge lies in making the implementation horizontally scalable, with low memory footprint, low CPU utilization, and low time complexity.
 
 # Design
-Designing a rate limiter has to be super-efficient because the rate limiter decision engine will be invoked on every single request and if the engine takes a long time to decide this is will, in turn, reflect in the overall response time of the request. A better design will not only help us in keeping the response time to a bare minimum, but it also ensures that the system is extensible with respect to future requirements.
+Designing a rate limiter has to be super-efficient because the rate limiter decision engine will be invoked on every single request and if the engine takes a long time to decide this, it will add some overhead in the overall response time of the request. A better design will not only help us keep the response time to a bare minimum, but it also ensures that the system is extensible with respect to future requirement changes.
 
 ## Components of the Rate limiter
 The Rate limiter has the following components
@@ -66,7 +66,7 @@ The primary role of the configuration store would be to
  - efficiently store configuration for a key
  - efficiently retrieve the configuration for a key
 
-In case of machine failure, we would not want to lose all the configurations created, hence we choose a disk-backed data store that has an efficient `get` and `put` operation for a key. Since there would be billions of entries in this configuration store, using a SQL DB to hold these entries will lead to a performance bottleneck and hence we go with a simple key-value NoSQL database like [MongoDB](https://mongodb.com) or [DynamoDB](https://aws.amazon.com/dynamodb/) for this use case.
+In case of machine failure, we would not want to lose the configurations created, hence we choose a disk-backed data store that has an efficient `get` and `put` operation for a key. Since there would be billions of entries in this configuration store, using a SQL DB to hold these entries will lead to a performance bottleneck and hence we go with a simple key-value NoSQL database like [MongoDB](https://mongodb.com) or [DynamoDB](https://aws.amazon.com/dynamodb/) for this use case.
 
 ### Requests Store
 The requests store will hold the count of requests served against each key per unit time. The most frequent operations on this store will be
@@ -75,7 +75,7 @@ The requests store will hold the count of requests served against each key per u
  - summing all the requests served in a given time window - _read and compute heavy_
  - cleaning up the obsolete requests count - _write heavy_
 
-Since the operations are both read and write-heavy and will ve very frequent (on every request call), we chose an in-memory store for persisting it. A good choice for such operation will be a datastore like [Redis](https://redis.io) but since we would love to dive deep with the core implementation, we would store everything using data common data structures available.
+Since the operations are both read and write-heavy and will be made very frequently (on every request call), we chose an in-memory store for persisting it. A good choice for such operation will be a datastore like [Redis](https://redis.io) but since we would be diving deep with the core implementation, we would store everything using the common data structures available.
 
 ## Data models and data structures
 Now we take a look at data models and data structures we would use to build this generic rate limiter.
