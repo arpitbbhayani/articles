@@ -163,15 +163,15 @@ Since we are deleting the keys from the inner dictionary that refers to older ti
  - take locks while reading and block the deletions
 
 ### Non-static sliding window
-There would be cases where the `time_window_sec` is large, suppose it is an hour, so if in the request store we store requests count against the epoch seconds there will be 3600 entries for that key and on every request, we will be iterating over at least 3600 keys and computing the sum. A faster way to do this is instead of keeping granularity at seconds we could do it at the minute-level granularity. This means we sub-aggregate the requests count at per minute and not we only need to iterate over about 60 entires to get the total number of requests and this also means our window slides not per second but per minute.
+There would be cases where the `time_window_sec` is large - an hour or even a day, suppose it is an hour, so if in the request store we hold the requests count against the epoch seconds there will be 3600 entries for that key and on every request, we will be iterating over at least 3600 keys and computing the sum. A faster way to do this is, instead of keeping granularity at seconds we could do it at the minute-level and thus we sub-aggregate the requests count at per minute and now we only need to iterate over about 60 entries to get the total number of  requests and our window slides not per second but per minute.
 
-The granularity configuration could be persisted in the configuration as a new attribute which would help us take a call.
+The granularity configuration could be persisted in the configuration as a new attribute which would help us take this call.
 
 ### Other improvements
-The solution mentioned above is not the most optimal solution that could ever be but it aims to prove a rough idea on how we could implement a sliding window rate limiting algorithm. Apart from the improvements mentioned above there some approaches that could well improve the performance
+The solution described above is not the most optimal solution but it aims to prove a rough idea on how we could implement a sliding window rate limiting algorithm. Apart from the improvements mentioned above there some approaches that would further improve the performance
 
  - use a data structure that is optimized for range sum, like segment tree
- - use a running aggregation algorithm that would prevent from recomputing redundant sum
+ - use a running aggregation algorithm that would prevent from recomputing redundant sums
 
 ## Scaling the solution
 
