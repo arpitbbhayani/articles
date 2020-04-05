@@ -54,8 +54,8 @@ Designing a rate limiter has to be super-efficient because the rate limiter deci
 The Rate limiter has the following components
 
  - Configuration store - to keep all the rate limit configurations
- - Requests store - to keep all the requests made against one configuration key
- - Decision Engine - it uses data from the configuration store and requests store and makes the decision
+ - Request Store - to keep all the requests made against one configuration key
+ - Decision Engine - it uses data from the configuration store and Request Store and makes the decision
 
 ## Deciding the datastores
 Picking the right data store for the use case is extremely important. The kind of datastore we choose determines the core performance of a system like this.
@@ -68,8 +68,8 @@ The primary role of the configuration store would be to
 
 In case of machine failure, we would not want to lose the configurations created, hence we choose a disk-backed data store that has an efficient `get` and `put` operation for a key. Since there would be billions of entries in this configuration store, using a SQL DB to hold these entries will lead to a performance bottleneck and hence we go with a simple key-value NoSQL database like [MongoDB](https://mongodb.com) or [DynamoDB](https://aws.amazon.com/dynamodb/) for this use case.
 
-### Requests Store
-The requests store will hold the count of requests served against each key per unit time. The most frequent operations on this store will be
+### Request Store
+Request Store will hold the count of requests served against each key per unit time. The most frequent operations on this store will be
 
  - registering (storing and updating) requests count served against each key - _write heavy_
  - summing all the requests served in a given time window - _read and compute heavy_
@@ -94,10 +94,10 @@ As decided before we would be using a NoSQL key-value store to hold the configur
 
 The above configuration defines that the user with id `241531` would be allowed to make `5` requests in `1` second.
 
-## Requests Store
-A requests store is a nested dictionary where the outer dictionary maps the configuration key `key` to an inner dictionary, and the inner dictionary maps the epoch second to the request counter. The inner dictionary is actually holding the number of requests served during the corresponding epoch second. This  way we keep on aggregating the requests per second and then sum them all  during aggregation to compute the number of requests served in the required time window.
+## Request Store
+Request Store is a nested dictionary where the outer dictionary maps the configuration key `key` to an inner dictionary, and the inner dictionary maps the epoch second to the request counter. The inner dictionary is actually holding the number of requests served during the corresponding epoch second. This  way we keep on aggregating the requests per second and then sum them all  during aggregation to compute the number of requests served in the required time window.
 
-![Requests store for sliding window rate limiter](https://user-images.githubusercontent.com/4745789/78384914-b0657600-75f8-11ea-8158-981ac3ecd46d.png)
+![Request Store for sliding window rate limiter](https://user-images.githubusercontent.com/4745789/78384914-b0657600-75f8-11ea-8158-981ac3ecd46d.png)
 
 
 ## Implementation
@@ -150,7 +150,7 @@ def register_request(key, ts):
 Although the above code elaborates on the overall low-level implementation details of the algorithm, it is not something that we would want to put in production as there are lots of improvements to be made.
 
 ### Atomic updates
-While we register a request in the requests store we increment the request counter by 1. When the code runs in a multi-threaded environment, all the threads executing the function for the same key `key`, all will try to increment the same counter. Thus there will be a classical problem where multiple writers read the same old value and updates. To fix this we need to ensure that the increment is done atomically and to do this we could use one of the following approaches
+While we register a request in the Request Store we increment the request counter by 1. When the code runs in a multi-threaded environment, all the threads executing the function for the same key `key`, all will try to increment the same counter. Thus there will be a classical problem where multiple writers read the same old value and updates. To fix this we need to ensure that the increment is done atomically and to do this we could use one of the following approaches
 
  - optimistic locking (compare and swap)
  - pessimistic locks (always taking lock before incrementing)
@@ -163,7 +163,7 @@ Since we are deleting the keys from the inner dictionary that refers to older ti
  - take locks while reading and block the deletions
 
 ### Non-static sliding window
-There would be cases where the `time_window_sec` is large - an hour or even a day, suppose it is an hour, so if in the requests store we hold the requests count against the epoch seconds there will be 3600 entries for that key and on every request, we will be iterating over at least 3600 keys and computing the sum. A faster way to do this is, instead of keeping granularity at seconds we could do it at the minute-level and thus we sub-aggregate the requests count at per minute and now we only need to iterate over about 60 entries to get the total number of  requests and our window slides not per second but per minute.
+There would be cases where the `time_window_sec` is large - an hour or even a day, suppose it is an hour, so if in the Request Store we hold the requests count against the epoch seconds there will be 3600 entries for that key and on every request, we will be iterating over at least 3600 keys and computing the sum. A faster way to do this is, instead of keeping granularity at seconds we could do it at the minute-level and thus we sub-aggregate the requests count at per minute and now we only need to iterate over about 60 entries to get the total number of  requests and our window slides not per second but per minute.
 
 The granularity configuration could be persisted in the configuration as a new attribute which would help us take this call.
 
@@ -185,15 +185,15 @@ The scaling policy of the decision engine will be kept on following metrics
  - memory consumption
  - CPU utilization
 
-### Scaling the Requests store
-Since the requests store is doing all the heavy lifting and storing a lot of data in memory, this would not scale if kept on a single instance. We would need to horizontally scale this system and for that, we shard the store using configuration key key and use consistent hashing to find the machine that holds the data for the key.
+### Scaling the Request Store
+Since the Request Store is doing all the heavy lifting and storing a lot of data in memory, this would not scale if kept on a single instance. We would need to horizontally scale this system and for that, we shard the store using configuration key key and use consistent hashing to find the machine that holds the data for the key.
 
-To facilitate sharding and making things seamless for the decision engine we will have a Requests store proxy which will act as the entry point to access requests store data. It will abstract out all the complexities of distributed data, replication, and failures.
+To facilitate sharding and making things seamless for the decision engine we will have a Request Store proxy which will act as the entry point to access Request Store data. It will abstract out all the complexities of distributed data, replication, and failures.
 
 ### Scaling the Configuration store
 The number of configurations would be high but it would be relatively simple to scale since we are using a NoSQL solution, sharding on configuration key `key` would help us achieve horizontal scalability.
 
-Similar to requests store proxy we will have a proxy for Configuration store that would be an abstraction over the distributed configuration stores.
+Similar to Request Store proxy we will have a proxy for Configuration store that would be an abstraction over the distributed configuration stores.
 
 ## High-level design
 The overall high-level design of the entire system looks something like this
