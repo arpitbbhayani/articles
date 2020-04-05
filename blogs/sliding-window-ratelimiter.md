@@ -53,20 +53,20 @@ Designing a rate limiter has to be super-efficient because the rate limiter deci
 ## Components of the Rate limiter
 The Rate limiter has the following components
 
- - Configuration store - to keep all the rate limit configurations
+ - Configuration Store - to keep all the rate limit configurations
  - Request Store - to keep all the requests made against one configuration key
- - Decision Engine - it uses data from the configuration store and Request Store and makes the decision
+ - Decision Engine - it uses data from the Configuration Store and Request Store and makes the decision
 
 ## Deciding the datastores
 Picking the right data store for the use case is extremely important. The kind of datastore we choose determines the core performance of a system like this.
 
 ### Configuration Store
-The primary role of the configuration store would be to
+The primary role of the Configuration Store would be to
 
  - efficiently store configuration for a key
  - efficiently retrieve the configuration for a key
 
-In case of machine failure, we would not want to lose the configurations created, hence we choose a disk-backed data store that has an efficient `get` and `put` operation for a key. Since there would be billions of entries in this configuration store, using a SQL DB to hold these entries will lead to a performance bottleneck and hence we go with a simple key-value NoSQL database like [MongoDB](https://mongodb.com) or [DynamoDB](https://aws.amazon.com/dynamodb/) for this use case.
+In case of machine failure, we would not want to lose the configurations created, hence we choose a disk-backed data store that has an efficient `get` and `put` operation for a key. Since there would be billions of entries in this Configuration Store, using a SQL DB to hold these entries will lead to a performance bottleneck and hence we go with a simple key-value NoSQL database like [MongoDB](https://mongodb.com) or [DynamoDB](https://aws.amazon.com/dynamodb/) for this use case.
 
 ### Request Store
 Request Store will hold the count of requests served against each key per unit time. The most frequent operations on this store will be
@@ -104,7 +104,7 @@ Request Store is a nested dictionary where the outer dictionary maps the configu
 Now that we have defined and designed the data stores and structures, it is time that we implement all the helper functions we saw in the pseudocode.
 
 ### Getting the rate limit configuration
-Getting the rate limit configuration is a simple get on the configuration store by `key`. Since the information does not change often and making a disk read every time is expensive, we cache the results in memory for faster access.
+Getting the rate limit configuration is a simple get on the Configuration Store by `key`. Since the information does not change often and making a disk read every time is expensive, we cache the results in memory for faster access.
 
 ```py
 def get_ratelimit_config(key):
@@ -190,10 +190,10 @@ Since the Request Store is doing all the heavy lifting and storing a lot of data
 
 To facilitate sharding and making things seamless for the decision engine we will have a Request Store proxy which will act as the entry point to access Request Store data. It will abstract out all the complexities of distributed data, replication, and failures.
 
-### Scaling the Configuration store
+### Scaling the Configuration Store
 The number of configurations would be high but it would be relatively simple to scale since we are using a NoSQL solution, sharding on configuration key `key` would help us achieve horizontal scalability.
 
-Similar to Request Store proxy we will have a proxy for Configuration store that would be an abstraction over the distributed configuration stores.
+Similar to Request Store proxy we will have a proxy for Configuration Store that would be an abstraction over the distributed Configuration Stores.
 
 ## High-level design
 The overall high-level design of the entire system looks something like this
