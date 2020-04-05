@@ -176,19 +176,19 @@ The solution described above is not the most optimal solution but it aims to pro
 ## Scaling the solution
 
 ### Scaling the Decision engine
-The decision engine is the one making the call to each store and fetching the data and taking the to call to accept or discard the request. Since decision engine is a typical service engine we would put it behind a load balancer and that would take of distributing requests to decision engine instances in a round-robin facing and ensure it scales.
+The decision engine is the one making the call to each store to fetch the data and taking the call to either accept or discard the request. Since decision engine is a typical service engine we would put it behind a load balancer that takes care of distributing requests to decision engine instances in a round-robin fashion ensuring it scales horizontally.
 
 The scaling policy of the decision engine will be kept on following metrics
 
  - number of requests received per second
- - time to make the decision (response time)
- - memory utilization
+ - time taken to make a decision (response time)
+ - memory consumption
  - CPU utilization
 
 ### Scaling the Requests store
-Since the Requests store is doing all the heavy lifting and storing a lot of data in memory, this would not scale if kept on a single instance. We would need to horizontally scale this system and for that, we shard the store using configuration key `key` and use consistent hashing to find the machine that holds the data for the key.
+Since the requests store is doing all the heavy lifting and storing a lot of data in memory, this would not scale if kept on a single instance. We would need to horizontally scale this system and for that, we shard the store using configuration key key and use consistent hashing to find the machine that holds the data for the key.
 
-To facilitate sharding and making things seamless for the decision engine we will have a Request store proxy which will act as the only entry point to access request store. It will abstract out all the complexities of distributed request stores, replication, and failures.
+To facilitate sharding and making things seamless for the decision engine we will have a Requests store proxy which will act as the entry point to access requests store data. It will abstract out all the complexities of distributed data, replication, and failures.
 
 ### Scaling the Configuration store
 The number of configurations would be high but relatively simple to scale since we are using a NoSQL solution, sharding on configuration key `key` would help us achieve horizontal scalability.
