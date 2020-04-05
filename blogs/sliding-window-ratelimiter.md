@@ -55,7 +55,7 @@ The Rate limiter has the following components
 
  - Configuration store - to keep all the rate limit configurations
  - Requests store - to keep all the requests made against one configuration key
- - Decision Engine - it uses data from the configuration store and request store and makes the decision
+ - Decision Engine - it uses data from the configuration store and requests store and makes the decision
 
 ## Deciding the datastores
 Picking the right data store for the use case is extremely important. The kind of datastore we choose determines the core performance of a system like this.
@@ -94,8 +94,8 @@ As decided before we would be using a NoSQL key-value store to hold the configur
 
 The above configuration defines that the user with id `241531` would be allowed to make `5` requests in `1` second.
 
-## Request Store
-A request store is a nested dictionary where the outer dictionary maps the configuration key `key` to an inner dictionary, and the inner dictionary maps the epoch second to the request counter. The inner dictionary is actually holding the number of requests served during the corresponding epoch second. This  way we keep on aggregating the requests per second and then sum them all  during aggregation to compute the number of requests served in the required time window.
+## Requests Store
+A requests store is a nested dictionary where the outer dictionary maps the configuration key `key` to an inner dictionary, and the inner dictionary maps the epoch second to the request counter. The inner dictionary is actually holding the number of requests served during the corresponding epoch second. This  way we keep on aggregating the requests per second and then sum them all  during aggregation to compute the number of requests served in the required time window.
 
 ![Requests store for sliding window rate limiter](https://user-images.githubusercontent.com/4745789/78384914-b0657600-75f8-11ea-8158-981ac3ecd46d.png)
 
@@ -150,7 +150,7 @@ def register_request(key, ts):
 Although the above code elaborates on the overall low-level implementation details of the algorithm, it is not something that we would want to put in production as there are lots of improvements to be made.
 
 ### Atomic updates
-While we register a request in the request store we increment the request counter by 1. When the code runs in a multi-threaded environment, all the threads executing the function for the same key `key`, all will try to increment the same counter. Thus there will be a classical problem where multiple writers read the same old value and updates. To fix this we need to ensure that the increment is done atomically and to do this we could use one of the following approaches
+While we register a request in the requests store we increment the request counter by 1. When the code runs in a multi-threaded environment, all the threads executing the function for the same key `key`, all will try to increment the same counter. Thus there will be a classical problem where multiple writers read the same old value and updates. To fix this we need to ensure that the increment is done atomically and to do this we could use one of the following approaches
 
  - optimistic locking (compare and swap)
  - pessimistic locks (always taking lock before incrementing)
@@ -163,7 +163,7 @@ Since we are deleting the keys from the inner dictionary that refers to older ti
  - take locks while reading and block the deletions
 
 ### Non-static sliding window
-There would be cases where the `time_window_sec` is large - an hour or even a day, suppose it is an hour, so if in the request store we hold the requests count against the epoch seconds there will be 3600 entries for that key and on every request, we will be iterating over at least 3600 keys and computing the sum. A faster way to do this is, instead of keeping granularity at seconds we could do it at the minute-level and thus we sub-aggregate the requests count at per minute and now we only need to iterate over about 60 entries to get the total number of  requests and our window slides not per second but per minute.
+There would be cases where the `time_window_sec` is large - an hour or even a day, suppose it is an hour, so if in the requests store we hold the requests count against the epoch seconds there will be 3600 entries for that key and on every request, we will be iterating over at least 3600 keys and computing the sum. A faster way to do this is, instead of keeping granularity at seconds we could do it at the minute-level and thus we sub-aggregate the requests count at per minute and now we only need to iterate over about 60 entries to get the total number of  requests and our window slides not per second but per minute.
 
 The granularity configuration could be persisted in the configuration as a new attribute which would help us take this call.
 
@@ -191,9 +191,9 @@ Since the requests store is doing all the heavy lifting and storing a lot of dat
 To facilitate sharding and making things seamless for the decision engine we will have a Requests store proxy which will act as the entry point to access requests store data. It will abstract out all the complexities of distributed data, replication, and failures.
 
 ### Scaling the Configuration store
-The number of configurations would be high but relatively simple to scale since we are using a NoSQL solution, sharding on configuration key `key` would help us achieve horizontal scalability.
+The number of configurations would be high but it would be relatively simple to scale since we are using a NoSQL solution, sharding on configuration key `key` would help us achieve horizontal scalability.
 
-Similar to Request store proxy we will have a proxy for Configuration store that would be an abstraction over the distributed configuration stores.
+Similar to requests store proxy we will have a proxy for Configuration store that would be an abstraction over the distributed configuration stores.
 
 ## High-level design
 The overall high-level design of the entire system looks something like this
@@ -201,7 +201,7 @@ The overall high-level design of the entire system looks something like this
 ![Rate limiter high-level design diagram](https://user-images.githubusercontent.com/4745789/78460031-1cb8a600-76db-11ea-94f4-b821244993b3.png)
 
 ## Deploying in production
-While deploying it to production we could use a memory store like Redis whose features, like Key expiration, transaction, locks, sorted, come in handy. The language we chose for explaining and pseudocode was Python but in production to make things super-fast and concurrent we would prefer a language like Java or Golang. Picking this stack will keep our server cost down and would also help us make optimum use of resources.
+While deploying it to production we could use a memory store like Redis whose features, like Key expiration, transaction, locks, sorted, would come in handy. The language we chose for explaining and pseudocode was Python but in production to make things super-fast and concurrent we would prefer a language like Java or Golang. Picking this stack will keep our server cost down and would also help us make optimum utilization of the resources.
 
 # References
  - [Rate Limiting - Wikipedia](https://en.wikipedia.org/wiki/Rate_limiting)
