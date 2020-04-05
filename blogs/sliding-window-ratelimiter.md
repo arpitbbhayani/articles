@@ -95,7 +95,7 @@ As decided before we would be using a NoSQL key-value store to hold the configur
 The above configuration defines that the user with id `241531` would be allowed to make `5` requests in `1` second.
 
 ## Request Store
-A request store is a nested dictionary where the outer dictionary maps the configuration key `key` to an inner dictionary, and the inner dictionary maps the epoch second to the request counter. The inner dictionary is actually holding the number of requests served during the corresponding epoch second. This way we keep on aggregating the requests per second and then sum them all during to compute the number of requests served in a time range, making updations and computations faster.
+A request store is a nested dictionary where the outer dictionary maps the configuration key `key` to an inner dictionary, and the inner dictionary maps the epoch second to the request counter. The inner dictionary is actually holding the number of requests served during the corresponding epoch second. This  way we keep on aggregating the requests per second and then sum them all  during aggregation to compute the number of requests served in the required time window.
 
 ![Requests store for sliding window rate limiter](https://user-images.githubusercontent.com/4745789/78384914-b0657600-75f8-11ea-8158-981ac3ecd46d.png)
 
