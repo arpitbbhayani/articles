@@ -1,5 +1,15 @@
 [
   {
+    "id": "sliding-window-ratelimiter",
+    "title": "Sliding window based Rate Limiter",
+    "description": "A rate limiter is used to control the rate of traffic sent or received on the network and in this article we dive deep into sliding window based rate limiter.",
+    "image": "https://user-images.githubusercontent.com/4745789/78276848-3c13cf80-7531-11ea-8186-99cb1da58e50.png",
+    "gif": "https://media.giphy.com/media/5YuhLwDgrgtRVwI7OY/giphy.gif",
+    "categories": ["algorithm"],
+    "tags": [],
+    "published_at": "2020-04-05"
+  },
+  {
     "id": "idf",
     "title": "Understanding Inverse Document Frequency",
     "description": "TF-IDF is extensively used in search engines and in various document classification and clustering techniques. Instead of taking the formula by the word, we take a detour and dive deep into the better half of it and find its connection with Probability, the role it plays in document relevance and the intuition behind it.",
