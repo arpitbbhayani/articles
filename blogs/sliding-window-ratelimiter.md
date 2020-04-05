@@ -101,7 +101,7 @@ A request store is a nested dictionary where the outer dictionary maps the confi
 
 
 ## Implementation
-Now that we have defined and designed the data stores and structures, it is time that we implement all the helper functions we see in the pseudocode.
+Now that we have defined and designed the data stores and structures, it is time that we implement all the helper functions we saw in the pseudocode.
 
 ### Getting the rate limit configuration
 Getting the rate limit configuration is a simple get on the configuration store by `key`. Since the information does not change often and making a disk read every time is expensive, we cache the results in memory for faster access.
@@ -118,9 +118,9 @@ def get_ratelimit_config(key):
 ```
 
 ### Getting requests in the current window
-Now that we have the configuration for the given key, we first compute the `start_time` from which we want to count the requests that have been served by the system for the `key`. For this, we iterate through the data from the inner dictionary second by second and keep on summing the requests count for the epoch seconds greater than the `start_time`. This way we get the total requests served from start_time till now. This would help us make the decision.
+Now that we have the configuration for the given key, we first compute the `start_time` from which we want to count the requests that have been served by the system for the `key`. For this, we iterate through the data from the inner dictionary second by second and keep on summing the requests count for the epoch seconds greater than the `start_time`. This way we get the total requests served from start_time till now.
 
-In order to reduce the memory footprint, we could delete the items from the inner dictionary against the time older than the `start_time` because we are sure that the requests for an older than `start_time` would never come in the future.
+In order to reduce the memory footprint, we could delete the items from the inner dictionary against the time older than the `start_time` because we are sure that the requests for a timestamp older than `start_time` would never come in the future.
 
 ```python
 def get_current_window(key, start_time):
@@ -139,7 +139,7 @@ def get_current_window(key, start_time):
 ```
 
 ### Registering the request
-Once we have validated that the request is good to go through it is time to register it in the store and the defined function `register_request` does exactly that.
+Once we have validated that the request is good to go through, it is time to register it in the store and the defined function `register_request` does exactly that.
 
 ```python
 def register_request(key, ts):
@@ -150,16 +150,16 @@ def register_request(key, ts):
 Although the above code elaborates on the overall low-level implementation details of the algorithm, it is not something that we would want to put in production as there are lots of improvements to be made.
 
 ### Atomic updates
-While we register a request in the request store we increment the request counter by 1. When the code runs in a multi-threaded environment, all the threads executing the function for the same `key` will try to increment the same counter. Thus there will be a classical problem where multiple writers read the same old value and updates. To fix this we need to ensure that the increment is done atomically and to do this we could use one of the following approaches
+While we register a request in the request store we increment the request counter by 1. When the code runs in a multi-threaded environment, all the threads executing the function for the same key `key`, all will try to increment the same counter. Thus there will be a classical problem where multiple writers read the same old value and updates. To fix this we need to ensure that the increment is done atomically and to do this we could use one of the following approaches
 
  - optimistic locking (compare and swap)
  - pessimistic locks (always taking lock before incrementing)
  - utilize atomic hardware instructions (fetch-and-add instruction)
 
-### Accurately computing Total Requests
-Since we are deleting the keys from the inner dictionary referring to old timestamps (older than the `start_time`), it is possible that a request with older `start_time` is executing while a request with newer `start_time` deleted the entry and lead to incorrect `total_request` calculation. To remedy this we could either
+### Accurately computing total requests
+Since we are deleting the keys from the inner dictionary that refers to older timestamps (older than the `start_time`), it is possible that a request with older `start_time` is executing while a request with newer `start_time` deleted the entry and lead to incorrect `total_request` calculation. To remedy this we could either
 
- - delete entries from the inner dictionary with a buffer (say older than start_time - 10 seconds),
+ - delete entries from the inner dictionary with a buffer (say older than 10 seconds before the start_time),
  - take locks while reading and block the deletions
 
 ### Non-static sliding window
