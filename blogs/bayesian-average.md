@@ -23,7 +23,7 @@ With the movie dataset we are playing with here is the top 10 movies ranking usi
 
 ![top 10 movies arithmetic mean](https://user-images.githubusercontent.com/4745789/79049814-58a3bc00-7c43-11ea-980e-a12ae10379f7.png)
 
-All the movies that are in top 10 have average score of 5 on 5 and have 1 or 2 ratings in totality. But are these really the top 10 movies? Nope. We can do a lot better than arithmetic mean.
+Through this measure, all the movies that are in top 10 have average score of 5 (out of 5) and have just 1 rating. But, in reality, are these really the top 10 movies of all time? Looks like we can do a lot better than arithmetic mean.
 
 ## Cumulative Rating
 To remedy the issue with low cardinality we could stop taking the average but rather just consider the cumulative rating, which means the scoring function will simply sum all the ratings for a movie and take that as the score for it.
