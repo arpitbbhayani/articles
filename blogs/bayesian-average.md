@@ -7,7 +7,7 @@ To keep things simple we define the problem statement as
 > Given the ratings that users gives to a movie, on a scale of 1 to 5, we generate a score that is a measure of how good a movie is and it helps us get the top 10 movies of all time.
 
 # Generating the score
-The `score` we generate for each will be computed by using the individual ratings; and willalso be a measure of its quality, which means higher the `score`, superior is the product. Hence we could say that the `score` is the function of all the ratings `ri` and today we seek to find this function `fn`
+The `score` we generate for each will be computed by using the individual ratings; and willalso be a measure of its quality, which means higher the `score`, superior is the product. Hence we say that the `score` is the function of all the `m` ratings that the product got.
 
 ![score function](https://user-images.githubusercontent.com/4745789/79049127-31e38680-7c3f-11ea-9032-baa0d2152cc2.png)
 
