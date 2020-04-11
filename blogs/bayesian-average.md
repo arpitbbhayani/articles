@@ -26,9 +26,11 @@ With the movie dataset we are playing with here is the top 10 movies ranking usi
 Through this measure, all the movies that are in top 10 have average score of 5 (out of 5) and have just 1 rating. But, in reality, are these really the top 10 movies of all time? Looks like we can do a lot better than arithmetic mean.
 
 ## Cumulative Rating
-To remedy the issue with low cardinality we could stop taking the average but rather just consider the cumulative rating, which means the scoring function will simply sum all the ratings for a movie and take that as the score for it.
+To remedy the issue with low cardinality we could come up with an approach of using cumulative rating as the scoring function which means instead of taking the average we simly consider the sum of all the ratings as the final score.
 
 ![cumulative rating as scoring function](https://user-images.githubusercontent.com/4745789/79050470-e1245b80-7c47-11ea-824b-ecd5cbb40912.png)
+
+Cumulative rating does a pretty good job, it makes popular items with large number of ratings float to the top of the leaderboard and it does
 
 If we apply cumulative rating as scoring function ont he movie dataset, we get the following moves as the top 10
 
@@ -42,6 +44,7 @@ IMAGE: example
 
 ### Issues
 Unbounded
+Favours high cardinality
 The ranking looks good but it suffers from the problem. 10k ratings of 1 start vs 500 ratings of 5 star.
 
 # The Bayesian Average
