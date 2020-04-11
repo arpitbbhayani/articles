@@ -7,11 +7,9 @@ To keep things simple we define the problem statement as
 > Given the ratings that users gives to a movie, on a scale of 1 to 5, we generate a score that is a measure of how good a movie is and it helps us get the top 10 movies of all time.
 
 # Generating the score
-In order to find top 10 movies, we need a way to assign a `score` to each movie that defines how good it is. This score has to be computed from all the ratings that the movie has received till date. Thus the final score of the move will be
+The `score` we generate for each will be computed by using the individual ratings; and willalso be a measure of its quality, which means higher the `score`, superior is the product. Hence we could say that the `score` is the function of all the ratings `ri` and today we seek to find this function `fn`
 
-IMAGE: score is a function of all ratings it has received
-
-Deciding this function `fn` is what we do today.
+![score function](https://user-images.githubusercontent.com/4745789/79049127-31e38680-7c3f-11ea-9032-baa0d2152cc2.png)
 
 ## Arithmetic Mean
 The most common strategy of computing aggregated rating is Arithmetic Mean. In this for all movies we take sum all the ratings users submitted and divide it by the number of ratings that were submitted. This is the true arithmetic mean.
