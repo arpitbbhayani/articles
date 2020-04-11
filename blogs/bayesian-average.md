@@ -1,22 +1,20 @@
 Almost every single website, app or platform on the internet has some sort rating system in place. Whenever you purchase a product or use a service, you are asked to rate it on a scale, say 1 to 5. The platform then uses this data to generate a score and build a ranking system around it. The score is the measure of quality for each product or service. By surfacing quality content on top the platform tries up their selling and serve the most quality content to their users.
 
-Coming up with the aggregated score is not a easy thing - we need to curnching millions of ratings and then see that the score is infact the true measure of quality. If it isn't then it would directly affect the business. Today we discuss how we should define this `score` in a rating based system; spoiler alert! the measure is called [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average).
+Coming up with the aggregated score is not a easy thing - we need to curnching millions of ratings and then see that the score is infact the true measure of quality. If it isn't then it would directly affect the business. Today we discuss how we should define this score in a rating based system; spoiler alert! the measure is called [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average).
 
 To keep things simple we define the problem statement as
 
 > Given the ratings that users gives to a movie, on a scale of 1 to 5, we generate a score that is a measure of how good a movie is and it helps us get the top 10 movies of all time.
 
 # Generating the score
-The `score` we generate for each will be computed by using the individual ratings; and willalso be a measure of its quality, which means higher the `score`, superior is the product. Hence we say that the `score` is the function of all the `m` ratings that the product got.
+The score we generate for each will be computed by using the individual ratings; and willalso be a measure of its quality, which means higher the score, superior is the product. Hence we say that the score is the function of all the `m` ratings that the product got.
 
 ![score function](https://user-images.githubusercontent.com/4745789/79049127-31e38680-7c3f-11ea-9032-baa0d2152cc2.png)
 
 ## Arithmetic Mean
-The most common strategy of computing aggregated rating is Arithmetic Mean. In this for all movies we take sum all the ratings users submitted and divide it by the number of ratings that were submitted. This is the true arithmetic mean.
+The simplest and the most common strategy to compute this arrgregated score is by taking an arithmetic mean (average). Hence for each product we sum all the ratings that it got and divide it by the number of ratings it got, giving us an average value.
 
 IMAGE: FORMULA
-
-This is what we usually do when someone asks to have an "average" rating.
 
 ### Some issues with Arithmetic Mean
 If you set score of an item to be equal to arithmetic mean of all its rating, then what about an item that gets just one rating which is a 5 on 5. That item will have be rank 1. This seems wrong.
