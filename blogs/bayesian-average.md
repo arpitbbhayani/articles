@@ -1,16 +1,39 @@
-bayesian average addresses an age old problem f
+The internet is filled with user reviews and ratings which are then used to rank products during listing - example Search results. Today we explore Bayesian Average as a strategy to calculate aggregated ranking of a product given user ratings.
 
-Let's say you are running a platform like IMDB where people can submit their reviews about a movie.
+Here we take an example of a Movie rating system through a Movie Lens dataset. The problem stattement could be summarized as
+
+> Given the user ratings for each product, find the top k products
+
+Movies, Restaurants, Hotels, Books, 
 
 # Aggregation methods
+Each product has several ratings but it will be extremely helpful that each product has an aggregated rating that indicates the true rating of the product - which helps user to make the decision. Example booking 
 
 ## Arithmetic Mean
+The most common strategy of computing aggregated rating is Arithmetic Mean. In this for all movies we take sum all the ratings users submitted and divide it by the number of ratings that were submitted. This is the true arithmetic mean.
+
+IMAGE: FORMULA
+
+### Some issues with Arithmetic Mean
+
+When cardinality is low the average rating could skew. It is not a true representaton of quality.
 
 ## Arithmetic Mean with Cardinality
 
+To fix arithmetic mean, we could path things with the cardinatity where we first sort on the basis of average rating and then on cardinaility. This wouldn't ame the solution any better
+
+### Issues
+Even this suffers from the issue with skew.
+
 ## Cumulative Rating
 
+Another approach we could be to use cumulative score. Now show the end rating to the user but have an score. Summation of all the ratings we ever received.
+
+### Issues
+The ranking looks good but it suffers from the problem. 10k ratings of 1 start vs 500 ratings of 5 star.
+
 # The Bayesian Average
+Bayesian average tries to address all of the above problem.
 
 ## Understanding the formula
 
