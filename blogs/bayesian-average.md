@@ -17,12 +17,13 @@ The simplest and the most common strategy to compute this arrgregated score is b
 ![arithmetic mean](https://user-images.githubusercontent.com/4745789/79049349-b387e400-7c40-11ea-9adf-b40aa377778f.png)
 
 ### Issues with arithmetic mean
+Arithmetic mean falls apart pretty quickly. Let's say there is a product with just one rating of 5 on 5, the product would soar high on the leaderboard ranking. But does it deserve that place? probably not. Thus arithmetic mean suffes from the cardinality issue which means the items with low cardinality (low number of ratings) will fluctuate between highs and lows of ranking.
 
-If you set score of an item to be equal to arithmetic mean of all its rating, then what about an item that gets just one rating which is a 5 on 5. That item will have be rank 1. This seems wrong.
+With the movie dataset we are playing with here is the top 10 movies ranking using Arithmetic Mean.
 
-IMAGE: Ranking movies with AA
+![top 10 movies arithmetic mean](https://user-images.githubusercontent.com/4745789/79049814-58a3bc00-7c43-11ea-980e-a12ae10379f7.png)
 
-The core issue here is the cardinality. While taking arithmetic mean the low cardinality items dominate the top or the bottom positions in the leaderboard. Thus we establish the fact that Arithmetic mean is not the score we would want to go ahead with.
+All the movies that are in top 10 have average score of 5 on 5 and have 1 or 2 ratings in totality. But are these really the top 10 movies? Nope. We can do a lot better than arithmetic mean.
 
 ## Arithmetic Mean with Cardinality
 If cardinality is the issue we could try to patch things by considering not only the score but also the cardinality. This way we assign a score tuple `(average_score, ratings_count)` as the final score and we sort items in descending order. Thus in case of a tie of score the conflict will be resolved using number of ratings.
