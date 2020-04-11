@@ -26,15 +26,22 @@ With the movie dataset we are playing with here is the top 10 movies ranking usi
 All the movies that are in top 10 have average score of 5 on 5 and have 1 or 2 ratings in totality. But are these really the top 10 movies? Nope. We can do a lot better than arithmetic mean.
 
 ## Cumulative Rating
-We could assign the score as a summation of all the ratings received.
+To remedy the issue with low cardinality we could stop taking the average but rather just consider the cumulative rating, which means the scoring function will simply sum all the ratings for a movie and take that as the score for it.
 
-IMAGE: function
+![cumulative rating as scoring function](https://user-images.githubusercontent.com/4745789/79050470-e1245b80-7c47-11ea-824b-ecd5cbb40912.png)
+
+If we apply cumulative rating as scoring function ont he movie dataset, we get the following moves as the top 10
+
+![top 10 movies through cunulative rating](https://user-images.githubusercontent.com/4745789/79050520-2d6f9b80-7c48-11ea-8e48-1c12fbbc0a88.png)
+
+This approach although solves a lot of probel with arithmetic mean approach but it introduces new ones.
 
 This approach does a pretty good job in getting the top k. as shown in the table below.
 
 IMAGE: example
 
 ### Issues
+Unbounded
 The ranking looks good but it suffers from the problem. 10k ratings of 1 start vs 500 ratings of 5 star.
 
 # The Bayesian Average
