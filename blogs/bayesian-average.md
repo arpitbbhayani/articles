@@ -1,13 +1,17 @@
-The internet is filled with user reviews and ratings which are then used to rank products during listing - example Search results. Today we explore Bayesian Average as a strategy to calculate aggregated ranking of a product given user ratings.
+Almost every single website/app/platform on the internet has some sort rating system in place. Whenever you purchase a product or use a service you are asked to rate it on a scale, say 1 to 5. The platform then uses this data to build a ranking for each product/service so that they could surface the best products first and thus driving large number of sales.
 
-Here we take an example of a Movie rating system through a Movie Lens dataset. The problem stattement could be summarized as
+Building a ranking is not as easy as it sounds. Curnching millions of ratings and coming with one consolidate and aggregated number is a touch problem on its own. Today we discuss several approaches for coming up with this aggregated rating for a product and see why a approach called Bayesian Average does wonderfully well.
 
-> Given the user ratings for each product, find the top k products
+To set things up for this roller coaster ride we first define the problem statement, that we will then dissect to understand ranking strategies.
 
-Movies, Restaurants, Hotels, Books, 
+> Given the user ratings, on a scale of 1 to 5, for movies, we find top 10 movies of all time.
 
 # Aggregation methods
-Each product has several ratings but it will be extremely helpful that each product has an aggregated rating that indicates the true rating of the product - which helps user to make the decision. Example booking 
+In order to find top 10 movies, we need a way to assign a `score` to each movie that defines how good it is. This score has to be computed from all the ratings that the movie has received till date. Thus the final score of the move will be
+
+IMAGE: score is a function of all ratings it has received
+
+Deciding this function `fn` is what we do today.
 
 ## Arithmetic Mean
 The most common strategy of computing aggregated rating is Arithmetic Mean. In this for all movies we take sum all the ratings users submitted and divide it by the number of ratings that were submitted. This is the true arithmetic mean.
@@ -17,6 +21,7 @@ IMAGE: FORMULA
 ### Some issues with Arithmetic Mean
 
 When cardinality is low the average rating could skew. It is not a true representaton of quality.
+This means that we if 1 restaurant had 1 vote and with rating of 10, it would not be the number one. (If we just got the average, it would be at the top! – and that would be wrong)
 
 ## Arithmetic Mean with Cardinality
 
@@ -35,19 +40,31 @@ The ranking looks good but it suffers from the problem. 10k ratings of 1 start v
 # The Bayesian Average
 Bayesian average tries to address all of the above problem.
 
+## The intuition
+Unless we are sure that the rating will give the true rating of a movie we need to use system average. Once given a number of opportunities we would consider the rating it received as true rating.
+
+Bayesian average of items is given by
+
+IMAGE: FORMULA
+
 ## Understanding the formula
+
+Given weight to prior.
 
 ## How this formula works?
 
-## What it actually does?
+When m = 0, unless it reaches the avg number of rating we cannot say for sure.
 
 # Applications of Bayesian Average
+Movies, Restaurants, Hotels, Books, 
 
 # Extra thought points
 
 ## Dealing with multi-dimensional data
 
 ## Tweaking the formula
+
+# References
 
 ---
 
