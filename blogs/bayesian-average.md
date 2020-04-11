@@ -1,4 +1,4 @@
-Almost every single website/app/platform on the internet has some sort rating system in place. Whenever you purchase a product or use a service you are asked to rate it on a scale, say 1 to 5. The platform then uses this data to build a ranking for each product/service so that they could surface the best products first and thus driving large number of sales.
+Almost every single website, app or platform on the internet has some sort rating system in place. Whenever you purchase a product or use a service, you are asked to rate it on a scale, say 1 to 5. The platform then uses this data to generate a score and build a ranking system around it. The score is the measure of quality for each product or service. By surfacing quality content on top the platform tries up their selling and serve the most quality content to their users.
 
 Building a ranking is not as easy as it sounds. Curnching millions of ratings and coming with one consolidate and aggregated number is a touch problem on its own. Today we discuss several approaches for coming up with this aggregated rating for a product and see why a approach called Bayesian Average does wonderfully well.
 
