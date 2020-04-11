@@ -18,21 +18,33 @@ The most common strategy of computing aggregated rating is Arithmetic Mean. In t
 
 IMAGE: FORMULA
 
-### Some issues with Arithmetic Mean
+This is what we usually do when someone asks to have an "average" rating.
 
-When cardinality is low the average rating could skew. It is not a true representaton of quality.
-This means that we if 1 restaurant had 1 vote and with rating of 10, it would not be the number one. (If we just got the average, it would be at the top! – and that would be wrong)
+### Some issues with Arithmetic Mean
+If you set score of an item to be equal to arithmetic mean of all its rating, then what about an item that gets just one rating which is a 5 on 5. That item will have be rank 1. This seems wrong.
+
+IMAGE: Ranking movies with AA
+
+The core issue here is the cardinality. While taking arithmetic mean the low cardinality items dominate the top or the bottom positions in the leaderboard. Thus we establish the fact that Arithmetic mean is not the score we would want to go ahead with.
 
 ## Arithmetic Mean with Cardinality
+If cardinality is the issue we could try to patch things by considering not only the score but also the cardinality. This way we assign a score tuple `(average_score, ratings_count)` as the final score and we sort items in descending order. Thus in case of a tie of score the conflict will be resolved using number of ratings.
 
-To fix arithmetic mean, we could path things with the cardinatity where we first sort on the basis of average rating and then on cardinaility. This wouldn't ame the solution any better
+IMAGE: score
 
 ### Issues
-Even this suffers from the issue with skew.
+This solution tries to address the issue but fails to do a good job. Movie example:
+
+IMAGE: Movie example:
 
 ## Cumulative Rating
+We could assign the score as a summation of all the ratings received.
 
-Another approach we could be to use cumulative score. Now show the end rating to the user but have an score. Summation of all the ratings we ever received.
+IMAGE: function
+
+This approach does a pretty good job in getting the top k. as shown in the table below.
+
+IMAGE: example
 
 ### Issues
 The ranking looks good but it suffers from the problem. 10k ratings of 1 start vs 500 ratings of 5 star.
