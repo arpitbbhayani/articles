@@ -14,7 +14,7 @@ The score we generate for each will be computed by using the individual ratings;
 ## Arithmetic Mean
 The simplest and the most common strategy to compute this arrgregated score is by taking an arithmetic mean (average). Hence for each product we sum all the ratings that it got and divide it by the number of ratings it got, giving us an average value.
 
-IMAGE: FORMULA
+![arithmetic mean](https://user-images.githubusercontent.com/4745789/79049349-b387e400-7c40-11ea-9adf-b40aa377778f.png)
 
 ### Issues with arithmetic mean
 
