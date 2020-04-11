@@ -25,16 +25,6 @@ With the movie dataset we are playing with here is the top 10 movies ranking usi
 
 All the movies that are in top 10 have average score of 5 on 5 and have 1 or 2 ratings in totality. But are these really the top 10 movies? Nope. We can do a lot better than arithmetic mean.
 
-## Arithmetic Mean with Cardinality
-If cardinality is the issue we could try to patch things by considering not only the score but also the cardinality. This way we assign a score tuple `(average_score, ratings_count)` as the final score and we sort items in descending order. Thus in case of a tie of score the conflict will be resolved using number of ratings.
-
-IMAGE: score
-
-### Issues
-This solution tries to address the issue but fails to do a good job. Movie example:
-
-IMAGE: Movie example:
-
 ## Cumulative Rating
 We could assign the score as a summation of all the ratings received.
 
