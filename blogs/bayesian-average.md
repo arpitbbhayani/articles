@@ -1,4 +1,30 @@
-Bayesian Average
+bayesian average addresses an age old problem f
+
+Let's say you are running a platform like IMDB where people can submit their reviews about a movie.
+
+# Aggregation methods
+
+## Arithmetic Mean
+
+## Arithmetic Mean with Cardinality
+
+## Cumulative Rating
+
+# The Bayesian Average
+
+## Understanding the formula
+
+## How this formula works?
+
+## What it actually does?
+
+# Applications of Bayesian Average
+
+# Extra thought points
+
+## Dealing with multi-dimensional data
+
+## Tweaking the formula
 
 ---
 
