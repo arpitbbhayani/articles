@@ -16,7 +16,8 @@ The simplest and the most common strategy to compute this arrgregated score is b
 
 IMAGE: FORMULA
 
-### Some issues with Arithmetic Mean
+### Issues with arithmetic mean
+
 If you set score of an item to be equal to arithmetic mean of all its rating, then what about an item that gets just one rating which is a 5 on 5. That item will have be rank 1. This seems wrong.
 
 IMAGE: Ranking movies with AA
