@@ -2,9 +2,9 @@ Almost every single website, app or platform on the internet has some sort ratin
 
 Coming up with the aggregated score is not a easy thing - we need to curnching millions of ratings and then see that the score is infact the true measure of quality. If it isn't then it would directly affect the business. Today we discuss how we should define this `score` in a rating based system; spoiler alert! the measure is called [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average).
 
-To set things up for this roller coaster ride we first define the problem statement, that we will then dissect to understand ranking strategies.
+To keep things simple we define the problem statement as
 
-> Given the user ratings, on a scale of 1 to 5, for movies, we find top 10 movies of all time.
+> Given the ratings that users gives to a movie, on a scale of 1 to 5, we generate a score that is a measure of how good a movie is and it helps us get the top 10 movies of all time.
 
 # Aggregation methods
 In order to find top 10 movies, we need a way to assign a `score` to each movie that defines how good it is. This score has to be computed from all the ratings that the movie has received till date. Thus the final score of the move will be
