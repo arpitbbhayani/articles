@@ -6,7 +6,7 @@ To keep things simple we define the problem statement as
 
 > Given the ratings that users gives to a movie, on a scale of 1 to 5, we generate a score that is a measure of how good a movie is and it helps us get the top 10 movies of all time.
 
-# Aggregation methods
+# Generating the score
 In order to find top 10 movies, we need a way to assign a `score` to each movie that defines how good it is. This score has to be computed from all the ratings that the movie has received till date. Thus the final score of the move will be
 
 IMAGE: score is a function of all ratings it has received
