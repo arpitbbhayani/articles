@@ -1,5 +1,15 @@
 [
   {
+    "id": "bayesian-average",
+    "title": "Solving an age-old problem using Bayesian Average",
+    "description": "Ranking a list of movies, products, books or even restaurants is tricky and in this article, we find what works for such a rating system and the math behind it.",
+    "image": "https://user-images.githubusercontent.com/4745789/78990379-ebfdc400-7b53-11ea-88b7-cd64e39eabf6.png",
+    "gif": "https://media.giphy.com/media/dJ4vNQ7r72pb4nDhN5/giphy.gif",
+    "categories": ["statistics"],
+    "tags": [],
+    "published_at": "2020-04-12"
+  },
+  {
     "id": "sliding-window-ratelimiter",
     "title": "Sliding window based Rate Limiter",
     "description": "A rate limiter is used to control the rate of traffic sent or received on the network and in this article we dive deep and design a sliding window based rate limiter.",
