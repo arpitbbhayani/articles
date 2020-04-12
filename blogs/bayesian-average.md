@@ -44,22 +44,36 @@ Another issue with Cumulative Rating is the fact that it generates and unbounded
 Thus we see although Cumulative Rating, in a usual scenario, will do a good job, the system is not fool-proof and that's where the Bayesian Average comes to the rescue.
 
 # The Bayesian Average
-Bayesian average tries to address all of the above problem.
+Bayesian Average computes the mean of a population by not only consider the data residing in the population but also considering outside information, like a pre-existing belief - a derived property from the dataset ex: prior mean.
 
 ## The intuition
-Unless we are sure that the rating will give the true rating of a movie we need to use system average. Once given a number of opportunities we would consider the rating it received as true rating.
+The major problem with Arithmetic Mean as the scaoring function was how unreliable it was when we had a low number of data points (cardinality) to compute the score. Bayesian Average plays a part here by introducing pre-belief like Prior Mean, into the scheme of things.
 
-Bayesian average of items is given by
+We would want our scoring system to be adhering to the following rules
 
-IMAGE: FORMULA
+ - an item has a fewer than average number of ratings - the score should be around the system's arithmetic mean
+ - an item has substantial number of ratings - the score should be the item's arithmetic mean
 
-## Understanding the formula
+By doing the above we ensure that we do not either prematurely promote or demote an item in the leaderboard. The item is given a fair number chances till it receives a substantial number of ratings. This way we use the prior-belief making the scoring function more robust and fair to all items.
 
-Given weight to prior.
+## The formula
+Given the intuition and scoring rules we could come up with the following formula
 
-## How this formula works?
+![bayesian average forumla for rating system](https://user-images.githubusercontent.com/4745789/79066315-ab798400-7cd4-11ea-804b-e5e8479824b2.png)
 
-When m = 0, unless it reaches the avg number of rating we cannot say for sure.
+In the above formula `w` indicates the weight that needs to be given the item's Arithmetic Mean `A` while `S` represents the System's Arithmetic Mean. If `A` and `S` are bounded then the final score `s` will also be bounded in the same range, thus solving the problem with Cumulative Rating.
+
+Suppose we denote the number of ratings that an item `i` received by `m` and the average number of ratings that an item in the system receives by `M`, we define the requirements of `w` as follows
+
+ - `w` is bounded in range `[0, 1]`
+ - `w` should be monotonically increasing
+ - `w` should be close to `0` when `m` is close to `0`
+ - `w` should reach `0.5` when number `m` reaches `M`
+ - `w` tries to get closer to `1` as `m` increases
+
+Considering the above requirements a `w` could be defined as
+
+![weight function for bayesian average](https://user-images.githubusercontent.com/4745789/79066656-3e1b2280-7cd7-11ea-88f7-2ece0fcff47a.png)
 
 # Applications of Bayesian Average
 Movies, Restaurants, Hotels, Books, 
