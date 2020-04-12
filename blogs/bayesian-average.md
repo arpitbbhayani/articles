@@ -79,7 +79,7 @@ When we combine all of the above we get the final scoring function as
 
 ![scoring function for bayesian average rating system](https://user-images.githubusercontent.com/4745789/79066769-111b3f80-7cd8-11ea-979e-6437334ccbba.png)
 
->>>>>>>>>>>>>> Bayesian Rating converges with time.
+One of the most important property of Bayesian Average is the fact that the pre-existing belief acts as a support which oversees that the score does not flucture too abruptly and smoothens as the item sees more number of ratings.
 
 ## Applying Bayesian Average to movies dataset
 After applying the above mentioned Bayesian Average scoring function to our Movie dataset, we get the following movies as top 10
