@@ -9,7 +9,7 @@ To keep things simple we define the problem statement as
 # Generating the score
 The score we generate for each will be computed by using the individual ratings; and will also be a measure of its quality, which means higher the score, superior is the product. Hence we say that the score is the function of all the `m` ratings that the product got.
 
-![score function](https://user-images.githubusercontent.com/4745789/79049127-31e38680-7c3f-11ea-9032-baa0d2152cc2.png)
+![score function](https://user-images.githubusercontent.com/4745789/79067003-cf8b9400-7cd9-11ea-9b16-c1875933725a.png)
 
 ## Arithmetic Mean
 The simplest and the most common strategy to compute this aggregated score is by taking an arithmetic mean (average). Hence for each product we sum all the ratings that it got and divide it by the number of ratings it got, giving us an average value.
