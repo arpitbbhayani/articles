@@ -12,29 +12,29 @@ The score we generate for each product, should be proportional to the quality qu
 ![score function](https://user-images.githubusercontent.com/4745789/79067003-cf8b9400-7cd9-11ea-9b16-c1875933725a.png)
 
 ## Arithmetic Mean
-The simplest and the most common strategy to compute this aggregated score for a product is by taking an [Arithmetic Mean (average)](https://en.wikipedia.org/wiki/Arithmetic_mean) of all the ratings it received. Hence for each product we sum all the ratings that it got and divide it by its cardinality, giving us an average value.
+The simplest and the most common strategy to compute this aggregated score for a product is by taking an [Arithmetic Mean (average)](https://en.wikipedia.org/wiki/Arithmetic_mean) of all the ratings it received. Hence for each product we sum all the ratings that it received and divide it by its cardinality, giving us the average value.
 
 ![arithmetic mean](https://user-images.githubusercontent.com/4745789/79049349-b387e400-7c40-11ea-9adf-b40aa377778f.png)
 
 ### Issues with arithmetic mean
 The arithmetic mean falls apart pretty quickly. Let's say there is a product with just one rating of 5 on 5, the product would soar high on the leaderboard ranking. But does it deserve that place? probably not. Because of low cardinality (number of ratings), the score (and hence the rank) of the item will fluctuate more and will not give a true measure of quality.
 
-With the movie dataset we are playing with here is the top 10 movies ranked using Arithmetic Mean.
+With the movie dataset we are analyzing here is the top 10 movies ranked using Arithmetic Mean.
 
 ![top 10 movies arithmetic mean](https://user-images.githubusercontent.com/4745789/79049814-58a3bc00-7c43-11ea-980e-a12ae10379f7.png)
 
-Through this measure, all of the top 10 movies have the score of 5 (out of 5) and all of them have just 1 rating. Are these really the top 10 movies of all time? Looks like we need to do a lot better than the Arithmetic Mean.
+Through this measure, all of the top 10 movies have the score of 5 (out of 5) and all of them have just 1 rating. Are these really the top 10 movies of all time? Probably not. Looks like we need to do a lot better than the Arithmetic Mean.
 
 ## Cumulative Rating
-To remedy the issue with low cardinality in Arithmetic Mean, we could come up with an approach of using Cumulative Rating as the scoring function hence instead of taking the average we only consider the sum of all the ratings as the final score.
+To remedy the issue with Arithmetic Mean, we come up with an approach of using Cumulative Rating as the scoring function hence instead of taking the average we only consider the sum of all the ratings as the final score.
 
 ![cumulative rating as scoring function](https://user-images.githubusercontent.com/4745789/79050470-e1245b80-7c47-11ea-824b-ecd5cbb40912.png)
 
-Cumulative Rating actually does a pretty decent job, it makes popular items with a large number of ratings bubble up to the top of the leaderboard. When we rank the movies using Cumulative ratings we get the following as the the top 10.
+Cumulative Rating actually does a pretty decent job, it makes popular items with a large number of ratings bubble up to the top of the leaderboard. When we rank the movies in our dataset using Cumulative Ratings we get the following as the the top 10.
 
 ![top 10 movies through cunulative rating](https://user-images.githubusercontent.com/4745789/79050520-2d6f9b80-7c48-11ea-8e48-1c12fbbc0a88.png)
 
-The top 10 movies now feature Shawshank Redemption, Forrest Gump, Pulp Fiction, etc. which are in fact the top movies of all times. But is Cumulative Rating fool-proof?
+The top 10 movies now feature Shawshank Redemption, Forrest Gump, Pulp Fiction, etc. which are in fact considered as the top movies of all times. But is Cumulative Rating fool-proof?
 
 ### Issues with cumulative rating
 Cumulative Rating favors high cardinality. Let's say there is an extremely poor yet popular item `A` that got 10000 ratings of 1 on 5, and there is another item `B` which is very good but it got 1000 rating of 5 on 5 Cumulative Rating thus gives a score of 10000 to item `A` and `5000` to item `B`, but `B` clearly is a far superior product than `A`.
