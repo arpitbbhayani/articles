@@ -6,6 +6,8 @@ To keep things simple we define the problem statement as
 
 > Given the ratings, on a scale of 1 to 5, that users give to a movie, we generate a score that is a measure of how good a movie is which then helps us get the top 10 movies of all time.
 
+We will use the [MovieLens Dataset](https://grouplens.org/datasets/movielens/) to explore various scoring functions in this article. In the dataset we get user ratings for each movie and the ratings are made on a scale of 1 to 5.
+
 # Generating the score
 The score we generate for each item, should be proportional to the quality quotient which means higher the score, superior is the item. Hence we say that the score of an item is the function of all the `m` ratings that it received.
 
@@ -104,6 +106,7 @@ Bayesian Average is not a fixed formula that we have seen above, but it is a con
 
 # References
 
+ - [Source Code][https://github.com/arpitbbhayani/ranking-on-ratings/blob/master/movie-lens.ipynb]
  - [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average)
  - [How not to sort by Average Rating](https://evanmiller.org/how-not-to-sort-by-average-rating.html)
  - [How to Rank (Restaurants)](http://www.ebc.cat/2015/01/05/how-to-rank-restaurants/)
