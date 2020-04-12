@@ -79,10 +79,17 @@ When we combine all of the above we get the final scoring function as
 
 ![scoring function for bayesian average rating system](https://user-images.githubusercontent.com/4745789/79066769-111b3f80-7cd8-11ea-979e-6437334ccbba.png)
 
-Once we apply the function to our Move Dataset we get the following movies as the top 10
+>>>>>>>>>>>>>> Bayesian Rating converges with time.
+
+## Applying Bayesian Average to movies dataset
+After applying the above mentioned Bayesian Average scoring function to our Movie dataset, we get the following movies as top 10
 
 ![top 10 movies by Basysian Average](https://user-images.githubusercontent.com/4745789/79066961-686ddf80-7cd9-11ea-87d7-7e7e582ab9ac.png)
 
+Pretty impressive list! The list contains almost all the famous movies that we all think makes the cut. Bayesian average thus provides a bounded score that is a measure of quality of the item, by using prior-belief i.e. system's mean.
+
+## Analyzing how Bayesian Average changes the rank
+Now that we have seen than Bayesian Average in fact is an excellent way to rank items in a rating system, we find how the position of an item changes as and when it sees more ratings.
 Changes in position
 
 ![Kingsman position with ratings](https://user-images.githubusercontent.com/4745789/79068414-53e31480-7ce4-11ea-884a-90e7aee326d8.png)
@@ -91,16 +98,14 @@ Changes in position
 
 ![Scorpion King](https://user-images.githubusercontent.com/4745789/79068524-35c9e400-7ce5-11ea-8726-d1836a6b9c23.png)
 
-# Applications of Bayesian Average
-Movies, Restaurants, Hotels, Books, 
-
-# Extra thought points
-
-## Dealing with multi-dimensional data
-
-## Tweaking the formula
+# More notes on Bayesian
+Bayesian Average is not a fixed formula that we have seen above, but a concept where we make scoring procees "smoother" by using pre-existing belief. Hence we can tweak the formula as per our needs, use multiple prior beliefs and still it would classify as a Bayesian Average.
 
 # References
+
+ - [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average)
+ - [How not to sort by Average Rating](https://evanmiller.org/how-not-to-sort-by-average-rating.html)
+ - [How to Rank (Restaurants)](http://www.ebc.cat/2015/01/05/how-to-rank-restaurants/)
 
 ---
 
