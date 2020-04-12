@@ -1,6 +1,6 @@
 Almost every single website, app or platform on the internet has some sort of rating system in place. Whenever you purchase a product or use a service, you are asked to rate it on a scale, say 1 to 5. The platform then uses this data to generate a score and build a ranking system around it. The score is the measure of quality for each product or service. By surfacing the most quality content on top of the list, the platform tries to up their sales and ensure better engagement with their users.
 
-Coming up with an aggregated score is not an easy thing - we need to crunch a millions of ratings and then see that the score is, in fact, the true measure of quality. If it isn't then it would directly affect the business. Today we discuss how we should define this score in a rating based system; spoiler alert! the measure is called [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average).
+Coming up with an aggregated score is not an easy thing - we need to crunch a million ratings and then see that the score is, in fact, the true measure of quality. If it isn't then it would directly affect the business. Today we discuss how we should define this score in a rating based system; spoiler alert! the measure is called [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average).
 
 To keep things simple we define the problem statement as
 
@@ -9,7 +9,7 @@ To keep things simple we define the problem statement as
 We will use the [MovieLens Dataset](https://grouplens.org/datasets/movielens/) to explore various scoring functions in this article. In the dataset, we get user ratings for each movie and the ratings are made on a scale of 1 to 5.
 
 # Generating the score
-The score we generate for each item, should be proportional to the quality quotient which means higher the score, superior is the item. Hence we say that the score of an item is the function of all the `m` ratings that it received.
+The score we generate for each item should be proportional to the quality quotient which means higher the score, superior is the item. Hence we say that the score of an item is the function of all the `m` ratings that it received.
 
 ![score function](https://user-images.githubusercontent.com/4745789/79067003-cf8b9400-7cd9-11ea-9b16-c1875933725a.png)
 
@@ -21,7 +21,7 @@ The simplest and the most common strategy to compute this aggregated score for a
 ### Issues with arithmetic mean
 The arithmetic mean falls apart pretty quickly. Let's say there is an item with just one rating of 5 on 5, the item would soar high on the leaderboard ranking. But does it deserve that place? probably not. Because of low cardinality (number of ratings), the score (and hence the rank) of the item will fluctuate more and will not give a true measure of quality.
 
-With the movie dataset, we are analyzing here is the top 10 movies ranked using Arithmetic Mean.
+With the movie dataset, we are analyzing here are the top 10 movies ranked using Arithmetic Mean.
 
 ![top 10 movies arithmetic mean](https://user-images.githubusercontent.com/4745789/79049814-58a3bc00-7c43-11ea-980e-a12ae10379f7.png)
 
@@ -46,7 +46,7 @@ Another issue with Cumulative Rating is the fact that it generates an unbounded 
 We established that Cumulative Rating is better than Arithmetic Mean but it is not fool-proof and that's where the Bayesian Average comes to the rescue.
 
 # The Bayesian Average
-Bayesian Average computes the mean of a population by not only using the data residing in the population but also considering some outside information, like a pre-existing belief - a derived property from the dataset for example, prior mean.
+Bayesian Average computes the mean of a population by not only using the data residing in the population but also considering some outside information, like a pre-existing belief - a derived property from the dataset, for example, prior mean.
 
 ## The intuition
 The major problem with Arithmetic Mean as the scoring function was how unreliable it was when we had a low number of data points (cardinality) to compute the score. Bayesian Average plays a part here by introducing pre-belief into the scheme of things.
@@ -63,7 +63,7 @@ Given the intuition and scoring rules, we come up with the following formula
 
 ![bayesian average formula for rating system](https://user-images.githubusercontent.com/4745789/79066315-ab798400-7cd4-11ea-804b-e5e8479824b2.png)
 
-In the above formula `w` indicates the weight that needs to be given the item's Arithmetic Mean `A` while `S` represents the System's Arithmetic Mean. If `A` and `S` are bounded then the final score `s` will also be bounded in the same range, thus solving the problem with Cumulative Rating.
+In the above formula, `w` indicates the weight that needs to be given the item's Arithmetic Mean `A` while `S` represents the System's Arithmetic Mean. If `A` and `S` are bounded then the final score `s` will also be bounded in the same range, thus solving the problem with Cumulative Rating.
 
 Suppose the number of ratings that an item `i` receives is denoted by `m` and the average number of ratings that any item in the system receives is denoted by `m_avg`, we define the requirements of weight `w` as follows
 
@@ -73,7 +73,7 @@ Suppose the number of ratings that an item `i` receives is denoted by `m` and th
  - `w` should reach 0.5 when number `m` reaches `m_avg`
  - `w` tries to get closer to 1 as `m` increases
 
-From the above requirements, it is clear that `w` is acting as a knob which decides in what proportions we should consider an item's mean versus the system's mean. As `w` increases we tilt more towards item's mean. We define the `w` as
+From the above requirements, it is clear that `w` is acting like a knob which decides in what proportions we should consider an item's mean versus the system's mean. As `w` increases we tilt more towards item's mean. We define the `w` as
 
 ![weight function for bayesian average](https://user-images.githubusercontent.com/4745789/79066802-4162de00-7cd8-11ea-8068-467ce3305810.png)
 
