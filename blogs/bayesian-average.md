@@ -12,7 +12,7 @@ The score we generate for each product, should be proportional to the quality qu
 ![score function](https://user-images.githubusercontent.com/4745789/79067003-cf8b9400-7cd9-11ea-9b16-c1875933725a.png)
 
 ## Arithmetic Mean
-The simplest and the most common strategy to compute this aggregated score is by taking an arithmetic mean (average). Hence for each product we sum all the ratings that it got and divide it by the number of ratings it got, giving us an average value.
+The simplest and the most common strategy to compute this aggregated score for a product is by taking an [Arithmetic Mean (average)](https://en.wikipedia.org/wiki/Arithmetic_mean) of all the ratings it received. Hence for each product we sum all the ratings that it got and divide it by its cardinality, giving us an average value.
 
 ![arithmetic mean](https://user-images.githubusercontent.com/4745789/79049349-b387e400-7c40-11ea-9adf-b40aa377778f.png)
 
