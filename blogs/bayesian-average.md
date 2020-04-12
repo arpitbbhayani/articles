@@ -37,9 +37,11 @@ Cumulative rating does a pretty decent job, it makes popular items with large nu
 The top 10 now features Shawshank Redemption, Forrest Gump, Pulp Fiction, etc. which are in fact the top movies of all times. But is Cumulative Rating fool-proof?
 
 ### Issues with cumulative rating
-Unbounded
-Favours high cardinality
-The ranking looks good but it suffers from the problem. 10k ratings of 1 start vs 500 ratings of 5 star.
+Cumulative rating favours high cardinality. Let's say there is an extremely popular item `A` that got 10k rating of 1 on 5, while there is another item `B` that got 1k rating of 5 on 5. When we apply cumulative rating we find that the score of `A` is 10000 while that of `B` will be 5000, but we could see that item `B` is far superior than `A`.
+
+Another issue with Cumulative rating is the fact that it generates and unbounded score. Ideally any ranking system expects a normalized bounded score, so that it becomes predicatable and easy to determine the position and measure quality.
+
+Thus we see although cumulative rating, in a usual scenario, will do a good job, the system is not fool-proof and that's where the Bayesian Average comes to the rescue.
 
 # The Bayesian Average
 Bayesian average tries to address all of the above problem.
