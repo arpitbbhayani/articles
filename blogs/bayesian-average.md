@@ -106,7 +106,7 @@ Bayesian Average is not a fixed formula that we have seen above, but it is a con
 
 # References
 
- - [Source Code][https://github.com/arpitbbhayani/ranking-on-ratings/blob/master/movie-lens.ipynb]
+ - [Source Code](https://github.com/arpitbbhayani/ranking-on-ratings/blob/master/movie-lens.ipynb)
  - [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average)
  - [How not to sort by Average Rating](https://evanmiller.org/how-not-to-sort-by-average-rating.html)
  - [How to Rank (Restaurants)](http://www.ebc.cat/2015/01/05/how-to-rank-restaurants/)
