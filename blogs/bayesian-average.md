@@ -71,7 +71,7 @@ Suppose the number of ratings that an item `i` receives is denoted by `m` and th
  - `w` should reach 0.5 when number `m` reaches `M`
  - `w` tries to get closer to 1 as `m` increases
 
-Considering the above requirements a `w` could be defined as
+From the above requirements it is clear that `w` is acting as a knob which decides in what proportions we should consider item's mean vs system's mean. As `w` increases we tilt more towards item's mean. We define the `w` as
 
 ![weight function for bayesian average](https://user-images.githubusercontent.com/4745789/79066802-4162de00-7cd8-11ea-8068-467ce3305810.png)
 
