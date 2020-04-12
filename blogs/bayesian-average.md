@@ -52,6 +52,7 @@ The major problem with Arithmetic Mean as the scoring function was how unreliabl
 We start by defining the requirements of our scoring function
  - for an item with a fewer than average number of ratings - the score should be around the system's arithmetic mean
  - for an item with a substantial number of ratings - the score should be the item's arithmetic mean
+ - as the number of ratings that an item receives increases, the score should gradually move from system's mean to item's mean
 
 By ensuring the above we neither prematurely promote nor demote an item in the leaderboard. An item is given a fair number of chances before its score falls to its own Arithmetic mean. This way we use the prior-belief - System's Arithmetic mean, to make the scoring function more robust and fair to all items.
 
