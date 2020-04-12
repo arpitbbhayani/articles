@@ -79,6 +79,10 @@ When we combine all of the above we get the final scoring function as
 
 ![scoring function for bayesian average rating system](https://user-images.githubusercontent.com/4745789/79066769-111b3f80-7cd8-11ea-979e-6437334ccbba.png)
 
+Once we apply the function to our Move Dataset we get the following movies as the top 10
+
+![top 10 movies by Basysian Average](https://user-images.githubusercontent.com/4745789/79066853-9acb0d00-7cd8-11ea-9734-274a57bdd0dd.png)
+
 # Applications of Bayesian Average
 Movies, Restaurants, Hotels, Books, 
 
