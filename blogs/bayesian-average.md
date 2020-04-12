@@ -89,12 +89,6 @@ Changes in position
 
 ![Logan rankings](https://user-images.githubusercontent.com/4745789/79068443-7f65ff00-7ce4-11ea-9623-6f03451235de.png)
 
-![Reverant ratings with time](https://user-images.githubusercontent.com/4745789/79068463-a6bccc00-7ce4-11ea-89f7-da118990577f.png)
-
-![Toy Story 3](https://user-images.githubusercontent.com/4745789/79068495-fc917400-7ce4-11ea-9024-feb09988ba3d.png)
-
-![Lost World Jurrasic Park](https://user-images.githubusercontent.com/4745789/79068511-1a5ed900-7ce5-11ea-9104-deb833a2598a.png)
-
 ![Scorpion King](https://user-images.githubusercontent.com/4745789/79068524-35c9e400-7ce5-11ea-8726-d1836a6b9c23.png)
 
 # Applications of Bayesian Average
