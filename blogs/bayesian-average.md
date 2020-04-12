@@ -89,8 +89,7 @@ After applying the above mentioned Bayesian Average scoring function to our Movi
 Pretty impressive list! The list contains almost all the famous movies that we all think makes the cut. Bayesian average thus provides a bounded score that is a measure of quality of the item, by using prior-belief i.e. system's mean.
 
 ## Analyzing how Bayesian Average changes the rank
-Now that we have seen than Bayesian Average in fact is an excellent way to rank items in a rating system, we find how the position of an item changes as and when it sees more ratings.
-Changes in position
+Now that we have seen that Bayesian Average is, in fact, an excellent way to rank items in a rating system, we find how the rank of an item changes as it receives more ratings. Below we plot the change in percentile rank for some of the famous movies like Kingsman, Logan and Scorpion King. 
 
 ![Kingsman position with ratings](https://user-images.githubusercontent.com/4745789/79068414-53e31480-7ce4-11ea-884a-90e7aee326d8.png)
 
@@ -98,7 +97,7 @@ Changes in position
 
 ![Scorpion King](https://user-images.githubusercontent.com/4745789/79068524-35c9e400-7ce5-11ea-8726-d1836a6b9c23.png)
 
-# More notes on Bayesian
+# A note on Bayesian Average
 Bayesian Average is not a fixed formula that we have seen above, but a concept where we make scoring procees "smoother" by using pre-existing belief. Hence we can tweak the formula as per our needs, use multiple prior beliefs and still it would classify as a Bayesian Average.
 
 # References
