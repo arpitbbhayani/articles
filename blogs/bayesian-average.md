@@ -1,4 +1,4 @@
-Almost every single website, app or platform on the internet has some sort of rating system in place. Whenever you purchase a product or use a service, you are asked to rate it on a scale, say 1 to 5. The platform then uses this data to generate a score and build a ranking system around it. The score is the measure of quality for each product or service. By surfacing the most quality content on top of the list, platform tries to up their sales and ensure better engagement with their users.
+Almost every single website, app or platform on the internet has some sort of rating system in place. Whenever you purchase a product or use a service, you are asked to rate it on a scale, say 1 to 5. The platform then uses this data to generate a score and build a ranking system around it. The score is the measure of quality for each product or service. By surfacing the most quality content on top of the list, the platform tries to up their sales and ensure better engagement with their users.
 
 Coming up with an aggregated score is not an easy thing - we need to crunch a millions of ratings and then see that the score is, in fact, the true measure of quality. If it isn't then it would directly affect the business. Today we discuss how we should define this score in a rating based system; spoiler alert! the measure is called [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average).
 
@@ -6,7 +6,7 @@ To keep things simple we define the problem statement as
 
 > Given the ratings, on a scale of 1 to 5, that users give to a movie, we generate a score that is a measure of how good a movie is which then helps us get the top 10 movies of all time.
 
-We will use the [MovieLens Dataset](https://grouplens.org/datasets/movielens/) to explore various scoring functions in this article. In the dataset we get user ratings for each movie and the ratings are made on a scale of 1 to 5.
+We will use the [MovieLens Dataset](https://grouplens.org/datasets/movielens/) to explore various scoring functions in this article. In the dataset, we get user ratings for each movie and the ratings are made on a scale of 1 to 5.
 
 # Generating the score
 The score we generate for each item, should be proportional to the quality quotient which means higher the score, superior is the item. Hence we say that the score of an item is the function of all the `m` ratings that it received.
@@ -21,11 +21,11 @@ The simplest and the most common strategy to compute this aggregated score for a
 ### Issues with arithmetic mean
 The arithmetic mean falls apart pretty quickly. Let's say there is an item with just one rating of 5 on 5, the item would soar high on the leaderboard ranking. But does it deserve that place? probably not. Because of low cardinality (number of ratings), the score (and hence the rank) of the item will fluctuate more and will not give a true measure of quality.
 
-With the movie dataset we are analyzing here is the top 10 movies ranked using Arithmetic Mean.
+With the movie dataset, we are analyzing here is the top 10 movies ranked using Arithmetic Mean.
 
 ![top 10 movies arithmetic mean](https://user-images.githubusercontent.com/4745789/79049814-58a3bc00-7c43-11ea-980e-a12ae10379f7.png)
 
-Through this measure, all of the top 10 movies have the score of 5 (out of 5) and all of them have just 1 rating. Are these really the top 10 movies of all time? Probably not. Looks like we need to do a lot better than the Arithmetic Mean.
+Through this measure, all of the top 10 movies have a score of 5 (out of 5) and all of them have just 1 rating. Are these really the top 10 movies of all time? Probably not. Looks like we need to do a lot better than the Arithmetic Mean.
 
 ## Cumulative Rating
 To remedy the issue with Arithmetic Mean, we come up with an approach of using Cumulative Rating as the scoring function hence instead of taking the average we only consider the sum of all the ratings as the final score.
@@ -67,7 +67,7 @@ In the above formula `w` indicates the weight that needs to be given the item's 
 
 Suppose the number of ratings that an item `i` receives is denoted by `m` and the average number of ratings that any item in the system receives is denoted by `m_avg`, we define the requirements of weight `w` as follows
 
- - `w` is bounded in range [0, 1]
+ - `w` is bounded in the range [0, 1]
  - `w` should be monotonically increasing
  - `w` should be close to 0 when `m` is close to 0
  - `w` should reach 0.5 when number `m` reaches `m_avg`
