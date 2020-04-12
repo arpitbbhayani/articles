@@ -46,7 +46,7 @@ Another issue with Cumulative Rating is the fact that it generates an unbounded 
 We established that Cumulative Rating is better than Arithmetic Mean but it is not fool-proof and that's where the Bayesian Average comes to the rescue.
 
 # The Bayesian Average
-Bayesian Average computes the mean of a population by not only using the data residing in the population but also considering some outside information, like a pre-existing belief - a derived property from the dataset for example, prior mean.
+Bayesian Average computes the mean of a population by not only using the data residing in the population but also considering some outside information, like a pre-existing belief - a derived property from the dataset, for example, prior mean.
 
 ## The intuition
 The major problem with Arithmetic Mean as the scoring function was how unreliable it was when we had a low number of data points (cardinality) to compute the score. Bayesian Average plays a part here by introducing pre-belief into the scheme of things.
@@ -73,7 +73,7 @@ Suppose the number of ratings that an item `i` receives is denoted by `m` and th
  - `w` should reach 0.5 when number `m` reaches `m_avg`
  - `w` tries to get closer to 1 as `m` increases
 
-From the above requirements, it is clear that `w` is acting as a knob which decides in what proportions we should consider an item's mean versus the system's mean. As `w` increases we tilt more towards item's mean. We define the `w` as
+From the above requirements, it is clear that `w` is acting like a knob which decides in what proportions we should consider an item's mean versus the system's mean. As `w` increases we tilt more towards item's mean. We define the `w` as
 
 ![weight function for bayesian average](https://user-images.githubusercontent.com/4745789/79066802-4162de00-7cd8-11ea-8068-467ce3305810.png)
 
