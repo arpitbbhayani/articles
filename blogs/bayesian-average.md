@@ -26,15 +26,15 @@ With the movie dataset we are playing with here is the top 10 movies ranked usin
 Through this measure, all of the top 10 movies have the score of 5 (out of 5) and all of them have just 1 rating. Are these really the top 10 movies of all time? Looks like we need to do a lot better than the Arithmetic Mean.
 
 ## Cumulative Rating
-To remedy the issue with low cardinality in Arithmetic Mean, we could come up with an approach of using Cumulative Rating as the scoring function which means instead of taking the average we only consider the sum of all the ratings as the final score.
+To remedy the issue with low cardinality in Arithmetic Mean, we could come up with an approach of using Cumulative Rating as the scoring function hence instead of taking the average we only consider the sum of all the ratings as the final score.
 
 ![cumulative rating as scoring function](https://user-images.githubusercontent.com/4745789/79050470-e1245b80-7c47-11ea-824b-ecd5cbb40912.png)
 
-Cumulative Rating does a pretty decent job, it makes popular items with a large number of ratings bubble up to the top of the leaderboard. We can see this in action when applied to our Movie dataset.
+Cumulative Rating actually does a pretty decent job, it makes popular items with a large number of ratings bubble up to the top of the leaderboard. When we rank the movies using Cumulative ratings we get the following as the the top 10.
 
 ![top 10 movies through cunulative rating](https://user-images.githubusercontent.com/4745789/79050520-2d6f9b80-7c48-11ea-8e48-1c12fbbc0a88.png)
 
-The top 10 now features Shawshank Redemption, Forrest Gump, Pulp Fiction, etc. which are in fact the top movies of all times. But is Cumulative Rating fool-proof?
+The top 10 movies now feature Shawshank Redemption, Forrest Gump, Pulp Fiction, etc. which are in fact the top movies of all times. But is Cumulative Rating fool-proof?
 
 ### Issues with cumulative rating
 Cumulative Rating favors high cardinality. Let's say there is an extremely popular item `A` that got 10000 ratings of 1 on 5, while there is another item `B` that got 1000 rating of 5 on 5. When we apply cumulative rating we find that the score of `A` is 10000 while that of `B` will be 5000, but we could see that item `B` is far superior to `A`.
