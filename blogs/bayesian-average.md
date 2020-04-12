@@ -7,17 +7,17 @@ To keep things simple we define the problem statement as
 > Given the ratings, on a scale of 1 to 5, that users give to a movie, we generate a score that is a measure of how good a movie is which then helps us get the top 10 movies of all time.
 
 # Generating the score
-The score we generate for each product, should be proportional to the quality quotient which means higher the score, superior is the product. Hence we say that the score of a product is the function of all the `m` ratings that it received.
+The score we generate for each item, should be proportional to the quality quotient which means higher the score, superior is the item. Hence we say that the score of an item is the function of all the `m` ratings that it received.
 
 ![score function](https://user-images.githubusercontent.com/4745789/79067003-cf8b9400-7cd9-11ea-9b16-c1875933725a.png)
 
 ## Arithmetic Mean
-The simplest and the most common strategy to compute this aggregated score for a product is by taking an [Arithmetic Mean (average)](https://en.wikipedia.org/wiki/Arithmetic_mean) of all the ratings it received. Hence for each product we sum all the ratings that it received and divide it by its cardinality, giving us the average value.
+The simplest and the most common strategy to compute this aggregated score for an item is by taking an [Arithmetic Mean (average)](https://en.wikipedia.org/wiki/Arithmetic_mean) of all the ratings it received. Hence for each item we sum all the ratings that it received and divide it by its cardinality, giving us the average value.
 
 ![arithmetic mean](https://user-images.githubusercontent.com/4745789/79049349-b387e400-7c40-11ea-9adf-b40aa377778f.png)
 
 ### Issues with arithmetic mean
-The arithmetic mean falls apart pretty quickly. Let's say there is a product with just one rating of 5 on 5, the product would soar high on the leaderboard ranking. But does it deserve that place? probably not. Because of low cardinality (number of ratings), the score (and hence the rank) of the item will fluctuate more and will not give a true measure of quality.
+The arithmetic mean falls apart pretty quickly. Let's say there is an item with just one rating of 5 on 5, the item would soar high on the leaderboard ranking. But does it deserve that place? probably not. Because of low cardinality (number of ratings), the score (and hence the rank) of the item will fluctuate more and will not give a true measure of quality.
 
 With the movie dataset we are analyzing here is the top 10 movies ranked using Arithmetic Mean.
 
@@ -37,7 +37,7 @@ Cumulative Rating actually does a pretty decent job, it makes popular items with
 The top 10 movies now feature Shawshank Redemption, Forrest Gump, Pulp Fiction, etc. which are in fact considered as the top movies of all times. But is Cumulative Rating fool-proof?
 
 ### Issues with cumulative rating
-Cumulative Rating favors high cardinality. Let's say there is an extremely poor yet popular item `A` that got 10000 ratings of 1 on 5, and there is another item `B` which is very good but it got 1000 rating of 5 on 5 Cumulative Rating thus gives a score of 10000 to item `A` and `5000` to item `B`, but `B` clearly is a far superior product than `A`.
+Cumulative Rating favors high cardinality. Let's say there is an extremely poor yet popular item `A` that got 10000 ratings of 1 on 5, and there is another item `B` which is very good but it got 1000 rating of 5 on 5 Cumulative Rating thus gives a score of 10000 * 1 = 10000 to item `A` and 1000 * 5 = 5000 to item `B`, but `B` clearly is a far superior item than `A`.
 
 Another issue with Cumulative Rating is the fact that it generates an unbounded score. Ideally, any ranking system expects a normalized bounded score so that the system becomes predictable and consistent.
 
