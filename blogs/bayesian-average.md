@@ -83,6 +83,20 @@ Once we apply the function to our Move Dataset we get the following movies as th
 
 ![top 10 movies by Basysian Average](https://user-images.githubusercontent.com/4745789/79066961-686ddf80-7cd9-11ea-87d7-7e7e582ab9ac.png)
 
+Changes in position
+
+![Kingsman position with ratings](https://user-images.githubusercontent.com/4745789/79068414-53e31480-7ce4-11ea-884a-90e7aee326d8.png)
+
+![Logan rankings](https://user-images.githubusercontent.com/4745789/79068443-7f65ff00-7ce4-11ea-9623-6f03451235de.png)
+
+![Reverant ratings with time](https://user-images.githubusercontent.com/4745789/79068463-a6bccc00-7ce4-11ea-89f7-da118990577f.png)
+
+![Toy Story 3](https://user-images.githubusercontent.com/4745789/79068495-fc917400-7ce4-11ea-9024-feb09988ba3d.png)
+
+![Lost World Jurrasic Park](https://user-images.githubusercontent.com/4745789/79068511-1a5ed900-7ce5-11ea-9104-deb833a2598a.png)
+
+![Scorpion King](https://user-images.githubusercontent.com/4745789/79068524-35c9e400-7ce5-11ea-8726-d1836a6b9c23.png)
+
 # Applications of Bayesian Average
 Movies, Restaurants, Hotels, Books, 
 
