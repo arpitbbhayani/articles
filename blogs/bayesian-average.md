@@ -44,17 +44,16 @@ Another issue with Cumulative Rating is the fact that it generates an unbounded 
 We established that Cumulative Rating is better than Arithmetic Mean but it is not fool-proof and that's where the Bayesian Average comes to the rescue.
 
 # The Bayesian Average
-Bayesian Average computes the mean of a population by not only considering the data residing in the population but also considering outside information, like a pre-existing belief - a derived property from the dataset ex: prior mean.
+Bayesian Average computes the mean of a population by not only using the data residing in the population but also considering some outside information, like a pre-existing belief - a derived property from the dataset for example, prior mean.
 
 ## The intuition
-The major problem with Arithmetic Mean as the scoring function was how unreliable it was when we had a low number of data points (cardinality) to compute the score. Bayesian Average plays a part here by introducing pre-belief like Prior Mean, into the scheme of things.
+The major problem with Arithmetic Mean as the scoring function was how unreliable it was when we had a low number of data points (cardinality) to compute the score. Bayesian Average plays a part here by introducing pre-belief into the scheme of things.
 
-We would want our scoring system to be adhering to the following rules
+We start by defining the requirements of our scoring function
+ - for an item with a fewer than average number of ratings - the score should be around the system's arithmetic mean
+ - for an item with a substantial number of ratings - the score should be the item's arithmetic mean
 
- - an item has a fewer than average number of ratings - the score should be around the system's arithmetic mean
- - an item has a substantial number of ratings - the score should be the item's arithmetic mean
-
-By doing the above we ensure that we do not either prematurely promote or demote an item in the leaderboard. The item is given a fair number of chances until it receives a substantial number of ratings. This way we use the prior-belief making the scoring function more robust and fair to all items.
+By ensuring the above we neither prematurely promote nor demote an item in the leaderboard. An item is given a fair number of chances before its score falls to its own Arithmetic mean. This way we use the prior-belief - System's Arithmetic mean, to make the scoring function more robust and fair to all items.
 
 ## The formula
 Given the intuition and scoring rules, we could come up with the following formula
