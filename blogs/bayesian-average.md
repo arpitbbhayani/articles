@@ -26,23 +26,17 @@ With the movie dataset we are playing with here is the top 10 movies ranking usi
 Through this measure, all the movies that are in top 10 have average score of 5 (out of 5) and have just 1 rating. But, in reality, are these really the top 10 movies of all time? Looks like we can do a lot better than arithmetic mean.
 
 ## Cumulative Rating
-To remedy the issue with low cardinality we could come up with an approach of using cumulative rating as the scoring function which means instead of taking the average we simly consider the sum of all the ratings as the final score.
+To remedy the issue with low cardinality in Arithmetic Mean, we could come up with an approach of using cumulative rating as the scoring function which means instead of taking the average we only consider the sum of all the ratings as the final score.
 
 ![cumulative rating as scoring function](https://user-images.githubusercontent.com/4745789/79050470-e1245b80-7c47-11ea-824b-ecd5cbb40912.png)
 
-Cumulative rating does a pretty good job, it makes popular items with large number of ratings float to the top of the leaderboard and it does
-
-If we apply cumulative rating as scoring function ont he movie dataset, we get the following moves as the top 10
+Cumulative rating does a pretty decent job, it makes popular items with large number of ratings bubble up to the top of the leaderboard. We can see this in action when applied to our Movie dataset.
 
 ![top 10 movies through cunulative rating](https://user-images.githubusercontent.com/4745789/79050520-2d6f9b80-7c48-11ea-8e48-1c12fbbc0a88.png)
 
-This approach although solves a lot of probel with arithmetic mean approach but it introduces new ones.
+The top 10 now features Shawshank Redemption, Forrest Gump, Pulp Fiction, etc. which are in fact the top movies of all times. But is Cumulative Rating fool-proof?
 
-This approach does a pretty good job in getting the top k. as shown in the table below.
-
-IMAGE: example
-
-### Issues
+### Issues with cumulative rating
 Unbounded
 Favours high cardinality
 The ranking looks good but it suffers from the problem. 10k ratings of 1 start vs 500 ratings of 5 star.
