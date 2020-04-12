@@ -1,10 +1,10 @@
 Almost every single website, app or platform on the internet has some sort of rating system in place. Whenever you purchase a product or use a service, you are asked to rate it on a scale, say 1 to 5. The platform then uses this data to generate a score and build a ranking system around it. The score is the measure of quality for each product or service. By surfacing quality content on top the platform tries up their selling and surface the most quality content to their users.
 
-Coming up with the aggregated score is not a easy thing - we need to curnching millions of ratings and then see that the score is in fact the true measure of quality. If it isn't then it would directly affect the business. Today we discuss how we should define this score in a rating based system; spoiler alert! the measure is called [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average).
+Coming up with the aggregated score is not an easy thing - we need to crunching millions of ratings and then see that the score is, in fact, the true measure of quality. If it isn't then it would directly affect the business. Today we discuss how we should define this score in a rating based system; spoiler alert! the measure is called [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average).
 
 To keep things simple we define the problem statement as
 
-> Given the ratings that users gives to a movie, on a scale of 1 to 5, we generate a score that is a measure of how good a movie is and it helps us get the top 10 movies of all time.
+> Given the ratings that users give to a movie, on a scale of 1 to 5, we generate a score that is a measure of how good a movie is and it helps us get the top 10 movies of all time.
 
 # Generating the score
 The score we generate for each will be computed by using the individual ratings; and will also be a measure of its quality, which means higher the score, superior is the product. Hence we say that the score is the function of all the `m` ratings that the product got.
@@ -37,7 +37,7 @@ Cumulative Rating does a pretty decent job, it makes popular items with a large 
 The top 10 now features Shawshank Redemption, Forrest Gump, Pulp Fiction, etc. which are in fact the top movies of all times. But is Cumulative Rating fool-proof?
 
 ### Issues with cumulative rating
-Cumulative Rating favors high cardinality. Let's say there is an extremely popular item `A` that got 10000 rating of 1 on 5, while there is another item `B` that got 1000 rating of 5 on 5. When we apply cumulative rating we find that the score of `A` is 10000 while that of `B` will be 5000, but we could see that item `B` is far superior to `A`.
+Cumulative Rating favors high cardinality. Let's say there is an extremely popular item `A` that got 10000 ratings of 1 on 5, while there is another item `B` that got 1000 rating of 5 on 5. When we apply cumulative rating we find that the score of `A` is 10000 while that of `B` will be 5000, but we could see that item `B` is far superior to `A`.
 
 Another issue with Cumulative Rating is the fact that it generates and unbounded score. Ideally, any ranking system expects a normalized bounded score so that it becomes predictable and easy to determine the position and measure quality.
 
@@ -47,19 +47,19 @@ Thus we see although Cumulative Rating, in a usual scenario, will do a good job,
 Bayesian Average computes the mean of a population by not only consider the data residing in the population but also considering outside information, like a pre-existing belief - a derived property from the dataset ex: prior mean.
 
 ## The intuition
-The major problem with Arithmetic Mean as the scaoring function was how unreliable it was when we had a low number of data points (cardinality) to compute the score. Bayesian Average plays a part here by introducing pre-belief like Prior Mean, into the scheme of things.
+The major problem with Arithmetic Mean as the scoring function was how unreliable it was when we had a low number of data points (cardinality) to compute the score. Bayesian Average plays a part here by introducing pre-belief like Prior Mean, into the scheme of things.
 
 We would want our scoring system to be adhering to the following rules
 
  - an item has a fewer than average number of ratings - the score should be around the system's arithmetic mean
- - an item has substantial number of ratings - the score should be the item's arithmetic mean
+ - an item has a substantial number of ratings - the score should be the item's arithmetic mean
 
-By doing the above we ensure that we do not either prematurely promote or demote an item in the leaderboard. The item is given a fair number chances till it receives a substantial number of ratings. This way we use the prior-belief making the scoring function more robust and fair to all items.
+By doing the above we ensure that we do not either prematurely promote or demote an item in the leaderboard. The item is given a fair number of chances until it receives a substantial number of ratings. This way we use the prior-belief making the scoring function more robust and fair to all items.
 
 ## The formula
-Given the intuition and scoring rules we could come up with the following formula
+Given the intuition and scoring rules, we could come up with the following formula
 
-![bayesian average forumla for rating system](https://user-images.githubusercontent.com/4745789/79066315-ab798400-7cd4-11ea-804b-e5e8479824b2.png)
+![bayesian average formula for rating system](https://user-images.githubusercontent.com/4745789/79066315-ab798400-7cd4-11ea-804b-e5e8479824b2.png)
 
 In the above formula `w` indicates the weight that needs to be given the item's Arithmetic Mean `A` while `S` represents the System's Arithmetic Mean. If `A` and `S` are bounded then the final score `s` will also be bounded in the same range, thus solving the problem with Cumulative Rating.
 
