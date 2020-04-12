@@ -37,7 +37,7 @@ Cumulative Rating actually does a pretty decent job, it makes popular items with
 The top 10 movies now feature Shawshank Redemption, Forrest Gump, Pulp Fiction, etc. which are in fact considered as the top movies of all times. But is Cumulative Rating fool-proof?
 
 ### Issues with cumulative rating
-Cumulative Rating favors high cardinality. Let's say there is an extremely poor yet popular item `A` that got 10000 ratings of 1 on 5, and there is another item `B` which is very good but it got 1000 rating of 5 on 5 Cumulative Rating thus gives a score of 10000 * 1 = 10000 to item `A` and 1000 * 5 = 5000 to item `B`, but `B` clearly is a far superior item than `A`.
+Cumulative Rating favors high cardinality. Let's say there is an extremely poor yet popular item `A` that got 10000 ratings of 1 on 5, and there is another item `B` which is very good but it got 1000 rating of 5 on 5 Cumulative Rating thus gives a score of 10000 * 1 = 10000 to item `A` and 1000 * 5 = 5000 to item `B`, but `B` clearly is far superior of an item than `A`.
 
 Another issue with Cumulative Rating is the fact that it generates an unbounded score. Ideally, any ranking system expects a normalized bounded score so that the system becomes predictable and consistent.
 
