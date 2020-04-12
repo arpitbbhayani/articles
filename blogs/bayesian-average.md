@@ -89,13 +89,15 @@ After applying the above mentioned Bayesian Average scoring function to our Movi
 Pretty impressive list! The list contains almost all the famous movies that we all think makes the cut. Bayesian average thus provides a bounded score that is a measure of quality of the item, by using prior-belief i.e. system's mean.
 
 ## Analyzing how Bayesian Average changes the rank
-Now that we have seen that Bayesian Average is, in fact, an excellent way to rank items in a rating system, we find how the rank of an item changes as it receives more ratings. Below we plot the change in percentile rank for some of the famous movies like Kingsman, Logan and Scorpion King. 
+Now that we have seen that the Bayesian Average is, in fact, an excellent way to rank items in a rating system, we find how the rank of an item changes as it receives more ratings. Below we plot the change in the percentile rank of the movies: [Kingsman](https://en.wikipedia.org/wiki/Kingsman:_The_Secret_Service), [Logan](https://en.wikipedia.org/wiki/Logan_(film)) and [The Scorpion King](https://en.wikipedia.org/wiki/The_Scorpion_King).
 
 ![Kingsman position with ratings](https://user-images.githubusercontent.com/4745789/79068414-53e31480-7ce4-11ea-884a-90e7aee326d8.png)
 
 ![Logan rankings](https://user-images.githubusercontent.com/4745789/79068443-7f65ff00-7ce4-11ea-9623-6f03451235de.png)
 
 ![Scorpion King](https://user-images.githubusercontent.com/4745789/79068524-35c9e400-7ce5-11ea-8726-d1836a6b9c23.png)
+
+We observe that, the fluctuations in percentile rank are more in Arithmetic Mean. Sometimes even after receiving a good number of reviews the position fluctuates sharply. In case of Bayesian Average after inital set of abberations the position smoothens and converges.
 
 # A note on Bayesian Average
 Bayesian Average is not a fixed formula that we have seen above, but a concept where we make scoring procees "smoother" by using pre-existing belief. Hence we can tweak the formula as per our needs, use multiple prior beliefs and still it would classify as a Bayesian Average.
