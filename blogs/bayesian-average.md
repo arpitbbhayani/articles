@@ -73,7 +73,11 @@ Suppose we denote the number of ratings that an item `i` received by `m` and the
 
 Considering the above requirements a `w` could be defined as
 
-![weight function for bayesian average](https://user-images.githubusercontent.com/4745789/79066656-3e1b2280-7cd7-11ea-88f7-2ece0fcff47a.png)
+![weight function for bayesian average](https://user-images.githubusercontent.com/4745789/79066802-4162de00-7cd8-11ea-8068-467ce3305810.png)
+
+When we combine all of the above we get the final scoring function as
+
+![scoring function for bayesian average rating system](https://user-images.githubusercontent.com/4745789/79066769-111b3f80-7cd8-11ea-979e-6437334ccbba.png)
 
 # Applications of Bayesian Average
 Movies, Restaurants, Hotels, Books, 
