@@ -57,19 +57,19 @@ We start by defining the requirements of our scoring function
 By ensuring the above we neither prematurely promote nor demote an item in the leaderboard. An item is given a fair number of chances before its score falls to its own Arithmetic mean. This way we use the prior-belief - System's Arithmetic mean, to make the scoring function more robust and fair to all items.
 
 ## The formula
-Given the intuition and scoring rules, we could come up with the following formula
+Given the intuition and scoring rules, we come up with the following formula
 
 ![bayesian average formula for rating system](https://user-images.githubusercontent.com/4745789/79066315-ab798400-7cd4-11ea-804b-e5e8479824b2.png)
 
 In the above formula `w` indicates the weight that needs to be given the item's Arithmetic Mean `A` while `S` represents the System's Arithmetic Mean. If `A` and `S` are bounded then the final score `s` will also be bounded in the same range, thus solving the problem with Cumulative Rating.
 
-Suppose we denote the number of ratings that an item `i` received by `m` and the average number of ratings that an item in the system receives by `M`, we define the requirements of `w` as follows
+Suppose the number of ratings that an item `i` receives is denoted by `m` and the average number of ratings that any item in the system receives is denoted by `M`, we define the requirements of weight `w` as follows
 
- - `w` is bounded in range `[0, 1]`
+ - `w` is bounded in range [0, 1]
  - `w` should be monotonically increasing
- - `w` should be close to `0` when `m` is close to `0`
- - `w` should reach `0.5` when number `m` reaches `M`
- - `w` tries to get closer to `1` as `m` increases
+ - `w` should be close to 0 when `m` is close to 0
+ - `w` should reach 0.5 when number `m` reaches `M`
+ - `w` tries to get closer to 1 as `m` increases
 
 Considering the above requirements a `w` could be defined as
 
