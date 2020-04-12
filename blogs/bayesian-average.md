@@ -41,7 +41,7 @@ Cumulative Rating favors high cardinality. Let's say there is an extremely poor 
 
 Another issue with Cumulative Rating is the fact that it generates an unbounded score. Ideally, any ranking system expects a normalized bounded score so that the system becomes predictable and consistent.
 
-We established that Cumulative Rating is better than Arithmetic Mean it is not fool-proof and that's where the Bayesian Average comes to the rescue.
+We established that Cumulative Rating is better than Arithmetic Mean but it is not fool-proof and that's where the Bayesian Average comes to the rescue.
 
 # The Bayesian Average
 Bayesian Average computes the mean of a population by not only consider the data residing in the population but also considering outside information, like a pre-existing belief - a derived property from the dataset ex: prior mean.
