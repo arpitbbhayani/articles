@@ -79,7 +79,7 @@ When we combine all of the above we get the final scoring function as
 
 ![scoring function for bayesian average rating system](https://user-images.githubusercontent.com/4745789/79066769-111b3f80-7cd8-11ea-979e-6437334ccbba.png)
 
-One of the most important property of Bayesian Average is the fact that the pre-existing belief acts as a support which oversees that the score does not flucture too abruptly and smoothens as the item sees more number of ratings.
+One of the most important property of Bayesian Average is the fact that the pre-existing belief acts as a support which oversees that the score does not flucture too abruptly and it smoothens with more number of ratings.
 
 ## Applying Bayesian Average to movies dataset
 After applying the above mentioned Bayesian Average scoring function to our Movie dataset, we get the following movies as top 10
@@ -97,7 +97,7 @@ Now that we have seen that the Bayesian Average is, in fact, an excellent way to
 
 ![Scorpion King](https://user-images.githubusercontent.com/4745789/79068524-35c9e400-7ce5-11ea-8726-d1836a6b9c23.png)
 
-We observe that, the fluctuations in percentile rank are more in Arithmetic Mean. Sometimes even after receiving a good number of reviews the rank fluctuates sharply. In case of Bayesian Average after inital set of abberations the rank smoothens and converges.
+We observe that, the fluctuations in percentile rank are more in case of Arithmetic Mean. Sometimes even after receiving a good number of reviews the rank fluctuates sharply. In case of Bayesian Average after inital set of abberations the rank smoothens and converges.
 
 # A note on Bayesian Average
 Bayesian Average is not a fixed formula that we have seen above, but a concept where we make scoring procees "smoother" by using pre-existing belief. Hence we can tweak the formula as per our needs, use multiple prior beliefs and still it would classify as a Bayesian Average.
