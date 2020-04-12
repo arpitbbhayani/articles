@@ -17,13 +17,13 @@ The simplest and the most common strategy to compute this aggregated score for a
 ![arithmetic mean](https://user-images.githubusercontent.com/4745789/79049349-b387e400-7c40-11ea-9adf-b40aa377778f.png)
 
 ### Issues with arithmetic mean
-The arithmetic mean falls apart pretty quickly. Let's say there is a product with just one rating of 5 on 5, the product would soar high on the leaderboard ranking. But does it deserve that place? probably not. Thus arithmetic mean suffers from the cardinality issue which means the items with low cardinality (low number of ratings) will fluctuate between highs and lows of ranking.
+The arithmetic mean falls apart pretty quickly. Let's say there is a product with just one rating of 5 on 5, the product would soar high on the leaderboard ranking. But does it deserve that place? probably not. Because of low cardinality (number of ratings), the score (and hence the rank) of the item will fluctuate more and will not give a true measure of quality.
 
 With the movie dataset we are playing with here is the top 10 movies ranked using Arithmetic Mean.
 
 ![top 10 movies arithmetic mean](https://user-images.githubusercontent.com/4745789/79049814-58a3bc00-7c43-11ea-980e-a12ae10379f7.png)
 
-Through this measure, all the movies that are in top 10 have average score of 5 (out of 5) and have just 1 rating. But, in reality, are these really the top 10 movies of all time? Looks like we can do a lot better than the arithmetic mean.
+Through this measure, all of the top 10 movies have the score of 5 (out of 5) and all of them have just 1 rating. Are these really the top 10 movies of all time? Looks like we need to do a lot better than the Arithmetic Mean.
 
 ## Cumulative Rating
 To remedy the issue with low cardinality in Arithmetic Mean, we could come up with an approach of using Cumulative Rating as the scoring function which means instead of taking the average we only consider the sum of all the ratings as the final score.
