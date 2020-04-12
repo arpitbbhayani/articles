@@ -63,12 +63,12 @@ Given the intuition and scoring rules, we come up with the following formula
 
 In the above formula `w` indicates the weight that needs to be given the item's Arithmetic Mean `A` while `S` represents the System's Arithmetic Mean. If `A` and `S` are bounded then the final score `s` will also be bounded in the same range, thus solving the problem with Cumulative Rating.
 
-Suppose the number of ratings that an item `i` receives is denoted by `m` and the average number of ratings that any item in the system receives is denoted by `M`, we define the requirements of weight `w` as follows
+Suppose the number of ratings that an item `i` receives is denoted by `m` and the average number of ratings that any item in the system receives is denoted by `m_avg`, we define the requirements of weight `w` as follows
 
  - `w` is bounded in range [0, 1]
  - `w` should be monotonically increasing
  - `w` should be close to 0 when `m` is close to 0
- - `w` should reach 0.5 when number `m` reaches `M`
+ - `w` should reach 0.5 when number `m` reaches `m_avg`
  - `w` tries to get closer to 1 as `m` increases
 
 From the above requirements, it is clear that `w` is acting as a knob which decides in what proportions we should consider an item's mean versus the system's mean. As `w` increases we tilt more towards item's mean. We define the `w` as
