@@ -1,4 +1,4 @@
-Almost every single website, app or platform on the internet has some sort of rating system in place. Whenever you purchase a product or use a service, you are asked to rate it on a scale, say 1 to 5. The platform then uses this data to generate a score and build a ranking system around it. The score is the measure of quality for each product or service. By surfacing quality content on top the platform tries surface the most quality content to their users and up their sales.
+Almost every single website, app or platform on the internet has some sort of rating system in place. Whenever you purchase a product or use a service, you are asked to rate it on a scale, say 1 to 5. The platform then uses this data to generate a score and build a ranking system around it. The score is the measure of quality for each product or service. By surfacing the most quality content on top of the list, platform tries to up their sales and ensure better engagement with their users.
 
 Coming up with an aggregated score is not an easy thing - we need to crunch a millions of ratings and then see that the score is, in fact, the true measure of quality. If it isn't then it would directly affect the business. Today we discuss how we should define this score in a rating based system; spoiler alert! the measure is called [Bayesian Average](https://en.wikipedia.org/wiki/Bayesian_average).
 
@@ -30,7 +30,7 @@ To remedy the issue with Arithmetic Mean, we come up with an approach of using C
 
 ![cumulative rating as scoring function](https://user-images.githubusercontent.com/4745789/79050470-e1245b80-7c47-11ea-824b-ecd5cbb40912.png)
 
-Cumulative Rating actually does a pretty decent job, it makes popular items with a large number of ratings bubble up to the top of the leaderboard. When we rank the movies in our dataset using Cumulative Ratings we get the following as the the top 10.
+Cumulative Rating actually does a pretty decent job, it makes popular items with a large number of ratings bubble up to the top of the leaderboard. When we rank the movies in our dataset using Cumulative Ratings we get the following as the top 10.
 
 ![top 10 movies through cunulative rating](https://user-images.githubusercontent.com/4745789/79050520-2d6f9b80-7c48-11ea-8e48-1c12fbbc0a88.png)
 
@@ -71,7 +71,7 @@ Suppose the number of ratings that an item `i` receives is denoted by `m` and th
  - `w` should reach 0.5 when number `m` reaches `M`
  - `w` tries to get closer to 1 as `m` increases
 
-From the above requirements it is clear that `w` is acting as a knob which decides in what proportions we should consider item's mean vs system's mean. As `w` increases we tilt more towards item's mean. We define the `w` as
+From the above requirements, it is clear that `w` is acting as a knob which decides in what proportions we should consider an item's mean versus the system's mean. As `w` increases we tilt more towards item's mean. We define the `w` as
 
 ![weight function for bayesian average](https://user-images.githubusercontent.com/4745789/79066802-4162de00-7cd8-11ea-8068-467ce3305810.png)
 
@@ -79,14 +79,14 @@ When we combine all of the above we get the final scoring function as
 
 ![scoring function for bayesian average rating system](https://user-images.githubusercontent.com/4745789/79066769-111b3f80-7cd8-11ea-979e-6437334ccbba.png)
 
-One of the most important property of Bayesian Average is the fact that the pre-existing belief acts as a support which oversees that the score does not flucture too abruptly and it smoothens with more number of ratings.
+One of the most important properties of Bayesian Average is the fact that the pre-existing belief acts as support which oversees that the score does not fluctuate too abruptly and it smoothens with more number of ratings.
 
 ## Applying Bayesian Average to movies dataset
 After applying the above mentioned Bayesian Average scoring function to our Movie dataset, we get the following movies as top 10
 
 ![top 10 movies by Basysian Average](https://user-images.githubusercontent.com/4745789/79066961-686ddf80-7cd9-11ea-87d7-7e7e582ab9ac.png)
 
-Pretty impressive list! The list contains almost all the famous movies that we all think makes the cut. Bayesian average thus provides a bounded score that is a measure of quality of the item, by using prior-belief i.e. system's mean.
+Pretty impressive list! The list contains almost all the famous movies that we all think make the cut. Bayesian average thus provides a bounded score that is a measure of the quality of the item, by using prior-belief i.e. system's mean.
 
 ## Analyzing how Bayesian Average changes the rank
 Now that we have seen that the Bayesian Average is, in fact, an excellent way to rank items in a rating system, we find how the rank of an item changes as it receives more ratings. Below we plot the change in the percentile rank of the movies: [Kingsman](https://en.wikipedia.org/wiki/Kingsman:_The_Secret_Service), [Logan](https://en.wikipedia.org/wiki/Logan_(film)) and [The Scorpion King](https://en.wikipedia.org/wiki/The_Scorpion_King).
@@ -97,10 +97,10 @@ Now that we have seen that the Bayesian Average is, in fact, an excellent way to
 
 ![Scorpion King](https://user-images.githubusercontent.com/4745789/79068524-35c9e400-7ce5-11ea-8726-d1836a6b9c23.png)
 
-We observe that, the fluctuations in percentile rank are more in case of Arithmetic Mean. Sometimes even after receiving a good number of reviews the rank fluctuates sharply. In case of Bayesian Average after inital set of abberations the rank smoothens and converges.
+We observe that the fluctuations in percentile rank are more in the case of Arithmetic Mean. Sometimes even after receiving a good number of reviews, the rank fluctuates sharply. In the case of Bayesian Average after an initial set of aberrations, the rank smoothens and converges.
 
 # A note on Bayesian Average
-Bayesian Average is not a fixed formula that we have seen above, but a concept where we make scoring procees "smoother" by using pre-existing belief. Hence we can tweak the formula as per our needs, use multiple prior beliefs and still it would classify as a Bayesian Average.
+Bayesian Average is not a fixed formula that we have seen above, but it is a concept where we make the scoring function "smoother" by using a pre-existing belief as support. Hence we can tweak the formula as per our needs, or use multiple prior beliefs and still it would classify as a Bayesian Average.
 
 # References
 
@@ -119,7 +119,7 @@ _Other articles you might like:_
  - [Overload Functions in Python](https://arpitbhayani.me/blogs/function-overloading)
  - [Isolation Forest algorithm for anomaly detection](https://arpitbhayani.me/blogs/isolation-forest)
 
-_This article was originally published on my [blog - Sliding window based Rate Limiter](https://arpitbhayani.me/blogs/sliding-window-ratelimiter)._
+_This article was originally published on my [blog - Solving an age-old problem using Bayesian Average](https://arpitbhayani.me/blogs/bayesian-average)._
 
 _If you liked what you read, subscribe to my newsletter and get the post delivered directly to your inbox and give me a shout-out [@arpit_bhayani](https://twitter.com/arpit_bhayani)._
 
