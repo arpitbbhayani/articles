@@ -31,17 +31,38 @@ The `yield` statement is the one where the magic happens. yielded value is retur
 Thus using a fibonacci generator is extremely memory efficient as now we need not compute a lot of fibonacci numbers and hold them in memory, rather the process could ask for as many values as it needs and the generator would keep on yielding values one by one.
 
 ## Coroutines
-Python coroutines are resumable functions, just like generators but instead they consume values on the fly. The way we can do this is by using the `yield` statement as shown below
+Coroutines are resumable functions, just like generators, but instead they consume values on the fly. The working of it is very similar to generator and again the `yield` statement is where the magic happens. When a coroutine is paused at the `yield` statement, we could send the value it using `send` function and the value could be used using assignment operator on `yield` as shown below
 
 ```py
-def grep(pattern):
+def grep(substr):
     while True:
         line = yield
-        if pattern in line:
-            print(line)
+        if substr in line:
+            print(f"found {substr} in '{line}'")
 ```
 
-In the example above, the function
+In the example above, when the generator `grep` is paused at the `yield` statement, we could send the value to it and the value we send will be stored in the variable `line`.
+
+> Before sending the value to a coroutine we need to "prime" it so that the flow reaches the yield statement and is paused, at the yield statement, and is ready to accept values.
+
+```py
+>>> g = grep("users/created")
+>>> next(g)                                # priming the generator
+>>>
+>>> g.send("users/get api took 1 ms.")
+>>> g.send("users/created api took 3 ms.")
+found users/created in 'users/created api took 3 ms.'
+>>> g.send("users/get api took 1 ms.")
+>>> g.send("users/created api took 4 ms.")
+found users/created in 'users/created api took 4 ms.'
+>>> g.send("users/get api took 1 ms.")
+```
+
+TODO: Tail -f could also be implemented.
+
+In the example above we see how we have written a simple `grep` function that as and when receives input resumes its execution and spits out if the input `line` contains the substring `substr` in it. We need not pass all the lines to the grep function at once rather we can "stream" the lines as and when we see it to this grep function and it would print as and when it finds `substr` in the `line`.
+
+The ability of coroutines to pause the execution and accept input on the fly helps us model FSM in an extremely intuitive way.
 
 # Finite State Machine for Regex
 Finite State Machine (FSM) for a regular expression `ab*c` could be designed as below
