@@ -47,7 +47,7 @@ In the example above, when the generator `grep` is paused at the `yield` stateme
 
 ```py
 >>> g = grep("users/created")
->>> next(g)                                # priming the generator
+>>> next(g)  # priming the generator
 >>>
 >>> g.send("users/get api took 1 ms.")
 >>> g.send("users/created api took 3 ms.")
