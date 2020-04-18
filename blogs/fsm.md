@@ -58,25 +58,45 @@ found users/created
 >>> g.send("users/get api took 1 ms.")
 ```
 
-TODO: Tail -f could also be implemented.
-
 In the example above we see how we have written a simple `grep` function that as and when receives input resumes its execution and spits out if the input `line` contains the substring `substr` in it. We need not pass all the lines to the grep function at once rather we can "stream" the lines as and when we see it to this grep function and it would print as and when it finds `substr` in the `line`.
 
 The ability of coroutines to pause the execution and accept input on the fly helps us model FSM in an extremely intuitive way.
 
 # Building a Finite State Machine
-As mentioned above a finite state machine contains finite number of states, transition function, inputs, initial state and end state. The machine at a point in time is in one of the finite states and upon receiving an input transitions to the next state as determined by the transition function.
+As mentioned above a finite state machine contains finite number of states, transition function, inputs, initial state and end state. The machine at a point in time is in one of the finite states and upon receiving an input, it transitions to the next state as determined by the transition function.
 
 The way we are using states is oddly similar to how Python Coroutines work, hence we can model a state as a Python co-routine that runs an infinite loop within which it accepts the input, decides the transition and changes the current state of the FSM.
 
-To dive into low level details, we build and FSM for a regular expression `ab*c`.
+To dive into low level details, we build an FSM for a regular expression `ab*c`. The FSM for the regular expression looks something like this, take a note of the transitions between states.
 
 ![fsm for ab*c](https://user-images.githubusercontent.com/4745789/79634655-84fe9180-8189-11ea-9b94-f9ee563394bf.png)
 
-## Implementation
-Each state of the FSM is modelled as a coroutine that holds its transition function and depending on input sent to the coroutine changes the current state.
+## State
+Each state is modelled as an infinitely running coroutine which on receiving an input, makes the decision and changes the state of the machine. From the FSM defined for the regex `ab*c`, we could write the model the state `q2` as shown below
 
-### FSM Class
+```py
+def _create_state_q2():
+    while True:
+        # Wait till the input is received.
+        # once received store the input in `char`
+        char = yield
+
+        # depending on what we received as the input
+        # change the current state of the fsm
+        if char == 'b':
+            # on receiving `b` the state moves to `q2`
+            current_state = state_q2
+        elif char == 'c':
+            # on receiving `c` the state moves to `q3`
+            current_state = state_q3
+        else:
+            # on receiving any other input, break the loop
+            # so that next time when someone sends any input to
+            # the coroutine it raises StopIteration
+            break
+```
+
+## The FSM Class
 
 ```py
 class FSM:
