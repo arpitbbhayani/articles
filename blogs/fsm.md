@@ -1,14 +1,16 @@
-Finite state machines is a mathematical model of computations thes helps us model sequential logic. FSM consists of finitie number of states, transitions, inputs alphabets (tokens), initial state and end state(s). FSM can be in exactly one of a finite number of states at any given time and it transitions into another state in response to some input.
+Finite state machines is a mathematical model of computations thes helps us model sequential logic. FSM consists of finitie number of states, transitions, inputs alphabets (tokens), initial state and end state(s). FSM can be in exactly one of a finite number of states at any given time and it transitions into another state in response to some input. You can read more about FSM [here](https://en.wikipedia.org/wiki/Finite-state_machine).
 
 In the field of computer science the FSMs are used in designing Compilers, Step worklows, Game Design, Protocols (like TCP/IP), event-driven programming, conversational AI and many more.
 
 TODO EXAMPLE FSM
 
+In this article we will dive deep into how we can model a finite state machine using Python coroutines.
+
 # Python Coroutines
-In a Finite State Machine, with every input, the control transits from one state to another and modelling them with Python Coroutines is pretty simple and intuitive. So before diving into the implementation we dive take a look at what Generators and Coroutines are and how they fit into this scheme of things.
+In a Finite State Machine, with every input, the control transits from one state to another and modelling them with Python Coroutines is simple and intuitive. So before diving into the implementation we take a detour and look at what Generators and Coroutines are and how they fit into this scheme of things.
 
 ## Generators
-Generators, in python, are resumable functions which keeps on yielding values as long as someone keeps asking for it by calling `next` function on the generator. If there are no more values to yield generators raise a `StopIteration` excetpion.
+Generators, in python, are **resumable functions** which keeps on yielding values as long as someone keeps asking for the new values, by calling `next` function on it. If there are no more values to yield, generators raise a `StopIteration` excetpion.
 
 ```py
 def fib():
@@ -18,7 +20,7 @@ def fib():
         a, b = b, a+b
 ```
 
-The `yield` statement is the one where the magic happens. `yield`ed value is returned to the caller and the function execution is paused. Once the next value is requested by calling `next`, the function resumes from this very statement.
+The `yield` statement is the one where the magic happens. yielded value is returned to the caller and the function execution is paused and the caller continues its execution. The flow returns back to the generator when the caller function asks from the next value. Once the next value is requested by calling `next`, the generator function resumes from where it left off i.e. `yield` statement.
 
 ```py
 >>> fgen = fib()
@@ -26,7 +28,7 @@ The `yield` statement is the one where the magic happens. `yield`ed value is ret
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ```
 
-Thus using a fibonacci generator is extremely memory efficient as now we need not compute a lot of fibonacci numbers in memory, rather the process could ask for as many values as it needs and the generator would keep on yielding values one by one.
+Thus using a fibonacci generator is extremely memory efficient as now we need not compute a lot of fibonacci numbers and hold them in memory, rather the process could ask for as many values as it needs and the generator would keep on yielding values one by one.
 
 ## Coroutines
 Python coroutines are resumable functions, just like generators but instead they consume values on the fly. The way we can do this is by using the `yield` statement as shown below
