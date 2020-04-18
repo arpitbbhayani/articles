@@ -106,14 +106,17 @@ The FSM class for the regular expression `ab*c` could be modelled as,
 ```py
 class FSM:
     def __init__(self):
-        self.current_state = None
-        
+        # initializing states
         self.start = self._create_start()
         self.q1 = self._create_q1()
         self.q2 = self._create_q2()
         self.q3 = self._create_q3()
         
+        # setting current state of the system
         self.current_state = self.start
+
+        # stopped flag to denote that iteration is stopped due to bad
+        # input against which transition was not defined.
         self.stopped = False
 
     def send(self, char):
@@ -142,15 +145,25 @@ class FSM:
     @prime
     def _create_q2(self):
         while True:
+            # Wait till the input is received.
+            # once received store the input in `char`
             char = yield
+
+            # depending on what we received as the input
+            # change the current state of the fsm
             if char == 'b':
+                # on receiving `b` the state moves to `q2`
                 self.current_state = self.q2
             elif char == 'c':
+                # on receiving `c` the state moves to `q3`
                 self.current_state = self.q3
             else:
+                # on receiving any other input, break the loop
+                # so that next time when someone sends any input to
+                # the coroutine it raises StopIteration
                 break
-
     ...
+
 ```
 
 ## Running
