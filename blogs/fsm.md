@@ -1,5 +1,3 @@
-Finite State machines with Python Coroutines
-
 Finite state machines are simulate sequential logic and some computer programs, Finite state machines can be used to model problems in many fields including mathematics, artificial intelligence, games, and linguistics. 
 
 ![fsm for ab*c](https://user-images.githubusercontent.com/4745789/79634655-84fe9180-8189-11ea-9b94-f9ee563394bf.png)
@@ -18,11 +16,30 @@ Pacman
 TCP/IP
 
 # Python Coroutines
+In a Finite State Machine, with every input, the control transits from one state to another and modelling them with Python Coroutines is pretty simple and intuitive. So before diving into the implementation we dive take a look at what Generators and Coroutines are and how they fit into this scheme of things.
 
 ## Generators
-Generate Values
+Generators, in python, are resumable functions which keeps on yielding values as long as someone keeps asking for it. A fibonacci generator could be written as
+
+```py
+def fib():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a+b
+```
+
+Say, we want first 10 fibonacci number we call `next` function on the generator returned by `fib()`. Everytime the `next` is called, the control loops through the instructions and yields one value when the flow reaches the `yield a` statement within `fib` and the flow is passed on the callee. When the `next` is called the second time, the `fib` is resumed from the place where the control returned.
+
+```py
+>>> fgen = fib()
+>>> [next(fgen) for _ in range(10)]
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+```
 
 ## Coroutines
+Python coroutines are resumable functions that wait for 
+
 Consume Values
 
 ```py
