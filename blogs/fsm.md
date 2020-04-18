@@ -1,7 +1,5 @@
 Finite state machines are simulate sequential logic and some computer programs, Finite state machines can be used to model problems in many fields including mathematics, artificial intelligence, games, and linguistics. 
 
-![fsm for ab*c](https://user-images.githubusercontent.com/4745789/79634655-84fe9180-8189-11ea-9b94-f9ee563394bf.png)
-
 Application sof FSM
     Automata-based programming
     Event-driven finite-state machine
@@ -37,17 +35,27 @@ The `yield` statement is the one where the magic happens. `yield`ed value is ret
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ```
 
-Thus using a Fibonacci generator is extremely memory efficient as now we need not compute a lot of fibonacci numbers in memory, rather the process could ask for as many values as it needs and the generator would keep on yielding values one by one.
+Thus using a fibonacci generator is extremely memory efficient as now we need not compute a lot of fibonacci numbers in memory, rather the process could ask for as many values as it needs and the generator would keep on yielding values one by one.
 
 ## Coroutines
-Python coroutines are resumable functions that wait for 
-
-Consume Values
+Python coroutines are resumable functions, just like generators but instead they consume values on the fly. The way we can do this is by using the `yield` statement as shown below
 
 ```py
+def grep(pattern):
+    while True:
+        line = yield
+        if pattern in line:
+            print(line)
 ```
 
+In the example above, the function
+
 # Finite State Machine for Regex
+Finite State Machine (FSM) for a regular expression `ab*c` could be designed as below
+
+![fsm for ab*c](https://user-images.githubusercontent.com/4745789/79634655-84fe9180-8189-11ea-9b94-f9ee563394bf.png)
+
+Each state of above FSM could be treated as an infinite loop waiting for an input, making the decision and doing the transition to the next state.
 
 # Implementation
 
