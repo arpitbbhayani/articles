@@ -75,7 +75,7 @@ To dive into low level details, we build an FSM for a regular expression `ab*c`.
 Each state is modelled as an infinitely running coroutine which on receiving an input, makes the decision and changes the state of the machine. From the FSM defined for the regex `ab*c`, we could write the model the state `q2` as shown below
 
 ```py
-def _create_state_q2():
+def _create_q2():
     while True:
         # Wait till the input is received.
         # once received store the input in `char`
@@ -85,10 +85,10 @@ def _create_state_q2():
         # change the current state of the fsm
         if char == 'b':
             # on receiving `b` the state moves to `q2`
-            current_state = state_q2
+            current_state = q2
         elif char == 'c':
             # on receiving `c` the state moves to `q3`
-            current_state = state_q3
+            current_state = q3
         else:
             # on receiving any other input, break the loop
             # so that next time when someone sends any input to
@@ -96,75 +96,68 @@ def _create_state_q2():
             break
 ```
 
-## The FSM Class
+## FSM Class
+To keep things encapsulated we will define a class for FSM which holds all the states and maintains current state of the machine. It will also have a method called `send` which actually sends input to the current state. The current state upon receiving this input, makes a decision and updates the `current_state` of the FSM.
+
+Depending on the usecase the FSM could also have a function that answers the core problem statemet, example does the given line matches the regular expression? or is the number divisible by 3?
+
+The FSM class for the regular expression `ab*c` could be modelled as,
 
 ```py
 class FSM:
     def __init__(self):
         self.current_state = None
         
-        self.state_init = self._create_state_init()
-        self.state_q1 = self._create_state_q1()
-        self.state_q2 = self._create_state_q2()
-        self.state_q3 = self._create_state_q3()
+        self.start = self._create_start()
+        self.q1 = self._create_q1()
+        self.q2 = self._create_q2()
+        self.q3 = self._create_q3()
         
-        self.current_state = self.state_init
+        self.current_state = self.start
         self.stopped = False
-        
+
     def send(self, char):
+        """The function sends the curretn input to the current state
+        It captures the StopIteration exception and marks the stopped flag.
+        """
         try:
             self.current_state.send(char)
         except StopIteration:
             self.stopped = True
         
     def does_match(self):
+        """The function at any point in time returns if till the current input
+        the string matches the given regular expression.
+
+        It does so by comparing the current state with the end state `q3`.
+        It also checks for `stopped` flag which sees that due to bad input
+        the iteration of FSM had to be stopped.
+        """
         if self.stopped:
-            return Falset
-        return self.current_state == self.state_q3
+            return False
+        return self.current_state == self.q3
 
+    ...
+    
     @prime
-    def _create_state_q1(self):
+    def _create_q2(self):
         while True:
             char = yield
             if char == 'b':
-                self.current_state = self.state_q2
+                self.current_state = self.q2
             elif char == 'c':
-                self.current_state = self.state_q3
+                self.current_state = self.q3
             else:
                 break
 
-    @prime
-    def _create_state_q2(self):
-        while True:
-            char = yield
-            if char == 'b':
-                self.current_state = self.state_q2
-            elif char == 'c':
-                self.current_state = self.state_q3
-            else:
-                break
-
-    @prime
-    def _create_state_q3(self):
-        while True:
-            char = yield
-            break
-
-    @prime
-    def _create_state_init(self):
-        while True:
-            char = yield
-            if char == 'a':
-                self.current_state = self.state_q1
-            else:
-                break
+    ...
 ```
 
-## Runner
+## Running
 
 ```py
 def grep_regex(text):
-    evaluator = RegexFSM()
+    evaluator = FSM()
     for ch in text:
         evaluator.send(ch)
     return evaluator.does_match()
@@ -188,15 +181,15 @@ https://github.com/arpitbbhayani/fsm/blob/master/divisibility-by-3.ipynb
 
 ```py
 @prime
-def _create_state_q1(self):
+def _create_q1(self):
     while True:
         digit = yield
         if  digit in [0, 3, 6, 9]:
-            self.current_state = self.state_q1
+            self.current_state = self.q1
         elif  digit in [1, 4, 7]:
-            self.current_state = self.state_q2
+            self.current_state = self.q2
         elif  digit in [2, 5, 8]:
-            self.current_state = self.state_q0
+            self.current_state = self.q0
 ```
 
 ## SQL Query Validator
@@ -207,13 +200,13 @@ https://github.com/arpitbbhayani/fsm/blob/master/sql-query-validator.ipynb
 
 ```py
 @prime
-def _create_state_explicit_cols(self):
+def _create_explicit_cols(self):
     while True:
         token = yield
         if token == 'from':
-            self.current_state = self.state_from_clause
+            self.current_state = self.from_clause
         elif token == ',':
-            self.current_state = self.state_more_cols
+            self.current_state = self.more_cols
         else:
             break
 ```
