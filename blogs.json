@@ -1,7 +1,7 @@
 [
   {
     "id": "fsm",
-    "title": "Finite State Machines with Python Coroutines",
+    "title": "Building Finite State Machines with Python Coroutines",
     "description": "Finite State Machines with Python Coroutines",
     "image": "https://user-images.githubusercontent.com/4745789/78990379-ebfdc400-7b53-11ea-88b7-cd64e39eabf6.png",
     "gif": "https://media.giphy.com/media/dJ4vNQ7r72pb4nDhN5/giphy.gif",

@@ -71,10 +71,8 @@ Finite State Machine (FSM) for a regular expression `ab*c` could be designed as 
 
 Each state of above FSM could be treated as an infinite loop waiting for an input, making the decision and doing the transition to the next state.
 
-# Implementation
+## Implementation
 Each state of the FSM is modelled as a coroutine that holds its transition function and depending on input sent to the coroutine changes the current state.
-
-## Low level modelling
 
 ### FSM Class
 
