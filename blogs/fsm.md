@@ -1,6 +1,8 @@
-Finite state machines (FSM) simulate sequential logic and can be used to model problems in many fields including mathematics, artificial intelligence, games, and linguistics. FSM consists of states, transitions, inputs and final state. A stream of inputs is given and depending on it the transiton takes place from one to another. If at the end the current state reaches the end state, the machine stops.
+Finite state machines is a mathematical model of computations thes helps us model sequential logic. FSM consists of finitie number of states, transitions, inputs alphabets (tokens), initial state and end state(s). FSM can be in exactly one of a finite number of states at any given time and it transitions into another state in response to some input.
 
-FSMs are used in designing Compilers, designing systems with step workflows, game design and protocol validations, event-driven systems could be built well using FSM.
+In the field of computer science the FSMs are used in designing Compilers, Step worklows, Game Design, Protocols (like TCP/IP), event-driven programming, conversational AI and many more.
+
+TODO EXAMPLE FSM
 
 # Python Coroutines
 In a Finite State Machine, with every input, the control transits from one state to another and modelling them with Python Coroutines is pretty simple and intuitive. So before diving into the implementation we dive take a look at what Generators and Coroutines are and how they fit into this scheme of things.
@@ -47,22 +49,14 @@ Finite State Machine (FSM) for a regular expression `ab*c` could be designed as 
 Each state of above FSM could be treated as an infinite loop waiting for an input, making the decision and doing the transition to the next state.
 
 # Implementation
+Each state of the FSM is modelled as a coroutine that holds its transition function and depending on input sent to the coroutine changes the current state.
 
-## Prime decorator
+## Low level modelling
 
-```py
-def prime(fn):
-    def wrapper(*args, **kwargs):
-        v = fn(*args, **kwargs)
-        v.send(None)
-        return v
-    return wrapper
-```
-
-## FSM
+### FSM Class
 
 ```py
-class RegexFSM:
+class FSM:
     def __init__(self):
         self.current_state = None
         
