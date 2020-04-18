@@ -1,17 +1,6 @@
-Finite state machines are simulate sequential logic and some computer programs, Finite state machines can be used to model problems in many fields including mathematics, artificial intelligence, games, and linguistics. 
+Finite state machines (FSM) simulate sequential logic and can be used to model problems in many fields including mathematics, artificial intelligence, games, and linguistics. FSM consists of states, transitions, inputs and final state. A stream of inputs is given and depending on it the transiton takes place from one to another. If at the end the current state reaches the end state, the machine stops.
 
-Application sof FSM
-    Automata-based programming
-    Event-driven finite-state machine
-    Virtual finite-state machine
-    State design pattern
-    Compilers
-    Systems
-    Rule based triggers
-    Step Workflows
-Vending Machines
-Pacman
-TCP/IP
+FSMs are used in designing Compilers, designing systems with step workflows, game design and protocol validations, event-driven systems could be built well using FSM.
 
 # Python Coroutines
 In a Finite State Machine, with every input, the control transits from one state to another and modelling them with Python Coroutines is pretty simple and intuitive. So before diving into the implementation we dive take a look at what Generators and Coroutines are and how they fit into this scheme of things.
