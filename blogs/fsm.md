@@ -38,7 +38,7 @@ def grep(substr):
     while True:
         line = yield
         if substr in line:
-            print(f"found {substr} in '{line}'")
+            print(f"found {substr}")
 ```
 
 In the example above, when the generator `grep` is paused at the `yield` statement, we could send the value to it and the value we send will be stored in the variable `line`.
@@ -51,10 +51,10 @@ In the example above, when the generator `grep` is paused at the `yield` stateme
 >>>
 >>> g.send("users/get api took 1 ms.")
 >>> g.send("users/created api took 3 ms.")
-found users/created in 'users/created api took 3 ms.'
+found users/created
 >>> g.send("users/get api took 1 ms.")
 >>> g.send("users/created api took 4 ms.")
-found users/created in 'users/created api took 4 ms.'
+found users/created
 >>> g.send("users/get api took 1 ms.")
 ```
 
