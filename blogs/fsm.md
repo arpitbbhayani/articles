@@ -19,9 +19,7 @@ TCP/IP
 In a Finite State Machine, with every input, the control transits from one state to another and modelling them with Python Coroutines is pretty simple and intuitive. So before diving into the implementation we dive take a look at what Generators and Coroutines are and how they fit into this scheme of things.
 
 ## Generators
-Generators, in python, are resumable functions which keeps on yielding values as long as someone keeps asking for it. Generators do not store all the values in memory rather they generate the values on the fly and hence extremely memory efficient.
-
-A fibonacci generator could be written as
+Generators, in python, are resumable functions which keeps on yielding values as long as someone keeps asking for it by calling `next` function on the generator. If there are no more values to yield generators raise a `StopIteration` excetpion.
 
 ```py
 def fib():
@@ -31,7 +29,7 @@ def fib():
         a, b = b, a+b
 ```
 
-Say, we want first 10 fibonacci number we call `next` function on the generator returned by `fib()`. Everytime the `next` is called, the control loops through the instructions and yields one value when the flow reaches the `yield a` statement within `fib` and the flow is passed on the callee. When the `next` is called the second time, the `fib` is resumed from the place where the control returned. `next` function helps you resume the egenerator.
+The `yield` statement is the one where the magic happens. `yield`ed value is returned to the caller and the function execution is paused. Once the next value is requested by calling `next`, the function resumes from this very statement.
 
 ```py
 >>> fgen = fib()
@@ -39,7 +37,7 @@ Say, we want first 10 fibonacci number we call `next` function on the generator 
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ```
 
-Hence now one process could ask for 10 numbers while other could ask for 1000 but the `fib` will not be compuing all values and storing it in memoty rather it will compute and yield values one by one.
+Thus using a Fibonacci generator is extremely memory efficient as now we need not compute a lot of fibonacci numbers in memory, rather the process could ask for as many values as it needs and the generator would keep on yielding values one by one.
 
 ## Coroutines
 Python coroutines are resumable functions that wait for 
