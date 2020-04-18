@@ -19,7 +19,9 @@ TCP/IP
 In a Finite State Machine, with every input, the control transits from one state to another and modelling them with Python Coroutines is pretty simple and intuitive. So before diving into the implementation we dive take a look at what Generators and Coroutines are and how they fit into this scheme of things.
 
 ## Generators
-Generators, in python, are resumable functions which keeps on yielding values as long as someone keeps asking for it. A fibonacci generator could be written as
+Generators, in python, are resumable functions which keeps on yielding values as long as someone keeps asking for it. Generators do not store all the values in memory rather they generate the values on the fly and hence extremely memory efficient.
+
+A fibonacci generator could be written as
 
 ```py
 def fib():
@@ -36,6 +38,8 @@ Say, we want first 10 fibonacci number we call `next` function on the generator 
 >>> [next(fgen) for _ in range(10)]
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ```
+
+Hence now one process could ask for 10 numbers while other could ask for 1000 but the `fib` will not be compuing all values and storing it in memoty rather it will compute and yield values one by one.
 
 ## Coroutines
 Python coroutines are resumable functions that wait for 
