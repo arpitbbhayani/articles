@@ -160,7 +160,7 @@ False
 
 ## Divisibility by 3
 
-![div3](https://user-images.githubusercontent.com/4745789/79635520-1290b000-818f-11ea-93ae-e2d1a4fc1e0b.png)
+![div3](https://user-images.githubusercontent.com/4745789/79641628-564ae000-81b6-11ea-9c84-147cae3a30a6.png)
 
 https://github.com/arpitbbhayani/fsm/blob/master/divisibility-by-3.ipynb
 
