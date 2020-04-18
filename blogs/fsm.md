@@ -31,7 +31,7 @@ def fib():
         a, b = b, a+b
 ```
 
-Say, we want first 10 fibonacci number we call `next` function on the generator returned by `fib()`. Everytime the `next` is called, the control loops through the instructions and yields one value when the flow reaches the `yield a` statement within `fib` and the flow is passed on the callee. When the `next` is called the second time, the `fib` is resumed from the place where the control returned.
+Say, we want first 10 fibonacci number we call `next` function on the generator returned by `fib()`. Everytime the `next` is called, the control loops through the instructions and yields one value when the flow reaches the `yield a` statement within `fib` and the flow is passed on the callee. When the `next` is called the second time, the `fib` is resumed from the place where the control returned. `next` function helps you resume the egenerator.
 
 ```py
 >>> fgen = fib()
