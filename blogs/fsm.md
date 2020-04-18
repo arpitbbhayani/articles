@@ -64,12 +64,14 @@ In the example above we see how we have written a simple `grep` function that as
 
 The ability of coroutines to pause the execution and accept input on the fly helps us model FSM in an extremely intuitive way.
 
-# Finite State Machine for Regex
-Finite State Machine (FSM) for a regular expression `ab*c` could be designed as below
+# Building a Finite State Machine
+As mentioned above a finite state machine contains finite number of states, transition function, inputs, initial state and end state. The machine at a point in time is in one of the finite states and upon receiving an input transitions to the next state as determined by the transition function.
+
+The way we are using states is oddly similar to how Python Coroutines work, hence we can model a state as a Python co-routine that runs an infinite loop within which it accepts the input, decides the transition and changes the current state of the FSM.
+
+To dive into low level details, we build and FSM for a regular expression `ab*c`.
 
 ![fsm for ab*c](https://user-images.githubusercontent.com/4745789/79634655-84fe9180-8189-11ea-9b94-f9ee563394bf.png)
-
-Each state of above FSM could be treated as an infinite loop waiting for an input, making the decision and doing the transition to the next state.
 
 ## Implementation
 Each state of the FSM is modelled as a coroutine that holds its transition function and depending on input sent to the coroutine changes the current state.
