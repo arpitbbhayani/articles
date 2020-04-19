@@ -1,6 +1,6 @@
-Finite State Machines is a mathematical model of computations to model sequential logic. FSM consists of a finite number of states, transition function, inputs alphabets, start state and end state(s). In the field of computer science, the FSMs are used in designing Compilers, Linguistics, Step workflows, Game Design, Protocols Procedures (like TCP/IP), Event-driven programming, Conversational AI and many more.
+Finite State Machine is a mathematical model of computation that models a sequential logic. FSM consists of a finite number of states, transition functions, input alphabets, a start state and end state(s). In the field of computer science, the FSMs are used in designing Compilers, Linguistics Processing, Step workflows, Game Design, Protocols Procedures (like TCP/IP), Event-driven programming, Conversational AI and many more.
 
-A Finite State Machine that simulates a Traffic Signal is designed below. `Green` is the start/initial state, which upon receiving a trigger moves to `Yellow` state, which upon receiving a trigger, transitions to `Red` state. The `Red` state circles back to `Green` and the loop continues. The machine does not have any end state because we do not want our traffic signal to stop functioning. 
+To understand what a finite machine is, we take a look at Traffic Signal. Finite State Machine for a Traffic Signal is designed and rendered below. `Green` is the start/initial state, which upon receiving a trigger moves to `Yellow`, which, in turn, upon receiving a trigger, transitions to `Red`. The `Red` then circles back to `Green` and the loop continues.
 
 ![traffic signal fsm](https://user-images.githubusercontent.com/4745789/79678813-d572ff00-821c-11ea-8437-b4a3b7fd1a60.png)
 
