@@ -4,9 +4,9 @@ To understand what a finite machine is, we take a look at Traffic Signal. Finite
 
 ![traffic signal fsm](https://user-images.githubusercontent.com/4745789/79678813-d572ff00-821c-11ea-8437-b4a3b7fd1a60.png)
 
-Any FSM can be in exactly one of the finite states at any given time and it transitions into another state in response to some input. In the example above, at any point in time, the traffic signal is exactly in one state - either `Green`, `Yellow` or `Red`. The transition rules are defined for each state and because of that rules we will always see `Red` going back to `Green` and never `Yellow`. Thus transition function defines the rules which the state and the FSM adhere to and is the one that determines the sequential logic the FSM builds.
+An FSM must be in exactly one of the finite states at any given point in time and then in response to the input it received it transitions into another state. In the example above, the traffic signal is exactly in one of the 3 states - `Green`, `Yellow` or `Red`. The transition rules are defined for each state which defines what sequential logic will be played out upon input.
 
-In this article, we will dive deep into how we can model a Finite State Machine using Python coroutines.
+Implementing an FSM is crucial to solve some of the most interesting problems in Computer Science and in this article, we dive deep into modelling a Finite State Machine using Python coroutines.
 
 # Python Coroutines
 In a Finite State Machine, with every input, the control transits from one state to another and modelling them with Python Coroutines is simple and intuitive. So before diving into the implementation we take a detour and look at what Generators and Coroutines are and how they fit into this scheme of things.
