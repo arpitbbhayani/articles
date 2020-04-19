@@ -1,18 +1,18 @@
-Finite State Machines is a mathematical model of computations to model sequential logic. FSM consists of finite number of states, transition function, inputs alphabets, start state and end state(s). In the field of computer science the FSMs are used in designing Compilers, Linguistics, Step workflows, Game Design, Protocols Procedures (like TCP/IP), Event-driven programming, Conversational AI and many more.
+Finite State Machines is a mathematical model of computations to model sequential logic. FSM consists of a finite number of states, transition function, inputs alphabets, start state and end state(s). In the field of computer science, the FSMs are used in designing Compilers, Linguistics, Step workflows, Game Design, Protocols Procedures (like TCP/IP), Event-driven programming, Conversational AI and many more.
 
-A Finite State Machine that simulates a Traffic Signal is designed below. `Green` is the start/initial state, which upon receiving a trigger moves to `Yellow` state, which upon receiving a trigger transitions to `Red` state. The `Red` state circles back to `Green` and the loop continues. The machine does not have any end state because we do not want our traffic signal to stop functioning. 
+A Finite State Machine that simulates a Traffic Signal is designed below. `Green` is the start/initial state, which upon receiving a trigger moves to `Yellow` state, which upon receiving a trigger, transitions to `Red` state. The `Red` state circles back to `Green` and the loop continues. The machine does not have any end state because we do not want our traffic signal to stop functioning. 
 
 ![traffic signal fsm](https://user-images.githubusercontent.com/4745789/79678813-d572ff00-821c-11ea-8437-b4a3b7fd1a60.png)
 
-Any FSM can be in exactly one of a finite states at any given time and it transitions into another state in response to some input. In the example above, at any point in time the traffic signal is exactly in one state - either `Green`, `Yellow` or `Red`. The transition rules are defined for each state and because of that rules we will always see `Red` going back to `Green` and never `Yellow`. Thus transition function defines the rules which the state and the FSM adheres to and is the one that determines the sequential loigc the FSM builds.
+Any FSM can be in exactly one of the finite states at any given time and it transitions into another state in response to some input. In the example above, at any point in time, the traffic signal is exactly in one state - either `Green`, `Yellow` or `Red`. The transition rules are defined for each state and because of that rules we will always see `Red` going back to `Green` and never `Yellow`. Thus transition function defines the rules which the state and the FSM adhere to and is the one that determines the sequential logic the FSM builds.
 
-In this article we will dive deep into how we can model a Finite State Machine using Python coroutines.
+In this article, we will dive deep into how we can model a Finite State Machine using Python coroutines.
 
 # Python Coroutines
 In a Finite State Machine, with every input, the control transits from one state to another and modelling them with Python Coroutines is simple and intuitive. So before diving into the implementation we take a detour and look at what Generators and Coroutines are and how they fit into this scheme of things.
 
 ## Generators
-Generators, in python, are **resumable functions** which keeps on yielding values as long as someone keeps asking for the new values, by calling `next` function on it. If there are no more values to yield, generators raise a `StopIteration` excetpion.
+Generators, in python, are **resumable functions** which keeps on yielding values as long as someone keeps asking for the new values, by calling `next` function on it. If there are no more values to yield, generators raise a `StopIteration` exception.
 
 ```py
 def fib():
@@ -30,10 +30,10 @@ The `yield` statement is the one where the magic happens. yielded value is retur
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ```
 
-Thus using a fibonacci generator is extremely memory efficient as now we need not compute a lot of fibonacci numbers and hold them in memory, rather the process could ask for as many values as it needs and the generator would keep on yielding values one by one.
+Thus using a Fibonacci generator is extremely memory-efficient as now we need not compute a lot of Fibonacci numbers and hold them in memory, rather the process could ask for as many values as it needs and the generator would keep on yielding values one by one.
 
 ## Coroutines
-Coroutines are resumable functions, just like generators, but instead they consume values on the fly. The working of it is very similar to generator and again the `yield` statement is where the magic happens. When a coroutine is paused at the `yield` statement, we could send the value it using `send` function and the value could be used using assignment operator on `yield` as shown below
+Coroutines are resumable functions, just like generators, but instead, they consume values on the fly. The working of it is very similar to the generator and again the `yield` statement is where the magic happens. When a coroutine is paused at the `yield` statement, we could send the value it using `send` function and the value could be used using assignment operator on `yield` as shown below
 
 ```py
 def grep(substr):
@@ -65,11 +65,11 @@ In the example above we see how we have written a simple `grep` function that as
 The ability of coroutines to pause the execution and accept input on the fly helps us model FSM in an extremely intuitive way.
 
 # Building a Finite State Machine
-As mentioned above a Finite State Machine contains finite number of states, transition function, inputs, initial state and end state. The machine at a point in time is in one of the finite states and upon receiving an input, it transitions to the next state as determined by the transition function.
+As mentioned above a Finite State Machine contains a finite number of states, transition function, inputs, the initial state and end state. The machine at a point in time is in one of the finite states and upon receiving input, it transitions to the next state as determined by the transition function.
 
 The way we are using states is oddly similar to how Python Coroutines work, hence we can model a state as a Python coroutine that runs an infinite loop within which it accepts the input, decides the transition and changes the current state of the FSM.
 
-To dive into low level details, we build an FSM for a regular expression `ab*c`. The FSM for the regular expression looks something like this, take a note of the transitions between states.
+To dive into low-level details, we build an FSM for a regular expression `ab*c`. The FSM for the regular expression looks something like this, take note of the transitions between states.
 
 ![fsm for ab*c](https://user-images.githubusercontent.com/4745789/79634655-84fe9180-8189-11ea-9b94-f9ee563394bf.png)
 
@@ -99,9 +99,9 @@ def _create_q2():
 ```
 
 ## FSM Class
-To keep things encapsulated we will define a class for FSM which holds all the states and maintains current state of the machine. It will also have a method called `send` which actually sends input to the current state. The current state upon receiving this input, makes a decision and updates the `current_state` of the FSM.
+To keep things encapsulated we will define a class for FSM which holds all the states and maintains the current state of the machine. It will also have a method called `send` which actually sends input to the current state. The current state upon receiving this input makes a decision and updates the `current_state` of the FSM.
 
-Depending on the usecase the FSM could also have a function that answers the core problem statemet, example does the given line matches the regular expression? or is the number divisible by 3?
+Depending on the use-case the FSM could also have a function that answers the core problem statement, the example does the given line matches the regular expression? or is the number divisible by 3?
 
 The FSM class for the regular expression `ab*c` could be modelled as,
 
@@ -135,8 +135,7 @@ class FSM:
         the string matches the given regular expression.
 
         It does so by comparing the current state with the end state `q3`.
-        It also checks for `stopped` flag which sees that due to bad input
-        the iteration of FSM had to be stopped.
+        It also checks for `stopped` flag which sees that due to bad input the iteration of FSM had to be stopped.
         """
         if self.stopped:
             return False
@@ -168,10 +167,10 @@ class FSM:
 
 ```
 
-Similar to how we have defined the function `_create_q2` we could defined functions for the other three states `start`, `q1` and `q3`. You can find how it is defined at [arpitbbhayani/fsm/regex-1](https://github.com/arpitbbhayani/fsm/blob/master/regex-1.ipynb)
+Similar to how we have defined the function `_create_q2` we could define functions for the other three states `start`, `q1` and `q3`. You can find how it is defined at [arpitbbhayani/fsm/regex-1](https://github.com/arpitbbhayani/fsm/blob/master/regex-1.ipynb)
 
 ## Running
-The input to this FSM will be a stream of input characters, and for passing this input to the current state we have a function called `send` in the `FSM` class that in turn sends the data to the current state, implemented as coroutine. Once we have sent all the characters from the text to this `FSM` we call the helped function `does_match` which tells us if the text matches the pattern or not by checking it against the final end state of the FSM.
+The input to this FSM will be a stream of input characters, and for passing this input to the current state we have a function called `send` in the `FSM` class that in turn sends the data to the current state, implemented as a coroutine. Once we have sent all the characters from the text to this `FSM` we call the helped function `does_match` which tells us if the text matches the pattern or not by checking it against the final end state of the FSM.
 
 ```py
 def grep_regex(text):
@@ -187,13 +186,13 @@ True
 False
 ```
 
-> The way we have implemented state, it is very natural to think that they are all running in parallel, like threads, but in reality the entire execution is pure sequential - and that's the magic of Coroutines. All states seems independent and seems to run in parallel instead all of them are executed in one thread concurrently using coroutines. The coroutines of the current state is executing while all others are suspended on their corresponding `yield` statements.
+> The way we have implemented state, it is very natural to think that they are all running in parallel, like threads, but in reality, the entire execution is pure sequential - and that's the magic of Coroutines. All states seem independent and seem to run in parallel instead all of them are executed in one thread concurrently using coroutines. The coroutine of the current state is executing while all others are suspended on their corresponding `yield` statements.
 
 # More FSMs
-We have seen how intuitive it is to build Regular expression FSMs using Python coroutines, but if our hypothesis is true things should equally intuitive when we are implementing FSMs for other use cases and here we take a look at two examples and see how a state coroutines is implemented in each
+We have seen how intuitive it is to build Regular expression FSMs using Python coroutines, but if our hypothesis is true things should equally intuitive when we are implementing FSMs for other use cases and here we take a look at two examples and see how a state coroutine is implemented in each
 
 ## Divisibility by 3
-The FSM that tells if a given stream of digits constuiting a number is divisible by 3 or not, is designed as follows. The state `q0` is the end state that denotes remainder to be 0.
+The FSM that tells if a given stream of digits constituting a number is divisible by 3 or not, is designed as follows. The state `q0` is the end state that denotes remainder to be 0.
 
 ![div3](https://user-images.githubusercontent.com/4745789/79641628-564ae000-81b6-11ea-9c84-147cae3a30a6.png)
 
@@ -212,17 +211,17 @@ def _create_q1(self):
             self.current_state = self.q0
 ```
 
-The similarity between the coroutine implemtation and transition function for a state is uncanny. The entire implementation of this FSM can be found at [arpitbbhayani/fsm/divisibility-by-3](https://github.com/arpitbbhayani/fsm/blob/master/divisibility-by-3.ipynb)
+The similarity between the coroutine implementation and transition function for a state is uncanny. The entire implementation of this FSM can be found at [arpitbbhayani/fsm/divisibility-by-3](https://github.com/arpitbbhayani/fsm/blob/master/divisibility-by-3.ipynb)
 
 ## SQL Query Validator
-Now we design an FSM for a SQL Query Validator that given a sql query tells if it is valid or not. The FSM for the validator that covers all the queries will be massive, we just deal with the subset of it where we support sql queries like
+Now we design an FSM for a SQL Query Validator that given a SQL query tells if it is valid or not. The FSM for the validator that covers all the queries will be massive, we just deal with the subset of it where we support SQL queries like
 
 ```
 SELECT * from TABLE_NAME;
 SELECT column, [...columns] from TABLE_NAME;
 ```
 
-The FSM for SQL query validator that spports above mentioned queires is
+The FSM for SQL query validator that supports above-mentioned queries is
 
 ![fsm for sql query validator](https://user-images.githubusercontent.com/4745789/79635523-1c1a1800-818f-11ea-8afe-fe8065b55791.png)
 
@@ -241,10 +240,10 @@ def _create_explicit_cols(self):
             break
 ```
 
-Again the coroutine through which state is implemented looks so similar to the transition function of the state. This makes wirting and building FSM so intuitive. The entire implementation of this FSM can be found at [arpitbbhayani/fsm/sql-query-validator](https://github.com/arpitbbhayani/fsm/blob/master/sql-query-validator.ipynb)
+Again the coroutine through which state is implemented looks so similar to the transition function of the state. This makes writing and building FSM so intuitive. The entire implementation of this FSM can be found at [arpitbbhayani/fsm/sql-query-validator](https://github.com/arpitbbhayani/fsm/blob/master/sql-query-validator.ipynb)
 
 # Conclusion
-Even though this may not be the most efficinet way to implement and build FSM but it is most intuitive way indeed. The edges and state transitions translate well into `if` and `elif`, each state is modelled as an independant coroutines and we still do things in a sequential manner. It feels parallel but it is infact sequential.
+Even though this may not be the most efficient way to implement and build FSM but it is the most intuitive way indeed. The edges and state transitions translate well into `if` and `elif`, each state is modelled as an independent coroutine and we still do things in a sequential manner. It feels parallel but it is in fact sequential.
 
 More like passing the parcel.
 
