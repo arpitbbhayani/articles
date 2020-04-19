@@ -62,9 +62,7 @@ found users/created
 >>> g.send("users/get api took 1 ms.")
 ```
 
-In the example above we see how we have written a simple `grep` function that as and when receives input resumes its execution and spits out if the input `line` contains the substring `substr` in it. We need not pass all the lines to the grep function at once rather we can "stream" the lines as and when we see it to this grep function and it would print as and when it finds `substr` in the `line`.
-
-The ability of coroutines to pause the execution and accept input on the fly helps us model FSM in an extremely intuitive way.
+In the function invocations above we see how we could keep on sending the text to the coroutine and it continues to spit out if it found the given substring `users/created` in the text. This ability of coroutine to pause the execution and accept input on the fly helps us model FSM in a very intuitive way.
 
 # Building a Finite State Machine
 As mentioned above a Finite State Machine contains a finite number of states, transition function, inputs, the initial state and end state. The machine at a point in time is in one of the finite states and upon receiving input, it transitions to the next state as determined by the transition function.
