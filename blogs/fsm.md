@@ -171,6 +171,7 @@ class FSM:
 Similar to how we have defined the function `_create_q2` we could defined functions for the other three states `start`, `q1` and `q3`. You can find how it is defined at [arpitbbhayani/fsm/regex-1](https://github.com/arpitbbhayani/fsm/blob/master/regex-1.ipynb)
 
 ## Running
+The input to this FSM will be a stream of input characters, and for passing this input to the current state we have a function called `send` in the `FSM` class that in turn sends the data to the current state, implemented as coroutine. Once we have sent all the characters from the text to this `FSM` we call the helped function `does_match` which tells us if the text matches the pattern or not by checking it against the final end state of the FSM.
 
 ```py
 def grep_regex(text):
@@ -178,9 +179,7 @@ def grep_regex(text):
     for ch in text:
         evaluator.send(ch)
     return evaluator.does_match()
-```
 
-```py
 >>> grep_regex("abc")
 True
 
