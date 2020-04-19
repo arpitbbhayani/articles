@@ -187,13 +187,17 @@ True
 False
 ```
 
-# More Examples
+> The way we have implemented state, it is very natural to think that they are all running in parallel, like threads, but in reality the entire execution is pure sequential - and that's the magic of Coroutines. All states seems independent and seems to run in parallel instead all of them are executed in one thread concurrently using coroutines. The coroutines of the current state is executing while all others are suspended on their corresponding `yield` statements.
+
+# More FSMs
+We have seen how intuitive it is to build Regular expression FSMs using Python coroutines, but if our hypothesis is true things should equally intuitive when we are implementing FSMs for other use cases and here we take a look at two examples and see how a state coroutines is implemented in each
 
 ## Divisibility by 3
+The FSM that tells if a given stream of digits constuiting a number is divisible by 3 or not, is designed as follows. The state `q0` is the end state that denotes remainder to be 0.
 
 ![div3](https://user-images.githubusercontent.com/4745789/79641628-564ae000-81b6-11ea-9c84-147cae3a30a6.png)
 
-https://github.com/arpitbbhayani/fsm/blob/master/divisibility-by-3.ipynb
+The state coroutines for state `q1` is implemented as below
 
 ```py
 @prime
@@ -207,6 +211,8 @@ def _create_q1(self):
         elif  digit in [2, 5, 8]:
             self.current_state = self.q0
 ```
+
+The similarity between the coroutine implemtation and transition function for a state is uncanny. The entire implementation of this FSM can be found at [arpitbbhayani/fsm/divisibility-by-3](https://github.com/arpitbbhayani/fsm/blob/master/divisibility-by-3.ipynb)
 
 ## SQL Query Validator
 
