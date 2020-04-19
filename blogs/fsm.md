@@ -215,10 +215,18 @@ def _create_q1(self):
 The similarity between the coroutine implemtation and transition function for a state is uncanny. The entire implementation of this FSM can be found at [arpitbbhayani/fsm/divisibility-by-3](https://github.com/arpitbbhayani/fsm/blob/master/divisibility-by-3.ipynb)
 
 ## SQL Query Validator
+Now we design an FSM for a SQL Query Validator that given a sql query tells if it is valid or not. The FSM for the validator that covers all the queries will be massive, we just deal with the subset of it where we support sql queries like
 
-![sql](https://user-images.githubusercontent.com/4745789/79635523-1c1a1800-818f-11ea-8afe-fe8065b55791.png)
+```
+SELECT * from TABLE_NAME;
+SELECT column, [...columns] from TABLE_NAME;
+```
 
-https://github.com/arpitbbhayani/fsm/blob/master/sql-query-validator.ipynb
+The FSM for SQL query validator that spports above mentioned queires is
+
+![fsm for sql query validator](https://user-images.githubusercontent.com/4745789/79635523-1c1a1800-818f-11ea-8afe-fe8065b55791.png)
+
+The state coroutines for state `explicit_cols` is implemented as below
 
 ```py
 @prime
@@ -232,6 +240,8 @@ def _create_explicit_cols(self):
         else:
             break
 ```
+
+Again the coroutine through which state is implemented looks so similar to the transition function of the state. This makes wirting and building FSM so intuitive. The entire implementation of this FSM can be found at [arpitbbhayani/fsm/sql-query-validator](https://github.com/arpitbbhayani/fsm/blob/master/sql-query-validator.ipynb)
 
 # Conclusion
 Even though this may not be the most efficinet way to implement and build FSM but it is most intuitive way indeed. The edges and state transitions translate well into `if` and `elif`, each state is modelled as an independant co-routines and we still do things in a sequential manner. It feels parallel but it is infact sequential.
