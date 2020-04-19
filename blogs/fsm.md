@@ -1,8 +1,10 @@
-Finite state machines is a mathematical model of computations thes helps us model sequential logic. FSM consists of finitie number of states, transitions, inputs alphabets (tokens), initial state and end state(s). FSM can be in exactly one of a finite number of states at any given time and it transitions into another state in response to some input. You can read more about FSM [here](https://en.wikipedia.org/wiki/Finite-state_machine).
+Finite state machines is a mathematical model of computations to model sequential logic. FSM consists of finite number of states, transition function, inputs alphabets, start state and end state(s). In the field of computer science the FSMs are used in designing Compilers, Linguistics, Step workflows, Game Design, Protocols Procedures (like TCP/IP), Event-driven programming, Conversational AI and many more.
 
-In the field of computer science the FSMs are used in designing Compilers, Step worklows, Game Design, Protocols (like TCP/IP), event-driven programming, conversational AI and many more.
+A finite state machine that simulates a Traffic Signal is designed below. `Green` is the start/initial state, which upon receiving a trigger moves to `Yellow` state, which upon receiving a trigger transitions to `Red` state. The `Red` state circles back to `Green` and the loop continues. The machine does not have any end state because we do not want our traffic signal to stop functioning. 
 
-TODO EXAMPLE FSM
+![traffic signal fsm](https://user-images.githubusercontent.com/4745789/79678813-d572ff00-821c-11ea-8437-b4a3b7fd1a60.png)
+
+Any FSM can be in exactly one of a finite number of states at any given time and it transitions into another state in response to some input.
 
 In this article we will dive deep into how we can model a finite state machine using Python coroutines.
 
