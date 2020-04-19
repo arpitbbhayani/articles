@@ -72,7 +72,7 @@ To dive into low-level details, we build an FSM for the regular expression `ab*c
 ![fsm for ab*c](https://user-images.githubusercontent.com/4745789/79634655-84fe9180-8189-11ea-9b94-f9ee563394bf.png)
 
 ## State
-Each state is modelled as an infinitely running coroutine which on receiving an input, makes the decision and changes the state of the machine. From the FSM defined for the regex `ab*c`, we could write the model the state `q2` as shown below
+From the FSM above we model the state `q2` as
 
 ```py
 def _create_q2():
@@ -96,10 +96,12 @@ def _create_q2():
             break
 ```
 
-## FSM Class
-To keep things encapsulated we will define a class for FSM which holds all the states and maintains the current state of the machine. It will also have a method called `send` which actually sends input to the current state. The current state upon receiving this input makes a decision and updates the `current_state` of the FSM.
+The coroutine runs as an infinite loop in which it waits for the input token at `yield` statement. Upon receiving the input, say `b` it changes the current state of FSM to `q2` and on receiving `c` changes the state to `q3` and this precisely what we see in the FSM diagram.
 
-Depending on the use-case the FSM could also have a function that answers the core problem statement, the example does the given line matches the regular expression? or is the number divisible by 3?
+## FSM Class
+To keep things encapsulated we will define a class for FSM which holds all the states and maintains the current state of the machine. It will also have a method called `send` which reroutes the received input to the current state. The current state upon receiving this input makes a decision and updates the `current_state` of the FSM as shown above.
+
+Depending on the use-case the FSM could also have a function that answers the core problem statement, for example, does the given line matches the regular expression? or is the number divisible by 3?
 
 The FSM class for the regular expression `ab*c` could be modelled as,
 
