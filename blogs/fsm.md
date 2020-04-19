@@ -4,7 +4,7 @@ A finite state machine that simulates a Traffic Signal is designed below. `Green
 
 ![traffic signal fsm](https://user-images.githubusercontent.com/4745789/79678813-d572ff00-821c-11ea-8437-b4a3b7fd1a60.png)
 
-Any FSM can be in exactly one of a finite number of states at any given time and it transitions into another state in response to some input.
+Any FSM can be in exactly one of a finite states at any given time and it transitions into another state in response to some input. In the example above, at any point in time the traffic signal is exactly in one state - either `Green`, `Yellow` or `Red`. The transition rules are defined for each state and because of that rules we will always see `Red` going back to `Green` and never `Yellow`. Thus transition function defines the rules which the state and the FSM adheres to and is the one that determines the sequential loigc the FSM builds.
 
 In this article we will dive deep into how we can model a finite state machine using Python coroutines.
 
