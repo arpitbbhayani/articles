@@ -1,5 +1,15 @@
 [
   {
+    "id": "fsm",
+    "title": "Building Finite State Machines with Python Coroutines",
+    "description": "The most intuitive way of building and implementing Finite State Machines is by using Python Coroutines and in this article, we find how and why.",
+    "image": "https://user-images.githubusercontent.com/4745789/79684359-3ebf3600-824e-11ea-97cc-0f06c2919aeb.png",
+    "gif": "https://media.giphy.com/media/3ov9jVxlCPc7FV7xXW/giphy.gif",
+    "categories": ["python"],
+    "tags": [],
+    "published_at": "2020-04-19"
+  },
+  {
     "id": "bayesian-average",
     "title": "Solving an age-old problem using Bayesian Average",
     "description": "Ranking a list of movies, products, books or even restaurants is tricky and in this article, we find what works for such a rating system and the math behind it.",
