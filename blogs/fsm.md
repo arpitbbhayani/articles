@@ -1,12 +1,12 @@
-Finite state machines is a mathematical model of computations to model sequential logic. FSM consists of finite number of states, transition function, inputs alphabets, start state and end state(s). In the field of computer science the FSMs are used in designing Compilers, Linguistics, Step workflows, Game Design, Protocols Procedures (like TCP/IP), Event-driven programming, Conversational AI and many more.
+Finite State Machines is a mathematical model of computations to model sequential logic. FSM consists of finite number of states, transition function, inputs alphabets, start state and end state(s). In the field of computer science the FSMs are used in designing Compilers, Linguistics, Step workflows, Game Design, Protocols Procedures (like TCP/IP), Event-driven programming, Conversational AI and many more.
 
-A finite state machine that simulates a Traffic Signal is designed below. `Green` is the start/initial state, which upon receiving a trigger moves to `Yellow` state, which upon receiving a trigger transitions to `Red` state. The `Red` state circles back to `Green` and the loop continues. The machine does not have any end state because we do not want our traffic signal to stop functioning. 
+A Finite State Machine that simulates a Traffic Signal is designed below. `Green` is the start/initial state, which upon receiving a trigger moves to `Yellow` state, which upon receiving a trigger transitions to `Red` state. The `Red` state circles back to `Green` and the loop continues. The machine does not have any end state because we do not want our traffic signal to stop functioning. 
 
 ![traffic signal fsm](https://user-images.githubusercontent.com/4745789/79678813-d572ff00-821c-11ea-8437-b4a3b7fd1a60.png)
 
 Any FSM can be in exactly one of a finite states at any given time and it transitions into another state in response to some input. In the example above, at any point in time the traffic signal is exactly in one state - either `Green`, `Yellow` or `Red`. The transition rules are defined for each state and because of that rules we will always see `Red` going back to `Green` and never `Yellow`. Thus transition function defines the rules which the state and the FSM adheres to and is the one that determines the sequential loigc the FSM builds.
 
-In this article we will dive deep into how we can model a finite state machine using Python coroutines.
+In this article we will dive deep into how we can model a Finite State Machine using Python coroutines.
 
 # Python Coroutines
 In a Finite State Machine, with every input, the control transits from one state to another and modelling them with Python Coroutines is simple and intuitive. So before diving into the implementation we take a detour and look at what Generators and Coroutines are and how they fit into this scheme of things.
@@ -65,9 +65,9 @@ In the example above we see how we have written a simple `grep` function that as
 The ability of coroutines to pause the execution and accept input on the fly helps us model FSM in an extremely intuitive way.
 
 # Building a Finite State Machine
-As mentioned above a finite state machine contains finite number of states, transition function, inputs, initial state and end state. The machine at a point in time is in one of the finite states and upon receiving an input, it transitions to the next state as determined by the transition function.
+As mentioned above a Finite State Machine contains finite number of states, transition function, inputs, initial state and end state. The machine at a point in time is in one of the finite states and upon receiving an input, it transitions to the next state as determined by the transition function.
 
-The way we are using states is oddly similar to how Python Coroutines work, hence we can model a state as a Python co-routine that runs an infinite loop within which it accepts the input, decides the transition and changes the current state of the FSM.
+The way we are using states is oddly similar to how Python Coroutines work, hence we can model a state as a Python coroutine that runs an infinite loop within which it accepts the input, decides the transition and changes the current state of the FSM.
 
 To dive into low level details, we build an FSM for a regular expression `ab*c`. The FSM for the regular expression looks something like this, take a note of the transitions between states.
 
@@ -244,7 +244,7 @@ def _create_explicit_cols(self):
 Again the coroutine through which state is implemented looks so similar to the transition function of the state. This makes wirting and building FSM so intuitive. The entire implementation of this FSM can be found at [arpitbbhayani/fsm/sql-query-validator](https://github.com/arpitbbhayani/fsm/blob/master/sql-query-validator.ipynb)
 
 # Conclusion
-Even though this may not be the most efficinet way to implement and build FSM but it is most intuitive way indeed. The edges and state transitions translate well into `if` and `elif`, each state is modelled as an independant co-routines and we still do things in a sequential manner. It feels parallel but it is infact sequential.
+Even though this may not be the most efficinet way to implement and build FSM but it is most intuitive way indeed. The edges and state transitions translate well into `if` and `elif`, each state is modelled as an independant coroutines and we still do things in a sequential manner. It feels parallel but it is infact sequential.
 
 More like passing the parcel.
 
