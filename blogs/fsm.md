@@ -33,7 +33,7 @@ The `yield` statement is where the magic happens. Upon reaching the `yield` stat
 Using a Fibonacci generator is memory-efficient as now we need not compute a lot of Fibonacci numbers and hold them in memory, in a list, rather the requesting process could ask for as many values as it needs and the generator would keep on yielding values one by one.
 
 ## Coroutines
-Coroutines are resumable functions, just like generators, but instead, they consume values on the fly. The working of it is very similar to the generator and again the `yield` statement is where the magic happens. When a coroutine is paused at the `yield` statement, we could send the value it using `send` function and the value could be used using assignment operator on `yield` as shown below
+Coroutines, just like generators, are resumable functions but instead of generating values, they consume values on the fly. The working of it is very similar to the generator and again the `yield` statement is where the magic happens. When a coroutine is paused at the `yield` statement, we could send the value it using `send` function and the value could be used using assignment operator `=` on `yield` as shown below
 
 ```py
 def grep(substr):
@@ -43,9 +43,11 @@ def grep(substr):
             print(f"found {substr}")
 ```
 
-In the example above, when the generator `grep` is paused at the `yield` statement, we could send the value to it and the value we send will be stored in the variable `line`.
+In the example above, we wrote a simple `grep` utility that checks for a substring in given stream of text. When the coroutine `grep` is paused at the `yield` statement, using the `send` function, we send the text to it, and it will be referenced by the variable `line`. The coroutine then continues its execution to check if `substr` is in `line` or not. Once the flow reaches the `yield` statement again, the coroutine pauses and waits for caller to `send` it a new value.
 
-> Before sending the value to a coroutine we need to "prime" it so that the flow reaches the yield statement and is paused, at the yield statement, and is ready to accept values.
+Note that, this is not a thread that keeps on running and hogging the CPU. It is just a function whose execution is paused at the `yield` statement waiting for the value; the state is persisted and the control is passed back to the caller. When resumed the coroutine starts from the same state where it left off.
+
+> Before sending the value to a coroutine we need to "prime" it so that the flow reaches the yield statement and the execution is paused, while waiting for the value to be sent.
 
 ```py
 >>> g = grep("users/created")
