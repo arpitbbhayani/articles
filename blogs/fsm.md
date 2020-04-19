@@ -243,8 +243,8 @@ Even though this may not be the most efficient way to implement and build FSM bu
 
 # References and Readings
 
- - [Finite State Machines - Brilliant.org](https://brilliant.org/wiki/finite-state-machines/)
  - [Finite State Machines - Wikipedia](https://en.wikipedia.org/wiki/Finite-state_machine)
+ - [Finite State Machines - Brilliant.org](https://brilliant.org/wiki/finite-state-machines/)
  - [FSM Applications](https://web.cs.ucdavis.edu/~rogaway/classes/120/spring13/eric-applications.pdf)
  - [What Are Python Coroutines?](https://realpython.com/lessons/what-are-python-coroutines/)
  - [How to Use Generators and yield in Python](https://realpython.com/introduction-to-python-generators/)
