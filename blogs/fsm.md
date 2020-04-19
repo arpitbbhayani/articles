@@ -12,7 +12,7 @@ Implementing an FSM is crucial to solve some of the most interesting problems in
 Before diving into the implementation we take a detour and look at what Generators and Coroutines are, how they keeps implementation intuitive and fits into the scheme of things.
 
 ## Generators
-Generators, in python, are **resumable functions** which keeps on yielding values as long as someone keeps asking for the new values, by calling `next` function on it. If there are no more values to yield, generators raise a `StopIteration` exception.
+Generators are **resumable functions** which yields values as long as someone, by calling `next` function, keeps asking it. If there are no more values to yield, the generator raises a `StopIteration` exception.
 
 ```py
 def fib():
