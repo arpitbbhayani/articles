@@ -30,7 +30,7 @@ The `yield` statement is where the magic happens. Upon reaching the `yield` stat
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ```
 
-Thus using a Fibonacci generator is extremely memory-efficient as now we need not compute a lot of Fibonacci numbers and hold them in memory, rather the process could ask for as many values as it needs and the generator would keep on yielding values one by one.
+Using a Fibonacci generator is memory-efficient as now we need not compute a lot of Fibonacci numbers and hold them in memory, in a list, rather the requesting process could ask for as many values as it needs and the generator would keep on yielding values one by one.
 
 ## Coroutines
 Coroutines are resumable functions, just like generators, but instead, they consume values on the fly. The working of it is very similar to the generator and again the `yield` statement is where the magic happens. When a coroutine is paused at the `yield` statement, we could send the value it using `send` function and the value could be used using assignment operator on `yield` as shown below
