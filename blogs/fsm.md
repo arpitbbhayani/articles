@@ -186,7 +186,7 @@ True
 False
 ```
 
-> The way we have implemented state, it is very natural to think that they are all running in parallel, like threads, but in reality, the entire execution is pure sequential - and that's the magic of Coroutines. All states seem independent and seem to run in parallel instead all of them are executed in one thread concurrently using coroutines. The coroutine of the current state is executing while all others are suspended on their corresponding `yield` statements.
+> The entire execution is purely running sequential - and that's because of Coroutines. All states seem to run in parallel but they that are all executing in one thread concurrently. The coroutine of the current state is executing while all others are suspended on their corresponding `yield` statements. When a new input is sent to the coroutine it is unblocked completes its execution, changes the current state of FSM and pauses itself on its `yield` statement again.
 
 # More FSMs
 We have seen how intuitive it is to build Regular expression FSMs using Python coroutines, but if our hypothesis is true things should equally intuitive when we are implementing FSMs for other use cases and here we take a look at two examples and see how a state coroutine is implemented in each
