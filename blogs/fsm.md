@@ -65,11 +65,9 @@ found users/created
 In the function invocations above we see how we could keep on sending the text to the coroutine and it continues to spit out if it found the given substring `users/created` in the text. This ability of coroutine to pause the execution and accept input on the fly helps us model FSM in a very intuitive way.
 
 # Building a Finite State Machine
-A Finite State Machine contains a finite number of states, transition function, inputs, the initial state and end state. The machine at a point in time is in one of the finite states and upon receiving input, it transitions to the next state as determined by the transition function.
+While building FSM, the most important thing is how we model states and transition functions. States coult be modelled as Python Coroutines that runs an infinite loop within which they accept the input, decides the transition and changes the current state of the FSM. The transition function could be as simple as a bunch of `if` and `elif` statements and in a more complex FSM it could be a decision function.
 
-The way we are using states is oddly similar to how Python Coroutines work, hence we can model a state as a Python coroutine that runs an infinite loop within which it accepts the input, decides the transition and changes the current state of the FSM.
-
-To dive into low-level details, we build an FSM for a regular expression `ab*c`. The FSM for the regular expression looks something like this, take note of the transitions between states.
+To dive into low-level details, we build an FSM for a regular expression `ab*c`. The FSM for the regular expression is as shown below
 
 ![fsm for ab*c](https://user-images.githubusercontent.com/4745789/79634655-84fe9180-8189-11ea-9b94-f9ee563394bf.png)
 
