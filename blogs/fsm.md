@@ -9,7 +9,7 @@ An FSM must be in exactly one of the finite states at any given point in time an
 Implementing an FSM is crucial to solve some of the most interesting problems in Computer Science and in this article, we dive deep into modelling a Finite State Machine using Python coroutines.
 
 # Python Coroutines
-In a Finite State Machine, with every input, the control transits from one state to another and modelling them with Python Coroutines is simple and intuitive. So before diving into the implementation we take a detour and look at what Generators and Coroutines are and how they fit into this scheme of things.
+Before diving into the implementation we take a detour and look at what Generators and Coroutines are, how they keeps implementation intuitive and fits into the scheme of things.
 
 ## Generators
 Generators, in python, are **resumable functions** which keeps on yielding values as long as someone keeps asking for the new values, by calling `next` function on it. If there are no more values to yield, generators raise a `StopIteration` exception.
