@@ -168,6 +168,8 @@ class FSM:
 
 ```
 
+Similar to how we have defined the function `_create_q2` we could defined functions for the other three states `start`, `q1` and `q3`. You can find how it is defined at [arpitbbhayani/fsm/regex-1](https://github.com/arpitbbhayani/fsm/blob/master/regex-1.ipynb)
+
 ## Running
 
 ```py
