@@ -67,7 +67,7 @@ In the function invocations above we see how we could keep on sending the text t
 # Building a Finite State Machine
 While building FSMs, the most important thing is how we decide to model and implement states and transition functions. States could be modelled as Python Coroutines that runs an infinite loop within which they accept the input, decides the transition and updates the current state of the FSM. The transition function could be as simple as a bunch of `if` and `elif` statements and in a more complex system it could be a decision function.
 
-To dive into low-level details, we build an FSM for the regular expression `ab*c`, the state machine of which is as shown below
+To dive into low-level details, we build an FSM for the regular expression `ab*c`, which means if the given string matches the regex then the machine should end at the end state, only then we say that the string matches the regex.
 
 ![fsm for ab*c](https://user-images.githubusercontent.com/4745789/79634655-84fe9180-8189-11ea-9b94-f9ee563394bf.png)
 
