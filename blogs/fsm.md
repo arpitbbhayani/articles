@@ -12,7 +12,7 @@ Implementing an FSM is crucial to solving some of the most interesting problems 
 Before diving into the implementation we take a detour and look at what Generators and Coroutines are, how they keep implementation intuitive and fits into the scheme of things.
 
 ## Generators
-Generators are **resumable functions** which yields values as long as someone, by calling `next` function, keeps asking it. If there are no more values to yield, the generator raises a `StopIteration` exception.
+Generators are **resumable functions** that yield values as long as someone, by calling `next` function, keeps asking it. If there are no more values to yield, the generator raises a `StopIteration` exception.
 
 ```py
 def fib():
@@ -33,7 +33,7 @@ The `yield` statement is where the magic happens. Upon reaching the `yield` stat
 Using a Fibonacci generator is memory-efficient as now we need not compute a lot of Fibonacci numbers and hold them in memory, in a list, rather the requesting process could ask for as many values as it needs and the generator would keep on yielding values one by one.
 
 ## Coroutines
-Coroutines, just like generators, are resumable functions but instead of generating values, they consume values on the fly. The working of it is very similar to the generator and again the `yield` statement is where the magic happens. When a coroutine is paused at the `yield` statement, we could send the value it using `send` function and the value could be used using assignment operator `=` on `yield` as shown below
+Coroutines, just like generators, are resumable functions but instead of generating values, they consume values on the fly. The working of it is very similar to the generator and again the `yield` statement is where the magic happens. When a coroutine is paused at the `yield` statement, we could send the value it using `send` function and the value could be used using the assignment operator `=` on `yield` as shown below
 
 ```py
 def grep(substr):
@@ -103,7 +103,7 @@ To keep things encapsulated we will define a class for FSM which holds all the s
 
 Depending on the use-case the FSM could also have a function that answers the core problem statement, for example, does the given line matches the regular expression? or is the number divisible by 3?
 
-The FSM class for the regular expression `ab*c` could be modelled as,
+The FSM class for the regular expression `ab*c` could be modeled as
 
 ```py
 class FSM:
@@ -196,7 +196,7 @@ Here we build an FSM that tells if a given stream of digits of a number is divis
 
 ![div3](https://user-images.githubusercontent.com/4745789/79641628-564ae000-81b6-11ea-9c84-147cae3a30a6.png)
 
-We can implement state `q1` as a coroutine as
+We can implement the state `q1` as a coroutine as
 
 ```py
 def _create_q1(self):
@@ -222,7 +222,7 @@ SELECT column, [...columns] from TABLE_NAME;
 
 ![fsm for sql query validator](https://user-images.githubusercontent.com/4745789/79635523-1c1a1800-818f-11ea-8afe-fe8065b55791.png)
 
-We can implement state `explicit_cols` as a coroutine as
+We can implement the state `explicit_cols` as a coroutine as
 
 ```py
 def _create_explicit_cols(self):
