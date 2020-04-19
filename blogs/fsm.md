@@ -22,7 +22,7 @@ def fib():
         a, b = b, a+b
 ```
 
-The `yield` statement is the one where the magic happens. yielded value is returned to the caller and the function execution is paused and the caller continues its execution. The flow returns back to the generator when the caller function asks from the next value. Once the next value is requested by calling `next`, the generator function resumes from where it left off i.e. `yield` statement.
+The `yield` statement is where the magic happens. Upon reaching the `yield` statement, the generator function execution is paused and the yielded value is returned to the caller and the caller continues its execution. The flow returns back to the generator when the caller function asks from the next value. Once the next value is requested by calling `next` (explicitly or implicitly), the generator function resumes from where it left off i.e. `yield` statement.
 
 ```py
 >>> fgen = fib()
