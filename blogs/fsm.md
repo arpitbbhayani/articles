@@ -239,9 +239,7 @@ def _create_explicit_cols(self):
 Again the coroutine through which the state is implemented is very similar to the transition function of the state keeping things intuitive. The entire implementation of this FSM can be found at [arpitbbhayani/fsm/sql-query-validator](https://github.com/arpitbbhayani/fsm/blob/master/sql-query-validator.ipynb).
 
 # Conclusion
-Even though this may not be the most efficient way to implement and build FSM but it is the most intuitive way indeed. The edges and state transitions translate well into `if` and `elif`, each state is modelled as an independent coroutine and we still do things in a sequential manner. It feels parallel but it is in fact sequential.
-
-More like passing the parcel.
+Even though this may not be the most efficient way to implement and build FSM but it is the most intuitive way indeed. The edges and state transitions translate well into `if` and `elif` or decision functions, while each state is modelled as an independent coroutine and we still do things in a sequential manner. The entire execution is like a relay race where the baton of execution is being passed from one coroutine to another.
 
 # References and Readings
 
