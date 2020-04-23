@@ -1,5 +1,47 @@
 [
     {
+        "_id": "5e1be6c3a31a9f0ab0ebc2d2",
+        "b": "Curiosity drives motivation.\n\nIf you are not motivated enough, question yourself - are you curious enough?",
+        "d": 20200420,
+        "top": "growth"
+    },
+    {
+        "_id": "5e1be6c3a31a9f0ab0ebc2d1",
+        "b": "Build a solution, not a hack.",
+        "d": 20200419,
+        "top": "engineering"
+    },
+    {
+        "_id": "5e1be6c3a31a9f0ab0ebc2d0",
+        "b": "ORMs are suboptimal convenience.",
+        "d": 20200418,
+        "top": "engineering"
+    },
+    {
+        "_id": "5e1be6c3a31a9f0ab0ebc2cf",
+        "b": "Most people are stuck in the past.",
+        "d": 20200417,
+        "top": "growth"
+    },
+    {
+        "_id": "5e1be6c3a31a9f0ab0ebc2cf",
+        "b": "It is criminal to store datetime objects in a relational databases.\n\nUse epoch seconds, milliseconds or even microseconds, but never as datetime.",
+        "d": 20200416,
+        "top": "engineering"
+    },
+    {
+        "_id": "5e1be6c3a31a9f0ab0ebc2ce",
+        "b": "Impatience is the most effective catalyst.",
+        "d": 20200415,
+        "top": "growth"
+    },
+    {
+        "_id": "5e1be6c3a31a9f0ab0ebc2cd",
+        "b": "You cannot make all of your customers happy, you always try to maximize the overall happiness quotient.",
+        "d": 20200115,
+        "top": "product"
+    },
+    {
         "_id":"5e1be6c3a31a9f0ab0ebc2cc",
         "b":"Nothing moves us forward like a deadline.",
         "d":20200114,
