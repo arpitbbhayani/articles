@@ -1,7 +1,7 @@
 [
     {
         "_id": "1",
-        "title": "Search as you should know it - Part 1",
+        "title": "Search as you should know it",
         "description": "The talk is focussed on basics of Information Retrieval. We cover lookups, indexing, relevance by intuition, math behind relevance, building a toy search engine and squeezing out the performance from it.",
         "canva_design_id": "DAD5swEIWu8",
         "deliveredOn": "20200424"
