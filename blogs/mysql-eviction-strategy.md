@@ -23,12 +23,6 @@ Since cache is limited, it can only hold some fixed number of pages, hence when 
 
 ---
 
-Since cache is limited, hence when it gets full some elements of it should be removed making space of new hot items from the disk. This is cache eviction.
-
-IMage: Control Flow.
-
-In this article we will how MySQL's InnoDB database engine performs Cache Eviction and how this strategy solves a super critical problem in one of the most elegant ways.
-
 # The usual LRU Cache
 
 Most common way of implementing a cache is a Least Recently Used based Cache.
