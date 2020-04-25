@@ -1,5 +1,15 @@
 [
   {
+    "id": "mysql-eviction-strategy",
+    "title": "MySQL's cache eviction strategy",
+    "description": "MySQL's midpoint insertion strategy",
+    "image": "https://user-images.githubusercontent.com/4745789/79684359-3ebf3600-824e-11ea-97cc-0f06c2919aeb.png",
+    "gif": "https://media.giphy.com/media/KhdQ2Ia3FJuKs/giphy.gif",
+    "categories": ["mysql", "algorithm"],
+    "tags": [],
+    "published_at": "2020-04-26"
+  },
+  {
     "id": "fsm",
     "title": "Building Finite State Machines with Python Coroutines",
     "description": "The most intuitive way of building and implementing Finite State Machines is by using Python Coroutines and in this article, we find how and why.",
