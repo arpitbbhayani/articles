@@ -29,7 +29,13 @@ The most-recently used page is at the head of the list while the least-recently 
 
 ![LRU Cache](https://user-images.githubusercontent.com/4745789/80288324-d7751a80-8754-11ea-96ab-6a8e25730bff.png)
 
-InnoDB uses the LRU mechanism by default to manage the pages within the buffer pool, but makes exceptions in cases where a page might be read only a single time, such as during a full table scan. This variation of the LRU algorithm is called the midpoint insertion strategy.
+## Issue with this implementation
+MySQL's InnoDB uses this LRU mechanism by default to manage the pages within the cache, which means everytime the InnoDB engine accesses a page on the disk, it adds the page in this cache and if required evicts one page from the cache. The problem arises when an entire table is scanned, this usually happens while [taking a data dump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) or while executing a `SELECT` query with no `WHERE` clause.
+
+Such statements pulls a large amount of data, almost an entire table, in cache, and displacing existing data from cache. The worst part here is that this freshly loaded data is never ever refereced again, which means the performance of the database is going to take a huge hit.
+
+
+but makes exceptions in cases where a page might be read only a single time, such as during a full table scan. This variation of the LRU algorithm is called the midpoint insertion strategy.
 
 
 
