@@ -3,9 +3,18 @@ Disk reads are 4x (for SSD) to 80x (for magnetic disk) [slower](https://gist.git
 The database engine virtually splits the storage into pages. A page is a unit which represents how much data the engine transfers at any one time between disk (the data files) and memory (cache). It is usually a few kilobytes 4KB, 8KB, 16KB, 32KB and is configurable via some engine parameter. Thus a page can hold one or multiple rows of a table depending on how much data is in each row i.e. the length of row.
 
 # Locality of reference
-Database systems exhibit a strong and predictable behaviour called [locality of reference](https://en.wikipedia.org/wiki/Locality_of_reference). Caching exploits the Temporal Locality of reference which suggests that if at one point a particular memory location is referenced, then it is very likely the same localtion will be referenced again in the near future.
+Database systems exhibit a strong and predictable behaviour called [locality of reference](https://en.wikipedia.org/wiki/Locality_of_reference) which suggests access pattern of a page and its neighbours.
 
-Whenever a region is read from the disk, it is cached in main memory, if the above behaviour holds true, the same region will be accessed in near future and if it lies in the main memory (cache), we save a disk read.
+## Spatial Locality of Reference
+Spatial locality of reference suggests if a row is accessed, it is very likely that the neighbouring rows will be accessed in the near future.
+
+Having a larger page size addresses this situations. A larger page size implies more rows could fit in one page and if that page is cached in memory, when the next row is accessed the same page will be referenced from the memory thus saving a disk read.
+
+## Temporal Locality of Reference
+Temporal locality of reference suggests that if a page is recently accessed (referenced), it is very likely that the same page will be accessed (referenced) again in the near future.
+
+Caching exploits this behaviour and everytime a page is accessed from the disk it stores the page in main-memory (cache) and the next time the page is referenced, it returns the page from the cache, thus saving a disk read.
+
 
 
 -----------
