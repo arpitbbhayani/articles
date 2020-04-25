@@ -15,7 +15,7 @@ Temporal locality of reference suggests that if a page is recently accessed (ref
 
 Caching exploits this behaviour by putting every single page accessed from the disk into main-memory (cache) and the next time the same page is referenced, it returns the page from the cache, thus saving a disk read. The control flow of how a disk read happens could be represented as
 
-IMAGE:
+![Disk cache control flow](https://user-images.githubusercontent.com/4745789/80286130-45b2e080-8747-11ea-9ea7-0fcb3235d809.png)
 
 Since cache is limited, it can only hold some fixed number of pages, hence when the cache gets full the engine needs to decide which page should be moved out of the cache so that the new page could fit in. The most common strategy is the Least Recently Used Cache eviction strategy.
 
