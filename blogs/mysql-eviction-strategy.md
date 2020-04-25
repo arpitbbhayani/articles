@@ -13,11 +13,16 @@ Having a larger page size addresses this situations. A larger page size implies 
 ## Temporal Locality of Reference
 Temporal locality of reference suggests that if a page is recently accessed (referenced), it is very likely that the same page will be accessed (referenced) again in the near future.
 
-Caching exploits this behaviour and everytime a page is accessed from the disk it stores the page in main-memory (cache) and the next time the page is referenced, it returns the page from the cache, thus saving a disk read.
+Caching exploits this behaviour by putting every single page accessed from the disk into main-memory (cache) and the next time the same page is referenced, it returns the page from the cache, thus saving a disk read. The control flow of how a disk read happens could be represented as
 
+IMAGE:
 
+Since cache is limited, it can only hold some fixed number of pages, hence when the cache gets full the engine needs to decide which page should be moved out of the cache so that the new page could fit in. The most common strategy is the Least Recently Used Cache eviction strategy.
 
------------
+# The LRU Cache
+
+---
+
 Since cache is limited, hence when it gets full some elements of it should be removed making space of new hot items from the disk. This is cache eviction.
 
 IMage: Control Flow.
