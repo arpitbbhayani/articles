@@ -25,7 +25,7 @@ The LRU cache holds the items in the order of its access allowing us to identify
 ## Implementation
 An LRU cache is often implemented by pairing a [doubly linked list](https://en.wikipedia.org/wiki/Doubly_linked_list) with a [hash map](https://en.wikipedia.org/wiki/Hash_table). The cache is just a linked list of pages while the hashmap maps the `page_id` to the node in the linked list.
 
-The most-recently used page is at the head of the list while the least-recently used one is at the tail. When a new page is to be added to the list it gets added to the head while the eviction always happens on the tail end of it. If a page exists in the cache and is accessed again, it is moved to the head since it is now the most recently used.
+The most-recently used page is at the head of the list while the least-recently used one is at the tail. When a new page is to be added to the list it gets added to the head while the eviction always happens on the tail end of it. If a page exists in the cache and is accessed again, it is brought to the head of the list since it is now the most recently used.
 
 ![LRU Cache](https://user-images.githubusercontent.com/4745789/80288324-d7751a80-8754-11ea-96ab-6a8e25730bff.png)
 
@@ -37,6 +37,17 @@ MySQL's InnoDB uses this LRU mechanism by default to manage the pages within the
 
 Such statements pulls a large amount of data, almost an entire table, in cache, and displacing existing data from cache. The worst part here is that this freshly loaded data is never ever refereced again, which means the performance of the database is going to take a huge hit.
 
+```
+OLTP server with a warm buffer pool containing the current working set. Then someone submit a report needing to access a table through a full table scan. The normal and current MySQL behavior is to wipe out the content of the cache. if the table is never reused this is pure loss
+
+The technique of initially bringing pages into the InnoDB buffer pool not at the "newest" end of the list, but instead somewhere in the middle. The exact location of this point can vary, based on the setting of the innodb-old-blocks-pct option. The intent is that blocks that are only read once, such as during a full table scan, can be aged out of the buffer pool sooner than with a strict LRU algorithm. 
+
+An acronym for "least recently used", a common method for managing storage areas. The items that have not been used recently are evicted when space is needed to cache newer items. InnoDB uses the LRU mechanism by default to manage the pages within the buffer pool, but makes exceptions in cases where a page might be read only a single time, such as during a full table scan. This variation of the LRU algorithm is called the midpoint insertion strategy. The ways in which the buffer pool management differs from the traditional LRU algorithm is fine-tuned by the options innodb-old-blocks-pct, innodb_old_blocks_time, and the new MariaDB 5.6 options innodb_lru_scan_depth and innodb_flush_neighbors. 
+```
+
+# Midpoint Insertion Strategy
+
+"Midpoint insertion strategy" which makes things not a true LRU in order to deprioritize superfluous pages.
 
 but makes exceptions in cases where a page might be read only a single time, such as during a full table scan. This variation of the LRU algorithm is called the midpoint insertion strategy.
 
@@ -130,3 +141,4 @@ COmparing time taken from various stores - in-memory vs ssd
  - [Making the Buffer Pool Scan Resistant](https://dev.mysql.com/doc/refman/8.0/en/innodb-performance-midpoint_insertion.html)
  - [Latency numbers](https://gist.github.com/hellerbarde/2843375)
  - [Locality of reference](https://en.wikipedia.org/wiki/Locality_of_reference)
+ - [InnoDB : Making Buffer Cache Scan Resistant](https://serge.frezefond.com/2009/12/innodb-making-buffer-cache-scan-resistant/)
