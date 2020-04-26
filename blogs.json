@@ -2,7 +2,7 @@
   {
     "id": "mysql-eviction-strategy",
     "title": "MySQL's cache eviction strategy",
-    "description": "In this article we will how MySQL's InnoDB database engine performs Cache Eviction and how this strategy solves a super critical problem in one of the most elegant ways. - MySQL's midpoint insertion strategy",
+    "description": "The InnoDB Storage engine of MySQL uses LRU cache but it suffers from a notorious problem. In this article, we dive deep into how by changing one aspect of LRU and using a Midpoint Insertion Strategy MySQL becomes super performant.",
     "image": "https://user-images.githubusercontent.com/4745789/79684359-3ebf3600-824e-11ea-97cc-0f06c2919aeb.png",
     "gif": "https://media.giphy.com/media/KhdQ2Ia3FJuKs/giphy.gif",
     "categories": ["mysql", "algorithm"],
