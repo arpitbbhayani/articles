@@ -1,7 +1,7 @@
 [
   {
     "id": "mysql-cache",
-    "title": "Making MySQL LRU cache scan resistant with Midpoint Insertion Strategy",
+    "title": "What makes MySQL LRU cache scan resistant",
     "description": "The InnoDB Storage engine of MySQL uses LRU cache but it suffers from a notorious problem. In this article, we dive deep into how by changing one aspect of LRU and using a Midpoint Insertion Strategy MySQL becomes super performant.",
     "image": "https://user-images.githubusercontent.com/4745789/79684359-3ebf3600-824e-11ea-97cc-0f06c2919aeb.png",
     "gif": "https://media.giphy.com/media/KhdQ2Ia3FJuKs/giphy.gif",
