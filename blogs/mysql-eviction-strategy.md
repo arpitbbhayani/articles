@@ -8,9 +8,9 @@ Database systems exhibit a strong and predictable behaviour called [locality of 
 ## Spatial Locality of Reference
 The spatial locality of reference suggests if a row is accessed, there is a high probability that the neighbouring rows will be accessed in the near future.
 
-Having a larger page size addresses this situation to some extent. As one page could fit multiple rows, this means when that page is cached in main memory, the engine saves a disk read if the neighbouring rows residing in the same page are accessed.
+Having a larger page size addresses this situation to some extent. As one page could fit multiple rows, this means when that page is cached in main memory, the engine saves a disk read if the neighbouring rows residing on the same page are accessed.
 
-Another way to address this situation is to [read-ahead](https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-io.html) pages that are very likely to be accessed in the future and keep them available in the main memory. This way if the read-ahead pages are referenced, the engine need to go to the disk to fetch the page, rather it will find the page residing in the main memory and thus saving a bunch of disk reads.
+Another way to address this situation is to [read-ahead](https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-io.html) pages that are very likely to be accessed in the future and keep them available in the main memory. This way if the read-ahead pages are referenced, the engine needs to go to the disk to fetch the page, rather it will find the page residing in the main memory and thus saving a bunch of disk reads.
 
 ## Temporal Locality of Reference
 The temporal locality of reference suggests that if a page is recently accessed, it is very likely that the same page will be accessed again in the near future.
@@ -19,7 +19,7 @@ Caching exploits this behaviour by putting every single page accessed from the d
 
 ![Disk cache-control flow](https://user-images.githubusercontent.com/4745789/80286313-4e57e680-8748-11ea-88c2-dcb67f6ac566.png)
 
-Since the cache is very costly, it is magnitude smaller in capacity than the disk. It can only hold some fixed number of pages which means the cache suffers from the problem of getting full very quickly. Once the cache gets full, the engine needs to evict an old page so that the new page, which according to the temporal locality of reference is going to be accessed in the near future, could get a place in the cache.
+Since the cache is very costly, it is in magnitude smaller in capacity than the disk. It can only hold some fixed number of pages which means the cache suffers from the problem of getting full very quickly. Once the cache gets full, the engine needs to evict an old page so that the new page, which according to the temporal locality of reference is going to be accessed in the near future, could get a place in the cache.
 
 The most common strategy that decides the page that will be evicted from the cache is the [Least Recently Used cache eviction strategy](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)). This strategy uses Temporal Locality of Reference to the core and hence evicts the page which was not accessed the longest, thus maximizing the time the most-recently accessed pages are held in the cache.
 
@@ -63,7 +63,7 @@ def get_page(page_id:int) -> Page:
 ```
 
 ## A notorious problem with Sequential Scans
-Above caching strategy works wonders and helps the engine to be super-performant. [Cache hit ratio](https://www.stix.id.au/wiki/Cache_Hit_Ratio) is usually more than 80% for a mid-sized production-level traffic, which means 80% of the times the pages were served from the main memory (cache) and the engine did not require to make the disk read.
+Above caching strategy works wonders and helps the engine to be super-performant. [Cache hit ratio](https://www.stix.id.au/wiki/Cache_Hit_Ratio) is usually more than 80% for mid-sized production-level traffic, which means 80% of the times the pages were served from the main memory (cache) and the engine did not require to make the disk read.
 
 What would happen if an entire table is scanned? say, while talking a [db dump]((https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)), or running a `SELECT` without `WHERE` to perform some statistical computations.
 
@@ -74,7 +74,7 @@ If the table is bigger than the cache, this process will wipe out the entire cac
 # Midpoint Insertion Strategy
 MySQL InnoDB Engine ploys an extremely smart solution to solve the notorious problem with Sequential Scans. Instead of keeping its Buffer Pool a strict LRU, it tweaks it a little bit.
 
-Instead of treating the Buffer Pool as a single doubly linked list, it treats it as a combination of two smaller sublists - usually 5/8th and 3/8th of the total size. One sublist holds the younger data while the other one holds the older data. The head of the Young sublist holds the most recent pages and the recency decreases as we reaches the tail of the Old sublist.
+Instead of treating the Buffer Pool as a single doubly-linked list, it treats it as a combination of two smaller sublists - usually 5/8th and 3/8th of the total size. One sublist holds the younger data while the other one holds the older data. The head of the Young sublist holds the most recent pages and the recency decreases as we reach the tail of the Old sublist.
 
 ![MySQL InnoDB Midpoint Insertion Strategy](https://user-images.githubusercontent.com/4745789/80299447-138a9880-87b2-11ea-9b0a-888e0ccf4b49.png)
 
@@ -82,12 +82,12 @@ Instead of treating the Buffer Pool as a single doubly linked list, it treats it
 The tail of the Old Sublist holds the Least Recently Used page and the eviction thus happens as per the LRU Strategy i.e. at the tail of the Old Sublist.
 
 ## Insertion
-This is where this strategy differs from the Strict LRU. The insertion, instead of happening at "newest" end of the list i.e. head of Young sublist, happens at the head of Old sublist i.e. in the "middle" of the list. This position of the list where the tail of the Young sublist meets the head of the Old sublist is referred as the "midpoint", and hence the name of the strategy is Midpoint Insertion Strategy.
+This is where this strategy differs from Strict LRU. The insertion, instead of happening at "newest" end of the list i.e. head of Young sublist, happens at the head of Old sublist i.e. in the "middle" of the list. This position of the list where the tail of the Young sublist meets the head of the Old sublist is referred to as the "midpoint", and hence the name of the strategy is Midpoint Insertion Strategy.
 
 > By inserting in the middle, the pages that are only read once, such as during a full table scan, can be aged out of the Buffer Pool sooner than with a strict LRU algorithm.
 
 ## Moving page from Old to the Young sublist
-In this strategy, like in Strict LRU implementation, whenever the page is accessed it moves to the newest end of the list i.e. the head of the Young sublist. During the first access the pages makes an entry in the cache in the "middle" position.
+In this strategy, like in Strict LRU implementation, whenever the page is accessed it moves to the newest end of the list i.e. the head of the Young sublist. During the first access the pages make an entry in the cache in the "middle" position.
 
 If the page is referenced the second time it is moved to the head of Young sublist and hence stays in the cache for a longer time. If the page, after being inserted in the middle, is never referenced again (during full scans), it is evicted sooner because the Old sublist is usually shorter than the Young sublist.
 
@@ -132,7 +132,7 @@ The command `SHOW ENGINE INNODB STATUS` outputs a lot of interesting metrics but
  - read ahead rate
 
 # Conclusion
-We see how by changing just one aspect of LRU cache, MySQL InnoDB makes itself Scan Resistant. Sequential scanning was a critical issue for cache but it was addressed in a very elegant way.
+We see how by changing just one aspect of LRU cache, MySQL InnoDB makes itself Scan Resistant. Sequential scanning was a critical issue for the cache but it was addressed in a very elegant way.
 
 # References
  - [Buffer Pool](https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool.html)
