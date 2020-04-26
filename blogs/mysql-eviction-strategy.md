@@ -82,14 +82,19 @@ Instead of treating the Buffer Pool as a single doubly linked list, it treats it
 The tail of the Old Sublist holds the Least Recently Used page and the eviction thus happens as per the LRU Strategy i.e. at the tail of the Old Sublist.
 
 ## Insertion
-The insertion, instead of happening at head of Young sublist i.e. "newest" end of the list, happens at the head of Old sublist i.e. in the "middle" of the list. This position of the list where the tail of the Young sublist meets the head of the Old sublist is the "midpoint", and hence the name of the strategy is Midpoint Insertion Strategy.
+This is where this strategy differs from the Strict LRU. The insertion, instead of happening at "newest" end of the list i.e. head of Young sublist, happens at the head of Old sublist i.e. in the "middle" of the list. This position of the list where the tail of the Young sublist meets the head of the Old sublist is referred as the "midpoint", and hence the name of the strategy is Midpoint Insertion Strategy.
 
-The intent, by inserting in the middle, is that the pages that are only read once, such as during a full table scan, can be aged out of the Buffer Pool sooner than with a strict LRU algorithm.
+> By inserting in the middle, the pages that are only read once, such as during a full table scan, can be aged out of the Buffer Pool sooner than with a strict LRU algorithm.
 
-## Moving from Old sublist to the Young sublist
-In any LRU strategy whenever any page from the Buffer Pool (cache) is accessed, it moves to the head of the list. In this strategy as well, whenever the page is accessed, irrespective of its list, it moves to the head of Young sublist.
+## Moving page from Old to the Young sublist
+In this strategy, like in Strict LRU implementation, whenever the page is accessed it moves to the newest end of the list i.e. the head of the Young sublist. During the first access the pages makes an entry in the cache in the "middle" position.
 
-After the page is in the cache (inserted in the middle), if the page is still in demand and accessed again, it moves to the head of Young sublist and stays in the cache for longer. If after being inserted in the middle the page not accessed at all it continues to stay in the Old sublist until evicted. Since old sublist is shorter, the pages that are not accessed are evicted quicker as compared to a strict LRU implementation.
+If the page is referenced the second time it is moved to the head of Young sublist and hence stays in the cache for a longer time. If the page, after being inserted in the middle, is never referenced again (during full scans), it is evicted quicker because the Old sublist is usually shorter than the Young sublist.
+
+The Young sublist thus remains unaffected by table scans and continues to hold the most recent pages from the cache.
+
+# Conclusion
+Thus we see how by changing just one aspect of LRU cache, MySQL InnoDB makes it self Scan Resistant. This is a critical problem that was addressed in a very smart way by the engine.
 
 # References
  - [Buffer Pool](https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool.html)
