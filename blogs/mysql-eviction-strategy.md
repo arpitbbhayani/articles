@@ -63,14 +63,16 @@ def get_page(page_id:int) -> Page:
 ```
 
 ## A notorious problem with Sequential Scans
-Above caching strategy works wonders and helps the engine be super-performant. [Cache hit ratio](https://www.stix.id.au/wiki/Cache_Hit_Ratio) is usually more than 80% for a mid-sized production-level traffic, which means 80% of the times the page was served from the main-memory (cache) and the engine did not require to make the disk read, and this is a huge deal when we are talking about some heavy concurrent access.
+Above caching strategy works wonders and helps the engine to be super-performant. [Cache hit ratio](https://www.stix.id.au/wiki/Cache_Hit_Ratio) is usually more than 80% for a mid-sized production-level traffic, which means 80% of the times the pages were served from the main memory (cache) and the engine did not require to make the disk read.
 
-What would happen if an entire table is scanned? - While talking a [dump]((https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)), or running a `SELECT` without `WHERE` to perform some statistical computations.
+What would happen if an entire table is scanned? say, while talking a [db dump]((https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)), or running a `SELECT` without `WHERE` to perform some statistical computations.
 
-Going by the MySQL's aforementioned behaviour, the engine iterates on all the pages and since each page which is accessed not is the most recent one, it puts it at the head of the cache whiles evicting one from the tail. If the table is bigger than the cache, this process will wipe out the entire cache and fill it with the pages of one table. If these pages are not referenced again, this is a total loss and performance of the database takes a hit. The performance of the database will not be back up until these newly added cache pages are evicted from the cache.
+Going by the MySQL's aforementioned behaviour, the engine iterates on all the pages and since each page which is accessed now is the most recent one, it puts it at the head of the cache while evicting one from the tail.
+
+If the table is bigger than the cache, this process will wipe out the entire cache and fill it with the pages from just one table. If these pages are not referenced again, this is a total loss and performance of the database takes a hit. The performance will pickup once these pages are evicted from the cache and other pages make an entry.
 
 # Midpoint Insertion Strategy
-MySQL InnoDB Engine ploys an extremely smart solution to solve the notorious problem with Sequential Scans. Instead of keeping its Buffer Pool a pure LRU it tweaks it a little bit.
+MySQL InnoDB Engine ploys an extremely smart solution to solve the notorious problem with Sequential Scans. Instead of keeping its Buffer Pool a strict LRU, it tweaks it a little bit.
 
 Instead of treating the Buffer Pool as a huge doubly linked list, it treats it as a combination of two smaller sublists - usually 5/8th and 3/8th of the total size. One sublist holds younger data while the other one holds the older data. The head of the Young sublist holds the most recent pages and the recency decreases as it reaches the tail of the Old sublist.
 
