@@ -1,23 +1,23 @@
-Disk reads are 4x (for SSD) to 80x (for magnetic disk) [slower](https://gist.github.com/hellerbarde/2843375) as compared to main-memory (RAM) and hence it becomes extremely important for a database to utilize main-memory as much as it can, and be super-performant while keeping its latencies to a bare minimum. Engines cannot simply replace disks with RAM because of volatility and cost, hence it needs to strike a balance between the two - maximize main-memory utilization and minimize the disk access.
+Disk reads are 4x (for SSD) to 80x (for magnetic disk) [slower](https://gist.github.com/hellerbarde/2843375) as compared to main memory (RAM) and hence it becomes extremely important for a database to utilize main-memory as much as it can, and be super-performant while keeping its latencies to a bare minimum. Engines cannot simply replace disks with RAM because of volatility and cost, hence it needs to strike a balance between the two - maximize main-memory utilization and minimize the disk access.
 
-The database engine virtually splits the data files into pages. A page is a unit which represents how much data the engine transfers at any one time between the disk (the data files) and the main-memory. It is usually a few kilobytes 4KB, 8KB, 16KB, 32KB, etc. and is configurable via parameters. Because of its bulky size a page can hold one or multiple rows of a table depending on how much data is in each row i.e. the length of row.
+The database engine virtually splits the data files into pages. A page is a unit which represents how much data the engine transfers at any one time between the disk (the data files) and the main memory. It is usually a few kilobytes 4KB, 8KB, 16KB, 32KB, etc. and is configurable via parameters. Because of its bulky size, a page can hold one or multiple rows of a table depending on how much data is in each row i.e. the length of the row.
 
 # Locality of reference
 Database systems exhibit a strong and predictable behaviour called [locality of reference](https://en.wikipedia.org/wiki/Locality_of_reference) which suggests an access pattern of a page and its neighbours.
 
 ## Spatial Locality of Reference
-Spatial locality of reference suggests if a row is accessed, there is a high probability that the neighbouring rows will be accessed in the near future.
+The spatial locality of reference suggests if a row is accessed, there is a high probability that the neighbouring rows will be accessed in the near future.
 
-Having a larger page size addresses this situation to some extent. As one page could fit multiple rows, this means when that page is cached in memory, the engine saves a disk read if the neighbouring rows lying in the same page are accessed. Another approach to take advantage of this behaviour is to [read-ahead](https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-io.html) that pages that are very likely to be accessed in the future and keep them available in the main-memory (cache).
+Having a larger page size addresses this situation to some extent. As one page could fit multiple rows, this means when that page is cached in memory, the engine saves a disk read if the neighbouring rows lying in the same page are accessed. Another approach to take advantage of this behaviour is to [read-ahead](https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-io.html) that pages that are very likely to be accessed in the future and keep them available in the main memory (cache).
 
 ## Temporal Locality of Reference
-Temporal locality of reference suggests that if a page is recently accessed, it is very likely that the same page will be accessed again in the near future.
+The temporal locality of reference suggests that if a page is recently accessed, it is very likely that the same page will be accessed again in the near future.
 
 Caching exploits this behaviour by putting every single page accessed from the disk into main-memory (cache). Hence the next time the same page is referenced it is available in the main-memory eradicating the need of a disk read.
 
-![Disk cache control flow](https://user-images.githubusercontent.com/4745789/80286313-4e57e680-8748-11ea-88c2-dcb67f6ac566.png)
+![Disk cache-control flow](https://user-images.githubusercontent.com/4745789/80286313-4e57e680-8748-11ea-88c2-dcb67f6ac566.png)
 
-Since cache is bounded and limited in size, it can only hold some fixed number of pages, hence when the cache gets full the engine needs to decide which page should be moved out of the cache so that the new page could fit in. The most common strategy is the [Least Recently Used Cache eviction strategy](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)), that helps in deciding which page to evict by considering how recently that page was accessed.
+Since the cache is bounded and limited in size, it can only hold some fixed number of pages, hence when the cache gets full the engine needs to decide which page should be moved out of the cache so that the new page could fit in. The most common strategy is the [Least Recently Used Cache eviction strategy](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)), that helps in deciding which page to evict by considering how recently that page was accessed.
 
 # The LRU Cache
 The LRU cache holds the items in the order of its access allowing us to identify which item is not being used the longest. When the cache is full and a newer item needs to make an entry in the cache, the item which is not accessed the longest is evicted and hence the name Least Recently Used.
@@ -37,7 +37,7 @@ def get_page(page_id:int) -> Page:
     # Check if the page is available in the cache
     page = cache.get_page(page_id)
 
-    # if the page is retrieved from the main-memory
+    # if the page is retrieved from the main memory
     # return the page.
     if page:
         return page
@@ -59,16 +59,16 @@ def get_page(page_id:int) -> Page:
 ```
 
 ## A notorious problem with Sequential Scans
-Above caching strategy works wonders and helps the engine be super-performant. [Cache hit ratio](https://www.stix.id.au/wiki/Cache_Hit_Ratio) is usually more than 80% for a mid-sized production level traffic, which means 80% of the times the page was served from the main-memory (cache) and the engine did not require to make the disk read; and this is a huge deal when we are talking about some heavy concurrent access.
+Above caching strategy works wonders and helps the engine be super-performant. [Cache hit ratio](https://www.stix.id.au/wiki/Cache_Hit_Ratio) is usually more than 80% for a mid-sized production-level traffic, which means 80% of the times the page was served from the main-memory (cache) and the engine did not require to make the disk read, and this is a huge deal when we are talking about some heavy concurrent access.
 
 What would happen if an entire table is scanned? - While talking a [dump]((https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)), or running a `SELECT` without `WHERE` to perform some statistical computations.
 
-Going by the MySQL's aforementioned behaviour, the engine iterates on all the pages and since each page which is accessed not is the most recent one, it puts it at the head of the cache whiles evicting one from the tail. If the table is bigger than the cache, this process will wipe out the entire cache and fill it with the pages of one table. If these pages are not referenced again, this is a total loss and performance of the database takes a hit. The performance of the database will not be back up untill these newly added cache pages are evicted from the cache.
+Going by the MySQL's aforementioned behaviour, the engine iterates on all the pages and since each page which is accessed not is the most recent one, it puts it at the head of the cache whiles evicting one from the tail. If the table is bigger than the cache, this process will wipe out the entire cache and fill it with the pages of one table. If these pages are not referenced again, this is a total loss and performance of the database takes a hit. The performance of the database will not be back up until these newly added cache pages are evicted from the cache.
 
 # Midpoint Insertion Strategy
 MySQL InnoDB Engine ploys an extremely smart solution to solve the notorious problem with Sequential Scans. Instead of keeping its Buffer Pool a pure LRU it tweaks it a little bit.
 
-Instead of treating the Buffer Pool as a huge doubly linked list, it treats it as a combination of two smaller sublists - usually 5/8th and 3/8th of total size. One sublist holds younger data while the other one holds the older data. The head of the Young sublist holds the most recent pages and the recency decreases as it reaches the tail of the Old sublist.
+Instead of treating the Buffer Pool as a huge doubly linked list, it treats it as a combination of two smaller sublists - usually 5/8th and 3/8th of the total size. One sublist holds younger data while the other one holds the older data. The head of the Young sublist holds the most recent pages and the recency decreases as it reaches the tail of the Old sublist.
 
 ![MySQL InnoDB Midpoint Insertion Strategy](https://user-images.githubusercontent.com/4745789/80299447-138a9880-87b2-11ea-9b0a-888e0ccf4b49.png)
 
@@ -83,7 +83,7 @@ The intent, by inserting in the middle, is that the pages that are only read onc
 ## Moving from Old sublist to the Young sublist
 In any LRU strategy whenever any page from the Buffer Pool (cache) is accessed, it moves to the head of the list. In this strategy as well, whenever the page is accessed, irrespective of its list, it moves to the head of Young sublist.
 
-After the page is in cache (in the middle), if the page is still in demand and accessed, it moves to the head of Young sublist and stays in the cache for longer. If after being inserted in the middle the page not accessed at all it continues to stay in the Old sublist until evicted. Since old sublist is shorter, the pages that are not not accessed are evicted quicker as compared to a strict LRU implementation.
+After the page is in the cache (inserted in the middle), if the page is still in demand and accessed again, it moves to the head of Young sublist and stays in the cache for longer. If after being inserted in the middle the page not accessed at all it continues to stay in the Old sublist until evicted. Since old sublist is shorter, the pages that are not accessed are evicted quicker as compared to a strict LRU implementation.
 
 # References
  - [Buffer Pool](https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool.html)
