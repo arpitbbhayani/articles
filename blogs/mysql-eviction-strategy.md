@@ -58,8 +58,12 @@ def get_page(page_id:int) -> Page:
     return page
 ```
 
-## Issue with this implementation
-MySQL's InnoDB uses this LRU mechanism by default to manage the pages within the cache, which means everytime the InnoDB engine accesses a page on the disk, it adds the page in this cache and if required evicts one page from the cache. The problem arises when an entire table is scanned, this usually happens while [taking a data dump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) or while executing a `SELECT` query with no `WHERE` clause.
+## A notorious problem
+Above caching strategy works wonders and helps the engine be super-performant. [Cache hit ratio](https://www.stix.id.au/wiki/Cache_Hit_Ratio) is usually more than 80% for a mid-sized production level traffic, which means 80% of the times the page was served from the main-memory (cache) and the engine did not require to make the disk read; and this is a huge deal when we are talking about some heavy concurrent access.
+
+
+
+The problem arises when an entire table is scanned, this usually happens while [taking a data dump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) or while executing a `SELECT` query with no `WHERE` clause.
 
 Such statements pulls a large amount of data, almost an entire table, in cache, and displacing existing data from cache. The worst part here is that this freshly loaded data is never ever refereced again, which means the performance of the database is going to take a huge hit.
 
