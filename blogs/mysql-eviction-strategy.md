@@ -68,21 +68,23 @@ Going by the MySQL's aforementioned behaviour, the engine iterates on all the pa
 # Midpoint Insertion Strategy
 MySQL InnoDB Engine ploys an extremely smart solution to solve the notorious problem with Sequential Scans. Instead of keeping its Buffer Pool a pure LRU it tweaks it a little bit.
 
-Instead of treating the Buffer Pool as a huge doubly linked list, it treats it as a combination of two smaller sublists - usually 5/8th and 3/8th of total size. One sublist holds younger data while the other one holds the older data.
+Instead of treating the Buffer Pool as a huge doubly linked list, it treats it as a combination of two smaller sublists - usually 5/8th and 3/8th of total size. One sublist holds younger data while the other one holds the older data. The head of the Young sublist holds the most recent pages and the recency decreases as it reaches the tail of the Old sublist.
 
 ![MySQL InnoDB Midpoint Insertion Strategy](https://user-images.githubusercontent.com/4745789/80299447-138a9880-87b2-11ea-9b0a-888e0ccf4b49.png)
 
-The head of the Young sublist holds the most recent pages and the recency decreases as it reaches the tail of the Old sublist. The eviction happens as per LRU strategy i.e. from the tail of the Old sublist. The twist is how the insertion happens. The insertion instead of happening at head of Young sublist, happens at the head of Old sublist.
+## Eviction
+The tail of the Old Sublist holds the Least Recently Used page and the eviction thus happens as per the LRU Strategy i.e. at the tail of the Old Sublist.
+
+## Insertion
+The insertion instead of happening at head of Young sublist i.e. "newest" end of the list, it happens at the head of Old sublist i.e. in the "middle" of the list. This position of the list where the tail of the Young sublist meets the head of the Old sublist is the "midpoint", and hence the name of the strategy is Midpoint Insertion Strategy.
+
+The intent, by inserting in the middle, is that the pages that are only read once, such as during a full table scan, can be aged out of the Buffer Pool sooner than with a strict LRU algorithm.
+
+## Moving from Old sublist to the Young sublist
 
 
-
-"Midpoint insertion strategy" which makes things not a true LRU in order to deprioritize superfluous pages.
-
-but makes exceptions in cases where a page might be read only a single time, such as during a full table scan. This variation of the LRU algorithm is called the midpoint insertion strategy.
 
 ```
-The technique of initially bringing pages into the InnoDB buffer pool not at the "newest" end of the list, but instead somewhere in the middle. The exact location of this point can vary, based on the setting of the innodb-old-blocks-pct option. The intent is that blocks that are only read once, such as during a full table scan, can be aged out of the buffer pool sooner than with a strict LRU algorithm. 
-
 An acronym for "least recently used", a common method for managing storage areas. The items that have not been used recently are evicted when space is needed to cache newer items. InnoDB uses the LRU mechanism by default to manage the pages within the buffer pool, but makes exceptions in cases where a page might be read only a single time, such as during a full table scan. This variation of the LRU algorithm is called the midpoint insertion strategy. The ways in which the buffer pool management differs from the traditional LRU algorithm is fine-tuned by the options innodb-old-blocks-pct, innodb_old_blocks_time, and the new MariaDB 5.6 options innodb_lru_scan_depth and innodb_flush_neighbors. 
 ```
 
