@@ -23,9 +23,9 @@ Since cache is bounded and limited in size, it can only hold some fixed number o
 The LRU cache holds the items in the order of its access allowing us to identify which item is not being used the longest. When the cache is full and a newer item needs to make an entry in the cache, the item which is not accessed the longest is evicted and hence the name Least Recently Used.
 
 ## Implementation
-An LRU cache is often implemented by pairing a [doubly linked list](https://en.wikipedia.org/wiki/Doubly_linked_list) with a [hash map](https://en.wikipedia.org/wiki/Hash_table). The cache is just a linked list of pages while the hashmap maps the `page_id` to the node in the linked list.
+An LRU cache is often implemented by pairing a [doubly linked list](https://en.wikipedia.org/wiki/Doubly_linked_list) with a [hash map](https://en.wikipedia.org/wiki/Hash_table). The cache is thus just a linked list of pages while the hashmap mapping the `page_id` to the node in the linked list.
 
-The most-recently used page is at the head of the list while the least-recently used one is at the tail. When a new page is to be added to the list it gets added to the head while the eviction always happens on the tail end of it. If a page exists in the cache and is accessed again, it is brought to the head of the list since it is now the most recently used.
+The most-recently referenced page is at the head of the list while the least-recently referenced one is at the tail. When a new page is to be added to the list it gets added to the head while the eviction always happens on the tail end of it. If a page exists in the cache and is accessed again, it is brought back to the head of the list as it is now the most recently referenced page.
 
 ![LRU Cache](https://user-images.githubusercontent.com/4745789/80288324-d7751a80-8754-11ea-96ab-6a8e25730bff.png)
 
