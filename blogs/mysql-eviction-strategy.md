@@ -1,14 +1,16 @@
-Disk reads are 4x (for SSD) to 80x (for magnetic disk) [slower](https://gist.github.com/hellerbarde/2843375) as compared to main memory (RAM) and hence it becomes extremely important for a database to utilize main-memory as much as it can, and be super-performant while keeping its latencies to a bare minimum. Engines cannot simply replace disks with RAM because of volatility and cost, hence it needs to strike a balance between the two - maximize main-memory utilization and minimize the disk access.
+Disk reads are 4x (for SSD) to 80x (for magnetic disk) [slower](https://gist.github.com/hellerbarde/2843375) as compared to main memory (RAM) reads and hence it becomes extremely important for a database to utilize main memory as much as it can, and be super-performant while keeping its latencies to a bare minimum. Engines cannot simply replace disks with RAM because of volatility and cost, hence it needs to strike a balance between the two - maximize main-memory utilization and minimize the disk access.
 
-The database engine virtually splits the data files into pages. A page is a unit which represents how much data the engine transfers at any one time between the disk (the data files) and the main memory. It is usually a few kilobytes 4KB, 8KB, 16KB, 32KB, etc. and is configurable via parameters. Because of its bulky size, a page can hold one or multiple rows of a table depending on how much data is in each row i.e. the length of the row.
+The database engine virtually splits the data files into pages. A page is a unit which represents how much data the engine transfers at any one time between the disk (the data files) and the main memory. It is usually a few kilobytes 4KB, 8KB, 16KB, 32KB, etc. and is configurable via engine parameters. Because of its bulky size, a page can hold one or multiple rows of a table depending on how much data is in each row i.e. the length of the row.
 
 # Locality of reference
-Database systems exhibit a strong and predictable behaviour called [locality of reference](https://en.wikipedia.org/wiki/Locality_of_reference) which suggests an access pattern of a page and its neighbours.
+Database systems exhibit a strong and predictable behaviour called [locality of reference](https://en.wikipedia.org/wiki/Locality_of_reference) which suggests the access pattern of a page and its neighbours.
 
 ## Spatial Locality of Reference
 The spatial locality of reference suggests if a row is accessed, there is a high probability that the neighbouring rows will be accessed in the near future.
 
-Having a larger page size addresses this situation to some extent. As one page could fit multiple rows, this means when that page is cached in memory, the engine saves a disk read if the neighbouring rows lying in the same page are accessed. Another approach to take advantage of this behaviour is to [read-ahead](https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-io.html) that pages that are very likely to be accessed in the future and keep them available in the main memory (cache).
+Having a larger page size addresses this situation to some extent. As one page could fit multiple rows, this means when that page is cached in main memory, the engine saves a disk read if the neighbouring rows residing in the same page are accessed.
+
+Another way to address this situation is to [read-ahead](https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-io.html) pages that are very likely to be accessed in the future and keep them available in the main memory. This way if the read-ahead pages are refereced, the engine need to go to the disk to fetch the page rather it will find the page residing in the main memory thus saving a bunch of disk reads.
 
 ## Temporal Locality of Reference
 The temporal locality of reference suggests that if a page is recently accessed, it is very likely that the same page will be accessed again in the near future.
