@@ -29,7 +29,7 @@ The LRU cache holds the items in the order of its last access, allowing us to id
 The one end (head) of the list holds the most-recently referenced page while the fag end (tail) of the list holds the least-recently referenced one. A new page, being most-recently accessed, is always added at the head of the list while the eviction happens at the tail. If a page from the cache is referenced again, it is moved to the head of the list as it is now the most-recently referenced.
 
 ## Implementation
-LRU cache is often implemented by pairing a [doubly linked list](https://en.wikipedia.org/wiki/Doubly_linked_list) with a [hash map](https://en.wikipedia.org/wiki/Hash_table). The cache is thus just a linked list of pages and the hashmap maps the `page_id` to the node in the linked list, enabling `O(1)` lookups.
+LRU cache is often implemented by pairing a [doubly-linked list](https://en.wikipedia.org/wiki/Doubly_linked_list) with a [hash map](https://en.wikipedia.org/wiki/Hash_table). The cache is thus just a linked list of pages and the hashmap maps the `page_id` to the node in the linked list, enabling `O(1)` lookups.
 
 ![LRU Cache](https://user-images.githubusercontent.com/4745789/80288324-d7751a80-8754-11ea-96ab-6a8e25730bff.png)
 
@@ -65,7 +65,7 @@ def get_page(page_id:int) -> Page:
 ## A notorious problem with Sequential Scans
 Above caching strategy works wonders and helps the engine to be super-performant. [Cache hit ratio](https://www.stix.id.au/wiki/Cache_Hit_Ratio) is usually more than 80% for mid-sized production-level traffic, which means 80% of the times the pages were served from the main memory (cache) and the engine did not require to make the disk read.
 
-What would happen if an entire table is scanned? say, while talking a [db dump]((https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)), or running a `SELECT` without `WHERE` to perform some statistical computations.
+What would happen if an entire table is scanned? say, while talking a [DB dump]((https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)), or running a `SELECT` without `WHERE` to perform some statistical computations.
 
 Going by the MySQL's aforementioned behaviour, the engine iterates on all the pages and since each page which is accessed now is the most recent one, it puts it at the head of the cache while evicting one from the tail.
 
@@ -87,7 +87,7 @@ This is where this strategy differs from Strict LRU. The insertion, instead of h
 > By inserting in the middle, the pages that are only read once, such as during a full table scan, can be aged out of the Buffer Pool sooner than with a strict LRU algorithm.
 
 ## Moving page from Old to the Young sublist
-In this strategy, like in Strict LRU implementation, whenever the page is accessed it moves to the newest end of the list i.e. the head of the Young sublist. During the first access the pages make an entry in the cache in the "middle" position.
+In this strategy, like in Strict LRU implementation, whenever the page is accessed it moves to the newest end of the list i.e. the head of the Young sublist. During the first access, the pages make an entry in the cache in the "middle" position.
 
 If the page is referenced the second time it is moved to the head of Young sublist and hence stays in the cache for a longer time. If the page, after being inserted in the middle, is never referenced again (during full scans), it is evicted sooner because the Old sublist is usually shorter than the Young sublist.
 
