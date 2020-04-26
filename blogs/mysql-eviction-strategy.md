@@ -74,7 +74,7 @@ If the table is bigger than the cache, this process will wipe out the entire cac
 # Midpoint Insertion Strategy
 MySQL InnoDB Engine ploys an extremely smart solution to solve the notorious problem with Sequential Scans. Instead of keeping its Buffer Pool a strict LRU, it tweaks it a little bit.
 
-Instead of treating the Buffer Pool as a huge doubly linked list, it treats it as a combination of two smaller sublists - usually 5/8th and 3/8th of the total size. One sublist holds younger data while the other one holds the older data. The head of the Young sublist holds the most recent pages and the recency decreases as it reaches the tail of the Old sublist.
+Instead of treating the Buffer Pool as a single doubly linked list, it treats it as a combination of two smaller sublists - usually 5/8th and 3/8th of the total size. One sublist holds the younger data while the other one holds the older data. The head of the Young sublist holds the most recent pages and the recency decreases as we reaches the tail of the Old sublist.
 
 ![MySQL InnoDB Midpoint Insertion Strategy](https://user-images.githubusercontent.com/4745789/80299447-138a9880-87b2-11ea-9b0a-888e0ccf4b49.png)
 
