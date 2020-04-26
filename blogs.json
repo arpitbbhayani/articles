@@ -1,5 +1,15 @@
 [
   {
+    "id": "mysql-cache",
+    "title": "What makes MySQL LRU cache scan resistant",
+    "description": "The MySQl InnoDB Storage engine uses LRU cache but it suffers from a notorious problem. In this article, we dive deep into how by changing one aspect of LRU and using a Midpoint Insertion Strategy MySQL becomes super performant.",
+    "image": "https://user-images.githubusercontent.com/4745789/80304802-0ed7db80-87d6-11ea-98db-bc5d4afe965b.png",
+    "gif": "https://media.giphy.com/media/l0MYEqEzwMWFCg8rm/giphy.gif",
+    "categories": ["mysql", "algorithm"],
+    "tags": [],
+    "published_at": "2020-04-26"
+  },
+  {
     "id": "fsm",
     "title": "Building Finite State Machines with Python Coroutines",
     "description": "The most intuitive way of building and implementing Finite State Machines is by using Python Coroutines and in this article, we find how and why.",
@@ -21,7 +31,7 @@
   },
   {
     "id": "sliding-window-ratelimiter",
-    "title": "Sliding window based Rate Limiter",
+    "title": "Designing a sliding window based rate limiter",
     "description": "A rate limiter is used to control the rate of traffic sent or received on the network and in this article we dive deep and design a sliding window based rate limiter.",
     "image": "https://user-images.githubusercontent.com/4745789/78276848-3c13cf80-7531-11ea-8186-99cb1da58e50.png",
     "gif": "https://media.giphy.com/media/5YuhLwDgrgtRVwI7OY/giphy.gif",
@@ -31,7 +41,7 @@
   },
   {
     "id": "idf",
-    "title": "Understanding Inverse Document Frequency",
+    "title": "All you need to know about Inverse Document Frequency",
     "description": "TF-IDF is extensively used in search engines and in various document classification and clustering techniques. Instead of taking the formula by the word, we take a detour and dive deep into the better half of it and find its connection with Probability, the role it plays in document relevance and the intuition behind it.",
     "image": "https://user-images.githubusercontent.com/4745789/76207579-10e4db80-6224-11ea-91ba-b67359125156.png",
     "gif": "https://media.giphy.com/media/3ornjWIRSzXEw61KH6/giphy.gif",
@@ -71,7 +81,7 @@
   },
   {
     "id": "function-overloading",
-    "title": "Overload Functions in Python",
+    "title": "Function overloading in Python",
     "description": "Python natively does not support function overloading - having multiple functions with the same name. Today we see how we can implement and add this functionality to Python by using common language constructs like decorators and dictionaries.",
     "image": "https://user-images.githubusercontent.com/4745789/73909201-04423000-48d2-11ea-8bd0-d7c25f6435c1.png",
     "gif": "https://media.giphy.com/media/WtCHRSPCuqS8E/giphy.gif",
