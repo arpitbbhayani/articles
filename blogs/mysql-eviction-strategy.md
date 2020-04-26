@@ -24,9 +24,9 @@ Since the cache is very costly, it is magnitude smaller in capacity than the dis
 The most common strategy that decides the page that will be evicted from the cache is the [Least Recently Used cache eviction strategy](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)). This strategy uses Temporal Locality of Reference to the core and hence evicts the page which was not accessed the longest, thus maximizing the time the most-recently accessed pages are held in the cache.
 
 # LRU Cache
-The LRU cache holds the items in the order of its last access allowing us to identify which item is not being used the longest. When the cache is full and a newer item needs to make an entry in the cache, the item which is not accessed the longest is evicted and hence the name Least Recently Used.
+The LRU cache holds the items in the order of its last access, allowing us to identify which item is not being used the longest. When the cache is full and a newer item needs to make an entry in the cache, the item which is not accessed the longest is evicted and hence the name Least Recently Used.
 
-The one end (head) of the list holds the most-recently referenced page while the fag end (tail) of the list holds the least-recently referenced one. A new page, being most-recently accessed, is always added at the head of the list while the eviction happens at the tail. If a page from the cache is referenced again, it is moved to the head of the list as it is now the most-recently referenced page.
+The one end (head) of the list holds the most-recently referenced page while the fag end (tail) of the list holds the least-recently referenced one. A new page, being most-recently accessed, is always added at the head of the list while the eviction happens at the tail. If a page from the cache is referenced again, it is moved to the head of the list as it is now the most-recently referenced.
 
 ## Implementation
 LRU cache is often implemented by pairing a [doubly linked list](https://en.wikipedia.org/wiki/Doubly_linked_list) with a [hash map](https://en.wikipedia.org/wiki/Hash_table). The cache is thus just a linked list of pages and the hashmap maps the `page_id` to the node in the linked list, enabling `O(1)` lookups.
