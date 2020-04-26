@@ -124,7 +124,8 @@ Pages read ahead 0.00/s, evicted without access 0.00/s, Random read ahead 0.00/s
 ...
 ```
 
-The command `SHOW ENGINE INNODB STATUS` outputs a lot of interesting metrics but the most interesting ones are
+The command `SHOW ENGINE INNODB STATUS` outputs a lot of interesting metrics but the most interesting and critical ones, w.r.t Memory and Buffer Pool, are
+
  - number of pages that were made young
  - rate of eviction without access
  - cache hit ratio
