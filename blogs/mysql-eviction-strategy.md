@@ -89,12 +89,15 @@ This is where this strategy differs from the Strict LRU. The insertion, instead 
 ## Moving page from Old to the Young sublist
 In this strategy, like in Strict LRU implementation, whenever the page is accessed it moves to the newest end of the list i.e. the head of the Young sublist. During the first access the pages makes an entry in the cache in the "middle" position.
 
-If the page is referenced the second time it is moved to the head of Young sublist and hence stays in the cache for a longer time. If the page, after being inserted in the middle, is never referenced again (during full scans), it is evicted quicker because the Old sublist is usually shorter than the Young sublist.
+If the page is referenced the second time it is moved to the head of Young sublist and hence stays in the cache for a longer time. If the page, after being inserted in the middle, is never referenced again (during full scans), it is evicted sooner because the Old sublist is usually shorter than the Young sublist.
 
-The Young sublist thus remains unaffected by table scans and continues to hold the most recent pages from the cache.
+The Young sublist thus remains unaffected by table scans bringing in new blocks that might or might not be accessed afterwards. The engine thus remains performant as more frequently accessed pages continue to remain in the cache (Young sublist).
+
+## MySQL Parameter to tune the midpoint
+InnoDB allows us to tune the midpoint of the buffer pool through the parameter `innodb_old_blocks_pct`. This parameter controls the percentage of Old sublist to Buffer Pool. The default value is 37 which corresponds to the ratio 3/8.
 
 # Conclusion
-Thus we see how by changing just one aspect of LRU cache, MySQL InnoDB makes it self Scan Resistant. This is a critical problem that was addressed in a very smart way by the engine.
+We see how by changing just one aspect of LRU cache, MySQL InnoDB makes itself Scan Resistant. Sequential scanning was a critical issue for cache but it was addressed in a very elegant way.
 
 # References
  - [Buffer Pool](https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool.html)
