@@ -93,8 +93,42 @@ If the page is referenced the second time it is moved to the head of Young subli
 
 The Young sublist thus remains unaffected by table scans bringing in new blocks that might or might not be accessed afterwards. The engine thus remains performant as more frequently accessed pages continue to remain in the cache (Young sublist).
 
-## MySQL Parameter to tune the midpoint
+## MySQL parameter to tune the midpoint
 InnoDB allows us to tune the midpoint of the buffer pool through the parameter `innodb_old_blocks_pct`. This parameter controls the percentage of Old sublist to Buffer Pool. The default value is 37 which corresponds to the ratio 3/8.
+
+In order to get greater insights about Buffer Pool we can invoke the following command as
+
+```
+$ SHOW ENGINE INNODB STATUS
+
+----------------------
+BUFFER POOL AND MEMORY
+----------------------
+Total memory allocated 137363456; in additional pool allocated 0
+Dictionary memory allocated 159646
+Buffer pool size   8191
+Free buffers       7741
+Database pages     449
+Old database pages 0
+
+...
+
+Pages made young 12, not young 0
+43.00 youngs/s, 27.00 non-youngs/s
+
+...
+
+Buffer pool hit rate 997 / 1000, young-making rate 0 / 1000 not 0 / 1000
+Pages read ahead 0.00/s, evicted without access 0.00/s, Random read ahead 0.00/s
+
+...
+```
+
+The command `SHOW ENGINE INNODB STATUS` outputs a lot of interesting metrics but the most interesting ones are
+ - number of pages that were made young
+ - rate of eviction without access
+ - cache hit ratio
+ - read ahead rate
 
 # Conclusion
 We see how by changing just one aspect of LRU cache, MySQL InnoDB makes itself Scan Resistant. Sequential scanning was a critical issue for cache but it was addressed in a very elegant way.
