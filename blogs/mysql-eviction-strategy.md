@@ -58,7 +58,7 @@ def get_page(page_id:int) -> Page:
     return page
 ```
 
-## A notorious problem
+## A notorious problem with Sequential Scans
 Above caching strategy works wonders and helps the engine be super-performant. [Cache hit ratio](https://www.stix.id.au/wiki/Cache_Hit_Ratio) is usually more than 80% for a mid-sized production level traffic, which means 80% of the times the page was served from the main-memory (cache) and the engine did not require to make the disk read; and this is a huge deal when we are talking about some heavy concurrent access.
 
 What would happen if an entire table is scanned? - While talking a [dump]((https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)), or running a `SELECT` without `WHERE` to perform some statistical computations.
@@ -66,6 +66,9 @@ What would happen if an entire table is scanned? - While talking a [dump]((https
 Going by the MySQL's aforementioned behaviour, the engine iterates on all the pages and since each page which is accessed not is the most recent one, it puts it at the head of the cache whiles evicting one from the tail. If the table is bigger than the cache, this process will wipe out the entire cache and fill it with the pages of one table. If these pages are not referenced again, this is a total loss and performance of the database takes a hit. The performance of the database will not be back up untill these newly added cache pages are evicted from the cache.
 
 # Midpoint Insertion Strategy
+MySQL InnoDB Engine ploys an extremely smart solution to solve the problem with Sequential Scans. Instead of keeping its Buffer Pool a pure LRU it tweaks it a little bit.
+
+
 
 "Midpoint insertion strategy" which makes things not a true LRU in order to deprioritize superfluous pages.
 
