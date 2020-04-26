@@ -66,7 +66,13 @@ What would happen if an entire table is scanned? - While talking a [dump]((https
 Going by the MySQL's aforementioned behaviour, the engine iterates on all the pages and since each page which is accessed not is the most recent one, it puts it at the head of the cache whiles evicting one from the tail. If the table is bigger than the cache, this process will wipe out the entire cache and fill it with the pages of one table. If these pages are not referenced again, this is a total loss and performance of the database takes a hit. The performance of the database will not be back up untill these newly added cache pages are evicted from the cache.
 
 # Midpoint Insertion Strategy
-MySQL InnoDB Engine ploys an extremely smart solution to solve the problem with Sequential Scans. Instead of keeping its Buffer Pool a pure LRU it tweaks it a little bit.
+MySQL InnoDB Engine ploys an extremely smart solution to solve the notorious problem with Sequential Scans. Instead of keeping its Buffer Pool a pure LRU it tweaks it a little bit.
+
+Instead of treating the Buffer Pool as a huge doubly linked list, it treats it as a combination of two smaller sublists - usually 5/8th and 3/8th of total size. One sublist holds younger data while the other one holds the older data.
+
+![MySQL InnoDB Midpoint Insertion Strategy](https://user-images.githubusercontent.com/4745789/80299447-138a9880-87b2-11ea-9b0a-888e0ccf4b49.png)
+
+The head of the Young sublist holds the most recent pages and the recency decreases as it reaches the tail of the Old sublist. The eviction happens as per LRU strategy i.e. from the tail of the Old sublist. The twist is how the insertion happens. The insertion instead of happening at head of Young sublist, happens at the head of Old sublist.
 
 
 
