@@ -135,9 +135,9 @@ The command `SHOW ENGINE INNODB STATUS` outputs a lot of interesting metrics but
 We see how by changing just one aspect of LRU cache, MySQL InnoDB makes itself Scan Resistant. Sequential scanning was a critical issue for the cache but it was addressed in a very elegant way.
 
 # References
- - [Buffer Pool](https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool.html)
- - [Making the Buffer Pool Scan Resistant](https://dev.mysql.com/doc/refman/8.0/en/innodb-performance-midpoint_insertion.html)
  - [Latency numbers](https://gist.github.com/hellerbarde/2843375)
  - [Locality of reference](https://en.wikipedia.org/wiki/Locality_of_reference)
- - [InnoDB : Making Buffer Cache Scan Resistant](https://serge.frezefond.com/2009/12/innodb-making-buffer-cache-scan-resistant/)
- - [InnoDB Disk I/O](https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-io.html)
+ - [InnoDB: Making Buffer Cache Scan Resistant](https://serge.frezefond.com/2009/12/innodb-making-buffer-cache-scan-resistant/)
+ - [MySQL Dev - Buffer Pool](https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool.html)
+ - [MySQL Dev - Making the Buffer Pool Scan Resistant](https://dev.mysql.com/doc/refman/8.0/en/innodb-performance-midpoint_insertion.html)
+ - [MySQL Dev - InnoDB Disk I/O](https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-io.html)
