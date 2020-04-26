@@ -76,20 +76,16 @@ Instead of treating the Buffer Pool as a huge doubly linked list, it treats it a
 The tail of the Old Sublist holds the Least Recently Used page and the eviction thus happens as per the LRU Strategy i.e. at the tail of the Old Sublist.
 
 ## Insertion
-The insertion instead of happening at head of Young sublist i.e. "newest" end of the list, it happens at the head of Old sublist i.e. in the "middle" of the list. This position of the list where the tail of the Young sublist meets the head of the Old sublist is the "midpoint", and hence the name of the strategy is Midpoint Insertion Strategy.
+The insertion, instead of happening at head of Young sublist i.e. "newest" end of the list, happens at the head of Old sublist i.e. in the "middle" of the list. This position of the list where the tail of the Young sublist meets the head of the Old sublist is the "midpoint", and hence the name of the strategy is Midpoint Insertion Strategy.
 
 The intent, by inserting in the middle, is that the pages that are only read once, such as during a full table scan, can be aged out of the Buffer Pool sooner than with a strict LRU algorithm.
 
 ## Moving from Old sublist to the Young sublist
+In any LRU strategy whenever any page from the Buffer Pool (cache) is accessed, it moves to the head of the list. In this strategy as well, whenever the page is accessed, irrespective of its list, it moves to the head of Young sublist.
 
-
-
-```
-An acronym for "least recently used", a common method for managing storage areas. The items that have not been used recently are evicted when space is needed to cache newer items. InnoDB uses the LRU mechanism by default to manage the pages within the buffer pool, but makes exceptions in cases where a page might be read only a single time, such as during a full table scan. This variation of the LRU algorithm is called the midpoint insertion strategy. The ways in which the buffer pool management differs from the traditional LRU algorithm is fine-tuned by the options innodb-old-blocks-pct, innodb_old_blocks_time, and the new MariaDB 5.6 options innodb_lru_scan_depth and innodb_flush_neighbors. 
-```
+After the page is in cache (in the middle), if the page is still in demand and accessed, it moves to the head of Young sublist and stays in the cache for longer. If after being inserted in the middle the page not accessed at all it continues to stay in the Old sublist until evicted. Since old sublist is shorter, the pages that are not not accessed are evicted quicker as compared to a strict LRU implementation.
 
 # References
-
  - [Buffer Pool](https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool.html)
  - [Making the Buffer Pool Scan Resistant](https://dev.mysql.com/doc/refman/8.0/en/innodb-performance-midpoint_insertion.html)
  - [Latency numbers](https://gist.github.com/hellerbarde/2843375)
