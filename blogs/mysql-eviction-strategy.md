@@ -33,20 +33,30 @@ The most-recently referenced page is at the head of the list while the least-rec
 MySQL InnoDB's cache is called [Buffer Pool](https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool.html) which does exactly what has been established earlier. Pseudocode implementation of `get_page` function, using which the engine gets the page for further processing, could be summarized as
 
 ```py
-def get_page(page_id):
+def get_page(page_id:int) -> Page:
+    # Check if the page is available in the cache
     page = cache.get_page(page_id)
-    if not page:
-        page = disk.get_page(page_id)
-        if cache.is_full():
-            cache.evict_page()
-        cache.put_page(page)
+
+    # if the page is retrieved from the main-memory
+    # return the page.
+    if page:
+        return page
+
+    # retrieve the page from the disk
+    page = disk.get_page(page_id)
+
+    # put the page in the cache,
+    # if the cache is full, evict a page which is
+    # least recently used.
+    if cache.is_full():
+        cache.evict_page()
+
+    # put the page in the cache
+    cache.put_page(page)
+
+    # return the pages
     return page
 ```
-
-
-Any time a page is referenced, it is first checked against the cache, if it is present it served from there otherwise a disk read is made for that page, a page entry is evicted from cache
-
-the page is then put in the Buffer Pool
 
 ## Issue with this implementation
 MySQL's InnoDB uses this LRU mechanism by default to manage the pages within the cache, which means everytime the InnoDB engine accesses a page on the disk, it adds the page in this cache and if required evicts one page from the cache. The problem arises when an entire table is scanned, this usually happens while [taking a data dump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) or while executing a `SELECT` query with no `WHERE` clause.
