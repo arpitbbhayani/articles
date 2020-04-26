@@ -1,14 +1,14 @@
-Disk reads are 4x (for SSD) to 80x (for magnetic disk) [slower](https://gist.github.com/hellerbarde/2843375) as compared to memory (RAM) access and hence it becomes extremely important for a database to utilize main memory as much as it can, and be super-performant while keeping its latencies to a bare minimum. Engines cannot simply replace disks with RAM because of volatility and cost, hence it needs to strike a balance between the two - maximize main memory utilization and keep the disk access to a bare minimum.
+Disk reads are 4x (for SSD) to 80x (for magnetic disk) [slower](https://gist.github.com/hellerbarde/2843375) as compared to main-memory (RAM) and hence it becomes extremely important for a database to utilize main-memory as much as it can, and be super-performant while keeping its latencies to a bare minimum. Engines cannot simply replace disks with RAM because of volatility and cost, hence it needs to strike a balance between the two - maximize main-memory utilization and minimize the disk access.
 
-The database engine virtually splits the storage into pages. A page is a unit which represents how much data the engine transfers at any one time between disk (the data files) and memory (cache). It is usually a few kilobytes 4KB, 8KB, 16KB, 32KB and is configurable via some engine parameter. Thus a page can hold one or multiple rows of a table depending on how much data is in each row i.e. the length of row.
+The database engine virtually splits the data files into pages. A page is a unit which represents how much data the engine transfers at any one time between the disk (the data files) and the main-memory. It is usually a few kilobytes 4KB, 8KB, 16KB, 32KB, etc. and is configurable via parameters. Because of its bulky size a page can hold one or multiple rows of a table depending on how much data is in each row i.e. the length of row.
 
 # Locality of reference
-Database systems exhibit a strong and predictable behaviour called [locality of reference](https://en.wikipedia.org/wiki/Locality_of_reference) which suggests access pattern of a page and its neighbours.
+Database systems exhibit a strong and predictable behaviour called [locality of reference](https://en.wikipedia.org/wiki/Locality_of_reference) which suggests an access pattern of a page and its neighbours.
 
 ## Spatial Locality of Reference
-Spatial locality of reference suggests if a row is accessed, it is very likely that the neighbouring rows will be accessed in the near future.
+Spatial locality of reference suggests if a row is accessed, there is a high probability that the neighbouring rows will be accessed in the near future.
 
-Having a larger page size addresses this situations. A larger page size implies more rows could fit in one page and if that page is cached in memory, when the next row is accessed the same page will be referenced from the memory thus saving a disk read.
+Having a larger page size addresses this situation to some extent. As one page could fit multiple rows, this means when that page is cached in memory, the engine saves a disk read if the neighbouring rows lying in the same page are accessed. Another approach to take advantage of this behaviour is to [read-ahead](https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-io.html) that pages that are very likely to be accessed in the future and keep them available in the main-memory (cache).
 
 ## Temporal Locality of Reference
 Temporal locality of reference suggests that if a page is recently accessed (referenced), it is very likely that the same page will be accessed (referenced) again in the near future.
@@ -70,7 +70,7 @@ What is the problem.
 -------------------------------
 
 # Why does a database need cache?
-As established earlier, disk reads are costly hence database engines stores frequently accessed pages in memory so that when the page is requested, instead of making a slower disk read, the engine can directly serve it from the main memory - cache.
+As established earlier, disk reads are costly hence database engines stores frequently accessed pages in memory so that when the page is requested, instead of making a slower disk read, the engine can directly serve it from the main-memory - cache.
 
 ## What if Database does not cache?
 Not only does this hurt performance when a record is retrieved, we pay the same time cost if that same record is requested again..
@@ -124,7 +124,7 @@ All the InnoDB disk data structures within a MySQL instance share the same page 
 
 
 # Buffer Pool
-The buffer pool is an area in main memory where InnoDB caches table and index data as it is accessed. The buffer pool permits frequently used data to be processed directly from memory, which speeds up processing. On dedicated servers, up to 80% of physical memory is often assigned to the buffer pool.
+The buffer pool is an area in main-memory where InnoDB caches table and index data as it is accessed. The buffer pool permits frequently used data to be processed directly from memory, which speeds up processing. On dedicated servers, up to 80% of physical memory is often assigned to the buffer pool.
 
 For efficiency of high-volume read operations, the buffer pool is divided into pages that can potentially hold multiple rows. For efficiency of cache management, the buffer pool is implemented as a linked list of pages; data that is rarely used is aged out of the cache using a variation of the LRU algorithm.
 
@@ -142,3 +142,4 @@ COmparing time taken from various stores - in-memory vs ssd
  - [Latency numbers](https://gist.github.com/hellerbarde/2843375)
  - [Locality of reference](https://en.wikipedia.org/wiki/Locality_of_reference)
  - [InnoDB : Making Buffer Cache Scan Resistant](https://serge.frezefond.com/2009/12/innodb-making-buffer-cache-scan-resistant/)
+ - [InnoDB Disk I/O](https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-io.html)
