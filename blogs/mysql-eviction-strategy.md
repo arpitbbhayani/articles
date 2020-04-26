@@ -61,11 +61,9 @@ def get_page(page_id:int) -> Page:
 ## A notorious problem
 Above caching strategy works wonders and helps the engine be super-performant. [Cache hit ratio](https://www.stix.id.au/wiki/Cache_Hit_Ratio) is usually more than 80% for a mid-sized production level traffic, which means 80% of the times the page was served from the main-memory (cache) and the engine did not require to make the disk read; and this is a huge deal when we are talking about some heavy concurrent access.
 
+What would happen if an entire table is scanned? Going by the disk control flow mentioned above, the engine would iterate on all the pages and will keep adding those pages at the head of the Buffer Pool (cache), because those pages are most recently referenced, expecting it to be referenced again. Usually tables are scanned while talking a [dump]((https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)), or running a `SELECT` without `WHERE` to perform some statistical computations.
 
-
-The problem arises when an entire table is scanned, this usually happens while [taking a data dump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) or while executing a `SELECT` query with no `WHERE` clause.
-
-Such statements pulls a large amount of data, almost an entire table, in cache, and displacing existing data from cache. The worst part here is that this freshly loaded data is never ever refereced again, which means the performance of the database is going to take a huge hit.
+Thus the entire warm Buffer Pool is displaced by the pages of a single table which may not even be referenced again. The worst part here is that this freshly loaded data is never ever refereced again, which means the performance of the database is going to take a huge hit.
 
 ```
 OLTP server with a warm buffer pool containing the current working set. Then someone submit a report needing to access a table through a full table scan. The normal and current MySQL behavior is to wipe out the content of the cache. if the table is never reused this is pure loss
