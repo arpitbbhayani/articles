@@ -21,15 +21,15 @@ Caching exploits this behaviour by putting every single page accessed from the d
 
 Since the cache is very costly, it is magnitude smaller in capacity than the disk. It can only hold some fixed number of pages which means the cache suffers from the problem of getting full very quickly. Once the cache gets full, the engine needs to evict an old page so that the new page, which according to the temporal locality of reference is going to be accessed in the near future, could get a place in the cache.
 
-The most common strategy that decides the page that will be evicted from the cache is the [Least Recently Used cache eviction strategy](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)). This strategy uses Temporal Locality of Reference to the core and hence evicts the page which was not accessed the longest, thus maximizing the time the most recently accessed pages are held in the cache.
+The most common strategy that decides the page that will be evicted from the cache is the [Least Recently Used cache eviction strategy](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)). This strategy uses Temporal Locality of Reference to the core and hence evicts the page which was not accessed the longest, thus maximizing the time the most-recently accessed pages are held in the cache.
 
-# The LRU Cache
-The LRU cache holds the items in the order of its access allowing us to identify which item is not being used the longest. When the cache is full and a newer item needs to make an entry in the cache, the item which is not accessed the longest is evicted and hence the name Least Recently Used.
+# LRU Cache
+The LRU cache holds the items in the order of its last access allowing us to identify which item is not being used the longest. When the cache is full and a newer item needs to make an entry in the cache, the item which is not accessed the longest is evicted and hence the name Least Recently Used.
+
+The one end (head) of the list holds the most-recently referenced page while the fag end (tail) of the list holds the least-recently referenced one. A new page, being most-recently accessed, is always added at the head of the list while the eviction happens at the tail. If a page from the cache is referenced again, it is moved to the head of the list as it is now the most-recently referenced page.
 
 ## Implementation
-An LRU cache is often implemented by pairing a [doubly linked list](https://en.wikipedia.org/wiki/Doubly_linked_list) with a [hash map](https://en.wikipedia.org/wiki/Hash_table). The cache is thus just a linked list of pages while the hashmap mapping the `page_id` to the node in the linked list.
-
-The most-recently referenced page is at the head of the list while the least-recently referenced one is at the tail. When a new page is to be added to the list it gets added to the head while the eviction always happens on the tail end of it. If a page exists in the cache and is accessed again, it is brought back to the head of the list as it is now the most recently referenced page.
+LRU cache is often implemented by pairing a [doubly linked list](https://en.wikipedia.org/wiki/Doubly_linked_list) with a [hash map](https://en.wikipedia.org/wiki/Hash_table). The cache is thus just a linked list of pages and the hashmap maps the `page_id` to the node in the linked list, enabling `O(1)` lookups.
 
 ![LRU Cache](https://user-images.githubusercontent.com/4745789/80288324-d7751a80-8754-11ea-96ab-6a8e25730bff.png)
 
