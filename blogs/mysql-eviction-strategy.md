@@ -61,13 +61,13 @@ def get_page(page_id:int) -> Page:
 ## A notorious problem
 Above caching strategy works wonders and helps the engine be super-performant. [Cache hit ratio](https://www.stix.id.au/wiki/Cache_Hit_Ratio) is usually more than 80% for a mid-sized production level traffic, which means 80% of the times the page was served from the main-memory (cache) and the engine did not require to make the disk read; and this is a huge deal when we are talking about some heavy concurrent access.
 
-What would happen if an entire table is scanned? Going by the disk control flow mentioned above, the engine would iterate on all the pages and will keep adding those pages at the head of the Buffer Pool (cache), because those pages are most recently referenced, expecting it to be referenced again. Usually tables are scanned while talking a [dump]((https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)), or running a `SELECT` without `WHERE` to perform some statistical computations.
+What would happen if an entire table is scanned? - While talking a [dump]((https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)), or running a `SELECT` without `WHERE` to perform some statistical computations.
 
-Thus the entire warm Buffer Pool is displaced by the pages of a single table which may not even be referenced again. The worst part here is that this freshly loaded data is never ever refereced again, which means the performance of the database is going to take a huge hit.
+Going by the MySQL's aforementioned behaviour, the engine iterates on all the pages and since each page which is accessed not is the most recent one, it puts it at the head of the cache whiles evicting one from the tail. If the table is bigger than the cache, this process will wipe out the entire cache and fill it with the pages of one table. If these pages are not referenced again, this is a total loss and performance of the database takes a hit. The performance of the database will not be back up untill these newly added cache pages are evicted from the cache.
+
+# Midpoint Insertion Strategy
 
 ```
-OLTP server with a warm buffer pool containing the current working set. Then someone submit a report needing to access a table through a full table scan. The normal and current MySQL behavior is to wipe out the content of the cache. if the table is never reused this is pure loss
-
 The technique of initially bringing pages into the InnoDB buffer pool not at the "newest" end of the list, but instead somewhere in the middle. The exact location of this point can vary, based on the setting of the innodb-old-blocks-pct option. The intent is that blocks that are only read once, such as during a full table scan, can be aged out of the buffer pool sooner than with a strict LRU algorithm. 
 
 An acronym for "least recently used", a common method for managing storage areas. The items that have not been used recently are evicted when space is needed to cache newer items. InnoDB uses the LRU mechanism by default to manage the pages within the buffer pool, but makes exceptions in cases where a page might be read only a single time, such as during a full table scan. This variation of the LRU algorithm is called the midpoint insertion strategy. The ways in which the buffer pool management differs from the traditional LRU algorithm is fine-tuned by the options innodb-old-blocks-pct, innodb_old_blocks_time, and the new MariaDB 5.6 options innodb_lru_scan_depth and innodb_flush_neighbors. 
