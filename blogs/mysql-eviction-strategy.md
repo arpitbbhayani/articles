@@ -11,13 +11,13 @@ Spatial locality of reference suggests if a row is accessed, there is a high pro
 Having a larger page size addresses this situation to some extent. As one page could fit multiple rows, this means when that page is cached in memory, the engine saves a disk read if the neighbouring rows lying in the same page are accessed. Another approach to take advantage of this behaviour is to [read-ahead](https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-io.html) that pages that are very likely to be accessed in the future and keep them available in the main-memory (cache).
 
 ## Temporal Locality of Reference
-Temporal locality of reference suggests that if a page is recently accessed (referenced), it is very likely that the same page will be accessed (referenced) again in the near future.
+Temporal locality of reference suggests that if a page is recently accessed, it is very likely that the same page will be accessed again in the near future.
 
-Caching exploits this behaviour by putting every single page accessed from the disk into main-memory (cache) and the next time the same page is referenced, it returns the page from the cache, thus saving a disk read. The control flow of how a disk read happens could be represented as
+Caching exploits this behaviour by putting every single page accessed from the disk into main-memory (cache). Hence the next time the same page is referenced it is available in the main-memory eradicating the need of a disk read.
 
 ![Disk cache control flow](https://user-images.githubusercontent.com/4745789/80286313-4e57e680-8748-11ea-88c2-dcb67f6ac566.png)
 
-Since cache is limited, it can only hold some fixed number of pages, hence when the cache gets full the engine needs to decide which page should be moved out of the cache so that the new page could fit in. The most common strategy is the [Least Recently Used Cache eviction strategy](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)).
+Since cache is bounded and limited in size, it can only hold some fixed number of pages, hence when the cache gets full the engine needs to decide which page should be moved out of the cache so that the new page could fit in. The most common strategy is the [Least Recently Used Cache eviction strategy](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)), that helps in deciding which page to evict by considering how recently that page was accessed.
 
 # The LRU Cache
 The LRU cache holds the items in the order of its access allowing us to identify which item is not being used the longest. When the cache is full and a newer item needs to make an entry in the cache, the item which is not accessed the longest is evicted and hence the name Least Recently Used.
