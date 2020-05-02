@@ -35,6 +35,8 @@ Point in time snapshots
 ## CoW in Applications
 Document Versioning
 
+# Why shouldn't we Copy-on-Write
+
 # References
  - http://schd.ws/hosted_files/buildstuff14/96/20141120-BuildStuff-Lightning.pdf
  - https://stackoverflow.com/questions/35279756/what-is-special-about-internal-design-of-lmdb
