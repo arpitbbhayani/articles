@@ -60,15 +60,33 @@ No need of locks
 attomic compare and swap.
 
 ## CoW in Data Engineering
+Database in in-conssitent state, going back in time and restore the db to its last
+known stable state. with CoW we can take our DB to any version in past.
 Point in time snapshots
 
 ## CoW in Data Structures
 Persistent Data Structures is hwere 
+There are data strucutes that upon updation creates a new copy instead of making an
+in-place update. For example: adding a new element in array, we create a new copy.
+Why such data strutures are needed?
 
 ## CoW in Real World applications
-Document Versioning
+While using a collaborative doument editor like, Google Doc, one malicious user with write access to the
+document could just erase entire content of the document.
+Thus we need a way to revert the changes made by the malicous user and user an earlier revision of the
+document that we know was last stable and proper version.
+
+Deepcopying document on every single update is not a good option as it would require the tool to create new copies on every update, say every second. Which is infeasible solution in terms of storage requirements.
+
+CoW semantic could help in this as when the document is updated only some part of the document is updated after the last save, thus CoW is ideal for such scenarious.
 
 ## CoW in Time Travel
+Whenever Flash, a DC Superhero, goes back in time to fix something, he creates a new time line. This new timeline
+has all of its events fareing in a different way depending on which event was interefered with.
+
+modelling multiple timelines i.e. parallel universes could done with the help of CoW semantics, where instead
+of creating deep-copy of the entire universe, we apply CoW semantics and store references to unchanged items
+while copying the chunks that changed.
 
 # Why shouldn't we Copy-on-Write
 
