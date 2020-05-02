@@ -7,7 +7,7 @@ CoW is an alternate to this strategy in which a instead of creating a deep copy 
 # Copy-on-write on a Doubly LinkedList
 Given a Doubly LinkedList `A` we create a copy of `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to way. Naive way was to copy and clone all the nodes of the LinkedList and let `B` now points to head of this new list.
 
-![Deep Copying a Doubly LinkedList](https://user-images.githubusercontent.com/4745789/80857148-6e6a3700-8c6d-11ea-82a5-332875e32cac.png)
+![Deep Copying a Doubly LinkedList](https://user-images.githubusercontent.com/4745789/80857167-978ac780-8c6d-11ea-9fc5-238753391eb2.png)
 
 
 # Why should we Copy-on-Write
