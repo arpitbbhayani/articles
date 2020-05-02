@@ -5,9 +5,11 @@ A naive way to create such copies is by deep copying the resource. Deep-copying 
 CoW is an alternate to this strategy in which a instead of creating a deep copy of a modifiable resource, everything is just copied by reference and before making the modification a deep copy of that particular chunk/resource is made and changes are applied. To gain a deeper understanding we see how CoW fares while copying a [Doubly LinkedList](https://en.wikipedia.org/wiki/Doubly_linked_list).
 
 # Copy-on-write on a Doubly LinkedList
-Given a Doubly LinkedList `A` we create a copy of `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to way. Naive way was to copy and clone all the nodes of the LinkedList and let `B` now points to head of this new list.
+Given a Doubly LinkedList `A` we create a copy of `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to way. Naive way is to copy and clone all the nodes of the LinkedList and let `B` now points to head of this new list, as illustrated in the diagram below. Any modifications made to either list will not be visible to the other because their entire space is mutually exclusive.
 
 ![Deep Copying a Doubly LinkedList](https://user-images.githubusercontent.com/4745789/80857167-978ac780-8c6d-11ea-9fc5-238753391eb2.png)
+
+Copy-on-Write semantics suggest an optimistic approach where `B` instead of pointing to the cloned `A`, shares the same reference as `A` which means it also points to the exact same list as `A`.
 
 
 # Why should we Copy-on-Write
