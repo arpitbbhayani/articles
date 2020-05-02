@@ -5,13 +5,13 @@ A naive way to create such copies is by deep copying the resource. Deep-copying 
 CoW is an alternate to this strategy in which a instead of creating a deep copy of a modifiable resource, everything is just copied by reference and before making the modification a deep copy of that particular chunk/resource is made and changes are applied. To gain a deeper understanding we see how CoW fares while copying a [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
 
 # Copy-on-write on a Binary Tree
-Given a Binary Tree `A` we create a copy of `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to way. Naive way is to copy and clone all the nodes of the Tree and let `B` now points to head of this new tree, as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
+Given a Binary Tree `A` we create a copy of `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to `A`. Naive way is to copy and clone all the nodes of the tree and let `B` now points to root of this new tree, as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
 
 ![Deep Copying a Binary Tree](https://user-images.githubusercontent.com/4745789/80859895-b3986400-8c81-11ea-9ebe-829540df77d5.png)
 
 Copy-on-Write semantics suggest an optimistic approach where `B` instead of pointing to the cloned `A`, shares the same reference as `A` which means it also points to the exact same tree as `A`. But if both variables point to the same tree, how do we ensure isolation?
 
-The magic happens how 
+The Copy-on-Write semantics kick in when any modification happens.
 Copy-on-Write starts to act when the some modification is made to either list.
 
 
