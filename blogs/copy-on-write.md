@@ -2,10 +2,12 @@ Copy-On-Write, abbreviately referred as CoW, is a semantic that suggests how to 
 
 A naive way to create such copies is by deep copying the resource. Deep-copying copies all the immediate pages along with all the other remote resources that are referenced within those pages. This makes deep-copying a very heavy operation consuming a lot of Memory and CPU cycles.
 
-CoW is an alternate to this strategy in which a instead of creating a deep copy of a modifiable resource, everything is just copied by reference and when the modification is to be made then the deep copy of that particular chunk is made and changes are applied.
+CoW is an alternate to this strategy in which a instead of creating a deep copy of a modifiable resource, everything is just copied by reference and before making the modification a deep copy of that particular chunk/resource is made and changes are applied. To gain a deeper understanding we see how CoW fares while copying a [Doubly LinkedList](https://en.wikipedia.org/wiki/Doubly_linked_list).
 
-# What exactly is Copy-on-write semantic
-LinkedList example
+# Copy-on-write on a Doubly LinkedList
+
+
+# Why should we Copy-on-Write
 
 # CoW in action
 Each deserves its own essay.
