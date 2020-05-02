@@ -11,7 +11,7 @@ Given a Binary Tree `A` we create a copy of `B` such that any modifications by `
 
 Copy-on-Write semantics suggest an optimistic approach where `B` instead of pointing to the cloned `A`, shares the same reference as `A` which means it also points to the exact same tree as `A`. But if both variables point to the same tree, how do we ensure isolation?
 
-The Copy-on-Write semantics kick in when any modification happens.
+The Copy-on-Write semantics kick in when any modification happens. Say in tree `A` 
 Copy-on-Write starts to act when the some modification is made to either list.
 
 
