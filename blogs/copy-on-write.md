@@ -59,14 +59,16 @@ Locks could be avoided. Readers will not see things updating by a writer.
 No need of locks
 attomic compare and swap.
 
-## CoW in Data Structures
-Persistent Data Structures
-
 ## CoW in Data Engineering
 Point in time snapshots
 
-## CoW in Applications
+## CoW in Data Structures
+Persistent Data Structures is hwere 
+
+## CoW in Real World applications
 Document Versioning
+
+## CoW in Time Travel
 
 # Why shouldn't we Copy-on-Write
 
