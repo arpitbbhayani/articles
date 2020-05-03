@@ -80,7 +80,9 @@ int main( void ) {
 ```
 
 ## No Locks Needed
-One major benefit we get from CoW is that it removes the need of Locks altogether. Since on every write we are creating a new copy of the resource there are no in-place updates. Hence 
+Locks are required when we have in-place updates. Because multiple writers could try to modify the same instance of resource and thus to maintain data integrity we define a [critical section](https://en.wikipedia.org/wiki/Critical_section) and apply locks such that only one process could enter the critical section and update the resource at a time.
+
+If we follow this CoW aggresively, which suggests we copy before we write, there will be no in-place updates. All updates will result in an true copy and then in one atomic [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap) operation system could switch to a newer version.
 
 ## Versioning
 One timeline of all data
