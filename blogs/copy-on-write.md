@@ -1,9 +1,9 @@
-Copy-On-Write, abbreviately referred to as CoW suggests deferring the copy process until the first modification. A resource is usually copied when we do not want the changes made in either resource to be visible to the other. A resource here could be anything - an in-memory page, a database disk block, an item in a structure, or even the entire data structure.
+Copy-On-Write, abbreviately referred to as CoW suggests deferring the copy process until the first modification. A resource is usually copied when we do not want the changes made in the either to be visible to the other. A resource here could be anything - an in-memory page, a database disk block, an item in a structure, or even the entire data structure.
 
-CoW suggests that we first copy by reference and let both instances point to the same resource and before the first modification we clone the original resource and then apply the updates. In a gist, CoW suggests we defer the process of copying until the first modification is about to be made.
+CoW suggests that we first copy by reference and let both instances share the same resource and just before the first modification we clone the original resource and then apply the updates.
 
 # Deep copying
-The process of creating a pure clone of the resource is called [Deep Copying](https://en.wikipedia.org/wiki/Object_copying#Deep_copy) and it copies not only the immediate resource but also all the remote resources that are referenced within it. Thus if we were to deep copy a [Linked List](https://en.wikipedia.org/wiki/Linked_list) we do not copy the head pointer, rather we clone all the nodes of the list and create an entirely new list from the original one. A C++ function deep copying a Linked List is as illustrated below
+The process of creating a pure clone of the resource is called [Deep Copying](https://en.wikipedia.org/wiki/Object_copying#Deep_copy) and it copies not only the immediate content but also all the remote resources that are referenced within it. Thus if we were to deep copy a [Linked List](https://en.wikipedia.org/wiki/Linked_list) we do not just copy the head pointer, rather we clone all the nodes of the list and create an entirely new list from the original one. A C++ function for deep copying a Linked List is as illustrated below
 
 ```cpp
 struct node* copy(struct node *head) {
@@ -30,7 +30,7 @@ struct node* copy(struct node *head) {
 
 ![deep copying a linked list](https://user-images.githubusercontent.com/4745789/80907205-76d87580-8d32-11ea-88a8-153a94d92d72.png)
 
-Going by the details, we understand that deep copying is a very memory-intensive operation for any resource.
+Going by the details, we understand that deep copying is a very memory-intensive operation, and hence we try to not do it very often.
 
 # Why Copy-on-Write
 Copy-on-Write, as established earlier, suggests we defer the copy operation until the first modification is requested. The approach suits the best when the traversal and access operations vastly outnumber the mutations. CoW has a number of advantages, some of them are
