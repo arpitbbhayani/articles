@@ -33,14 +33,14 @@ struct node* copy(struct node *head) {
 Going by the details, we understand that deep copying is a very memory-intensive operation for any resource.
 
 # Why Copy-on-Write
-Copy-on-Write, as established earlier, suggests we defer the copy operation until the first modification is requested. The approach suits the best when the traversal and access operations vastly outnumber the mutations. CoW has anumber of advantages, some of them are
+Copy-on-Write, as established earlier, suggests we defer the copy operation until the first modification is requested. The approach suits the best when the traversal and access operations vastly outnumber the mutations. CoW has a number of advantages, some of them are
 
 ## Perceived performance gain
-By having a CoW technique, the process need not wait for the deep copy to happen, instead it could directly proceed to the next phase by doing a copy-by-reference, and thus gaining a performance boost. Although we cannot totally get rid of deep copy because we have to copy when the modifications are made but if the system is read heavy, this gain is huge.
+By having a CoW, the process need not wait for the deep copy to happen, instead it could directly proceed to the next phase by just doing a copy-by-reference, which is much faster than a deep copy, and thus gaining a performance boost. Although we cannot totally get rid of deep copy because once some modification is requested the deep copy has to be triggered.
 
-A particular example is of the `fork` system call.
+A particular example where we gain a significant performance is during the `fork` system call.
 
-`fork` system call creates child process which in turn copies entire memory space of parent. If during this `fork` call if the parent's space is huge and we deep copy, the time taken to create child process will shoot up. Hence instead by having a CoW we would just copy-by-reference and child could point to the same space as parent until the child makes some modification to the space.
+`fork` system call creates child process that is a spitting copy of its parent. During this `fork` call, if the parent's memory space is huge and we deep copy, the time taken to create child process will shoot up. But if we just copy-by-reference and child process could be spun superfast and once child decides to make some modification to the memory space that is where we trigger the deep copy.
 
 ## Better resource management
 CoW gives us an optimistic way to manage memory. One peculiar property that CoW exploits is how before any modification to the copied instance, both the original and copied resource are exactly the same.
