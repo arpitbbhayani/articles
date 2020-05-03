@@ -2,28 +2,8 @@ Copy-On-Write, abbreviately referred as CoW, is a semantic that suggests to defe
 
 CoW suggests that we first copy by reference and let both instances point to the same resource and just before the first modification we clone the original resource and then apply the modification. Thus CoW suggets we defer the process of copying until the first modification is about to be made.
 
-# Why should we Copy-on-Write
-CoW gives a significant improvement while creating the first copy of any resource. Since the first copy is just a copy-by-reference it is lightning fast. CoW also does really well in cases where the copied resources are never modified. Deep-copying a resource that is never modified is a waste of memory and CPU cycles, using CoW hus saves these efforts.
-
-CoW is just a semantic and it tells what and not how. Thus the implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
-
-
-Copy-on-Write is a wonderful way to save 
-the copy operation is deferred to the first write
-it is possible to significantly reduce the resource consumption of unmodified copies, while adding a small overhead to resource-modifying operations
-when traversal operations vastly outnumber mutations
-
- - removes the need of deep copying
- - say if copy something and do not modify at all, out deep copy efforts are a loss
- - efficient rollbacks
-
-
-To gain a deeper understanding we see how enfficiently could be make CoW for a Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
-
 # Deep copying
-The process of creating a pure clone of the reousce is called Deep-Copying and it copies not only the immediate pages but also all the remote resources that are referenced within those pages. Going by the details of deep-copying we know that deep-copying a resource is a very memory intensive process.
-
-Creating a deep copy of a linkedlist
+The process of creating a pure clone of the reousce is called Deep-Copying and it copies not only the immediate resource but also all the remote resources that are referenced within it. Thus if we were to copy a LinkedList we will not only copy the head pointer to it but also clone all the nodes of it and create an entirely new LinkedList from the original one. A C++ function deep copying a LinkedList is as illustrated below
 
 ```cpp
 struct node* copy(struct node *head) {
@@ -47,6 +27,33 @@ struct node* copy(struct node *head) {
     return nhead;
 }
 ```
+
+Going by the details, we know that deep-copying any resource is going to be a super heavy on memory. Thus
+
+# Why should we Copy-on-Write
+CoW is an optimistic way of memory management. It has the following intention.
+
+> Why bother copying something, if it is never going to be modified.
+
+By deferring the copy until the first modification we are saving a bunch of memory and first copy time
+
+
+CoW gives a significant improvement while creating the first copy of any resource. Since the first copy is just a copy-by-reference it is lightning fast. CoW also does really well in cases where the copied resources are never modified. Deep-copying a resource that is never modified is a waste of memory and CPU cycles, using CoW hus saves these efforts.
+
+CoW is just a semantic and it tells what and not how. Thus the implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
+
+Copy-on-Write is a wonderful way to save 
+the copy operation is deferred to the first write
+it is possible to significantly reduce the resource consumption of unmodified copies, while adding a small overhead to resource-modifying operations
+when traversal operations vastly outnumber mutations
+
+ - removes the need of deep copying
+ - say if copy something and do not modify at all, out deep copy efforts are a loss
+ - efficient rollbacks
+
+
+To gain a deeper understanding we see how enfficiently could be make CoW for a Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
+
 
 # Effieicnt Copy-on-write on a Binary Tree
 Given a Binary Tree `A` we create a copy `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to `A`. Naive way is to copy and clone all the nodes of the tree and let `B` now points to root of this new tree, as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
