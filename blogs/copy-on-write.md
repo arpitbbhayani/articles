@@ -80,9 +80,9 @@ int main( void ) {
 ```
 
 ## No Locks Needed
-Locks are required when we have in-place updates. Because multiple writers could try to modify the same instance of resource and thus to maintain data integrity we define a [critical section](https://en.wikipedia.org/wiki/Critical_section) and apply locks such that only one process could enter the critical section and update the resource at a time.
+Locks are required when we have in-place updates. Multiple writers tries to modify the same instance of resource and hence we define a [critical section](https://en.wikipedia.org/wiki/Critical_section) where the core updations happen. This critical section is bounded by locks and any writer who which to modify would have to acquire the lock. This streamlines the wrtiers and ensures only one writer could enter the critical section at any point in time, creating a chokepoint.
 
-If we follow this CoW aggresively, which suggests we copy before we write, there will be no in-place updates. All updates will result in an true copy and then in one atomic [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap) operation system could switch to a newer version.
+If we follow CoW aggresively, which suggests we copy before we write, there will be no in-place updates. All variables during updation will create a clone, apply modfication on this clone and then in one atomic [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap) operation switch and start pointing to this newer version.
 
 ![Updating variables without locks](https://user-images.githubusercontent.com/4745789/80912595-9fc13080-8d5b-11ea-9b73-599b673e6715.png)
 
