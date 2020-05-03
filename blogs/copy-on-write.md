@@ -3,17 +3,19 @@ Copy-On-Write, abbreviately referred as CoW, is a semantic that suggests to defe
 The process of creating a pure clone of the reousce is called Deep-Copying and it copies not only the immediate pages but also all the remote resources that are referenced within those pages. Going by the details of deep-copying we know that deep-copying a resource is a very memory intensive process.
 
 CoW gives a significant improvement while creating the first copy of any resource. Since the first copy is just a copy-by-reference it is lightning fast. CoW also does really well in cases where the copied resources are never modified. Deep-copying a resource that is never modified is a waste of memory and CPU cycles, using CoW hus saves these efforts.
- 
- To gain a deeper understanding we see how CoW makes copying of a [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree) super efficient.
 
-# Copy-on-write on a Binary Tree
-Given a Binary Tree `A` we create a copy of `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to `A`. Naive way is to copy and clone all the nodes of the tree and let `B` now points to root of this new tree, as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
+CoW is just a semantic and it tells what and not how. Thus the implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
+
+To gain a deeper understanding we see how enfficiently could be make CoW for a Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
+
+# Effieicnt Copy-on-write on a Binary Tree
+Given a Binary Tree `A` we create a copy `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to `A`. Naive way is to copy and clone all the nodes of the tree and let `B` now points to root of this new tree, as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
 
 ![Deep Copying a Binary Tree](https://user-images.githubusercontent.com/4745789/80859895-b3986400-8c81-11ea-9ebe-829540df77d5.png)
 
-Copy-on-Write semantics suggest an optimistic approach where `B` instead of pointing to the cloned `A`, shares the same reference as `A` which means it also points to the exact same tree as `A`. But if both variables point to the same tree, how do we ensure isolation?
+Copy-on-Write semantics suggest an optimistic approach where `B` instead of pointing to the cloned `A`, shares the same reference as `A` which means it also points to the exact same tree as `A`. Now say we modify the node `2` in tree `B` and change its value to `9`. As per CoW now we need to clone the tree and then apply the modifications.
 
-The Copy-on-Write semantics kick in when any modification happens. Say in tree `B` we change the value of node `2` to `9`, since we do not want tree `A` to see the change, instead of copying entire tree, only the path from the updated node till the root is cloned, keeping all other pointers refereces same, and now `B` points to this new root.
+Again a naive way would be to clone the entire tree and then make the necessary modifications, but observing closely we find that a lot of pointers could be reused and hence a better approach would be to only copy the path from the updated node till the root, keeping all other pointers refereces same, and now `B` points to this new root, as shown in the illustration.
 
 ![Copy-on-Write a Binary Tree](https://user-images.githubusercontent.com/4745789/80869877-7606fb80-8cc0-11ea-8a9b-2b7312a59f11.png)
 
