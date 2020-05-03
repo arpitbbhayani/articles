@@ -47,9 +47,9 @@ CoW gives us an optimistic way to manage memory. One peculiar property that CoW 
 
 Things change when the first modification is made to the copied instance and that's where readers of the corresponding resource would expect to see things differently. But what if the copied instance is never modified?
 
-Since there are no modifications, the deep copy would never happen and hence the only operation that happened was a, super-fast, copy-by-reference of the original resource; and thus we just saved an expensive deep copy operation.
+Since there are no modifications, the deep copy would never happen and hence the only operation that happened was a super-fast, copy-by-reference of the original resource; and thus we just saved an expensive deep copy operation.
 
-This usually happens when the `fork` system call is made. One very common pattern in OS is called [fork-exec](https://en.wikipedia.org/wiki/Fork%E2%80%93exec) in which a child process is forked as a spitting copy of its parent but it immediately executes another program, using `exec` family of functions, replacing its entire space. Since the child do not intend to modify its program space, inherited from the parent, and just wants to replace it with the new program, deep copy plays no part. So if we defer the deep copy operation until modification, the deep copy would never happen and we thus save a bunch of memory and CPU cycles.
+This usually happens when the `fork` system call is made. One very common pattern in OS is called [fork-exec](https://en.wikipedia.org/wiki/Fork%E2%80%93exec) in which a child process is forked as a spitting copy of its parent but it immediately executes another program, using `exec` family of functions, replacing its entire space. Since the child does not intend to modify its program space, inherited from the parent, and just wants to replace it with the new program, deep copy plays no part. So if we defer the deep copy operation until modification, the deep copy would never happen and we thus save a bunch of memory and CPU cycles.
 
 ```cpp
 #include <stdio.h>
