@@ -80,14 +80,16 @@ int main( void ) {
 ```
 
 ## Updating without locks
-Locks are required when we have in-place updates. Multiple writers try to modify the same instance of the resource and hence we define a [critical section](https://en.wikipedia.org/wiki/Critical_section) where the core updations happen. This critical section is bounded by locks and any writer who which to modify would have to acquire the lock. This streamlines the writers and ensures only one writer could enter the critical section at any point in time, creating a chokepoint.
+Locks are required when we have in-place updates. Multiple writers try to modify the same instance of the resource and hence we need to define a [critical section](https://en.wikipedia.org/wiki/Critical_section) where the updations happen. This critical section is bounded by locks and any writer who whises to modify would have to acquire the lock. This streamlines the writers and ensures only one writer could enter the critical section at any point in time, creating a chokepoint.
 
-If we follow CoW aggressively, which suggests we copy before we write, there will be no in-place updates. All variables during updation will create a clone, apply modfication on this clone and then in one atomic [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap) operation switch and start pointing to this newer version; thus eradicating need of locking entirely. The memory loction with the old value will be garbage collected.
+If we follow CoW aggressively, which suggests we copy before we write, there will be no in-place updates. All variables during every single updation will create a clone, apply updates to it and then in one atomic [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap) operation switch and start pointing to this newer version; thus eradicating need of locking entirely. Garbage collection on unsed items, with old values, could happen from time to time.
 
 ![Updating variables without locks](https://user-images.githubusercontent.com/4745789/80912595-9fc13080-8d5b-11ea-9b73-599b673e6715.png)
 
 ## Versioning and point in time snapshots
-One timeline of all data
+If we aggresively follow CoW then on every write we create a clone, a copy, of the original resource and apply updates to it. If we do not garbage collect the older instances, what is get is the history of the resouce in a timeline.
+
+This is exactly how a collaborative document tool does document versioning, or a database engine does point in time snapshots. These snapshots enable us to revert our database or data struture, somewhere in the past and receover the data in case of some failure or data loss.
 
 # Implementing CoW
 CoW is just a technique and it tells us what and not how. The implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
