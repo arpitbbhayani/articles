@@ -1,9 +1,9 @@
-Copy-On-Write, abbreviately referred as CoW, is a semantic that suggests to defer the copy process until the first modification. A resource is usually copied when we do not want the changes made in either resources to be visible to the other. A resource here could be anything - an in-memory page, a database disk block, an item in a structure or even the entire data structure.
+Copy-On-Write, abbreviately referred to as CoW suggests deferring the copy process until the first modification. A resource is usually copied when we do not want the changes made in either resource to be visible to the other. A resource here could be anything - an in-memory page, a database disk block, an item in a structure or even the entire data structure.
 
-CoW suggests that we first copy by reference and let both instances point to the same resource and before the first modification we clone the original resource and then apply the updates. In a gist CoW suggets we defer the process of copying until the first modification is about to be made.
+CoW suggests that we first copy by reference and let both instances point to the same resource and before the first modification we clone the original resource and then apply the updates. In a gist CoW suggests we defer the process of copying until the first modification is about to be made.
 
 # Deep copying
-The process of creating a pure clone of the reousce is called [Deep Copying](https://en.wikipedia.org/wiki/Object_copying#Deep_copy) and it copies not only the immediate resource but also all the remote resources that are referenced within it. Thus if we were to __deep copy__ a [Linked List](https://en.wikipedia.org/wiki/Linked_list) we do not copy the head pointer, rather we clone all the nodes of the list and create an entirely new list from the original one. A C++ function deep copying a LinkedList is as illustrated below
+The process of creating a pure clone of the resource is called [Deep Copying](https://en.wikipedia.org/wiki/Object_copying#Deep_copy) and it copies not only the immediate resource but also all the remote resources that are referenced within it. Thus if we were to deep copy a [Linked List](https://en.wikipedia.org/wiki/Linked_list) we do not copy the head pointer, rather we clone all the nodes of the list and create an entirely new list from the original one. A C++ function deep copying a Linked List is as illustrated below
 
 ```cpp
 struct node* copy(struct node *head) {
@@ -30,7 +30,7 @@ struct node* copy(struct node *head) {
 
 ![Deep-copying a linked list](https://user-images.githubusercontent.com/4745789/80907205-76d87580-8d32-11ea-88a8-153a94d92d72.png)
 
-Going by the details, we understand that deep-copying is a very memory intensive operation for any resource.
+Going by the details, we understand that deep-copying is a very memory-intensive operation for any resource.
 
 # Why should we Copy-on-Write
 CoW is an optimistic way of memory management. As established earlier, in CoW we defer the process of copying until modification. One peculiar property that CoW exploits is how before any modification to a poied instance, both the original resource and copied resource are exactly the same. Hence no matter if the reader is reading from original resource or the copied resource, it will traverse and access the same data. Hence copying by reference would make no difference until the first modification.
@@ -63,7 +63,7 @@ Again a naive way would be to clone the entire tree and then make the necessary 
 
 ![Copy-on-Write a Binary Tree](https://user-images.githubusercontent.com/4745789/80869877-7606fb80-8cc0-11ea-8a9b-2b7312a59f11.png)
 
-Copy on write is just a semantic, the implementation of this semantic depends on the data structure and the usecase. CoW with trees could be implemented as shown above, for LinkedList things are very similar to Trees becoase everything is just a pointer. In arrays 
+Copy on write is just a semantic, the implementation of this semantic depends on the data structure and the usecase. CoW with trees could be implemented as shown above, for Linked List things are very similar to Trees becoase everything is just a pointer. In arrays 
 
 # CoW in action
 In this section we see how Copy-on-Write semantics finds its use in a variety of fields and branches like Operating Systems, Databases, and even Time Travel.
