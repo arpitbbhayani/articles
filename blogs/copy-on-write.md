@@ -79,10 +79,10 @@ int main( void ) {
 }
 ```
 
-## No Locks Needed
-Locks are required when we have in-place updates. Multiple writers tries to modify the same instance of resource and hence we define a [critical section](https://en.wikipedia.org/wiki/Critical_section) where the core updations happen. This critical section is bounded by locks and any writer who which to modify would have to acquire the lock. This streamlines the wrtiers and ensures only one writer could enter the critical section at any point in time, creating a chokepoint.
+## Updating without locks
+Locks are required when we have in-place updates. Multiple writers try to modify the same instance of the resource and hence we define a [critical section](https://en.wikipedia.org/wiki/Critical_section) where the core updations happen. This critical section is bounded by locks and any writer who which to modify would have to acquire the lock. This streamlines the writers and ensures only one writer could enter the critical section at any point in time, creating a chokepoint.
 
-If we follow CoW aggresively, which suggests we copy before we write, there will be no in-place updates. All variables during updation will create a clone, apply modfication on this clone and then in one atomic [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap) operation switch and start pointing to this newer version.
+If we follow CoW aggressively, which suggests we copy before we write, there will be no in-place updates. All variables during updation will create a clone, apply modfication on this clone and then in one atomic [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap) operation switch and start pointing to this newer version; thus eradicating need of locking entirely. The memory loction with the old value will be garbage collected.
 
 ![Updating variables without locks](https://user-images.githubusercontent.com/4745789/80912595-9fc13080-8d5b-11ea-9b73-599b673e6715.png)
 
