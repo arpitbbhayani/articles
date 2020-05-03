@@ -94,7 +94,7 @@ Each update creates a new version of the resource and thus we get resource versi
 # Implementing CoW
 CoW is just a technique and it tells us what and not how. The implementation is all in the hands of the system and depending on the type of resource being CoW'ed the implementation details differ.
 
-The naive way to perform copy is deep copy which as established before is a super inefficient way. We can do a lot better than then by understanding the nuances of the unlying resource. To gain a deeper understanding we see how efficiently we could make CoW Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
+The naive way to perform copy is deep copy which, as established before, is a super inefficient way. We can do a lot better than this by understanding the nuances of the underlying resource. To gain a deeper understanding we see how efficiently we could make CoW Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
 
 ## Efficient Copy-on-write on a Binary Tree
 Given a Binary Tree `A` we create a copy `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to `A`. The naive way is to copy and clone all the nodes of the tree and let `B` now points to the root of this new tree, as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
