@@ -33,23 +33,28 @@ struct node* copy(struct node *head) {
 Going by the details, we understand that deep-copying is a very memory-intensive operation for any resource.
 
 # Why should we Copy-on-Write
-CoW suits the best when the number of traversal and access operations vastly outnumber the number of mutations.
+Copy-on-Write, as established earlier, suggests we defer the copy operation until the first modification is requested. The approach suits the best when the number of traversal and access operations vastly outnumber the number of mutations. There are a number of advantages of using CoW, some of them are
 
 ## Getting things done quickly
-If instead of deep copy, we copy by reference, we get things done pretty quickly because now instead of going through a tedious way of copying all references and remote references we only need to copy reference to original resource.
+If instead of deep copy, we first copy by reference, we get things done pretty quickly because now instead of going through a tedious way of copying all references and remote references we only need to copy reference to the original resource.
 
-For example: `fork` system call creates child process as a copy of parent process. If instead of deep copying we copy-by-reference, the `fork` system call can execute pretty quickly rather than waiting for an entire parent memory to be deep copied.
+For example: `fork` system call creates child process as a copy of parent process. If instead of deep copying we copy-by-reference, the `fork` system call can execute quickly and need not wait for the entire parent memory to be copied. Hence the new child process is forked quickly. Now if the child process wants to write something to its memory then the entire memory space is deep-copied.
+
+## Why deep-copy if there are no modifications
+If the copied resource is never modified, having a CoW approach would be super performant. The there are no modifications, the resources need not be deep dopied and hence it saves a lot of Memory and computations.
+
+THis is usually the case when the `fork` system call is made to create child process. [fork-exec-wait]() is a very common pattern in operating systems; where a child process is forked and immedeatly it executes a program replacing the entire copied parent space. Here since the child do not intend to modify its program space, inherited from parent, and simply replace it with the new program, bu having CoW makes sene. We have a lot of efforts.
+
+## No Locks Required
+
 
 ## Readers do not see a difference
 CoW gives us an optimistic way to manage memory. One peculiar property that CoW exploits is how before any modification to the copied instance, both the original and copied resource are exactly the same.
 
 The readers, thus, cannot distinguish if it is reading from original resource or the copied one. Hence deep-copy and copy-by-reference would look and feel exactly the same to a reader. The things change when the first modification is made to the copied instance and thats where, readers of corresponding resource would see things differently, and hence just before that we copy the resource.
 
-## Why deep-copy if there are no modifications
-CoW also does really well in cases where the copied resources are never modified. Deep-copying a resource that is never modified is a waste of memory and CPU cycles, using CoW hus saves these efforts.
-
 # Implementing CoW
-CoW is just a semantic and it tells what and not how. Thus the implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
+CoW is just a technique and it tells us what and not how. The implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
 
 Naive way is how we deep copy a list. But we can do a lot better.
 
