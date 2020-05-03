@@ -126,7 +126,7 @@ Deepcopying document on every single update is not a good option as it would req
 
 CoW semantic could help in this as when the document is updated only some part of the document is updated after the last save, thus CoW is ideal for such scenarious.
 
-## CoW in Time Travel
+## CoW in modelling Time Travel
 Whenever Flash, a DC Superhero, goes back in time to fix something, he creates a new time line. This new timeline
 has all of its events fareing in a different way depending on which event was interefered with.
 
