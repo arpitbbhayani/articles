@@ -89,15 +89,15 @@ If we follow CoW aggressively, which suggests we copy before we write, there wil
 ## Versioning and point in time snapshots
 If we aggressively follow CoW then on every write we create a clone of the original resource and apply updates to it. If we do not garbage collect the older unused instances, what we get is the history of the resource that shows us how it has been changing with time (every write operation).
 
-Each update creates a new version of the resource and thus we get resource versioning; enabling us to take a point-in-time snapshots. This particular behavior is used by all collaborative document tools, like [Google Docs](https://en.wikipedia.org/wiki/Google_Docs), to provide document versioning. Point-in-time snapshots are also used in database to take timely backups allowing us to have a rollback and recovery plan in case of some data loss or worse a database failure.
+Each update creates a new version of the resource and thus we get resource versioning; enabling us to take point-in-time snapshots. This particular behavior is used by all collaborative document tools, like [Google Docs](https://en.wikipedia.org/wiki/Google_Docs), to provide document versioning. Point-in-time snapshots are also used in the databases to take timely backups allowing us to have a rollback and recovery plan in case of some data loss or worse a database failure.
 
 # Implementing CoW
 CoW is just a technique and it tells us what and not how. The implementation is all in the hands of the system and depending on the type of resource being CoW'ed the implementation details differ.
 
-The naive way to perform copy is deep copy which, as established before, is a super inefficient way. We can do a lot better than this by understanding the nuances of the underlying resource. To gain a deeper understanding we see how efficiently we could make CoW Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
+The naive way to perform copy operation is by doing a deep copy which, as established before, is a super inefficient way. We can do a lot better than this by understanding the nuances of the underlying resource. To gain a deeper understanding we see how efficiently we could make CoW Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
 
 ## Efficient Copy-on-write on a Binary Tree
-Given a Binary Tree `A` we create a copy `B` such that any modifications by `A` is not visible to `B` and any modifications on `B` are not visible to `A`. Simplest way to acieve this is by cloning all the nodes of the tree, their pointer references and create a second tree which is then pointed by `B` - as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
+Given a Binary Tree `A` we create a copy `B` such that any modifications by `A` are not visible to `B` and any modifications on `B` are not visible to `A`. The simplest way to acieve this is by cloning all the nodes of the tree, their pointer references, and create a second tree which is then pointed by `B` - as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
 
 ![Deep Copying a Binary Tree](https://user-images.githubusercontent.com/4745789/80859895-b3986400-8c81-11ea-9ebe-829540df77d5.png)
 
@@ -107,12 +107,12 @@ Observing closely we find that a lot of pointers could be reused and hence a bet
 
 ![Copy-on-Write a Binary Tree](https://user-images.githubusercontent.com/4745789/80869877-7606fb80-8cc0-11ea-8a9b-2b7312a59f11.png)
 
-Thus instead of maintaining two separate mutually exclusive trees, we make space partially exclusive depending on which node is updated and in the process make things efficient with respect to memory and time. This behaviour is core to a family of data strutures called [Persistent Data Structures](https://en.wikipedia.org/wiki/Persistent_data_structure).
+Thus instead of maintaining two separate mutually exclusive trees, we make space partially exclusive depending on which node is updated and in the process make things efficient with respect to memory and time. This behavior is core to a family of data structures called [Persistent Data Structures](https://en.wikipedia.org/wiki/Persistent_data_structure).
 
 > Fun fact: You can model Time Travel using Copy-on-Write semantics.
 
 # Why shouldn't we Copy-on-Write
-CoW is an expensive process if done aggressively. If on every single write, we create a copy then in a system that is write-heavy, things could go out of hand very soon. A lot of CPU cycles will be occupied for doing garbage collections and thus stalling the core processes. Picking which battles to win is important while chosing something as fragile as Copy-on-Write.
+CoW is an expensive process if done aggressively. If on every single write, we create a copy then in a system that is write-heavy, things could go out of hand very soon. A lot of CPU cycles will be occupied for doing garbage collections and thus stalling the core processes. Picking which battles to win is important while choosing something as fragile as Copy-on-Write.
 
 # References
  - [Copy on Write](https://en.wikipedia.org/wiki/Copy-on-write)
