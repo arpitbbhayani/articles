@@ -31,39 +31,26 @@ struct node* copy(struct node *head) {
 Going by the details, we understand how memory intensive deep-copying can be for any resource.
 
 # Why should we Copy-on-Write
-CoW is an optimistic way of memory management; as we defer the copy process until modification.
-This actually makes sense
+CoW is an optimistic way of memory management. As established earlier, in CoW we defer the process of copy until modification because until the modification both, original and copied resource are exactly the same. Thus the readers would not see any difference if they are accessing Original or copied. Things will start to change only after some modification is made.
 
-Until any modification being made on either original or copied instance, both are exactly the same.
-Then what is the benefit of even copying the resource in the first place?
-
-This intuition is mthe core principle of CoW.
-
-It has the following intention.
-
-> Why bother copying something, if it is never going to be modified.
-
-By deferring the copy until the first modification we are saving a bunch of memory and first copy time
-
-
-CoW gives a significant improvement while creating the first copy of any resource. Since the first copy is just a copy-by-reference it is lightning fast. CoW also does really well in cases where the copied resources are never modified. Deep-copying a resource that is never modified is a waste of memory and CPU cycles, using CoW hus saves these efforts.
-
-CoW is just a semantic and it tells what and not how. Thus the implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
-
-Copy-on-Write is a wonderful way to save 
-the copy operation is deferred to the first write
 it is possible to significantly reduce the resource consumption of unmodified copies, while adding a small overhead to resource-modifying operations
 when traversal operations vastly outnumber mutations
 
- - removes the need of deep copying
- - say if copy something and do not modify at all, out deep copy efforts are a loss
- - efficient rollbacks
+## Performance gain during copy-by-reference
+Since the first copy is just copy-by-reference, the instruction is executed lightninging fast and the process does not really need to wait for the epensive deep-copy to happen.
 
+## Performance in read-only use cases
+CoW also does really well in cases where the copied resources are never modified. Deep-copying a resource that is never modified is a waste of memory and CPU cycles, using CoW hus saves these efforts.
+
+# Implementing CoW
+CoW is just a semantic and it tells what and not how. Thus the implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
+
+Naive way is how we deep copy a list. But we can do a lot better.
 
 To gain a deeper understanding we see how enfficiently could be make CoW for a Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
 
 
-# Effieicnt Copy-on-write on a Binary Tree
+## Effieicnt Copy-on-write on a Binary Tree
 Given a Binary Tree `A` we create a copy `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to `A`. Naive way is to copy and clone all the nodes of the tree and let `B` now points to root of this new tree, as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
 
 ![Deep Copying a Binary Tree](https://user-images.githubusercontent.com/4745789/80859895-b3986400-8c81-11ea-9ebe-829540df77d5.png)
