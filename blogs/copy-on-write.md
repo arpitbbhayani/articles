@@ -103,11 +103,11 @@ Given a Binary Tree `A` we create a copy `B` such that any modifications by `A` 
 
 Copy-on-Write semantics suggest an optimistic approach where `B` instead of pointing to the cloned `A`, shares the same reference as `A` which means it also points to the exact same tree as `A`. Now say, we modify the node `2` in tree `B` and change its value to `9`.
 
-Observing closely we find that a lot of pointers could be reused and hence a better approach would be to only copy the path from the updating node till the root, keeping all other pointers references same, and now `B` points to this new root, as shown in the illustration.
+Observing closely we find that a lot of pointers could be reused and hence a better approach would be to only copy the path from the updating node till the root, keeping all other pointers references same, and let `B` point to this new root, as shown in the illustration.
 
 ![Copy-on-Write a Binary Tree](https://user-images.githubusercontent.com/4745789/80869877-7606fb80-8cc0-11ea-8a9b-2b7312a59f11.png)
 
-Thus instead of maintaining two separate mutually exclusive trees, we make space partially exclusive depending on which node is updated and in the process save a lot of memory and time. This behaviour is core to a family of data strutures called [Persistent Data Structures](https://en.wikipedia.org/wiki/Persistent_data_structure).
+Thus instead of maintaining two separate mutually exclusive trees, we make space partially exclusive depending on which node is updated and in the process make things efficient with respect to memory and time. This behaviour is core to a family of data strutures called [Persistent Data Structures](https://en.wikipedia.org/wiki/Persistent_data_structure).
 
 > Fun fact: You can model Time Travel using Copy-on-Write semantics.
 
