@@ -92,11 +92,9 @@ If we aggressively follow CoW then on every write we create a clone, a copy, of 
 Each update creates a new version of the resource and thus we get resource versioning enabling us to take a point in time snapshots. This particular behavior is used by all collaborative document tools, like Google Docs, to have document versioning. This is also used in taking timely point in time snapshots of a database that enables us to have a rollback and recovery plan in case of a database failure or data loss.
 
 # Implementing CoW
-CoW is just a technique and it tells us what and not how. The implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
+CoW is just a technique and it tells us what and not how. The implementation is all in the hands of the system and depending on the type of resource being CoW'ed the implementation details differ.
 
-Naive way is how we deep copy a list. But we can do a lot better.
-
-To gain a deeper understanding we see how enfficiently could be make CoW for a Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
+The naive way to perform copy is deep copy which as established before is a super inefficient way. We can do a lot better than then by understanding the nuances of the unlying resource. To gain a deeper understanding we see how enfficiently we could make CoW Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
 
 ## Effieicnt Copy-on-write on a Binary Tree
 Given a Binary Tree `A` we create a copy `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to `A`. Naive way is to copy and clone all the nodes of the tree and let `B` now points to root of this new tree, as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
@@ -109,15 +107,7 @@ Again a naive way would be to clone the entire tree and then make the necessary 
 
 ![Copy-on-Write a Binary Tree](https://user-images.githubusercontent.com/4745789/80869877-7606fb80-8cc0-11ea-8a9b-2b7312a59f11.png)
 
-Copy on write is just a semantic, the implementation of this semantic depends on the data structure and the usecase. CoW with trees could be implemented as shown above, for Linked List things are very similar to Trees becoase everything is just a pointer. In arrays 
-
 > Fun fact: You can model Time Travel using Copy-on-Write semantics.
-
-## CoW in Data Structures
-Persistent Data Structures is hwere 
-There are data strucutes that upon updation creates a new copy instead of making an
-in-place update. For example: adding a new element in array, we create a new copy.
-Why such data strutures are needed?
 
 # Why shouldn't we Copy-on-Write
 CoW is an expensive process if done aggressively. If on every single write, we create a copy then in a system that is write heavy, things could go out of hand very soon. A lot of CPU cycles will be occupied for garbage collections.
