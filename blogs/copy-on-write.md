@@ -1,6 +1,6 @@
-Copy-On-Write, abbreviately referred to as CoW suggests deferring the copy process until the first modification. A resource is usually copied when we do not want the changes made in either resource to be visible to the other. A resource here could be anything - an in-memory page, a database disk block, an item in a structure or even the entire data structure.
+Copy-On-Write, abbreviately referred to as CoW suggests deferring the copy process until the first modification. A resource is usually copied when we do not want the changes made in either resource to be visible to the other. A resource here could be anything - an in-memory page, a database disk block, an item in a structure, or even the entire data structure.
 
-CoW suggests that we first copy by reference and let both instances point to the same resource and before the first modification we clone the original resource and then apply the updates. In a gist CoW suggests we defer the process of copying until the first modification is about to be made.
+CoW suggests that we first copy by reference and let both instances point to the same resource and before the first modification we clone the original resource and then apply the updates. In a gist, CoW suggests we defer the process of copying until the first modification is about to be made.
 
 # Deep copying
 The process of creating a pure clone of the resource is called [Deep Copying](https://en.wikipedia.org/wiki/Object_copying#Deep_copy) and it copies not only the immediate resource but also all the remote resources that are referenced within it. Thus if we were to deep copy a [Linked List](https://en.wikipedia.org/wiki/Linked_list) we do not copy the head pointer, rather we clone all the nodes of the list and create an entirely new list from the original one. A C++ function deep copying a Linked List is as illustrated below
@@ -36,11 +36,11 @@ Going by the details, we understand that deep copying is a very memory-intensive
 Copy-on-Write, as established earlier, suggests we defer the copy operation until the first modification is requested. The approach suits the best when the traversal and access operations vastly outnumber the mutations. CoW has a number of advantages, some of them are
 
 ## Perceived performance gain
-By having a CoW, the process need not wait for the deep copy to happen, instead it could directly proceed by just doing a copy-by-reference, where the resource is shared between the two, which is much faster than a deep copy, and thus gaining a performance boost. Although we cannot totally get rid of deep copy because once some modification is requested the deep copy has to be triggered.
+By having a CoW, the process need not wait for the deep copy to happen, instead, it could directly proceed by just doing a copy-by-reference, where the resource is shared between the two, which is much faster than a deep copy and thus gaining a performance boost. Although we cannot totally get rid of deep copy because once some modification is requested the deep copy has to be triggered.
 
 A particular example where we gain a significant performance boost is during the `fork` system call.
 
-`fork` system call creates child process that is a spitting copy of its parent. During this `fork` call, if the parent's memory space is huge and we trigger deep copy, the time taken to create child process will shoot up. But if we just do copy-by-reference at first the child process could be spun superfast. Once the child decides to make some modification then we trigger the deep copy.
+`fork` system call creates a child process that is a spitting copy of its parent. During this `fork` call, if the parent's memory space is huge and we trigger deep copy, the time taken to create child process will shoot up. But if we just do copy-by-reference at first the child process could be spun superfast. Once the child decides to make some modification then we trigger the deep copy.
 
 ## Better resource management
 CoW gives us an optimistic way to manage memory. One peculiar property that CoW exploits is how before any modification to the copied instance, both the original and copied resource are exactly the same.
