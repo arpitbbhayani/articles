@@ -1,4 +1,4 @@
-Copy-On-Write, abbreviately referred to as CoW suggests deferring the copy process until the first modification. A resource is usually copied when we do not want the changes made in the either to be visible to the other. A resource here could be anything - an in-memory page, a database disk block, an item in a structure, or even the entire data structure.
+Copy-On-Write, abbreviately referred to as CoW suggests deferring the copy process until the first modification. A resource is usually copied when we do not want the changes made in either to be visible to the other. A resource here could be anything - an in-memory page, a database disk block, an item in a structure, or even the entire data structure.
 
 CoW suggests that we first copy by reference and let both instances share the same resource and just before the first modification we clone the original resource and then apply the updates.
 
@@ -119,3 +119,18 @@ CoW is an expensive process if done aggressively. If on every single write, we c
  - [Copy on Write](https://en.wikipedia.org/wiki/Copy-on-write)
  - [Persistent Data Structures](https://en.wikipedia.org/wiki/Persistent_data_structure)
  - [Fork Exec Pattern](https://en.wikipedia.org/wiki/Fork%E2%80%93exec)
+
+---
+
+_Other articles you might like:_
+ - [What makes MySQL LRU cache scan resistant](https://arpitbhayani.me/blogs/mysql-cache)
+ - [Building Finite State Machines with Python Coroutines](https://arpitbhayani.me/blogs/fsm)
+ - [Solving an age-old problem using Bayesian Average ](https://arpitbhayani.me/blogs/bayesian-average)
+ - [Pseudorandom numbers using Cellular Automata - Rule 30](https://arpitbhayani.me/blogs/rule-30)
+ - [Overload Functions in Python](https://arpitbhayani.me/blogs/function-overloading)
+
+_This article was originally published on my [blog - Copy-on-Write Semantics](https://arpitbhayani.me/blogs/copy-on-write)._
+
+_If you liked what you read, subscribe to my newsletter and get the post delivered directly to your inbox and give me a shout-out [@arpit_bhayani](https://twitter.com/arpit_bhayani)._
+
+[![Subscribe to Arpit's newsletter](https://user-images.githubusercontent.com/4745789/79068776-07e59f00-7ce7-11ea-8eff-3918556a3682.png)](https://arpit.substack.com)
