@@ -119,20 +119,10 @@ There are data strucutes that upon updation creates a new copy instead of making
 in-place update. For example: adding a new element in array, we create a new copy.
 Why such data strutures are needed?
 
-## CoW in Real World applications
-While using a collaborative doument editor like, Google Doc, one malicious user with write access to the
-document could just erase entire content of the document.
-Thus we need a way to revert the changes made by the malicous user and user an earlier revision of the
-document that we know was last stable and proper version.
-
-Deepcopying document on every single update is not a good option as it would require the tool to create new copies on every update, say every second. Which is infeasible solution in terms of storage requirements.
-
-CoW semantic could help in this as when the document is updated only some part of the document is updated after the last save, thus CoW is ideal for such scenarious.
-
 # Why shouldn't we Copy-on-Write
 CoW is an expensive process if done aggressively. If on every single write, we create a copy then in a system that is write heavy, things could go out of hand very soon. A lot of CPU cycles will be occupied for garbage collections.
 
 # References
- - http://schd.ws/hosted_files/buildstuff14/96/20141120-BuildStuff-Lightning.pdf
- - https://stackoverflow.com/questions/35279756/what-is-special-about-internal-design-of-lmdb
+ - [Copy on Write](https://en.wikipedia.org/wiki/Copy-on-write)
+ - [Persistent Data Structures](https://en.wikipedia.org/wiki/Persistent_data_structure)
  - [Fork Exec Pattern](https://en.wikipedia.org/wiki/Fork%E2%80%93exec)
