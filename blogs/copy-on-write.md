@@ -36,11 +36,11 @@ Going by the details, we understand that deep copying is a very memory-intensive
 Copy-on-Write, as established earlier, suggests we defer the copy operation until the first modification is requested. The approach suits the best when the traversal and access operations vastly outnumber the mutations. CoW has a number of advantages, some of them are
 
 ## Perceived performance gain
-By having a CoW, the process need not wait for the deep copy to happen, instead it could directly proceed to the next phase by just doing a copy-by-reference, which is much faster than a deep copy, and thus gaining a performance boost. Although we cannot totally get rid of deep copy because once some modification is requested the deep copy has to be triggered.
+By having a CoW, the process need not wait for the deep copy to happen, instead it could directly proceed by just doing a copy-by-reference, where the resource is shared between the two, which is much faster than a deep copy, and thus gaining a performance boost. Although we cannot totally get rid of deep copy because once some modification is requested the deep copy has to be triggered.
 
-A particular example where we gain a significant performance is during the `fork` system call.
+A particular example where we gain a significant performance boost is during the `fork` system call.
 
-`fork` system call creates child process that is a spitting copy of its parent. During this `fork` call, if the parent's memory space is huge and we deep copy, the time taken to create child process will shoot up. But if we just copy-by-reference and child process could be spun superfast and once child decides to make some modification to the memory space that is where we trigger the deep copy.
+`fork` system call creates child process that is a spitting copy of its parent. During this `fork` call, if the parent's memory space is huge and we trigger deep copy, the time taken to create child process will shoot up. But if we just do copy-by-reference at first the child process could be spun superfast. Once the child decides to make some modification then we trigger the deep copy.
 
 ## Better resource management
 CoW gives us an optimistic way to manage memory. One peculiar property that CoW exploits is how before any modification to the copied instance, both the original and copied resource are exactly the same.
