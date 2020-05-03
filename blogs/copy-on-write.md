@@ -47,9 +47,37 @@ CoW gives us an optimistic way to manage memory. One peculiar property that CoW 
 
 Things change when the first modification is made to the copied instance and that's where readers of the corresponding resource would expect to see things differently. But what if the copied instance is never modified?
 
-Since there are no modifications, the deep copy would never happen and hence the only operation that happened was a, super-fast, copy-by-reference of the original resource; and thus we jsut saved an expensive deep copy operation.
+Since there are no modifications, the deep copy would never happen and hence the only operation that happened was a, super-fast, copy-by-reference of the original resource; and thus we just saved an expensive deep copy operation.
 
 This usually happens when the `fork` system call is made. One very common pattern in OS is called [fork-exec](https://en.wikipedia.org/wiki/Fork%E2%80%93exec) in which a child process is forked as a spitting copy of its parent but it immediately executes another program, using `exec` family of functions, replacing its entire space. Since the child do not intend to modify its program space, inherited from the parent, and just wants to replace it with the new program, deep copy plays no part. So if we defer the deep copy operation until modification, the deep copy would never happen and we thus save a bunch of memory and CPU cycles.
+
+```cpp
+#include <stdio.h>
+int main( void ) {
+    char * argv[2] = {".", NULL};
+
+    // fork spins the child process and both child and the parent
+    // continues to co-exist from this point with the same
+    // program space.
+    int pid = fork();
+
+    if ( pid == 0 ) {
+        // The entire child program space is replace by the
+        // execvp function call.
+        // The child continues to execute the `ls` command.
+        execvp("ls", argv);
+    }
+
+    // Child process will never reach here.
+    // hence all memory that was copied from its parent's
+    // program space is of no use.
+    
+    // The parent will continue its execution and print the
+    // following message.
+    printf("parent finishes...\n");
+    return 0;
+}
+```
 
 ## No Locks Needed
 One major benefit we get from CoW is that it removes the need of Locks altogether. Since on every write we are creating a new copy of the resource there are no in-place updates. Hence 
