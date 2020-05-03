@@ -2,10 +2,7 @@ Copy-On-Write, abbreviately referred as CoW, is a semantic that suggests to defe
 
 The process of creating a pure clone of the reousce is called Deep-Copying and it copies not only the immediate pages but also all the remote resources that are referenced within those pages. Going by the details of deep-copying we know that deep-copying a resource is a very memory intensive process.
 
-CoW gives a significant improvement in
-
- - creating the first copy of any resource
- - saving CPU and memory cycles in creating a deep copy of a resource which is never modified.
+CoW gives a significant improvement while creating the first copy of any resource. Since the first copy is just a copy-by-reference it is lightning fast. CoW also does really well in cases where the copied resources are never modified. Deep-copying a resource that is never modified is a waste of memory and CPU cycles, using CoW hus saves these efforts.
  
  To gain a deeper understanding we see how CoW makes copying of a [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree) super efficient.
 
