@@ -84,6 +84,8 @@ Locks are required when we have in-place updates. Because multiple writers could
 
 If we follow this CoW aggresively, which suggests we copy before we write, there will be no in-place updates. All updates will result in an true copy and then in one atomic [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap) operation system could switch to a newer version.
 
+![Updating variables without locks](https://user-images.githubusercontent.com/4745789/80912595-9fc13080-8d5b-11ea-9b73-599b673e6715.png)
+
 ## Versioning
 One timeline of all data
 
