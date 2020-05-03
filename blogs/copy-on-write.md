@@ -1,12 +1,13 @@
-Copy-On-Write, abbreviately referred as CoW, is a semantic that suggests to defer the copy process until the first modification. A resource is usually copied when we do not want the changes made to either the original instance or the copied instance to be visible to the other. A resource here could be anything, an in-memory page, a database block, an item in a structure or even the entire data structure. CoW suggests that let the first copy be made by reference and just before the first modification on the copied instance that we create a true copy or clone of the original instance.
+Copy-On-Write, abbreviately referred as CoW, is a semantic that suggests to defer the copy process until the first modification. A resource is usually copied when we do not want the changes made in either to be visible to the other. A resource here could be anything - an in-memory page, a database block, an item in a structure or even the entire data structure.
 
-The process of creating a pure clone of the reousce is called Deep-Copying and it copies not only the immediate pages but also all the remote resources that are referenced within those pages. Going by the details of deep-copying we know that deep-copying a resource is a very memory intensive process.
+CoW suggests that we first copy by reference and let both instances point to the same resource and just before the first modification we clone the original resource and then apply the modification. Thus CoW suggets we defer the process of copying until the first modification is about to be made.
 
+# Why should we Copy-on-Write
 CoW gives a significant improvement while creating the first copy of any resource. Since the first copy is just a copy-by-reference it is lightning fast. CoW also does really well in cases where the copied resources are never modified. Deep-copying a resource that is never modified is a waste of memory and CPU cycles, using CoW hus saves these efforts.
 
 CoW is just a semantic and it tells what and not how. Thus the implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
 
-# Why should we Copy-on-Write
+
 Copy-on-Write is a wonderful way to save 
 the copy operation is deferred to the first write
 it is possible to significantly reduce the resource consumption of unmodified copies, while adding a small overhead to resource-modifying operations
@@ -18,6 +19,34 @@ when traversal operations vastly outnumber mutations
 
 
 To gain a deeper understanding we see how enfficiently could be make CoW for a Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
+
+# Deep copying
+The process of creating a pure clone of the reousce is called Deep-Copying and it copies not only the immediate pages but also all the remote resources that are referenced within those pages. Going by the details of deep-copying we know that deep-copying a resource is a very memory intensive process.
+
+Creating a deep copy of a linkedlist
+
+```cpp
+struct node* copy(struct node *head) {
+    if (!head) {
+        return NULL;
+    }
+
+    struct node *nhead = (struct node *) malloc(sizeof(struct node))
+    nhead->val = head->val;
+
+    struct node *p = head;
+    struct node *q = nhead;
+
+    while(p -> next) {
+        q -> next = (struct node *) malloc(sizeof(struct node));
+        q -> next -> val = p -> next -> val;
+        p = p -> next;
+        q = q -> next;
+    }
+
+    return nhead;
+}
+```
 
 # Effieicnt Copy-on-write on a Binary Tree
 Given a Binary Tree `A` we create a copy `B` such that any modifications by `A` is not visible to `B` and any modifications by `B` are not visible to `A`. Naive way is to copy and clone all the nodes of the tree and let `B` now points to root of this new tree, as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
