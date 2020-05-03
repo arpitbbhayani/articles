@@ -55,6 +55,9 @@ This usually happens when the `fork` system call is made. One very common patter
 One major benefit we get from CoW is that it removes the need of Locks altogether. Since on every write we are creating a new copy of the resource there are no in-place updates. Hence 
 
 ## Versioning
+One timeline of all data
+
+## Point in time snapshots
 
 # Implementing CoW
 CoW is just a technique and it tells us what and not how. The implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
