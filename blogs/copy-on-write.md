@@ -6,6 +6,17 @@ CoW gives a significant improvement while creating the first copy of any resourc
 
 CoW is just a semantic and it tells what and not how. Thus the implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
 
+# Why should we Copy-on-Write
+Copy-on-Write is a wonderful way to save 
+the copy operation is deferred to the first write
+it is possible to significantly reduce the resource consumption of unmodified copies, while adding a small overhead to resource-modifying operations
+when traversal operations vastly outnumber mutations
+
+ - removes the need of deep copying
+ - say if copy something and do not modify at all, out deep copy efforts are a loss
+ - efficient rollbacks
+
+
 To gain a deeper understanding we see how enfficiently could be make CoW for a Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
 
 # Effieicnt Copy-on-write on a Binary Tree
@@ -20,16 +31,6 @@ Again a naive way would be to clone the entire tree and then make the necessary 
 ![Copy-on-Write a Binary Tree](https://user-images.githubusercontent.com/4745789/80869877-7606fb80-8cc0-11ea-8a9b-2b7312a59f11.png)
 
 Copy on write is just a semantic, the implementation of this semantic depends on the data structure and the usecase. CoW with trees could be implemented as shown above, for LinkedList things are very similar to Trees becoase everything is just a pointer. In arrays 
-
-# Why should we Copy-on-Write
-Copy-on-Write is a wonderful way to save 
-the copy operation is deferred to the first write
-it is possible to significantly reduce the resource consumption of unmodified copies, while adding a small overhead to resource-modifying operations
-when traversal operations vastly outnumber mutations
-
- - removes the need of deep copying
- - say if copy something and do not modify at all, out deep copy efforts are a loss
- - efficient rollbacks
 
 # CoW in action
 In this section we see how Copy-on-Write semantics finds its use in a variety of fields and branches like Operating Systems, Databases, and even Time Travel.
