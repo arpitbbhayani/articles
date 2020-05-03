@@ -1,9 +1,9 @@
-Copy-On-Write, abbreviately referred as CoW, is a semantic that suggests to defer the copy process until the first modification. A resource is usually copied when we do not want the changes made in either to be visible to the other. A resource here could be anything - an in-memory page, a database block, an item in a structure or even the entire data structure.
+Copy-On-Write, abbreviately referred as CoW, is a semantic that suggests to defer the copy process until the first modification. A resource is usually copied when we do not want the changes made in either resources to be visible to the other. A resource here could be anything - an in-memory page, a database disk block, an item in a structure or even the entire data structure.
 
-CoW suggests that we first copy by reference and let both instances point to the same resource and just before the first modification we clone the original resource and then apply the modification. Thus CoW suggets we defer the process of copying until the first modification is about to be made.
+CoW suggests that we first copy by reference and let both instances point to the same resource and before the first modification we clone the original resource and then apply the updates. In a gist CoW suggets we defer the process of copying until the first modification is about to be made.
 
 # Deep copying
-The process of creating a pure clone of the reousce is called [Deep Copying](https://en.wikipedia.org/wiki/Object_copying#Deep_copy) and it copies not only the immediate resource but also all the remote resources that are referenced within it. Thus if we were to copy a LinkedList we will not only copy the head pointer to it but also clone all the nodes of it and create an entirely new LinkedList from the original one. A C++ function deep copying a LinkedList is as illustrated below
+The process of creating a pure clone of the reousce is called [Deep Copying](https://en.wikipedia.org/wiki/Object_copying#Deep_copy) and it copies not only the immediate resource but also all the remote resources that are referenced within it. Thus if we were to __deep copy__ a [Linked List](https://en.wikipedia.org/wiki/Linked_list) we do not copy the head pointer, rather we clone all the nodes of the list and create an entirely new list from the original one. A C++ function deep copying a LinkedList is as illustrated below
 
 ```cpp
 struct node* copy(struct node *head) {
@@ -27,6 +27,8 @@ struct node* copy(struct node *head) {
     return nhead;
 }
 ```
+
+![Deep-copying a linked list](https://user-images.githubusercontent.com/4745789/80907205-76d87580-8d32-11ea-88a8-153a94d92d72.png)
 
 Going by the details, we understand how memory intensive deep-copying can be for any resource.
 
