@@ -49,7 +49,7 @@ The things change when the first modification is made to the copied instance and
 
 Since there are no modifications, deep copy would never happen and hence the only operation that happened was a, super-fast, copy-by-reference of the original resource; and thus we jsut saved an expensive deep copy operation.
 
-This is usually the case when the `fork` system call is made to create child process. [fork-exec-wait](https://en.wikipedia.org/wiki/Fork%E2%80%93exec) is a very common pattern in operating systems; where a child process is forked and immedeatly it executes a program replacing the entire copied parent space. Here since the child do not intend to modify its program space, inherited from parent, and simply replace it with the new program, bu having CoW makes sene. We have a lot of efforts.
+This usually happens when the `fork` system call is made. One very common pattern in OS is called [fork-exec-wait](https://en.wikipedia.org/wiki/Fork%E2%80%93exec). A child process is forked as a spitting copy of its parent but it immedeatly executes another program, using `exec` family of functions, replacing its entire space. Since the child do not intend to modify its program space, inherited from parent, and just wants to replace it with the new program, deep copy plays no part. So if we defer the deep copy operation until modification, deep copy would never get called for this `fork-exec` pattern, thus saving a memory and CPU cycles.
 
 ## No Locks Needed
 One major benefit we get from CoW is that it removes the need of Locks altogether. Since on every write we are creating a new copy of the resource there are no in-place updates. Hence 
