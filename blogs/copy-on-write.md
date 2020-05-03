@@ -11,14 +11,14 @@ struct node* copy(struct node *head) {
         return NULL;
     }
 
-    struct node *nhead = (struct node *) malloc(sizeof(struct node))
+    struct node *nhead = (struct node *) calloc(sizeof(struct node))
     nhead->val = head->val;
 
     struct node *p = head;
     struct node *q = nhead;
 
     while(p -> next) {
-        q -> next = (struct node *) malloc(sizeof(struct node));
+        q -> next = (struct node *) calloc(sizeof(struct node));
         q -> next -> val = p -> next -> val;
         p = p -> next;
         q = q -> next;
@@ -40,10 +40,10 @@ By having a CoW, the process need not wait for the deep copy to happen, instead,
 
 A particular example where we gain a significant performance boost is during the `fork` system call.
 
-`fork` system call creates a child process that is a spitting copy of its parent. During this call, if the parent's program space is huge and we trigger a deep copy, the time taken to create the child process will shoot up. But if we just do copy-by-reference the child process could be spun super fast. Once the child decides to make some modification to its program space, then we trigger the deep copy.
+`fork` system call creates a child process that is a spitting copy of its parent. During this call, if the parent's program space is huge and we trigger a deep copy, the time taken to create the child process will shoot up. But if we just do copy-by-reference the child process could be spun super fast. Once the child decides to make some modifications to its program space, then we trigger the deep copy.
 
 ## Better resource management
-CoW gives us an optimistic way to manage memory. One peculiar property that CoW exploits is how, before any modifications to the copied instance, both the original and the copied resources are exactly the same. The readers, thus, cannot distinguish if they are reading from the original resource or the copied one.
+CoW gives us an optimistic way to manage memory. One peculiar property that CoW exploits are how, before any modifications to the copied instance, both the original and the copied resources are exactly the same. The readers, thus, cannot distinguish if they are reading from the original resource or the copied one.
 
 Things change when the first modification is made to the copied instance and that's where readers of the corresponding resource would expect to see things differently. But what if the copied instance is never modified?
 
@@ -53,6 +53,7 @@ One very common pattern in OS is called [fork-exec](https://en.wikipedia.org/wik
 
 ```cpp
 #include <stdio.h>
+
 int main( void ) {
     char * argv[2] = {".", NULL};
 
@@ -82,7 +83,7 @@ int main( void ) {
 ## Updating without locks
 Locks are required when we have in-place updates. Multiple writers try to modify the same instance of the resource and hence we need to define a [critical section](https://en.wikipedia.org/wiki/Critical_section) where the updations happen. This critical section is bounded by locks and any writer who wishes to modify would have to acquire the lock. This streamlines the writers and ensures only one writer could enter the critical section at any point in time, creating a chokepoint.
 
-If we follow CoW aggressively, which suggests we copy before we write, there will be no in-place updates. All variables during every single write will create a clone, apply updates to it and then in one atomic [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap) operation switch and start pointing to this newer version; thus eradicating the need of locking entirely. Garbage collection on unused items, with old values, could happen from time to time.
+If we follow CoW aggressively, which suggests we copy before we write, there will be no in-place updates. All variables during every single write will create a clone, apply updates to it and then in one atomic [compare-and-swap](https://en.wikipedia.org/wiki/Compare-and-swap) operation switch and start pointing to this newer version; thus eradicating the need for locking entirely. Garbage collection on unused items, with old values, could happen from time to time.
 
 ![Updating variables without locks](https://user-images.githubusercontent.com/4745789/80912595-9fc13080-8d5b-11ea-9b73-599b673e6715.png)
 
@@ -97,7 +98,7 @@ CoW is just a technique and it tells us what and not how. The implementation is 
 The naive way to perform copy operation is by doing a deep copy which, as established before, is a super inefficient way. We can do a lot better than this by understanding the nuances of the underlying resource. To gain a deeper understanding we see how efficiently we could make CoW Binary Tree [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
 
 ## Efficient Copy-on-write on a Binary Tree
-Given a Binary Tree `A` we create a copy `B` such that any modifications by `A` are not visible to `B` and any modifications on `B` are not visible to `A`. The simplest way to acieve this is by cloning all the nodes of the tree, their pointer references, and create a second tree which is then pointed by `B` - as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
+Given a Binary Tree `A` we create a copy `B` such that any modifications by `A` are not visible to `B` and any modifications on `B` are not visible to `A`. The simplest way to achieve this is by cloning all the nodes of the tree, their pointer references, and create a second tree which is then pointed by `B` - as illustrated in the diagram below. Any modifications made to either tree will not be visible to the other because their entire space is mutually exclusive.
 
 ![Deep Copying a Binary Tree](https://user-images.githubusercontent.com/4745789/80859895-b3986400-8c81-11ea-9ebe-829540df77d5.png)
 
@@ -112,7 +113,7 @@ Thus instead of maintaining two separate mutually exclusive trees, we make space
 > Fun fact: You can model Time Travel using Copy-on-Write semantics.
 
 # Why shouldn't we Copy-on-Write
-CoW is an expensive process if done aggressively. If on every single write, we create a copy then in a system that is write-heavy, things could go out of hand very soon. A lot of CPU cycles will be occupied for doing garbage collections and thus stalling the core processes. Picking which battles to win is important while choosing something as fragile as Copy-on-Write.
+CoW is an expensive process if done aggressively. If on every single write, we create a copy then in a system that is write-heavy, things could go out of hand very soon. A lot of CPU cycles will be occupied for doing garbage collections and thus stalling the core processes. Picking which battles to win is important while choosing something as critical as Copy-on-Write.
 
 # References
  - [Copy on Write](https://en.wikipedia.org/wiki/Copy-on-write)
