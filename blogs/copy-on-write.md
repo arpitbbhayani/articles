@@ -40,16 +40,16 @@ By having a CoW, the process need not wait for the deep copy to happen, instead,
 
 A particular example where we gain a significant performance boost is during the `fork` system call.
 
-`fork` system call creates a child process that is a spitting copy of its parent. During this `fork` call, if the parent's memory space is huge and we trigger deep copy, the time taken to create child process will shoot up. But if we just do copy-by-reference at first the child process could be spun superfast. Once the child decides to make some modification then we trigger the deep copy.
+`fork` system call creates a child process that is a spitting copy of its parent. During this `fork` call, if the parent's memory space is huge and we trigger deep copy, the time taken to create child process will shoot up. But if we just do copy-by-reference at first the child process could be spun super fast. Once the child decides to make some modification then we trigger the deep copy.
 
 ## Better resource management
-CoW gives us an optimistic way to manage memory. One peculiar property that CoW exploits is how before modifications to the copied instance, both the original and the copied resource are exactly the same. The readers, thus, cannot distinguish if they are reading from the original resource or the copied one.
+CoW gives us an optimistic way to manage memory. One peculiar property that CoW exploits are how before modifications to the copied instance, both the original and the copied resources are exactly the same. The readers, thus, cannot distinguish if they are reading from the original resource or the copied one.
 
-The things change when the first modification is made to the copied instance and thats where, readers of the corresponding resource would expect to see things differently. But what if the copied instance is never modified?
+Things change when the first modification is made to the copied instance and that's where readers of the corresponding resource would expect to see things differently. But what if the copied instance is never modified?
 
-Since there are no modifications, deep copy would never happen and hence the only operation that happened was a, super-fast, copy-by-reference of the original resource; and thus we jsut saved an expensive deep copy operation.
+Since there are no modifications, the deep copy would never happen and hence the only operation that happened was a, super-fast, copy-by-reference of the original resource; and thus we jsut saved an expensive deep copy operation.
 
-This usually happens when the `fork` system call is made. One very common pattern in OS is called [fork-exec](https://en.wikipedia.org/wiki/Fork%E2%80%93exec) in which a child process is forked as a spitting copy of its parent but it immedeatly executes another program, using `exec` family of functions, replacing its entire space. Since the child do not intend to modify its program space, inherited from parent, and just wants to replace it with the new program, deep copy plays no part. So if we defer the deep copy operation until modification, deep copy would never happen and we thus save a bunch of memory and CPU cycles.
+This usually happens when the `fork` system call is made. One very common pattern in OS is called [fork-exec](https://en.wikipedia.org/wiki/Fork%E2%80%93exec) in which a child process is forked as a spitting copy of its parent but it immediately executes another program, using `exec` family of functions, replacing its entire space. Since the child do not intend to modify its program space, inherited from the parent, and just wants to replace it with the new program, deep copy plays no part. So if we defer the deep copy operation until modification, the deep copy would never happen and we thus save a bunch of memory and CPU cycles.
 
 ## No Locks Needed
 One major benefit we get from CoW is that it removes the need of Locks altogether. Since on every write we are creating a new copy of the resource there are no in-place updates. Hence 
