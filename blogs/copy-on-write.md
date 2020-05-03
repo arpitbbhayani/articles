@@ -86,10 +86,8 @@ If we follow CoW aggressively, which suggests we copy before we write, there wil
 
 ![Updating variables without locks](https://user-images.githubusercontent.com/4745789/80912595-9fc13080-8d5b-11ea-9b73-599b673e6715.png)
 
-## Versioning
+## Versioning and point in time snapshots
 One timeline of all data
-
-## Point in time snapshots
 
 # Implementing CoW
 CoW is just a technique and it tells us what and not how. The implementation is all in the hands of the system and depending on the type of resource bing CoWed the implementation details differ.
@@ -111,18 +109,7 @@ Again a naive way would be to clone the entire tree and then make the necessary 
 
 Copy on write is just a semantic, the implementation of this semantic depends on the data structure and the usecase. CoW with trees could be implemented as shown above, for Linked List things are very similar to Trees becoase everything is just a pointer. In arrays 
 
----
-
-## CoW in Databases
-Database is structured with BTrees.
-Locks could be avoided. Readers will not see things updating by a writer. 
-No need of locks
-attomic compare and swap.
-
-## CoW in Data Engineering
-Database in in-conssitent state, going back in time and restore the db to its last
-known stable state. with CoW we can take our DB to any version in past.
-Point in time snapshots
+> Fun fact: You can model Time Travel using Copy-on-Write semantics.
 
 ## CoW in Data Structures
 Persistent Data Structures is hwere 
@@ -140,17 +127,8 @@ Deepcopying document on every single update is not a good option as it would req
 
 CoW semantic could help in this as when the document is updated only some part of the document is updated after the last save, thus CoW is ideal for such scenarious.
 
-## CoW in modelling Time Travel
-Whenever Flash, a DC Superhero, goes back in time to fix something, he creates a new time line. This new timeline
-has all of its events fareing in a different way depending on which event was interefered with.
-
-modelling multiple timelines i.e. parallel universes could done with the help of CoW semantics, where instead
-of creating deep copy of the entire universe, we apply CoW semantics and store references to unchanged items
-while copying the chunks that changed.
-
 # Why shouldn't we Copy-on-Write
-
- - if you operations are write heavy then CoW has a huge overhead.
+CoW is an expensive process if done aggressively. If on every single write, we create a copy then in a system that is write heavy, things could go out of hand very soon. A lot of CPU cycles will be occupied for garbage collections.
 
 # References
  - http://schd.ws/hosted_files/buildstuff14/96/20141120-BuildStuff-Lightning.pdf
