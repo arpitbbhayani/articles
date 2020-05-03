@@ -3,7 +3,7 @@ Copy-On-Write, abbreviately referred as CoW, is a semantic that suggests to defe
 CoW suggests that we first copy by reference and let both instances point to the same resource and just before the first modification we clone the original resource and then apply the modification. Thus CoW suggets we defer the process of copying until the first modification is about to be made.
 
 # Deep copying
-The process of creating a pure clone of the reousce is called Deep-Copying and it copies not only the immediate resource but also all the remote resources that are referenced within it. Thus if we were to copy a LinkedList we will not only copy the head pointer to it but also clone all the nodes of it and create an entirely new LinkedList from the original one. A C++ function deep copying a LinkedList is as illustrated below
+The process of creating a pure clone of the reousce is called [Deep Copying](https://en.wikipedia.org/wiki/Object_copying#Deep_copy) and it copies not only the immediate resource but also all the remote resources that are referenced within it. Thus if we were to copy a LinkedList we will not only copy the head pointer to it but also clone all the nodes of it and create an entirely new LinkedList from the original one. A C++ function deep copying a LinkedList is as illustrated below
 
 ```cpp
 struct node* copy(struct node *head) {
@@ -28,10 +28,18 @@ struct node* copy(struct node *head) {
 }
 ```
 
-Going by the details, we know that deep-copying any resource is going to be a super heavy on memory. Thus
+Going by the details, we understand how memory intensive deep-copying can be for any resource.
 
 # Why should we Copy-on-Write
-CoW is an optimistic way of memory management. It has the following intention.
+CoW is an optimistic way of memory management; as we defer the copy process until modification.
+This actually makes sense
+
+Until any modification being made on either original or copied instance, both are exactly the same.
+Then what is the benefit of even copying the resource in the first place?
+
+This intuition is mthe core principle of CoW.
+
+It has the following intention.
 
 > Why bother copying something, if it is never going to be modified.
 
