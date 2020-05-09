@@ -1,8 +1,4 @@
-Binary search is one of the most famous algorithm. It makes searching super efficient when the numbers in the list are sorted. It explots the property so well. that it makes lsearching for the document`log(n)` which means we do not need to visit each and every element of the array to find the number.
-
-BInary Search also outputs the position at which the number could be inserted.
-
-In Python binary search could be implemented as
+Binary Search is a search algorithm that finds the position of a target value in a sorted array. If the target value is present in the array, the algoritm returns the position. If it does not exist then the algorithm returns the posiiton where it should be inserted. The search happens in `O(log(n))`.
 
 ```py
 import bisect
@@ -10,6 +6,9 @@ import bisect
 def binary_search(arr, q):
     return bisect.bisect_left(arr, q)
 ```
+
+Fractional Cascading is a technique that speeds up binary searches for the same value in a sequence of 
+
 
 # The two extremes
 
