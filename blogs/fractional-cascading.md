@@ -1,13 +1,14 @@
-Binary Search is a search algorithm that finds the position of a target value in a sorted array. If the target value is present in the array, the algoritm returns the position. If it does not exist then the algorithm returns the posiiton where it should be inserted. The search happens in `O(log(n))`.
+Binary Search is a search algorithm that finds the position of a target value in a sorted array. The algorithm exploits that fact that the array is sorted, and using this the algorithm does not even need to traverse all `n` elements of the array but it only needs to check `log(n)` elements to find the target value.
 
-Which means it does not even need to take a look at all the elements to find the target value. The approach seems super efficient and it actually is. As the number of items increases the lookup time increases marginally. Here is the graph representing that.
+The binary search outputs the position of the target value, if present, otherwise it returns the position where the target value should be been present in the array. In other words we can say that the algorithm outputs the position where the target value should be inserted.
 
-TODO: Graph
+Here is the graph that shows how efficient is binary search. We plot the number of comparisons required to find the target value in a array of `n` elements. Even for a million values the binary search just need to look at 20 elements to deduce if the target value exists or not.
 
-Taking this use case a notch higher. Say we need to find the target value, not in one, but `k` lists independently which means. For each list we need to find the position of the target value. Preprocessing is allowed.
+Fractional Cascading comes into the picture when we need to perform binary search on, not one but `k` such arrays. We take a look at several approaches to solve this problem and then we dive deep into the algorithm in spotlight - Fractional Cascading. Thus we define the problem statement as
+
+> Given `k` lists of `n` integers and a target value `x`, find. Preprocessing is allowed.
 
 # The naive approach - k binary searches
-
 As the problem suggests, we need to find `x` in `k` arrays. we do `k` binary searches.
 TODO: Image
 
@@ -18,6 +19,9 @@ Complexity: `k.log(n)`
 # Merge all lists in one
 
 We can merge all the `k` lists in one and do binary search just once instead of `k`.
+
+## Preprocess
+
 Before before doing that we can just apply binary search for each term in each list and say we store
 all the locations for each number in search list.
 
@@ -37,7 +41,7 @@ Can we have best of both worlds? Fractional cascading is how you can acive time 
 Speeds up binary search.
 Creates bridges and fences.
 
-## Preprocessing
+## Preprocess
 
 Each number is represented by [a, b]
 
