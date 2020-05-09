@@ -52,6 +52,8 @@ def binary_search(arr, q):
     return bisect.bisect_left(arr, q)
 ```
 
+The entire working code could be found here [github.com/arpitbbhayani/fractional-cascading](https://github.com/arpitbbhayani/fractional-cascading/blob/master/fractional-cascading.ipynb)
+
 ## Time and space complexity
 
 ## The more interesting part
