@@ -7,7 +7,7 @@ Things become more interesting when we have to perform an iterative binary searc
 > Given `k` lists of `n` sorted integers each, and a target value `x`, return the position of the smallest value greater than or equal to `x` in each of the `k` lists. Preprocessing of the list is allowed before answering the queries.
 
 # The naive approach - k binary searches
-The expected output of this iterative search is the position of smallest value greater than or equal to `x` in each of the `k` lists. This is a classical Binary Search problem and hence in this approach we fire `k` binary searches on `k` lists for the target value `x` and collect the positions.
+The expected output of this iterative search is the position of smallest value greater than or equal to `x` in each of the `k` lists. This is a classical Binary Search problem and hence in this approach, we fire `k` binary searches on `k` lists for the target value `x` and collect the positions.
 
 ![k-binary searches](https://user-images.githubusercontent.com/4745789/81492614-dbf21500-92b6-11ea-9f75-29eb3522186f.png)
 
@@ -58,7 +58,7 @@ for i, l in enumerate(arr):
 ```
 
 ### Creating a huge list
-Once we have all the position tuples and they are well associated with the corresponding elements, we create an auxiliary list of size `k * n` that holds all the elements from all the `k` lists. This auxiliary list is again kept sorted so that we could perform binary search on it.
+Once we have all the position tuples and they are well associated with the corresponding elements, we create an auxiliary list of size `k * n` that holds all the elements from all the `k` lists. This auxiliary list is again kept sorted so that we could perform a binary search on it.
 
 ## Working
 Given a target value, we perform a binary search in the above auxiliary list and get the smallest element greater than or equal to this target value. Once we get the element, we now get the associated position tuple. This position tuple is precisely the position of the target element in all the `k` lists. Thus by performing one binary search in this huge list, we are able to get the required positions.
