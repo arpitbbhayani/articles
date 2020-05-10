@@ -151,7 +151,7 @@ The entire working code could be found here [github.com/arpitbbhayani/fractional
 ## Time and space complexity
 In Fractional Cascading, we perform binary search once on auxiliary list `M(0)` and then make `k` constant comparisions for each of the subsequent levels; hence the time complexity is `O(k + log(n))`.
 
-In Fractional cascading, the auxiliary lists contains less then twice the number of elements from original list. The space required is thus less then twice the original list and each position tuple is also a constant 2 item tuple, we say that the space complexity is `O(kn)`.
+The auxiliary lists could at most contain all the elements from original list plus `1/2 |L(n)| + 1/4 |L(n-1)| + 1/8 |L(n-2)| + ...` which is less than all elements of original list. Thus the total size of auxiliary list cannot exceed twice of the original lists. The position tuple for each of the element is also a constant 2 item tuple thus the space complexity of Fractional Cascading is `O(kn)`.
 
 Thus Fractional Cascading has time complexity very close to the k-binary searches approach with a very low space complexity as compared to  unified binary searches approach; thus giving us the best of both worlds.
 
