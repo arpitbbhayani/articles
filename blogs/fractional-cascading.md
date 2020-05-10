@@ -41,7 +41,7 @@ Creates bridges and fences.
 
 Concept
 
-TODO: Image
+![Fractional Cascading the Idea](https://user-images.githubusercontent.com/4745789/81495324-241c3200-92cd-11ea-9d7d-9c9b0911071b.png)
 
 ## Preprocess
 
