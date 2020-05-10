@@ -156,7 +156,7 @@ In Fractional cascading, the auxiliary lists contains less then twice the number
 Thus Fractional Cascading has time complexity very close to the k-binary searches approach with a very low space complexity as compared to  unified binary searches approach; thus giving us the best of both worlds.
 
 ## Fractional Cascading in real world
-Fractional Cascading is used in FD-Trees which are used in databases to address asymmetry of read-write speeds in tree indexing on the flash disk. Fractional cascading is typically used in [range search](https://en.wikipedia.org/wiki/Range_searching) data structures like [Segment Trees](https://en.wikipedia.org/wiki/Segment_tree) to speed up lookups and filters.
+Fractional Cascading is used in [FD-Trees](http://pages.cs.wisc.edu/~yinan/fdtree.html) which are used in databases to address asymmetry of read-write speeds in tree indexing on the flash disk. Fractional cascading is typically used in [range search](https://en.wikipedia.org/wiki/Range_searching) data structures like [Segment Trees](https://en.wikipedia.org/wiki/Segment_tree) to speed up lookups and filters.
 
 # References
  - [Fractional Cascading - Wikipedia](https://en.wikipedia.org/wiki/Fractional_cascading)
