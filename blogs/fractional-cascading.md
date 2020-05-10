@@ -1,21 +1,21 @@
-Binary Search is a search algorithm that finds the position of a target value in a sorted array. The algorithm exploits that fact that the array is sorted, and is devised such that is need not even look at all `n` elements to decide if the target value is present or not. IN worst case the algorithm checks for `log(n)` elements of the array to make the decision.
+Binary Search is a search algorithm that finds the position of a target value in a sorted list. The algorithm exploits that fact that the list is sorted, and is devised such that is need not even look at all `n` elements to decide if the target value is present or not. IN worst case the algorithm checks for `log(n)` elements of the list to make the decision.
 
-Having to check only `log(n)` elements from the array of size `n` is super eficient - this means in an array of size of a million `1000000` the number of elemnts to be looked at to make the call is just `20`. need to look at 20 elements to deduce if the target value exists or not. Binary search could be tewaked to output the position of the target value, if present, or otherwise returns the position of smallest number greater than the target value i.e. position where the target value should have been present in the array.
+Having to check only `log(n)` elements from the list of size `n` is super eficient - this means in an list of size of a million `1000000` the number of elemnts to be looked at to make the call is just `20`. need to look at 20 elements to deduce if the target value exists or not. Binary search could be tewaked to output the position of the target value, if present, or otherwise returns the position of smallest number greater than the target value i.e. position where the target value should have been present in the list.
 
-Things become slightly moer interesting when instead of searching for the target value in one array, we need to do it in `k` arrays. Problem statement could be defined as
+Things become slightly moer interesting when instead of searching for the target value in one list, we need to do it in `k` lists. Problem statement could be defined as
 
-> Given `k` lists of `n` integers each and a target value `x` return the position of the smallest value greater than or equal to `x` in each of the `k` lists. We are allowed to preprocess the lists.
+> Given `k` lists of `n` sorted integers each and a target value `x` return the position of the smallest value greater than or equal to `x` in each of the `k` lists. We are allowed to preprocess the lists.
 
 # The naive approach - k binary searches
+Returning the position of the smallest value greater than or equal to `x` in each of the `k` list is a classical `k` binary search problem and hence the naive way to solve this would be to perform binary searches for each of the `k` lists and return.
 
-As the problem suggests, we need to find `x` in `k` arrays. we do `k` binary searches.
 TODO: Image
 
 ## Complexity
+Since each of the `k` list has size `n`, the time complexity of performing a binary search in one list would be `O(log(n))` and to do it for `k` lists it would take `O(k.log(n))`. Since we do not require any extra space the space somplexity of this approach would be `O(1)`.
 
-Complexity: `k.log(n)`
-
-# Merge all lists in one
+# Unified binary search
+We can improve on time complexity by using extra bit of space.
 
 We can merge all the `k` lists in one and do binary search just once instead of `k`.
 
