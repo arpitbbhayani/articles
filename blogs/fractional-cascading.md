@@ -9,7 +9,7 @@ Things become slightly moer interesting when instead of searching for the target
 # The naive approach - k binary searches
 Returning the position of the smallest value greater than or equal to `x` in each of the `k` list is a classical `k` binary search problem and hence the naive way to solve this would be to perform binary searches for each of the `k` lists and return.
 
-![k-binary searches](https://user-images.githubusercontent.com/4745789/81491915-06d96a80-92b1-11ea-816d-fe1367954a90.png)
+![k-binary searches](https://user-images.githubusercontent.com/4745789/81492614-dbf21500-92b6-11ea-9f75-29eb3522186f.png)
 
 ## Complexity
 Since each of the `k` list has size `n`, the time complexity of performing a binary search in one list would be `O(log(n))` and to do it for `k` lists it would take `O(k.log(n))`. Since we do not require any extra space the space somplexity of this approach would be `O(1)`.
@@ -23,7 +23,7 @@ We can merge all the `k` lists in one and do binary search just once instead of 
 Before before doing that we can just apply binary search for each term in each list and say we store
 all the locations for each number in search list.
 
-TODO: Image
+![unified binary search](https://user-images.githubusercontent.com/4745789/81492609-ca107200-92b6-11ea-8fdf-999852f4d9b1.png)
 
 Here [a,b,c,d] represents location of a number in each of the four lists.
 
