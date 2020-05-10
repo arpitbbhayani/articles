@@ -30,8 +30,10 @@ def get_positions_k_bin_search(x):
 [2, 4, 2, 3]
 ```
 
-## Complexity
-Since each of the `k` list has size `n`, the time complexity of performing a binary search in one list would be `O(log(n))` and to do it for `k` lists it would take `O(k.log(n))`. Since we do not require any extra space the space somplexity of this approach would be `O(1)`.
+## Time and Space Complexity
+Each of the `k` list has size `n` and we know the time complexity of performing a binary search in one list of `n` elements is `O(log(n))`, we deduce that time complexity of this approach of k-binary searches is `O(k.log(n))`. 
+
+The k-binary searches approach does not reqlly require any additional space and hence the space complexity is `O(1)`.
 
 # Unified binary search
 We can improve on time complexity by using extra bit of space.
