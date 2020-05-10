@@ -44,9 +44,9 @@ This approach uses some extra space, preprocessing and computations to reduce se
 The preprocessing is done in two phases; in the first phase, we compute a position tuple for each element and attach it with the same element. In phase two of preprocessing, we create an auxiliary list containing all the elements of all the lists on which we then perform a binary search for the given target value.
 
 ### Computing position tuple for each element
-Position tuple is a `k` item tuple where every `i`th item denotes the position of the associated element in the `i`th list. We compute this tuple by performing binary search on all `k` lists treating the element as the target value.
+Position tuple is a `k` item tuple where every `i`th item denotes the position of the associated element in the `i`th list. We compute this tuple by performing binary search on all the `k` lists treating the element as the target value.
 
-From the example above, the position tuple of 4th element in 4th list i.e `79` will be `[3, 5, 4, 3]`. The position of `79` in list L0 is `3`, list `l1` is 5, list `l2` is 4 and list l3 is `3`. Notice if the element exceeds all the values of an array we get the index to be the length of the array, instead we could also use a placeholder like `-2` which denotes out-of-bounds.
+From the example above, the position tuple of 4th element in 4th list i.e 79 will be `[3, 5, 4, 3]` which denotes its position in all 4 lists. In list 1 - `arr[0]` - 79 is at index `3`, in list 2 - `arr[1]` 79 is actually out of bounds but would be inserted at index `5` hence the output `5`, we could also have returned a value marking out of bounds, like `-2`, in list 3 - `arr[2]` - 79 is not present but smallest number greater than 79 is 94 which is at index `4` and in list 4 - `arr[3]` - 79 is present at index `3`.
 
 Given a 2-dimensional array `arr` we compute the position tuple for element `(i, j)` by performing binary search on all `k` lists as shown in python code below
 
