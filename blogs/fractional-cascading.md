@@ -108,6 +108,13 @@ for i, l in enumerate(m_arr):
 ```
 
 ## Fractional Cascading in action
+We start by performing binary search on the first auxiliary list `M(0)` from which we get the element corresponding to the target value. The position tuple for this element contains the position corresponding to the original list `L(0)` and bridge that will take us to the list `M(1)`. Now when we move to the list `M(1)` through bridge and have reached the index `b`.
+
+Since auxilieary lists have uniform range spread, because of every other element being promoted, we are sure that the target value should be checked againg the index `b` and `b - 1`; because if the value was any lower it would have been promoted and bridged to other value and hence the trail we trace would be different from what we are tracing now.
+
+Once we know which of the `b` and `b-1` index to pick (depending on the values at the index and the target value) we add the first item of the position tuple to the solution set and move the auxiliary list on the lower level and the entire process continues.
+
+Once we reach the last auxiliary list and process the position tuple there and pick the element, our solution set contains the required positions and we can stop the iteration.
 
 ```py
 def get_locations_fractional_cascading(x): 
