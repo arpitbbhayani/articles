@@ -107,9 +107,37 @@ for i, l in enumerate(m_arr):
         ]
 ```
 
-## Working
+## Fractional Cascading in action
 
-## Code
+```py
+def get_locations_fractional_cascading(x): 
+    locations = []
+
+    # the first and only binary search on auxiliary list M[0]
+    index = bisect.bisect_left(m_arr[0], x)
+
+    # loc always holds the required location from original list on same level
+    # next_loc holds the bridge index on the lower level
+    loc, next_loc = pointers[0][index]
+
+    # adding loc to the solution
+    locations.append(loc)
+
+    for i in range(1, len(m_arr)):
+        # we check for the element we reach through the bridge
+        # and the one before it and make the decision to go with one
+        # depending on the target value.
+        if x <= m_arr[i][next_loc-1]:
+            loc, next_loc = pointers[i][next_loc-1]
+        else:
+            loc, next_loc = pointers[i][next_loc]
+
+        # adding loc to the solution
+        locations.append(loc)
+
+    # returning the required locations
+    return locations
+```
 
 The entire working code could be found here [github.com/arpitbbhayani/fractional-cascading](https://github.com/arpitbbhayani/fractional-cascading/blob/master/fractional-cascading.ipynb)
 
