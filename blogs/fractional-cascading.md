@@ -1,17 +1,17 @@
-Binary Search is an algorithm that finds the position of a target value in a sorted list. The algorithm exploits the fact that the list is sorted, and is devised such that is does not even look at all `n` elements to decide if the target value is present or not. In the worst case the algorithm checks `log(n)` number of elements to make the decision.
+Binary Search is an algorithm that finds the position of a target value in a sorted list. The algorithm exploits the fact that the list is sorted, and is devised such that is does not have to even look at all the `n` elements, to decide if a value is present or not. In the worst case, the algorithm checks `log(n)` number of elements to make the decision.
 
-Binary Search could be tweaked to output the position of the target value, if present, or otherwise returns the position of the smallest number greater than the target value i.e. position where the target value should have been present in the list.
+Binary Search could be tweaked to output the position of the target value, or return the position of the smallest number greater than the target value i.e. position where the target value should have been present in the list.
 
-Things become more interesting when we have to perform an iterative search on `k` lists i.e. finding the target values in each of the `k` lists independently. The formal problem statement could be defined as
+Things become more interesting when we have to perform an iterative binary search on `k` lists in which we find the target value in each of the `k` lists independently. The problem statement could be formally defined as
 
-> Given `k` lists of `n` sorted integers each and a target value `x` return the position of the smallest value greater than or equal to `x` in each of the `k` lists. Preprocessing of the list is allowed before answering queries.
+> Given `k` lists of `n` sorted integers each, and a target value `x`, return the position of the smallest value greater than or equal to `x` in each of the `k` lists. Preprocessing of the list is allowed before answering the queries.
 
 # The naive approach - k binary searches
-The expected output of this iterative search is the position of smallest value greater than or equal to `x` in each of the `k` lists. This is a classical Binary search problem that could be applied to each of the `k` lists.
+The expected output of this iterative search is the position of smallest value greater than or equal to `x` in each of the `k` lists. This is a classical Binary Search problem that could be applied to each of the `k` lists.
 
 ![k-binary searches](https://user-images.githubusercontent.com/4745789/81492614-dbf21500-92b6-11ea-9f75-29eb3522186f.png)
 
-A python-based solution to this problem is pretty simple. We use in-built module `bisect` and `bisect_left` function returns the exact thing we are looking for
+Python has an in-built module called `bisect` which has the function `bisect_left` which outputs the smallest value greater than or equal to `x` in a list `l`; and this is exactly what we need to output.
 
 ```py
 import bisect
