@@ -1,14 +1,13 @@
-Binary Search is a search algorithm that finds the position of a target value in a sorted array. The algorithm exploits that fact that the array is sorted, and using this the algorithm does not even need to traverse all `n` elements of the array but it only needs to check `log(n)` elements to find the target value.
+Binary Search is a search algorithm that finds the position of a target value in a sorted array. The algorithm exploits that fact that the array is sorted, and is devised such that is need not even look at all `n` elements to decide if the target value is present or not. IN worst case the algorithm checks for `log(n)` elements of the array to make the decision.
 
-The binary search outputs the position of the target value, if present, otherwise it returns the position where the target value should be been present in the array. In other words we can say that the algorithm outputs the position where the target value should be inserted.
+Having to check only `log(n)` elements from the array of size `n` is super eficient - this means in an array of size of a million `1000000` the number of elemnts to be looked at to make the call is just `20`. need to look at 20 elements to deduce if the target value exists or not. Binary search could be tewaked to output the position of the target value, if present, or otherwise returns the position of smallest number greater than the target value i.e. position where the target value should have been present in the array.
 
-Here is the graph that shows how efficient is binary search. We plot the number of comparisons required to find the target value in a array of `n` elements. Even for a million values the binary search just need to look at 20 elements to deduce if the target value exists or not.
+Things become slightly moer interesting when instead of searching for the target value in one array, we need to do it in `k` arrays. Problem statement could be defined as
 
-Fractional Cascading comes into the picture when we need to perform binary search on, not one but `k` such arrays. We take a look at several approaches to solve this problem and then we dive deep into the algorithm in spotlight - Fractional Cascading. Thus we define the problem statement as
-
-> Given `k` lists of `n` integers and a target value `x`, find. Preprocessing is allowed.
+> Given `k` lists of `n` integers each and a target value `x` return the position of the smallest value greater than or equal to `x` in each of the `k` lists. We are allowed to preprocess the lists.
 
 # The naive approach - k binary searches
+
 As the problem suggests, we need to find `x` in `k` arrays. we do `k` binary searches.
 TODO: Image
 
