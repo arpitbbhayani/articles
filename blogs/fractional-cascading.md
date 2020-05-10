@@ -151,24 +151,12 @@ The entire working code could be found here [github.com/arpitbbhayani/fractional
 ## Time and space complexity
 In Fractional Cascading, we perform binary search once on auxiliary list `M(0)` and then make `k` constant comparisions for each of the subsequent levels; hence the time complexity is `O(k + log(n))`.
 
-Fractional cascading also requires space to hold auxiliary list which amounts to `O(kn)` since the position tuple requires a constant 2 items and is independent of `k`.
+In Fractional cascading, the auxiliary lists contains less then twice the number of elements from original list. The space required is thus less then twice the original list and each position tuple is also a constant 2 item tuple, we say that the space complexity is `O(kn)`.
 
 Thus Fractional Cascading has time complexity very close to the k-binary searches approach with a very low space complexity as compared to  unified binary searches approach; thus giving us the best of both worlds.
 
-## The more interesting part
-
-### Why does we need to only check for the element and one before?
-Since we take every other number from the list. This means the number was either 1st or second.
-
-### Instead of doing it for alternate and not all?
-If we do it for all, it becomes the nurmal search. Hence the name "Fractional" cascading.
-
-### What if we do one in three
-We can limit the number fo elements promoted to higher level. But in that that we need to compare with last `r` numbers prior to the matched value.
-
 ## Fractional Cascading in real world
-
-Fractional cascading is used in databases, especially, relational databases to speedup the lookups in B-Trees. It is used in geometric data structures to find out.
+Fractional Cascading is used in FD-Trees which are used in databases to address asymmetry of read-write speeds in tree indexing on the flash disk. Fractional cascading is typically used in [range search](https://en.wikipedia.org/wiki/Range_searching) data structures like [Segment Trees](https://en.wikipedia.org/wiki/Segment_tree) to speed up lookups and filters.
 
 # References
  - [Fractional Cascading - Wikipedia](https://en.wikipedia.org/wiki/Fractional_cascading)
