@@ -62,7 +62,6 @@ Once we have position tuple associated with each element, we create an auxiliary
 ![unified binary search](https://user-images.githubusercontent.com/4745789/81492609-ca107200-92b6-11ea-8fdf-999852f4d9b1.png)
 
 ## Working
-
 When when a target value is to be searched, we search it in this huge list `M`, get the position by regular binary search. and return the position tuple associated with it.
 
 ## Complexity
