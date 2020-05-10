@@ -41,6 +41,11 @@ Creates bridges and fences.
 
 ## Preprocess
 
+### Create Auxiliary Lists
+
+![Create auxiliary lists](https://user-images.githubusercontent.com/4745789/81494062-588af080-92c3-11ea-9ec7-e894ccc537e5.png)
+
+
 Each number is represented by [a, b]
 
 ## Working
