@@ -43,10 +43,12 @@ This approach uses some extra space, preprocessing and computations to reduce se
 ## Preprocess
 The preprocessing is done in two phases; in the first phase, we compute a position tuple for each element and attach it it with the element. In phase two of preprocessing we create an auxiliary list containing all the elements of all the lists on which the binary search is performed.
 
-### Create position tuple for each element
-The position tuple is a `k` item tuple where every `i`th item denotes the position of the associated element in `i`th list. Thus the tuple for an element is computed by performing binary search on all `k` lists by treating the element as the target value.
+### Computing position tuple for each element
+Position tuple is a `k` item tuple where every `i`th item denotes the position of the associated element in the `i`th list. We compute this tuple by performing binary search on all `k` lists treating the element as the target value.
 
-Python code to compute position tuple for all elements in 2-dimensional array `arr` is as shown below
+From the example above, the position tuple of 4th element in 4th list i.e `79` will be `[3, 5, 4, 3]`. The position of `79` in list L0 is `3`, list `l1` is 5, list `l2` is 4 and list l3 is `3`. Notice if the element exceeds all the values of an array we get the index to be length of the array, instead we could also use a placeholder like `-2` which denotes out-of-bounds.
+
+So given a 2-dimensional array `arr` we compute the position tuple for element `(i, j)` by performing binary search on all `k` lists as shown in python code below
 
 ```py
 for i, l in enumerate(arr):
@@ -54,8 +56,6 @@ for i, l in enumerate(arr):
         for k, m in enumerate(arr):
             positions[i][j][k] = int(bisect.bisect_left(m, e))
 ```
-
-In the above example, the position tuple of 4th element in 4th list i.e `79` is `[3, 5, 4, 3]`.
 
 ### Creating a huge list
 Once we have position tuple associated with each element, we create an auxiliary list containing all the elements (with its position tuple associations) of all the `k` lists. Thus we create a huge list of in all `kn` number of elements and arrange them in sorted order.
