@@ -62,16 +62,14 @@ Once we have position tuple associated with each element, we create an auxiliary
 ![unified binary search](https://user-images.githubusercontent.com/4745789/81492609-ca107200-92b6-11ea-8fdf-999852f4d9b1.png)
 
 ## Working
-When when a target value is to be searched, we search it in this huge list `M`, get the position by regular binary search. and return the position tuple associated with it.
+Given a target value, we perform binary search in the above auxiliary list created and get the smallest element greater than  or equal to this target value. Once we get the element, we now get the associated position tuple. This position tuple is precisely the positions of the target element in all the `k` lists. Thus by performing one binary search in this huge list we are able to get the required positions.
 
 ## Complexity
+We are performing binary search just once on the list of size `kn` hence, the time complexity of this approach is `O(log(kn))` which is a huge improvement over the k-binary search approach where it was `O(klog(n))`.
 
-This approach uses `O(kn)` extra space but does it on `O(log(kn))` time
+This approach, unlike k-binary searches, requires a huge additional space of `O(kn)`.
 
-Time Complexity: `k + log(n)`
-Space Complexity: `O(kn)`
-
-Can we have best of both worlds? Fractional cascading is how you can acive time complexity of approach 2 and space of approach 1.
+Fractional cascading is something that gives us the best of both words by creating bridges. Let's find out how.
 
 # Fractional Cascading
 
