@@ -38,17 +38,17 @@ This approach does not really require any additional space and hence the space c
 The k-binary searches approach is thus super-efficient on space but not so much on time. Hence by trading some space, we could reap some benefits on time, and on this exact principle, the unified binary search approach is based.
 
 # Unified binary search
-This approach uses some extra space, preprocessing and computations to reduce search time. The preprocessing actually involves precomputing the position of all elements in all the `k` lists. This precomputation enables us to perform just one binary search and get the required precalculated positions.
+This approach uses some extra space, preprocessing and computations to reduce search time. The preprocessing actually involves precomputing the positions of all elements in all the `k` lists. This precomputation enables us to perform just one binary search and get the required precalculated positions in one go.
 
 ## Preprocess
-The preprocessing is done in two phases; in the first phase, we compute a position tuple for each element and attach it with the same element. In phase two of preprocessing, we create an auxiliary list containing all the elements of all the lists on which we then perform a binary search for the given target value.
+The preprocessing is done in two phases; in the first phase, we compute a position tuple for each element and associate it with the same. In phase two of preprocessing, we create an auxiliary list containing all the elements of all the lists, on which we then perform a binary search for the given target value.
 
 ### Computing position tuple for each element
-Position tuple is a `k` item tuple where every `i`th item denotes the position of the associated element in the `i`th list. We compute this tuple by performing binary search on all the `k` lists treating the element as the target value.
+Position tuple is a `k` item tuple where every `i`th item denotes the position of the associated element in the `i`th list. We compute this tuple by performing a binary search on all the `k` lists treating the element as the target value.
 
-From the example above, the position tuple of 4th element in 4th list i.e 79 will be `[3, 5, 4, 3]` which denotes its position in all 4 lists. In list 1 - `arr[0]` - 79 is at index `3`, in list 2 - `arr[1]` 79 is actually out of bounds but would be inserted at index `5` hence the output `5`, we could also have returned a value marking out of bounds, like `-2`, in list 3 - `arr[2]` - 79 is not present but smallest number greater than 79 is 94 which is at index `4` and in list 4 - `arr[3]` - 79 is present at index `3`.
+From the example above, the position tuple of 4th element in 4th list i.e 79 will be `[3, 5, 4, 3]` which denotes its position in all 4 lists. In list 1, 79 is at index `3`, in list 2, 79 is actually out of bounds but would be inserted at index `5` hence the output `5`, we could also have returned a value marking out of bounds, like `-2`, in list 3, 79 is not present but the smallest number greater than 79 is 94 and which is at index `4` and in list 4, 79 is present at index `3`. This makes the position tuple for 79 to be `[3, 5, 4, 3]`.
 
-Given a 2-dimensional array `arr` we compute the position tuple for element `(i, j)` by performing binary search on all `k` lists as shown in python code below
+Given a 2-dimensional array `arr` we compute the position tuple for element `(i, j)` by performing a binary search on all `k` lists as shown in python code below
 
 ```py
 for i, l in enumerate(arr):
@@ -60,17 +60,17 @@ for i, l in enumerate(arr):
 ### Creating a huge list
 Once we have all the position tuples and they are well associated with the corresponding elements, we create an auxiliary list of size `k * n` that holds all the elements from all the `k` lists. This auxiliary list is again kept sorted so that we could perform binary search on it.
 
+## Working
+Given a target value, we perform a binary search in the above auxiliary list and get the smallest element greater than or equal to this target value. Once we get the element, we now get the associated position tuple. This position tuple is precisely the position of the target element in all the `k` lists. Thus by performing one binary search in this huge list, we are able to get the required positions.
+
 ![unified binary search](https://user-images.githubusercontent.com/4745789/81492609-ca107200-92b6-11ea-8fdf-999852f4d9b1.png)
 
-## Working
-Given a target value, we perform a binary search in the above auxiliary list created and get the smallest element greater than or equal to this target value. Once we get the element, we now get the associated position tuple. This position tuple is precisely the position of the target element in all the `k` lists. Thus by performing one binary search in this huge list, we are able to get the required positions.
-
 ## Complexity
-We are performing binary search just once on the list of size `kn` hence, the time complexity of this approach is `O(log(kn))` which is a huge improvement over the k-binary search approach where it was `O(klog(n))`.
+We are performing binary search just once on the list of size `k * n` hence, the time complexity of this approach is `O(log(kn))` which is a huge improvement over the k-binary searches approach where it was `O(klog(n))`.
 
-This approach, unlike k-binary searches, requires a huge additional space of `O(kn)`.
+This approach, unlike k-binary searches, requires an additional space of `O(kn)`.
 
-Fractional cascading is something that gives us the best of both words by creating bridges. Let's find out how.
+Fractional cascading is something that gives us the best of both worlds by creating bridges between the lists and narrowing the scope of binary searches on subsequent iterations. Let's find out how.
 
 # Fractional Cascading
 Fractional cascading is a technique through which we speed up the iterative binary searches by creating bridges between lists. The main idea behind this approach is to dampen, rather avoid, the need to perform binary searches in `n - 1` lists.
