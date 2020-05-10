@@ -71,3 +71,50 @@ We are performing binary search just once on the list of size `kn` hence, the ti
 This approach, unlike k-binary searches, requires a huge additional space of `O(kn)`.
 
 Fractional cascading is something that gives us the best of both words by creating bridges. Let's find out how.
+
+# Fractional Cascading
+Fractional cascading is a technique through which we speed up the iterative binary searches by creating bridges between lists. The main idea behind this approach is to dampen, rather avoid, the need to perform binary searches in `n - 1` lists.
+
+In the first approach we saw how a naive way to solve this problem is to perform `k` binary searches for `k` lists; but by closely observing we find that a lot of binary search iterations on 2nd and onwards list could be avoided by just reducing the scope. The idea here is to preprocess the lists such that we create pointers from one list to another that defines a super-narrow scope for binary search. so that instead of doing binary search across the entire list, we look for the number only in that narrowed scope.
+
+![Fractional Cascading the Idea](https://user-images.githubusercontent.com/4745789/81495324-241c3200-92cd-11ea-9d7d-9c9b0911071b.png)
+
+Fractional cascading is just an idea through which we could speed up binary searches, implementations vary with respect to underlying data. The cascading could be implemnted using pointers, graphs or array indexes and in this example we keep things simple and implement everything using indexes.
+
+## Preprocess
+Preprocessing is a super-critical step in fractional cascading becuase this is something that is respondible of speeding up the binary searches. Preprocesing actually sets up all the bridges we need to traverse through the k lists.
+
+### Create Auxiliary Lists
+The first step in pre-processing is to create `k` auxiliary lists from `k` original lists. These lists are created bottom up such that auxiliary list `Mi` is created as a sorted list of elements of `Li` and half of the elements of `Mi+1`. The half elements are picked by picing every other element.
+
+THis is necessary to fill the gaps, if any, in the original list and create a uniform spread of values.
+
+![Create Auxiliary Lists](https://user-images.githubusercontent.com/4745789/81494077-8112ea80-92c3-11ea-9416-bb2422334744.png)
+
+
+### Create position pointers
+
+![Create position pointerss](https://user-images.githubusercontent.com/4745789/81494709-92122a80-92c8-11ea-89c0-e180a735eb2d.png)
+
+Each number is represented by [a, b]
+
+## Working
+
+## Code
+
+The entire working code could be found here [github.com/arpitbbhayani/fractional-cascading](https://github.com/arpitbbhayani/fractional-cascading/blob/master/fractional-cascading.ipynb)
+
+## Time and space complexity
+
+## The more interesting part
+
+### Why does we need to only check for the element and one before?
+Since we take every other number from the list. This means the number was either 1st or second.
+
+### Instead of doing it for alternate and not all?
+If we do it for all, it becomes the nurmal search. Hence the name "Fractional" cascading.
+
+### What if we do one in three
+We can limit the number fo elements promoted to higher level. But in that that we need to compare with last `r` numbers prior to the matched value.
+
+# References
