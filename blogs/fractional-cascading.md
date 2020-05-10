@@ -36,19 +36,30 @@ Each of the `k` list has size `n` and we know the time complexity of performing 
 The k-binary searches approach does not reqlly require any additional space and hence the space complexity is `O(1)`.
 
 # Unified binary search
-We can improve on time complexity by using extra bit of space.
-We can merge all the `k` lists in one and do binary search just once instead of `k`.
+This approach combines all the elements of all the `k` lists and creates an auxiliary list of size `kn` and performs binary search on this. While creating this this, it also creates a vector for each element that represents `k`-tuple containing position of that elment in each of the `k` list. Hence this approach is split into two phases
 
 ## Preprocess
 
-Before before doing that we can just apply binary search for each term in each list and say we store
-all the locations for each number in search list.
+### Create position vector for each element
+For every element in all the `k` lists we create a `k` sizes tuple for each. This tuple will hold position of the element in each of the `k` lists. The first position in the tuple is the position of the element in the 1st list, second position in the tuple is the position of the element in the 2nd list, and so on.
+
+`[2, 3, 3, 4]`
+
+This way we have precomputed all the position of every single element in all the `k` lists.
+
+### Creating a huge list
+The step one of this approach is to create an auxiliary list of all the elements of `k` lists and put them in sorted order in another list.
+
+## Working
+
+When when a target value is to be searched, we search it in this huge list `M`, get the position by regular binary search. and return the position tuple associated with it.
 
 ![unified binary search](https://user-images.githubusercontent.com/4745789/81492609-ca107200-92b6-11ea-8fdf-999852f4d9b1.png)
 
-Here [a,b,c,d] represents location of a number in each of the four lists.
-
 ## Complexity
+
+This approach uses `O(kn)` extra space but does it on `O(log(kn))` time
+
 
 Time Complexity: `k + log(n)`
 Space Complexity: `O(kn)`
