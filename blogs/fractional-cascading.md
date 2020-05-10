@@ -73,9 +73,9 @@ This approach, unlike k-binary searches, requires an additional space of `O(kn)`
 Fractional cascading is something that gives us the best of both worlds by creating bridges between the lists and narrowing the scope of binary searches on subsequent iterations. Let's find out how.
 
 # Fractional Cascading
-Fractional cascading is a technique through which we speed up the iterative binary searches by creating bridges between lists. The main idea behind this approach is to dampen or avoid the need to perform binary searches in subsequent lists.
+Fractional cascading is a technique through which we speed up iterative binary searches by creating bridges between lists. The main idea behind this approach is to dampen the need to perform binary searches in subsequent lists after performing the search on one.
 
-In the first approach we saw how a naive way to solve this problem is to perform `k` binary searches for `k` lists, but by closely observing we find that a lot of binary search iterations on 2nd and onwards list could be avoided by just reducing the scope. The idea here is to preprocess the lists such that we create pointers from one list to another that defines a super-narrow scope for binary search. so that instead of doing a binary search across the entire list, we look for the number only in that narrowed scope.
+In the first approach we saw how we solved this problem by performing `k` binary searches on `k` lists. If we closely observe we find that a lot of binary search iterations on 2nd list and onwards list could have been avoided by just reducing the scope. The scope of binary search could be reduced by creating bridges from one list to another using pointers, that narrows down the scope of binary search. This narrowing down enables us to not search in the entire list but just a subset of the list.
 
 ![Fractional Cascading the Idea](https://user-images.githubusercontent.com/4745789/81495324-241c3200-92cd-11ea-9d7d-9c9b0911071b.png)
 
