@@ -68,7 +68,7 @@ Given a target value, we perform a binary search in the above auxiliary list and
 ## Complexity
 We are performing binary search just once on the list of size `k * n` hence, the time complexity of this approach is `O(log(kn))` which is a huge improvement over the k-binary searches approach where it was `O(klog(n))`.
 
-This approach, unlike k-binary searches, requires an additional space of `O(kn)`.
+This approach, unlike k-binary searches, requires an additional space of `O(k.kn)` since each element holds `k` item position tuple and there are in all `k * n` elements.
 
 Fractional cascading is something that gives us the best of both worlds by creating bridges between the lists and narrowing the scope of binary searches on subsequent iterations. Let's find out how.
 
@@ -151,7 +151,7 @@ The entire working code could be found here [github.com/arpitbbhayani/fractional
 ## Time and space complexity
 In Fractional Cascading, we perform binary search once on auxiliary list `M(0)` and then make `k` constant comparisions for each of the subsequent levels; hence the time complexity is `O(k + log(n))`.
 
-Fractional cascading also requires space to hold auxiliary list which amounts to `O(kn)`
+Fractional cascading also requires space to hold auxiliary list which amounts to `O(kn)` since the position tuple requires a constant 2 items and is independent of `k`.
 
 Thus Fractional Cascading has time complexity very close to the k-binary searches approach with a very low space complexity as compared to  unified binary searches approach; thus giving us the best of both worlds.
 
