@@ -7,11 +7,11 @@ Things become more interesting when we have to perform an iterative binary searc
 > Given `k` lists of `n` sorted integers each, and a target value `x`, return the position of the smallest value greater than or equal to `x` in each of the `k` lists. Preprocessing of the list is allowed before answering the queries.
 
 # The naive approach - k binary searches
-The expected output of this iterative search is the position of smallest value greater than or equal to `x` in each of the `k` lists. This is a classical Binary Search problem and hence in this, the naive approach we could fire `k` binary searches on `k` lists for the target value `x` and collect the positions. A simple enough solution that works just fine.
+The expected output of this iterative search is the position of smallest value greater than or equal to `x` in each of the `k` lists. This is a classical Binary Search problem and hence in this approach we fire `k` binary searches on `k` lists for the target value `x` and collect the positions.
 
 ![k-binary searches](https://user-images.githubusercontent.com/4745789/81492614-dbf21500-92b6-11ea-9f75-29eb3522186f.png)
 
-Python has an in-built module called `bisect` which has the function `bisect_left` which outputs the smallest value greater than or equal to `x` in a list `l`; which is exactly what we need to output and hence python-based solution using this k-binary searches approach could be 
+Python has an in-built module called `bisect` which has the function `bisect_left` which outputs the smallest value greater than or equal to `x` in a list which is exactly what we need to output and hence python-based solution using this k-binary searches approach could be 
 
 ```py
 import bisect
@@ -35,7 +35,7 @@ Each of the `k` lists has size `n` and we know the time complexity of performing
 
 This approach does not really require any additional space and hence the space complexity is `O(1)`.
 
-The k-binary searchs approach is thus super-efficient on space but not so much on time. Hence by trading some space, we could get some benefits on time complexity and on this principle, the unified binary search approach is based.
+The k-binary searches approach is thus super-efficient on space but not so much on time. Hence by trading some space, we could get some benefits on time complexity and on this principle, the unified binary search approach is based.
 
 # Unified binary search
 This approach uses extra space to reduce search time. It processes, precomputes, and stores the position of each element in all the lists and serves the result by performing a binary search just once. Thus each element is now associated with a tuple with `k` items where every `i`th each item represents its position in `i`it list.
@@ -67,7 +67,7 @@ Once we have position tuple associated with each element, we create an auxiliary
 Given a target value, we perform a binary search in the above auxiliary list created and get the smallest element greater than or equal to this target value. Once we get the element, we now get the associated position tuple. This position tuple is precisely the position of the target element in all the `k` lists. Thus by performing one binary search in this huge list, we are able to get the required positions.
 
 ## Complexity
-We are performing binary search just once on the list of size `kn` hence, the time complexity of this approach is `O(log(kn))` which is a huge improvement over the k-binary searches approach where it was `O(klog(n))`.
+We are performing binary search just once on the list of size `kn` hence, the time complexity of this approach is `O(log(kn))` which is a huge improvement over the k-binary search approach where it was `O(klog(n))`.
 
 This approach, unlike k-binary searches, requires a huge additional space of `O(kn)`.
 
