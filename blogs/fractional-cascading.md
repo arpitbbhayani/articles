@@ -43,7 +43,7 @@ Creates bridges and fences.
 
 ### Create Auxiliary Lists
 
-![Create auxiliary lists](https://user-images.githubusercontent.com/4745789/81494062-588af080-92c3-11ea-9ec7-e894ccc537e5.png)
+![Create Auxiliary Lists](https://user-images.githubusercontent.com/4745789/81494077-8112ea80-92c3-11ea-9416-bb2422334744.png)
 
 
 Each number is represented by [a, b]
