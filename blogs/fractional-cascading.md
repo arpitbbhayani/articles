@@ -73,30 +73,28 @@ This approach, unlike k-binary searches, requires an additional space of `O(kn)`
 Fractional cascading is something that gives us the best of both worlds by creating bridges between the lists and narrowing the scope of binary searches on subsequent iterations. Let's find out how.
 
 # Fractional Cascading
-Fractional cascading is a technique through which we speed up the iterative binary searches by creating bridges between the lists. The main idea behind this approach is to dampen the need to perform binary searches in subsequent lists after performing the search on one.
+Fractional cascading is a technique through which we speed up the iterative binary searches by creating bridges between the lists. The main idea behind this approach is to dampen the need to perform binary searches on subsequent lists after performing the search on one.
 
-In the first approach we solved the problem by performing `k` binary searches on `k` lists. If, after the binary search on the first list, we would have known a range within which the target value was present in 2nd, then we would have limit our search within that subset saving us a bunch of computation time. The bridegs, defined above provides us the shortcut to reach the subset of the other list and narrowed down the range. 
+In the k-binary searches approach, we solved the problem by performing `k` binary searches on `k` lists. If, after the binary search on the first list, we would have known a range within which the target value was present in the 2nd list, we would have limit our search within that subset and thus saving us a bunch of computation time. The bridegs, defined above, provides us with a shortcut to reach the subset of the other list where that target value would be present.
 
 ![Fractional Cascading the Idea](https://user-images.githubusercontent.com/4745789/81495324-241c3200-92cd-11ea-9d7d-9c9b0911071b.png)
 
-Fractional cascading is just an idea through which we could speed up binary searches, implementations vary with respect to the underlying data. The bridges could be implemnted using pointers, graphs or array indexes. To keep things simple we implement this using array indexes.
+Fractional cascading is just an idea through which we could speed up binary searches, implementations vary with respect to the underlying data. The bridges could be implemnted using pointers, graphs or array indexes.
 
 ## Preprocess
-Preprocessing is a super-critical step in fractional cascading becuase this is something that is respondible of speeding up the binary searches. Preprocesing actually sets up all the bridges we need to traverse through the k lists.
+Preprocessing is a super-critical step in fractional cascading becuase this is something that is respondible for speeding up the binary searches. Preprocesing actually sets up all the bridges from all the elements from one list to the corresponding range in the lower list, and thus cascading that bridges to all the `k` lists.
 
 ### Create Auxiliary Lists
-The first step in pre-processing is to create `k` auxiliary lists from `k` original lists. These lists are created bottom up such that auxiliary list `Mi` is created as a sorted list of elements of `Li` and half of the elements of `Mi+1`. The half elements are picked by picing every other element.
-
-THis is necessary to fill the gaps, if any, in the original list and create a uniform spread of values.
+The first step in pre-processing is to create `k` auxiliary lists from `k` original lists. These lists are created bottom up which means lists on the lower levels are created first. An auxiliary list `M(i)` is created as a sorted list of elements of original list `L(i)` and half of previously created auxiliary list `M(i+1)`. The half elements of auxiliary lists are chosen by picking every other element from it.
 
 ![Create Auxiliary Lists](https://user-images.githubusercontent.com/4745789/81494077-8112ea80-92c3-11ea-9416-bb2422334744.png)
 
+By picking every other element from lower level lists, we fill the gaps in value ranges in original list `L(i)`, giving us a uniform spread of values across all auxiliary lists.
 
-### Create position pointers
+### Position tuples
+A position tuple for Fractional cascading is a 2 item tuple where the first item is the position of the element in original list on the same level and the second element is the position of the element in the auxiliary list on the lower level.
 
 ![Create position pointerss](https://user-images.githubusercontent.com/4745789/81494709-92122a80-92c8-11ea-89c0-e180a735eb2d.png)
-
-Each number is represented by [a, b]
 
 ## Working
 
