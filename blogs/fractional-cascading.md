@@ -38,11 +38,10 @@ This approach does not really require any additional space and hence the space c
 The k-binary searches approach is thus super-efficient on space but not so much on time. Hence by trading some space, we could reap some benefits on time, and on this exact principle, the unified binary search approach is based.
 
 # Unified binary search
-This approach uses extra space to reduce search time. It processes, precomputes, and stores the position of each element in all the lists and serves the result by performing a binary search just once. Thus each element is now associated with a tuple with `k` items where every `i`th each item represents its position in `i`it list.
+This approach uses some extra space, preprocessing and computations to reduce search time. The preprocessing actually involves precomputing the position of all elements in all the `k` lists. This precomputation enables us to make just one binary search and get the precalculated positions and return.
 
 ## Preprocess
-
-The preprocessing is done in two folds; in the first phase, we compute position tuple for each element while in the second we create an auxiliary list containing all the elements of all the lists.
+The preprocessing is done in two phases; in the first phase, we compute a position tuple for each element and attach it it with the element. In phase two of preprocessing we create an auxiliary list containing all the elements of all the lists on which the binary search is performed.
 
 ### Create position tuple for each element
 The position tuple is a `k` item tuple where every `i`th item denotes the position of the associated element in `i`th list. Thus the tuple for an element is computed by performing binary search on all `k` lists by treating the element as the target value.
