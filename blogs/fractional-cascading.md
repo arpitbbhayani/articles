@@ -57,13 +57,13 @@ for i, l in enumerate(arr):
 In above example, the position tuple of 4th element in 4th list i.e `79` is `[3, 5, 4, 3]`.
 
 ### Creating a huge list
-The step one of this approach is to create an auxiliary list of all the elements of `k` lists and put them in sorted order in another list.
+Once we have position tuple associated with each element, we create an auxiliary list containing all the elements (with its position tuple associations) of all the `k` lists. Thus we create a huge list of in all `kn` number of elments and arrange them in sorted order.
+
+![unified binary search](https://user-images.githubusercontent.com/4745789/81492609-ca107200-92b6-11ea-8fdf-999852f4d9b1.png)
 
 ## Working
 
 When when a target value is to be searched, we search it in this huge list `M`, get the position by regular binary search. and return the position tuple associated with it.
-
-![unified binary search](https://user-images.githubusercontent.com/4745789/81492609-ca107200-92b6-11ea-8fdf-999852f4d9b1.png)
 
 ## Complexity
 
