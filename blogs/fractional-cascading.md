@@ -39,12 +39,20 @@ Can we have best of both worlds? Fractional cascading is how you can acive time 
 Speeds up binary search.
 Creates bridges and fences.
 
+Concept
+
+TODO: Image
+
 ## Preprocess
 
 ### Create Auxiliary Lists
 
 ![Create Auxiliary Lists](https://user-images.githubusercontent.com/4745789/81494077-8112ea80-92c3-11ea-9416-bb2422334744.png)
 
+
+### Create position pointers
+
+![Create position pointerss](https://user-images.githubusercontent.com/4745789/81494709-92122a80-92c8-11ea-89c0-e180a735eb2d.png)
 
 Each number is represented by [a, b]
 
