@@ -79,7 +79,7 @@ In the first approach we saw how we solved this problem by performing `k` binary
 
 ![Fractional Cascading the Idea](https://user-images.githubusercontent.com/4745789/81495324-241c3200-92cd-11ea-9d7d-9c9b0911071b.png)
 
-Fractional cascading is just an idea through which we could speed up binary searches, implementations vary with respect to underlying data. The cascading could be implemnted using pointers, graphs or array indexes and in this example we keep things simple and implement everything using indexes.
+Fractional cascading is just an idea through which we could speed up binary searches, implementations vary with respect to the underlying data. The bridges could be implemnted using pointers, graphs or array indexes. To keep things simple we implement this using array indexes.
 
 ## Preprocess
 Preprocessing is a super-critical step in fractional cascading becuase this is something that is respondible of speeding up the binary searches. Preprocesing actually sets up all the bridges we need to traverse through the k lists.
