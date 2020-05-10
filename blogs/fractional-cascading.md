@@ -72,11 +72,9 @@ This approach, unlike k-binary searches, requires a huge additional space of `O(
 Fractional cascading is something that gives us the best of both words by creating bridges. Let's find out how.
 
 # Fractional Cascading
+Fractional cascading is a technique through which we speed up the iterative binary searches by creating bridges between lists. The main idea behind this approach is to dampen, rather avoid, the need to perform binary searches in `n - 1` lists.
 
-Speeds up binary search.
-Creates bridges and fences.
-
-Concept
+In the first approach we saw how a naive way to solve this problem is to perform `k` binary searches for `k` lists; but by closely observing we find that a lot of binary search iterations on 2nd and onwards list could be avoided by just reducing the scope. The idea here is to preprocess the lists such that we create pointers from one list to another that defines a super-narrow scope for binary search. so that instead of doing binary search across the entire list, we look for the number only in that narrowed scope.
 
 ![Fractional Cascading the Idea](https://user-images.githubusercontent.com/4745789/81495324-241c3200-92cd-11ea-9d7d-9c9b0911071b.png)
 
@@ -96,13 +94,6 @@ Each number is represented by [a, b]
 ## Working
 
 ## Code
-
-```py
-import bisect
-
-def binary_search(arr, q):
-    return bisect.bisect_left(arr, q)
-```
 
 The entire working code could be found here [github.com/arpitbbhayani/fractional-cascading](https://github.com/arpitbbhayani/fractional-cascading/blob/master/fractional-cascading.ipynb)
 
