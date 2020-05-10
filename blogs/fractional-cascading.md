@@ -9,7 +9,7 @@ Things become slightly moer interesting when instead of searching for the target
 # The naive approach - k binary searches
 Returning the position of the smallest value greater than or equal to `x` in each of the `k` list is a classical `k` binary search problem and hence the naive way to solve this would be to perform binary searches for each of the `k` lists and return.
 
-![k-binary searches](https://user-images.githubusercontent.com/4745789/81491850-929ec700-92b0-11ea-9117-6125055a3903.png)
+![k-binary searches](https://user-images.githubusercontent.com/4745789/81491889-d42f7200-92b0-11ea-9186-869edc1d16d8.png)
 
 ## Complexity
 Since each of the `k` list has size `n`, the time complexity of performing a binary search in one list would be `O(log(n))` and to do it for `k` lists it would take `O(k.log(n))`. Since we do not require any extra space the space somplexity of this approach would be `O(1)`.
