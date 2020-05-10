@@ -149,6 +149,7 @@ def get_locations_fractional_cascading(x):
 The entire working code could be found here [github.com/arpitbbhayani/fractional-cascading](https://github.com/arpitbbhayani/fractional-cascading/blob/master/fractional-cascading.ipynb)
 
 ## Time and space complexity
+The Fractional Cascading is
 
 ## The more interesting part
 
@@ -161,4 +162,12 @@ If we do it for all, it becomes the nurmal search. Hence the name "Fractional" c
 ### What if we do one in three
 We can limit the number fo elements promoted to higher level. But in that that we need to compare with last `r` numbers prior to the matched value.
 
+## Fractional Cascading in real world
+
+Fractional cascading is used in databases, especially, relational databases to speedup the lookups in B-Trees. It is used in geometric data structures to find out.
+
 # References
+ - [Fractional Cascading - Wikipedia](https://en.wikipedia.org/wiki/Fractional_cascading)
+ - [Fractional Cascading - Original Paper by Bernard Chazelle and Leonidas Guibas](https://www.cs.princeton.edu/~chazelle/pubs/FractionalCascading1.pdf)
+ - [Fractional Cascading Revisited](http://www.cse.iitd.ernet.in/~ssen/journals/frac.pdf)
+ - [Fractional Cascading - Brown University](http://cs.brown.edu/courses/cs252/misc/resources/lectures/pdf/notes08.pdf)
