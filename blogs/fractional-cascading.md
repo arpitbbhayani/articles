@@ -36,16 +36,25 @@ Each of the `k` list has size `n` and we know the time complexity of performing 
 The k-binary searches approach does not reqlly require any additional space and hence the space complexity is `O(1)`.
 
 # Unified binary search
-This approach combines all the elements of all the `k` lists and creates an auxiliary list of size `kn` and performs binary search on this. While creating this this, it also creates a vector for each element that represents `k`-tuple containing position of that elment in each of the `k` list. Hence this approach is split into two phases
+This approach uses extra space to reduce the search time. It processess, precomputes and stores the position of each element in all the lists and serves the result by performing binary search just once. Thus each element is now associated with a tuple with `k` items where every `i`th each item represents its position in `i`it list.
 
 ## Preprocess
 
-### Create position vector for each element
-For every element in all the `k` lists we create a `k` sizes tuple for each. This tuple will hold position of the element in each of the `k` lists. The first position in the tuple is the position of the element in the 1st list, second position in the tuple is the position of the element in the 2nd list, and so on.
+The preprocessing is done in two folds; in the first phase we compute position tuple for each element while in second we create an auxiliary list containing all the elements of all the lists.
 
-`[2, 3, 3, 4]`
+### Create position tuple for each element
+The position tuple is a `k` item tuple where every `i`th item denotes the position of the associated element in `i`th list. Thus the tuple for an element is computed by performing binary search on all `k` lists by treating the element as the target value.
 
-This way we have precomputed all the position of every single element in all the `k` lists.
+Python code to compute position tuple for all elements in 2 dimensional array `arr` is as shown below
+
+```py
+for i, l in enumerate(arr):
+    for j, e in enumerate(l):
+        for k, m in enumerate(arr):
+            positions[i][j][k] = int(bisect.bisect_left(m, e))
+```
+
+In above example, the position tuple of 4th element in 4th list i.e `79` is `[3, 5, 4, 3]`.
 
 ### Creating a huge list
 The step one of this approach is to create an auxiliary list of all the elements of `k` lists and put them in sorted order in another list.
@@ -59,7 +68,6 @@ When when a target value is to be searched, we search it in this huge list `M`, 
 ## Complexity
 
 This approach uses `O(kn)` extra space but does it on `O(log(kn))` time
-
 
 Time Complexity: `k + log(n)`
 Space Complexity: `O(kn)`
