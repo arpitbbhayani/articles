@@ -48,7 +48,7 @@ Position tuple is a `k` item tuple where every `i`th item denotes the position o
 
 From the example above, the position tuple of 4th element in 4th list i.e `79` will be `[3, 5, 4, 3]`. The position of `79` in list L0 is `3`, list `l1` is 5, list `l2` is 4 and list l3 is `3`. Notice if the element exceeds all the values of an array we get the index to be length of the array, instead we could also use a placeholder like `-2` which denotes out-of-bounds.
 
-So given a 2-dimensional array `arr` we compute the position tuple for element `(i, j)` by performing binary search on all `k` lists as shown in python code below
+Given a 2-dimensional array `arr` we compute the position tuple for element `(i, j)` by performing binary search on all `k` lists as shown in python code below
 
 ```py
 for i, l in enumerate(arr):
@@ -58,7 +58,7 @@ for i, l in enumerate(arr):
 ```
 
 ### Creating a huge list
-Once we have position tuple associated with each element, we create an auxiliary list containing all the elements (with its position tuple associations) of all the `k` lists. Thus we create a huge list of in all `kn` number of elements and arrange them in sorted order.
+Once we have all the position tuples and they are well associated with the corresponding elements, we create an auxiliary list of size `k * n` that holds all the elements from all the `k` lists. This auxiliary list is again kept sorted so that we could perform binary search on it.
 
 ![unified binary search](https://user-images.githubusercontent.com/4745789/81492609-ca107200-92b6-11ea-8fdf-999852f4d9b1.png)
 
