@@ -7,11 +7,11 @@ Things become more interesting when we have to perform an iterative binary searc
 > Given `k` lists of `n` sorted integers each, and a target value `x`, return the position of the smallest value greater than or equal to `x` in each of the `k` lists. Preprocessing of the list is allowed before answering the queries.
 
 # The naive approach - k binary searches
-The expected output of this iterative search is the position of smallest value greater than or equal to `x` in each of the `k` lists. This is a classical Binary Search problem that could be applied to each of the `k` lists.
+The expected output of this iterative search is the position of smallest value greater than or equal to `x` in each of the `k` lists. This is a classical Binary Search problem and hence in this the naive approach we could fire `k` binary searches on `k` lists for the target value `x` and collect the positions. A simple enough solution that works just fine.
 
 ![k-binary searches](https://user-images.githubusercontent.com/4745789/81492614-dbf21500-92b6-11ea-9f75-29eb3522186f.png)
 
-Python has an in-built module called `bisect` which has the function `bisect_left` which outputs the smallest value greater than or equal to `x` in a list `l`; and this is exactly what we need to output.
+Python has an in-built module called `bisect` which has the function `bisect_left` which outputs the smallest value greater than or equal to `x` in a list `l`; which is exactly what we need to output and hence python-based solution using this k-binary search approach could be 
 
 ```py
 import bisect
