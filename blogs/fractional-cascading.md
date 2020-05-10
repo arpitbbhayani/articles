@@ -75,7 +75,7 @@ Fractional cascading is something that gives us the best of both worlds by creat
 # Fractional Cascading
 Fractional cascading is a technique through which we speed up the iterative binary searches by creating bridges between the lists. The main idea behind this approach is to dampen the need to perform binary searches in subsequent lists after performing the search on one.
 
-In the first approach we solved the problem by performing `k` binary searches on `k` lists. If we could have known a range within which the target value was present, then we could have narrowed down the scope of binary search to that particular subset and look for the value within it and thus saving a bunch of computation time.
+In the first approach we solved the problem by performing `k` binary searches on `k` lists. If, after the binary search on the first list, we would have known a range within which the target value was present in 2nd, then we would have limit our search within that subset saving us a bunch of computation time. The bridegs, defined above provides us the shortcut to reach the subset of the other list and narrowed down the range. 
 
 ![Fractional Cascading the Idea](https://user-images.githubusercontent.com/4745789/81495324-241c3200-92cd-11ea-9d7d-9c9b0911071b.png)
 
