@@ -149,7 +149,11 @@ def get_locations_fractional_cascading(x):
 The entire working code could be found here [github.com/arpitbbhayani/fractional-cascading](https://github.com/arpitbbhayani/fractional-cascading/blob/master/fractional-cascading.ipynb)
 
 ## Time and space complexity
-The Fractional Cascading is
+In Fractional Cascading, we perform binary search once on auxiliary list `M(0)` and then make `k` constant comparisions for each of the subsequent levels; hence the time complexity is `O(k + log(n))`.
+
+Fractional cascading also requires space to hold auxiliary list which amounts to `O(kn)`
+
+Thus Fractional Cascading has time complexity very close to the k-binary searches approach with a very low space complexity as compared to  unified binary searches approach; thus giving us the best of both worlds.
 
 ## The more interesting part
 
