@@ -96,7 +96,7 @@ A position tuple for Fractional Cascading is a 2 item tuple, associated with eac
 
 ![Create position pointerss](https://user-images.githubusercontent.com/4745789/81494709-92122a80-92c8-11ea-89c0-e180a735eb2d.png)
 
-The position tuple for each element in the auxiliary array can be craeted by doing a binary search on the original list and the auxiliary list on the lower level. Given a 2-dimensional array `arr` and auxiliary lists `m_arr` we compute the position tuples for element `(i, j)` by performing a binary search on all `k` original and auxiliary lists as shown in python code below
+The position tuple for each element in the auxiliary array can be created by doing a binary search on the original list and the auxiliary list on the lower level. Given a 2-dimensional array `arr` and auxiliary lists `m_arr` we compute the position tuples for element `(i, j)` by performing a binary search on all `k` original and auxiliary lists as shown in python code below
 
 ```py
 for i, l in enumerate(m_arr):
@@ -108,9 +108,9 @@ for i, l in enumerate(m_arr):
 ```
 
 ## Fractional Cascading in action
-We start by performing binary search on the first auxiliary list `M(0)` from which we get the element corresponding to the target value. The position tuple for this element contains the position corresponding to the original list `L(0)` and bridge that will take us to the list `M(1)`. Now when we move to the list `M(1)` through bridge and have reached the index `b`.
+We start by performing a binary search on the first auxiliary list `M(0)` from which we get the element corresponding to the target value. The position tuple for this element contains the position corresponding to the original list `L(0)` and bridge that will take us to the list `M(1)`. Now when we move to the list `M(1)` through bridge and have reached the index `b`.
 
-Since auxilieary lists have uniform range spread, because of every other element being promoted, we are sure that the target value should be checked againg the index `b` and `b - 1`; because if the value was any lower it would have been promoted and bridged to other value and hence the trail we trace would be different from what we are tracing now.
+Since auxiliary lists have uniform range spread, because of every other element being promoted, we are sure that the target value should be checked again at the index `b` and `b - 1`; because if the value was any lower it would have been promoted and bridged to other value and hence the trail we trace would be different from what we are tracing now.
 
 Once we know which of the `b` and `b-1` index to pick (depending on the values at the index and the target value) we add the first item of the position tuple to the solution set and move the auxiliary list on the lower level and the entire process continues.
 
@@ -123,7 +123,7 @@ def get_locations_fractional_cascading(x):
     # the first and only binary search on auxiliary list M[0]
     index = bisect.bisect_left(m_arr[0], x)
 
-    # loc always holds the required location from original list on same level
+    # loc always holds the required location from the original list on same level
     # next_loc holds the bridge index on the lower level
     loc, next_loc = pointers[0][index]
 
@@ -149,14 +149,14 @@ def get_locations_fractional_cascading(x):
 The entire working code could be found here [github.com/arpitbbhayani/fractional-cascading](https://github.com/arpitbbhayani/fractional-cascading/blob/master/fractional-cascading.ipynb)
 
 ## Time and space complexity
-In Fractional Cascading, we perform binary search once on auxiliary list `M(0)` and then make `k` constant comparisions for each of the subsequent levels; hence the time complexity is `O(k + log(n))`.
+In Fractional Cascading, we perform binary search once on auxiliary list `M(0)` and then make `k` constant comparisons for each of the subsequent levels; hence the time complexity is `O(k + log(n))`.
 
-The auxiliary lists could at most contain all the elements from original list plus `1/2 |L(n)| + 1/4 |L(n-1)| + 1/8 |L(n-2)| + ...` which is less than all elements of original list. Thus the total size of auxiliary list cannot exceed twice of the original lists. The position tuple for each of the element is also a constant 2 item tuple thus the space complexity of Fractional Cascading is `O(kn)`.
+The auxiliary lists could at most contain all the elements from original list plus `1/2 |L(n)| + 1/4 |L(n-1)| + 1/8 |L(n-2)| + ...` which is less than all elements of original list. Thus the total size of the auxiliary list cannot exceed twice the original lists. The position tuple for each of the elements is also a constant 2 item tuple thus the space complexity of Fractional Cascading is `O(kn)`.
 
-Thus Fractional Cascading has time complexity very close to the k-binary searches approach with a very low space complexity as compared to  unified binary searches approach; thus giving us the best of both worlds.
+Thus Fractional Cascading has time complexity very close to the k-binary searches approach with a very low space complexity as compared to the unified binary searches approach; thus giving us the best of both worlds.
 
 ## Fractional Cascading in real world
-Fractional Cascading is used in [FD-Trees](http://pages.cs.wisc.edu/~yinan/fdtree.html) which are used in databases to address asymmetry of read-write speeds in tree indexing on the flash disk. Fractional cascading is typically used in [range search](https://en.wikipedia.org/wiki/Range_searching) data structures like [Segment Trees](https://en.wikipedia.org/wiki/Segment_tree) to speed up lookups and filters.
+Fractional Cascading is used in [FD-Trees](http://pages.cs.wisc.edu/~yinan/fdtree.html) which are used in databases to address the asymmetry of read-write speeds in tree indexing on the flash disk. Fractional cascading is typically used in [range search](https://en.wikipedia.org/wiki/Range_searching) data structures like [Segment Trees](https://en.wikipedia.org/wiki/Segment_tree) to speed up lookups and filters.
 
 # References
  - [Fractional Cascading - Wikipedia](https://en.wikipedia.org/wiki/Fractional_cascading)
