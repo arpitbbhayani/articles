@@ -7,7 +7,7 @@ Things become more interesting when we have to perform an iterative binary searc
 > Given `k` lists of `n` sorted integers each, and a target value `x`, return the position of the smallest value greater than or equal to `x` in each of the `k` lists. Preprocessing of the list is allowed before answering the queries.
 
 # The naive approach - k binary searches
-The expected output of this iterative search is the position of smallest value greater than or equal to `x` in each of the `k` lists. This is a classical Binary Search problem and hence in this approach, we fire `k` binary searches on `k` lists for the target value `x` and collect the positions.
+The expected output of this iterative search is the position of the smallest value greater than or equal to `x` in each of the `k` lists. This is a classical Binary Search problem and hence in this approach, we fire `k` binary searches on `k` lists for the target value `x` and collect the positions.
 
 ![k-binary searches](https://user-images.githubusercontent.com/4745789/81492614-dbf21500-92b6-11ea-9f75-29eb3522186f.png)
 
@@ -31,7 +31,7 @@ def get_positions_k_bin_search(x):
 ```
 
 ## Time and Space Complexity
-Each of the `k` lists has size `n` and we know the time complexity of performing a binary search in one list of `n` elements is `O(log(n))`. Hence we deduce that the time complexity of this k-binary searches approach is `O(klog(n))`. 
+Each of the `k` lists have size `n` and we know the time complexity of performing a binary search in one list of `n` elements is `O(log(n))`. Hence we deduce that the time complexity of this k-binary searches approach is `O(klog(n))`. 
 
 This approach does not really require any additional space and hence the space complexity is `O(1)`.
 
@@ -46,9 +46,9 @@ The preprocessing is done in two phases; in the first phase, we compute a positi
 ### Computing position tuple for each element
 Position tuple is a `k` item tuple where every `i`th item denotes the position of the associated element in the `i`th list. We compute this tuple by performing a binary search on all the `k` lists treating the element as the target value.
 
-From the example above, the position tuple of 4th element in 4th list i.e 79 will be `[3, 5, 4, 3]` which denotes its position in all 4 lists. In list 1, 79 is at index `3`, in list 2, 79 is actually out of bounds but would be inserted at index `5` hence the output `5`, we could also have returned a value marking out of bounds, like `-2`, in list 3, 79 is not present but the smallest number greater than 79 is 94 and which is at index `4` and in list 4, 79 is present at index `3`. This makes the position tuple for 79 to be `[3, 5, 4, 3]`.
+From the example above, the position tuple of 4th element in the 4th list i.e 79 will be `[3, 5, 4, 3]` which denotes its position in all 4 lists. In list 1, 79 is at index `3`, in list 2, 79 is actually out of bounds but would be inserted at index `5` hence the output `5`, we could also have returned a value marking out of bounds, like `-2`, in list 3, 79 is not present but the smallest number greater than 79 is 94 and which is at index `4` and in list 4, 79 is present at index `3`. This makes the position tuple for 79 to be `[3, 5, 4, 3]`.
 
-Given a 2-dimensional array `arr` we compute the position tuple for element `(i, j)` by performing a binary search on all `k` lists as shown in python code below
+Given a 2-dimensional array `arr` we compute the position tuple for an element `(i, j)` by performing a binary search on all `k` lists as shown in python code below
 
 ```py
 for i, l in enumerate(arr):
@@ -85,7 +85,7 @@ Fractional cascading is just an idea through which we could speed up binary sear
 Preprocessing is a super-critical step in fractional cascading because it is responsible for speeding up the iterative binary searches. Preprocessing actually sets up all the bridges from all the elements from one list to the range of items in the lower list where the element could be found. These bridges then cascade to all the lists on the lower levels.
 
 ### Create Auxiliary Lists
-The first step in pre-processing is to create `k` auxiliary lists from `k` original lists. These lists are created bottom-up which means lists on the lower levels are created first - `M(i+1)` is created before `M(i)`. An auxiliary list `M(i)` is created as a sorted list of elements of original list `L(i)` and half of the previously created auxiliary list `M(i+1)`. The half elements of auxiliary lists are chosen by picking every other element from it.
+The first step in pre-processing is to create `k` auxiliary lists from `k` original lists. These lists are created bottom-up which means lists on the lower levels are created first - `M(i+1)` is created before `M(i)`. An auxiliary list `M(i)` is created as a sorted list of elements of the original list `L(i)` and half of the previously created auxiliary list `M(i+1)`. The half elements of auxiliary lists are chosen by picking every other element from it.
 
 ![Create Auxiliary Lists](https://user-images.githubusercontent.com/4745789/81494077-8112ea80-92c3-11ea-9416-bb2422334744.png)
 
@@ -108,7 +108,7 @@ for i, l in enumerate(m_arr):
 ```
 
 ## Fractional Cascading in action
-We start by performing a binary search on the first auxiliary list `M(0)` from which we get the element corresponding to the target value. The position tuple for this element contains the position corresponding to the original list `L(0)` and bridge that will take us to the list `M(1)`. Now when we move to the list `M(1)` through bridge and have reached the index `b`.
+We start by performing a binary search on the first auxiliary list `M(0)` from which we get the element corresponding to the target value. The position tuple for this element contains the position corresponding to the original list `L(0)` and bridge that will take us to the list `M(1)`. Now when we move to the list `M(1)` through the bridge and have reached the index `b`.
 
 Since auxiliary lists have uniform range spread, because of every other element being promoted, we are sure that the target value should be checked again at the index `b` and `b - 1`; because if the value was any lower it would have been promoted and bridged to other value and hence the trail we trace would be different from what we are tracing now.
 
@@ -120,7 +120,7 @@ Once we reach the last auxiliary list and process the position tuple there and p
 def get_locations_fractional_cascading(x): 
     locations = []
 
-    # the first and only binary search on auxiliary list M[0]
+    # the first and only binary search on the auxiliary list M[0]
     index = bisect.bisect_left(m_arr[0], x)
 
     # loc always holds the required location from the original list on same level
@@ -149,9 +149,9 @@ def get_locations_fractional_cascading(x):
 The entire working code could be found here [github.com/arpitbbhayani/fractional-cascading](https://github.com/arpitbbhayani/fractional-cascading/blob/master/fractional-cascading.ipynb)
 
 ## Time and space complexity
-In Fractional Cascading, we perform binary search once on auxiliary list `M(0)` and then make `k` constant comparisons for each of the subsequent levels; hence the time complexity is `O(k + log(n))`.
+In Fractional Cascading, we perform binary search once on the auxiliary list `M(0)` and then make `k` constant comparisons for each of the subsequent levels; hence the time complexity is `O(k + log(n))`.
 
-The auxiliary lists could at most contain all the elements from original list plus `1/2 |L(n)| + 1/4 |L(n-1)| + 1/8 |L(n-2)| + ...` which is less than all elements of original list. Thus the total size of the auxiliary list cannot exceed twice the original lists. The position tuple for each of the elements is also a constant 2 item tuple thus the space complexity of Fractional Cascading is `O(kn)`.
+The auxiliary lists could at most contain all the elements from the original list plus `1/2 |L(n)| + 1/4 |L(n-1)| + 1/8 |L(n-2)| + ...` which is less than all elements of the original list combined. Thus the total size of the auxiliary list cannot exceed twice the original lists. The position tuple for each of the elements is also a constant 2 item tuple thus the space complexity of Fractional Cascading is `O(kn)`.
 
 Thus Fractional Cascading has time complexity very close to the k-binary searches approach with a very low space complexity as compared to the unified binary searches approach; thus giving us the best of both worlds.
 
