@@ -35,7 +35,7 @@ Each of the `k` lists has size `n` and we know the time complexity of performing
 
 This approach does not really require any additional space and hence the space complexity is `O(1)`.
 
-The k-binary searches approach is thus super-efficient on space but not so much on time. Hence by trading some space, we could get some benefits on time complexity and on this principle, the unified binary search approach is based.
+The k-binary searches approach is thus super-efficient on space but not so much on time. Hence by trading some space, we could reap some benefits on time, and on this exact principle, the unified binary search approach is based.
 
 # Unified binary search
 This approach uses extra space to reduce search time. It processes, precomputes, and stores the position of each element in all the lists and serves the result by performing a binary search just once. Thus each element is now associated with a tuple with `k` items where every `i`th each item represents its position in `i`it list.
