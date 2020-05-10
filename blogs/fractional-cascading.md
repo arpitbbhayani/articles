@@ -1,15 +1,34 @@
-Binary Search is a search algorithm that finds the position of a target value in a sorted list. The algorithm exploits that fact that the list is sorted, and is devised such that is need not even look at all `n` elements to decide if the target value is present or not. IN worst case the algorithm checks for `log(n)` elements of the list to make the decision.
+Binary Search is an algorithm that finds the position of a target value in a sorted list. The algorithm exploits that fact that the list is sorted, and is devised such that is does not even look at all `n` elements to decide if the target value is present or not. In worst case the algorithm checks `log(n)` number of elements to make the decision.
 
-Having to check only `log(n)` elements from the list of size `n` is super eficient - this means in an list of size of a million `1000000` the number of elemnts to be looked at to make the call is just `20`. need to look at 20 elements to deduce if the target value exists or not. Binary search could be tewaked to output the position of the target value, if present, or otherwise returns the position of smallest number greater than the target value i.e. position where the target value should have been present in the list.
+Binary search could be tweaked to output the position of the target value, if present, or otherwise returns the position of smallest number greater than the target value i.e. position where the target value should have been present in the list.
 
-Things become slightly moer interesting when instead of searching for the target value in one list, we need to do it in `k` lists. Problem statement could be defined as
+Things become more interesting when we have to perform iterative search on `k` lists i.e. finding the target values in each of the `k` list independently. The formal problem statement could be defined as
 
-> Given `k` lists of `n` sorted integers each and a target value `x` return the position of the smallest value greater than or equal to `x` in each of the `k` lists. We are allowed to preprocess the lists.
+> Given `k` lists of `n` sorted integers each and a target value `x` return the position of the smallest value greater than or equal to `x` in each of the `k` lists. Preprocessing of the list is allowed before answering queries.
 
 # The naive approach - k binary searches
-Returning the position of the smallest value greater than or equal to `x` in each of the `k` list is a classical `k` binary search problem and hence the naive way to solve this would be to perform binary searches for each of the `k` lists and return.
+The expected output of this iterative search is the position of smallest value greater than or equal to `x` in each of the `k` lists. This is a classical Binary search problem that could be applied on each of the `k` lists.
 
 ![k-binary searches](https://user-images.githubusercontent.com/4745789/81492614-dbf21500-92b6-11ea-9f75-29eb3522186f.png)
+
+A python based solution to this problem is pretty simple. We use in-built module `bisect` and `bisect_left` function returns the exact thing we are looking for
+
+```py
+import bisect
+
+arr = [
+    [21, 54, 64, 79, 93],
+    [27, 35, 46, 47, 72],
+    [11, 44, 62, 66, 94],
+    [10, 35, 46, 79, 83],
+]
+
+def get_positions_k_bin_search(x): 
+    return [bisect.bisect_left(l, x) for l in arr]
+
+>>> get_positions_k_bin_search(60)
+[2, 4, 2, 3]
+```
 
 ## Complexity
 Since each of the `k` list has size `n`, the time complexity of performing a binary search in one list would be `O(log(n))` and to do it for `k` lists it would take `O(k.log(n))`. Since we do not require any extra space the space somplexity of this approach would be `O(1)`.
