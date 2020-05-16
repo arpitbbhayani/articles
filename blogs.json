@@ -1,7 +1,7 @@
 [
   {
-    "id": "markov-chains-pagerank",
-    "title": "Markov Chains and PageRank",
+    "id": "markov-chains",
+    "title": "Markov Chains",
     "description": "The performance of binary search when applied on k lists independently can be improved using bridges and the technique is called Fractional Cascading. Fractional Cascading also sees its application in Geometric Data Structures, Segment Trees, and Databases.",
     "image": "https://user-images.githubusercontent.com/4745789/81494077-8112ea80-92c3-11ea-9416-bb2422334744.png",
     "gif": "https://media.giphy.com/media/1k5k3J5K3BywQOrpNA/giphy.gif",
