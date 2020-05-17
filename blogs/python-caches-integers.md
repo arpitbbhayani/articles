@@ -21,7 +21,7 @@ Here is what [Python's official documentation]((https://docs.python.org/3/c-api/
 In the CPython's [source code](https://github.com/python/cpython/) this optimization can be traced in the macro `IS_SMALL_INT` and the function [`get_small_int`](https://github.com/python/cpython/blob/master/Objects/longobject.c#L40) in [longobject.c](https://github.com/python/cpython/blob/master/Objects/longobject.c). This way python saves a lot of space and computation for commonly used integers.
 
 # Verifying smaller integers are indeed a singleton
-For a CPython implementation, the in-built [`id` function](https://docs.python.org/3/library/functions.html#id) returns the address of the object in memory. This means if the smaller integers are indeed singleton then the `id` function should return the same memory address for two instances of same value while multiple instances of larger values should return different ones, and this is indeed what we observe
+For a CPython implementation, the in-built [`id` function](https://docs.python.org/3/library/functions.html#id) returns the address of the object in memory. This means if the smaller integers are indeed singleton then the `id` function should return the same memory address for two instances of the same value while multiple instances of larger values should return different ones, and this is indeed what we observe
 
 ```py
 >>> x, y = 36, 36
