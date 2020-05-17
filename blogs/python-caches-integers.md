@@ -53,7 +53,7 @@ When we do this for all the integers in range -5 to 300 we get the following dis
 
 The above graph suggests that the reference count of smaller integer values is high indicating heavy usage and it decreases as the value increases which asserts the fact that there are many objects referencing smaller integer values as compared to larger ones during python initialization.
 
-The value `0` is referenced the most - `359` times while along the long tail we see spikes in reference counts at powers of 2 i.e. 32, 64, 128 and 256. Python during its initialization itself requires small integer values and hence by creating singletons it saves about `1993` allocations.
+The value `0` is referenced the most - `359` times while along the long tail we see spikes in reference counts at powers of 2 i.e. 32, 64, 128, and 256. Python during its initialization itself requires small integer values and hence by creating singletons it saves about `1993` allocations.
 
 The reference counts were computed on a freshly spun python which means during initialization it requires some integers for computations and these are facilitated by creating singleton instances of smaller values.
 
