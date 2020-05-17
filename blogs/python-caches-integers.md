@@ -59,13 +59,9 @@ When we do this for all the integers in range -5 to 300 we get the following dis
 
 ![Reference counts of interger values](https://user-images.githubusercontent.com/4745789/82137930-e9207e00-9839-11ea-88f0-857c6846ee35.png)
 
-## What do we get from?
-The above graph sggests the reference count of smaller values is very high showing heavy usage and the references count decreases as the value increases. The value `0` is referenced the maximum and has reference count of `359`
-
-`1993` allocations saved
+The above graph sggests that the reference count of smaller integet values is high indicating heavy usage and it decreases as the value increases which asserts the fact that there are many objects referencing smaller integer values as compare to larger one during python initialization. The value `0` is referenced `359` times which is maximum amongst smaller integers. During python initialization the number of initializations saved were a minimum of `1993`.
 
 ## What does this mean?
-
 The reference counts were computed on a freshly spun up Python interpreter which means 
 
 Python during initialization requires integer objects and most of these objects are in range -5 to 256. To make initialization faster Python caches the interger objects.
