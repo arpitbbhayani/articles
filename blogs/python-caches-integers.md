@@ -34,6 +34,16 @@ True
 False
 ```
 
+The singletons can also be seen in action during computations. In the example below, we reach the same target value `6` by performing two operations on three different numbers, 2, 4, and 10, and we see the `id` function returning the same memory reference in both the cases.
+
+```py
+>>> a, b, c = 2, 4, 10
+>>> x = a + b
+>>> y = c - b
+>>> id(x) == id(y)
+True
+```
+
 # Verifying if these integers are indeed referenced often
 We have established that Python indeed is consuming smaller integers through their corresponding singleton instances, without reallocating them every time. Now we verify the hypothesis that Python indeed saves a bunch of allocations during its initialization through these singletons. We do this by checking the reference counts of each of the integer values.
 
