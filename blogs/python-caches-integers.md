@@ -47,7 +47,7 @@ In order to get the current reference count of an object, we use the function `g
 11
 ```
 
-When we do this for all the integers in range `-5` to `300` we get the following distribution
+When we do this for all the integers in range -5 to 300 we get the following distribution
 
 ![Reference counts of interger values](https://user-images.githubusercontent.com/4745789/82139531-03f8ef80-9846-11ea-8755-637df5852a30.png)
 
