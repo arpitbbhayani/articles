@@ -64,7 +64,7 @@ The above graph sggests that the reference count of smaller integet values is hi
 The value `0` is referenced the most - `359` times while along the long tail we see spikes in reference counts at powers of `2` i.e. `32`, `64`, `128` and `256`. Python during its initilization itself requires small integer values and and hence by creating singletons it saves about `1993` allocations.
 
 ## What does this mean?
-The reference counts were computed on a freshly spun Python interpreter which means during initilization itself python requires to perform some integer computations and these computations are facilitated by creating singleton instances of values in range -5 to 256.
+The reference counts were computed on a freshly spun Python interpreter which means during initilization itself python requires to perform some integer computations and these computations are facilitated by creating singleton instances of values in range`-5` to `256`.
 
 In usual programming as well, smaller integer values are access much more frequently than larger ones, having singleton instances of these saves a bunch of computation and allocations.
 
