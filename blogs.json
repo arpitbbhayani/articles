@@ -2,7 +2,7 @@
   {
     "id": "python-caches-integers",
     "title": "Python Caches Integers",
-    "description": "Python Caches Integers",
+    "description": "Python caches smaller integers and creates singletons instances to eradicate the need of reallocation and use them by reference.",
     "image": "https://user-images.githubusercontent.com/4745789/81494077-8112ea80-92c3-11ea-9416-bb2422334744.png",
     "gif": "https://media.giphy.com/media/1k5k3J5K3BywQOrpNA/giphy.gif",
     "categories": ["python"],
