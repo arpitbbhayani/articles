@@ -1,6 +1,6 @@
-An integer in Python is not a traditional 2, 4, or 8-byte implementation but rather it is implemented as an array of digits in base 2<sup>30</sup> which enables Python to support [super long integers](https://arpitbhayani.me/blogs/super-long-integers). Since there is no explicit limit on the size, working with integers in Python is extremely convenient and we need not worry about the overflows. This convenience comes at a cost of allocation being expensive and trivial operations like addition, multiplication, division being inefficient.
+An integer in Python is not a traditional 2, 4, or 8-byte implementation but rather it is implemented as an array of digits in base 2<sup>30</sup> which enables Python to support [super long integers](https://arpitbhayani.me/blogs/super-long-integers). Since there is no explicit limit on the size, working with integers in Python is extremely convenient as we can carry out operations on very long numbers without worrying about integer overflows. This convenience comes at a cost of allocation being expensive and trivial operations like addition, multiplication, division being inefficient.
 
-Each integer in python is implemented as a C structure as illustrated below.
+Each integer in python is implemented as a C structure illustrated below.
 
 ```cpp
 struct _longobject {
@@ -18,10 +18,10 @@ Here is what [Python's official documentation]((https://docs.python.org/3/c-api/
 
 > The current implementation keeps an array of integer objects for all integers between -5 and 256 when you create an int in that range you actually just get back a reference to the existing object.
 
-In the CPython's [source code](https://github.com/python/cpython/) this optimization can be traced in the macro `IS_SMALL_INT` and the function [get_small_int](https://github.com/python/cpython/blob/master/Objects/longobject.c#L40) in [longobject.c](https://github.com/python/cpython/blob/master/Objects/longobject.c). This way python saves a lot of space and computation for commonly used integers.
+In the CPython's [source code](https://github.com/python/cpython/) this optimization can be traced in the macro `IS_SMALL_INT` and the function [`get_small_int`](https://github.com/python/cpython/blob/master/Objects/longobject.c#L40) in [longobject.c](https://github.com/python/cpython/blob/master/Objects/longobject.c). This way python saves a lot of space and computation for commonly used integers.
 
 # Verifying smaller integers are indeed a singleton
-For a CPython implementation, the in-built [`id` function](https://docs.python.org/3/library/functions.html#id) returns the address of the object in memory. This means if the smaller integers are indeed singleton then the return value of two instances of same value should return the same memory address while multiple instances of larger values should return different ones, and this is indeed what we observe
+For a CPython implementation, the in-built [`id` function](https://docs.python.org/3/library/functions.html#id) returns the address of the object in memory. This means if the smaller integers are indeed singleton then the `id` function should return the same memory address for two instances of same value while multiple instances of larger values should return different ones, and this is indeed what we observe
 
 ```py
 >>> x, y = 36, 36
@@ -34,28 +34,20 @@ True
 False
 ```
 
-# Verifying if these integers are indeed referenced
-Now that we have established that Python indeed is consuming smaller integers by reference and not reallocating them every time, it is time we check the hypothesis that Python indeed requires smaller integers and by creating singleton it is saving a bunch of allocations. We do this by checking the reference counts of each of the integer values.
+# Verifying if these integers are indeed referenced often
+We have established that Python indeed is consuming smaller integers through their corresponding singleton instances, without reallocating them every time. Now we verify the hypothesis that Python indeed saves a bunch of allocations during its initialization through these singletons. We do this by checking the reference counts of each of the integer values.
 
 ## Reference Counts
-Reference counts hold the number of different places there are that have a reference to the object. Every time an object is referenced the `ob_refcnt` is increased by 1 and when dereferenced the count is decreased by 1. When the reference count becomes `0` the object is garbage collected and thus avoiding memory leaks.
+Reference count holds the number of different places there are that have a reference to the object. Every time an object is referenced the `ob_refcnt`, in its structure, is increased by `1`, and when dereferenced the count is decreased by `1`. When the reference count becomes `0` the object is garbage collected.
 
-In order to get the current reference count of the object, we can use the function `getrefcount` from the `sys` module which returns the current reference count of the objects.
-
-```py
->>> text = "hello, world!"
->>> ref_count = sys.getrefcount(text)
-2
-```
-
-We can find the reference count of a newly created text `hello, world!` as shown above. The function could also be applied to integer values and we can check the reference counts of each integer value
+In order to get the current reference count of an object, we use the function `getrefcount` from the `sys` module.
 
 ```py
 >>> ref_count = sys.getrefcount(50)
 11
 ```
 
-When we do this for all the integers in range -5 to 300 we get the following distribution
+When we do this for all the integers in range `-5` to `300` we get the following distribution
 
 ![Reference counts of interger values](https://user-images.githubusercontent.com/4745789/82139531-03f8ef80-9846-11ea-8755-637df5852a30.png)
 
@@ -63,13 +55,9 @@ The above graph suggests that the reference count of smaller integer values is h
 
 The value `0` is referenced the most - `359` times while along the long tail we see spikes in reference counts at powers of `2` i.e. `32`, `64`, `128` and `256`. Python during its initialization itself requires small integer values and hence by creating singletons it saves about `1993` allocations.
 
-## What does this mean?
-The reference counts were computed on a freshly spun Python interpreter which means during initialization itself python requires to perform some integer computations and these computations are facilitated by creating singleton instances of values in range`-5` to `256`.
+The reference counts were computed on a freshly spun python which means during initialization it requires some integers for computations and these are facilitated by creating singleton instances of smaller values.
 
-In usual programming as well, smaller integer values are accessed much more frequently than larger ones, having singleton instances of these saves a bunch of computation and allocations.
-
-# Conclusion
-Integers are the most common values that any language would have and by caching them, Python not only speeds up its initialization process but also ensures it saves a bunch of computation and allocation during general programming needs.
+In usual programming, the smaller integer values are accessed much more frequently than larger ones, having singleton instances of these saves python a bunch of computation and allocations.
 
 # References
  - [Python Object Types and Reference Counts](https://docs.python.org/3/c-api/intro.html#objects-types-and-reference-counts)
