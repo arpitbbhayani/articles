@@ -62,11 +62,9 @@ When we do this for all the integers in range -5 to 300 we get the following dis
 The above graph sggests that the reference count of smaller integet values is high indicating heavy usage and it decreases as the value increases which asserts the fact that there are many objects referencing smaller integer values as compare to larger one during python initialization. The value `0` is referenced `359` times which is maximum amongst smaller integers. During python initialization the number of initializations saved were a minimum of `1993`.
 
 ## What does this mean?
-The reference counts were computed on a freshly spun up Python interpreter which means 
+The reference counts were computed on a freshly spun Python interpreter which means during initilization itself python requires to perform some integer computations and these computations are facilitated by creating singleton instances of values in range -5 to 256.
 
-Python during initialization requires integer objects and most of these objects are in range -5 to 256. To make initialization faster Python caches the interger objects.
-
-In usual programming the most common integer values used are in fact in the range -5 to 256 and by caching the referece and using them as singleton this could be optimized.
+In usual programming as well, smaller integer values are access much more frequently than larger ones, having singleton instances of these saves a bunch of computation and allocations.
 
 # References
  - [Python Object Types and Reference Counts](https://docs.python.org/3/c-api/intro.html#objects-types-and-reference-counts)
