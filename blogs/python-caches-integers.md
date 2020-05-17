@@ -8,4 +8,40 @@ Here is what [official Python documentation]((https://docs.python.org/3/c-api/lo
 
 This optimization can be traced in the macro `IS_SMALL_INT` and the function [get_small_int](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L43) in [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L35). This way python saves a lot of space and computation for commonly used integers.
 
+We can see this in action by using `id` function
+
+For CPython, the `id` function returns the memory address the variable or value points to and we can use this to check if applying `id` function on smaller integers vs larger integers yields us same of different values.
+
+```py
+>>> x, y = 36, 36
+>>> id(x) == id(y)
+True
+
+
+>>> x, y = 257, 257
+>>> id(x) == id(y)
+False
+```
+
+# Reference Counts of Integers
+Now that we have established that Python indeed is using smaller integers by reference and not reallocating them, it time we check exactly how much Python saves by doing this. This we could do by finding reference counts of each of 256 integers and
+
+https://docs.python.org/3/c-api/intro.html#objects-types-and-reference-counts
+
+```py
+>>> ref_count = sys.getrefcount(50)
+32131
+```
+
+When we do this for all integers in range -5 to 1000 we get the following distribution
+
+[loglog graph](https://user-images.githubusercontent.com/4745789/82136535-b15f0980-982c-11ea-9dcb-2da98e8fc9ea.png)
+
+## What does this mean?
+
+Python during initialization requires integer objects and most of these objects are in range -5 to 256. To make initialization faster Python caches the interger objects.
+
+In usual programming the most common integer values used are in fact in the range -5 to 256 and by caching the referece and using them as singleton this could be optimized.
+
 # References
+ - [Why Python is Slow: Looking Under the Hood](http://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)
