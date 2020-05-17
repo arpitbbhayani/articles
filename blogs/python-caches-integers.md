@@ -14,7 +14,7 @@ struct _longobject {
 
 It is observed that smaller integers in the range -5 to 256, are used very frequently as compared to other longer integers and hence to gain performance benefit Python preallocates this range of integers during initialization and makes them singleton and hence every time a smaller integer value is referenced instead of allocating a new integer it passes the reference of the corresponding singleton.
 
-Here is what [Python's official documentation]((https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong)) says about this preallocation
+Here is what [Python's official documentation](https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong) says about this preallocation
 
 > The current implementation keeps an array of integer objects for all integers between -5 and 256 when you create an int in that range you actually just get back a reference to the existing object.
 
