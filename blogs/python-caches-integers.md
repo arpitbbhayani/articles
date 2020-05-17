@@ -35,24 +35,43 @@ False
 ```
 
 # Verifying if these integers are indeed referenced
-Now that we have established that Python indeed is using smaller integers by reference and not reallocating them, it time we check exactly how much Python saves by doing this. This we could do by finding reference counts of each of 256 integers and
+Now that we have established that Python indeed is consuming smaller integers by reference and not reallocating them everytime, it is time we check the hypothesis that Python indeed requires smaller integers and by creating singleton it is saving a bunch of allocations. We do this by checking reference counts of each of the interger values.
 
-https://docs.python.org/3/c-api/intro.html#objects-types-and-reference-counts
+## Reference Counts
+Reference counts holds the number of different places there are that have a reference to the object. Every time an object is referenced the `ob_refcnt` is increased by 1 and when dereferenced the count is decreasesd by 1. When the reference count becomes `0` the object is garbage collected and thus avoiding memory leaks.
+
+In order to get the curretn reference count of the object we can use the function `getrefcount` from the `sys` module which returns the current reference count of the objects.
+
+```py
+>>> text = "hello, world!"
+>>> ref_count = sys.getrefcount(text)
+2
+```
+
+We can find the referecne count of a newly created text `hello, world!` as shown above. The function could also be applied to integer values and we can check the reference counts of each integer value
 
 ```py
 >>> ref_count = sys.getrefcount(50)
-32131
+11
 ```
 
-When we do this for all integers in range -5 to 1000 we get the following distribution
+When we do this for all the integers in range -5 to 300 we get the following distribution
 
-[loglog graph](https://user-images.githubusercontent.com/4745789/82136535-b15f0980-982c-11ea-9dcb-2da98e8fc9ea.png)
+![Reference counts of interger values](https://user-images.githubusercontent.com/4745789/82137930-e9207e00-9839-11ea-88f0-857c6846ee35.png)
+
+## What do we get from?
+The above graph sggests the reference count of smaller values is very high showing heavy usage and the references count decreases as the value increases. The value `0` is referenced the maximum and has reference count of `359`
+
+`1993` allocations saved
 
 ## What does this mean?
+
+The reference counts were computed on a freshly spun up Python interpreter which means 
 
 Python during initialization requires integer objects and most of these objects are in range -5 to 256. To make initialization faster Python caches the interger objects.
 
 In usual programming the most common integer values used are in fact in the range -5 to 256 and by caching the referece and using them as singleton this could be optimized.
 
 # References
+ - [Python Object Types and Reference Counts](https://docs.python.org/3/c-api/intro.html#objects-types-and-reference-counts)
  - [Why Python is Slow: Looking Under the Hood](http://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)
