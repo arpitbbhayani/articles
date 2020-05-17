@@ -1,6 +1,18 @@
-An integer in Python is not traditional 2/4 or 8 byte implementation but rather an array of digits in base 2<sup>30</sup> which enables Python to support [super long integers](https://arpitbhayani.me/blogs/super-long-integers). Since there is no explicit limit on the size, working with Python integers is very convinient as now we need not worry about the overflows. This convinience comes at a cost of allocation being expensive and trivial opetaions like addition, multiplication being inefficient.
+An integer in Python is not a traditional 2, 4 or 8 byte implementation but rather it is implemented as an array of digits in base 2<sup>30</sup> which enables Python to support [super long integers](https://arpitbhayani.me/blogs/super-long-integers). Since there is no explicit limit on the size, working with integers in Python is extremely convinient and we need not worry about the overflows. This convinience comes at a cost of allocation being expensive and trivial operations like addition, multiplication, division being inefficient.
 
-It is observed that smaller integers -5 to 256 are used very frequently as compared to other longer integers and hence to gain performance benefit Python preallocates this singleton range of integers during initialization and passes on the reference everytime the integer value is referenced.
+Each integer in python is implemented as a C structure as illustrated
+
+```cpp
+struct _longobject {
+    ...
+    Py_ssize_t    ob_refcnt;      // <--- holds reference count
+    ...
+    Py_ssize_t    ob_size;        // <--- holds number of digits
+    digit         ob_digit[1];    // <--- holds the digits in base 2^30
+};
+```
+
+It is observed that smaller integers, -5 to 256, are used very frequently as compared to other longer integers and hence to gain performance benefit Python preallocates this range of integers during initialization and makes them singleton and hence everytime the integer value is referenced instead of allocating a new integer it passes the reference of the corresponding singleton.
 
 Here is what [official Python documentation]((https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong)) says about preallocation
 
