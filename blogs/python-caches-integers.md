@@ -73,4 +73,5 @@ Integers are the most common values that any language would have and by caching 
 
 # References
  - [Python Object Types and Reference Counts](https://docs.python.org/3/c-api/intro.html#objects-types-and-reference-counts)
+ - [How python implements super-long integers](https://arpitbhayani.me/blogs/super-long-integers)
  - [Why Python is Slow: Looking Under the Hood](http://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)
