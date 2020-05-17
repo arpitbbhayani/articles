@@ -49,7 +49,7 @@ In order to get the current reference count of an object, we use the function `g
 
 When we do this for all the integers in range -5 to 300 we get the following distribution
 
-![Reference counts of interger values](https://user-images.githubusercontent.com/4745789/82139531-03f8ef80-9846-11ea-8755-637df5852a30.png)
+![Reference counts of interger values](https://user-images.githubusercontent.com/4745789/82141240-1e38ca80-9852-11ea-8133-fd8e1b26fc01.png)
 
 The above graph suggests that the reference count of smaller integer values is high indicating heavy usage and it decreases as the value increases which asserts the fact that there are many objects referencing smaller integer values as compared to larger ones during python initialization.
 
