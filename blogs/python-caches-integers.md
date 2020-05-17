@@ -57,7 +57,7 @@ We can find the referecne count of a newly created text `hello, world!` as shown
 
 When we do this for all the integers in range -5 to 300 we get the following distribution
 
-![Reference counts of interger values](https://user-images.githubusercontent.com/4745789/82137930-e9207e00-9839-11ea-88f0-857c6846ee35.png)
+![Reference counts of interger values](https://user-images.githubusercontent.com/4745789/82139531-03f8ef80-9846-11ea-8755-637df5852a30.png)
 
 The above graph sggests that the reference count of smaller integet values is high indicating heavy usage and it decreases as the value increases which asserts the fact that there are many objects referencing smaller integer values as compare to larger one during python initialization. The value `0` is referenced `359` times which is maximum amongst smaller integers. During python initialization the number of initializations saved were a minimum of `1993`.
 
