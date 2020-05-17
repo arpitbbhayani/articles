@@ -68,6 +68,9 @@ The reference counts were computed on a freshly spun Python interpreter which me
 
 In usual programming as well, smaller integer values are access much more frequently than larger ones, having singleton instances of these saves a bunch of computation and allocations.
 
+# Conclusion
+Integers are the most common values that any language would have and by caching Python not only speeds up its initilization process but also ensures it saves a bunch of computation and allocation during general programming needs.
+
 # References
  - [Python Object Types and Reference Counts](https://docs.python.org/3/c-api/intro.html#objects-types-and-reference-counts)
  - [Why Python is Slow: Looking Under the Hood](http://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)
