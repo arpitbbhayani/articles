@@ -1,6 +1,6 @@
 An integer in Python is not a traditional 2, 4 or 8 byte implementation but rather it is implemented as an array of digits in base 2<sup>30</sup> which enables Python to support [super long integers](https://arpitbhayani.me/blogs/super-long-integers). Since there is no explicit limit on the size, working with integers in Python is extremely convinient and we need not worry about the overflows. This convinience comes at a cost of allocation being expensive and trivial operations like addition, multiplication, division being inefficient.
 
-Each integer in python is implemented as a C structure as illustrated
+Each integer in python is implemented as a C structure as illustrated below.
 
 ```cpp
 struct _longobject {
@@ -12,17 +12,16 @@ struct _longobject {
 };
 ```
 
-It is observed that smaller integers, -5 to 256, are used very frequently as compared to other longer integers and hence to gain performance benefit Python preallocates this range of integers during initialization and makes them singleton and hence everytime the integer value is referenced instead of allocating a new integer it passes the reference of the corresponding singleton.
+It is observed that smaller integers in the range -5 to 256, are used very frequently as compared to other longer integers and hence to gain performance benefit Python preallocates this range of integers during initialization and makes them singleton and hence everytime a smaller integer value is referenced instead of allocating a new integer it passes the reference of the corresponding singleton.
 
-Here is what [official Python documentation]((https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong)) says about preallocation
+Here is what [Python's official documentation]((https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong)) says about this preallocation
 
-> The current implementation keeps an array of integer objects for all integers between -5 and 256, when you create an int in that range you actually just get back a reference to the existing object. So it should be possible to change the value of 1. I suspect the behaviour of Python in this case is undefined. :-)
+> The current implementation keeps an array of integer objects for all integers between -5 and 256, when you create an int in that range you actually just get back a reference to the existing object.
 
-This optimization can be traced in the macro `IS_SMALL_INT` and the function [get_small_int](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L43) in [longobject.c](https://github.com/arpitbbhayani/cpython/blob/0-base/Objects/longobject.c#L35). This way python saves a lot of space and computation for commonly used integers.
+In the CPython's [source code](https://github.com/python/cpython/) this optimization can be traced in the macro `IS_SMALL_INT` and the function [get_small_int](https://github.com/python/cpython/blob/master/Objects/longobject.c#L40) in [longobject.c](https://github.com/python/cpython/blob/master/Objects/longobject.c). This way python saves a lot of space and computation for commonly used integers.
 
-We can see this in action by using `id` function
-
-For CPython, the `id` function returns the memory address the variable or value points to and we can use this to check if applying `id` function on smaller integers vs larger integers yields us same of different values.
+# Verifying smaller integers are indeed singleton
+For a CPython implementation the in-built [`id` function](https://docs.python.org/3/library/functions.html#id) returns the address of the object in memory. This means if the smaller integers are indeed singleton then the return value of two instances of same value should return the same memory address while multiple instances of larger values should return different ones; and this is indeed what we observe
 
 ```py
 >>> x, y = 36, 36
@@ -35,7 +34,7 @@ True
 False
 ```
 
-# Reference Counts of Integers
+# Verifying if these integers are indeed referenced
 Now that we have established that Python indeed is using smaller integers by reference and not reallocating them, it time we check exactly how much Python saves by doing this. This we could do by finding reference counts of each of 256 integers and
 
 https://docs.python.org/3/c-api/intro.html#objects-types-and-reference-counts
