@@ -5,8 +5,6 @@ Before we jump into the core Consistent Hashing technique we first get few thing
 
 A very simple hash function maps any 32 bit integer to a 8 bit integer and the way we can do this is by taking a `modulo 256`. A hash function more often than not applies the `modulo N` so as to restrict the domain values to a range `[0, N-1]`.
 
-TODO: Image of hash functions
-
 A good hash function has following properties
 
  - The function is computationally efficient and easy to evaluate and also easy for lookups.
@@ -53,7 +51,7 @@ Since the hash function works in a pseudorandom way we expect it to distribute l
 
 Things become interesting when the system is a hit and we need to scale the product, now 5 storage machines are not enough and we need to add say 2 more nodes. Now with this implementation things look pretty bleak. For things to scale smoothly, we need to constatly scale up the system and now when the number of storage nodes increases from 4 to say 7, the entire mapping changes. The same function does not work fine.
 
-TODO: Remapping of files across nodes IMAGE - OLD and new with file examples.
+![File association changed](https://user-images.githubusercontent.com/4745789/82738059-b9e6a100-9d52-11ea-8cf3-f264b4a195b1.png)
 
 The file with hash value 1027 which was present on node C is now expected to be at node G. For most cases this mapping would change hence a lot of data needs to be migrated. This is super expensive. The solution to this problem is consistent hashing.
 
