@@ -1,13 +1,16 @@
-Consistent hashing is a hashing technique that performs really well when operated in a dynamic environment where the number of keys on which the mapping happens change frequently. Consistent Hashing was made famous by Amazon DynamoDB, Bit Torrent and Akamai who solve some serious distributed system problems using . IN this article we dive deep into this wonderful algorithm, see its internals and its array based implementations.
+Consistent hashing is a hashing technique that performs really well when operated in a dynamic environment where the number of keys mapped to change frequently. The core concept of Consistent Hashing was introdured in the paper [Consistent Hashing and RandomTrees : Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web](https://www.akamai.com/us/en/multimedia/documents/technical-publication/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web-technical-publication.pdf) but was made really famous after the infamous white paper of dynamodb [Dynamo: Amazon’s Highly Available Key-value Store](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf). Since them consistent hashing did not look back and started gaining traction and found a ton of use cases while desinging and scaling distributed systems. Two famous examples that exhaustively uses consistent hashing are Bit Torrent and Akamai. In this article we dive deep into Consistent Hashing and more importantly along the way also implement it using the simplest compose data type - array.
 
 # Hash Functions
-Hash Functions are any functions that maps value from one arbitrary sized domain to a fixed sized values. The values output from the hash functions are typically used for efficient lookup of the original entity.
+Before we jump into the core Consistent Hashing technique we first get few things cleared up one of which is Hash Functions. Hash Functions are any functions that maps value from one arbitrary sized domain to another fixed sized domain values. For example: mapping URLs to 32 bit integers or web pages to 256 byte strings. The values generated as an output of these hash functions are typically used as keys to make lookups of original entity efficient and the store that holds all such keys is called a Hash Table.
 
-A very simple example of hash function is a `modulo N` function which operates on integers and returns the reminder when divided by `N` and thus generating the output values in the range `[0, N-1]`.
-
-Recall  that  ahashfunctionmaps elements of a (usually super-big) universeU, like URLs, to “buckets,” suchas 32-bit values (Figure 1).  A “good” hash functionhsatisfies two properties:1.  It is easy to remember and evaluate.  Ideally, computing the function involves just afew arithmetic operations, and maybe a “mod” operation.2.  For all practical purposes,hbehaves like a totally random function,  spreading dataout evenly and without noticeable correlation across the possible buckets.
+A very simple hash function maps any 32 bit integer to a 8 bit integer and the way we can do this is by taking a `modulo 256`. A hash function more often than not applies the `modulo N` so as to restrict the domain values to a range `[0, N-1]`.
 
 TODO: Image of hash functions
+
+A good hash function has following properties
+
+ - The function is computationally efficient and easy to evaluate and also easy for lookups.
+ - The function, for most cases behaves like a pseudorandom function spreading data out evenly without any noticeable correlation.
 
 # Hashing in distributed system
 SAy we are building a distrbiuted storage system where users can upload files and these files is stored on one of the storage machines. The storage machine where the file is stored depends on the name. Since there are so many fiels to tore, storing them on one machine does not make sense. Hence these files are stored across machines. THe mahcine that is responsible of holding the file depends on the name of the file.
