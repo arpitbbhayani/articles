@@ -1,3 +1,35 @@
+Consistent hashing 
+
+Three major examples of Consistent Hashing
+
+ - Akamai
+ - BitTorrent
+ - Amazon DynamoDB
+
+# Hash Functions
+Hash Functions are any functions that maps value from one arbitrary sized domain to a fixed sized values. The values output from the hash functions are typically used for efficient lookup of the original entity.
+
+A very simple example of hash function is a `modulo N` function which operates on integers and returns the reminder when divided by `N` and thus generating the output values in the range `[0, N-1]`.
+
+Recall  that  ahashfunctionmaps elements of a (usually super-big) universeU, like URLs, to “buckets,” suchas 32-bit values (Figure 1).  A “good” hash functionhsatisfies two properties:1.  It is easy to remember and evaluate.  Ideally, computing the function involves just afew arithmetic operations, and maybe a “mod” operation.2.  For all practical purposes,hbehaves like a totally random function,  spreading dataout evenly and without noticeable correlation across the possible buckets.
+
+TODO: Image of hash functions
+
+# Hashing in distributed system
+SAy we are building a distrbiuted storage system where users can upload files and these files is stored on one of the storage machines. The storage machine where the file is stored depends on the name. Since there are so many fiels to tore, storing them on one machine does not make sense. Hence these files are stored across machines. THe mahcine that is responsible of holding the file depends on the name of the file.
+
+Say we have 4 storage nodes we could do `h(name) % 4` where `h` is the hash function that takes a name and generate a 32 bit integer as the output. The integer is then mod with 4 to return the index of the storage node where the actual file is stored. NOw everytime a file is accessed by its name
+
+```py
+def get_file(name):
+    node = storage_nodes[hash_fn(name) % 4]
+    return node.fetch_file(name)
+```
+
+# Consistent Hashing
+Our criticism of the solution (1) for mapping URLs to caches motivates the goal ofconsistenthashing:  we want hash table-type functionality (we can store stuff and retrieve it later) withthe  additional  property  that  almost  all  objects  stay  assigned  to  the  same  cache  even  asthe  numbernof  caches  changes.   We  next  give  the  most  popular  implementation  of  thisfunctionality 
+
+
 Consistent Hashing provides an excellent way of load balancing items across nodes. There are lots of great resources to learn consistent hashing from and instead of reiterating things here we will implement it using an array based implementation.
 
 # Consistent Hash as an array
@@ -96,3 +128,5 @@ def assign(self, item_id: str) -> str:
 ```
 
 # References
+ - [Hash Functions - Wikipedia](https://en.wikipedia.org/wiki/Hash_function)
+ - [Consistent Hashin - Stanford](https://web.stanford.edu/class/cs168/l/l1.pdf)
