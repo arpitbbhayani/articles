@@ -49,6 +49,10 @@ def fetch_file(name):
     return node.fetch_file(name)
 ```
 
+Since the hash function works in a pseudorandom way we expect it to distribute load evenly across the 5 storgae nodes and hence ensure we maintain our SLA and serve the customers well.
+
+Things become interesting when the system is a hit and we need to scale the product, now 5 storage machines are not enough and we need to add say 2 more nodes. Now with this implementation things look pretty bleak.
+
 For things to scale smoothly, we need to constatly scale up the system and now when the number of storage nodes increases from 4 to say 7, the entire mapping changes. The same function does not work fine.
 
 The file with hash value 1027 which was present on node C is now expected to be at node G. For most cases this mapping would change hence a lot of data needs to be migrated. This is super expensive. The solution to this problem is consistent hashing.
