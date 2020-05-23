@@ -34,7 +34,7 @@ def hash_fn(key):
     key and generate an integer value. This value is then mod 5 so
     that we point to one of the 5 storage nodes to put or fetch data.
     """
-    return fn(name) % 5
+    return sum(bytearray(name)) % 5
 
 
 def fetch_file(name):
