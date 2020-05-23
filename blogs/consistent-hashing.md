@@ -12,14 +12,40 @@ A good hash function has following properties
  - The function is computationally efficient and easy to evaluate and also easy for lookups.
  - The function, for most cases behaves like a pseudorandom function spreading data out evenly without any noticeable correlation.
 
-# Hashing in distributed system
-SAy we are building a distrbiuted storage system where users can upload files and these files is stored on one of the storage machines. The storage machine where the file is stored depends on the name. Since there are so many fiels to tore, storing them on one machine does not make sense. Hence these files are stored across machines. THe mahcine that is responsible of holding the file depends on the name of the file.
+Now that we have seen what a hash function is we take a look into how traditional hash functions fit into our real world.
 
-Say we have 4 storage nodes we could do `h(name) % 4` where `h` is the hash function that takes a name and generate a 32 bit integer as the output. The integer is then mod with 4 to return the index of the storage node where the actual file is stored. NOw everytime a file is accessed by its name
+# Hashing in distributed system
+Say we are building a distrbiuted storage system within which users can upload files and these files are stored on one of the 5 storage machines so that we distribute the load properly. We use hash function to decide which storage machine would store which file and the function would use the file name and spit out an integer in the range `[0, 4]` denoting the index of storage node that would hold that file. A pseudocode representing the above flow of fetching the file through function `fetch_file` is as illustrated bwlow.
 
 ```py
-def get_file(name):
-    node = storage_nodes[hash_fn(name) % 4]
+# storage_nodes holding programmatic instances of actual storage node
+# Each of the node has a `fetch_file` function exposed which actually
+# fetches the file from the corresponding machine.
+storage_nodes = [
+    StorageNode(host='10.131.213.12'),
+    StorageNode(host='10.131.217.11'),
+    StorageNode(host='10.131.142.46'),
+    StorageNode(host='10.131.114.17'),
+    StorageNode(host='10.131.189.18'),
+]
+
+def hash_fn(key):
+    """The function applies some transformation function on the
+    key and generate an integer value. This value is then mod 5 so
+    that we point to one of the 5 storage nodes to put or fetch data.
+    """
+    return fn(name) % 5
+
+
+def fetch_file(name):
+    # we use the hash function to get the index of the storage node
+    # that would hold the file
+    index = hash_fn(name)
+
+    # we get the StorageNode instance
+    node = storage_nodes[index]
+
+    # we fetch the file from the node and return
     return node.fetch_file(name)
 ```
 
