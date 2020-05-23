@@ -66,13 +66,15 @@ def fetch_file(path):
     return node.fetch_file(path)
 ```
 
-Since the hash function works in a pseudorandom way we expect it to distribute load evenly across the 5 storgae nodes and hence ensure we maintain our SLA and serve the customers well.
+We have 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' if we apply hash function to these files we realize that they are stored on storage nodes E, A, B, C, and D respectively.
 
-Things become interesting when the system is a hit and we need to scale the product, now 5 storage machines are not enough and we need to add say 2 more nodes. Now with this implementation things look pretty bleak. For things to scale smoothly, we need to constatly scale up the system and now when the number of storage nodes increases from 4 to say 7, the entire mapping changes. The same function does not work fine.
+Things become interesting when the system gains a nice traction and we scale the storage node horizontally and want to make 7 nodes instead of 5. The hash function will change and now instead of doing a `mod 5` it would do `mod 7`. Changing the hash function impleies changing the mapping and association of file with storage nodes. Let us first administer the new associations and see which files required to be moved.
+
+If we apply the hash function to the same 5 files we get that files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' will now be stored on nodes D, E, F, G, A which means we need to move every single of the 5 files to different nodes and then only we can change the hash function.
 
 ![File association changed](https://user-images.githubusercontent.com/4745789/82738059-b9e6a100-9d52-11ea-8cf3-f264b4a195b1.png)
 
-The file with hash value 1027 which was present on node C is now expected to be at node G. For most cases this mapping would change hence a lot of data needs to be migrated. This is super expensive. The solution to this problem is Consistent Hashing.
+This data movement is super expensive and if everytime we scale up we need to move not all but even half the amount of data, that becomes huge and very inefficient. This is where COnsistent Hashing kicks in and ensures that when we scale up or down we only migrate a bare minimum amount of data to different nodes.
 
 # Consistent Hashing
 Our criticism of the solution (1) for mapping URLs to caches motivates the goal ofconsistenthashing:  we want hash table-type functionality (we can store stuff and retrieve it later) withthe  additional  property  that  almost  all  objects  stay  assigned  to  the  same  cache  even  asthe  numbernof  caches  changes.   We  next  give  the  most  popular  implementation  of  thisfunctionality 
