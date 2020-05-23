@@ -1,10 +1,4 @@
-Consistent hashing 
-
-Three major examples of Consistent Hashing
-
- - Akamai
- - BitTorrent
- - Amazon DynamoDB
+Consistent hashing is a hashing technique that performs really well when operated in a dynamic environment where the number of keys on which the mapping happens change frequently. Consistent Hashing was made famous by Amazon DynamoDB, Bit Torrent and Akamai who solve some serious distributed system problems using . IN this article we dive deep into this wonderful algorithm, see its internals and its array based implementations.
 
 # Hash Functions
 Hash Functions are any functions that maps value from one arbitrary sized domain to a fixed sized values. The values output from the hash functions are typically used for efficient lookup of the original entity.
