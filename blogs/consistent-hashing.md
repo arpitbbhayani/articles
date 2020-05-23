@@ -22,11 +22,11 @@ Say we are building a distrbiuted storage system within which users can upload f
 # Each of the node has a `fetch_file` function exposed which actually
 # fetches the file from the corresponding machine.
 storage_nodes = [
-    StorageNode(host='10.131.213.12'),
-    StorageNode(host='10.131.217.11'),
-    StorageNode(host='10.131.142.46'),
-    StorageNode(host='10.131.114.17'),
-    StorageNode(host='10.131.189.18'),
+    StorageNode(name='A', host='10.131.213.12'),
+    StorageNode(name='B', host='10.131.217.11'),
+    StorageNode(name='C', host='10.131.142.46'),
+    StorageNode(name='D', host='10.131.114.17'),
+    StorageNode(name='E', host='10.131.189.18'),
 ]
 
 def hash_fn(key):
