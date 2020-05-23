@@ -158,4 +158,4 @@ def assign(self, item_id: str) -> str:
 
 # References
  - [Hash Functions - Wikipedia](https://en.wikipedia.org/wiki/Hash_function)
- - [Consistent Hashin - Stanford](https://web.stanford.edu/class/cs168/l/l1.pdf)
+ - [Consistent Hashing - Stanford](https://web.stanford.edu/class/cs168/l/l1.pdf)
