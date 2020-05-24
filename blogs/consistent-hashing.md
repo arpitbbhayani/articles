@@ -83,7 +83,7 @@ The major pain point of the above system is that it is prone to events like scal
 
 Consistent Hashing addresses this situation by keeping the Hash Space huge and constant, somewhere in the order of `[0, 2^128 - 1]` and the storage node and objects both map to one of the slots in this huge Hash Space. Unlike in the traditional system where the file was associated with storage node at index where it got hashed to, in this system the chances of a collision between a file and a storage node are infinitesimally small and hence we need a different way to define this association.
 
-Instead of using a collision based approach we define the association as - the file will be associated with the storage node which is present to the immediate right of its hashed location. Defining association in this way helps us
+Instead of using a collision-based approach we define the association as - the file will be associated with the storage node which is present to the immediate right of its hashed location. Defining association in this way helps us
 
  - keep the hash function independent of the number of storage nodes
  - keep associations relative and not driven by absolute collisions
@@ -174,7 +174,7 @@ When a node is removed from the system it only affects the files associated with
 
 ![Removing a new node from the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82751261-b0e9e400-9dd3-11ea-81ee-3fd3f0187857.png)
 
-From the illustration above, we see when the node K is removed from the system, we change the associations of files associated with node K to the node that lies to its immediate right i.e. node E. Thus the only files affected and needs migration are the ones associated with node K.
+From the illustration above, we see when node K is removed from the system, we change the associations of files associated with node K to the node that lies to its immediate right i.e. node E. Thus the only files affected and needs migration are the ones associated with node K.
 
 In order to implement this at a low level using `nodes` and `keys` array, we get the index where the node K lies in the `keys` array using binary search. Once we have the index we remove the key from the `keys` array and Storage Node from the `nodes` array present on that index.
 
@@ -230,11 +230,9 @@ def assign(self, item: str) -> str:
 The source code with the implementation of Consistent Hashing in Python could be found at [github.com/arpitbbhayani/consistent-hashing](https://github.com/arpitbbhayani/consistent-hashing/blob/master/consistent-hashing.ipynb).
 
 # Conclusion
-Consistent Hashing is one of the most important algorithms to help us horizontally scale and manage any distributed system. The algorithm does not only work in sharded systems but also finds its application in load balancing, data partitioning, managing server based sticky sessions, routing algorithms, and many more.
+Consistent Hashing is one of the most important algorithms to help us horizontally scale and manage any distributed system. The algorithm does not only work in sharded systems but also finds its application in load balancing, data partitioning, managing server-based sticky sessions, routing algorithms, and many more. A lot of databases owe their scale and performance and ability to handle the humongous load to Consistent Hashing.
 
 # References
  - [Hash Functions - Wikipedia](https://en.wikipedia.org/wiki/Hash_function)
  - [Consistent Hashing - Wikipedia](https://en.wikipedia.org/wiki/Consistent_hashing)
  - [Consistent Hashing - Stanford](https://web.stanford.edu/class/cs168/l/l1.pdf)
- - [Consistent Hashing and RandomTrees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web](https://www.akamai.com/us/en/multimedia/documents/technical-publication/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web-technical-publication.pdf)
- - [Dynamo: Amazon’s Highly Available Key-value Store](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf)
