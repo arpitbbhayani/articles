@@ -117,11 +117,17 @@ def hash_fn(key: str, total_slots: int) -> int:
 ```
 
 ## Adding a new node in the system
-When there is a need to scale up and a new node in the system, in our case a Storage Node, is to be added to the system, we first find the position of the node where it resides in the huge Hash Space by using the hash function. If the slot is not already taken we place the node in that position.
+When there is a need to scale up and a new node in the system, in our case a new Storage Node, we
 
-Before the node is added to the system, we migrate the data to this node for the affected files. We see that the files to the left of this newly added node that were, associated with the node to the right, has to be migrated. So we pull the data out of the right node for the affected files and populate the newly added node. All other data and associations remain intact.
+ - find the position of the node where it resides in the huge Hash Space
+ - populate the new node with data it is supposed to serve
+ - add the node in the Hash Space
+
+When a new node is added in the system it only affects the files that hash at the location to the left of the position this new node will fit in, and associated with the node the right of the new node. Association of all other files remain intact. Thus minimizing the amount of data to be migrated and mapping to be changed.
 
 ![Adding a new node in the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82749683-80507d00-9dc8-11ea-92a5-5ed9ebeacd69.png)
+
+From the illustration above, when the new node K is added between nodes B and E, we first find all the files that are mapped to node E and are hashed at index that lies before node K. These are the files whose association will be changed from E to the newly added node K. Hence the node K is populated with the required contents and then added in the hash space.
 
 For low level implementation of this we perform binary search in the `keys` array so as to find the position in te keys array where the .
 
