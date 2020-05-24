@@ -1,27 +1,27 @@
-Consistent hashing is a hashing technique that performs really well when operated in a dynamic environment where the distributed system scales up and scales down changes frequently. The core concept of Consistent Hashing was introduced in the paper [Consistent Hashing and RandomTrees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web](https://www.akamai.com/us/en/multimedia/documents/technical-publication/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web-technical-publication.pdf) but it gained popularity after the infamous paper introducing DynamoDB - [Dynamo: Amazon’s Highly Available Key-value Store](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf). Since then the consistent hashing gained traction and found a ton of use cases in designing and scaling distributed systems efficiently. The two famous examples that exhaustively use this technique are Bit Torrent, for their peer-to-peer networks and Akamai, for their web caches. In this article we dive deep into the need of Consistent Hashing, the internals of it, and more importantly along the way implement it using arrays and [Binary Search](https://en.wikipedia.org/wiki/Binary_search_algorithm).
+Consistent hashing is a hashing technique that performs really well when operated in a dynamic environment where the distributed system scales up and scales down frequently. The core concept of Consistent Hashing was introduced in the paper [Consistent Hashing and RandomTrees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web](https://www.akamai.com/us/en/multimedia/documents/technical-publication/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web-technical-publication.pdf) but it gained popularity after the infamous paper introducing DynamoDB - [Dynamo: Amazon’s Highly Available Key-value Store](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf). Since then the consistent hashing gained traction and found a ton of use cases in designing and scaling distributed systems efficiently. The two famous examples that exhaustively use this technique are Bit Torrent, for their peer-to-peer networks and Akamai, for their web caches. In this article we dive deep into the need of Consistent Hashing, the internals of it, and more importantly along the way implement it using arrays and [Binary Search](https://en.wikipedia.org/wiki/Binary_search_algorithm).
 
 # Hash Functions
 Before we jump into the core Consistent Hashing technique we first get a few things cleared up, one of which is Hash Functions. Hash Functions are any functions that map value from an arbitrarily sized domain to another fixed-sized domain, usually called the Hash Space. For example, mapping URLs to 32-bit integers or web pages' HTML content to a 256-byte string. The values generated as an output of these hash functions are typically used as keys to enable efficient lookups of the original entity.
 
-A trivial hash function could be something that maps any 32-bit integer to an 8-bit integer hash space. The function could be implemented using the arithmetic operator `modulo` and we can achieve this by taking a `modulo 256` which yields numbers in the range `[0, 255]` taking up 8-bits for its representation. A hash function, that maps keys to integer domain, more often than not applies the `modulo N` so as to restrict the values, or the hash space, to a range `[0, N-1]`.
+An example of a simple hash function is a function that maps a 32-bit integer into an 8-bit integer hash space. The function could be implemented using the arithmetic operator `modulo` and we can achieve this by taking a `modulo 256` which yields numbers in the range `[0, 255]` taking up 8-bits for its representation. A hash function, that maps keys to such integer domain, more often than not applies the `modulo N` so as to restrict the values, or the hash space, to a range `[0, N-1]`.
 
 A good hash function has the following properties
- - The function is computationally efficient and values generated are easy for lookups
- - The function, for most general cases, behaves like a pseudorandom function spreading data out evenly without any noticeable correlation
+ - The function is computationally efficient and the values generated are easy for lookups
+ - The function, for most general use cases, behaves like a pseudorandom generator that spreads data out evenly without any noticeable correlation
 
-Now that we have seen what a hash function is we take a look into how these traditional hash functions fit into our real world along with their limitations.
+Now that we have seen what a hash function is, we take a look into how we could use them and build a somewhat scalable distributed system.
 
-# Hashing in a distributed system
-Say we are building a distributed storage system in which users can upload files and access them on demand. The service exposes the following APIs
+# Distributed storage system using traditional hashing
+Say we are building a distributed storage system in which users can upload files and access them on demand. The service exposes the following APIs to the client
 
  - `upload` to upload the file to the storage machine
  - `fetch` to fetch the file and return its content
 
-The system has storage engines that store the uploaded file and in-turn expose a function `fetch` (same name for convenience) that reads the content from the file and returns them to the main API server which is then sent back to the client. The system has 5 storage engines to store the files in a distributed way so that a single machine is not overwhelmed and we have enough capacity to sustain the initial growth.
+Behind the scenes the system has Storage Nodes on which the files are stored and accessed. These nodes exposes the function `put_file` and `fetch_file` that puts and gets the file content from the disk and sends it to the main API server which in turn sends the response back to the user.
 
-When someone invokes `upload` function with the path of the file, we first apply a hash function on the path so as to find which storage engine would be responsible in storing this file; once identified we read the content of the file and put that file on the corresponding storage machine.
+To sustain the initial load, the system has 5 Stogare Nodes which stores the uploaded files in a distributed manner. Having multiple nodes ensures that the system, as a whole, is not overwhelmed, and the storage is distributed almost evenly across.
 
-The hash function used over here simply sums the bytes and takes the modulo by `5` and thus generating the output in range `[0, 4]`. This output value now represents the index of the storage engine that will be responsible for holding the file. Pseudocode representing the above flow of putting and fetching the file is illustrated below.
+When the user invokes `upload` function with the path of the file, the system first needs to identify the storage node that will be responsible for holding the file and we do this by applying a hash function to the path and in turn getting the storage node index. Once we get the storage node, we read the content of the file and put that file on the node by invoking `put_file` function of the node.
 
 ```py
 # storage_nodes holding instances of actual storage node objects
@@ -65,6 +65,8 @@ def fetch(path):
     # we fetch the file from the node and return
     return node.fetch_file(path)
 ```
+
+The hash function used over here simply sums the bytes and takes the modulo by `5` and thus generating the output in range `[0, 4]`. This output value now represents the index of the storage engine that will be responsible for holding the file. Pseudocode representing the above flow of putting and fetching the file is illustrated below.
 
 We have 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' if we apply the hash function to these files we realize that they are stored on storage nodes E, A, B, C, and D respectively.
 
