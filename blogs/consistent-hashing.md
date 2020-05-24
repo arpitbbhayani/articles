@@ -83,7 +83,7 @@ The major pain point of the above system is that it is prone to events like scal
 
 Consistent Hashing addresses this situation by keeping the Hash Space huge and constant, somewhere in the order of `[0, 2^128 - 1]` and the storage node and objects both map to one of the slots in this huge Hash Space. Unlike in the traditional system where the file was associated with storage node at index where it got hashed to, in this system the chances of a collision between a file and a storage node are infinitesimally small and hence we need a different way to define this association.
 
-Hence instead of a collision based approach we define the association as - the file will be associated with the storage node which is present to the immediate right of its hashed location. Defining association in this way helps us
+Instead of using a collision based approach we define the association as - the file will be associated with the storage node which is present to the immediate right of its hashed location. Defining association in this way helps us
 
  - keep the hash function independent of the number of storage nodes
  - keep associations relative and not driven by absolute collisions
@@ -97,7 +97,7 @@ A very naive way to implement this is by allocating an array of size equal to th
  - requires huge memory to hold such a large array
  - finding association by iterating every time to the right is `O(hash_space)`
 
-Since in the above approach, most of the items in the array are not allocated, we are wasting a lot of space. A better way of implementing this is by using two arrays: one to hold the Storage Nodes, called `nodes` and another one to hold the positions of the Storage Nodes in the hash space, called `keys`. There is a one-to-one correspondence between the two arrays - the Storage Node `nodes[i]` is present at position `keys[i]` in the hash space. Both the arrays are kept sorted as per the `keys` array.
+A better way of implementing this is by using two arrays: one to hold the Storage Nodes, called `nodes` and another one to hold the positions of the Storage Nodes in the hash space, called `keys`. There is a one-to-one correspondence between the two arrays - the Storage Node `nodes[i]` is present at position `keys[i]` in the hash space. Both the arrays are kept sorted as per the `keys` array.
 
 ## Hash Function in Consistent Hashing
 We define `total_slots` as the size of this entire hash space, typically of order `2^256` and the hash function could be implemented by taking [SHA-256](https://en.wikipedia.org/wiki/SHA-2) followed by a `mod total_slots`. Since the `total_slots` is huge and a constant the following hash function implementation is independent of the actual number of Storage Nodes present in the system and hence remains unaffected by scaling up or down events.
