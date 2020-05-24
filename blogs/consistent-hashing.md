@@ -74,12 +74,10 @@ If we apply the hash function to the same 5 files we get that files 'f1.txt', 'f
 
 ![File association changed](https://user-images.githubusercontent.com/4745789/82738059-b9e6a100-9d52-11ea-8cf3-f264b4a195b1.png)
 
-This data movement is super expensive and if every time we scale up we need to move not all but even half the amount of data, that becomes huge and very inefficient. This is where COnsistent Hashing kicks in and ensures that when we scale up or down we only migrate a bare minimum amount of data to different nodes.
+If we need to move not all but even half the amount of data, everytime we scale up, the process of scaling up becomes super expensive and in longer run very tedious. This is where Consistent Hashing kicks in and ensures that when we scale up or down we only migrate a bare minimum amount of data to different nodes.
 
 # Consistent Hashing
-Our criticism of the solution (1) for mapping URLs to caches motivates the goal ofconsistenthashing:  we want hash table-type functionality (we can store stuff and retrieve it later) withthe  additional  property  that  almost  all  objects  stay  assigned  to  the  same  cache  even  asthe  numbernof  caches  changes.   We  next  give  the  most  popular  implementation  of  thisfunctionality 
-
-Consistent Hashing provides an excellent way of load balancing items across nodes. There are lots of great resources to learn consistent hashing from and instead of reiterating things here we will implement it using an array based implementation.
+The main advantage we seek by using Consistent Hashing is that when we scale up we want that almost all the objects stay assigned to the same storage node even as the number of nodes change.
 
 # Consistent Hash as an array
 Naive way is to create a hash space equal to ring_length length which could go huge and waste a lot of memory. Most of the elements are un occupued. Hence to fix that we take two arrays one holds the actual nodes that are present
