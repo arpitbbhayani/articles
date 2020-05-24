@@ -11,17 +11,17 @@ A good hash function has the following properties
 
 Now that we have seen what a hash function is we take a look into how these traditional hash functions fit into our real world and their limitations.
 
-# Hashing in distributed system
+# Hashing in a distributed system
 Say we are building a distributed storage system in which users can upload files and access them on demand. The service exposes the following APIs
 
  - `put_file` to upload the file to the storage machine
  - `fetch_file` to fetch the file and return its content
 
-The system has storage engines that store the uploaded file and in-turn expose a function `fetch_file` (same name for convenience) that reads the content from the file and returns them to the main API server which are them sent back to the client. The system has 5 storage engines to store the files in a distributed way so that a single machine is not overwhelmed and we have enough capacity to sustain the initial growth.
+The system has storage engines that store the uploaded file and in-turn expose a function `fetch_file` (same name for convenience) that reads the content from the file and returns them to the main API server which is then sent back to the client. The system has 5 storage engines to store the files in a distributed way so that a single machine is not overwhelmed and we have enough capacity to sustain the initial growth.
 
 When someone invokes `put_file` function with the path of the file, we first apply a hash function on the path so as to find which storage engine would be responsible in storing this file; once identified we read the content of the file and put that file on the corresponding storage machine.
 
-The hash function used over here simply sums the bytes and takes the modulo by `5` and thus generating the output in range `[0, 4]`. This output value now represents the index of storage engine that will be responsible for holding the file. Pseudocode representing the above flow of putting and fetching the file is illustrated as below.
+The hash function used over here simply sums the bytes and takes the modulo by `5` and thus generating the output in range `[0, 4]`. This output value now represents the index of the storage engine that will be responsible for holding the file. Pseudocode representing the above flow of putting and fetching the file is illustrated below.
 
 ```py
 # storage_nodes holding instances of actual storage node objects
@@ -68,13 +68,13 @@ def fetch_file(path):
 
 We have 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' if we apply the hash function to these files we realize that they are stored on storage nodes E, A, B, C, and D respectively.
 
-Things become interesting when the system gains good traction and we scale the storage node horizontally and want to make 7 nodes instead of 5. The hash function will change and now instead of doing a `mod 5` it would do `mod 7`. Changing the hash function impleies changing the mapping and association of file with storage nodes. Let us first administer the new associations and see which files required to be moved.
+Things become interesting when the system gains good traction and we scale the storage node horizontally and want to make 7 nodes instead of 5. The hash function will change and now instead of doing a `mod 5` it would do `mod 7`. Changing the hash function implies changing the mapping and association of files with storage nodes. Let us first administer the new associations and see which files required to be moved.
 
 If we apply the hash function to the same 5 files we get that files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' will now be stored on nodes D, E, F, G, A which means we need to move every single of the 5 files to different nodes and then only we can change the hash function.
 
 ![File association changed](https://user-images.githubusercontent.com/4745789/82738059-b9e6a100-9d52-11ea-8cf3-f264b4a195b1.png)
 
-If we need to move not all but even half the amount of data, everytime we scale up, the process of scaling up becomes super expensive and in longer run very tedious. This is where Consistent Hashing kicks in and ensures that when we scale up or down we only migrate a bare minimum amount of data to different nodes.
+If we need to move not all but even half the amount of data, every time we scale up, the process of scaling up becomes super expensive and in longer run very tedious. This is where Consistent Hashing kicks in and ensures that when we scale up or down we only migrate a bare minimum amount of data to different nodes.
 
 # Consistent Hashing
 The main advantage we seek by using Consistent Hashing is that almost all the objects stay assigned to the same storage node even as the number of nodes change, either we scale up or down.
