@@ -153,6 +153,8 @@ def add_node(self, node: StorageNode) -> int:
     if index > 0 and self._keys[index - 1] == key:
         raise Exception("collision occurred")
 
+    # Perform data migration
+
     # insert the node_id and the key at the same `index` location.
     # this insertion will keep nodes and keys sorted w.r.t keys.
     self.nodes.insert(index, node)
@@ -194,6 +196,8 @@ def remove_node(self, node: StorageNode) -> int:
     # if key does not exist in the array we raise Exception
     if index >= len(self._keys) or self._keys[index] != key:
         raise Exception("node does not exist")
+
+    # Perform data migration
 
     # now that all sanity checks are done we popping the
     # keys and nodes at the index and thus removing the presence of the node.
