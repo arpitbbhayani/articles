@@ -204,6 +204,10 @@ def remove_node(self, node: StorageNode) -> int:
 ```
 
 ## Associating an item to a node
+Now that we have seen how consistent hashing helps in minimizing data migration and change in associations it is time see how to efficiently find the "node to the right" for a given item; This operation has to be super fast and efficient because it is something that will be called for every single read and write. Adding and removing are not that frequent when compared to this operation.
+
+At low level this is again implemented efficiently using binary search. We first find pass the item to the hash function and get the position of it in the hash space. Once we have this index we perform a binary search and find the index of this position in the `keys` array. If the position is greater than position of the node to the extreme right we circle back to the 0th index. The index thus obtained will be the index of the storage node to which the item will be associated with.
+
 ```py
 def assign(self, item: str) -> str:
     """Given an item, the function returns the node it is associated with.
