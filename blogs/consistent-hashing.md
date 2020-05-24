@@ -79,16 +79,14 @@ With the new hash function the same 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.tx
 If we have to change the hash function every time we scale up or down and if this requires us to move not all but even half of the data, the process becomes super expensive and in longer run infeasible. So we need a way to minimize the data movement required during scale-ups or scale-downs, and this is where Consistent Hashing fits in as it is designed to minimize this data transfer.
 
 # Consistent Hashing
-The main advantage we seek by using Consistent Hashing is that even when the system scales and we add more storage nodes, almost all the objects stay assigned to the same storage node. With this requirement in place we dissect the traditional hashing approach.
+The pain point of the above system is that the system is prone to scale-ups and downs and requires a lot of alterations in associations of items with nodes. These associations are purely driven by the underlying Hash Function and hence if we could somehow make this hash function independent of the number of the storage nodes in the system, we address this pain point.
 
-In a system designed through the traditional hashing techniques, we see that the Hash Space is always equal to the number of storage nodes and onto which our files get mapped to. When the number of storage nodes changes the entire mapping changes and this is where the bottleneck lies. We need to make a Hash function independent of the number of the storage node and we could solve this issue.
+Consistent Hashing addresses this situation by keeping the Hash Space huge and constant, somewhere in the order of `[0, 2^128 - 1]` and the storage node and objects both map to one of the slots in this huge Hash Space. Unlike in the traditional system where the file was associated with storage node at index where it got hashed to, in this system the chances of a collision between a file and a storage node are infinitesimally small and hence we need a different way to define this association.
 
-Consistent Hashing addresses this situation by keeping the Hash Space huge and constant, somewhere in the order of `[0, 2^256 - 1]` and the storage node and objects both map to one of the slots in this huge Hash Space. Unlike in the traditional system where the file was associated with storage node at index where it got hashed to, in this system the chances of a collision between a file and a storage node are infinitesimally small and hence we need a different way to define this association.
+Hence instead of a collision based approach we define the association as - the file will be associated with the storage node which is present to the immediate right of its hashed location. Defining association in this way helps us
 
-Since the chances of the file and storage node being hashed to the same location in this vast Hash Space is very small, we define the association as - the file will be associated with the storage node which is present to the immediate right of its hashed location. Defining association in this way helps us
-
- - keep the hash function independent of the storage nodes
- - associations are relative and do not require collisions
+ - keep the hash function independent of the number of storage nodes
+ - keep associations relative and not driven by absolute collisions
 
 ![Associations in Consistent Hashing](https://user-images.githubusercontent.com/4745789/82748149-4d54bc00-9dbd-11ea-8f06-6710a5c98f20.png)
 
