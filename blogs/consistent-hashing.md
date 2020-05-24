@@ -1,4 +1,4 @@
-Consistent hashing is a hashing technique that performs really well when operated in a dynamic environment where the distributed system scales up and scales down frequently. The core concept of Consistent Hashing was introduced in the paper [Consistent Hashing and RandomTrees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web](https://www.akamai.com/us/en/multimedia/documents/technical-publication/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web-technical-publication.pdf) but it gained popularity after the infamous paper introducing DynamoDB - [Dynamo: Amazon’s Highly Available Key-value Store](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf). Since then the consistent hashing gained traction and found a ton of use cases in designing and scaling distributed systems efficiently. The two famous examples that exhaustively use this technique are Bit Torrent, for their peer-to-peer networks and Akamai, for their web caches. In this article we dive deep into the need of Consistent Hashing, the internals of it, and more importantly along the way implement it using arrays and [Binary Search](https://en.wikipedia.org/wiki/Binary_search_algorithm).
+Consistent hashing is a hashing technique that performs really well when operated in a dynamic environment where the distributed system scales up and scales down frequently. The core concept of Consistent Hashing was introduced in the paper [Consistent Hashing and RandomTrees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web](https://www.akamai.com/us/en/multimedia/documents/technical-publication/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web-technical-publication.pdf) but it gained popularity after the famous paper introducing DynamoDB - [Dynamo: Amazon’s Highly Available Key-value Store](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf). Since then the consistent hashing gained traction and found a ton of use cases in designing and scaling distributed systems efficiently. The two famous examples that exhaustively use this technique are Bit Torrent, for their peer-to-peer networks and Akamai, for their web caches. In this article we dive deep into the need of Consistent Hashing, the internals of it, and more importantly along the way implement it using arrays and [Binary Search](https://en.wikipedia.org/wiki/Binary_search_algorithm).
 
 # Hash Functions
 Before we jump into the core Consistent Hashing technique we first get a few things cleared up, one of which is Hash Functions. Hash Functions are any functions that map value from an arbitrarily sized domain to another fixed-sized domain, usually called the Hash Space. For example, mapping URLs to 32-bit integers or web pages' HTML content to a 256-byte string. The values generated as an output of these hash functions are typically used as keys to enable efficient lookups of the original entity.
@@ -11,13 +11,13 @@ A good hash function has the following properties
 
 Now that we have seen what a hash function is, we take a look into how we could use them and build a somewhat scalable distributed system.
 
-# Distributed storage system using traditional hashing
-Say we are building a distributed storage system in which users can upload files and access them on demand. The service exposes the following APIs to the client
+# Building a distributed storage system
+Say we are building a distributed storage system in which users can upload files and access them on demand. The service exposes the following APIs to the users
 
- - `upload` to upload the file to the storage machine
+ - `upload` to upload the file
  - `fetch` to fetch the file and return its content
 
-Behind the scenes the system has Storage Nodes on which the files are stored and accessed. These nodes expose the functions `put_file` and `fetch_file` that puts and gets the file content from the disk and sends it to the main API server which in turn sends the response back to the user.
+Behind the scenes the system has Storage Nodes on which the files are stored and accessed. These nodes expose the functions `put_file` and `fetch_file` that puts and gets the file content to/from the disk and sends the response to the main API server which in turn sends it back to the user.
 
 To sustain the initial load, the system has 5 Stogare Nodes which stores the uploaded files in a distributed manner. Having multiple nodes ensures that the system, as a whole, is not overwhelmed, and the storage is distributed almost evenly across.
 
