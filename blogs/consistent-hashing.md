@@ -168,11 +168,11 @@ When there is a need to scale down and remove an existing node from the system, 
  - populate the node to the right with data that was associated with the node to be removed
  - remove the node from the Hash Space
 
-When a node is removed from the system it only affects the files associated with the current node. All other files and associations remain intact, thus minimizing the amount of data to be migrated and mapping required to be changed.
+When a node is removed from the system it only affects the files associated with the node itself. All other files and associations remain unaffected, thus minimizing the amount of data to be migrated and mapping required to be changed.
 
 ![Removing a new node from the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82751261-b0e9e400-9dd3-11ea-81ee-3fd3f0187857.png)
 
-From the illustration, above we see, when the node K is removed from the system, we change the associations of files handled by the node K and change its association to the node to its immediate right which is node E. Thus the only files affected and needs migration are the ones associated with node K.
+From the illustration above, we see when the node K is removed from the system, we change the associations of files associated with node K to the node that lies to its immediate right i.e. node E. Thus the only files affected and needs migration are the ones associated with node K.
 
 In order to implement this at a low level using `nodes` and `keys` array, we get the index where the node K lies in the `keys` array using binary search. Once we have the index we remove the key from the `keys` array and Storage Node from the `nodes` array present on that index.
 
