@@ -74,7 +74,7 @@ Things become interesting when the system gains some traction and it needs to be
 
 With the new hash function the same 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' will now be associated with storage nodes D, E, F, G, A. Here we see that changing the hash function requires us to move every single one of the 5 files to a different node.
 
-![File association changed](https://user-images.githubusercontent.com/4745789/82746661-e8469980-9daf-11ea-80c0-460e40ec5bb9.png)
+![File association changed](https://user-images.githubusercontent.com/4745789/82746677-16c47480-9db0-11ea-8dea-7b5a3cb73e91.png)
 
 If we have to change the hash function every time we scale up or down and if this requires us to move not all but even half of the data, the process becomes super expensive and in longer run infeasible. So we need a way to minimize the data movement required during scale-ups or scale-downs, and this is where Consistent Hashing fits in as it is designed to minimize this data transfer.
 
