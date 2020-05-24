@@ -92,18 +92,27 @@ Since the chances of the file and storage node being hashed to the same location
 
 ![Associations in Consistent Hashing](https://user-images.githubusercontent.com/4745789/82748149-4d54bc00-9dbd-11ea-8f06-6710a5c98f20.png)
 
-Naive way is to create a hash space equal to ring_length length which could go huge and waste a lot of memory. Most of the elements are un occupued. Hence to fix that we take two arrays one holds the actual nodes that are present while other holds the locations where you would find them on the ring.
+A very naive way to implement this is by allocating an array of size equal to the Hash Space and putting files and storage node literally in the array on the hased location. In order to get association we iterete from the item's hashed location towards right and find the first Storage Node. If we reach the end of the array and do not fund any Storage Node we circle back to index 0 and continue the search. The approach is very easy to implement but suffers from following limitations
+
+ - requires huge memory to hold such a large array
+ - finding association by iterating everytime to the right is effectively `O(hash_space)`
+
+Since in above approach, most of the items in array are not allocation, we are wasting a lot of space. A better way of implementing this is by using two arrays: one to hold the Storage Nodes and other one to hold the positions of nodes in the hash space.
 
 The consistent hash as a ring could be treated as a sorted array. Given a node id or an item item, the hash function outputs an integer value that denotes the position of the entity in the hash space.
 
 ```py
-def _generate_key(self, obj):
-    """returns hash key modulo ring_length because of which it represents
-    the location in the flattened hash ring where the data should reside.
+def hash_fn(key: str, total_slots: int) -> int:
+    """hash_fn creates an integer equivalent of a SHA256 hash and
+    takes a modulo with the total number of slots in hash space.
     """
-    if not obj:
-        return None
-    return hash_fn(obj) % self.ring_length
+    hsh = hashlib.sha256()
+
+    # converting data into bytes and passing it to hash function
+    hsh.update(bytes(key.encode('utf-8')))
+
+    # converting the HEX digest into equivalent integer value
+    return int(hsh.hexdigest(), 16) % total_slots
 ```
 
 # Adding a node to the ring
