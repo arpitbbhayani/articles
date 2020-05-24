@@ -123,13 +123,13 @@ When there is a need to scale up and a new node in the system, in our case a new
  - populate the new node with data it is supposed to serve
  - add the node in the Hash Space
 
-When a new node is added in the system it only affects the files that hash at the location to the left and and associated with the node to the right, of the position the new node will fit in. All other files and associations remain intact, thus minimizing the amount of data to be migrated and mapping required to be changed.
+When a new node is added in the system it only affects the files that hash at the location to the left and associated with the node to the right, of the position the new node will fit in. All other files and associations remain intact, thus minimizing the amount of data to be migrated and mapping required to be changed.
 
 ![Adding a new node in the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82749683-80507d00-9dc8-11ea-92a5-5ed9ebeacd69.png)
 
-From the illustration above we see, when the new node K is added between nodes B and E, we find all the files that are mapped to node E and are hashed at index that lies before node K. These are the files whose association will be changed from E to the newly added node K. Hence the node K is populated with the required contents and then added in the hash space.
+From the illustration, above we see, when the new node K is added between nodes B and E, we change the associations of files present in the segment B-K and assign them to node K. The data belonging to the segment B-K could be found at node E where they were previously associated with. Thus the only files affected and needs migration are in the segment B-K; and their association will change from node E to node K.
 
-In order to implement this at low level using `nodes` and `keys` array, we get the index where the new node will fit in. Then using binary search we find the index of this position in the `keys` array and on this position insert the new storage node in `nodes` array and key in `keys` array.
+In order to implement this at a low level using `nodes` and `keys` array, we get the index where the new node K will fit in. Using binary search we then find the index of this position in the sorted `keys` array where it should be inserted. On this index insert the new Storage Node instance in the `nodes` array and the key in the `keys` array. Thus using the auxiliary sorted `keys` array we efficiently find the position where the new node would fit in.
 
 ```py
 def add_node(self, node: StorageNode) -> int:
