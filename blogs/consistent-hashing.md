@@ -77,9 +77,16 @@ If we apply the hash function to the same 5 files we get that files 'f1.txt', 'f
 If we need to move not all but even half the amount of data, everytime we scale up, the process of scaling up becomes super expensive and in longer run very tedious. This is where Consistent Hashing kicks in and ensures that when we scale up or down we only migrate a bare minimum amount of data to different nodes.
 
 # Consistent Hashing
-The main advantage we seek by using Consistent Hashing is that when we scale up we want that almost all the objects stay assigned to the same storage node even as the number of nodes change.
+The main advantage we seek by using Consistent Hashing is that almost all the objects stay assigned to the same storage node even as the number of nodes change, either we scale up or down.
 
-# Consistent Hash as an array
+Hash Space in case of the systems desinged using traditional hashing are equal to the number of slots, in our example the number of storage nodes. It is because of this dependency on the the number of slots that is causing issues when the slots change. Consistent hashing addresses this issue by not being dependent on this but by having a huge hash space to map to.
+
+The nodes were not hashed.
+
+So the objects and the nodes both are hashed by the same hash function and hence they map on the same hash space. The get 
+
+A traditional hash function, as discussed earler, generates a number in a range `[0, N]` where `N` are the number of slots where your data fits in, in the example above these were the storage nodes where the files resided. In consistent hashing, this approach changes and instead of limiting the range to the slots available, the function outputs in a wide range say `[0, 2^256 - 1]`. The storage 
+
 Naive way is to create a hash space equal to ring_length length which could go huge and waste a lot of memory. Most of the elements are un occupued. Hence to fix that we take two arrays one holds the actual nodes that are present
 while other holds the locations where you would find them on the ring.
 
