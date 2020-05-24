@@ -17,11 +17,11 @@ Say we are building a distributed storage system in which users can upload files
  - `upload` to upload the file to the storage machine
  - `fetch` to fetch the file and return its content
 
-Behind the scenes the system has Storage Nodes on which the files are stored and accessed. These nodes exposes the function `put_file` and `fetch_file` that puts and gets the file content from the disk and sends it to the main API server which in turn sends the response back to the user.
+Behind the scenes the system has Storage Nodes on which the files are stored and accessed. These nodes expose the functions `put_file` and `fetch_file` that puts and gets the file content from the disk and sends it to the main API server which in turn sends the response back to the user.
 
 To sustain the initial load, the system has 5 Stogare Nodes which stores the uploaded files in a distributed manner. Having multiple nodes ensures that the system, as a whole, is not overwhelmed, and the storage is distributed almost evenly across.
 
-When the user invokes `upload` function with the path of the file, the system first needs to identify the storage node that will be responsible for holding the file and we do this by applying a hash function to the path and in turn getting the storage node index. Once we get the storage node, we read the content of the file and put that file on the node by invoking `put_file` function of the node.
+When the user invokes `upload` function with the path of the file, the system first needs to identify the storage node that will be responsible for holding the file and we do this by applying a hash function to the path and in turn getting the storage node index. Once we get the storage node, we read the content of the file and put that file on the node by invoking the `put_file` function of the node.
 
 ```py
 # storage_nodes holding instances of actual storage node objects
@@ -72,11 +72,11 @@ Say we have 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' if we apply
 
 Things become interesting when the system gains some traction and it needs to be scaled to 7 nodes, which means now the hash function should do `mod 7` instead of a `mod 5`. Changing the hash function implies changing the mapping and association of files with storage nodes. We first need to administer the new associations and see which files required to be moved from one node to another.
 
-With the new hash function the same 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' will now be associated with storage nodes D, E, F, G, A. Here we see that changing the hash function requires us move every single one of the 5 files to a different node.
+With the new hash function the same 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' will now be associated with storage nodes D, E, F, G, A. Here we see that changing the hash function requires us to move every single one of the 5 files to a different node.
 
 ![File association changed](https://user-images.githubusercontent.com/4745789/82738059-b9e6a100-9d52-11ea-8cf3-f264b4a195b1.png)
 
-If we have to change the hash function every time we scale up or down and if this requires us to move not all but even half of the data, the process becomes super expensive and in longer run infeasible. So we need a way to minimize the data movement required during scale ups or scale downs; and this is where Consistent Hashing kicks which is designed to minimize this data transfer.
+If we have to change the hash function every time we scale up or down and if this requires us to move not all but even half of the data, the process becomes super expensive and in longer run infeasible. So we need a way to minimize the data movement required during scale-ups or scale-downs, and this is where Consistent Hashing fits in as it is designed to minimize this data transfer.
 
 # Consistent Hashing
 The main advantage we seek by using Consistent Hashing is that almost all the objects stay assigned to the same storage node even as the number of nodes change, either we scale up or down.
