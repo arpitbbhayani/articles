@@ -4,7 +4,7 @@
     "title": "Consistent Hashing with Binary Search",
     "description": "Consistent Hashing is one of the most sought after techniques when it comes to designing really distributed scalable systems. In this article, we dive deep into the need for Consistent Hashing, the internals of it, and more importantly along the way implement it using arrays and binary search.",
     "image": "https://user-images.githubusercontent.com/4745789/82753158-3cb63d00-9de1-11ea-8b5a-8a07c479e5f9.png",
-    "gif": "https://media.giphy.com/media/StXXmOGdJ7GshYijVv/giphy.gif",
+    "gif": "https://media.giphy.com/media/3orieQBlWzkKTq4new/giphy.gif",
     "categories": [
       "algorithms"
     ],
