@@ -79,13 +79,13 @@ With the new hash function the same 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.tx
 If we have to change the hash function every time we scale up or down and if this requires us to move not all but even half of the data, the process becomes super expensive and in longer run infeasible. So we need a way to minimize the data movement required during scale-ups or scale-downs, and this is where Consistent Hashing fits in as it is designed to minimize this data transfer.
 
 # Consistent Hashing
-The main advantage we seek by using Consistent Hashing is that almost all the objects stay assigned to the same storage node even as the number of nodes change, either we scale up or down.
+The main advantage we seek by using Consistent Hashing is that even when the system scales and we add more storage nodes, almost all the objects stay assigned to the same storage node. With this requirement in place we dissect the traditional hashing approach.
 
-In a system desigined through the tradtional hashing techniques, we see that the Hash Space is equal to the number of slots i.e. storage nodes and on which our items i.e. files gets mapped to. When the number of slots i.e. nodes change the entire mapping changes and this is where the bottleneck lies.
+In a system desigined through the tradtional hashing techniques, we see that the Hash Space is always equal to the number of storage nodes and onto which our files gets mapped to. When the number of storage nodes change the entire mapping changes and this is where the bottleneck lies. We need to make Hash function independent of the number of storage node and we could solve this issue.
 
-Consistent Hashing addresses this situation by keeping the Hash Space huge and constant, in order of `[0, 2^256 - 1]` and the storage node and objects both map to one of the slots in this huge Hash Space. Now since the chances of item being hashed to the slot of storage node is infinitesimally small, the item is ampped to the storage node which is to the right of the hashed location.
+Consistent Hashing addresses this situation by keeping the Hash Space huge and constant, somewhere in order of `[0, 2^256 - 1]` and the storage node and objects both map to one of the slots in this huge Hash Space. Unlike in traditional system where the file was associated to storage node at index where it got hashed to, in this system the chances of collision of file and storage node are infinitesimally small and hence we need a different way to define this association.
 
-
+the item is ampped to the storage node which is to the right of the hashed location.
 
 Naive way is to create a hash space equal to ring_length length which could go huge and waste a lot of memory. Most of the elements are un occupued. Hence to fix that we take two arrays one holds the actual nodes that are present while other holds the locations where you would find them on the ring.
 
