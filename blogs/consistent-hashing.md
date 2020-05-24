@@ -92,7 +92,7 @@ Since the chances of the file and storage node being hashed to the same location
 
 ![Associations in Consistent Hashing](https://user-images.githubusercontent.com/4745789/82748149-4d54bc00-9dbd-11ea-8f06-6710a5c98f20.png)
 
-> Consistent Hashing on an average requires only n/m units of data to be migrated during scale up or down; where n is the total number of data units and m is the number of nodes in the system.
+> Consistent Hashing on an average requires only k/n units of data to be migrated during scale up or down; where k is the total number of keys and n is the number of nodes in the system.
 
 A very naive way to implement this is by allocating an array of size equal to the Hash Space and putting files and storage node literally in the array on the hashed location. In order to get association we iterate from the item's hashed location towards the right and find the first Storage Node. If we reach the end of the array and do not fund any Storage Node we circle back to index 0 and continue the search. The approach is very easy to implement but suffers from the following limitations
 
@@ -131,7 +131,7 @@ When a new node is added in the system it only affects the files that hash at th
 
 From the illustration, above we see, when the new node K is added between nodes B and E, we change the associations of files present in the segment B-K and assign them to node K. The data belonging to the segment B-K could be found at node E where they were previously associated with. Thus the only files affected and needs migration are in the segment B-K; and their association will change from node E to node K.
 
-In order to implement this at a low level using `nodes` and `keys` array, we get the index where the new node K will fit in. Using binary search we then find the index of this position in the sorted `keys` array where it should be inserted. On this index insert the new Storage Node instance in the `nodes` array and the key in the `keys` array. Thus using the auxiliary sorted `keys` array we efficiently find the position where the new node would fit in.
+In order to implement this at a low level using `nodes` and `keys` array, we first get the position of the new node in the Hash Space using the hash function. We then find the index of the smallest key greater than the position in the sorted `keys` array using binary search. This index will be where the key and the new Storage node will be placed in `keys` and `nodes` array respectively.
 
 ```py
 def add_node(self, node: StorageNode) -> int:
@@ -176,7 +176,7 @@ When a node is removed from the system it only affects the files associated with
 
 From the illustration, above we see, when the node K is removed from the system, we change the associations of files handled by the node K and change its association to the node to its immedeiate right which is node E. Thus the only files affected and needs migration are the ones associated with node K.
 
-In order to implement this at a low level using `nodes` and `keys` array, we get the index where the node K lies in the `keys` array and we do this using binary search. Once we have the index we remove the key from the `keys` array and Storage Node from the `nodes` array present on the index.
+In order to implement this at a low level using `nodes` and `keys` array, we get the index where the node K lies in the `keys` array using binary search. Once we have the index we remove the key from the `keys` array and Storage Node from the `nodes` array present on that index.
 
 ```py
 def remove_node(self, node: StorageNode) -> int:
@@ -228,7 +228,7 @@ def assign(self, item: str) -> str:
 The source code with the implement of Consistent Hashing in Python could be found at [github.com/arpitbbhayani/consistent-hashing](https://github.com/arpitbbhayani/consistent-hashing/blob/master/consistent-hashing.ipynb).
 
 # Conclusion
-Consistent Hashing is one of most important algorithms that could help us horizontally scale and manage any distributed system. The algorithm does not only work in sharded use cases but it is also used in balancing load across servers, manage server based sticky sessions and many more.
+Consistent Hashing is one of most important algorithms that could help us horizontally scale and manage any distributed system. The algorithm does not only work in sharded use cases but it is also used in balancing load across servers, manage server based sticky sessions, data partitioning, modelling chat applications, routing algorithms and many more.
 
 # References
  - [Hash Functions - Wikipedia](https://en.wikipedia.org/wiki/Hash_function)
