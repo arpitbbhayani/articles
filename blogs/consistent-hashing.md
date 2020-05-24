@@ -97,9 +97,10 @@ A very naive way to implement this is by allocating an array of size equal to th
  - requires huge memory to hold such a large array
  - finding association by iterating everytime to the right is effectively `O(hash_space)`
 
-Since in above approach, most of the items in array are not allocation, we are wasting a lot of space. A better way of implementing this is by using two arrays: one to hold the Storage Nodes and other one to hold the positions of nodes in the hash space.
+Since in above approach, most of the items in array are not allocated, we are wasting a lot of space. A better way of implementing this is by using two arrays: one to hold the Storage Nodes, called `nodes` and other one to hold the positions of the Storage Nodes in the hash space, called `keys`. There is a one-to-one correspondence between the two array as the Storage Node `nodes[i]` is present at position `keys[i]` in the hash space. Both the arrays are kept sorted as per the `keys` array.
 
-The consistent hash as a ring could be treated as a sorted array. Given a node id or an item item, the hash function outputs an integer value that denotes the position of the entity in the hash space.
+## Hashing Function in Consistent Hashing
+We define `total_slots` as the size of this entire hash space, typically of order `2^256` and the hash function could be implemented by taking [SHA-256](https://en.wikipedia.org/wiki/SHA-2) followed by a `mod total_slots`. Since the `total_slots` is huge and a constant the following hash function implementation is independent of the actual number of Storage Nodes present in the system and hence remains unaffected by scaling up or down events.
 
 ```py
 def hash_fn(key: str, total_slots: int) -> int:
@@ -115,23 +116,25 @@ def hash_fn(key: str, total_slots: int) -> int:
     return int(hsh.hexdigest(), 16) % total_slots
 ```
 
-# Adding a node to the ring
+## Adding a node to the ring
 When a new node is added to the ring, then we first need to find where the node will be placed on
 the ring and then wo place it.
 
 ```py
-def add_node(self, node_id: str) -> int:
-    """add_node function adds a new node to the ring and returns the key
+def add_node(self, node: StorageNode) -> int:
+    """add_node function adds a new node in the system and returns the key
     from the hash space where it was placed
     """
 
     # handling error when hash space is full.
-    if len(self._keys) == self.ring_length:
+    if len(self._keys) == self.total_slots:
         raise Exception("hash space is full")
 
-    key = self._generate_key(node_id)
+    key = hash_fn(node.host, self.total_slots)
 
-    # find the index where the key should be inserted in the keys store
+    # find the index where the key should be inserted in the keys array
+    # this will be the index where the Storage Node will be added in the
+    # nodes array.
     index = bisect(self._keys, key)
 
     # if we have already seen the key i.e. node already is present
@@ -141,7 +144,7 @@ def add_node(self, node_id: str) -> int:
 
     # insert the node_id and the key at the same `index` location.
     # this insertion will keep nodes and keys sorted w.r.t keys.
-    self.nodes.insert(index, node_id)
+    self.nodes.insert(index, node)
     self._keys.insert(index, key)
 
     return key
@@ -150,8 +153,8 @@ def add_node(self, node_id: str) -> int:
 # Removing a node from the hash
 
 ```py
-def remove_node(self, node_id: str) -> int:
-    """remove_node removes the node with id = node_id and returns the key
+def remove_node(self, node: StorageNode) -> int:
+    """remove_node removes the node and returns the key
     from the hash space on which the node was placed.
     """
 
@@ -159,7 +162,7 @@ def remove_node(self, node_id: str) -> int:
     if len(self._keys) == 0:
         raise Exception("hash space is empty")
 
-    key = self._generate_key(node_id)
+    key = hash_fn(node.host, self.total_slots)
 
     # we find the index where the key would reside in the keys
     index = bisect_left(self._keys, key)
@@ -179,11 +182,11 @@ def remove_node(self, node_id: str) -> int:
 # Assigning a node to an item
 
 ```py
-def assign(self, item_id: str) -> str:
+def assign(self, item: str) -> str:
     """Given an item, the function returns the node_id through which this
     item will be served.
     """
-    key = self._generate_key(item_id)
+    key = hash_fn(item, self.total_slots)
 
     # we find the first right node to this key
     # if bisect_right returns index which is out of bounds then
