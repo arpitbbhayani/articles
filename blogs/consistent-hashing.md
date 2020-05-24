@@ -66,9 +66,9 @@ def fetch(path):
     return node.fetch_file(path)
 ```
 
-The hash function used over here simply sums the bytes and takes the modulo by `5` and thus generating the output in range `[0, 4]`. This output value now represents the index of the storage engine that will be responsible for holding the file. Pseudocode representing the above flow of putting and fetching the file is illustrated below.
+The hash function used over here simply sums the bytes and takes the modulo by `5` (since there are 5 storage nodes in the system) and thus generating the output in the hash space `[0, 4]`. This output value now represents the index of the storage engine that will be responsible for holding the file.
 
-We have 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' if we apply the hash function to these files we realize that they are stored on storage nodes E, A, B, C, and D respectively.
+Say we have 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' if we apply the hash function to these we find that they are stored on storage nodes E, A, B, C, and D respectively.
 
 Things become interesting when the system gains good traction and we scale the storage node horizontally and want to make 7 nodes instead of 5. The hash function will change and now instead of doing a `mod 5` it would do `mod 7`. Changing the hash function implies changing the mapping and association of files with storage nodes. Let us first administer the new associations and see which files required to be moved.
 
