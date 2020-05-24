@@ -172,7 +172,7 @@ When a node is removed from the system it only affects the files associated with
 
 ![Removing a new node from the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82751261-b0e9e400-9dd3-11ea-81ee-3fd3f0187857.png)
 
-From the illustration, above we see, when the node K is removed from the system, we change the associations of files handled by the node K and change its association to the node to its immedeiate right which is node E. Thus the only files affected and needs migration are the ones associated with node K.
+From the illustration, above we see, when the node K is removed from the system, we change the associations of files handled by the node K and change its association to the node to its immediate right which is node E. Thus the only files affected and needs migration are the ones associated with node K.
 
 In order to implement this at a low level using `nodes` and `keys` array, we get the index where the node K lies in the `keys` array using binary search. Once we have the index we remove the key from the `keys` array and Storage Node from the `nodes` array present on that index.
 
@@ -204,9 +204,9 @@ def remove_node(self, node: StorageNode) -> int:
 ```
 
 ## Associating an item to a node
-Now that we have seen how consistent hashing helps in keeping data migration, during scale ups and scale downs, to a bare minimum; it is time we see how to efficiently we can find the "node to the right" for a given item. The operation to find the association has to be super fast and efficient as it is something that will be invoked for every single read and write that happens on the system.
+Now that we have seen how consistent hashing helps in keeping data migration, during scale-ups and scale-downs, to a bare minimum; it is time we see how to efficiently we can find the "node to the right" for a given item. The operation to find the association has to be super fast and efficient as it is something that will be invoked for every single read and write that happens on the system.
 
-To implement it at low-level we again take leverage of binary search and perform this operation in `O(logn)`. We first pass the item to the hash function and fetch the position where the item is hashed in the hash space. This position is then binary searched in the `keys` array to obtain the index of the first key which is greater than than position. if there are no keys greater than the psoition in the `keys` array we circle back and return the 0th index. The index thus obtained will be the index of the storage node in the `nodes` array associated with the item.
+To implement it at low-level we again take leverage of binary search and perform this operation in `O(logn)`. We first pass the item to the hash function and fetch the position where the item is hashed in the hash space. This position is then binary searched in the `keys` array to obtain the index of the first key which is greater than the position. if there are no keys greater than the position in the `keys` array we circle back and return the 0th index. The index thus obtained will be the index of the storage node in the `nodes` array associated with the item.
 
 ```py
 def assign(self, item: str) -> str:
@@ -223,11 +223,12 @@ def assign(self, item: str) -> str:
     return self.nodes[index]
 ```
 
-The source code with the implement of Consistent Hashing in Python could be found at [github.com/arpitbbhayani/consistent-hashing](https://github.com/arpitbbhayani/consistent-hashing/blob/master/consistent-hashing.ipynb).
+The source code with the implementation of Consistent Hashing in Python could be found at [github.com/arpitbbhayani/consistent-hashing](https://github.com/arpitbbhayani/consistent-hashing/blob/master/consistent-hashing.ipynb).
 
 # Conclusion
-Consistent Hashing is one of most important algorithms that could help us horizontally scale and manage any distributed system. The algorithm does not only work in sharded use cases but it is also used in balancing load across servers, manage server based sticky sessions, data partitioning, modelling chat applications, routing algorithms and many more.
+Consistent Hashing is one of the most important algorithms that could help us horizontally scale and manage any distributed system. The algorithm does not only work in sharded use cases but it is also used in balancing load across servers, manage server-based sticky sessions, data partitioning, modeling chat applications, routing algorithms, and many more.
 
 # References
  - [Hash Functions - Wikipedia](https://en.wikipedia.org/wiki/Hash_function)
+ - [Consistent Hashing - Wikipedia](https://en.wikipedia.org/wiki/Consistent_hashing)
  - [Consistent Hashing - Stanford](https://web.stanford.edu/class/cs168/l/l1.pdf)
