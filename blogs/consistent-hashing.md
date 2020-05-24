@@ -236,3 +236,6 @@ Consistent Hashing is one of the most important algorithms to help us horizontal
  - [Hash Functions - Wikipedia](https://en.wikipedia.org/wiki/Hash_function)
  - [Consistent Hashing - Wikipedia](https://en.wikipedia.org/wiki/Consistent_hashing)
  - [Consistent Hashing - Stanford](https://web.stanford.edu/class/cs168/l/l1.pdf)
+ - [Consistent Hashing and RandomTrees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web](https://www.akamai.com/us/en/multimedia/documents/technical-publication/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web-technical-publication.pdf)
+ - [Dynamo: Amazon’s Highly Available Key-value Store](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf)
+ 
