@@ -92,12 +92,12 @@ Since the chances of the file and storage node being hashed to the same location
 
 ![Associations in Consistent Hashing](https://user-images.githubusercontent.com/4745789/82748149-4d54bc00-9dbd-11ea-8f06-6710a5c98f20.png)
 
-A very naive way to implement this is by allocating an array of size equal to the Hash Space and putting files and storage node literally in the array on the hashed location. In order to get association we iterate from the item's hashed location towards the right and find the first Storage Node. If we reach the end of the array and do not fund any Storage Node we circle back to index 0 and continue the search. The approach is very easy to implement but suffers from following limitations
+A very naive way to implement this is by allocating an array of size equal to the Hash Space and putting files and storage node literally in the array on the hashed location. In order to get association we iterate from the item's hashed location towards the right and find the first Storage Node. If we reach the end of the array and do not fund any Storage Node we circle back to index 0 and continue the search. The approach is very easy to implement but suffers from the following limitations
 
  - requires huge memory to hold such a large array
- - finding association by iterating everytime to the right is effectively `O(hash_space)`
+ - finding association by iterating every time to the right is `O(hash_space)`
 
-Since in the above approach, most of the items in the array are not allocated, we are wasting a lot of space. A better way of implementing this is by using two arrays: one to hold the Storage Nodes, called `nodes` and other one to hold the positions of the Storage Nodes in the hash space, called `keys`. There is a one-to-one correspondence between the two arrays as the Storage Node `nodes[i]` is present at position `keys[i]` in the hash space. Both the arrays are kept sorted as per the `keys` array.
+Since in the above approach, most of the items in the array are not allocated, we are wasting a lot of space. A better way of implementing this is by using two arrays: one to hold the Storage Nodes, called `nodes` and another one to hold the positions of the Storage Nodes in the hash space, called `keys`. There is a one-to-one correspondence between the two arrays as the Storage Node `nodes[i]` is present at position `keys[i]` in the hash space. Both the arrays are kept sorted as per the `keys` array.
 
 ## Hash Function in Consistent Hashing
 We define `total_slots` as the size of this entire hash space, typically of order `2^256` and the hash function could be implemented by taking [SHA-256](https://en.wikipedia.org/wiki/SHA-2) followed by a `mod total_slots`. Since the `total_slots` is huge and a constant the following hash function implementation is independent of the actual number of Storage Nodes present in the system and hence remains unaffected by scaling up or down events.
@@ -117,9 +117,13 @@ def hash_fn(key: str, total_slots: int) -> int:
 ```
 
 ## Adding a new node in the system
-When a new node, in our case a Storage Node, is to be added to the system, we first pass it to the hash function to find the position where it resides in the huge Hash Space. If the slot is not already taken we place the node in that position. Once the node is added, all items that hash to positions the left of this node now starts to get associated with this newly added node. Hence the data transfer of only the nodes to the left should be made.
+When there is a need to scale up and a new node in the system, in our case a Storage Node, is to be added to the system, we first find the position of the node where it resides in the huge Hash Space by using the hash function. If the slot is not already taken we place the node in that position.
+
+Before the node is added to the system, we migrate the data to this node for the affected files. We see that the files to the left of this newly added node that were, associated with the node to the right, has to be migrated. So we pull the data out of the right node for the affected files and populate the newly added node. All other data and associations remain intact.
 
 ![Adding a new node in the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82749683-80507d00-9dc8-11ea-92a5-5ed9ebeacd69.png)
+
+For low level implementation of this we perform binary search in the `keys` array so as to find the position in te keys array where the .
 
 ```py
 def add_node(self, node: StorageNode) -> int:
