@@ -223,6 +223,11 @@ def assign(self, item: str) -> str:
     return self.nodes[index]
 ```
 
+The source code to implement Consistent Hashing in Python could be obtained at [github.com/arpitbbhayani/consistent-hashing](https://github.com/arpitbbhayani/consistent-hashing/blob/master/consistent-hashing.ipynb).
+
+# Conclusion
+Consistent Hashing is one of most important algorithms that could help us horizontally scale and manage any distributed system. The algorithm does not only work in sharded use cases but it is also used in balancing load across servers, manage server based sticky sessions and many more.
+
 # References
  - [Hash Functions - Wikipedia](https://en.wikipedia.org/wiki/Hash_function)
  - [Consistent Hashing - Stanford](https://web.stanford.edu/class/cs168/l/l1.pdf)
