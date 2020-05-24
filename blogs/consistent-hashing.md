@@ -92,6 +92,8 @@ Since the chances of the file and storage node being hashed to the same location
 
 ![Associations in Consistent Hashing](https://user-images.githubusercontent.com/4745789/82748149-4d54bc00-9dbd-11ea-8f06-6710a5c98f20.png)
 
+> Consistent Hashing on an average requires only n/m units of data to be migrated during scale up or down; where n is the total number of data units and m is the number of nodes in the system.
+
 A very naive way to implement this is by allocating an array of size equal to the Hash Space and putting files and storage node literally in the array on the hashed location. In order to get association we iterate from the item's hashed location towards the right and find the first Storage Node. If we reach the end of the array and do not fund any Storage Node we circle back to index 0 and continue the search. The approach is very easy to implement but suffers from the following limitations
 
  - requires huge memory to hold such a large array
@@ -204,9 +206,9 @@ def remove_node(self, node: StorageNode) -> int:
 ```
 
 ## Associating an item to a node
-Now that we have seen how consistent hashing helps in minimizing data migration and change in associations it is time see how to efficiently find the "node to the right" for a given item; This operation has to be super fast and efficient because it is something that will be called for every single read and write. Adding and removing are not that frequent when compared to this operation.
+Now that we have seen how consistent hashing helps in keeping data migration, during scale ups and scale downs, to a bare minimum; it is time we see how to efficiently we can find the "node to the right" for a given item. The operation to find the association has to be super fast and efficient as it is something that will be invoked for every single read and write that happens on the system.
 
-At low level this is again implemented efficiently using binary search. We first find pass the item to the hash function and get the position of it in the hash space. Once we have this index we perform a binary search and find the index of this position in the `keys` array. If the position is greater than position of the node to the extreme right we circle back to the 0th index. The index thus obtained will be the index of the storage node to which the item will be associated with.
+To implement it at low-level we again take leverage of binary search and perform this operation in `O(logn)`. We first pass the item to the hash function and fetch the position where the item is hashed in the hash space. This position is then binary searched in the `keys` array to obtain the index of the first key which is greater than than position. if there are no keys greater than the psoition in the `keys` array we circle back and return the 0th index. The index thus obtained will be the index of the storage node in the `nodes` array associated with the item.
 
 ```py
 def assign(self, item: str) -> str:
@@ -223,7 +225,7 @@ def assign(self, item: str) -> str:
     return self.nodes[index]
 ```
 
-The source code to implement Consistent Hashing in Python could be obtained at [github.com/arpitbbhayani/consistent-hashing](https://github.com/arpitbbhayani/consistent-hashing/blob/master/consistent-hashing.ipynb).
+The source code with the implement of Consistent Hashing in Python could be found at [github.com/arpitbbhayani/consistent-hashing](https://github.com/arpitbbhayani/consistent-hashing/blob/master/consistent-hashing.ipynb).
 
 # Conclusion
 Consistent Hashing is one of most important algorithms that could help us horizontally scale and manage any distributed system. The algorithm does not only work in sharded use cases but it is also used in balancing load across servers, manage server based sticky sessions and many more.
