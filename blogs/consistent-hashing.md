@@ -1,9 +1,9 @@
 Consistent hashing is a hashing technique that performs really well when operated in a dynamic environment where the number of keys mapped to or sometimes referred to as the number of slots changes frequently. The core concept of Consistent Hashing was introduced in the paper [Consistent Hashing and RandomTrees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web](https://www.akamai.com/us/en/multimedia/documents/technical-publication/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web-technical-publication.pdf) but it gained popularity after the infamous paper of DynamoDB - [Dynamo: Amazon’s Highly Available Key-value Store](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf). Since then the consistent hashing gained traction and found a ton of use cases in designing and scaling distributed systems. The two famous examples that exhaustively use this technique are Bit Torrent and Akamai. In this article we dive deep into Consistent Hashing and more importantly along the way also implement it using arrays and [Binary Search](https://en.wikipedia.org/wiki/Binary_search_algorithm).
 
 # Hash Functions
-Before we jump into the core Consistent Hashing technique we first get a few things cleared up, one of which is Hash Functions. Hash Functions are any functions that map value from an arbitrarily sized domain to another fixed-sized domain. For example, mapping URLs to 32-bit integers or web pages to a 256-byte string. The values generated as an output of these hash functions are typically used as keys to making lookups of the original entity efficient.
+Before we jump into the core Consistent Hashing technique we first get a few things cleared up, one of which is Hash Functions. Hash Functions are any functions that map value from an arbitrarily sized domain to another fixed-sized domain, usually called the Hash Space. For example, mapping URLs to 32-bit integers or web pages to a 256-byte string. The values generated as an output of these hash functions are typically used as keys to making lookups of the original entity efficient.
 
-A trivial hash function could be something that maps any 32-bit integer to an 8-bit integer. The function could be implemented using the arithmetic operator `modulo` and the way we do this is by taking a `modulo 256` which yields numbers in the range `[0 - 255]` taking up 8-bits for representation. A hash function, that maps keys to integer domain, more often than not applies the `modulo N` so as to restrict the values to a range `[0, N-1]`.
+A trivial hash function could be something that maps any 32-bit integer to an 8-bit integer hash space. The function could be implemented using the arithmetic operator `modulo` and we can achieve this by taking a `modulo 256` which yields numbers in the range `[0, 255]` taking up 8-bits for its representation. A hash function, that maps keys to integer domain, more often than not applies the `modulo N` so as to restrict the values to a range `[0, N-1]`.
 
 A good hash function has the following properties
  - The function is computationally efficient and easy for lookups
@@ -21,7 +21,7 @@ The system has storage engines that store the uploaded file and in-turn expose a
 
 When someone invokes `put_file` function with the path of the file, we first apply a hash function on the path so as to find which storage engine would be responsible in storing this file; once identified we read the content of the file and put that file on the corresponding storage machine.
 
-The hash function used over here simply sums the bytes and takes the modulo by `5` and thus generating the output in range `[0 - 4]`. This output value now represents the index of storage engine that will be responsible for holding the file. Pseudocode representing the above flow of putting and fetching the file is illustrated as below.
+The hash function used over here simply sums the bytes and takes the modulo by `5` and thus generating the output in range `[0, 4]`. This output value now represents the index of storage engine that will be responsible for holding the file. Pseudocode representing the above flow of putting and fetching the file is illustrated as below.
 
 ```py
 # storage_nodes holding instances of actual storage node objects
@@ -77,9 +77,9 @@ If we apply the hash function to the same 5 files we get that files 'f1.txt', 'f
 If we need to move not all but even half the amount of data, everytime we scale up, the process of scaling up becomes super expensive and in longer run very tedious. This is where Consistent Hashing kicks in and ensures that when we scale up or down we only migrate a bare minimum amount of data to different nodes.
 
 # Consistent Hashing
-The main advantage we seek by using Consistent Hashing is that almost all the objects stay assigned to the same storage node even as the number of nodes change, either we scale up or down.
+The main advantage we seek by using Consistent Hashing is that almost all the objects stay assigned to the same storage node even as the number of nodes change, either we scale up or down. In a system desigined by tradtional hash function, we see that the hash space is equal to the number of slots i.e. storage nodes and on which our items i.e. files gets mapped to. When the number of slots i.e. nodes change the entire mapping changes and this is where the bottleneck lies.
 
-Hash Space in case of the systems desinged using traditional hashing are equal to the number of slots, in our example the number of storage nodes. It is because of this dependency on the the number of slots that is causing issues when the slots change. Consistent hashing addresses this issue by not being dependent on this but by having a huge hash space to map to.
+Consistent Hashing addresses this situation by keeping the Hash Space huge and constant, in order of `[0, 2^256 - 1]` and the storage node and objects both map to one of the slots in this huge Hash Space.
 
 The nodes were not hashed.
 
@@ -87,8 +87,7 @@ So the objects and the nodes both are hashed by the same hash function and hence
 
 A traditional hash function, as discussed earler, generates a number in a range `[0, N]` where `N` are the number of slots where your data fits in, in the example above these were the storage nodes where the files resided. In consistent hashing, this approach changes and instead of limiting the range to the slots available, the function outputs in a wide range say `[0, 2^256 - 1]`. The storage 
 
-Naive way is to create a hash space equal to ring_length length which could go huge and waste a lot of memory. Most of the elements are un occupued. Hence to fix that we take two arrays one holds the actual nodes that are present
-while other holds the locations where you would find them on the ring.
+Naive way is to create a hash space equal to ring_length length which could go huge and waste a lot of memory. Most of the elements are un occupued. Hence to fix that we take two arrays one holds the actual nodes that are present while other holds the locations where you would find them on the ring.
 
 The consistent hash as a ring could be treated as a sorted array. Given a node id or an item item, the hash function outputs an integer value that denotes the position of the entity in the hash space.
 
