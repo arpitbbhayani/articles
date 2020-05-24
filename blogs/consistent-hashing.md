@@ -81,23 +81,23 @@ If we have to change the hash function every time we scale up or down and if thi
 # Consistent Hashing
 The main advantage we seek by using Consistent Hashing is that even when the system scales and we add more storage nodes, almost all the objects stay assigned to the same storage node. With this requirement in place we dissect the traditional hashing approach.
 
-In a system desigined through the tradtional hashing techniques, we see that the Hash Space is always equal to the number of storage nodes and onto which our files gets mapped to. When the number of storage nodes change the entire mapping changes and this is where the bottleneck lies. We need to make Hash function independent of the number of storage node and we could solve this issue.
+In a system designed through the traditional hashing techniques, we see that the Hash Space is always equal to the number of storage nodes and onto which our files get mapped to. When the number of storage nodes changes the entire mapping changes and this is where the bottleneck lies. We need to make a Hash function independent of the number of the storage node and we could solve this issue.
 
-Consistent Hashing addresses this situation by keeping the Hash Space huge and constant, somewhere in order of `[0, 2^256 - 1]` and the storage node and objects both map to one of the slots in this huge Hash Space. Unlike in traditional system where the file was associated to storage node at index where it got hashed to, in this system the chances of collision of file and storage node are infinitesimally small and hence we need a different way to define this association.
+Consistent Hashing addresses this situation by keeping the Hash Space huge and constant, somewhere in the order of `[0, 2^256 - 1]` and the storage node and objects both map to one of the slots in this huge Hash Space. Unlike in the traditional system where the file was associated with storage node at index where it got hashed to, in this system the chances of a collision between a file and a storage node are infinitesimally small and hence we need a different way to define this association.
 
-Since the chances of the file and storage node being hashed to the same location in this vast Hash Space is very small, we define the association as - the file will be associated to the storage node which is present to the immediate right of its hashed location. Defining association in this way helps us
+Since the chances of the file and storage node being hashed to the same location in this vast Hash Space is very small, we define the association as - the file will be associated with the storage node which is present to the immediate right of its hashed location. Defining association in this way helps us
 
- - keep hash function independent of the storage nodes
- - associations are relative and does not require collisions
+ - keep the hash function independent of the storage nodes
+ - associations are relative and do not require collisions
 
 ![Associations in Consistent Hashing](https://user-images.githubusercontent.com/4745789/82748149-4d54bc00-9dbd-11ea-8f06-6710a5c98f20.png)
 
-A very naive way to implement this is by allocating an array of size equal to the Hash Space and putting files and storage node literally in the array on the hased location. In order to get association we iterete from the item's hashed location towards right and find the first Storage Node. If we reach the end of the array and do not fund any Storage Node we circle back to index 0 and continue the search. The approach is very easy to implement but suffers from following limitations
+A very naive way to implement this is by allocating an array of size equal to the Hash Space and putting files and storage node literally in the array on the hashed location. In order to get association we iterate from the item's hashed location towards the right and find the first Storage Node. If we reach the end of the array and do not fund any Storage Node we circle back to index 0 and continue the search. The approach is very easy to implement but suffers from following limitations
 
  - requires huge memory to hold such a large array
  - finding association by iterating everytime to the right is effectively `O(hash_space)`
 
-Since in above approach, most of the items in array are not allocated, we are wasting a lot of space. A better way of implementing this is by using two arrays: one to hold the Storage Nodes, called `nodes` and other one to hold the positions of the Storage Nodes in the hash space, called `keys`. There is a one-to-one correspondence between the two array as the Storage Node `nodes[i]` is present at position `keys[i]` in the hash space. Both the arrays are kept sorted as per the `keys` array.
+Since in the above approach, most of the items in the array are not allocated, we are wasting a lot of space. A better way of implementing this is by using two arrays: one to hold the Storage Nodes, called `nodes` and other one to hold the positions of the Storage Nodes in the hash space, called `keys`. There is a one-to-one correspondence between the two arrays as the Storage Node `nodes[i]` is present at position `keys[i]` in the hash space. Both the arrays are kept sorted as per the `keys` array.
 
 ## Hashing Function in Consistent Hashing
 We define `total_slots` as the size of this entire hash space, typically of order `2^256` and the hash function could be implemented by taking [SHA-256](https://en.wikipedia.org/wiki/SHA-2) followed by a `mod total_slots`. Since the `total_slots` is huge and a constant the following hash function implementation is independent of the actual number of Storage Nodes present in the system and hence remains unaffected by scaling up or down events.
@@ -168,7 +168,7 @@ def remove_node(self, node: StorageNode) -> int:
         raise Exception("node does not exist")
 
     # now that all sanity checks are done we popping the
-    # keys and nodes at the index and thus removing presence of the node.
+    # keys and nodes at the index and thus removing the presence of the node.
     self._keys.pop(index)
     self.nodes.pop(index)
 
