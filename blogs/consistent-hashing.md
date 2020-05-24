@@ -117,7 +117,7 @@ def hash_fn(key: str, total_slots: int) -> int:
 ```
 
 ## Adding a new node in the system
-When there is a need to scale up and a new node in the system, in our case a new Storage Node, we
+When there is a need to scale up and add a new node in the system, in our case a new Storage Node, we
 
  - find the position of the node where it resides in the Hash Space
  - populate the new node with data it is supposed to serve
@@ -161,7 +161,21 @@ def add_node(self, node: StorageNode) -> int:
     return key
 ```
 
-# Removing a node from the hash
+## Removing a new node from the system
+When there is a need to scale down and remove an existing node from the system, we
+
+ - find the position of the node to be removed from the Hash Space
+ - populate the node to the right with data that was associated with the node to be removed
+ - remove the node from the Hash Space
+
+When a node is removed from the system it only affects the files associated with the current node. All other files and associations remain intact, thus minimizing the amount of data to be migrated and mapping required to be changed.
+
+![Removing a new node from the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82749683-80507d00-9dc8-11ea-92a5-5ed9ebeacd69.png)
+
+From the illustration, above we see, when the node K is removed from the system, we change the associations of files handled by the node K and change its association to the node to its immedeiate right which is node E. Thus the only files affected and needs migration are the ones associated with node K.
+
+In order to implement this at a low level using `nodes` and `keys` array, we get the index where the node K lies in the `keys` array and we do this using binary search. Once we have the index we remove the key from the `keys` array and Storage Node from the `nodes` array present on the index.
+
 ```py
 def remove_node(self, node: StorageNode) -> int:
     """remove_node removes the node and returns the key
