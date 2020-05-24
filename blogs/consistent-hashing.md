@@ -125,7 +125,7 @@ When there is a need to scale up and add a new node in the system, in our case a
 
 When a new node is added in the system it only affects the files that hash at the location to the left and associated with the node to the right, of the position the new node will fit in. All other files and associations remain intact, thus minimizing the amount of data to be migrated and mapping required to be changed.
 
-![Adding a new node in the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82749683-80507d00-9dc8-11ea-92a5-5ed9ebeacd69.png)
+![Adding a new node in the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82751279-c959fe80-9dd3-11ea-86de-62d162519262.png)
 
 From the illustration, above we see, when the new node K is added between nodes B and E, we change the associations of files present in the segment B-K and assign them to node K. The data belonging to the segment B-K could be found at node E where they were previously associated with. Thus the only files affected and needs migration are in the segment B-K; and their association will change from node E to node K.
 
@@ -170,7 +170,7 @@ When there is a need to scale down and remove an existing node from the system, 
 
 When a node is removed from the system it only affects the files associated with the current node. All other files and associations remain intact, thus minimizing the amount of data to be migrated and mapping required to be changed.
 
-![Removing a new node from the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82749683-80507d00-9dc8-11ea-92a5-5ed9ebeacd69.png)
+![Removing a new node from the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82751261-b0e9e400-9dd3-11ea-81ee-3fd3f0187857.png)
 
 From the illustration, above we see, when the node K is removed from the system, we change the associations of files handled by the node K and change its association to the node to its immedeiate right which is node E. Thus the only files affected and needs migration are the ones associated with node K.
 
