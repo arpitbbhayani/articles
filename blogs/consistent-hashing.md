@@ -90,7 +90,7 @@ Since the chances of the file and storage node being hashed to the same location
  - keep hash function independent of the storage nodes
  - associations are relative and does not require collisions
 
-TODO: Image
+![Associations in Consistent Hashing](https://user-images.githubusercontent.com/4745789/82748149-4d54bc00-9dbd-11ea-8f06-6710a5c98f20.png)
 
 Naive way is to create a hash space equal to ring_length length which could go huge and waste a lot of memory. Most of the elements are un occupued. Hence to fix that we take two arrays one holds the actual nodes that are present while other holds the locations where you would find them on the ring.
 
