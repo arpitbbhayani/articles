@@ -77,15 +77,13 @@ If we apply the hash function to the same 5 files we get that files 'f1.txt', 'f
 If we need to move not all but even half the amount of data, everytime we scale up, the process of scaling up becomes super expensive and in longer run very tedious. This is where Consistent Hashing kicks in and ensures that when we scale up or down we only migrate a bare minimum amount of data to different nodes.
 
 # Consistent Hashing
-The main advantage we seek by using Consistent Hashing is that almost all the objects stay assigned to the same storage node even as the number of nodes change, either we scale up or down. In a system desigined by tradtional hash function, we see that the hash space is equal to the number of slots i.e. storage nodes and on which our items i.e. files gets mapped to. When the number of slots i.e. nodes change the entire mapping changes and this is where the bottleneck lies.
+The main advantage we seek by using Consistent Hashing is that almost all the objects stay assigned to the same storage node even as the number of nodes change, either we scale up or down.
 
-Consistent Hashing addresses this situation by keeping the Hash Space huge and constant, in order of `[0, 2^256 - 1]` and the storage node and objects both map to one of the slots in this huge Hash Space.
+In a system desigined through the tradtional hashing techniques, we see that the Hash Space is equal to the number of slots i.e. storage nodes and on which our items i.e. files gets mapped to. When the number of slots i.e. nodes change the entire mapping changes and this is where the bottleneck lies.
 
-The nodes were not hashed.
+Consistent Hashing addresses this situation by keeping the Hash Space huge and constant, in order of `[0, 2^256 - 1]` and the storage node and objects both map to one of the slots in this huge Hash Space. Now since the chances of item being hashed to the slot of storage node is infinitesimally small, the item is ampped to the storage node which is to the right of the hashed location.
 
-So the objects and the nodes both are hashed by the same hash function and hence they map on the same hash space. The get 
 
-A traditional hash function, as discussed earler, generates a number in a range `[0, N]` where `N` are the number of slots where your data fits in, in the example above these were the storage nodes where the files resided. In consistent hashing, this approach changes and instead of limiting the range to the slots available, the function outputs in a wide range say `[0, 2^256 - 1]`. The storage 
 
 Naive way is to create a hash space equal to ring_length length which could go huge and waste a lot of memory. Most of the elements are un occupued. Hence to fix that we take two arrays one holds the actual nodes that are present while other holds the locations where you would find them on the ring.
 
