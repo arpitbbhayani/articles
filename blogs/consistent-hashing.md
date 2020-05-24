@@ -99,7 +99,7 @@ A very naive way to implement this is by allocating an array of size equal to th
 
 Since in the above approach, most of the items in the array are not allocated, we are wasting a lot of space. A better way of implementing this is by using two arrays: one to hold the Storage Nodes, called `nodes` and other one to hold the positions of the Storage Nodes in the hash space, called `keys`. There is a one-to-one correspondence between the two arrays as the Storage Node `nodes[i]` is present at position `keys[i]` in the hash space. Both the arrays are kept sorted as per the `keys` array.
 
-## Hashing Function in Consistent Hashing
+## Hash Function in Consistent Hashing
 We define `total_slots` as the size of this entire hash space, typically of order `2^256` and the hash function could be implemented by taking [SHA-256](https://en.wikipedia.org/wiki/SHA-2) followed by a `mod total_slots`. Since the `total_slots` is huge and a constant the following hash function implementation is independent of the actual number of Storage Nodes present in the system and hence remains unaffected by scaling up or down events.
 
 ```py
@@ -116,7 +116,11 @@ def hash_fn(key: str, total_slots: int) -> int:
     return int(hsh.hexdigest(), 16) % total_slots
 ```
 
-## Adding a node to the ring
+## Adding a new node in the system
+When a new node, in our case a Storage Node, is to be added to the system, we first pass it to the hash function to find the position where it resides in the huge Hash Space. If the slot is not already taken we place the node in that position. Once the node is added, all items that hash to positions the left of this node now starts to get associated with this newly added node. Hence the data transfer of only the nodes to the left should be made.
+
+![Adding a new node in the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82749683-80507d00-9dc8-11ea-92a5-5ed9ebeacd69.png)
+
 ```py
 def add_node(self, node: StorageNode) -> int:
     """add_node function adds a new node in the system and returns the key
