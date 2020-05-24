@@ -117,9 +117,6 @@ def hash_fn(key: str, total_slots: int) -> int:
 ```
 
 ## Adding a node to the ring
-When a new node is added to the ring, then we first need to find where the node will be placed on
-the ring and then wo place it.
-
 ```py
 def add_node(self, node: StorageNode) -> int:
     """add_node function adds a new node in the system and returns the key
@@ -151,7 +148,6 @@ def add_node(self, node: StorageNode) -> int:
 ```
 
 # Removing a node from the hash
-
 ```py
 def remove_node(self, node: StorageNode) -> int:
     """remove_node removes the node and returns the key
@@ -180,7 +176,6 @@ def remove_node(self, node: StorageNode) -> int:
 ```
 
 # Assigning a node to an item
-
 ```py
 def assign(self, item: str) -> str:
     """Given an item, the function returns the node_id through which this
