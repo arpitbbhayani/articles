@@ -100,7 +100,7 @@ A very naive way to implement this is by allocating an array of size equal to th
 A better way of implementing this is by using two arrays: one to hold the Storage Nodes, called `nodes` and another one to hold the positions of the Storage Nodes in the hash space, called `keys`. There is a one-to-one correspondence between the two arrays - the Storage Node `nodes[i]` is present at position `keys[i]` in the hash space. Both the arrays are kept sorted as per the `keys` array.
 
 ## Hash Function in Consistent Hashing
-We define `total_slots` as the size of this entire hash space, typically of order `2^256` and the hash function could be implemented by taking [SHA-256](https://en.wikipedia.org/wiki/SHA-2) followed by a `mod total_slots`. Since the `total_slots` is huge and a constant the following hash function implementation is independent of the actual number of Storage Nodes present in the system and hence remains unaffected by scaling up or down events.
+We define `total_slots` as the size of this entire hash space, typically of order `2^256` and the hash function could be implemented by taking [SHA-256](https://en.wikipedia.org/wiki/SHA-2) followed by a `mod total_slots`. Since the `total_slots` is huge and a constant the following hash function implementation is independent of the actual number of Storage Nodes present in the system and hence remains unaffected by events like scale-ups and scale-downs.
 
 ```py
 def hash_fn(key: str, total_slots: int) -> int:
@@ -123,11 +123,11 @@ When there is a need to scale up and add a new node in the system, in our case a
  - populate the new node with data it is supposed to serve
  - add the node in the Hash Space
 
-When a new node is added in the system it only affects the files that hash at the location to the left and associated with the node to the right, of the position the new node will fit in. All other files and associations remain intact, thus minimizing the amount of data to be migrated and mapping required to be changed.
+When a new node is added in the system it only affects the files that hash at the location to the left and associated with the node to the right, of the position the new node will fit in. All other files and associations remain unaffected, thus minimizing the amount of data to be migrated and mapping required to be changed.
 
 ![Adding a new node in the system - Consistent Hashing](https://user-images.githubusercontent.com/4745789/82751279-c959fe80-9dd3-11ea-86de-62d162519262.png)
 
-From the illustration, above we see, when the new node K is added between nodes B and E, we change the associations of files present in the segment B-K and assign them to node K. The data belonging to the segment B-K could be found at node E where they were previously associated with. Thus the only files affected and needs migration are in the segment B-K; and their association will change from node E to node K.
+From the illustration above, we see when a new node K is added between nodes B and E, we change the associations of files present in the segment B-K and assign them to node K. The data belonging to the segment B-K could be found at node E to which they were previously associated with. Thus the only files affected and that needs migration are in the segment B-K; and their association changes from node E to node K.
 
 In order to implement this at a low level using `nodes` and `keys` array, we first get the position of the new node in the Hash Space using the hash function. We then find the index of the smallest key greater than the position in the sorted `keys` array using binary search. This index will be where the key and the new Storage node will be placed in `keys` and `nodes` array respectively.
 
