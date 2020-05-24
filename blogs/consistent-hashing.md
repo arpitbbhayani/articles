@@ -70,13 +70,13 @@ The hash function used over here simply sums the bytes and takes the modulo by `
 
 Say we have 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' if we apply the hash function to these we find that they are stored on storage nodes E, A, B, C, and D respectively.
 
-Things become interesting when the system gains good traction and we scale the storage node horizontally and want to make 7 nodes instead of 5. The hash function will change and now instead of doing a `mod 5` it would do `mod 7`. Changing the hash function implies changing the mapping and association of files with storage nodes. Let us first administer the new associations and see which files required to be moved.
+Things become interesting when the system gains some traction and it needs to be scaled to 7 nodes, which means now the hash function should do `mod 7` instead of a `mod 5`. Changing the hash function implies changing the mapping and association of files with storage nodes. We first need to administer the new associations and see which files required to be moved from one node to another.
 
-If we apply the hash function to the same 5 files we get that files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' will now be stored on nodes D, E, F, G, A which means we need to move every single of the 5 files to different nodes and then only we can change the hash function.
+With the new hash function the same 5 files 'f1.txt', 'f2.txt', 'f3.txt', 'f4.txt', 'f5.txt' will now be associated with storage nodes D, E, F, G, A. Here we see that changing the hash function requires us move every single one of the 5 files to a different node.
 
 ![File association changed](https://user-images.githubusercontent.com/4745789/82738059-b9e6a100-9d52-11ea-8cf3-f264b4a195b1.png)
 
-If we need to move not all but even half the amount of data, every time we scale up, the process of scaling up becomes super expensive and in longer run very tedious. This is where Consistent Hashing kicks in and ensures that when we scale up or down we only migrate a bare minimum amount of data to different nodes.
+If we have to change the hash function every time we scale up or down and if this requires us to move not all but even half of the data, the process becomes super expensive and in longer run infeasible. So we need a way to minimize the data movement required during scale ups or scale downs; and this is where Consistent Hashing kicks which is designed to minimize this data transfer.
 
 # Consistent Hashing
 The main advantage we seek by using Consistent Hashing is that almost all the objects stay assigned to the same storage node even as the number of nodes change, either we scale up or down.
