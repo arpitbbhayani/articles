@@ -203,17 +203,16 @@ def remove_node(self, node: StorageNode) -> int:
     return key
 ```
 
-# Assigning a node to an item
+## Associating an item to a node
 ```py
 def assign(self, item: str) -> str:
-    """Given an item, the function returns the node_id through which this
-    item will be served.
+    """Given an item, the function returns the node it is associated with.
     """
     key = hash_fn(item, self.total_slots)
 
-    # we find the first right node to this key
+    # we find the first node to the right of this key
     # if bisect_right returns index which is out of bounds then
-    # we circle back to the first in the array - making it a ring
+    # we circle back to the first in the array in a circular fashion.
     index = bisect_right(self._keys, key) % len(self._keys)
 
     # return the node present at the index
