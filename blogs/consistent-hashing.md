@@ -11,15 +11,17 @@ A good hash function has the following properties
 
 Now that we have seen what a hash function is we take a look into how these traditional hash functions fit into our real world along with their limitations.
 
-# Hashing in a distributed system
+# Distributed storage system using traditional hashing
 Say we are building a distributed storage system in which users can upload files and access them on demand. The service exposes the following APIs
 
- - `upload` to upload the file to the storage machine
- - `fetch` to fetch the file and return its content
+ - `put_file` - uploads a file to a storage machine
+ - `fetch_file` - fetches the file content from the storage machine
 
-The system has storage engines that store the uploaded file and in-turn expose a function `fetch` (same name for convenience) that reads the content from the file and returns them to the main API server which is then sent back to the client. The system has 5 storage engines to store the files in a distributed way so that a single machine is not overwhelmed and we have enough capacity to sustain the initial growth.
+The system also has a few storage nodes that are responsible to store the uploaded file on disk and when accessed returns the file content. These machines expose API that actually puts and fetches the content to and from the disk and returns to the main API server.
 
-When someone invokes `upload` function with the path of the file, we first apply a hash function on the path so as to find which storage engine would be responsible in storing this file; once identified we read the content of the file and put that file on the corresponding storage machine.
+The system has 5 storage engines to store the files in a distributed way so that a single machine is not overwhelmed and we have enough capacity to sustain the initial growth.
+
+When someone invokes `put_file` function with the path of the file, we first apply a hash function on the path so as to find which storage engine would be responsible in storing this file; once identified we read the content of the file and put that file on the corresponding storage machine.
 
 The hash function used over here simply sums the bytes and takes the modulo by `5` and thus generating the output in range `[0, 4]`. This output value now represents the index of the storage engine that will be responsible for holding the file. Pseudocode representing the above flow of putting and fetching the file is illustrated below.
 
@@ -42,7 +44,7 @@ def hash_fn(key):
     return sum(bytearray(key.encode('utf-8'))) % 5
 
 
-def upload(path):
+def put_file(path):
     # we use the hash function to get the index of the storage node
     # that would hold the file
     index = hash_fn(path)
@@ -54,7 +56,7 @@ def upload(path):
     return node.put_file(path)
 
 
-def fetch(path):
+def fetch_file(path):
     # we use the hash function to get the index of the storage node
     # that would hold the file
     index = hash_fn(path)
