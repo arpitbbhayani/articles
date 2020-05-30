@@ -9,7 +9,13 @@
       "algorithms"
     ],
     "tags": [],
-    "published_at": "2020-05-24"
+    "published_at": "2020-05-24",
+    "similar": [
+      "isolation-forest",
+      "mongodb-cursor-skip-is-slow",
+      "copy-on-write",
+      "better-programmer"
+    ]
   },
   {
     "id": "python-caches-integers",
@@ -21,7 +27,13 @@
       "python"
     ],
     "tags": [],
-    "published_at": "2020-05-17"
+    "published_at": "2020-05-17",
+    "similar": [
+      "i-changed-my-python",
+      "super-long-integers",
+      "python-prompts",
+      "fsm"
+    ]
   },
   {
     "id": "fractional-cascading",
@@ -33,7 +45,13 @@
       "algorithm"
     ],
     "tags": [],
-    "published_at": "2020-05-10"
+    "published_at": "2020-05-10",
+    "similar": [
+      "mongodb-cursor-skip-is-slow",
+      "copy-on-write",
+      "rule-30",
+      "idf"
+    ]
   },
   {
     "id": "copy-on-write",
@@ -45,7 +63,13 @@
       "engineering"
     ],
     "tags": [],
-    "published_at": "2020-05-03"
+    "published_at": "2020-05-03",
+    "similar": [
+      "fast-and-efficient-pagination-in-mongodb",
+      "efficient-way-to-stop-an-iterating-loop",
+      "rule-30",
+      "isolation-forest"
+    ]
   },
   {
     "id": "mysql-cache",
@@ -58,7 +82,13 @@
       "algorithm"
     ],
     "tags": [],
-    "published_at": "2020-04-26"
+    "published_at": "2020-04-26",
+    "similar": [
+      "image-steganography",
+      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "better-programmer"
+    ]
   },
   {
     "id": "fsm",
@@ -70,7 +100,13 @@
       "python"
     ],
     "tags": [],
-    "published_at": "2020-04-19"
+    "published_at": "2020-04-19",
+    "similar": [
+      "python-prompts",
+      "python-caches-integers",
+      "i-changed-my-python",
+      "super-long-integers"
+    ]
   },
   {
     "id": "bayesian-average",
@@ -82,7 +118,13 @@
       "statistics"
     ],
     "tags": [],
-    "published_at": "2020-04-12"
+    "published_at": "2020-04-12",
+    "similar": [
+      "idf",
+      "better-programmer",
+      "isolation-forest",
+      "sliding-window-ratelimiter"
+    ]
   },
   {
     "id": "sliding-window-ratelimiter",
@@ -94,7 +136,13 @@
       "algorithm"
     ],
     "tags": [],
-    "published_at": "2020-04-05"
+    "published_at": "2020-04-05",
+    "similar": [
+      "image-steganography",
+      "better-programmer",
+      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "mysql-cache"
+    ]
   },
   {
     "id": "idf",
@@ -117,7 +165,13 @@
       "math behind idf",
       "idf as probability"
     ],
-    "published_at": "2020-03-06"
+    "published_at": "2020-03-06",
+    "similar": [
+      "bayesian-average",
+      "mongodb-cursor-skip-is-slow",
+      "isolation-forest",
+      "i-changed-my-python"
+    ]
   },
   {
     "id": "better-programmer",
@@ -137,7 +191,13 @@
       "codechef",
       "hackerrank"
     ],
-    "published_at": "2020-02-28"
+    "published_at": "2020-02-28",
+    "similar": [
+      "mysql-cache",
+      "isolation-forest",
+      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "image-steganography"
+    ]
   },
   {
     "id": "python-prompts",
@@ -159,7 +219,13 @@
       "ps2",
       "fun"
     ],
-    "published_at": "2020-02-21"
+    "published_at": "2020-02-21",
+    "similar": [
+      "fsm",
+      "python-caches-integers",
+      "i-changed-my-python",
+      "super-long-integers"
+    ]
   },
   {
     "id": "rule-30",
@@ -179,7 +245,13 @@
       "elementary cellular automata",
       "1d cellular automata"
     ],
-    "published_at": "2020-02-14"
+    "published_at": "2020-02-14",
+    "similar": [
+      "efficient-way-to-stop-an-iterating-loop",
+      "super-long-integers",
+      "fast-and-efficient-pagination-in-mongodb",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+    ]
   },
   {
     "id": "function-overloading",
@@ -199,7 +271,13 @@
       "namespace",
       "advanced python"
     ],
-    "published_at": "2020-02-07"
+    "published_at": "2020-02-07",
+    "similar": [
+      "i-changed-my-python",
+      "fsm",
+      "python-caches-integers",
+      "idf"
+    ]
   },
   {
     "id": "isolation-forest",
@@ -224,7 +302,13 @@
       "fast anomaly detection",
       "efficient anomaly detection"
     ],
-    "published_at": "2020-01-28"
+    "published_at": "2020-01-28",
+    "similar": [
+      "better-programmer",
+      "mongodb-cursor-skip-is-slow",
+      "bayesian-average",
+      "copy-on-write"
+    ]
   },
   {
     "id": "image-steganography",
@@ -256,7 +340,13 @@
       "data science",
       "tech"
     ],
-    "published_at": "2020-01-17"
+    "published_at": "2020-01-17",
+    "similar": [
+      "mysql-cache",
+      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "better-programmer"
+    ]
   },
   {
     "id": "super-long-integers",
@@ -284,7 +374,13 @@
       "data science",
       "tech"
     ],
-    "published_at": "2020-01-10"
+    "published_at": "2020-01-10",
+    "similar": [
+      "rule-30",
+      "fast-and-efficient-pagination-in-mongodb",
+      "python-caches-integers",
+      "i-changed-my-python"
+    ]
   },
   {
     "id": "i-changed-my-python",
@@ -312,7 +408,13 @@
       "data science",
       "tech"
     ],
-    "published_at": "2020-01-03"
+    "published_at": "2020-01-03",
+    "similar": [
+      "python-caches-integers",
+      "super-long-integers",
+      "fsm",
+      "python-prompts"
+    ]
   },
   {
     "id": "efficient-way-to-stop-an-iterating-loop",
@@ -331,7 +433,13 @@
       "break or condition",
       "efficient for loop"
     ],
-    "published_at": "2019-09-06"
+    "published_at": "2019-09-06",
+    "similar": [
+      "fast-and-efficient-pagination-in-mongodb",
+      "rule-30",
+      "super-long-integers",
+      "copy-on-write"
+    ]
   },
   {
     "id": "fast-and-efficient-pagination-in-mongodb",
@@ -353,7 +461,13 @@
       "mongodb skip limit",
       "mongodb skip limit fast pagination"
     ],
-    "published_at": "2017-06-06"
+    "published_at": "2017-06-06",
+    "similar": [
+      "efficient-way-to-stop-an-iterating-loop",
+      "super-long-integers",
+      "rule-30",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+    ]
   },
   {
     "id": "benchmark-and-compare-pagination-approach-in-mongodb",
@@ -376,7 +490,13 @@
       "mongodb skip limit fast pagination",
       "benchmark results"
     ],
-    "published_at": "2017-06-02"
+    "published_at": "2017-06-02",
+    "similar": [
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "mysql-cache",
+      "image-steganography",
+      "better-programmer"
+    ]
   },
   {
     "id": "mongodb-cursor-skip-is-slow",
@@ -395,7 +515,13 @@
       "mongodb cursor slow",
       "mongodb skip limit"
     ],
-    "published_at": "2017-06-04"
+    "published_at": "2017-06-04",
+    "similar": [
+      "idf",
+      "isolation-forest",
+      "copy-on-write",
+      "python-caches-integers"
+    ]
   },
   {
     "id": "how-sleepsort-helped-me-understand-concurrency-in-golang",
@@ -416,7 +542,13 @@
       "concurrency in golang",
       "sleepsort in golang"
     ],
-    "published_at": "2017-07-16"
+    "published_at": "2017-07-16",
+    "similar": [
+      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "mysql-cache",
+      "fast-and-efficient-pagination-in-mongodb",
+      "image-steganography"
+    ]
   },
   {
     "id": "making-http-requests-using-netcat",
@@ -434,7 +566,13 @@
       "flask",
       "netcat with flask"
     ],
-    "published_at": "2017-07-05"
+    "published_at": "2017-07-05",
+    "similar": [
+      "multiple-mysql-on-same-server-using-docker",
+      "publish-python-package-on-pypi",
+      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+      "setting-up-graphite-using-nginx-on-ubuntu"
+    ]
   },
   {
     "id": "multiple-mysql-on-same-server-using-docker",
@@ -455,7 +593,13 @@
       "mysql",
       "running mysql using docker"
     ],
-    "published_at": "2016-05-13"
+    "published_at": "2016-05-13",
+    "similar": [
+      "making-http-requests-using-netcat",
+      "publish-python-package-on-pypi",
+      "setting-up-graphite-using-nginx-on-ubuntu",
+      "setting-up-graphite-grafana-using-nginx-on-ubuntu"
+    ]
   },
   {
     "id": "setting-up-graphite-using-nginx-on-ubuntu",
@@ -472,7 +616,13 @@
       "graphite on ubuntu",
       "graphite and nginx on ubuntu"
     ],
-    "published_at": "2015-12-14"
+    "published_at": "2015-12-14",
+    "similar": [
+      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+      "publish-python-package-on-pypi",
+      "multiple-mysql-on-same-server-using-docker",
+      "making-http-requests-using-netcat"
+    ]
   },
   {
     "id": "setting-up-graphite-grafana-using-nginx-on-ubuntu",
@@ -490,7 +640,13 @@
       "graphite and grafana on ubuntu",
       "grafana and graphite and nginx on ubuntu"
     ],
-    "published_at": "2015-12-14"
+    "published_at": "2015-12-14",
+    "similar": [
+      "setting-up-graphite-using-nginx-on-ubuntu",
+      "publish-python-package-on-pypi",
+      "multiple-mysql-on-same-server-using-docker",
+      "making-http-requests-using-netcat"
+    ]
   },
   {
     "id": "publish-python-package-on-pypi",
@@ -506,6 +662,12 @@
       "publish python package",
       "pypi"
     ],
-    "published_at": "2015-11-10"
+    "published_at": "2015-11-10",
+    "similar": [
+      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+      "setting-up-graphite-using-nginx-on-ubuntu",
+      "multiple-mysql-on-same-server-using-docker",
+      "making-http-requests-using-netcat"
+    ]
   }
 ]
