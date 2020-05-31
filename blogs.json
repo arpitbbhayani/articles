@@ -2,7 +2,7 @@
   {
     "id": "rum",
     "title": "The RUM Conjecture",
-    "description": "One thing that should be kept in mind while designing any storage system is the RUM Conjecture. It states that there is a competing triangle formed between miniming Read, Updates and Memory overheads and just like CAP Theorem we can only optimize two at a time.",
+    "description": "While designing any storage system the three main aspects we optimize for are Reads, Updates, and auxiliary Memory. RUM Conjecture states that these three form a competing triangle and we could only optimize two at the expense of the third.",
     "image": "https://user-images.githubusercontent.com/4745789/83344735-64009300-a328-11ea-858a-587d440136f1.png",
     "gif": "https://media.giphy.com/media/1n7B7bJ917pqZGHG9m/giphy.gif",
     "categories": [
