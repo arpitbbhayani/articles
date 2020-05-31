@@ -6,7 +6,7 @@
         "d":"When it comes to choosing, using, and maintaining a database, understanding its internals is essential. But with so many distributed databases and tools available today, it’s often difficult to understand what each one offers and how they differ. With this practical guide, Alex Petrov guides developers through the concepts behind modern database and storage engine internals.",
         "plnk":"https://amzn.to/2JADF9o",
         "total":495,
-        "pg":128,
+        "pg":295,
         "com":false,
         "hgs":[],
         "uat":1585842678000
@@ -22,18 +22,6 @@
         "com":true,
         "hgs":[],
         "uat":1585842677000
-    },
-    {
-        "_id":"harry-potter-1",
-        "n":"Harry Potter and the Philosopher's Stone",
-        "i":"https://user-images.githubusercontent.com/4745789/76164497-79c14a80-6175-11ea-9b6d-3f3d886475c3.jpg",
-        "d":"The story unfolds with a letter arriving for Harry Potter, a simple boy, that brings with it a dark secret. The letter reveals to Harry Potter that both his parents were wizards and were killed by a Dark Lord’s curse when he was just a baby.",
-        "plnk":"https://amzn.to/343QAdv",
-        "total":352,
-        "pg":352,
-        "com":true,
-        "hgs":[],
-        "uat":1578127568000
     },
     {
         "_id":"Measure-What-Matters",
