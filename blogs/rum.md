@@ -38,7 +38,7 @@ The RUM Conjecture, in a formal way, states that
 
 This is not a hard rule that is followed and hence it is not a theorem but a conjecture - widely observed but not proven. But we can safely keep this in mind while designing the next big storage system serving a use case.
 
-# Categorising Storage Systems
+# Categorizing Storage Systems
 
 Now that we have seen RUM overheads and the RUM Conjecture we take a look at examples of Storage Systems that classify into one of the three types.
 
