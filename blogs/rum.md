@@ -10,7 +10,7 @@ Data access refers to an ability to access and retrieve data stored within a sto
 
 # RUM Overheads
 
-An ideal storage system would be the one that has an access method that provides lowest Read Overhead, minimal Update Cost, and does not require any extra Memory or Storage space, over the main data. In real-world, achieving this is near impossible and that is something that is dictated by this conjecture.
+An ideal storage system would be the one that has an access method that provides lowest Read Overhead, minimal Update Cost, and does not require any extra Memory or Storage space, over the main data. In the real-world, achieving this is near impossible and that is something that is dictated by this conjecture.
 
 ### Read Overhead
 
