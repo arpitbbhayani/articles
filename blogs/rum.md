@@ -16,7 +16,7 @@ An ideal storage system would be the one that has an access method that provides
 
 Read Overhead occur when the storage engine performs reads on auxiliary data to fetch the required intended main data. This usually happens when we use an auxiliary data structure like a Secondary Index to speed up reads. The reads happening on this auxiliary structure constitutes read overheads.
 
-Read Overhead is measured through Read Amplification and it is defined as the ratio between the total amount of data read (base + auxiliary) and the amount of main data intended to be read.
+Read Overhead is measured through Read Amplification and it is defined as the ratio between the total amount of data read (main + auxiliary) and the amount of main data intended to be read.
 
 ### Update Overhead
 
