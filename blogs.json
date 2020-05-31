@@ -1,5 +1,23 @@
 [
   {
+    "id": "rum",
+    "title": "The RUM Conjecture",
+    "description": "One thing that should be kept in mind while designing any storage system is the RUM Conjecture. It states that there is a competing triangle formed between miniming Read, Updates and Memory overheads and just like CAP Theorem we can only optimize two at a time.",
+    "image": "https://user-images.githubusercontent.com/4745789/83344735-64009300-a328-11ea-858a-587d440136f1.png",
+    "gif": "https://media.giphy.com/media/1n7B7bJ917pqZGHG9m/giphy.gif",
+    "categories": [
+      "engineering"
+    ],
+    "tags": [],
+    "published_at": "2020-05-31",
+    "similar": [
+      "copy-on-write",
+      "mysql-cache",
+      "isolation-forest",
+      "image-steganography"
+    ]
+  },
+  {
     "id": "consistent-hashing",
     "title": "Consistent Hashing",
     "description": "Consistent Hashing is one of the most sought after techniques when it comes to designing highly scalable distributed systems. In this article, we dive deep into the need for Consistent Hashing, the internals of it, and more importantly along the way implement it using arrays and binary search.",
@@ -11,10 +29,10 @@
     "tags": [],
     "published_at": "2020-05-24",
     "similar": [
-      "isolation-forest",
+      "rum",
       "mongodb-cursor-skip-is-slow",
-      "copy-on-write",
-      "better-programmer"
+      "isolation-forest",
+      "copy-on-write"
     ]
   },
   {
@@ -379,7 +397,7 @@
       "rule-30",
       "fast-and-efficient-pagination-in-mongodb",
       "python-caches-integers",
-      "i-changed-my-python"
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -517,8 +535,8 @@
     ],
     "published_at": "2017-06-04",
     "similar": [
-      "idf",
       "isolation-forest",
+      "idf",
       "copy-on-write",
       "python-caches-integers"
     ]
@@ -547,7 +565,7 @@
       "benchmark-and-compare-pagination-approach-in-mongodb",
       "mysql-cache",
       "fast-and-efficient-pagination-in-mongodb",
-      "image-steganography"
+      "rule-30"
     ]
   },
   {
