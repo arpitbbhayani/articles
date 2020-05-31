@@ -1,5 +1,23 @@
 [
   {
+    "id": "rum",
+    "title": "The RUM Conjecture",
+    "description": "One thing that should be kept in mind while designing any storage system is the RUM Conjecture. It states that there is a competing triangle formed between miniming Read, Updates and Memory overheads and just like CAP Theorem we can only optimize two at a time.",
+    "image": "https://user-images.githubusercontent.com/4745789/83344735-64009300-a328-11ea-858a-587d440136f1.png",
+    "gif": "https://media.giphy.com/media/1n7B7bJ917pqZGHG9m/giphy.gif",
+    "categories": [
+      "engineering"
+    ],
+    "tags": [],
+    "published_at": "2020-05-31",
+    "similar": [
+      "isolation-forest",
+      "mongodb-cursor-skip-is-slow",
+      "copy-on-write",
+      "better-programmer"
+    ]
+  },
+  {
     "id": "consistent-hashing",
     "title": "Consistent Hashing",
     "description": "Consistent Hashing is one of the most sought after techniques when it comes to designing highly scalable distributed systems. In this article, we dive deep into the need for Consistent Hashing, the internals of it, and more importantly along the way implement it using arrays and binary search.",
