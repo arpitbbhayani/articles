@@ -11,10 +11,10 @@
     "tags": [],
     "published_at": "2020-05-31",
     "similar": [
-      "isolation-forest",
-      "mongodb-cursor-skip-is-slow",
       "copy-on-write",
-      "better-programmer"
+      "mysql-cache",
+      "isolation-forest",
+      "image-steganography"
     ]
   },
   {
@@ -29,10 +29,10 @@
     "tags": [],
     "published_at": "2020-05-24",
     "similar": [
-      "isolation-forest",
+      "rum",
       "mongodb-cursor-skip-is-slow",
-      "copy-on-write",
-      "better-programmer"
+      "isolation-forest",
+      "copy-on-write"
     ]
   },
   {
@@ -397,7 +397,7 @@
       "rule-30",
       "fast-and-efficient-pagination-in-mongodb",
       "python-caches-integers",
-      "i-changed-my-python"
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -535,8 +535,8 @@
     ],
     "published_at": "2017-06-04",
     "similar": [
-      "idf",
       "isolation-forest",
+      "idf",
       "copy-on-write",
       "python-caches-integers"
     ]
@@ -565,7 +565,7 @@
       "benchmark-and-compare-pagination-approach-in-mongodb",
       "mysql-cache",
       "fast-and-efficient-pagination-in-mongodb",
-      "image-steganography"
+      "rule-30"
     ]
   },
   {
