@@ -20,7 +20,7 @@ Read Overhead is measured through Read Amplification and it is defined as the ra
 
 ### Update Overhead
 
-Update Overhead occur when the storage engine performs writes on auxiliary data or on some unmodified main data along with intended updates on the main data. A typical example of Update Overheads are the writes that happen on an auxiliary structure like Secondary Index alongside the write happening on intended main data. 
+Update Overhead occur when the storage engine performs writes on auxiliary data or on some unmodified main data along with intended updates on the main data. A typical example of Update Overheads is the writes that happen on an auxiliary structure like Secondary Index alongside the write happening on intended main data. 
 
 Update Overhead is measured through Write Amplification and it is defined as the ratio between the total amount of data written (main + auxiliary) and the amount of main data intended to be updated.
 
