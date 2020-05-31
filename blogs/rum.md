@@ -81,18 +81,3 @@ This essay was heavily based on the original research paper introducing The RUM 
 # References
 
 - [Designing Access Methods: The RUM Conjecture](https://stratos.seas.harvard.edu/files/stratos/files/rum.pdf)
-
----
-
-# Other articles that you might like
-
-- [Copy-on-Write Semantics](https://arpitbhayani.me/blogs/copy-on-write)
-- [What makes MySQL LRU cache scan resistant](https://arpitbhayani.me/blogs/mysql-cache)
-- [Isolation Forest algorithm for anomaly detection](https://arpitbhayani.me/blogs/isolation-forest)
-- [Everything that you need to know about Image Steganography](https://arpitbhayani.me/blogs/image-steganography)
-
----
-
-If you liked what you read, consider subscribing to my weekly newsletter at [arpit.substack.com](https://arpit.substack.com/) were, once a week, I write an essay about programming languages internals, or a deep dive on some super-clever algorithm, or just a few tips on building highly scalable distributed systems.
-
-You can always find me browsing through twitter [@arpit_bhayani](https://twitter.com/arpit_bhayani).
