@@ -1,5 +1,3 @@
-# The RUM Conjecture
-
 The RUM Conjecture states that we cannot design an access method for a storage system that is optimal in all the following three aspects - Reads, Updates and Memory. The conjecture puts forth that we always have to trade one to make the other two optimal and this makes the three constitutes a competing triangle, very similar to the famous [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem).
 
 ![https://user-images.githubusercontent.com/4745789/83323578-6eb21e00-a27d-11ea-941b-43e875169c97.png](https://user-images.githubusercontent.com/4745789/83323578-6eb21e00-a27d-11ea-941b-43e875169c97.png)
