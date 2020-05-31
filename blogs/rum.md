@@ -46,19 +46,19 @@ Now that we have seen RUM overheads and the RUM Conjecture we take a look at exa
 
 Read Optimised storage systems offer very low read overhead but require some extra auxiliary space to gain necessary performance that again comes at a cost of updates required to keep auxiliary data in sync with main data which adds to update overheads. When the updates, on main data, become frequent the performance of a read optimized storage system takes a dip.
 
-A fine example of a read optimized storage system is the one that supports Point Indexes, also called Hash-based indexes, offering constant time access. The systems that provide logarithmic time access, like B-Trees and Skiplists, also fall into this category.
+A fine example of a read optimized storage system is the one that supports Point Indexes, also called Hash-based indexes, offering constant time access. The systems that provide logarithmic time access, like [B-Trees](https://en.wikipedia.org/wiki/B-tree) and [Skiplists](https://en.wikipedia.org/wiki/Skip_list), also fall into this category.
 
 ## Update Optimised
 
 Update Optimised storage systems offer very low Update Overhead by usually using an auxiliary space holding differential data (delta) and flushing them over main data in a bulk operation. The need of having an auxiliary data to keep track of delta to perform a bulk update adds to Memory Overhead.
 
-A few examples of Update Optimised systems are LSM Trees, Partitioned B Trees, and FD Tree. These structures offer very good performance for an update-heavy system but suffer from an increased read and space overheads. While reading data from LSM Tree, the engine needs to perform read on all the tiers and then perform a conflict resolution, and maintaining tiers of data itself is a huge Space Overhead.
+A few examples of Update Optimised systems are [LSM Trees](https://en.wikipedia.org/wiki/Log-structured_merge-tree), [Partitioned B Trees](http://cs.emis.de/LNI/Proceedings/Proceedings26/GI-Proceedings.26-47.pdf), and [FD Tree](http://pages.cs.wisc.edu/~yinan/fdtree.html). These structures offer very good performance for an update-heavy system but suffer from an increased read and space overheads. While reading data from LSM Tree, the engine needs to perform read on all the tiers and then perform a conflict resolution, and maintaining tiers of data itself is a huge Space Overhead.
 
 ## Memory Optimised
 
 Memory Optimised storage systems are designed to minimize auxiliary memory required for access and updates on the main data. To be memory-optimized the systems usually use compress the main data and auxiliary storages, or allow some error rate, like false positives.
 
-A few examples of Memory Optimises systems are lossy index structures like Bloom Filters, Count-min sketches, Lossy encodings, and Sparse Indexes. Keeping either main or auxiliary data compressed, to be memory efficient, the system takes a toll on writes and reads as they now have additionally performed compression and decompressions adding to the Update and Read overheads.
+A few examples of Memory Optimises systems are lossy index structures like [Bloom Filters](https://en.wikipedia.org/wiki/Bloom_filter), [Count-min sketches](https://en.wikipedia.org/wiki/Count%E2%80%93min_sketch), Lossy encodings, and Sparse Indexes. Keeping either main or auxiliary data compressed, to be memory efficient, the system takes a toll on writes and reads as they now have additionally performed compression and decompressions adding to the Update and Read overheads.
 
 ![https://user-images.githubusercontent.com/4745789/83323560-55a96d00-a27d-11ea-9d33-4001c672b920.png](https://user-images.githubusercontent.com/4745789/83323560-55a96d00-a27d-11ea-9d33-4001c672b920.png)
 
@@ -81,3 +81,18 @@ This essay was heavily based on the original research paper introducing The RUM 
 # References
 
 - [Designing Access Methods: The RUM Conjecture](https://stratos.seas.harvard.edu/files/stratos/files/rum.pdf)
+
+---
+
+# Other articles that you might like
+
+- [Copy-on-Write Semantics](https://arpitbhayani.me/blogs/copy-on-write)
+- [What makes MySQL LRU cache scan resistant](https://arpitbhayani.me/blogs/mysql-cache)
+- [Isolation Forest algorithm for anomaly detection](https://arpitbhayani.me/blogs/isolation-forest)
+- [Everything that you need to know about Image Steganography](https://arpitbhayani.me/blogs/image-steganography)
+
+---
+
+If you liked what you read, consider subscribing to my weekly newsletter at [arpit.substack.com](https://arpit.substack.com/) were, once a week, I write an essay about programming languages internals, or a deep dive on some super-clever algorithm, or just a few tips on building highly scalable distributed systems.
+
+You can always find me browsing through twitter [@arpit_bhayani](https://twitter.com/arpit_bhayani).
