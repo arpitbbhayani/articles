@@ -1,4 +1,4 @@
-The RUM Conjecture states that we cannot design an access method for a storage system that is optimal in all the following three aspects - Reads, Updates and Memory. The conjecture puts forth that we always have to trade one to make the other two optimal and this makes the three constitutes a competing triangle, very similar to the famous [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem).
+The RUM Conjecture states that we cannot design an access method for a storage system that is optimal in all the following three aspects - Reads, Updates and, Memory. The conjecture puts forth that we always have to trade one to make the other two optimal and this makes the three constitutes a competing triangle, very similar to the famous [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem).
 
 ![https://user-images.githubusercontent.com/4745789/83323578-6eb21e00-a27d-11ea-941b-43e875169c97.png](https://user-images.githubusercontent.com/4745789/83323578-6eb21e00-a27d-11ea-941b-43e875169c97.png)
 
@@ -6,7 +6,7 @@ The RUM Conjecture
 
 # Access Method
 
-Data access refers to an ability to access and retrieve data stored within a storage system driven by a optional storage engine. Usually a storage system is designed to be optimal for serving a niche use case and achieve that by carefully and judiciously deciding the memory and disk storage requirements, defining a well structured access and retrieval pattern, designing data structures for primary and auxiliary data and picking additional techniques like compression, encryption, etc. These decisions define, and to some extent restricts, the possible ways the storage engine can read and update the data in the system.
+Data access refers to an ability to access and retrieve data stored within a storage system driven by an optional storage engine. Usually, a storage system is designed to be optimal for serving a niche use case and achieve that by carefully and judiciously deciding the memory and disk storage requirements, defining a well structured access and retrieval pattern, designing data structures for primary and auxiliary data and picking additional techniques like compression, encryption, etc. These decisions define, and to some extent restricts, the possible ways the storage engine can read and update the data in the system.
 
 # RUM Overheads
 
