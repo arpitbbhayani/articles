@@ -6,7 +6,7 @@
         "d":"When it comes to choosing, using, and maintaining a database, understanding its internals is essential. But with so many distributed databases and tools available today, it’s often difficult to understand what each one offers and how they differ. With this practical guide, Alex Petrov guides developers through the concepts behind modern database and storage engine internals.",
         "plnk":"https://amzn.to/2JADF9o",
         "total":495,
-        "pg":295,
+        "pg":495,
         "com":false,
         "hgs":[],
         "uat":1585842678000
