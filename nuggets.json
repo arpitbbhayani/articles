@@ -1,5 +1,11 @@
 [
     {
+        "_id": "time-currency",
+        "b": "Time is a currency don't spend it, invest it.",
+        "d": 20200602,
+        "top": "growth"
+    },
+    {
         "_id": "5e1be6c3a31a9f0ab0ebc2d2",
         "b": "Curiosity drives motivation.\n\nIf you are not motivated enough, question yourself - are you curious enough?",
         "d": 20200420,
