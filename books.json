@@ -1,5 +1,17 @@
 [
     {
+        "_id":"how-to-write-a-lot",
+        "n":"How to Write a Lot",
+        "i":"https://user-images.githubusercontent.com/4745789/83501763-365d4a80-a4de-11ea-884a-d4714d9a366b.jpg",
+        "d":"Fresh advice to help you overcome barriers to writing and use your time more productively. After addressing some common excuses and bad habits, he provides practical strategies to motivate students, professors, researchers, and other academics to become better and more prolific writers",
+        "plnk":"https://www.amazon.com/How-Write-Lot-Practical-Productive/dp/1433829738",
+        "total":110,
+        "pg":10,
+        "com":false,
+        "hgs":[],
+        "uat":1591088739000
+    },
+    {
         "_id":"database-internals",
         "n":"Database Internals",
         "i":"https://user-images.githubusercontent.com/4745789/78269780-a6277700-7527-11ea-9a95-a77c99831e8f.png",
