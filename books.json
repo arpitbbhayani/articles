@@ -1,5 +1,17 @@
 [
     {
+        "_id":"range",
+        "n":"Range: How Generalists Triumph in a Specialized World",
+        "i":"https://user-images.githubusercontent.com/4745789/83667500-216edd00-a5ec-11ea-8209-6ecd869547c7.jpg",
+        "d":"why in most fields - especially those that are complex and unpredictable - generalists, not specialists are primed to excel. No matter what you do, where you are in life, whether you are a teacher, student, scientist, business analyst, parent, job hunter, retiree, you will see the world differently after you've read Range. You'll understand better how we solve problems, how we learn and how we succeed. You'll see why failing a test is the best way to learn and why frequent quitters end up with the most fulfilling careers",
+        "plnk":"https://www.amazon.in/Range-Generalists-Triumph-Specialized-World/dp/1509843507",
+        "total":353,
+        "pg":8,
+        "com":false,
+        "hgs":[],
+        "uat":1591204620000
+    },
+    {
         "_id":"how-to-write-a-lot",
         "n":"How to Write a Lot",
         "i":"https://user-images.githubusercontent.com/4745789/83501763-365d4a80-a4de-11ea-884a-d4714d9a366b.jpg",
