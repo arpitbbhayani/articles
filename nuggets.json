@@ -1,5 +1,11 @@
 [
     {
+        "_id": "recreational-reading",
+        "b": "Recreational reading is underrated.",
+        "d": 20200604,
+        "top": "growth"
+    },
+    {
         "_id": "time-currency",
         "b": "Time is a currency don't spend it, invest it.",
         "d": 20200602,
