@@ -1,5 +1,17 @@
 [
     {
+        "_id":"flow",
+        "n":"Flow: The Classic Work On How To Achieve Happiness",
+        "i":"https://user-images.githubusercontent.com/4745789/83770231-74a16800-a69e-11ea-9e05-d07c59bc29d2.jpg",
+        "d":"analyses the behaviour of all kinds of people and tries to answer a simple question - What makes people happy? The author tries to explore the innermost feelings of people who remain happy, and calls this deeply edifying state of mind as ‘flow’, which also happens to be the title of this book.",
+        "plnk":"https://www.amazon.in/Flow-Classic-Work-Achieve-Happiness/dp/0712657592",
+        "total":320,
+        "pg":29,
+        "com":false,
+        "hgs":[],
+        "uat":15912812300000
+    },
+    {
         "_id":"range",
         "n":"Range: How Generalists Triumph in a Specialized World",
         "i":"https://user-images.githubusercontent.com/4745789/83667500-216edd00-a5ec-11ea-8209-6ecd869547c7.jpg",
