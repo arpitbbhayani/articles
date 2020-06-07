@@ -115,14 +115,14 @@ Since the core operations on linked lists only require pointer manipulations, we
  */
 static inline void __list_del(struct list_head * prev, struct list_head * next)
 {
-	next->prev = prev;
-	prev->next = next;
+    next->prev = prev;
+    prev->next = next;
 }
 ```
 
 Other linked list utilities like *adding a node to tail*, *swapping nodes*, *splicing the list*, *rotating the list*, etc only require manipulations of `next` and `prev` pointers. Hence they could also be written in a very similar way i.e accepting `list_head *` and thus eliminating the need to reimplement function logic for every single child implementation.
 
-This behavior is very similar to how inheritance in modern OOP languages, like Python and Java, work where child is allowed to invoke any parent function.
+This behavior is very similar to how inheritance in modern OOP languages, like Python and Java, work where the child is allowed to invoke any parent function.
 
 # Who uses structure compositions?
 
@@ -146,7 +146,7 @@ typedef struct _object {
 Since Python wants these fields to be present in every single object that is created during runtime, it uses structure composition to ensure that objects like integers, floats, string, etc put `PyObject` as their first element and thus establishing a parent-child relationship. A Float object in Python is defined as
 
 ```cpp
-#define PyObject_HEAD                   PyObject ob_base;
+#define PyObject_HEAD PyObject ob_base;
 
 typedef struct {
     PyObject_HEAD
@@ -166,6 +166,6 @@ Thus we eradicate a need of rewriting `INCREF` for every single object type and 
 
 # References
 
-- [LinkedLists in Linux Source Code](https://elixir.bootlin.com/linux/latest/source/include/linux/list.h)
+- [LinkedList in Linux Source Code](https://elixir.bootlin.com/linux/latest/source/include/linux/list.h)
 - [PyObject - Python Internals Documentation](https://docs.python.org/3/c-api/structures.html#c.PyObject)
 - [PyFloatObject - Python Internals Documentation](https://docs.python.org/3/c-api/float.html)
