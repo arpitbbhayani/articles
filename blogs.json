@@ -12,9 +12,9 @@
     "published_at": "2020-05-31",
     "similar": [
       "copy-on-write",
-      "mysql-cache",
-      "isolation-forest",
-      "image-steganography"
+      "efficient-way-to-stop-an-iterating-loop",
+      "mongodb-cursor-skip-is-slow",
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -50,7 +50,7 @@
       "rum",
       "mongodb-cursor-skip-is-slow",
       "isolation-forest",
-      "copy-on-write"
+      "inheritance-c"
     ]
   },
   {
@@ -83,10 +83,10 @@
     "tags": [],
     "published_at": "2020-05-10",
     "similar": [
+      "inheritance-c",
       "mongodb-cursor-skip-is-slow",
       "copy-on-write",
-      "rule-30",
-      "idf"
+      "rule-30"
     ]
   },
   {
@@ -101,10 +101,10 @@
     "tags": [],
     "published_at": "2020-05-03",
     "similar": [
+      "inheritance-c",
       "fast-and-efficient-pagination-in-mongodb",
       "efficient-way-to-stop-an-iterating-loop",
-      "rule-30",
-      "isolation-forest"
+      "rule-30"
     ]
   },
   {
@@ -122,8 +122,8 @@
     "similar": [
       "image-steganography",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "better-programmer"
+      "better-programmer",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ]
   },
   {
@@ -177,7 +177,7 @@
       "image-steganography",
       "better-programmer",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "mysql-cache"
+      "bayesian-average"
     ]
   },
   {
@@ -283,8 +283,8 @@
     ],
     "published_at": "2020-02-14",
     "similar": [
-      "efficient-way-to-stop-an-iterating-loop",
       "super-long-integers",
+      "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
       "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ]
@@ -309,8 +309,8 @@
     ],
     "published_at": "2020-02-07",
     "similar": [
-      "i-changed-my-python",
       "fsm",
+      "i-changed-my-python",
       "python-caches-integers",
       "idf"
     ]
@@ -343,7 +343,7 @@
       "better-programmer",
       "mongodb-cursor-skip-is-slow",
       "bayesian-average",
-      "copy-on-write"
+      "idf"
     ]
   },
   {
@@ -380,8 +380,8 @@
     "similar": [
       "mysql-cache",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "better-programmer"
+      "better-programmer",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ]
   },
   {
@@ -413,9 +413,9 @@
     "published_at": "2020-01-10",
     "similar": [
       "rule-30",
+      "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
-      "python-caches-integers",
-      "efficient-way-to-stop-an-iterating-loop"
+      "python-caches-integers"
     ]
   },
   {
@@ -474,7 +474,7 @@
       "fast-and-efficient-pagination-in-mongodb",
       "rule-30",
       "super-long-integers",
-      "copy-on-write"
+      "inheritance-c"
     ]
   },
   {
@@ -531,7 +531,7 @@
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "mysql-cache",
       "image-steganography",
-      "better-programmer"
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -553,10 +553,10 @@
     ],
     "published_at": "2017-06-04",
     "similar": [
+      "inheritance-c",
       "isolation-forest",
       "idf",
-      "copy-on-write",
-      "python-caches-integers"
+      "copy-on-write"
     ]
   },
   {
@@ -581,8 +581,8 @@
     "published_at": "2017-07-16",
     "similar": [
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "mysql-cache",
       "fast-and-efficient-pagination-in-mongodb",
+      "mysql-cache",
       "rule-30"
     ]
   },
