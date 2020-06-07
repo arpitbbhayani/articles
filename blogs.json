@@ -1,5 +1,23 @@
 [
   {
+    "id": "inheritance-c",
+    "title": "Powering inheritance in C using structure composition",
+    "description": "C language does not support inheritance however it does support Structure Compositions which can be tweaked to serve use-cases requiring parent-child relationships. In this article we find out how Structure Compositions help us emulate inheritance in C and keep our code extensible. We will also find how it powers two of the most important things to have ever been invented in the field of computer science.",
+    "image": "https://user-images.githubusercontent.com/4745789/83344735-64009300-a328-11ea-858a-587d440136f1.png",
+    "gif": "https://media.giphy.com/media/1n7B7bJ917pqZGHG9m/giphy.gif",
+    "categories": [
+      "engineering"
+    ],
+    "tags": [],
+    "published_at": "2020-05-31",
+    "similar": [
+      "copy-on-write",
+      "mysql-cache",
+      "isolation-forest",
+      "image-steganography"
+    ]
+  },
+  {
     "id": "rum",
     "title": "The RUM Conjecture",
     "description": "While designing any storage system the three main aspects we optimize for are Reads, Updates, and auxiliary Memory. RUM Conjecture states that these three form a competing triangle and we could only optimize two at the expense of the third.",
