@@ -5,6 +5,7 @@
         "description": "The talk is focussed on basics of Information Retrieval. We cover lookups, indexing, relevance by intuition, math behind relevance, building a toy search engine and squeezing out the performance from it.",
         "image": "https://user-images.githubusercontent.com/4745789/80206055-511fe200-8649-11ea-80ca-f128c2eba1ae.png",
         "canva_design_id": "DAD5swEIWu8",
-        "deliveredOn": "20200424"
+        "deliveredOn": "20200424",
+        "publishedOn": "2020-04-24"
     }
 ]
