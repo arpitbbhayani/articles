@@ -1,5 +1,23 @@
 [
   {
+    "id": "inheritance-c",
+    "title": "Powering inheritance in C using structure composition",
+    "description": "C language does not support inheritance however it does support Structure Compositions which can be tweaked to serve use-cases requiring parent-child relationships. In this article we find out how Structure Compositions help us emulate inheritance in C and keep our code extensible. We will also find how it powers two of the most important things to have ever been invented in the field of computer science.",
+    "image": "https://user-images.githubusercontent.com/4745789/83960768-2bbdff00-a8aa-11ea-9e82-16b928d2a244.png",
+    "gif": "https://media.giphy.com/media/3o6Mbk7C7HVuhyqX3G/giphy.gif",
+    "categories": [
+      "engineering"
+    ],
+    "tags": [],
+    "published_at": "2020-06-07",
+    "similar": [
+      "copy-on-write",
+      "efficient-way-to-stop-an-iterating-loop",
+      "mongodb-cursor-skip-is-slow",
+      "fast-and-efficient-pagination-in-mongodb"
+    ]
+  },
+  {
     "id": "rum",
     "title": "The RUM Conjecture",
     "description": "While designing any storage system the three main aspects we optimize for are Reads, Updates, and auxiliary Memory. RUM Conjecture states that these three form a competing triangle and we could only optimize two at the expense of the third.",
@@ -32,7 +50,7 @@
       "rum",
       "mongodb-cursor-skip-is-slow",
       "isolation-forest",
-      "copy-on-write"
+      "inheritance-c"
     ]
   },
   {
@@ -65,10 +83,10 @@
     "tags": [],
     "published_at": "2020-05-10",
     "similar": [
+      "inheritance-c",
       "mongodb-cursor-skip-is-slow",
       "copy-on-write",
-      "rule-30",
-      "idf"
+      "rule-30"
     ]
   },
   {
@@ -83,10 +101,10 @@
     "tags": [],
     "published_at": "2020-05-03",
     "similar": [
+      "inheritance-c",
       "fast-and-efficient-pagination-in-mongodb",
       "efficient-way-to-stop-an-iterating-loop",
-      "rule-30",
-      "isolation-forest"
+      "rule-30"
     ]
   },
   {
@@ -104,8 +122,8 @@
     "similar": [
       "image-steganography",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "better-programmer"
+      "better-programmer",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ]
   },
   {
@@ -159,7 +177,7 @@
       "image-steganography",
       "better-programmer",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "mysql-cache"
+      "bayesian-average"
     ]
   },
   {
@@ -265,8 +283,8 @@
     ],
     "published_at": "2020-02-14",
     "similar": [
-      "efficient-way-to-stop-an-iterating-loop",
       "super-long-integers",
+      "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
       "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ]
@@ -291,8 +309,8 @@
     ],
     "published_at": "2020-02-07",
     "similar": [
-      "i-changed-my-python",
       "fsm",
+      "i-changed-my-python",
       "python-caches-integers",
       "idf"
     ]
@@ -325,7 +343,7 @@
       "better-programmer",
       "mongodb-cursor-skip-is-slow",
       "bayesian-average",
-      "copy-on-write"
+      "idf"
     ]
   },
   {
@@ -362,8 +380,8 @@
     "similar": [
       "mysql-cache",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "better-programmer"
+      "better-programmer",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ]
   },
   {
@@ -395,9 +413,9 @@
     "published_at": "2020-01-10",
     "similar": [
       "rule-30",
+      "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
-      "python-caches-integers",
-      "efficient-way-to-stop-an-iterating-loop"
+      "python-caches-integers"
     ]
   },
   {
@@ -456,7 +474,7 @@
       "fast-and-efficient-pagination-in-mongodb",
       "rule-30",
       "super-long-integers",
-      "copy-on-write"
+      "inheritance-c"
     ]
   },
   {
@@ -513,7 +531,7 @@
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "mysql-cache",
       "image-steganography",
-      "better-programmer"
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -535,10 +553,10 @@
     ],
     "published_at": "2017-06-04",
     "similar": [
+      "inheritance-c",
       "isolation-forest",
       "idf",
-      "copy-on-write",
-      "python-caches-integers"
+      "copy-on-write"
     ]
   },
   {
@@ -563,8 +581,8 @@
     "published_at": "2017-07-16",
     "similar": [
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "mysql-cache",
       "fast-and-efficient-pagination-in-mongodb",
+      "mysql-cache",
       "rule-30"
     ]
   },
