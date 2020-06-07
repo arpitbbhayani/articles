@@ -44,11 +44,11 @@ In the illustration above we see how members of `list_int` are mapped on the all
 
 ```cpp
 void print_addrs() {
-	// creating a node of the list_int holding value 41434
+    // creating a node of the list_int holding value 41434
     struct list_int *ll = new_list_int(41434);
 
-	// printing the address of individual members
-	printf("%p: head\n",             head);
+    // printing the address of individual members
+    printf("%p: head\n",             head);
     printf("%p: head->list.next\n",  &((head->list).next));
     printf("%p: head->list.prev\n",  &((head->list).prev));
     printf("%p: head->value\n",      &(head->value));
