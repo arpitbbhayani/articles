@@ -1,5 +1,11 @@
 [
     {
+        "_id": "cleverness",
+        "b": "It is always better to underestimate than to overestimate your cleverness.",
+        "d": 20200610,
+        "top": "growth"
+    },
+    {
         "_id": "problem-solving",
         "b": "Solving a problem 80% is simple; and all you need is some critical thinking and a knack to split it into solvable sub-problems; although for the other 20% you will require domain expertise. Approach, attitude, and grit help tackle a problem better than domain expertise.",
         "d": 20200608,
