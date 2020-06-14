@@ -32,7 +32,7 @@ Apart from `list` and `range` other [iterables](https://docs.python.org/3/librar
 
 # Iterators and Iterator Protocol
 
-Python, keeping things simple, defines iterable as any object that follows the Iterator Protocol; which means the object or a container implements the following functions
+Python, keeping things simple, defines iterable as any object that follows the [Iterator Protocol](https://docs.python.org/3/c-api/iter.html); which means the object or a container implements the following functions
 
 - `__iter__` - should return an iterator object having implemented the `__next__` method
 - `__next__` - should return the next item of the iteration and if items are exhausted then raise a `StopIteration` exception.
