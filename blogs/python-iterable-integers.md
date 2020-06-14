@@ -159,7 +159,7 @@ PyTypeObject PyLong_Type = {
 };
 ```
 
-## The flow
+## Consolidated flow
 
 Once we have everything in place, the entire flow goes like this
 
