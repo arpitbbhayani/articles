@@ -2,7 +2,7 @@
   {
     "id": "python-iterable-integers",
     "title": "Making Python Integers Iterable",
-    "description": "Making Python Integers Iterable",
+    "description": "In Python, Integers are not iterables but we can make them iterable by implementing __iter__ function. In this essay, we change Python's source code and implement iter function for integers.",
     "image": "https://user-images.githubusercontent.com/4745789/84585100-bf06af80-ae29-11ea-8797-16c70aee5cc4.png",
     "gif": "https://media.giphy.com/media/k4ta29T68xlfi/giphy.gif",
     "categories": [
