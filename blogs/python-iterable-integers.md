@@ -89,28 +89,28 @@ We define a utility function in `rangeobject.c` that, given a python integer, re
 PyObject *
 PyLongRangeIter_ZeroToN(PyObject *long_obj)
 {
-		// creating a new instance of longrangeiterobject
+    // creating a new instance of longrangeiterobject
     longrangeiterobject *it;
     it = PyObject_New(longrangeiterobject, &PyLongRangeIter_Type);
 
-		// if unable to allocate memoty to it, return NULL.
+    // if unable to allocate memoty to it, return NULL.
     if (it == NULL)
         return NULL;
 
-		// we set the start to 0
+    // we set the start to 0
     it->start = _PyLong_Zero;
 
     // we set the step to 1
     it->step = _PyLong_One;
-		
-		// we set the index to 0, since we want to always start from the first
+
+    // we set the index to 0, since we want to always start from the first
     // element of the iteration
     it->index = _PyLong_Zero;
 
     // we set the total length of iteration to be equal to the provided value
-		it->len = long_obj;
+    it->len = long_obj;
 
-		// we increment the reference count for each of the values referenced
+    // we increment the reference count for each of the values referenced
     Py_INCREF(it->start);
     Py_INCREF(it->step);
     Py_INCREF(it->len);
