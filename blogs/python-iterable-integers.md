@@ -37,25 +37,25 @@ Python, keeping things simple, defines iterable as any object that follows the [
 - `__iter__` - should return an iterator object having implemented the `__next__` method
 - `__next__` - should return the next item of the iteration and if items are exhausted then raise a `StopIteration` exception.
 
-So, in a gist, `__iter__` is something that makes any python object iterable; hence to make integers iterable we need to have `__iter__` function for integers.
+So, in a gist, `__iter__` is something that makes any python object iterable; hence to make integers iterable we need to have `__iter__` function set for integers.
 
 # Iterable in CPython
 
-The most used implementation of Python language is [CPython](https://github.com/python/cpython/) where the entire language is implemented in pure C language. Since we need to make changes to one of the core datatypes of Python, we will be modifying the CPython, add `__iter__` function to integers, and rebuild the binary. But before jumping into the core implementation, it is important to understand a few fundamentals.
+The most famous and widely used implementation of Python is [CPython](https://github.com/python/cpython/) where the core is implemented in pure C. Since we need to make changes to one of the core datatypes of Python, we will be modifying CPython, add `__iter__` function to integer type, and rebuild the binary. But before jumping into the implementation, it is important to understand a few fundamentals.
 
 ## The `PyTypeObject`
 
-Every object in Python is associated with a type and each [type](https://docs.python.org/3/c-api/typeobj.html#type-objects) is an instance of a struct named [PyTypeObject](https://docs.python.org/3/c-api/typeobj.html). A new instance of this structure is effectively a new type in python. This structure holds a few meta information and a bunch of C function pointers - each implementing a small segment of the type's functionality. Most of these "slots" in the structure are optional which could be filled by putting appropriate function pointers that drive the corresponding functionality.
+Every object in Python is associated with a type and each [type](https://docs.python.org/3/c-api/typeobj.html#type-objects) is an instance of a struct named [PyTypeObject](https://docs.python.org/3/c-api/typeobj.html). A new instance of this structure is effectively a new type in python. This structure holds a few meta information and a bunch of C function pointers - each implementing a small segment of the type's functionality. Most of these "slots" in the structure are optional which could be filled by putting appropriate function pointers and driving the corresponding functionality.
 
 ## The `tp_iter` slot
 
-Among all the slots available, the slot that interests us is the `tp_iter` slot which can hold a pointer to a function that returns an iterator object. This slot corresponds to the `__iter__` function which effectively makes any object iterable. A non `NULL` value of this slot indicates iterability. The `tp_iter` can hold function with the following signature
+Among all the slots available, the slot that interests us is the `tp_iter` slot which can hold a pointer to a function that returns an iterator object. This slot corresponds to the `__iter__` function which effectively makes the object iterable. A non `NULL` value of this slot indicates iterability. The `tp_iter` holds the function with the following signature
 
 ```cpp
 PyObject * tp_iter(PyObject *);
 ```
 
-Integers in Python have been implemented as long objects and its implementation can be found at [longobject.c](https://github.com/python/cpython/blob/master/Objects/longobject.c). The instance of `PyTypeObject` that defines integer/long type is `PyLong_Type` and has its `tp_iter` slot set to `0` i.e. `NULL` which asserts the fact that Integers in python are not iterable. A glimpse of `tp_iter` being `NULL` for integers is illustrated below
+Integers in Python do not have a fixed size; rather the size of integer depends on the value it holds. [How Python implements super long integers](https://arpitbhayani.me/blogs/super-long-integers) is a story on its own but the core implementation can be found at [longobject.c](https://github.com/python/cpython/blob/master/Objects/longobject.c). The instance of `PyTypeObject` that defines integer/long type is `PyLong_Type` and has its `tp_iter` slot set to `0` i.e. `NULL` which asserts the fact that Integers in python are not iterable. A glimpse of `tp_iter` being `NULL` for integers is illustrated below
 
 ```cpp
 PyTypeObject PyLong_Type = {
