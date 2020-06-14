@@ -9,7 +9,7 @@ Since integers, individualistically, are not iterable, when we try to do a `for 
 
 # Python Iterables
 
-Any object that could be iterated is an Iterable in Python. The list has to be the most popular iterable out there and it finds its usage in almost every single Python application - directly or indirectly. Before even the first user command is executed, the Python interpreter, while booting up has already created `406` lists, for its internal usage.
+Any object that could be iterated is an Iterable in Python. The list has to be the most popular iterable out there and it finds its usage in almost every single Python application - directly or indirectly. Even before the first user command is executed, the Python interpreter, while booting up, has already created `406` lists, for its internal usage.
 
 In the example below, we see how a list `a` is iterated through using a `for ... in` loop and each element can be accessed via variable `x`. 
 
