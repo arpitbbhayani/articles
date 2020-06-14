@@ -204,7 +204,7 @@ ValueError: too many values to unpack (expected 2)
 
 # Conclusion
 
-In this essay, we modified the Python's source code and made integers iterable. Even though it is not a good idea to do so, but it is fun to play around with the code and make changes in our favorite programming language. It helps us get a detailed idea about core python implementation and may pave the way for us to become a Python core developer. This is one of many articles in Python Internals series, others are - [How python implements super long integers?](https://arpitbhayani.me/blogs/super-long-integers), [Python Caches Integers](https://arpitbhayani.me/blogs/python-caches-integers).
+In this essay, we modified the Python's source code and made integers iterable. Even though it is not a good idea to do so, but it is fun to play around with the code and make changes in our favorite programming language. It helps us get a detailed idea about core python implementation and may pave the way for us to become a Python core developer. This is one of many articles in Python Internals series - [How python implements super long integers?](https://arpitbhayani.me/blogs/super-long-integers) and [Python Caches Integers](https://arpitbhayani.me/blogs/python-caches-integers).
 
 # References
  - [PyTypeObject](https://docs.python.org/3/c-api/type.html#c.PyTypeObject)
