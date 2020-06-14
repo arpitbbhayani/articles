@@ -74,9 +74,9 @@ This `NULL` value for `tp_iter` makes `int` object not iterable and hence if thi
 
 # Implementing `long_iter`
 
-We name the `tp_iter` function on integer type as `long_iter` which will return an iterator object that effectively makes integers iterable. The core functionality we are looking to implement here is - when an integer `n` is iterated, it should iterate through the sequence `[0, n)` with step `1`. This behavior is very close to the pre-defined `range` type, that iterates over a range of integer values, more specifically a `range` that starts at `0`, goes till `n` with a step of `1`.
+Now we implement the `tp_iter` function on integer type, naming it `long_iter`, that returns an iterator object, as required by the convention. The core functionality we are looking to implement here is - when an integer `n` is iterated, it should iterate through the sequence `[0, n)` with step `1`. This behavior is very close to the pre-defined `range` type, that iterates over a range of integer values, more specifically a `range` that starts at `0`, goes till `n` with a step of `1`.
 
-We define a utility function in `rangeobject.c` that given a python integer returns an instance of `longrangeiterobject` as per our specifications. This utility function will instantiate the `longrangeiterobject` with start as `0`, end as the long value given in the argument, and step as `1`. The utility function is as illustrated below.
+We define a utility function in `rangeobject.c` that, given a python integer, returns an instance of `longrangeiterobject` as per our specifications. This utility function will instantiate the `longrangeiterobject` with start as `0`, ending at the long value given in the argument, and step as `1`. The utility function is as illustrated below.
 
 ```cpp
 /*
@@ -127,7 +127,7 @@ The utility function `PyLongRangeIter_ZeroToN` is defined in `rangeobject.c` and
 PyAPI_FUNC(PyObject *)   PyLongRangeIter_ZeroToN(PyObject *);
 ```
 
-The function occupying the `tp_iter` slot will receive the `self` object as the input argument and returns the iterator instance. Hence, the `long_iter` function will receive the python integer object (self) that is being iterated as an input argument and it should return the iterator instance. Here we would use the utility function `PyLongRangeIter_ZeroToN`, we just defined, and the entire function could be defined as
+The function occupying the `tp_iter` slot will receive the `self` object as the input argument and is expected to return the iterator instance. Hence, the `long_iter` function will receive the python integer object (self) that is being iterated as an input argument and it should return the iterator instance. Here we would use the utility function `PyLongRangeIter_ZeroToN`, we just defined, which is returning us an instance of range iterator. The entire `long_iter` function could be defined as
 
 ```cpp
 /*
@@ -161,11 +161,11 @@ PyTypeObject PyLong_Type = {
 
 ## Consolidated flow
 
-Once we have everything in place, the entire flow goes like this
+Once we have everything in place, the entire flow goes like this -
 
-Every time a `for ... in` is invoked on an integer object, it would check the `tp_iter` of the `PyLongType` and since now it holds the function pointer `long_iter`, the same function will be invoked. This invocation will return an iterator object of type `longrangeiterobject` with a fixed start, index, and step values - which in pythonic terms is effectively a `range(0, n, 1)`.  Hence the `for x in 7` is inherently evaluated as `for x in range(0, 7, 1)` allowing us to iterate integers.
+Everytime an integer is iterated, using any iteration method - for example `for ... in`, it would check the `tp_iter` of the `PyLongType` and since now it holds the function pointer `long_iter`, the function will be invoked. This invocation will return an iterator object of type `longrangeiterobject` with a fixed start, index, and step values - which in pythonic terms is effectively a `range(0, n, 1)`.  Hence the `for x in 7` is inherently evaluated as `for x in range(0, 7, 1)` allowing us to iterate integers.
 
-> These changes are hosted on a remote branch [cpython@02-long-iter](https://github.com/arpitbbhayani/cpython/tree/02-long-iter) and Pull request to a forked CPython can be found [here](https://github.com/arpitbbhayani/cpython/pull/7).
+> These changes are also hosted on a remote branch [cpython@02-long-iter](https://github.com/arpitbbhayani/cpython/tree/02-long-iter) and Pull Request holding the `diff` can be found [here](https://github.com/arpitbbhayani/cpython/pull/7).
 
 # Integer iteration in action
 
@@ -175,18 +175,21 @@ Once we build a new python binary with aforementioned changes, we can see iterab
 >>> for i in 7: print(i, end=" ");
 0 1 2 3 4 5 6
 
-# Since integers are now iterable, we can create a list of [0, 7) like
+# Since integers are now iterable, we can create a list of [0, 7) using `list`
+# Internally `list` tries to iterate on the given object i.e. `7`
+# now that the iteration is defined as [0, 7) we get the list from
+# from iteration, instead of an exception
 >>> list(7)
 [0, 1, 2, 3, 4, 5, 6]
 ```
 
 # Why it is not a good idea
 
-Although it seems fun to have iterable integers but is not that great of an idea. The core reason for this is it makes unpacking unpredictable. Unpacking is when you unpack an iterable and assign it to multiple variables. For example: `a, b = 3, 4` will assign 3 to a and 4 to b. So assigning `a, b = 7` should be an error because there is just one value on the right side and multiple on the left.
+Although it seems fun, and somewhat useful, to have iterable integers, but it is really not a great idea. The core reason for this is that it makes unpacking unpredictable. Unpacking is when you unpack an iterable and assign it to multiple variables. For example: `a, b = 3, 4` will assign 3 to a and 4 to b. So assigning `a, b = 7` should be an error because there is just one value on the right side and multiple on the left.
 
-But after making integers iterable the statement `a, b = 7` is effectively `a, b = [0, 1, 2, 3, 4, 5, 6]` which means it raises `ValueError: too many values to unpack (expected 2)`.
+Unpacking treats right hand size as iterable and tries to iterate on it; and now since Integers are iterable the right hand side, post iteration, yields 7 values which the left hand side has mere 2 variables; Hence it raises an exception `ValueError: too many values to unpack (expected 2)`.
 
-But things would work just fine if we do `a, b = 2` as now the right-hand side has two values and left has two variables to hold. Thus two very similar statements result in two very different outcomes.
+Things would work just fine if we do `a, b = 2` as now the right-hand side, post iteration, has two values and left hand side has two variables. Thus two very similar statements result in two very different outcomes, making unpacking unpredictable.
 
 ```python
 >>> a, b = 7
@@ -201,4 +204,9 @@ ValueError: too many values to unpack (expected 2)
 
 # Conclusion
 
-In this essay, we modified the Python's source code and made integers iterable. Even though it is not a good idea to do so, but it is fun to play around with the code and make changes in our favorite programming language. It helps us get a detailed idea about core python implementation and may pave the way to become a Python core developer. This is one of many articles in Python Internals series, others are - [How python implements super long integers?](https://arpitbhayani.me/blogs/super-long-integers), [Python Caches Integers](https://arpitbhayani.me/blogs/python-caches-integers).
+In this essay, we modified the Python's source code and made integers iterable. Even though it is not a good idea to do so, but it is fun to play around with the code and make changes in our favorite programming language. It helps us get a detailed idea about core python implementation and may pave the way for us to become a Python core developer. This is one of many articles in Python Internals series, others are - [How python implements super long integers?](https://arpitbhayani.me/blogs/super-long-integers), [Python Caches Integers](https://arpitbhayani.me/blogs/python-caches-integers).
+
+# References
+ - [PyTypeObject](https://docs.python.org/3/c-api/type.html#c.PyTypeObject)
+ - [Python Type Objects](https://docs.python.org/3/c-api/typeobj.html)
+ - [Python Iterator Protocol](https://docs.python.org/3/c-api/iter.html)
