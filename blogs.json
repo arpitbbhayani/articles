@@ -1,5 +1,18 @@
 [
   {
+    "id": "python-iterable-integers",
+    "title": "Making Python Integers Iterable",
+    "description": "Making Python Integers Iterable",
+    "image": "https://user-images.githubusercontent.com/4745789/83960768-2bbdff00-a8aa-11ea-9e82-16b928d2a244.png",
+    "gif": "https://media.giphy.com/media/3o6Mbk7C7HVuhyqX3G/giphy.gif",
+    "categories": [
+      "python"
+    ],
+    "tags": [],
+    "published_at": "2020-06-14",
+    "similar": []
+  },
+  {
     "id": "inheritance-c",
     "title": "Powering inheritance in C using structure composition",
     "description": "C language does not support inheritance however it does support Structure Compositions which can be tweaked to serve use-cases requiring parent-child relationships. In this article we find out how Structure Compositions help us emulate inheritance in C and keep our code extensible. We will also find how it powers two of the most important things to have ever been invented in the field of computer science.",
