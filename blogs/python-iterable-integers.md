@@ -1,6 +1,6 @@
 Iterables in Python are objects and containers that could be stepped through one item at a time, usually using a `for ... in` loop. Not all objects can be iterated, for example - we cannot iterate an integer, it is a singular value. The best we can do here is iterate on a range of integers using the `range` type which helps us iterate through all integers in the range `[0, n)`.
 
-Since integers, individualistically, are not iterable, when we try to do a `for x in 7`, it raises an exception stating `TypeError: 'int' object is not iterable`. So what if, we change the Python's source code and make integers iterable, say every time we do a `for x in 7`, instead of raising an exception it actually iterates through the values `[0, 7)`. In this essay, we would be going through exactly that and the entire agenda goes like this;
+Since integers, individualistically, are not iterable, when we try to do a `for x in 7`, it raises an exception stating `TypeError: 'int' object is not iterable`. So what if, we change the Python's source code and make integers iterable, say every time we do a `for x in 7`, instead of raising an exception it actually iterates through the values `[0, 7)`. In this essay, we would be going through exactly that and the entire agenda being:
 
 - What is a Python iterable?
 - What is an iterator protocol?
