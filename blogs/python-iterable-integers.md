@@ -55,7 +55,7 @@ Among all the slots available, the slot that interests us is the `tp_iter` slot 
 PyObject * tp_iter(PyObject *);
 ```
 
-Integers in Python do not have a fixed size; rather the size of integer depends on the value it holds. [How Python implements super long integers](https://arpitbhayani.me/blogs/super-long-integers) is a story on its own but the core implementation can be found at [longobject.c](https://github.com/python/cpython/blob/master/Objects/longobject.c). The instance of `PyTypeObject` that defines integer/long type is `PyLong_Type` and has its `tp_iter` slot set to `0` i.e. `NULL` which asserts the fact that Integers in python are not iterable. A glimpse of `tp_iter` being `NULL` for integers is illustrated below
+Integers in Python do not have a fixed size; rather the size of integer depends on the value it holds. [How Python implements super long integers](https://arpitbhayani.me/blogs/super-long-integers) is a story on its own but the core implementation can be found at [longobject.c](https://github.com/python/cpython/blob/master/Objects/longobject.c). The instance of `PyTypeObject` that defines integer/long type is `PyLong_Type` and has its `tp_iter` slot set to `0` i.e. `NULL` which asserts the fact that Integers in python are not iterable.
 
 ```cpp
 PyTypeObject PyLong_Type = {
@@ -70,7 +70,7 @@ PyTypeObject PyLong_Type = {
 };
 ```
 
-This `NULL` value for `tp_iter` makes `int` object not iterable and hence if this slot was occupied by a function pointer with the aforementioned signature, this could well make any integer iterable.
+This `NULL` value for `tp_iter` makes `int` object not iterable and hence if this slot was occupied by an appropriate function pointer with the aforementioned signature, this could well make any integer iterable.
 
 # Implementing `long_iter`
 
