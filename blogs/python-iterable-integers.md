@@ -210,3 +210,4 @@ In this essay, we modified the Python's source code and made integers iterable. 
  - [PyTypeObject](https://docs.python.org/3/c-api/type.html#c.PyTypeObject)
  - [Python Type Objects](https://docs.python.org/3/c-api/typeobj.html)
  - [Python Iterator Protocol](https://docs.python.org/3/c-api/iter.html)
+ - [CPython with long_iter](https://github.com/arpitbbhayani/cpython/pull/7)
