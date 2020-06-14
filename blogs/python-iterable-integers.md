@@ -45,7 +45,7 @@ The most used implementation of Python language is [CPython](https://github.com/
 
 ## The `PyTypeObject`
 
-Every object in Python is associated with a type and each [type](https://docs.python.org/3/c-api/typeobj.html#type-objects) is an instance of a struct named `PyTypeObject`. A new instance of this structure is effectively a new type in python. This structure holds a few meta information and a bunch of C function pointers - each implementing a small segment of the type's functionality. Most of these "slots" in the structure are optional which could be filled by putting appropriate function pointers that drive the corresponding functionality.
+Every object in Python is associated with a type and each [type](https://docs.python.org/3/c-api/typeobj.html#type-objects) is an instance of a struct named [PyTypeObject](https://docs.python.org/3/c-api/typeobj.html). A new instance of this structure is effectively a new type in python. This structure holds a few meta information and a bunch of C function pointers - each implementing a small segment of the type's functionality. Most of these "slots" in the structure are optional which could be filled by putting appropriate function pointers that drive the corresponding functionality.
 
 ## The `tp_iter` slot
 
@@ -55,7 +55,7 @@ Among all the slots available, the slot that interests us is the `tp_iter` slot 
 PyObject * tp_iter(PyObject *);
 ```
 
-Integers in Python have been implemented as long objects and its implementation can be found at `[longobject.c](https://github.com/python/cpython/blob/master/Objects/longobject.c)`. The instance of `PyTypeObject` that defines integer/long type is `PyLong_Type` and has its `tp_iter` slot set to `0` i.e. `NULL` which asserts the fact that Integers in python are not iterable. A glimpse of `tp_iter` being `NULL` for integers is illustrated below
+Integers in Python have been implemented as long objects and its implementation can be found at [longobject.c](https://github.com/python/cpython/blob/master/Objects/longobject.c). The instance of `PyTypeObject` that defines integer/long type is `PyLong_Type` and has its `tp_iter` slot set to `0` i.e. `NULL` which asserts the fact that Integers in python are not iterable. A glimpse of `tp_iter` being `NULL` for integers is illustrated below
 
 ```cpp
 PyTypeObject PyLong_Type = {
