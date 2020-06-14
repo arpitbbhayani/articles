@@ -19,7 +19,7 @@ In the example below, we see how a list `a` is iterated through using a `for ...
 2 3 5 7 11 13
 ```
 
-Similar to `list`, `range` is a python type that allows us to iterate on integer values starting with value `start` and going till `end` while stepping over `step` values at each time. `range` is most commonly used for implementing a C-like `for` loop in Python. In the example below, the `for` loop iterates over a `range` that starts from `0`, goes till `7` with a step of  `1` - producing the sequence `[0, 7)`.
+Similar to `list`, `range` is a python type that allows us to iterate on integer values starting with the value `start` and going till `end` while stepping over `step` values at each time. `range` is most commonly used for implementing a C-like `for` loop in Python. In the example below, the `for` loop iterates over a `range` that starts from `0`, goes till `7` with a step of  `1` - producing the sequence `[0, 7)`.
 
 ```python
 # The range(0, 7, 1) will iterate through values 0 to 6 and every time
