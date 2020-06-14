@@ -1,6 +1,6 @@
 Iterables in Python are objects and containers that could be stepped through one item at a time, usually using a `for ... in` loop. Not all objects can be iterated, for example - we cannot iterate an integer, it is a singular value. The best we can do here is iterate on a range of integers using the `range` type which helps us iterate through all integers in the range `[0, n)`.
 
-Since integers, individualistically, are not iterable, when we try to do a `for x in 7`, it raises an exception stating `TypeError: 'int' object is not iterable`. So what if, we change the Python's source code and make integers iterable, say every time we do a `for x in 7`, instead of raising an exception it actually iterates through the values `[0, 7)`. In this essay, we would be going through exactly that and the entire agenda being:
+Since integers, individualistically, are not iterable, when we try to do a `for x in 7`, it raises an exception stating `TypeError: 'int' object is not iterable`. So what if, we change the Python's source code and make integers iterable, say every time we do a `for x in 7`, instead of raising an exception it actually iterates through the values `[0, 7)`. In this essay, we would be going through exactly that, and the entire agenda being:
 
 - What is a Python iterable?
 - What is an iterator protocol?
@@ -41,7 +41,7 @@ So, in a gist, `__iter__` is something that makes any python object iterable; he
 
 # Iterable in CPython
 
-The most famous and widely used implementation of Python is [CPython](https://github.com/python/cpython/) where the core is implemented in pure C. Since we need to make changes to one of the core datatypes of Python, we will be modifying CPython, add `__iter__` function to integer type, and rebuild the binary. But before jumping into the implementation, it is important to understand a few fundamentals.
+The most famous and widely used implementation of Python is [CPython](https://github.com/python/cpython/) where the core is implemented in pure C. Since we need to make changes to one of the core datatypes of Python, we will be modifying CPython, add `__iter__` function to Integer type, and rebuild the binary. But before jumping into the implementation, it is important to understand a few fundamentals.
 
 ## The `PyTypeObject`
 
@@ -163,13 +163,13 @@ PyTypeObject PyLong_Type = {
 
 Once we have everything in place, the entire flow goes like this -
 
-Everytime an integer is iterated, using any iteration method - for example `for ... in`, it would check the `tp_iter` of the `PyLongType` and since now it holds the function pointer `long_iter`, the function will be invoked. This invocation will return an iterator object of type `longrangeiterobject` with a fixed start, index, and step values - which in pythonic terms is effectively a `range(0, n, 1)`.  Hence the `for x in 7` is inherently evaluated as `for x in range(0, 7, 1)` allowing us to iterate integers.
+Every time an integer is iterated, using any iteration method - for example `for ... in`, it would check the `tp_iter` of the `PyLongType` and since now it holds the function pointer `long_iter`, the function will be invoked. This invocation will return an iterator object of type `longrangeiterobject` with a fixed start, index, and step values - which in pythonic terms is effectively a `range(0, n, 1)`.  Hence the `for x in 7` is inherently evaluated as `for x in range(0, 7, 1)` allowing us to iterate integers.
 
 > These changes are also hosted on a remote branch [cpython@02-long-iter](https://github.com/arpitbbhayani/cpython/tree/02-long-iter) and Pull Request holding the `diff` can be found [here](https://github.com/arpitbbhayani/cpython/pull/7).
 
 # Integer iteration in action
 
-Once we build a new python binary with aforementioned changes, we can see iterable integers in actions. Now when we do `for x in 7`, instead of raising an exception, it actually iterates through values `[0, 7)`.
+Once we build a new python binary with the aforementioned changes, we can see iterable integers in actions. Now when we do `for x in 7`, instead of raising an exception, it actually iterates through values `[0, 7)`.
 
 ```cpp
 >>> for i in 7: print(i, end=" ");
@@ -185,11 +185,11 @@ Once we build a new python binary with aforementioned changes, we can see iterab
 
 # Why it is not a good idea
 
-Although it seems fun, and somewhat useful, to have iterable integers, but it is really not a great idea. The core reason for this is that it makes unpacking unpredictable. Unpacking is when you unpack an iterable and assign it to multiple variables. For example: `a, b = 3, 4` will assign 3 to a and 4 to b. So assigning `a, b = 7` should be an error because there is just one value on the right side and multiple on the left.
+Although it seems fun, and somewhat useful, to have iterable integers, it is really not a great idea. The core reason for this is that it makes unpacking unpredictable. Unpacking is when you unpack an iterable and assign it to multiple variables. For example: `a, b = 3, 4` will assign 3 to a and 4 to b. So assigning `a, b = 7` should be an error because there is just one value on the right side and multiple on the left.
 
-Unpacking treats right hand size as iterable and tries to iterate on it; and now since Integers are iterable the right hand side, post iteration, yields 7 values which the left hand side has mere 2 variables; Hence it raises an exception `ValueError: too many values to unpack (expected 2)`.
+Unpacking treats right-hand size as iterable and tries to iterate on it; and now since Integers are iterable the right-hand side, post iteration yields 7 values which the left-hand side has mere 2 variables; Hence it raises an exception `ValueError: too many values to unpack (expected 2)`.
 
-Things would work just fine if we do `a, b = 2` as now the right-hand side, post iteration, has two values and left hand side has two variables. Thus two very similar statements result in two very different outcomes, making unpacking unpredictable.
+Things would work just fine if we do `a, b = 2` as now the right-hand side, post iteration, has two values, and left-hand side has two variables. Thus two very similar statements result in two very different outcomes, making unpacking unpredictable.
 
 ```python
 >>> a, b = 7
