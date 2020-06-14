@@ -167,7 +167,7 @@ Every time a `for ... in` is invoked on an integer object, it would check the `t
 
 > These changes are hosted on a remote branch [cpython@02-long-iter](https://github.com/arpitbbhayani/cpython/tree/02-long-iter) and Pull request to a forked CPython can be found [here](https://github.com/arpitbbhayani/cpython/pull/7).
 
-# Iteration in action
+# Integer iteration in action
 
 Once we build a new python binary with aforementioned changes, we can see iterable integers in actions. Now when we do `for x in 7`, instead of raising an exception, it actually iterates through values `[0, 7)`.
 
