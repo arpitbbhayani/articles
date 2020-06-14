@@ -41,7 +41,7 @@ So, in a gist, `__iter__` is something that makes any python object iterable; he
 
 # Iterable in CPython
 
-The most famous and widely used implementation of Python is [CPython](https://github.com/python/cpython/) where the core is implemented in pure C. Since we need to make changes to one of the core datatypes of Python, we will be modifying CPython, add `__iter__` function to Integer type, and rebuild the binary. But before jumping into the implementation, it is important to understand a few fundamentals.
+The most famous and widely used implementation of Python is [CPython](https://github.com/python/cpython/) where the core is implemented in pure C. Since we need to make changes to one of the core datatypes of Python, we will be modifying CPython, add `__iter__` function to an Integer type, and rebuild the binary. But before jumping into the implementation, it is important to understand a few fundamentals.
 
 ## The `PyTypeObject`
 
@@ -189,7 +189,7 @@ Although it seems fun, and somewhat useful, to have iterable integers, it is rea
 
 Unpacking treats right-hand size as iterable and tries to iterate on it; and now since Integers are iterable the right-hand side, post iteration yields 7 values which the left-hand side has mere 2 variables; Hence it raises an exception `ValueError: too many values to unpack (expected 2)`.
 
-Things would work just fine if we do `a, b = 2` as now the right-hand side, post iteration, has two values, and left-hand side has two variables. Thus two very similar statements result in two very different outcomes, making unpacking unpredictable.
+Things would work just fine if we do `a, b = 2` as now the right-hand side, post iteration, has two values, and the left-hand side has two variables. Thus two very similar statements result in two very different outcomes, making unpacking unpredictable.
 
 ```python
 >>> a, b = 7
