@@ -28,7 +28,7 @@ Similar to `list`, `range` is a python type that allows us to iterate on integer
 0 1 2 3 4 5 6
 ```
 
-Apart from `list` and `range` other [iterables](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are - `tuple`, `set`, `frozenset`, `str`, `bytes`, `bytearray`, `memoryview`, and `dict`.  In Python, we can also create custom iterables by making objects and types follow the Iterator Protocol.
+Apart from `list` and `range` other [iterables](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are - `tuple`, `set`, `frozenset`, `str`, `bytes`, `bytearray`, `memoryview`, and `dict`. Python also allows us to create custom iterables by making objects and types follow the [Iterator Protocol](https://docs.python.org/3/c-api/iter.html).
 
 # Iterators and Iterator Protocol
 
