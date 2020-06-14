@@ -180,7 +180,7 @@ Once we build a new python binary with aforementioned changes, we can see iterab
 [0, 1, 2, 3, 4, 5, 6]
 ```
 
-# Why is it a bad idea?
+# Why it is not a good idea
 
 Although it seems fun to have iterable integers but is not that great of an idea. The core reason for this is it makes unpacking unpredictable. Unpacking is when you unpack an iterable and assign it to multiple variables. For example: `a, b = 3, 4` will assign 3 to a and 4 to b. So assigning `a, b = 7` should be an error because there is just one value on the right side and multiple on the left.
 
