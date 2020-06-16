@@ -34,6 +34,11 @@
         ],
         [
             {
+                "name": "Zoho",
+                "logo": "https://user-images.githubusercontent.com/4745789/84798568-bfb16880-b018-11ea-8e59-69d88b5712a8.png",
+                "url": "https://www.zoho.com/"
+            },
+            {
                 "name": "Comcast",
                 "logo": "https://user-images.githubusercontent.com/4745789/84782398-989d6b80-b005-11ea-8c42-1668b80d5013.png",
                 "url": "https://www.comcast.com/"
