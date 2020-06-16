@@ -10,40 +10,44 @@
         }
     ],
     "organizations": [
-        {
-            "name": "Microsoft",
-            "logo": "https://user-images.githubusercontent.com/4745789/84784250-ba97ed80-b007-11ea-82de-3948bca18c7b.png",
-            "url": "https://www.microsoft.com"
-        },
-        {
-            "name": "Nutanix",
-            "logo": "https://user-images.githubusercontent.com/4745789/84783762-304f8980-b007-11ea-9cfc-1cbc88bfdd08.png",
-            "url": "https://www.nutanix.com/en"
-        },
-        {
-            "name": "Gojek",
-            "logo": "https://user-images.githubusercontent.com/4745789/84781623-b1595180-b004-11ea-8375-ac78beaf68e8.png",
-            "url": "https://www.gojek.com/"
-        },
-        {
-            "name": "Yandex",
-            "logo": "https://user-images.githubusercontent.com/4745789/84782112-465c4a80-b005-11ea-9d0f-e493851b037c.png",
-            "url": "https://www.yandex.com/"
-        },
-        {
-            "name": "Comcast",
-            "logo": "https://user-images.githubusercontent.com/4745789/84782398-989d6b80-b005-11ea-8c42-1668b80d5013.png",
-            "url": "https://www.comcast.com/"
-        },
-        {
-            "name": "Stony Brook University",
-            "logo": "https://user-images.githubusercontent.com/4745789/84782636-e6b26f00-b005-11ea-9621-5d501074b979.png",
-            "url": "https://www.stonybrook.edu/"
-        },
-        {
-            "name": "University of Illinois Urbana-Champaign",
-            "logo": "https://user-images.githubusercontent.com/4745789/84783124-82dc7600-b006-11ea-876e-ef56632309df.png",
-            "url": "https://illinois.edu/"
-        }
+        [
+            {
+                "name": "Microsoft",
+                "logo": "https://user-images.githubusercontent.com/4745789/84784250-ba97ed80-b007-11ea-82de-3948bca18c7b.png",
+                "url": "https://www.microsoft.com"
+            },
+            {
+                "name": "Nutanix",
+                "logo": "https://user-images.githubusercontent.com/4745789/84783762-304f8980-b007-11ea-9cfc-1cbc88bfdd08.png",
+                "url": "https://www.nutanix.com/en"
+            },
+            {
+                "name": "Gojek",
+                "logo": "https://user-images.githubusercontent.com/4745789/84781623-b1595180-b004-11ea-8375-ac78beaf68e8.png",
+                "url": "https://www.gojek.com/"
+            },
+            {
+                "name": "Yandex",
+                "logo": "https://user-images.githubusercontent.com/4745789/84782112-465c4a80-b005-11ea-9d0f-e493851b037c.png",
+                "url": "https://www.yandex.com/"
+            }
+        ],
+        [
+            {
+                "name": "Comcast",
+                "logo": "https://user-images.githubusercontent.com/4745789/84782398-989d6b80-b005-11ea-8c42-1668b80d5013.png",
+                "url": "https://www.comcast.com/"
+            },
+            {
+                "name": "Stony Brook University",
+                "logo": "https://user-images.githubusercontent.com/4745789/84782636-e6b26f00-b005-11ea-9621-5d501074b979.png",
+                "url": "https://www.stonybrook.edu/"
+            },
+            {
+                "name": "University of Illinois Urbana-Champaign",
+                "logo": "https://user-images.githubusercontent.com/4745789/84783124-82dc7600-b006-11ea-876e-ef56632309df.png",
+                "url": "https://illinois.edu/"
+            }
+        ]
     ]
 }
