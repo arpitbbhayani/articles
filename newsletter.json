@@ -1,4 +1,14 @@
 {
+    "testimonials": [
+        {
+            "name": "Ashwani",
+            "text": "Subscribing to Arpit’s newsletter has been the most productive thing I have done in this quarantine"
+        },
+        {
+            "name": "Satrap",
+            "text": "Your blog is awesome. I have read about some topics like Consistent Hashing and TF-IDF so many times but never really enjoyed reading them until I read the in your blog. They are so lucid and the code snippets are the unique things that stand out in your blog."
+        }
+    ],
     "organizations": [
         {
             "name": "Microsoft",
