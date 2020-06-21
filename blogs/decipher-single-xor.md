@@ -80,7 +80,7 @@ occurance_english = {
     'q': 0.0958366,    'r': 6.0397268,    's': 6.3827211,    't': 9.1357551,
     'u': 2.7822893,    'v': 0.9866131,    'w': 2.3807842,    'x': 0.1513210,
     'y': 1.9913847,    'z': 0.0746517
-
+}
 ```
 
 This Letter Frequency analysis is a rudimentary way for language identification in which we see if the current letter frequency distribution of a text matches the average letter frequency distribution of the English language. [ETAOIN SHRDLU](https://en.wikipedia.org/wiki/Etaoin_shrdlu) is the approximate order of frequency of the 12 most commonly used letters in the English language.
