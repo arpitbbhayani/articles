@@ -21,7 +21,7 @@ def single_byte_xor(text: bytes, key: int) -> bytes:
     return bytes([b ^ key for b in text])
 ```
 
-As an example, we can try to encrypt the plain text - `abcd` - with encryption key `69` and as per the algorithm we perform XOR bytewise on the given plain text. For character `a`, the byte i.e. ASCII value is `97` which when XORed with `69` results in `36` whose character equivalent is `$`, similarly for `b` the encrypted byte is `'`, for `c` it is `&` and for `d` it is `!`. Hence when `abcd` is encrypted using single-byte XOR cipher and encryption key `69`, the resultant ciphertext i.e. the encrypted message is `$'&!`.
+As an example, we can try to encrypt the plain text - `abcd` - with encryption key `69` and as per the algorithm, we perform XOR bytewise on the given plain text. For character `a`, the byte i.e. ASCII value is `97` which when XORed with `69` results in `36` whose character equivalent is `$`, similarly for `b` the encrypted byte is `'`, for `c` it is `&` and for `d` it is `!`. Hence when `abcd` is encrypted using single-byte XOR cipher and encryption key `69`, the resultant ciphertext i.e. the encrypted message is `$'&!`.
 
 ![https://user-images.githubusercontent.com/4745789/85209379-0b377f80-b355-11ea-8206-54ad558b4a6f.png](https://user-images.githubusercontent.com/4745789/85209379-0b377f80-b355-11ea-8206-54ad558b4a6f.png)
 
