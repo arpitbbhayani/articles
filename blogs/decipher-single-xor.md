@@ -29,7 +29,7 @@ As an example, we can try to encrypt plain text `abcd` with encryption key `69`.
 
 Decryption is the process of extracting the original message from the encrypted ciphertext given the encryption key. XOR has a [property](https://brainly.in/question/3038497) - if `a = b ^ c` then `b = a ^ c`, hence the decryption process is exactly the same as the encryption i.e. we iterate through the encrypted message bytewise and XOR each byte with the encryption key - the resultant will be the original message.
 
-Since encryption and decryption both have an exact same implementation, by passing the ciphertext to the function `single_byte_xor`, defined above, we get the original message back.
+Since encryption and decryption both have an exact same implementation - we pass the ciphertext to the function `single_byte_xor`, defined above, to get the original message back.
 
 ```python
 >>> single_byte_xor(b"$'&!", 69)
@@ -61,7 +61,7 @@ There are a very limited number of possible encryption keys - 256 to be exact - 
 
 ![https://user-images.githubusercontent.com/4745789/85209704-ad586700-b357-11ea-8b7c-4d4616af609a.png](https://user-images.githubusercontent.com/4745789/85209704-ad586700-b357-11ea-8b7c-4d4616af609a.png)
 
-In the illustration above, we see that the message decrypted through key `82` is, in fact, our original message, while the other retrieved plain texts looks scrambled and garbage. Doing this visually is very easy as we, as humans, are able to comprehend familiarity but how will a computer recognize this?
+In the illustration above, we see that the message decrypted through key `82` is, in fact, our original message, while the other retrieved plain texts look scrambled and garbage. Doing this visually is very easy as we, as humans, are able to comprehend familiarity but how will a computer recognize this?
 
 We need a way to quantify the closeness of a text to a genuine English sentence. Closer the decrypted text is to be a genuine English sentence, the closer it would be to our original plain text.
 
@@ -97,7 +97,7 @@ Fitting Quotient is the measure that suggests how well the two Letter Frequency 
 
 ![https://user-images.githubusercontent.com/4745789/85219888-f2ff4900-b3c4-11ea-933a-96e26580a3fb.png](https://user-images.githubusercontent.com/4745789/85219888-f2ff4900-b3c4-11ea-933a-96e26580a3fb.png)
 
-Python based implementation of the, above defined, Fitting Quotient is as shown below. The function first computes the relative frequency for each letter in `text` and then takes an average of the absolute difference between the two distibutions.
+Python-based implementation of the, above defined, Fitting Quotient is as shown below. The function first computes the relative frequency for each letter in `text` and then takes an average of the absolute difference between the two distibutions.
 
 ```python
 dist_english = list(occurance_english.values())
@@ -121,7 +121,7 @@ def compute_fitting_quotient(text: bytes) -> float:
 
 ## Deciphering
 
-Now that we have everything we require to directly get the plain text out of the given ciphertext we wrap it in a function that iterates over all possible encryption keys, decrypts the ciphertext, computes the fitting quotient and returns the one that minimizes the quotient as the original message. Python based implementation of this deciphering logic is as illustrated below.
+Now that we have everything we require to directly get the plain text out of the given ciphertext we wrap it in a function that iterates over all possible encryption keys, decrypts the ciphertext, computes the fitting quotient and returns the one that minimizes the quotient as the original message. Python-based implementation of this deciphering logic is as illustrated below.
 
 ```python
 def decipher(text: bytes) -> Tuple[bytes, int]:
