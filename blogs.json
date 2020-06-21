@@ -1,7 +1,7 @@
 [
   {
     "id": "decipher-single-xor",
-    "title": "Deciphering Single-byte XOR Ciphertexts",
+    "title": "Deciphering Single-byte XOR Ciphertext",
     "description": "Deciphering is the process of recovering the original message from an encrypted byte stream, usually, without having any knowledge of the encryption key. In this essay, we look at how we can use linguistics to recover the original message from a Single-byte XORed Ciphertext.",
     "image": "https://user-images.githubusercontent.com/4745789/85221047-52158b80-b3ce-11ea-9e35-c16868f49f91.png",
     "gif": "https://media.giphy.com/media/l3vRmVv5P01I5NDAA/giphy.gif",
