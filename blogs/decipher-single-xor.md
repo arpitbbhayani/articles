@@ -21,32 +21,32 @@ def single_byte_xor(text: bytes, key: int) -> bytes:
     return bytes([b ^ key for b in text])
 ```
 
-As an example, we can try to encrypt plain text `abcd` with encryption key `69`. We perform XOR bytewise on the given plain text. For character `a` the byte i.e. ASCII value is `97` which when XORed with `69` results in `36` whose character equaivalent is `$`, similarly for `b` the encrypted byte is `'`, for `c` it is `&` and for `d` it is `!`. Hence when `abcd` is encrypted using single-byte XOR cipher and excryption key `69`, the resultant ciphered text i.e. the encrypted message is `$'&!`.
+As an example, we can try to encrypt plain text `abcd` with encryption key `69`. We perform XOR bytewise on the given plain text. For character `a`, the byte i.e. ASCII value is `97` which when XORed with `69` results in `36` whose character equivalent is `$`, similarly for `b` the encrypted byte is `'`, for `c` it is `&` and for `d` it is `!`. Hence when `abcd` is encrypted using single-byte XOR cipher and encryption key `69`, the resultant ciphered text i.e. the encrypted message is `$'&!`.
 
 ![https://user-images.githubusercontent.com/4745789/85209379-0b377f80-b355-11ea-8206-54ad558b4a6f.png](https://user-images.githubusercontent.com/4745789/85209379-0b377f80-b355-11ea-8206-54ad558b4a6f.png)
 
 ## Decryption
 
-Decryption is the process of extracting original message from the encrypted ciphertext given the encryption key. XOR has a [property](https://brainly.in/question/3038497) - if `a = b ^ c` then `b = a ^ c`, hence the decryption process is exactly same as the encryption i.e. we iterate through the encrypted message bytewise and XOR each byte with the encryption key - the resultant will be the original message.
+Decryption is the process of extracting the original message from the encrypted ciphertext given the encryption key. XOR has a [property](https://brainly.in/question/3038497) - if `a = b ^ c` then `b = a ^ c`, hence the decryption process is exactly the same as the encryption i.e. we iterate through the encrypted message bytewise and XOR each byte with the encryption key - the resultant will be the original message.
 
-Since encrpytion and decryption both have exactly same implementation, by passing the ciphertext to the function `single_byte_xor`, defined above, we get the original message back.
+Since encryption and decryption both have an exact same implementation, by passing the ciphertext to the function `single_byte_xor`, defined above, we get the original message back.
 
 ```python
 >>> single_byte_xor(b"$'&!", 69)
 b'abcd'
 ```
 
-# Deciphering without encryption key
+# Deciphering without the encryption key
 
-Things become really interesting when we have to find the original message given the ciphertext with no knowledge of encryption key; although we do know the encryption algorithm.
+Things become really interesting when we have to find the original message given the ciphertext with no knowledge of the encryption key; although we do know the encryption algorithm.
 
 As a sample plain text, we take the last couple of German messages, sent across on their military radio network during World War II. These messages were intercepted and decrypted by the British troops. During wartime, the messages were encrypted using [Enigma Machine](https://en.wikipedia.org/wiki/Enigma_machine) and [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing) famously [cracked the Enigma Code](https://www.iwm.org.uk/history/how-alan-turing-cracked-the-enigma-code) (similar to encryption key) that was used to encipher German messages.
 
 ![https://user-images.githubusercontent.com/4745789/85209533-72096880-b356-11ea-8a84-97f2feb86b44.png](https://user-images.githubusercontent.com/4745789/85209533-72096880-b356-11ea-8a84-97f2feb86b44.png)
 
-> In this essay, instead of encrypting the message using Enigma Code, we are going to use Single-byte XOR cipher and try to recover the original message back without any knowledge of encryption key.
+> In this essay, instead of encrypting the message using the Enigma Code, we are going to use Single-byte XOR cipher and try to recover the original message back without any knowledge of the encryption key.
 
-Here, we assume that the original message, to be encrypted, is a genuine English lowercased sentence. The ciphettext that we would try to decipher can be obtained as
+Here, we assume that the original message, to be encrypted, is a genuine English lowercased sentence. The ciphertext that we would try to decipher can be obtained as
 
 ```python
 >>> key = 82
@@ -57,19 +57,19 @@ b'0 ;&;!:r& =="!r7<&7 76r1\'*:3$7<r3&rcfbbr=<rdr?3+r\x7fr4 =?r<=%r=<r3>>r 36;=r&
 
 ## Bruteforce
 
-There are a very limited number of possible encryption keys - 256 to be exact - we can, very conviniently, go for the Bruteforce approach and try to decrypt the ciphered text with every single one of it. So we start iterating over all keys in range `[0, 256)` and decrypt the ciphertext and see which one resembles the original message the most.
+There are a very limited number of possible encryption keys - 256 to be exact - we can, very conveniently, go for the Bruteforce approach and try to decrypt the ciphered text with every single one of it. So we start iterating over all keys in the range `[0, 256)` and decrypt the ciphertext and see which one resembles the original message the most.
 
 ![https://user-images.githubusercontent.com/4745789/85209704-ad586700-b357-11ea-8b7c-4d4616af609a.png](https://user-images.githubusercontent.com/4745789/85209704-ad586700-b357-11ea-8b7c-4d4616af609a.png)
 
 In the illustration above, we see that the message decrypted through key `82` is, in fact, our original message, while the other retrieved plain texts looks scrambled and garbage. Doing this visually is very easy as we, as humans, are able to comprehend familiarity but how will a computer recognize this?
 
-We need a way to quantify the closeness of a text to genuine english sentence. Closer the decrypted text is to being genuine English sentence, the closer it would be to our original plain text.
+We need a way to quantify the closeness of a text to a genuine English sentence. Closer the decrypted text is to be a genuine English sentence, the closer it would be to our original plain text.
 
 > *We can do this only because of our assumption - that the original plain text is a genuine English sentence.*
 
 ## ETAOIN SHRDLU
 
-Letter Frequency is the amount of times letters of an alphabet appear on average in written language. In English language the letter frequency of letter `a` is `8.239%`, for `b` it is `1.505%` which means out of 100 letters written in English in any random text the letter `a` will show up `8.239%` of times while `b` shows up `1.505%` of times. Letter frequency (in percentage) for other letters is as shown below.
+Letter Frequency is the number of times letters of an alphabet appear on average in written language. In the English language the letter frequency of letter `a` is `8.239%`, for `b` it is `1.505%` which means out of 100 letters written in English in any random text the letter `a` will show up `8.239%` of times while `b` shows up `1.505%` of times. Letter frequency (in percentage) for other letters is as shown below.
 
 ```python
 occurance_english = {
@@ -83,21 +83,21 @@ occurance_english = {
 
 ```
 
-This Letter Frequency analysis is a rudimentary way for language identification where we see if the current letter frequency distribution of a text matches the average letter frequency distribution of English language. [ETAOIN SHRDLU](https://en.wikipedia.org/wiki/Etaoin_shrdlu) is the approximate order of frequency of the 12 most commonly used letters in the English language.
+This Letter Frequency analysis is a rudimentary way for language identification where we see if the current letter frequency distribution of a text matches the average letter frequency distribution of the English language. [ETAOIN SHRDLU](https://en.wikipedia.org/wiki/Etaoin_shrdlu) is the approximate order of frequency of the 12 most commonly used letters in the English language.
 
-Following chart shows Letter Frequency analysis for decrypted plain texts with encryption keys 79 to 84 and we could clearly see how well one of these distribution fits the distribution of English Language.
+The following chart shows Letter Frequency analysis for decrypted plain texts with encryption keys 79 to 84 and we could clearly see how well one of these distribution fits the distribution of the English Language.
 
 ![https://user-images.githubusercontent.com/4745789/85209804-5a32e400-b358-11ea-8e1b-2b6bb3e22868.png](https://user-images.githubusercontent.com/4745789/85209804-5a32e400-b358-11ea-8e1b-2b6bb3e22868.png)
 
-In the illustration above, we could clearly see how well the Letter Frequency distribution for encryption key `82` fits the distribution of English language. Now we need to quantify this measure, we call if Fitting Quotient.
+In the illustration above, we could clearly see how well the Letter Frequency distribution for encryption key `82` fits the distribution of the English language. Now we need to quantify this measure, we call if Fitting Quotient.
 
 ## Fitting Quotient
 
-Fitting Quotient is the measure that suggests how well the two Letter Frequency Distributions match and we use a very simple heuristic to compute and quantify this. We define the Fitting Quotient as the average of absolute difference between the frequencies (in percentage) of letters in `text` and the corresponding letter in the English Language. This way, smaller the quotient, closer are the two distributions.
+Fitting Quotient is the measure that suggests how well the two Letter Frequency Distributions match and we use a very simple heuristic to compute and quantify this. We define the Fitting Quotient as the average of the absolute difference between the frequencies (in percentage) of letters in `text` and the corresponding letter in the English Language. This way, smaller the quotient, the closer are the two distributions.
 
 ![https://user-images.githubusercontent.com/4745789/85219888-f2ff4900-b3c4-11ea-933a-96e26580a3fb.png](https://user-images.githubusercontent.com/4745789/85219888-f2ff4900-b3c4-11ea-933a-96e26580a3fb.png)
 
-Python based implementation of the, above defined, Fitting Quotient is as shown below. The function first computes the relative frequency for each letter in `text` and then takes an average of absolute difference between the two distibutions.
+Python based implementation of the, above defined, Fitting Quotient is as shown below. The function first computes the relative frequency for each letter in `text` and then takes an average of the absolute difference between the two distibutions.
 
 ```python
 dist_english = list(occurance_english.values())
@@ -107,7 +107,7 @@ def compute_fitting_quotient(text: bytes) -> float:
     quotient of the letter frequency distribution for `text` with the
     letter frequency distribution of the English language.
 
-    The function returns the average of absolute difference between the
+    The function returns the average of the absolute difference between the
     frequencies (in percentage) of letters in `text` and the corresponding
     letter in the English Language.
     """
@@ -145,7 +145,7 @@ def decipher(text: bytes) -> Tuple[bytes, int]:
     return original_text, encryption_key
 ```
 
-We run this above function to determine how it fares with 100 random English sentences encrypted with random encryption keys, and found that this approach worked every single time and emitted the true original text message and encryption key. The entire source code is available in a Jupyter notebook at [arpitbhayani.me/decipher-single-byte-xor](https://github.com/arpitbbhayani/decipher-single-byte-xor/blob/master/decipher-single-byte-xor.ipynb).
+We run this above function to determine how it fares with 100 random English sentences encrypted with random encryption keys and found that this approach worked every single time and emitted the true original text message and encryption key. The entire source code is available in a Jupyter notebook at [arpitbhayani.me/decipher-single-byte-xor](https://github.com/arpitbbhayani/decipher-single-byte-xor/blob/master/decipher-single-byte-xor.ipynb).
 
 # References
 
