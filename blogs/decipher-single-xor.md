@@ -6,11 +6,11 @@ In this essay, we will work with a very simple cipher (encryption algorithm) tha
 
 # Single-byte XOR cipher
 
-The Single-byte XOR cipher algorithm works with an encryption key of size 1 byte - which means the encryption key could be one of the possible 256 values of a byte. Now we take a detailed look on how the encryption and decryption processes look like for this cipher.
+The Single-byte XOR cipher algorithm works with an encryption key of size 1 byte - which means the encryption key could be one of the possible 256 values of a byte. Now we take a detailed look at how the encryption and decryption processes look like for this cipher.
 
 ## Encryption
 
-As part of the encryption process, the original message is iterated bytewise and every single byte `b` is XORed with the encryption key `key` and the resultant stream of bytes is again translated back as characters and sent to other party. These encrypted bytes need not be among the usual printable characters and should ideally be interpreted as a stream of bytes. Following is the python-based implementation of the encryption process.
+As part of the encryption process, the original message is iterated bytewise and every single byte `b` is XORed with the encryption key `key` and the resultant stream of bytes is again translated back as characters and sent to the other party. These encrypted bytes need not be among the usual printable characters and should ideally be interpreted as a stream of bytes. Following is the python-based implementation of the encryption process.
 
 ```python
 def single_byte_xor(text: bytes, key: int) -> bytes:
@@ -93,11 +93,11 @@ In the illustration above, we could clearly see how well the Letter Frequency di
 
 ## Fitting Quotient
 
-Fitting Quotient is the measure that suggests how well the two Letter Frequency Distributions match. Heuristically, we define the Fitting Quotient as the average of the absolute difference between the frequencies (in percentage) of letters in `text` and the corresponding letter in the English Language. Thus having a smaller value of Fitting Quotient implies the text being closer to the English Language.
+Fitting Quotient is the measure that suggests how well the two Letter Frequency Distributions match. Heuristically, we define the Fitting Quotient as the average of the absolute difference between the frequencies (in percentage) of letters in `text` and the corresponding letter in the English Language. Thus having a smaller value of Fitting Quotient implies the text is closer to the English Language.
 
 ![https://user-images.githubusercontent.com/4745789/85219888-f2ff4900-b3c4-11ea-933a-96e26580a3fb.png](https://user-images.githubusercontent.com/4745789/85219888-f2ff4900-b3c4-11ea-933a-96e26580a3fb.png)
 
-Python-based implementation of the, above defined, Fitting Quotient is as shown below. The function first computes the relative frequency for each letter in `text` and then takes an average of the absolute difference between the two distibutions.
+Python-based implementation of the, above defined, Fitting Quotient is as shown below. The function first computes the relative frequency for each letter in `text` and then takes an average of the absolute difference between the two distributions.
 
 ```python
 dist_english = list(occurance_english.values())
