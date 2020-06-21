@@ -1,4 +1,4 @@
-Encryption is a process of encoding messages such that it can only be read and understood by intended parties. The process of extracting the original message from an encrypted one is called Decryption. Encryption usually scrambles the original message using a key, called encryption key, that the involved parties agree on.
+Encryption is a process of encoding messages such that it can only be read and understood by the intended parties. The process of extracting the original message from an encrypted one is called Decryption. Encryption usually scrambles the original message using a key, called encryption key, that the involved parties agree on.
 
 The strength of an encryption algorithm is determined by how hard it would be to extract the original message without knowing the encryption key. Usually, this depends on the number of bits in the key - bigger the key, the longer it takes to decrypt the enciphered data.
 
@@ -6,11 +6,11 @@ In this essay, we will work with a very simple cipher (encryption algorithm) tha
 
 # Single-byte XOR cipher
 
-The Single-byte XOR cipher algorithm works with an encryption key of size 1 byte - which means the encryption key could be one of the possible 256 values of a byte. Now we see how the encryption and decryption processes look like for this cipher.
+The Single-byte XOR cipher algorithm works with an encryption key of size 1 byte - which means the encryption key could be one of the possible 256 values of a byte. Now we take a detailed look on how the encryption and decryption processes look like for this cipher.
 
 ## Encryption
 
-As part of the encryption process, the original message is iterated bytewise and every single byte `b` is XORed with the encryption key `key` and the resultant stream of bytes is again translated as characters. These encrypted bytes need not be among the usual printable characters and should ideally be interpreted as a stream of bytes. Following is the python-based implementation of the encryption process.
+As part of the encryption process, the original message is iterated bytewise and every single byte `b` is XORed with the encryption key `key` and the resultant stream of bytes is again translated back as characters and sent to other party. These encrypted bytes need not be among the usual printable characters and should ideally be interpreted as a stream of bytes. Following is the python-based implementation of the encryption process.
 
 ```python
 def single_byte_xor(text: bytes, key: int) -> bytes:
@@ -21,7 +21,7 @@ def single_byte_xor(text: bytes, key: int) -> bytes:
     return bytes([b ^ key for b in text])
 ```
 
-As an example, we can try to encrypt plain text `abcd` with encryption key `69`. We perform XOR bytewise on the given plain text. For character `a`, the byte i.e. ASCII value is `97` which when XORed with `69` results in `36` whose character equivalent is `$`, similarly for `b` the encrypted byte is `'`, for `c` it is `&` and for `d` it is `!`. Hence when `abcd` is encrypted using single-byte XOR cipher and encryption key `69`, the resultant ciphered text i.e. the encrypted message is `$'&!`.
+As an example, we can try to encrypt the plain text - `abcd` - with encryption key `69` and as per the algorithm we perform XOR bytewise on the given plain text. For character `a`, the byte i.e. ASCII value is `97` which when XORed with `69` results in `36` whose character equivalent is `$`, similarly for `b` the encrypted byte is `'`, for `c` it is `&` and for `d` it is `!`. Hence when `abcd` is encrypted using single-byte XOR cipher and encryption key `69`, the resultant ciphertext i.e. the encrypted message is `$'&!`.
 
 ![https://user-images.githubusercontent.com/4745789/85209379-0b377f80-b355-11ea-8206-54ad558b4a6f.png](https://user-images.githubusercontent.com/4745789/85209379-0b377f80-b355-11ea-8206-54ad558b4a6f.png)
 
@@ -38,9 +38,9 @@ b'abcd'
 
 # Deciphering without the encryption key
 
-Things become really interesting when we have to find the original message given the ciphertext with no knowledge of the encryption key; although we do know the encryption algorithm.
+Things become really interesting when we have to recover the original message given the ciphertext and having no knowledge of the encryption key; although we do know the encryption algorithm.
 
-As a sample plain text, we take the last couple of German messages, sent across on their military radio network during World War II. These messages were intercepted and decrypted by the British troops. During wartime, the messages were encrypted using [Enigma Machine](https://en.wikipedia.org/wiki/Enigma_machine) and [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing) famously [cracked the Enigma Code](https://www.iwm.org.uk/history/how-alan-turing-cracked-the-enigma-code) (similar to encryption key) that was used to encipher German messages.
+As a sample plain text, we take the last couple of messages, sent across on their German military radio network during World War II. These messages were intercepted and decrypted by the British troops. During wartime, the messages were encrypted using [Enigma Machine](https://en.wikipedia.org/wiki/Enigma_machine) and [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing) famously [cracked the Enigma Code](https://www.iwm.org.uk/history/how-alan-turing-cracked-the-enigma-code) (similar to encryption key) that was used to encipher German messages.
 
 ![https://user-images.githubusercontent.com/4745789/85209533-72096880-b356-11ea-8a84-97f2feb86b44.png](https://user-images.githubusercontent.com/4745789/85209533-72096880-b356-11ea-8a84-97f2feb86b44.png)
 
@@ -61,15 +61,15 @@ There are a very limited number of possible encryption keys - 256 to be exact - 
 
 ![https://user-images.githubusercontent.com/4745789/85209704-ad586700-b357-11ea-8b7c-4d4616af609a.png](https://user-images.githubusercontent.com/4745789/85209704-ad586700-b357-11ea-8b7c-4d4616af609a.png)
 
-In the illustration above, we see that the message decrypted through key `82` is, in fact, our original message, while the other retrieved plain texts look scrambled and garbage. Doing this visually is very easy as we, as humans, are able to comprehend familiarity but how will a computer recognize this?
+In the illustration above, we see that the message decrypted through key `82` is, in fact, our original message, while the other retrieved plain texts look scrambled and garbage. Doing this visually is very easy; we, as humans, are able to comprehend familiarity but how will a computer recognize this?
 
 We need a way to quantify the closeness of a text to a genuine English sentence. Closer the decrypted text is to be a genuine English sentence, the closer it would be to our original plain text.
 
-> *We can do this only because of our assumption - that the original plain text is a genuine English sentence.*
+> We can do this only because of our assumption - that the original plain text is a genuine English sentence.
 
 ## ETAOIN SHRDLU
 
-Letter Frequency is the number of times letters of an alphabet appear on average in written language. In the English language the letter frequency of letter `a` is `8.239%`, for `b` it is `1.505%` which means out of 100 letters written in English in any random text the letter `a` will show up `8.239%` of times while `b` shows up `1.505%` of times. Letter frequency (in percentage) for other letters is as shown below.
+Letter Frequency is the number of times letters of an alphabet appear on average in written language. In the English language the letter frequency of letter `a` is `8.239%`, for `b` it is `1.505%` which means out of 100 letters written in English, the letter `a`, on an average, will show up `8.239%` of times while `b` shows up `1.505%` of times. Letter frequency (in percentage) for other letters is as shown below.
 
 ```python
 occurance_english = {
@@ -83,17 +83,17 @@ occurance_english = {
 
 ```
 
-This Letter Frequency analysis is a rudimentary way for language identification where we see if the current letter frequency distribution of a text matches the average letter frequency distribution of the English language. [ETAOIN SHRDLU](https://en.wikipedia.org/wiki/Etaoin_shrdlu) is the approximate order of frequency of the 12 most commonly used letters in the English language.
+This Letter Frequency analysis is a rudimentary way for language identification in which we see if the current letter frequency distribution of a text matches the average letter frequency distribution of the English language. [ETAOIN SHRDLU](https://en.wikipedia.org/wiki/Etaoin_shrdlu) is the approximate order of frequency of the 12 most commonly used letters in the English language.
 
-The following chart shows Letter Frequency analysis for decrypted plain texts with encryption keys 79 to 84 and we could clearly see how well one of these distribution fits the distribution of the English Language.
+The following chart shows Letter Frequency analysis for decrypted plain texts with encryption keys from `79` to `84`.
 
 ![https://user-images.githubusercontent.com/4745789/85209804-5a32e400-b358-11ea-8e1b-2b6bb3e22868.png](https://user-images.githubusercontent.com/4745789/85209804-5a32e400-b358-11ea-8e1b-2b6bb3e22868.png)
 
-In the illustration above, we could clearly see how well the Letter Frequency distribution for encryption key `82` fits the distribution of the English language. Now we need to quantify this measure, we call if Fitting Quotient.
+In the illustration above, we could clearly see how well the Letter Frequency distribution for encryption key `82` fits the distribution of the English language. Now that our hypothesis holds true, we need a way to quantify this measure and we call if the Fitting Quotient.
 
 ## Fitting Quotient
 
-Fitting Quotient is the measure that suggests how well the two Letter Frequency Distributions match and we use a very simple heuristic to compute and quantify this. We define the Fitting Quotient as the average of the absolute difference between the frequencies (in percentage) of letters in `text` and the corresponding letter in the English Language. This way, smaller the quotient, the closer are the two distributions.
+Fitting Quotient is the measure that suggests how well the two Letter Frequency Distributions match. Heuristically, we define the Fitting Quotient as the average of the absolute difference between the frequencies (in percentage) of letters in `text` and the corresponding letter in the English Language. Thus having a smaller value of Fitting Quotient implies the text being closer to the English Language.
 
 ![https://user-images.githubusercontent.com/4745789/85219888-f2ff4900-b3c4-11ea-933a-96e26580a3fb.png](https://user-images.githubusercontent.com/4745789/85219888-f2ff4900-b3c4-11ea-933a-96e26580a3fb.png)
 
@@ -121,7 +121,7 @@ def compute_fitting_quotient(text: bytes) -> float:
 
 ## Deciphering
 
-Now that we have everything we require to directly get the plain text out of the given ciphertext we wrap it in a function that iterates over all possible encryption keys, decrypts the ciphertext, computes the fitting quotient and returns the one that minimizes the quotient as the original message. Python-based implementation of this deciphering logic is as illustrated below.
+Now that we have everything we require to directly get the plain text out of the given ciphertext we wrap it in a function that iterates over all possible encryption keys in the range `[0, 256)`, decrypts the ciphertext, computes the fitting quotient for the plain text and returns the one that minimizes the quotient as the original message. Python-based implementation of this deciphering logic is as illustrated below.
 
 ```python
 def decipher(text: bytes) -> Tuple[bytes, int]:
@@ -145,7 +145,7 @@ def decipher(text: bytes) -> Tuple[bytes, int]:
     return original_text, encryption_key
 ```
 
-We run this above function to determine how it fares with 100 random English sentences encrypted with random encryption keys and found that this approach worked every single time and emitted the true original text message and encryption key. The entire source code is available in a Jupyter notebook at [arpitbhayani.me/decipher-single-byte-xor](https://github.com/arpitbbhayani/decipher-single-byte-xor/blob/master/decipher-single-byte-xor.ipynb).
+This approach was also tested against 100 random English sentences with random Encryption keys and it was found that this deciphering technique fared well for all the samples. The approach would fail if the sentence is very short or contains a lot of symbols. The source code for this entire deciphering process is available in a Jupyter notebook at [arpitbhayani.me/decipher-single-byte-xor](https://github.com/arpitbbhayani/decipher-single-byte-xor/blob/master/decipher-single-byte-xor.ipynb).
 
 # References
 
