@@ -1,5 +1,27 @@
 [
   {
+    "id": "decipher-single-xor",
+    "title": "Deciphering Single-byte XOR Ciphertexts",
+    "description": "Deciphering is the process of recovering the original message from an encrypted byte stream, usually, without having any knowledge of the encryption key. In this essay, we look at how we can use linguistics to recover the original message from a Single-byte XORed Ciphertext.",
+    "image": "https://user-images.githubusercontent.com/4745789/85221047-52158b80-b3ce-11ea-9e35-c16868f49f91.png",
+    "gif": "https://media.giphy.com/media/l3vRmVv5P01I5NDAA/giphy.gif",
+    "categories": [
+      "cryptography"
+    ],
+    "tags": [
+      "python",
+      "cryptography",
+      "cryptopals"
+    ],
+    "published_at": "2020-06-21",
+    "similar": [
+      "idf",
+      "fast-and-efficient-pagination-in-mongodb",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "super-long-integers"
+    ]
+  },
+  {
     "id": "python-iterable-integers",
     "title": "Making Python Integers Iterable",
     "description": "In Python, Integers are not iterables but we can make them iterable by implementing __iter__ function. In this essay, we change Python's source code and implement iter function for integers.",
@@ -14,7 +36,7 @@
       "python-caches-integers",
       "i-changed-my-python",
       "fsm",
-      "python-prompts"
+      "super-long-integers"
     ]
   },
   {
@@ -32,7 +54,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "copy-on-write",
       "rule-30",
-      "super-long-integers"
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -85,7 +107,7 @@
     "similar": [
       "i-changed-my-python",
       "python-iterable-integers",
-      "python-prompts",
+      "super-long-integers",
       "fsm"
     ]
   },
@@ -158,8 +180,8 @@
     "similar": [
       "python-prompts",
       "python-caches-integers",
-      "python-iterable-integers",
-      "i-changed-my-python"
+      "i-changed-my-python",
+      "python-iterable-integers"
     ]
   },
   {
@@ -177,7 +199,7 @@
       "idf",
       "better-programmer",
       "isolation-forest",
-      "sliding-window-ratelimiter"
+      "decipher-single-xor"
     ]
   },
   {
@@ -221,10 +243,10 @@
     ],
     "published_at": "2020-03-06",
     "similar": [
+      "decipher-single-xor",
       "bayesian-average",
       "mongodb-cursor-skip-is-slow",
-      "isolation-forest",
-      "better-programmer"
+      "isolation-forest"
     ]
   },
   {
@@ -330,7 +352,7 @@
       "python-iterable-integers",
       "i-changed-my-python",
       "fsm",
-      "idf"
+      "python-caches-integers"
     ]
   },
   {
@@ -431,8 +453,8 @@
     "published_at": "2020-01-10",
     "similar": [
       "i-changed-my-python",
-      "efficient-way-to-stop-an-iterating-loop",
       "python-caches-integers",
+      "efficient-way-to-stop-an-iterating-loop",
       "rule-30"
     ]
   },
@@ -574,7 +596,7 @@
       "idf",
       "isolation-forest",
       "inheritance-c",
-      "copy-on-write"
+      "decipher-single-xor"
     ]
   },
   {
