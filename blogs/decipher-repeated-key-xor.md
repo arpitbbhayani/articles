@@ -149,11 +149,11 @@ This minimum does not only hold true for chunk length equal to the length of the
 
 ![https://user-images.githubusercontent.com/4745789/86473953-7cb4fc00-bd5f-11ea-83af-f22413e1ecf9.png](https://user-images.githubusercontent.com/4745789/86473953-7cb4fc00-bd5f-11ea-83af-f22413e1ecf9.png)
 
-The above distribution shows a lot of sharp drops (minima) for chunk lengths that are multiples of `7` - the length of the encryption key used. We do not see a clear minimum at `7` but we do see it at a multiple of `7`. This happens when the last chunk is not of the same length as other chunks; which affects the average Hamming Score.
+The above distribution shows a lot of sharp drops of Average Hamming Score for chunk lengths that are multiples of `7` - the length of the encryption key used.
 
 ## Computing Encryption Key Length
 
-Now that we understand the theory and working of the process of finding the length of the Encryption Key, we can compile the logic into a function that accepts `text` and bytes and returns the length of the Encryption Key.
+Now that we understand the theory and concept behind the process of finding the length of the Encryption Key, we can compile the logic into a function that accepts `text` and bytes and returns the length of the Encryption Key as illustrated below
 
 ```python
 def compute_key_length(text: bytes) -> int:
@@ -165,7 +165,7 @@ def compute_key_length(text: bytes) -> int:
 		# We check for chunk lengths from 2 till the half the length of the
 		# plain text. Here we assume that the Ecryption Key had to be
     # repeated atleast twice to match the length of the plaintext
-    for klen in range(2, len(text)//2 + 1):
+    for klen in range(2, math.ceil(len(text)/2)):
 
 				# We create chunks such that length of each chunk if `klen`
         chunks = [
@@ -201,13 +201,13 @@ def compute_key_length(text: bytes) -> int:
 
 ## Bruteforce to recover the original text
 
-The above-defined function will return the length of the Encryption Key used to encrypt the plain text. Once we know the length, we can apply Bruteforce with all possible keys of that length and try to decipher the ciphertext. The approach of deciphering will be very similar to how it was done to [Decipher single-byte XOR Ciphertext](https://arpitbhayani.me/blogs/decipher-single-xor) i.e. by using Letter Frequency Distribution and Fitting Quotient to find which key leads to the plain text that is closest to a genuine English sentence.
+The function `compute_key_length` returns the length of the Encryption Key used to encrypt the plain text. Once we know the length, we can apply Bruteforce with all possible keys of that length and try to decipher the ciphertext. The approach of deciphering will be very similar to how it was done to [Decipher single-byte XOR Ciphertext](https://arpitbhayani.me/blogs/decipher-single-xor) i.e. by using [Letter Frequency Distribution](https://en.wikipedia.org/wiki/Letter_frequency) and Fitting Quotient to find which key leads to the plain text that is closest to a genuine English sentence.
 
-This approach was also tested against 100 random English sentences with random Encryption keys of varying lengths and it was found that this deciphering technique worked with an accuracy of 99%. Even if the approach is not fool-proof, it does pretty well in eliminating keys that would definitely not result in a correct plain text.
+A test was run on 100 random English sentences with random Encryption keys of varying lengths and it was found that this deciphering technique worked with an accuracy of 99%. Even though the approach is not fool-proof, it does pretty well in eliminating keys that would definitely not result in a correct plain text.
 
 # Conclusion
 
-Deciphering a repeated-key XOR Cipher could also be done using [Kasiski examination](https://en.wikipedia.org/wiki/Kasiski_examination); the method we saw in this essay was Friedman Test using Hamming Distance and Frequency Analysis. The main purpose of this essay was to showcase how seemingly unrelated fields work together to solve a seemingly unrelated problem efficiently.
+Deciphering a repeated-key XOR Cipher could also be done using [Kasiski examination](https://en.wikipedia.org/wiki/Kasiski_examination); the method we saw in this essay was Friedman Test using Hamming Distance and Frequency Analysis. The main purpose of this essay was to showcase how seemingly unrelated concepts work together to solve an interesting problem efficiently.
 
 # References
 
