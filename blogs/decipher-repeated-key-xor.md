@@ -112,7 +112,7 @@ encryption: c[i] = p[i] XOR k[i]   for i in [0, len(c))
 decryption: p[i] = c[i] XOR k[i]   for i in [0, len(p))
 ```
 
-Above rules and definitions imply that if we XOR two bytes of the ciphertext, encrypted (XORed) using the same byte of the encryption key, we are effectively XORing the corresponding bytes of the plain text. If `k'` is the byte of the encryption key `k` used to encrypt (XOR) the bytes `p[i]` and `p[j]` of the plain text to generate `c[i]` and `c[j]` of the ciphertext, we could derive the following relation
+Above definitions, along with the rules of XOR operations, imply that if we XOR two bytes of the ciphertext, encrypted (XORed) using the same byte of the encryption key, we are effectively XORing the corresponding bytes of the plain text. If `k'` is the byte of the encryption key `k` which was used to encrypt (XOR) the bytes `p[i]` and `p[j]` of the plain text to generate `c[i]` and `c[j]` of the ciphertext, we could derive the following relation
 
 ```
 # k' is the common byte of the key i.e. k' = k[i] = k[j]
