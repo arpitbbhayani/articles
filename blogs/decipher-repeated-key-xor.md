@@ -127,17 +127,17 @@ The above relation, `c[i] XOR c[j]` equal to `p[i] XOR p[j]`, holds true only be
 
 ### Chunking of ciphertext
 
-Chunking is the process where the ciphertext is split into smaller chunks (segments) of almost equal lengths. Chunking for the ciphertext `W;BV;UE*UE=J` for chunk length `4` would create 3 chunks `W;BV`, `;UE*` and `UE=J`. The illustration below shows chunks that would be formed for `W;BV;UE*UE=J` with chunks lengths from 2 to 6.
+Chunking is the process where the ciphertext is split into smaller chunks (segments) of almost equal lengths. For example, chunking the ciphertext `W;BV;UE*UE=J` for chunk length `4` would create `3` chunks `W;BV`, `;UE*` and `UE=J`. The illustration below shows the chunks that would be formed for `W;BV;UE*UE=J` with chunks lengths varying from 2 to 6.
 
 ![https://user-images.githubusercontent.com/4745789/86434084-24a7d680-bd1a-11ea-8346-aad7b42bab1c.png](https://user-images.githubusercontent.com/4745789/86434084-24a7d680-bd1a-11ea-8346-aad7b42bab1c.png)
 
 ### XOR of the chunks
 
-Something very interesting happens when we compute the Average Hamming Score for all possible chunk lengths. If we consider the ciphertext `b'W;BV;UE*UE=J` and we chunk it with lengths varying from 2 to 6, we get the following distribution for the Average Hamming Score.
+Something very interesting happens when we compute the Average Hamming Score for all possible chunk lengths. If we consider the ciphertext `b'W;BV;UE*UE=J` and we chunk it with lengths varying from 2 to 6, we get the following distribution for the Average Hamming Score for each of the chunk length.
 
 ![https://user-images.githubusercontent.com/4745789/86473899-6149f100-bd5f-11ea-908a-d4adabff1cf0.png](https://user-images.githubusercontent.com/4745789/86473899-6149f100-bd5f-11ea-908a-d4adabff1cf0.png)
 
-From the distribution above it is evident that the score reaches a minimum at chunk length equalling 3, which was in fact the length of the Encryption Key used on the plain text. Is this mere coincidence or does this hold some real value here?
+From the distribution above it is evident that the score was minimum at chunk length equalling `3`, which actually was the length of the Encryption Key used on the plain text. Is this mere coincidence or are we onto something?
 
 When chunk length is equal to the length of the encryption key, the XOR operation on any two chunks will reduce the expression to XOR of the corresponding plain texts (seen above) - because there will be a perfect alignment of bytes from ciphertext and bytes from the keys i.e every `i`th byte from both the chunks would have been XORed with `i`th byte from the encryption key.
 
