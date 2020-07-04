@@ -139,11 +139,11 @@ Something very interesting happens when we compute the Average Hamming Score for
 
 From the distribution above it is evident that the score was minimum at chunk length equalling `3`, which actually was the length of the Encryption Key used on the plain text. Is this mere coincidence or are we onto something?
 
-When chunk length is equal to the length of the encryption key, the XOR operation on any two chunks will reduce the expression to XOR of the corresponding plain texts (seen above) - because there will be a perfect alignment of bytes from ciphertext and bytes from the keys i.e every `i`th byte from both the chunks would have been XORed with `i`th byte from the encryption key.
+When chunk length is equal to the length of the encryption key, the XOR operation on any two chunks will reduce the expression to XOR of the corresponding plain texts (as seen above), because there will be a perfect alignment of bytes from ciphertext and bytes from the keys i.e every `i`th byte from both the chunks would have been XORed with `i`th byte from the encryption key.
 
-We have established that for chunk length equal to the length of encryption key `c[i] XOR c[j]` is effectively `p[i] XOR p[j]`. Since the plain text is a lowercased English sentence the XOR happens between bytes residing closer to each other and hence has a lower Average Hamming Score between them; because of which we see a minimum at this particular chunk length. The Hamming Score will be much higher for lengths other than the length of Encryption Key because during XOR the expression stays irreducible and hence hamming distance pans to the entire range of bytes `[0, 256)`.
+We have established that for chunk length equal to the length of encryption key `c[i] XOR c[j]` is effectively `p[i] XOR p[j]`. Since we have assumed that the plain text is a lowercased English sentence the XOR is heppening between bytes residing numerically closer to each other and hence has a lower Average Hamming Score between them; because of which we see a minimum at this particular chunk length. The Hamming Score will be much higher for lengths other than the length of Encryption Key because during XOR operation the expression stays irreducible and hence hamming distance is computed panning the entire range of bytes `[0, 256)`.
 
-### Another interesting result
+### Something far more interesting
 
 This minimum does not only hold true for chunk length equal to the length of the encryption key, but it also holds true when the length of the chunk is a multiple of the length of the encryption key. This happens because for repeated keys when the chunk length is a multiple of Encryption Key there will be a perfect alignment of bytes such that every `i`th byte of chunks is XORed with `i`th byte of the encryption key; which sets up the relation `c[i] XOR c[j]` equalling `p[i] XOR p[j]`.
 
