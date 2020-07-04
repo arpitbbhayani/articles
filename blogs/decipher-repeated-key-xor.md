@@ -62,11 +62,11 @@ Hamming distance between two bytes is the number of positions at which the corre
 
 ```python
 def hamming_distance_bytes(text1: bytes, text2: bytes) -> int:
-		"""Given two stream of bytes, the function returns the Hamming Distance
-		between the two.
-		Note: If the two texts have unequal lengths, the hamming distance is
+    """Given two stream of bytes, the function returns the Hamming Distance
+    between the two.
+    Note: If the two texts have unequal lengths, the hamming distance is
     computed only till one of the text exhausts, other bytes are not iterated.
-		"""
+    """
     dist = 0
     for byte1, byte2 in zip(text1, text2):
         dist += bin(byte1 ^ byte2).count('1')
@@ -162,19 +162,19 @@ def compute_key_length(text: bytes) -> int:
     """
     min_score, key_len = None, None
 
-		# We check for chunk lengths from 2 till the half the length of the
-		# plain text. Here we assume that the Ecryption Key had to be
+    # We check for chunk lengths from 2 till the half the length of the
+    # plain text. Here we assume that the Ecryption Key had to be
     # repeated atleast twice to match the length of the plaintext
     for klen in range(2, math.ceil(len(text)/2)):
 
-				# We create chunks such that length of each chunk if `klen`
+        # We create chunks such that length of each chunk if `klen`
         chunks = [
             text[i: i+klen]
             for i in range(0, len(text), klen)
         ]
 
-				# To gain better accuracy we get rid of the last chunk that had
-				# length smaller than klen/2
+        # To gain better accuracy we get rid of the last chunk that had
+        # length smaller than klen/2
         if len(chunks) >= 2 and len(chunks[-1]) <= len(chunks[-2])/2:
             chunks.pop()
         
