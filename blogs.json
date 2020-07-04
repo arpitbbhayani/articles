@@ -1,7 +1,7 @@
 [
   {
     "id": "decipher-repeated-key-xor.md",
-    "title": "Deciphering Repeated-byte XOR Ciphertext using Hamming Distance",
+    "title": "Deciphering Repeated-key XOR Ciphertext",
     "description": "Deciphering is the process of recovering the original message from an encrypted byte stream, usually, without having any knowledge of the encryption key. In this essay, we look at how we can use linguistics to recover the original message from a Single-byte XORed Ciphertext.",
     "image": "https://user-images.githubusercontent.com/4745789/85223233-0ddeb700-b3df-11ea-9bb8-5bd1cf0cabcb.png",
     "gif": "https://media.giphy.com/media/l3vRmVv5P01I5NDAA/giphy.gif",
