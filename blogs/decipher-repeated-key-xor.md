@@ -54,7 +54,7 @@ Things become really interesting when, given the encryption algorithm, we have t
 
 ## Finding the length of the Encryption Key
 
-In order to recover the original text from the cipher, we first find the length of the encryption key used and then apply brute force with all possible keys of the estimated length and deduce the plain text. Finding the length of the Encryption key makes the deciphering process quicker as it eliminates a lot of false keys and thus reduces the overall effort during brute force. In order to find the length of the Encryption Key, we need to have a better understanding of a seemingly unrelated topic - Hamming Distance.
+In order to recover the original text from the cipher, we first find the length of the encryption key used and then apply brute force with all possible keys of the estimated length and deduce the plain text. Finding the length of the Encryption key makes the deciphering process quicker as it eliminates a lot of false keys and thus reducing the overall effort required during the brute force. In order to find the length of the Encryption Key, we need to have a better understanding of a seemingly unrelated topic - Hamming Distance.
 
 ### Hamming Distance
 
