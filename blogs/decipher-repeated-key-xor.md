@@ -95,7 +95,7 @@ def hamming_score_bytes(text1: bytes, text2: bytes) -> float:
 0.25
 ```
 
-### What can we infer through the Hamming Score?
+### What can we infer through Hamming Score?
 
 Hamming Distance is an interesting measure; it effectively tells us the minimum number of bit flips required to convert one bytestream into another. It also implies that (on an average) if the numerical values of two bytestreams are closer then their Hamming Distance and Hamming Score will be lower i.e it would take less number of bit flips to convert one into another.
 
