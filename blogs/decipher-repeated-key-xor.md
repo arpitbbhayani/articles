@@ -8,7 +8,7 @@ The Repeating-key XOR cipher algorithm works with an encryption key with no cons
 
 ## Encryption
 
-A plain text is encrypted using an encryption key by performing bitwise [XOR](https://en.wikipedia.org/wiki/Exclusive_or) operation on every character. The encryption key is repeated until it XORs every single character of the plain text and the resultant stream of bytes is again translated back as characters and sent to the other party. These encrypted bytes need not be among the usual printable characters and should ideally be interpreted as a stream of bytes. Following is the python-based implementation of this encryption process.
+A plain text is encrypted using an encryption key by performing a bitwise [XOR](https://en.wikipedia.org/wiki/Exclusive_or) operation on every character. The encryption key is repeated until it XORs every single character of the plain text and the resultant stream of bytes is again translated back as characters and sent to the other party. These encrypted bytes need not be among the usual printable characters and should ideally be interpreted as a stream of bytes. Following is the python-based implementation of this encryption process.
 
 ```python
 def repeating_key_xor(text: bytes, key: bytes) -> bytes:
@@ -28,7 +28,7 @@ def repeating_key_xor(text: bytes, key: bytes) -> bytes:
     return bytes([b ^ k for b, k in zip(text, key)])
 ```
 
-As an example, we encrypt the plain text - `secretattack` - with encryption key `$^!` and as per the algorithm, we first repeat the encryption key till it matches the length of the plain text and then XOR it against the plain text. The illustration below shows the entire encryption process.
+As an example, we encrypt the plain text - `secretattack` - with encryption key `$^!` and as per the algorithm, we first repeat the encryption key until it matches the length of the plain text and then XOR it against the plain text. The illustration below shows the entire encryption process.
 
 ![https://user-images.githubusercontent.com/4745789/85919742-d1520600-b88b-11ea-8d71-aa36c58dc48a.png](https://user-images.githubusercontent.com/4745789/85919742-d1520600-b88b-11ea-8d71-aa36c58dc48a.png)
 
@@ -99,7 +99,7 @@ def hamming_score_bytes(text1: bytes, text2: bytes) -> float:
 
 Hamming Distance is an interesting measure; it effectively tells us the minimum number of bit flips required to convert one bytestream into another. It also implies that (on average) if the numerical values of two bytestreams are closer then their Hamming Distance and Hamming Score will be lower i.e it would take fewer bit flips to convert one into another.
 
-This is evident from the fact that average Hamming distance between any two bytes `[0-256)` picked at random is `3.9999` while that of any two lowercased English characters `[97, 122]` is just `2.45`. Similar ratios are observed for Hamming Score where `0.4999` is of the former while `0.3072` is of the later.
+This is evident from the fact that the average Hamming distance between any two bytes `[0-256)` picked at random is `3.9999` while that of any two lowercased English characters `[97, 122]` is just `2.45`. Similar ratios are observed for Hamming Score where `0.4999` is of the former while `0.3072` is of the later.
 
 This inference comes in handy when we want to find out the length of Encryption Key in Repeating-key XOR Cipher as illustrated in the section below.
 
@@ -141,7 +141,7 @@ From the distribution above it is evident that the score was minimum at chunk le
 
 When chunk length is equal to the length of the encryption key, the XOR operation on any two chunks will reduce the expression to XOR of the corresponding plain texts (as seen above), because there will be a perfect alignment of bytes from ciphertext and bytes from the keys i.e every `i`th byte from both the chunks would have been XORed with `i`th byte from the encryption key.
 
-We have established that for chunk length equal to the length of encryption key `c[i] XOR c[j]` is effectively `p[i] XOR p[j]`. Since we have assumed that the plain text is a lowercased English sentence the XOR is happening between bytes residing numerically closer to each other and hence has a lower Average Hamming Score between them; because of which we see a minimum at this particular chunk length. The Hamming Score will be much higher for lengths other than the length of Encryption Key because during XOR operation the expression stays irreducible and hence hamming distance is computed panning the entire range of bytes `[0, 256)`.
+We have established that for chunk length equal to the length of the encryption key `c[i] XOR c[j]` is effectively `p[i] XOR p[j]`. Since we have assumed that the plain text is a lowercased English sentence the XOR is happening between bytes residing numerically closer to each other and hence has a lower Average Hamming Score between them; because of which we see a minimum at this particular chunk length. The Hamming Score will be much higher for lengths other than the length of Encryption Key because during XOR operation the expression stays irreducible and hence hamming distance is computed panning the entire range of bytes `[0, 256)`.
 
 ### Something far more interesting
 
