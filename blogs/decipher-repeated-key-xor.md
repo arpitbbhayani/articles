@@ -61,7 +61,7 @@ In order to recover the original text from the cipher, we first find the length 
 Hamming distance between two bytes is the number of positions at which the corresponding bits differ. For a stream of bytes, of equal lengths, it is the sum of Hamming Distances between the corresponding bytes. Finding differences between bits can be efficiently done using bitwise XOR operation as the operation yields `0` when both the bits are the same and `1` when they differ. So for computing Hamming Distance between two bytes we XOR the bytes and count the number of `1` in its binary representation.
 
 ```python
-def hamming_distance_bytes(text1:bytes, text2:bytes) -> int:
+def hamming_distance_bytes(text1: bytes, text2: bytes) -> int:
 		"""Given two stream of bytes, the function returns the Hamming Distance
 		between the two.
 		Note: If the two texts have unequal lengths, the hamming distance is
@@ -83,7 +83,7 @@ In the example above, we find that the hamming distance between two bytestreams 
 Hamming distance is an absolute measure, hence in order to compare hamming distance across byte streams of varying lengths, it has to be normalized with the number of pairs of bits compared. We name this measure - Hamming Score - which thus is defined as the Hamming Distance per unit bit-pair. In python, Hamming Score is implemented as:
 
 ```python
-def hamming_score_bytes(text1:bytes, text2:bytes) -> float:
+def hamming_score_bytes(text1: bytes, text2: bytes) -> float:
     """Given two streams of bytes, the function computes a normalized Hamming
     Score based on the Hamming distance.
     Normalization is done by dividing the Hamming Distance by the number of bits
@@ -95,7 +95,7 @@ def hamming_score_bytes(text1:bytes, text2:bytes) -> float:
 0.25
 ```
 
-### What can we infer using Hamming Score?
+### What can we infer through the Hamming Score?
 
 Hamming Distance is an interesting measure; it effectively tells us the minimum number of bit flips required to convert one bytestream into another. It also implies that (on an average) if the numerical values of two bytestreams are closer then their Hamming Distance and Hamming Score will be lower i.e it would take less number of bit flips to convert one into another.
 
