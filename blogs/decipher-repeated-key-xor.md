@@ -1,10 +1,10 @@
 Encryption is a process of encoding messages such that it can only be read and understood by the intended parties. The process of extracting the original message from an encrypted one is called Decryption. Encryption usually scrambles the original message using a key, called the encryption key, that the involved parties agree on.
 
-In the previous essay, we went through the [Single-key XOR cipher](https://arpitbhayani.me/blogs/decipher-single-xor) and found a way to decipher it without having any knowledge of the encryption key. In this essay, we find how to break a [Repeating-key XOR cipher](https://en.wikipedia.org/wiki/XOR_cipher) with variable key length. The problem statement, defined above, is based on [Cryptopals Set 1 Challenge 6](https://cryptopals.com/sets/1/challenges/6).
+In the previous essay, we went through the [Single-byte XOR cipher](https://arpitbhayani.me/blogs/decipher-single-xor) and found a way to decipher it without having any knowledge of the encryption key. In this essay, we find how to break a [Repeating-key XOR cipher](https://en.wikipedia.org/wiki/XOR_cipher) with variable key length. The problem statement, defined above, is based on [Cryptopals Set 1 Challenge 6](https://cryptopals.com/sets/1/challenges/6).
 
 # Repeating-key XOR Cipher
 
-The Repeating-key XOR cipher algorithm works with an encryption key, having no constraint on length of the encryption key, which makes it much stronger than a Single-byte XOR Cipher, where the encryption key length was restricted to a single byte.
+The Repeating-key XOR cipher algorithm works with an encryption key with no constraint on its length, which makes it much stronger than a Single-byte XOR Cipher, where the encryption key length was restricted to a single byte.
 
 ## Encryption
 
@@ -32,7 +32,7 @@ As an example, we encrypt the plain text - `secretattack` - with encryption key 
 
 ![https://user-images.githubusercontent.com/4745789/85919742-d1520600-b88b-11ea-8d71-aa36c58dc48a.png](https://user-images.githubusercontent.com/4745789/85919742-d1520600-b88b-11ea-8d71-aa36c58dc48a.png)
 
-For the first character in plain text - `s` - the byte i.e. ASCII value is `115` which when XORed with `$` results in `87` whose character equivalent is `W`, similarly for the second character `e` the encrypted byte is `;`, for `c` it is `B` and for `r`, since the key repeats, the XOR is taken with `$` and we get `V` and the process continues. The resultant encrypted text using repeated-key XOR on the plain text `secretattack` with key `$^!` is `W;BV;UE*UE=J`.
+For the first character in plain text - `s` - the byte i.e. ASCII value is `115` which when XORed with `$` results in `87` whose character equivalent is `W`, similarly for the second character `e` the encrypted byte is `;`, for `c` it is `B`, for the fourth character `r`, since the key repeats, the XOR is taken with `$` to get `V` and the process continues. The resultant encrypted text using repeated-key XOR on the plain text `secretattack` with key `$^!` is `W;BV;UE*UE=J`.
 
 ## Decryption
 
