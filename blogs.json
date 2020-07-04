@@ -1,5 +1,27 @@
 [
   {
+    "id": "decipher-repeated-key-xor.md",
+    "title": "Deciphering Repeated-byte XOR Ciphertext using Hamming Distance",
+    "description": "Deciphering is the process of recovering the original message from an encrypted byte stream, usually, without having any knowledge of the encryption key. In this essay, we look at how we can use linguistics to recover the original message from a Single-byte XORed Ciphertext.",
+    "image": "https://user-images.githubusercontent.com/4745789/85223233-0ddeb700-b3df-11ea-9bb8-5bd1cf0cabcb.png",
+    "gif": "https://media.giphy.com/media/l3vRmVv5P01I5NDAA/giphy.gif",
+    "categories": [
+      "cryptography"
+    ],
+    "tags": [
+      "python",
+      "cryptography",
+      "cryptopals"
+    ],
+    "published_at": "2020-07-04",
+    "similar": [
+      "idf",
+      "fast-and-efficient-pagination-in-mongodb",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "super-long-integers"
+    ]
+  },
+  {
     "id": "decipher-single-xor",
     "title": "Deciphering Single-byte XOR Ciphertext",
     "description": "Deciphering is the process of recovering the original message from an encrypted byte stream, usually, without having any knowledge of the encryption key. In this essay, we look at how we can use linguistics to recover the original message from a Single-byte XORed Ciphertext.",
