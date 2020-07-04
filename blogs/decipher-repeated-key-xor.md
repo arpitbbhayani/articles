@@ -97,11 +97,11 @@ def hamming_score_bytes(text1: bytes, text2: bytes) -> float:
 
 ### What can we infer through Hamming Distance?
 
-Hamming Distance is an interesting measure; it effectively tells us the minimum number of bit flips required to convert one bytestream into another. It also implies that (on an average) if the numerical values of two bytestreams are closer then their Hamming Distance and Hamming Score will be lower i.e it would take less number of bit flips to convert one into another.
+Hamming Distance is an interesting measure; it effectively tells us the minimum number of bit flips required to convert one bytestream into another. It also implies that (on average) if the numerical values of two bytestreams are closer then their Hamming Distance and Hamming Score will be lower i.e it would take fewer bit flips to convert one into another.
 
 This is evident from the fact that average Hamming distance between any two bytes `[0-256)` picked at random is `3.9999` while that of any two lowercased English characters `[97, 122]` is just `2.45`. Similar ratios are observed for Hamming Score where `0.4999` is of the former while `0.3072` is of the later.
 
-This inference come in handy when we want to find out the length of Encryption Key in Repeating-key XOR Cipher as illustrated in the section below.
+This inference comes in handy when we want to find out the length of Encryption Key in Repeating-key XOR Cipher as illustrated in the section below.
 
 ### Formal definition of encryption and decryption processes
 
@@ -112,7 +112,7 @@ encryption: c[i] = p[i] XOR k[i]   for i in [0, len(c))
 decryption: p[i] = c[i] XOR k[i]   for i in [0, len(p))
 ```
 
-Above definitions, along with the rules of XOR operations, imply that if we XOR two bytes of the ciphertext, encrypted (XORed) using the same byte of the encryption key, we are effectively XORing the corresponding bytes of the plain text. If `k'` is the byte of the encryption key `k` which was used to encrypt (XOR) the bytes `p[i]` and `p[j]` of the plain text to generate `c[i]` and `c[j]` of the ciphertext, we could derive the following relation
+The above definitions, along with the rules of XOR operations, implying that if we XOR two bytes of the ciphertext, encrypted (XORed) using the same byte of the encryption key, we are effectively XORing the corresponding bytes of the plain text. If `k'` is the byte of the encryption key `k` which was used to encrypt (XOR) the bytes `p[i]` and `p[j]` of the plain text to generate `c[i]` and `c[j]` of the ciphertext, we could derive the following relation
 
 ```
 # k' is the common byte of the key i.e. k' = k[i] = k[j]
@@ -141,7 +141,7 @@ From the distribution above it is evident that the score was minimum at chunk le
 
 When chunk length is equal to the length of the encryption key, the XOR operation on any two chunks will reduce the expression to XOR of the corresponding plain texts (as seen above), because there will be a perfect alignment of bytes from ciphertext and bytes from the keys i.e every `i`th byte from both the chunks would have been XORed with `i`th byte from the encryption key.
 
-We have established that for chunk length equal to the length of encryption key `c[i] XOR c[j]` is effectively `p[i] XOR p[j]`. Since we have assumed that the plain text is a lowercased English sentence the XOR is heppening between bytes residing numerically closer to each other and hence has a lower Average Hamming Score between them; because of which we see a minimum at this particular chunk length. The Hamming Score will be much higher for lengths other than the length of Encryption Key because during XOR operation the expression stays irreducible and hence hamming distance is computed panning the entire range of bytes `[0, 256)`.
+We have established that for chunk length equal to the length of encryption key `c[i] XOR c[j]` is effectively `p[i] XOR p[j]`. Since we have assumed that the plain text is a lowercased English sentence the XOR is happening between bytes residing numerically closer to each other and hence has a lower Average Hamming Score between them; because of which we see a minimum at this particular chunk length. The Hamming Score will be much higher for lengths other than the length of Encryption Key because during XOR operation the expression stays irreducible and hence hamming distance is computed panning the entire range of bytes `[0, 256)`.
 
 ### Something far more interesting
 
@@ -163,8 +163,8 @@ def compute_key_length(text: bytes) -> int:
     min_score, key_len = None, None
 
     # We check for chunk lengths from 2 till the half the length of the
-    # plain text. Here we assume that the Ecryption Key had to be
-    # repeated atleast twice to match the length of the plaintext
+    # plain text. Here we assume that the Encryption Key had to be
+    # repeated at least twice to match the length of the plaintext
     for klen in range(2, math.ceil(len(text)/2)):
 
         # We create chunks such that length of each chunk if `klen`
