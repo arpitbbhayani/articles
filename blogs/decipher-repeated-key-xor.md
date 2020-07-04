@@ -80,7 +80,7 @@ In the example above, we find that the hamming distance between two bytestreams 
 
 ### Hamming Score
 
-Hamming distance is an absolute measure, hence in order to compare hamming distance across byte streams of varying lengths, it has to be normalized with the number of pairs of bits compared. We name this measure - Hamming Score - which thus is defined as the Hamming Distance per unit bit. In python, Hamming Score could be implemented as:
+Hamming distance is an absolute measure, hence in order to compare hamming distance across byte streams of varying lengths, it has to be normalized with the number of pairs of bits compared. We name this measure - Hamming Score - which thus is defined as the Hamming Distance per unit bit-pair. In python, Hamming Score is implemented as:
 
 ```python
 def hamming_score_bytes(text1:bytes, text2:bytes) -> float:
