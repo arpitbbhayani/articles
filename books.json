@@ -1,5 +1,17 @@
 [
     {
+        "_id":"kepler-the-new-astronomy",
+        "n":"Johannes Kepler: And the New Astronomy",
+        "i":"https://user-images.githubusercontent.com/4745789/86531338-fffc5c00-bedd-11ea-8d4e-6efd4d66a465.jpg",
+        "d":"An examination of the life of the great medieval astronomer--who endured religious prosecution for challenging church doctrine and supporting the then-iconoclastic theory of a sun-centered solar system--provides a rich background in physics and details Kepler's scientific achievements.",
+        "plnk":"https://www.amazon.in/Johannes-Kepler-Astronomy-Portraits-Science/dp/0195116801",
+        "total":145,
+        "pg":10,
+        "com":false,
+        "hgs":[],
+        "uat":15912812300000
+    },
+    {
         "_id":"flow",
         "n":"Flow: The Classic Work On How To Achieve Happiness",
         "i":"https://user-images.githubusercontent.com/4745789/83770231-74a16800-a69e-11ea-9e05-d07c59bc29d2.jpg",
