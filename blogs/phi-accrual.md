@@ -20,7 +20,7 @@ Phi Accrual Failure Detection is an adaptive Failure Detection algorithm that pr
 
 We define φ as the suspicion level output by this failure detector and as the algorithm is adaptive, the value will be dynamic and will reflect the current network conditions and system behaviour. As we established earlier - lower are the chances of receiving the heartbeat, higher are the chances that the system crashed hence higher should be the value of φ; the details around expressing φ mathematically is as illustracted below.
 
-![https://user-images.githubusercontent.com/4745789/87230121-18331600-c3cb-11ea-9261-9001ca709ad4.png](https://user-images.githubusercontent.com/4745789/87230121-18331600-c3cb-11ea-9261-9001ca709ad4.png)
+![Phi Accrual Failure Detection](https://user-images.githubusercontent.com/4745789/87240784-469c0a00-c43a-11ea-8689-9dc41eb1ccf1.png)
 
 The illustration above mathematically expresses our establishments and shows how we can use `-log10(x)` function applied on the probability to get a gradual negative slope indicating decline in the value of φ. We observe how, as the probability of receiving heartbeat increases, the value of φ decreases and approaches `0`, and when the probability of receiving heartbeat decreases and approaches `0`, the value of φ tends to infinity ∞.
 
@@ -36,7 +36,7 @@ We observe that the arrival intervals follow a [Normal Distribution](https://en.
 
 Since arrival intervals follow a Normal Distribution, we can integrate the [Probability Density Function](https://en.wikipedia.org/wiki/Probability_density) over interval `(t, ∞)` to get the probability of receiving heartbeat after `t` units of time. Thus the expression for deriving this can be illustrated below.
 
-![https://user-images.githubusercontent.com/4745789/87231591-fbe8a680-c3d5-11ea-9427-d4cd66e8e717.png](https://user-images.githubusercontent.com/4745789/87231591-fbe8a680-c3d5-11ea-9427-d4cd66e8e717.png)
+![Estimating probability of receiving another heartbeat](https://user-images.githubusercontent.com/4745789/87231591-fbe8a680-c3d5-11ea-9427-d4cd66e8e717.png)
 
 We observe that if the process actually crashes, the value is guaranteed to accrue (accumulate) over time and will tend to infinity ∞. Since the accrual failure detectors outputs value in a continuous range we need to explicitly define thresholds crossing which we say that the system crashed.
 
