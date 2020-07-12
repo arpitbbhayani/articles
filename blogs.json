@@ -1,7 +1,7 @@
 [
   {
     "id": "phi-accrual",
-    "title": "Phi Accrual Failure Detection",
+    "title": "Phi φ Accrual Failure Detection",
     "description": "Phi φ Accrual Failure Detection algorithm, unlike conventional algorithms, is an adaptive failure detection algorithm that instead of providing output as a boolean (system being up or down), outputs the suspicion information (level) on a continuous scale.",
     "image": "https://user-images.githubusercontent.com/4745789/87240958-c5de0d80-c43b-11ea-8e1b-2a7c70586b9b.png",
     "gif": "https://media.giphy.com/media/gLoMzjGQB2tQlQtB9P/giphy.gif",
