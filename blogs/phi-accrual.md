@@ -8,13 +8,13 @@ Accurately detecting failures is an impossible problem to solve as we cannot eve
 
 ## Heartbeats with constants timeouts
 
-Most common failure detection uses *heartbeat* messages with a fixed timeout in order to determine if a system is alive or not. The monitored system periodically sends a heartbeat message to the monitoring system, informing that it is still alive. The monitoring system will suspect that the process crashed if it fails to receive any heartbeat message within a configured timeout period.
+The conventional Failure Detection algorithms uses *heartbeat* messages with a fixed timeout in order to determine if a system is alive or not. The monitored system periodically sends a heartbeat message to the monitoring system, informing that it is still alive. The monitoring system will suspect that the process crashed if it fails to receive any heartbeat message within a configured timeout period.
 
-Here the value of timeout is very crucial as, keep it short means we detect failures quickly but with a lot of false positives; and if the timeout is long then we do reduce the false positives but the detection time takes a toll.
+Here the value of timeout is very crucial as, keeping it short means we detect failures quickly but with a lot of false positives; and while keeping it long means we reduce the false positives but the detection time takes a toll.
 
 # Phi Accrual Failure Detection
 
-Phi Accrual Failure Detection is an adaptive Failure Detection Algorithm that setups a building block to implementing failure detectors in any distributed system. A generic accrual failure detector, instead of providing output as a boolean (system being up or down), outputs the suspicion information on a continuous scale such that higher the suspicion value, higher are the chances that the system is down.
+Phi Accrual Failure Detection is an adaptive Failure Detection algorithm that provides a building block to implementing failure detectors in any distributed system. A generic Accrual Failure Detector, instead of providing output as a boolean (system being up or down), outputs the suspicion information (level) on a continuous scale such that higher the suspicion value, higher are the chances that the system is down.
 
 ## Detailing φ
 
@@ -22,7 +22,7 @@ We define φ as the suspicion level output by this failure detector and since th
 
 ![https://user-images.githubusercontent.com/4745789/87230121-18331600-c3cb-11ea-9261-9001ca709ad4.png](https://user-images.githubusercontent.com/4745789/87230121-18331600-c3cb-11ea-9261-9001ca709ad4.png)
 
-The illustration above mathematically expresses our establishments and shows how we can use `-log10(x)` function applied on probability to get a gradual negative slope. We observe how, as the probability of receiving heartbeat increases the value of φ decreases and approaches 0, and when the probability of receiving heartbeat approaches 0, the value of φ tends to infinity.
+The illustration above mathematically expresses our establishments and shows how we can use `-log10(x)` function applied on probability to get a gradual negative slope. We observe how, as the probability of receiving heartbeat increases the value of φ decreases and approaches 0, and when the probability of receiving heartbeat approaches 0, the value of φ tends to infinity ∞.
 
 The φ value computed using `-log10(x)` also suggests our likeliness of making mistake decreases exponentially as the value of φ increases. So if we say a system is down if φ crosses a threshold `X` where `X` is `1`, it implies that our decision will be contradicted in the future by reception of a late heartbeat is about `10%`. For `X = 2`, the likelihood of the mistake will be `1%`, for `X = 3` it will be `0.1%`.
 
@@ -34,11 +34,11 @@ In order to implement this, we keep a sampled Sliding Window holding arrival tim
 
 We observe that the arrival intervals follow a [Normal Distribution](https://en.wikipedia.org/wiki/Normal_distribution) indicating most of the heartbeats arrive within a specific interval range while there are a few that arrives late due to various network or system conditions. From the information stored in the window we can easily compute the arrival intervals, mean and variance which we require to estimate the probability.
 
-Since arrival intervals follow a Normal Distribution, we can integrate the Probability Density Function over interval `[t, infinity)` to get the probability of receiving heartbeat after `t` units of time. Thus the expression for deriving this is as illustrated below.
+Since arrival intervals follow a Normal Distribution, we can integrate the Probability Density Function over interval `[t, ∞)` to get the probability of receiving heartbeat after `t` units of time. Thus the expression for deriving this is as illustrated below.
 
 ![https://user-images.githubusercontent.com/4745789/87231591-fbe8a680-c3d5-11ea-9427-d4cd66e8e717.png](https://user-images.githubusercontent.com/4745789/87231591-fbe8a680-c3d5-11ea-9427-d4cd66e8e717.png)
 
-We observe that if the process actually crashes, the value is guaranteed to accrue (accumulate) over time tend to infinity. Since the accrual failure detectors outputs value in a continuous range we need to explicitly define thresholds crossing which we say that the system crashed.
+We observe that if the process actually crashes, the value is guaranteed to accrue (accumulate) over time tend to infinity ∞. Since the accrual failure detectors outputs value in a continuous range we need to explicitly define thresholds crossing which we say that the system crashed.
 
 # Benefits of using Accrual Failure Detectors
 
