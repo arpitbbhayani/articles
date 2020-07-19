@@ -10,7 +10,7 @@ Bitcask uses a lot of principles from [log-structured file systems](https://en.w
 
 Datafiles are the append-only log files that holds the KV pairs along with some meta information. A single Bitcask instance could have many datafiles out of just one will be active and opened for writing while the others are considered immutable and are used for reads.
 
-![https://user-images.githubusercontent.com/4745789/87866701-78fdb800-c9a2-11ea-9c35-9a706ac96d97.png](https://user-images.githubusercontent.com/4745789/87866701-78fdb800-c9a2-11ea-9c35-9a706ac96d97.png)
+![Bitcask Datafiles](https://user-images.githubusercontent.com/4745789/87866701-78fdb800-c9a2-11ea-9c35-9a706ac96d97.png)
 
 Each entry in the datafile has a fixed structure illustrated above and it stores `crc`, `timestamp`, `key_size`, `value_size`, `key` and `value`. All the write create, update and delete requests to the engine translates into entries in this active datafile. When this active datafile meets a size threshold, it is closed and a new active datafile is created; and as stated earlier, when closed the datafile is considered immutable and is never opened for writing again.
 
@@ -18,7 +18,7 @@ Each entry in the datafile has a fixed structure illustrated above and it stores
 
 KeyDir is an in-memory hash table that stores all the keys present in the Bitcask instance and maps it to the offset in the datafile where the value resides; thus facilitating the point lookups. The mapped value of the Hash Table is a structure that holds `file_id`, `offset` and some meta information like `timestamp`, as illustrated below.
 
-![https://user-images.githubusercontent.com/4745789/87866707-96cb1d00-c9a2-11ea-9730-fc7f8cb79b92.png](https://user-images.githubusercontent.com/4745789/87866707-96cb1d00-c9a2-11ea-9730-fc7f8cb79b92.png)
+![Bitcask KeyDir](https://user-images.githubusercontent.com/4745789/87866707-96cb1d00-c9a2-11ea-9730-fc7f8cb79b92.png)
 
 # Operations on Bitcask
 
