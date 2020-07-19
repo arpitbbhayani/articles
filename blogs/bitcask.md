@@ -32,7 +32,7 @@ Putting a new Key-Value pair requires just one atomic operation encapsulating on
 
 ### Updating an existing Key Value
 
-This KV store do not support partial update, out of the box, but it does support full value replacement. Hence the update operation is very similar to putting a new KV pair, the only change being instead of creating an entry in KeyDir, the existing entry is updated with the new position in, possibly, the new datafile.
+This KV store does not support partial update, out of the box, but it does support full value replacement. Hence the update operation is very similar to putting a new KV pair, the only change being instead of creating an entry in KeyDir, the existing entry is updated with the new position in, possibly, the new datafile.
 
 The entry corresponding to the old value is now dangling and will be garbage collected explicitly during merging and compaction.
 
@@ -40,7 +40,7 @@ The entry corresponding to the old value is now dangling and will be garbage col
 
 Deleting a key is a special operation where the engine atomically appends a new entry in the active datafile with value equalling a tombstone value, denoting deletion, and deleting the entry from the in-memory KeyDir. The tombstone value is chosen as something very unique so that it does not interfere with the existing value space.
 
-Delete operation, just like the update operation, is very lightweight and requires a disk write and an in-memory update. In delete operation as well, the older entries corresponding to the deleted keys are left dangling and will be garbage collected explicitly buring merging and compaction.
+Delete operation, just like the update operation, is very lightweight and requires a disk write and an in-memory update. In delete operation as well, the older entries corresponding to the deleted keys are left dangling and will be garbage collected explicitly during merging and compaction.
 
 ### Reading a Key-Value
 
@@ -52,7 +52,7 @@ The operation is inherently fast as it requires just one disk read and a few in-
 
 As we have seen during Update and Delete operations the old entries corresponding to the key remain untouched and dangling and this leads to Bitcask consuming a lot of disk space. In order to make things efficient for the disk utilization the engine once a while compacts the older closed datafiles into one or many merged files having the same structure as the existing datafiles.
 
-The merge process iterates over all the immutable files in the Bitcask and produces a set of datafiles having only *live* and *latest* versions of each present key. This way the unused and non-existent keys are ignored from the newer datafiles saving a bunch of disk space. Since the record now exist in a different merged datafiles and at a new offset, its entry in KeyDir needs an atomic updation.
+The merge process iterates over all the immutable files in the Bitcask and produces a set of datafiles having only *live* and *latest* versions of each present key. This way the unused and non-existent keys are ignored from the newer datafiles saving a bunch of disk space. Since the record now exist in a different merged datafile and at a new offset, its entry in KeyDir needs an atomic updation.
 
 # Performant bootup
 
@@ -75,7 +75,7 @@ For every datafile a *hint* file is created which holds everything in the datafi
 
 The KeyDir holds all the keys in memory at all times and this adds a huge constraint on the system that it needs to have enough memory to contain the entire keyspace along with other essentials like Filesystem buffers. Thus the limiting factor for a Bitcask is the limited RAM available to hold the KeyDir.
 
-Although this weakness sees a major one but solution to this is faily simple. We can typically shard the keys and scale it horizontally without losing much of the basic operations like Create, Read, Update, and Delete.
+Although this weakness sees a major one but the solution to this is fairly simple. We can typically shard the keys and scale it horizontally without losing much of the basic operations like Create, Read, Update, and Delete.
 
 # References
 
