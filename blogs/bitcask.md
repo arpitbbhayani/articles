@@ -22,7 +22,7 @@ KeyDir is an in-memory hash table that stores all the keys present in the Bitcas
 
 # Operations on Bitcask
 
-Now that we have seen the overall design and components of Bitcask, we can jump into understanding the operations that it supports and how each one is implemented.
+Now that we have seen the overall design and components of Bitcask, we can jump into exploring the operations that it supports and details of their implementations.
 
 ### Putting a new Key Value
 
