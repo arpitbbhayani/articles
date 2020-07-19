@@ -44,27 +44,25 @@ Delete operation just like the update operation is very lightweight and requires
 
 ### Reading a Key-Value
 
-Reading a KV pair from the store requires the engine to first find the datafile and the offset within it for the given key; which is done using the KeyDir. Once that information is available the engine then performs one disk read from the file at the offset to retrieve the log entry. The correctness of the value retrieved is checked against the CRC stored and the value is returned.
+Reading a KV pair from the store requires the engine to first find the datafile and the offset within it for the given key; which is done using the KeyDir. Once that information is available the engine then performs one disk read from the corresponding datafile at the offset to retrieve the log entry. The correctness of the value retrieved is checked against the CRC stored and the value is then returned to the client.
 
 The operation is inherently fast as it requires just one disk read and a few in-memory accesses, but it could be made faster using Filesystem read-ahead cache.
 
 # Merge and Compaction
 
-As we have seen during Update and Delete operations the old entries corresponding to the key in datafiles remain as is and this leads to Bitcask consuming a lot of disk space. In order to make things efficient for the disk utilization the engine once a while compacts the older closed datafiles into one or many merged files.
+As we have seen during Update and Delete operations the old entries corresponding to the key remain untouched and dangling and this leads to Bitcask consuming a lot of disk space. In order to make things efficient for the disk utilization the engine once a while compacts the older closed datafiles into one or many merged files having same structure as datafiles.
 
-The merge process iterates over all the immutable files in the Bitcask and produces a set of datafiles having only *live* and *latest* versions of each present key. This way the unused and non-existent keys are deleted from the datafiles saving us a bunch of disk space. Now since the record instead of lying datafiles resides at a new location in the merged and compacted files, its entry in KeyDir needs to be atomically updated.
+The merge process iterates over all the immutable files in the Bitcask and produces a set of datafiles having only *live* and *latest* versions of each present key. This way the unused and non-existent keys are ignored from the newer datafiles saving us a bunch of disk space. Since the record now exist ina different merged datafiles at a new location, its entry in KeyDir is atomically updated.
 
 # Performant bootup
 
-If the Bitcask crashes and it needs to boot-up, it will have to read all the datafiles and create a new KeyDir. Merging and compaction here do help as it reduces the need to read data that is eventually going to be evicted. But there is another operation that could help in making faster boot times.
+If the Bitcask crashes and needs a boot-up, it will have to read all the datafiles and create a new KeyDir everytime. Merging and compaction here do help as it reduces the need to read data that is eventually going to be evicted. But there is another operation that could help in making boot times faster.
 
-For every datafile a *hint* file is created which holds everything in the datafile except the value i.e. it holds the key and its meta-information. This *hint* file for a datafile is hence just a file containing all the keys from the datafile. The hint file is considerably very small in size and hence by reading this file the engine could quickly create the KeyDir and complete the bootup process.
+For every datafile a *hint* file is created which holds everything in the datafile except the value i.e. it holds the key and its meta-information. This *hint* file, hence, is just a file containing all the keys from the corresponding datafile. This *hint* file is very small in size and hence by reading this file the engine could quickly create the entire KeyDir and complete the bootup process quicker.
 
 # Strengths and Weaknesses of Bitcask
 
 ## Strengths
-
-Going by the 
 
 - Low latency for read and write operations
 - High Write Throughput
@@ -75,9 +73,9 @@ Going by the
 
 ## Weaknesses
 
-The KeyDir holds all the keys in memory at all times and this adds a huge constraint on the system that it needs to have enough memory to contain the entire keyspace along with from Filesystem buffers.
+The KeyDir holds all the keys in memory at all times and this adds a huge constraint on the system that it needs to have enough memory to contain the entire keyspace along with other essentials like Filesystem buffers. Thus the limiting factor for a Bitcask is the limited RAM available to hold the keys.
 
-But if we reach the limit of vertical scaling we can always shard and scale it horizontally without losing much of the basic operations like Create, Read, Update and Delete.
+A typical solution to this problem is that after a certain limit to vertical scaling we shard and scale it horizontally without losing much of the basic operations like Create, Read, Update and Delete.
 
 # References
 
