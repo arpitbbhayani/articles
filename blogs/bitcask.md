@@ -1,22 +1,22 @@
-Bitcask is one of the most efficient embedded Key-Value (KV) Databases designed to handle production-grade traffic. The paper that introduced Bitcask to the world says it is a *[Log-Structured](https://en.wikipedia.org/wiki/Log-structured_file_system) [Hash Table](https://en.wikipedia.org/wiki/Hash_table) for Fast Key/Value Data* which, in short, means that the data will be written sequentially to an append-only log file and there will be pointers for each `key` pointing to the `position` of its log entry. Building a KV store off the append-only log files seems like a really weird design choice, but Bitcask does not only make it efficient to do so but it also gives a really high Read-Write throughput.
+Bitcask is one of the most efficient embedded Key-Value (KV) Databases designed to handle production-grade traffic. The paper that introduced Bitcask to the world says it is a *[Log-Structured](https://en.wikipedia.org/wiki/Log-structured_file_system) [Hash Table](https://en.wikipedia.org/wiki/Hash_table) for Fast Key/Value Data* which, in short, means that the data will be written sequentially to an append-only log file and there will be pointers for each `key` pointing to the `position` of its log entry. Building a KV store off the append-only log files seems like a really weird design choice, but Bitcask does not only make it efficient but it also gives a really high Read-Write throughput.
 
 Bitcask was introduced as the backend for a distributed database named [Riak](https://riak.com/) in which each node used to run one instance of Bitcask to hold the data that it was responsible for. In this essay, we take a detailed look into Bitcask, its design, and find the secret sauce that makes it so performant.
 
 # Design of Bitcask
 
-Bitcask uses a lot of principles from [log-structured file systems](https://en.wikipedia.org/wiki/Log-structured_file_system) and draws inspiration from a number of designs that involve log file merging ex: LSM Trees. It essentially is just a directory of append-only (log) files with a fixed structure and an in-memory index holding the keys mapped to a bunch of information necessary for point lookup - referring to the entry in the datafile.
+Bitcask uses a lot of principles from [log-structured file systems](https://en.wikipedia.org/wiki/Log-structured_file_system) and draws inspiration from a number of designs that involve log file merging, for example - Merging in LSM Trees. It essentially is just a directory of append-only (log) files with a fixed structure and an in-memory index holding the keys mapped to a bunch of information necessary for point lookups - referring to the entry in the datafile.
 
 ## Datafiles
 
-Datafiles are append-only log files that hold the KV pairs along with some meta-information. A single Bitcask instance could have many datafiles out of just one will be active and opened for writing while the others are considered immutable and are used for reads.
+Datafiles are append-only log files that hold the KV pairs along with some meta-information. A single Bitcask instance could have many datafiles, out of which just one will be active and opened for writing, while the others are considered immutable and are only used for reads.
 
 ![Bitcask Datafiles](https://user-images.githubusercontent.com/4745789/87866701-78fdb800-c9a2-11ea-9c35-9a706ac96d97.png)
 
-Each entry in the datafile has a fixed structure illustrated above and it stores `crc`, `timestamp`, `key_size`, `value_size`, `key`, and `value`. All the write create, update and delete requests to the engine translates into entries in this active datafile. When this active datafile meets a size threshold, it is closed and a new active datafile is created; and as stated earlier, when closed the datafile is considered immutable and is never opened for writing again.
+Each entry in the datafile has a fixed structure illustrated above and it stores `crc`, `timestamp`, `key_size`, `value_size`, actual `key`, and the actual `value`. All the write operations - create, update and delete - made on the engine translates into entries in this active datafile. When this active datafile meets a size threshold, it is closed and a new active datafile is created; and as stated earlier, when closed (intentionally or unintentionally), the datafile is considered immutable and is never opened for writing again.
 
 ## KeyDir
 
-KeyDir is an in-memory hash table that stores all the keys present in the Bitcask instance and maps it to the offset in the datafile where the value resides; thus facilitating the point lookups. The mapped value of the Hash Table is a structure that holds `file_id`, `offset`, and some meta-information like `timestamp`, as illustrated below.
+KeyDir is an in-memory hash table that stores all the keys present in the Bitcask instance and maps it to the offset in the datafile where the log entry (value) resides; thus facilitating the point lookups. The mapped value in the Hash Table is a structure that holds `file_id`, `offset`, and some meta-information like `timestamp`, as illustrated below.
 
 ![Bitcask KeyDir](https://user-images.githubusercontent.com/4745789/87866707-96cb1d00-c9a2-11ea-9730-fc7f8cb79b92.png)
 
