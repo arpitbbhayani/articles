@@ -1,8 +1,31 @@
 [
   {
+    "id": "bitcask",
+    "title": "Bitcask",
+    "description": "Bitcask is a Key-Value store that persists its data in append-only log files and still reaps super-performant read-write throughputs. In this essay, we take a detailed look into Bitcask, its design, and find the secret sauce that makes it so performant.",
+    "image": "https://user-images.githubusercontent.com/4745789/87868516-144b5900-c9b4-11ea-91e3-2de14e80817b.png",
+    "gif": "https://media.giphy.com/media/l0NwF1dnk7GRz3pK0/giphy.gif",
+    "categories": [
+      "databases"
+    ],
+    "tags": [
+      "database",
+      "embedded database",
+      "key value store",
+      "log structured database"
+    ],
+    "published_at": "2020-07-19",
+    "similar": [
+      "consistent-hashing",
+      "phi-accrual",
+      "copy-on-write",
+      "mysql-cache"
+    ]
+  },
+  {
     "id": "phi-accrual",
-    "title": "Phi φ Accrual Failure Detection",
-    "description": "Phi φ Accrual Failure Detection algorithm, unlike conventional algorithms, is an adaptive failure detection algorithm that instead of providing output as a boolean (system being up or down), outputs the suspicion information (level) on a continuous scale.",
+    "title": "Phi \u03c6 Accrual Failure Detection",
+    "description": "Phi \u03c6 Accrual Failure Detection algorithm, unlike conventional algorithms, is an adaptive failure detection algorithm that instead of providing output as a boolean (system being up or down), outputs the suspicion information (level) on a continuous scale.",
     "image": "https://user-images.githubusercontent.com/4745789/87240958-c5de0d80-c43b-11ea-8e1b-2a7c70586b9b.png",
     "gif": "https://media.giphy.com/media/gLoMzjGQB2tQlQtB9P/giphy.gif",
     "categories": [
@@ -17,7 +40,7 @@
     "similar": [
       "copy-on-write",
       "better-programmer",
-      "isolation-forest",
+      "bitcask",
       "inheritance-c"
     ]
   },
@@ -96,8 +119,8 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
-      "idf",
       "copy-on-write",
+      "idf",
       "phi-accrual"
     ]
   },
@@ -113,10 +136,10 @@
     "tags": [],
     "published_at": "2020-05-31",
     "similar": [
+      "bitcask",
       "phi-accrual",
-      "copy-on-write",
       "mysql-cache",
-      "image-steganography"
+      "copy-on-write"
     ]
   },
   {
@@ -134,7 +157,7 @@
       "rum",
       "isolation-forest",
       "mongodb-cursor-skip-is-slow",
-      "phi-accrual"
+      "bitcask"
     ]
   },
   {
@@ -170,7 +193,7 @@
       "inheritance-c",
       "mongodb-cursor-skip-is-slow",
       "copy-on-write",
-      "phi-accrual"
+      "rule-30"
     ]
   },
   {
@@ -187,8 +210,8 @@
     "similar": [
       "phi-accrual",
       "better-programmer",
-      "inheritance-c",
-      "isolation-forest"
+      "bitcask",
+      "inheritance-c"
     ]
   },
   {
@@ -241,8 +264,8 @@
     "published_at": "2020-04-12",
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
-      "idf",
       "fast-and-efficient-pagination-in-mongodb",
+      "idf",
       "isolation-forest"
     ]
   },
@@ -316,7 +339,7 @@
       "phi-accrual",
       "copy-on-write",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "fast-and-efficient-pagination-in-mongodb"
+      "bitcask"
     ]
   },
   {
@@ -499,7 +522,7 @@
       "python-prompts",
       "i-changed-my-python",
       "python-caches-integers",
-      "rule-30"
+      "publish-python-package-on-pypi"
     ]
   },
   {
@@ -558,7 +581,7 @@
       "fast-and-efficient-pagination-in-mongodb",
       "rule-30",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      "bayesian-average"
     ]
   },
   {
@@ -612,9 +635,9 @@
     ],
     "published_at": "2017-06-02",
     "similar": [
-      "efficient-way-to-stop-an-iterating-loop",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "better-programmer",
+      "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb"
     ]
   },
@@ -664,8 +687,8 @@
     ],
     "published_at": "2017-07-16",
     "similar": [
-      "rule-30",
       "benchmark-and-compare-pagination-approach-in-mongodb",
+      "rule-30",
       "fast-and-efficient-pagination-in-mongodb",
       "efficient-way-to-stop-an-iterating-loop"
     ]
@@ -718,7 +741,7 @@
       "sliding-window-ratelimiter",
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "setting-up-graphite-using-nginx-on-ubuntu",
-      "making-http-requests-using-netcat"
+      "image-steganography"
     ]
   },
   {
