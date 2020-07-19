@@ -1,5 +1,28 @@
 [
   {
+    "id": "bitcask",
+    "title": "Bitcask",
+    "description": "BItcask",
+    "image": "https://user-images.githubusercontent.com/4745789/87868516-144b5900-c9b4-11ea-91e3-2de14e80817b.png",
+    "gif": "https://media.giphy.com/media/gLoMzjGQB2tQlQtB9P/giphy.gif",
+    "categories": [
+      "databases"
+    ],
+    "tags": [
+      "database",
+      "embedded database",
+      "key value store",
+      "log structured database"
+    ],
+    "published_at": "2020-07-19",
+    "similar": [
+      "copy-on-write",
+      "better-programmer",
+      "isolation-forest",
+      "inheritance-c"
+    ]
+  },
+  {
     "id": "phi-accrual",
     "title": "Phi φ Accrual Failure Detection",
     "description": "Phi φ Accrual Failure Detection algorithm, unlike conventional algorithms, is an adaptive failure detection algorithm that instead of providing output as a boolean (system being up or down), outputs the suspicion information (level) on a continuous scale.",
