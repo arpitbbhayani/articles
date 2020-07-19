@@ -73,7 +73,7 @@ Going by the
 - Crash recovery is fast and bounded
 - Backing up is easy - Just copy the directory
 
-## Weakness
+## Weaknesses
 
 The KeyDir holds all the keys in memory at all times and this adds a huge constraint on the system that it needs to have enough memory to contain the entire keyspace along with from Filesystem buffers.
 
