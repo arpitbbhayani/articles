@@ -26,21 +26,21 @@ Now that we have seen the overall design and components of Bitcask, we can jump 
 
 ### Putting a new Key Value
 
-When a new KV pair is submitted to be stored in the Bitcask, the engine appends first it to the active datafile and then creates a new entry in the `KeyDir` specifying the offset and file where the value is stored. Both of these actions are performed atomically which means either the entry is made in both the structures or none.
+When a new KV pair is submitted to be stored in the Bitcask, the engine first appends it to the active datafile and then creates a new entry in the KeyDir specifying the offset and file where the value is stored. Both of these actions are performed atomically which means either the entry is made in both the structures or none.
 
 Putting a new Key-Value pair requires just one atomic operation encapsulating one disk write and a few in-memory access and updates. Since the active datafile is an append-only file, the disk write operation does not have to perform any disk seek whatsoever making write operate at an optimum rate providing a high write throughput.
 
 ### Updating an existing Key Value
 
-KV stores do not support partial update but it does support full value replacement. Hence the update operation looks are very similar to putting a new KV pair, the only change being instead of creating an entry in KeyDir, the existing entry is updated with the new position in the new datafile.
+KV stores do not support partial update but it does support full value replacement. Hence the update operation is very similar to putting a new KV pair, the only change being instead of creating an entry in KeyDir, the existing entry is updated with the new position in, possibly, the new datafile.
 
-The entry corresponding to the old value is now dangling and will be garbage collected explicitly.
+The entry corresponding to the old value is now dangling and will be garbage collected explicitly during merging and compaction.
 
 ### Deleting a Key
 
-Deleting a key is a special operation where the engine atomically appends a new entry in the active datafile with value equalling a tombstone value, denoting deletion, and deleting the entry from the KeyDir. The tombstone value is chosen something very unique so that it does not interfere with the existing value space of the use-case.
+Deleting a key is a special operation where the engine atomically appends a new entry in the active datafile with value equalling a tombstone value, denoting deletion, and deleting the entry from the KeyDir. The tombstone value is chosen something very unique so that it does not interfere with the existing value space.
 
-Delete operation just like update operation is lightweight and requires a disk write and an in-memory update and hence provides very high throughput. Just like in updates, the older entries for the keys will be garbage collected explicitly.
+Delete operation just like the update operation is very lightweight and requires a disk write and an in-memory update, resulting in a high throughput. In delete operation as well, the older entries for the keys are left dangling and will be garbage collected explicitly.
 
 ### Reading a Key-Value
 
