@@ -38,9 +38,9 @@ The entry corresponding to the old value is now dangling and will be garbage col
 
 ### Deleting a Key
 
-Deleting a key is a special operation where the engine atomically appends a new entry in the active datafile with value equalling a tombstone value, denoting deletion, and deleting the entry from the KeyDir. The tombstone value is chosen something very unique so that it does not interfere with the existing value space.
+Deleting a key is a special operation where the engine atomically appends a new entry in the active datafile with value equalling a tombstone value, denoting deletion, and deleting the entry from the KeyDir. The tombstone value is chosen as something very unique so that it does not interfere with the existing value space.
 
-Delete operation just like the update operation is very lightweight and requires a disk write and an in-memory update, resulting in a high throughput. In delete operation as well, the older entries for the keys are left dangling and will be garbage collected explicitly.
+Delete operation just like the update operation is very lightweight and requires a disk write and an in-memory update, resulting in high throughput. In delete operation as well, the older entries for the keys are left dangling and will be garbage collected explicitly.
 
 ### Reading a Key-Value
 
@@ -50,13 +50,13 @@ The operation is inherently fast as it requires just one disk read and a few in-
 
 # Merge and Compaction
 
-As we have seen during Update and Delete operations the old entries corresponding to the key remain untouched and dangling and this leads to Bitcask consuming a lot of disk space. In order to make things efficient for the disk utilization the engine once a while compacts the older closed datafiles into one or many merged files having same structure as datafiles.
+As we have seen during Update and Delete operations the old entries corresponding to the key remain untouched and dangling and this leads to Bitcask consuming a lot of disk space. In order to make things efficient for the disk utilization the engine once a while compacts the older closed datafiles into one or many merged files having the same structure as datafiles.
 
 The merge process iterates over all the immutable files in the Bitcask and produces a set of datafiles having only *live* and *latest* versions of each present key. This way the unused and non-existent keys are ignored from the newer datafiles saving us a bunch of disk space. Since the record now exist ina different merged datafiles at a new location, its entry in KeyDir is atomically updated.
 
 # Performant bootup
 
-If the Bitcask crashes and needs a boot-up, it will have to read all the datafiles and create a new KeyDir everytime. Merging and compaction here do help as it reduces the need to read data that is eventually going to be evicted. But there is another operation that could help in making boot times faster.
+If the Bitcask crashes and needs a boot-up, it will have to read all the datafiles and create a new KeyDir every time. Merging and compaction here do help as it reduces the need to read data that is eventually going to be evicted. But there is another operation that could help in making boot times faster.
 
 For every datafile a *hint* file is created which holds everything in the datafile except the value i.e. it holds the key and its meta-information. This *hint* file, hence, is just a file containing all the keys from the corresponding datafile. This *hint* file is very small in size and hence by reading this file the engine could quickly create the entire KeyDir and complete the bootup process quicker.
 
@@ -75,7 +75,7 @@ For every datafile a *hint* file is created which holds everything in the datafi
 
 The KeyDir holds all the keys in memory at all times and this adds a huge constraint on the system that it needs to have enough memory to contain the entire keyspace along with other essentials like Filesystem buffers. Thus the limiting factor for a Bitcask is the limited RAM available to hold the keys.
 
-A typical solution to this problem is that after a certain limit to vertical scaling we shard and scale it horizontally without losing much of the basic operations like Create, Read, Update and Delete.
+A typical solution to this problem is that after a certain limit to vertical scaling we shard and scale it horizontally without losing much of the basic operations like Create, Read, Update, and Delete.
 
 # References
 
