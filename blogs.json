@@ -16,7 +16,7 @@
     ],
     "published_at": "2020-07-19",
     "similar": [
-      "copy-on-write",
+      "consistent-hashing",
       "phi-accrual",
       "copy-on-write",
       "mysql-cache"
