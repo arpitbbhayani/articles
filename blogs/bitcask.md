@@ -1,10 +1,10 @@
-Bitcask is one of the most efficient embedded Key-Value (KV) Databases designed to handle production-grade traffic. The paper that introduced Bitcask to the world says it is a *[Log-Structured](https://en.wikipedia.org/wiki/Log-structured_file_system) [Hash Table](https://en.wikipedia.org/wiki/Hash_table) for Fast Key/Value Data* which, in short, means that the data will be written sequentially to an append-only log file and there will be pointers for each `key` pointing to the `position` of its log entry. Building a KV store off the append-only log files seems like a really weird design choice, but Bitcask does not only make it efficient but it also gives a really high Read-Write throughput.
+Bitcask is one of the most efficient embedded Key-Value (KV) Databases designed to handle production-grade traffic. The paper that introduced Bitcask to the world says it is a *[Log-Structured](https://en.wikipedia.org/wiki/Log-structured_file_system) [Hash Table](https://en.wikipedia.org/wiki/Hash_table) for Fast Key/Value Data* which, in a simpler language, means that the data will be written sequentially to an append-only log file and there will be pointers for each `key` pointing to the `position` of its log entry. Building a KV store off the append-only log files seems like a really weird design choice, but Bitcask does not only make it efficient but it also gives a really high Read-Write throughput.
 
 Bitcask was introduced as the backend for a distributed database named [Riak](https://riak.com/) in which each node used to run one instance of Bitcask to hold the data that it was responsible for. In this essay, we take a detailed look into Bitcask, its design, and find the secret sauce that makes it so performant.
 
 # Design of Bitcask
 
-Bitcask uses a lot of principles from [log-structured file systems](https://en.wikipedia.org/wiki/Log-structured_file_system) and draws inspiration from a number of designs that involve log file merging, for example - Merging in LSM Trees. It essentially is just a directory of append-only (log) files with a fixed structure and an in-memory index holding the keys mapped to a bunch of information necessary for point lookups - referring to the entry in the datafile.
+Bitcask uses a lot of principles from [log-structured file systems](https://en.wikipedia.org/wiki/Log-structured_file_system) and draws inspiration from a number of designs that involve log file merging, for example - merging in LSM Trees. It essentially is just a directory of append-only (log) files with a fixed structure and an in-memory index holding the keys mapped to a bunch of information necessary for point lookups - referring to the entry in the datafile.
 
 ## Datafiles
 
@@ -28,19 +28,19 @@ Now that we have seen the overall design and components of Bitcask, we can jump 
 
 When a new KV pair is submitted to be stored in the Bitcask, the engine first appends it to the active datafile and then creates a new entry in the KeyDir specifying the offset and file where the value is stored. Both of these actions are performed atomically which means either the entry is made in both the structures or none.
 
-Putting a new Key-Value pair requires just one atomic operation encapsulating one disk write and a few in-memory access and updates. Since the active datafile is an append-only file, the disk write operation does not have to perform any disk seek whatsoever making write operate at an optimum rate providing a high write throughput.
+Putting a new Key-Value pair requires just one atomic operation encapsulating one disk write and a few in-memory access and updates. Since the active datafile is an append-only file, the disk write operation does not have to perform any disk seek whatsoever making the write operate at an optimum rate providing a high write throughput.
 
 ### Updating an existing Key Value
 
-KV stores do not support partial update but it does support full value replacement. Hence the update operation is very similar to putting a new KV pair, the only change being instead of creating an entry in KeyDir, the existing entry is updated with the new position in, possibly, the new datafile.
+This KV store do not support partial update, out of the box, but it does support full value replacement. Hence the update operation is very similar to putting a new KV pair, the only change being instead of creating an entry in KeyDir, the existing entry is updated with the new position in, possibly, the new datafile.
 
 The entry corresponding to the old value is now dangling and will be garbage collected explicitly during merging and compaction.
 
 ### Deleting a Key
 
-Deleting a key is a special operation where the engine atomically appends a new entry in the active datafile with value equalling a tombstone value, denoting deletion, and deleting the entry from the KeyDir. The tombstone value is chosen as something very unique so that it does not interfere with the existing value space.
+Deleting a key is a special operation where the engine atomically appends a new entry in the active datafile with value equalling a tombstone value, denoting deletion, and deleting the entry from the in-memory KeyDir. The tombstone value is chosen as something very unique so that it does not interfere with the existing value space.
 
-Delete operation just like the update operation is very lightweight and requires a disk write and an in-memory update, resulting in high throughput. In delete operation as well, the older entries for the keys are left dangling and will be garbage collected explicitly.
+Delete operation, just like the update operation, is very lightweight and requires a disk write and an in-memory update. In delete operation as well, the older entries corresponding to the deleted keys are left dangling and will be garbage collected explicitly buring merging and compaction.
 
 ### Reading a Key-Value
 
@@ -50,15 +50,15 @@ The operation is inherently fast as it requires just one disk read and a few in-
 
 # Merge and Compaction
 
-As we have seen during Update and Delete operations the old entries corresponding to the key remain untouched and dangling and this leads to Bitcask consuming a lot of disk space. In order to make things efficient for the disk utilization the engine once a while compacts the older closed datafiles into one or many merged files having the same structure as datafiles.
+As we have seen during Update and Delete operations the old entries corresponding to the key remain untouched and dangling and this leads to Bitcask consuming a lot of disk space. In order to make things efficient for the disk utilization the engine once a while compacts the older closed datafiles into one or many merged files having the same structure as the existing datafiles.
 
-The merge process iterates over all the immutable files in the Bitcask and produces a set of datafiles having only *live* and *latest* versions of each present key. This way the unused and non-existent keys are ignored from the newer datafiles saving us a bunch of disk space. Since the record now exist ina different merged datafiles at a new location, its entry in KeyDir is atomically updated.
+The merge process iterates over all the immutable files in the Bitcask and produces a set of datafiles having only *live* and *latest* versions of each present key. This way the unused and non-existent keys are ignored from the newer datafiles saving a bunch of disk space. Since the record now exist in a different merged datafiles and at a new offset, its entry in KeyDir needs an atomic updation.
 
 # Performant bootup
 
-If the Bitcask crashes and needs a boot-up, it will have to read all the datafiles and create a new KeyDir every time. Merging and compaction here do help as it reduces the need to read data that is eventually going to be evicted. But there is another operation that could help in making boot times faster.
+If the Bitcask crashes and needs a boot-up, it will have to read all the datafiles and build a new KeyDir. Merging and compaction here do help as it reduces the need to read data that is eventually going to be evicted. But there is another operation that could help in making the boot times faster.
 
-For every datafile a *hint* file is created which holds everything in the datafile except the value i.e. it holds the key and its meta-information. This *hint* file, hence, is just a file containing all the keys from the corresponding datafile. This *hint* file is very small in size and hence by reading this file the engine could quickly create the entire KeyDir and complete the bootup process quicker.
+For every datafile a *hint* file is created which holds everything in the datafile except the value i.e. it holds the key and its meta-information. This *hint* file, hence, is just a file containing all the keys from the corresponding datafile. This *hint* file is very small in size and hence by reading this file the engine could quickly create the entire KeyDir and complete the bootup process faster.
 
 # Strengths and Weaknesses of Bitcask
 
@@ -69,13 +69,13 @@ For every datafile a *hint* file is created which holds everything in the datafi
 - Single disk seek to retrieve any value
 - Predictable lookup and insert performance
 - Crash recovery is fast and bounded
-- Backing up is easy - Just copy the directory
+- Backing up is easy - Just copy the directory would suffice
 
 ## Weaknesses
 
-The KeyDir holds all the keys in memory at all times and this adds a huge constraint on the system that it needs to have enough memory to contain the entire keyspace along with other essentials like Filesystem buffers. Thus the limiting factor for a Bitcask is the limited RAM available to hold the keys.
+The KeyDir holds all the keys in memory at all times and this adds a huge constraint on the system that it needs to have enough memory to contain the entire keyspace along with other essentials like Filesystem buffers. Thus the limiting factor for a Bitcask is the limited RAM available to hold the KeyDir.
 
-A typical solution to this problem is that after a certain limit to vertical scaling we shard and scale it horizontally without losing much of the basic operations like Create, Read, Update, and Delete.
+Although this weakness sees a major one but solution to this is faily simple. We can typically shard the keys and scale it horizontally without losing much of the basic operations like Create, Read, Update, and Delete.
 
 # References
 
