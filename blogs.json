@@ -1,7 +1,7 @@
 [
   {
     "id": "bitcask",
-    "title": "Bitcask",
+    "title": "Bitcask - a log-structured fast KV store",
     "description": "Bitcask is a Key-Value store that persists its data in append-only log files and still reaps super-performant read-write throughputs. In this essay, we take a detailed look into Bitcask, its design, and find the secret sauce that makes it so performant.",
     "image": "https://user-images.githubusercontent.com/4745789/87868516-144b5900-c9b4-11ea-91e3-2de14e80817b.png",
     "gif": "https://media.giphy.com/media/l0NwF1dnk7GRz3pK0/giphy.gif",
