@@ -1,5 +1,17 @@
 [
     {
+        "_id":"mindset",
+        "n":"Mindset: The New Psychology of Success",
+        "i":"https://user-images.githubusercontent.com/4745789/87881807-578be300-ca19-11ea-861a-af548869e777.jpg",
+        "d":"Mindset reveals how great parents, teachers, managers, and athletes can put this idea to use to foster outstanding accomplishment.",
+        "plnk":"https://www.amazon.in/Mindset-Updated-Changing-Fulfil-Potential/dp/147213995X/",
+        "total":332,
+        "pg":14,
+        "com":false,
+        "hgs":[],
+        "uat":15912812400000
+    },
+    {
         "_id":"kepler-the-new-astronomy",
         "n":"Johannes Kepler: And the New Astronomy",
         "i":"https://user-images.githubusercontent.com/4745789/86531338-fffc5c00-bedd-11ea-8d4e-6efd4d66a465.jpg",
