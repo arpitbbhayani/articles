@@ -80,7 +80,7 @@ def slowsort(a):
     _slowsort(a, 0, len(a) - 1)
 ```
 
-The Slowsort algorithm typically replaces the `merge` function of the Mergesort with a simple swap that correctly places the largest element and then invokes the sort function on all but these elements. So on every invocation, we keep correctly placing the largest element but in a recursive manner.
+The Slowsort algorithm typically replaces the `merge` function of the Mergesort with a simple swap that correctly places the largest element (local maxima) and then invokes the sort function on all but this element. So on every invocation, we keep correctly placing the largest element but in a recursive manner.
 
 *A visualization of this algorithm could be found in this [youtube video](https://www.youtube.com/watch?v=QbRoyhGdjnA).*
 
@@ -90,19 +90,19 @@ The runtime of Slowsort could be computed by the following recurrence relation
 
 ![slowsort recurrence relation](https://user-images.githubusercontent.com/4745789/88473102-cb594e80-cf37-11ea-9015-217c3eda50d6.png)
 
-When the above recurrence relation is solved and we compute the asymptotic lower bound for `T(n)`, we find that is given by
+When the above recurrence relation is solved and we find that the asymptotic lower bound for `T(n)` is given by
 
 ![lower bound of slowsort](https://user-images.githubusercontent.com/4745789/88473128-14a99e00-cf38-11ea-905b-f3f473a0d74c.png)
 
-The above expression suggests that lower bound of Slowsort is non-polynomial in nature and for a sufficiently large `n` this would be more than `n^2` implying that even the best case of Slowsort is worse than the worst case of Bubble sort. The illustration below compares the time taken by Slowsort and the recursive implementation of Bubblesort.
+The above expression suggests that lower bound of Slowsort is non-polynomial in nature and for a sufficiently large `n` this would be more than `n ^ 2` implying that even the best case of Slowsort is worse than the worst case of Bubble sort. The illustration below compares the time taken by Slowsort and the recursive implementation of Bubblesort.
 
 ![slowsort vs recursive bubblesort](https://user-images.githubusercontent.com/4745789/88475549-8e4c8680-cf4e-11ea-8ee4-9f7ed345ff5d.png)
 
-> The iterative implementation of Bubblesort stood no chance in terms of time taken for smaller sets of integers, hence the chart was plotted against the recursive implementation of it.
+> The iterative implementation of Bubblesort stood no chance in terms of time taken for smaller sets of integers, hence the chart was plotted against the recursive implementation of it. Iterative bubble sort for smaller arrays is nearly flat.
 
 # Slowsort vs Bogosort
 
-Bogosort is a sorting algorithm that has a time complexity of `O(n!)` in the average case and an unbounded time in the worst case. The algorithm keeps on permuting (shuffling) the array till it is sorted and because of this unboundedness is considered to be the worst sorting algorithm ever.
+[Bogosort](https://en.wikipedia.org/wiki/Bogosort) is a sorting algorithm that has an average case time complexity of `O(n!)` and an unbounded time in the worst case. The algorithm keeps on permuting (shuffling) the array till it is sorted which introduces an unboundedness in its implementaion and hence the algorithm is considered to be the worst sorting algorithm ever.
 
 ```python
 import random
@@ -115,11 +115,11 @@ def bogosort(a):
         random.shuffle(a)
 ```
 
-The reason that we should rate Slowsort heavy is the fact the Bogosort could sort the list in its first shuffle while Slowsort is deterministic and will take `O(n ^ log(n))` time in best case scenario.
+The reason that we should rate Slowsort highly is the fact the Bogosort could sort the list in its first shuffle while Slowsort is deterministic and will take `O(n ^ log(n))` time in best case scenario.
 
-A rule that every algorithm follows is that every step that it takes actually makes some progress towards the goal. Bogosort does not guarantee progress, as it randomly shuffles, one iteration could transform array to its sorted form while the next one takes it afar.
+A rule that every algorithm follows is that every step that it takes actually makes some progress towards the final goal. Bogosort does not guarantee progress, and since it randomly shuffles the array, at one iteration we could end up at a nearly sorted array while the next shuffle takes us afar.
 
-But Slowsort is deterministic and convergent. The number of swaps made (inversions) during the execution is non-increasing which means once two items are swapped they are in the correct order relative to each other. In other words, we say that Slowsort never makes a wrong move.
+Slowsort is deterministic and convergent. The number of swaps made (inversions) during the execution is non-increasing which means once two items are swapped they are in the correct order relative to each other. In other words, we say that Slowsort never makes a wrong move.
 
 # References
 
