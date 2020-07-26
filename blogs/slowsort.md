@@ -2,9 +2,9 @@ Slowsort is a sorting algorithm that is designed to be deterministically sub-opt
 
 # Multiply and Surrender
 
-The *Multiply and Surrender (MnS)* paradigm, is a humorous take on the popular *Divide and Conquer (DnC)* technique. MnS splits the problem into subproblems, slightly simpler than the original, and continues doing so recursively for as long as possible. The subproblems are multiplied and the solution computation is delayed till the state that the solving could not be further postponed and then it surrenders.
+The *Multiply and Surrender (MnS)* paradigm, is a humorous take on the popular *Divide and Conquer (DnC)* technique. MnS splits the problem into subproblems, slightly simpler than the original, and continues doing so recursively for as long as possible. The subproblems are multiplied and the evaluation is delayed till the state that the solving could not be further postponed and then it surrenders.
 
-MnS paradigm is very similar to DnC; but where the DnC actually splits the problems into subproblems to reach the solution quicker, MnS does it to procrastinate making the entire process very inefficient yet convergent.
+MnS paradigm is very similar to DnC; but where the DnC actually splits the problems into subproblems to reach the solution quicker, MnS does it to procrastinate, making the entire process very inefficient but yet convergent.
 
 Although Slowsort is a classic example, recursive Fibonacci with no memoization also fares under the MnS paradigm. The recursive code to find `n`th Fibonacci number is as illustrated below
 
@@ -23,11 +23,11 @@ def fib(n):
     return fib(n - 1) + fib(n - 2)
 ```
 
-While computing the Fibonacci numbers, we split the problem into subproblems and do this recursively till we are left with elemental states i.e. `0` or `1` and which is when we return the initial values which are `1` and `1`. This approach is not DnC because we are not splitting the problem into subproblems to achieve optimality, instead are doing a lot of repetitive work while taking a non-polynomial time to generate the Fibonacci numbers.
+While computing the Fibonacci numbers, we split the problem into subproblems and do this recursively till we are left with elemental states i.e. `0` or `1` and which is when we return the initial values which are `1` and `1`. This approach is not DnC because we are not splitting the problem into subproblems to achieve optimality, instead are doing a lot of repetitive work and taking a non-polynomial time to generate the Fibonacci numbers.
 
 # Slowsort Algorithm
 
-Slowsort algorithm draws a lot of similarities to the very popular Mergesort, but while Mergesort operates in `O(n log(n))` the complexity of Slowsort is non-polynomial and its best-case performs worse than the worst-case of bubble sort.
+Slowsort algorithm draws a lot of similarities to the very popular Mergesort, but while Mergesort operates in `O(n . log(n))` the complexity of Slowsort is non-polynomial `O(n ^ log(n))` and its best case performs worse than the worst case of bubble sort.
 
 Slowsort algorithms recursively break the array sorting problem into two subarray sorting problems. Once the two subarrays are sorted, the algorithm swaps the rightmost elements of the two sorted subarrays such that the greatest among the two becomes the rightmost element of the array i.e. the greatest among the two is placed at the correct position, and then it invokes the sorting for all elements except the fixed maximum.
 
