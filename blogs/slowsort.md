@@ -87,15 +87,15 @@ The Slowsort algorithm typically replaces the `merge` function of the Mergesort 
 
 The runtime of Slowsort could be computed by the following recurrence relation
 
-![https://user-images.githubusercontent.com/4745789/88473102-cb594e80-cf37-11ea-9015-217c3eda50d6.png](https://user-images.githubusercontent.com/4745789/88473102-cb594e80-cf37-11ea-9015-217c3eda50d6.png)
+![slowsort recurrence relation](https://user-images.githubusercontent.com/4745789/88473102-cb594e80-cf37-11ea-9015-217c3eda50d6.png)
 
 When the above recurrence relation is solved and we compute the asymptotic lower bound for `T(n)`, we find that is given by
 
-![https://user-images.githubusercontent.com/4745789/88473128-14a99e00-cf38-11ea-905b-f3f473a0d74c.png](https://user-images.githubusercontent.com/4745789/88473128-14a99e00-cf38-11ea-905b-f3f473a0d74c.png)
+![lower bound of slowsort](https://user-images.githubusercontent.com/4745789/88473128-14a99e00-cf38-11ea-905b-f3f473a0d74c.png)
 
 The above expression suggests that lower bound of Slowsort is non-polynomial in nature and for a sufficiently large `n` this would be more than `n^2` implying that even the best case of Slowsort is worse than the worst case of Bubble sort. The illustration below compares the time taken by Slowsort and the recursive implementation of Bubblesort.
 
-![https://user-images.githubusercontent.com/4745789/88473298-afef4300-cf39-11ea-9c14-638e03791199.png](https://user-images.githubusercontent.com/4745789/88473298-afef4300-cf39-11ea-9c14-638e03791199.png)
+![slowsort vs recursive bubblesort](https://user-images.githubusercontent.com/4745789/88475549-8e4c8680-cf4e-11ea-8ee4-9f7ed345ff5d.png)
 
 > The iterative implementation of Bubblesort stood no chance in terms of time taken for smaller sets of integers, hence the chart was plotted against the recursive implementation of it.
 
