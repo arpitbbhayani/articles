@@ -29,14 +29,14 @@ While computing the Fibonacci numbers, we split the problem into subproblems and
 
 Slowsort algorithm draws a lot of similarities to the very popular Mergesort, but while Mergesort operates in `O(n . log(n))` the complexity of Slowsort is non-polynomial `O(n ^ log(n))` and its best case performs worse than the worst case of bubble sort.
 
-Slowsort algorithm recursively breaks the array sorting problem into two subarray sorting problems and some extra processing. Once the two subarrays are sorted, the algorithm swaps the rightmost elements of the two sorted subarrays such that the greatest among the two becomes the rightmost element of the array i.e. the greatest among the two is placed at the correct position, and then it invokes the sorting for all elements except the fixed maximum.
+Slowsort algorithm recursively breaks the array sorting problem into two subarray sorting problems and a few extra processing steps. Once the two subarrays are sorted, the algorithm swaps the rightmost elements such that the greatest among the two becomes the rightmost element of the array i.e. the greatest among the two is placed at the correct position relative to each other, and then it invokes the sorting for all elements except this fixed maximum.
 
-The algorithm could be stated as follows
+The algorithm could this be expressed as following broad steps
 
 - sort the first half recursively
 - sort the second half recursively
 - find the maximum of the whole array by comparing the last elements of both the sorted halves and place it at the end of the array
-- recursively sort the entire list except for the maximum one
+- recursively sort the entire array except for the maximum one
 
 The in-place implementation of the Slowsort algorithm is as illustrated below
 
@@ -64,14 +64,15 @@ def _slowsort(a, i, j):
     # last elements of both subarrays and move the
     # higher among the both to end of the right subarray
     # ensuring that the highest element is placed at the
-    # correct position
+    # correct relative position
     if a[m] > a[j]:
         a[m], a[j] = a[j], a[m]
   
     # now that the rightmost element of the array is at
-    # the correct position, we invoke Slowsort on all the elements
-    # except the last one.
+    # the relatively correct position, we invoke Slowsort on all
+    # the elements except the last one.
     _slowsort(a, i, j - 1)
+
 
 def slowsort(a):
     """in-place sorts the array `a` using Slowsort.
