@@ -29,7 +29,7 @@ While computing the Fibonacci numbers, we split the problem into subproblems and
 
 Slowsort algorithm draws a lot of similarities to the very popular Mergesort, but while Mergesort operates in `O(n . log(n))` the complexity of Slowsort is non-polynomial `O(n ^ log(n))` and its best case performs worse than the worst case of bubble sort.
 
-Slowsort algorithm recursively break the array sorting problem into two subarray sorting problems. Once the two subarrays are sorted, the algorithm swaps the rightmost elements of the two sorted subarrays such that the greatest among the two becomes the rightmost element of the array i.e. the greatest among the two is placed at the correct position, and then it invokes the sorting for all elements except the fixed maximum.
+Slowsort algorithm recursively break the array sorting problem into two subarray sorting problems and some extra processing. Once the two subarrays are sorted, the algorithm swaps the rightmost elements of the two sorted subarrays such that the greatest among the two becomes the rightmost element of the array i.e. the greatest among the two is placed at the correct position, and then it invokes the sorting for all elements except the fixed maximum.
 
 The algorithm could be stated as follows
 
