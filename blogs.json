@@ -4,7 +4,7 @@
     "title": "Slowsort - a pessimal sorting algorithm",
     "description": "Slowsort",
     "image": "https://user-images.githubusercontent.com/4745789/88473025-fabb8b80-cf36-11ea-8390-a807fcd57d93.png",
-    "gif": "https://media.giphy.com/media/l0NwF1dnk7GRz3pK0/giphy.gif",
+    "gif": "https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif",
     "categories": [
       "algorithms"
     ],
@@ -12,7 +12,8 @@
       "slowsort",
       "pessimal algorithms",
       "slowsort vs bogosort",
-      "worst sorting algorithm"
+      "worst sorting algorithm",
+      "multiply and surrender"
     ],
     "published_at": "2020-07-26",
     "similar": []
