@@ -16,7 +16,12 @@
       "multiply and surrender"
     ],
     "published_at": "2020-07-26",
-    "similar": []
+    "similar": [
+      "isolation-forest",
+      "copy-on-write",
+      "mongodb-cursor-skip-is-slow",
+      "inheritance-c"
+    ]
   },
   {
     "id": "bitcask",
@@ -35,7 +40,7 @@
     ],
     "published_at": "2020-07-19",
     "similar": [
-      "consistent-hashing",
+      "better-programmer",
       "phi-accrual",
       "copy-on-write",
       "mysql-cache"
@@ -60,7 +65,7 @@
       "copy-on-write",
       "better-programmer",
       "bitcask",
-      "inheritance-c"
+      "isolation-forest"
     ]
   },
   {
@@ -138,9 +143,9 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
-      "copy-on-write",
       "idf",
-      "phi-accrual"
+      "copy-on-write",
+      "slowsort"
     ]
   },
   {
@@ -176,7 +181,7 @@
       "rum",
       "isolation-forest",
       "mongodb-cursor-skip-is-slow",
-      "bitcask"
+      "slowsort"
     ]
   },
   {
@@ -209,10 +214,10 @@
     "tags": [],
     "published_at": "2020-05-10",
     "similar": [
-      "inheritance-c",
+      "slowsort",
       "mongodb-cursor-skip-is-slow",
-      "copy-on-write",
-      "rule-30"
+      "inheritance-c",
+      "copy-on-write"
     ]
   },
   {
@@ -229,8 +234,8 @@
     "similar": [
       "phi-accrual",
       "better-programmer",
-      "bitcask",
-      "inheritance-c"
+      "slowsort",
+      "bitcask"
     ]
   },
   {
@@ -332,7 +337,7 @@
       "bayesian-average",
       "i-changed-my-python",
       "inheritance-c",
-      "python-caches-integers"
+      "mongodb-cursor-skip-is-slow"
     ]
   },
   {
@@ -466,10 +471,10 @@
     ],
     "published_at": "2020-01-28",
     "similar": [
+      "slowsort",
       "bayesian-average",
       "phi-accrual",
-      "copy-on-write",
-      "better-programmer"
+      "copy-on-write"
     ]
   },
   {
@@ -681,8 +686,8 @@
     "similar": [
       "inheritance-c",
       "idf",
-      "copy-on-write",
-      "phi-accrual"
+      "slowsort",
+      "copy-on-write"
     ]
   },
   {
