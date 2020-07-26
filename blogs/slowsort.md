@@ -98,11 +98,11 @@ The above expression suggests that lower bound of Slowsort is non-polynomial in 
 
 ![slowsort vs recursive bubblesort](https://user-images.githubusercontent.com/4745789/88475549-8e4c8680-cf4e-11ea-8ee4-9f7ed345ff5d.png)
 
-> The iterative implementation of Bubblesort stood no chance in terms of time taken for smaller sets of integers, hence the chart was plotted against the recursive implementation of it. Iterative bubble sort for smaller arrays is nearly flat.
+> The iterative implementation of Bubblesort stood no chance in terms of time taken for smaller sets of integers, hence the chart was plotted against the recursive implementation of it. The iterative bubble sort for smaller arrays is nearly flat.
 
 # Slowsort vs Bogosort
 
-[Bogosort](https://en.wikipedia.org/wiki/Bogosort) is a sorting algorithm that has an average case time complexity of `O(n!)` and an unbounded time in the worst case. The algorithm keeps on permuting (shuffling) the array till it is sorted which introduces an unboundedness in its implementaion and hence the algorithm is considered to be the worst sorting algorithm ever.
+[Bogosort](https://en.wikipedia.org/wiki/Bogosort) is a sorting algorithm that has an average case time complexity of `O(n!)` and an unbounded time in the worst case. The algorithm keeps on permuting (shuffling) the array till it is sorted which introduces an unboundedness in its implementation and hence the algorithm is considered to be the worst sorting algorithm ever.
 
 ```python
 import random
