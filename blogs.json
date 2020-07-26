@@ -2,7 +2,7 @@
   {
     "id": "slowsort",
     "title": "Slowsort - a pessimal sorting algorithm",
-    "description": "Slowsort",
+    "description": "Slowsort is a pessimal sorting algorithm based on the Multiply and Surrender paradigm. The algorithm is designed to be deterministically sub-optimal and it could easily be the worst way anyone could sort an array.",
     "image": "https://user-images.githubusercontent.com/4745789/88473025-fabb8b80-cf36-11ea-8390-a807fcd57d93.png",
     "gif": "https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif",
     "categories": [
