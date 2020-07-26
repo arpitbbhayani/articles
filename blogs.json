@@ -1,5 +1,29 @@
 [
   {
+    "id": "slowsort",
+    "title": "Slowsort - a pessimal sorting algorithm",
+    "description": "Slowsort is a pessimal sorting algorithm based on the Multiply and Surrender paradigm. The algorithm is designed to be deterministically sub-optimal and it could easily be the worst way anyone could sort an array.",
+    "image": "https://user-images.githubusercontent.com/4745789/88473025-fabb8b80-cf36-11ea-8390-a807fcd57d93.png",
+    "gif": "https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif",
+    "categories": [
+      "algorithms"
+    ],
+    "tags": [
+      "slowsort",
+      "pessimal algorithms",
+      "slowsort vs bogosort",
+      "worst sorting algorithm",
+      "multiply and surrender"
+    ],
+    "published_at": "2020-07-26",
+    "similar": [
+      "isolation-forest",
+      "copy-on-write",
+      "mongodb-cursor-skip-is-slow",
+      "inheritance-c"
+    ]
+  },
+  {
     "id": "bitcask",
     "title": "Bitcask - a log-structured fast KV store",
     "description": "Bitcask is a Key-Value store that persists its data in append-only log files and still reaps super-performant read-write throughputs. In this essay, we take a detailed look into Bitcask, its design, and find the secret sauce that makes it so performant.",
@@ -16,7 +40,7 @@
     ],
     "published_at": "2020-07-19",
     "similar": [
-      "consistent-hashing",
+      "better-programmer",
       "phi-accrual",
       "copy-on-write",
       "mysql-cache"
@@ -41,7 +65,7 @@
       "copy-on-write",
       "better-programmer",
       "bitcask",
-      "inheritance-c"
+      "isolation-forest"
     ]
   },
   {
@@ -119,9 +143,9 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
-      "copy-on-write",
       "idf",
-      "phi-accrual"
+      "copy-on-write",
+      "slowsort"
     ]
   },
   {
@@ -157,7 +181,7 @@
       "rum",
       "isolation-forest",
       "mongodb-cursor-skip-is-slow",
-      "bitcask"
+      "slowsort"
     ]
   },
   {
@@ -190,10 +214,10 @@
     "tags": [],
     "published_at": "2020-05-10",
     "similar": [
-      "inheritance-c",
+      "slowsort",
       "mongodb-cursor-skip-is-slow",
-      "copy-on-write",
-      "rule-30"
+      "inheritance-c",
+      "copy-on-write"
     ]
   },
   {
@@ -210,8 +234,8 @@
     "similar": [
       "phi-accrual",
       "better-programmer",
-      "bitcask",
-      "inheritance-c"
+      "slowsort",
+      "bitcask"
     ]
   },
   {
@@ -313,7 +337,7 @@
       "bayesian-average",
       "i-changed-my-python",
       "inheritance-c",
-      "python-caches-integers"
+      "mongodb-cursor-skip-is-slow"
     ]
   },
   {
@@ -447,10 +471,10 @@
     ],
     "published_at": "2020-01-28",
     "similar": [
+      "slowsort",
       "bayesian-average",
       "phi-accrual",
-      "copy-on-write",
-      "better-programmer"
+      "copy-on-write"
     ]
   },
   {
@@ -662,8 +686,8 @@
     "similar": [
       "inheritance-c",
       "idf",
-      "copy-on-write",
-      "phi-accrual"
+      "slowsort",
+      "copy-on-write"
     ]
   },
   {
