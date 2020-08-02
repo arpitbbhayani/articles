@@ -19,7 +19,7 @@
       "rule-30",
       "copy-on-write",
       "inheritance-c",
-      "fast-and-efficient-pagination-in-mongodb"
+      "fractional-cascading"
     ]
   },
   {
