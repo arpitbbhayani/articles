@@ -24,7 +24,7 @@ This approach can be extended to count even larger numbers by changing the value
 
 Instead of keeping track of the total number of events `n` or some constant multiple of `n`, Morris' algorithm suggests that the value we store in the register is
 
-![value in counter Morris algorithm](https://user-images.githubusercontent.com/4745789/89117993-edb31500-d4bf-11ea-9879-1f0032950ff4.png)
+![value in counter Morris' algorithm](https://user-images.githubusercontent.com/4745789/89117993-edb31500-d4bf-11ea-9879-1f0032950ff4.png)
 
 Here we try to exploit the core property of *logarithm* - *the growth of logarithmic function is inverse of the exponential* - which means the value `v` will grow faster for the smaller values of `n` - providing better approximations. This ensures that the relative error is near-constant i.e. independent of `n` and it does not matter if the number of events is fewer or larger.
 
@@ -56,7 +56,7 @@ The proof that the expected value of `n`, post this probabilistic decision, is `
 
 ![morris function v](https://user-images.githubusercontent.com/4745789/89121058-3fb46480-d4d9-11ea-9d93-5af712ac08e7.png)
 
-When we plot values produced by Morris Algorithm vs the actual number of events we find that Morris' algorithm indeed generates better approximate values to smaller values of `n` but as `n` increases the absolute error grows but the relative error remains fairly constant. The illustrations shown below describe these facts.
+When we plot values produced by Morris' Algorithm vs the actual number of events we find that Morris' algorithm indeed generates better approximate values to smaller values of `n` but as `n` increases the absolute error grows but the relative error remains fairly constant. The illustrations shown below describe these facts.
 
 ![Morris comparison](https://user-images.githubusercontent.com/4745789/89123322-13eeaa00-d4ec-11ea-9539-ada7f5de9af1.png)
 
@@ -66,12 +66,12 @@ When we plot values produced by Morris Algorithm vs the actual number of events 
 
 # Space Complexity
 
-In order to count till `n` the Morris' algorithm requires the counter to go up to `log(n)` and hence the number of bits required to count from `0 to log(n)` ordinarily is `log(log(n))` and hence we say that the space complexity of this technique is `O(log log n)`. Morris algorithm thus provides a very efficient way to manage cardinalities where we can afford to have approximations.
+In order to count till `n` the Morris' algorithm requires the counter to go up to `log(n)` and hence the number of bits required to count from `0 to log(n)` ordinarily is `log(log(n))` and hence we say that the space complexity of this technique is `O(log log n)`. Morris' algorithm thus provides a very efficient way to manage cardinalities where we can afford to have approximations.
 
 # References
 
 - [Approximate Counting Algorithm - Wikipedia](https://en.wikipedia.org/wiki/Approximate_counting_algorithm)
 - [Approximate Counting with Morris's Algorithm](http://gregorygundersen.com/blog/2019/11/11/morris-algorithm/)
 - [Counting large number of events in small registers](http://www.inf.ed.ac.uk/teaching/courses/exc/reading/morris.pdf)
-- [Probabilistic Counting and Morris Algorithm - Texas A&M University](http://cesg.tamu.edu/wp-content/uploads/2014/09/ECEN689-lec11.pdf)
+- [Probabilistic Counting and Morris' Algorithm - Texas A&M University](http://cesg.tamu.edu/wp-content/uploads/2014/09/ECEN689-lec11.pdf)
 - [Python-based implementation of Morris' algorithm](https://github.com/arpitbbhayani/morris-counter/blob/master/morris-counter.ipynb)
