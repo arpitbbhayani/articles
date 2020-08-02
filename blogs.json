@@ -2,7 +2,7 @@
   {
     "id": "morris-counter",
     "title": "Morris's Algorithm for Approximate Counting",
-    "description": "Morris' Algorithm",
+    "description": "Morris' Algorithm counts a large number of events using a very small space O(log log n). The algorithm uses probabilistic techniques to increment the counter and in this essay, we take a detailed look at Morris' Algorithm and the math behind it.",
     "image": "https://user-images.githubusercontent.com/4745789/89116441-b9d0f300-d4b1-11ea-99e5-cca7c4cef5fb.png",
     "gif": "https://media.giphy.com/media/uWXxbGPMbFkxsni3tc/giphy.gif",
     "categories": [
