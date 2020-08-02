@@ -1,5 +1,28 @@
 [
   {
+    "id": "morris-counter",
+    "title": "Morris's Algorithm for Approximate Counting",
+    "description": "Morris' Algorithm",
+    "image": "https://user-images.githubusercontent.com/4745789/89116441-b9d0f300-d4b1-11ea-99e5-cca7c4cef5fb.png",
+    "gif": "https://media.giphy.com/media/uWXxbGPMbFkxsni3tc/giphy.gif",
+    "categories": [
+      "algorithms"
+    ],
+    "tags": [
+      "approximate counting",
+      "morris counter",
+      "hyperloglog",
+      "morris algorithm"
+    ],
+    "published_at": "2020-08-02",
+    "similar": [
+      "isolation-forest",
+      "copy-on-write",
+      "mongodb-cursor-skip-is-slow",
+      "inheritance-c"
+    ]
+  },
+  {
     "id": "slowsort",
     "title": "Slowsort - a pessimal sorting algorithm",
     "description": "Slowsort is a pessimal sorting algorithm based on the Multiply and Surrender paradigm. The algorithm is designed to be deterministically sub-optimal and it could easily be the worst way anyone could sort an array.",
