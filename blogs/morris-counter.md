@@ -2,7 +2,7 @@ Approximate Counting algorithms are techniques that allow us to count a large nu
 
 Robert Morris, while working at Bell Laboratories, had a problem at hand; he was supposed to write a piece of code that counts a large number of events and all he had was one 8-bit counter. Since the number of events easily crossed 256, counting them was infeasible using ordinary methods and this constraint led him to build this approximate counter that instead of providing the exact count, does a pretty good job providing an approximate one.
 
-# Counting and Coinflips
+# Counting and coin flips
 
 A very simple solution, to build an approximate counter, is to count every alternate event. In order to make the decision of whether to count an event or not - we use a coin flip, which means, every time we see a new event, we flip a coin and if it lands *heads* we increase the count otherwise we don't. This way the value preset in our counter register will, on average, represent half of the total events. When we multiply the count (in the register) by 2, we get a good approximation of the actual number of events.
 
