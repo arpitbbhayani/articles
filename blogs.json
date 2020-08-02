@@ -1,5 +1,28 @@
 [
   {
+    "id": "morris-counter",
+    "title": "Morris's Algorithm for Approximate Counting",
+    "description": "Morris' Algorithm counts a large number of events using a very small space O(log log n). The algorithm uses probabilistic techniques to increment the counter and in this essay, we take a detailed look at Morris' Algorithm and the math behind it.",
+    "image": "https://user-images.githubusercontent.com/4745789/89116441-b9d0f300-d4b1-11ea-99e5-cca7c4cef5fb.png",
+    "gif": "https://media.giphy.com/media/uWXxbGPMbFkxsni3tc/giphy.gif",
+    "categories": [
+      "algorithms"
+    ],
+    "tags": [
+      "approximate counting",
+      "morris counter",
+      "hyperloglog",
+      "morris algorithm"
+    ],
+    "published_at": "2020-08-02",
+    "similar": [
+      "rule-30",
+      "copy-on-write",
+      "inheritance-c",
+      "fractional-cascading"
+    ]
+  },
+  {
     "id": "slowsort",
     "title": "Slowsort - a pessimal sorting algorithm",
     "description": "Slowsort is a pessimal sorting algorithm based on the Multiply and Surrender paradigm. The algorithm is designed to be deterministically sub-optimal and it could easily be the worst way anyone could sort an array.",
@@ -19,7 +42,7 @@
     "similar": [
       "isolation-forest",
       "copy-on-write",
-      "mongodb-cursor-skip-is-slow",
+      "morris-counter",
       "inheritance-c"
     ]
   },
@@ -64,8 +87,8 @@
     "similar": [
       "copy-on-write",
       "better-programmer",
-      "bitcask",
-      "isolation-forest"
+      "morris-counter",
+      "bitcask"
     ]
   },
   {
@@ -143,8 +166,8 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
+      "morris-counter",
       "idf",
-      "copy-on-write",
       "slowsort"
     ]
   },
@@ -215,9 +238,9 @@
     "published_at": "2020-05-10",
     "similar": [
       "slowsort",
+      "morris-counter",
       "mongodb-cursor-skip-is-slow",
-      "inheritance-c",
-      "copy-on-write"
+      "inheritance-c"
     ]
   },
   {
@@ -234,8 +257,8 @@
     "similar": [
       "phi-accrual",
       "better-programmer",
-      "slowsort",
-      "bitcask"
+      "morris-counter",
+      "slowsort"
     ]
   },
   {
@@ -335,9 +358,9 @@
     "published_at": "2020-03-06",
     "similar": [
       "bayesian-average",
-      "i-changed-my-python",
       "inheritance-c",
-      "mongodb-cursor-skip-is-slow"
+      "i-changed-my-python",
+      "python-caches-integers"
     ]
   },
   {
@@ -415,9 +438,9 @@
     "published_at": "2020-02-14",
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
+      "morris-counter",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "fast-and-efficient-pagination-in-mongodb",
-      "benchmark-and-compare-pagination-approach-in-mongodb"
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -473,8 +496,8 @@
     "similar": [
       "slowsort",
       "bayesian-average",
-      "phi-accrual",
-      "copy-on-write"
+      "copy-on-write",
+      "phi-accrual"
     ]
   },
   {
@@ -633,7 +656,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "rule-30",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "better-programmer"
+      "morris-counter"
     ]
   },
   {
@@ -687,7 +710,7 @@
       "inheritance-c",
       "idf",
       "slowsort",
-      "copy-on-write"
+      "morris-counter"
     ]
   },
   {
@@ -711,10 +734,10 @@
     ],
     "published_at": "2017-07-16",
     "similar": [
-      "benchmark-and-compare-pagination-approach-in-mongodb",
       "rule-30",
+      "benchmark-and-compare-pagination-approach-in-mongodb",
       "fast-and-efficient-pagination-in-mongodb",
-      "efficient-way-to-stop-an-iterating-loop"
+      "morris-counter"
     ]
   },
   {
