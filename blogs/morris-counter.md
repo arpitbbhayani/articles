@@ -71,3 +71,4 @@ In order to count till `n` the Morris' algorithm requires the counter to go up t
 - [Approximate Counting with Morris's Algorithm](http://gregorygundersen.com/blog/2019/11/11/morris-algorithm/)
 - [Counting large number of events in small registers](http://www.inf.ed.ac.uk/teaching/courses/exc/reading/morris.pdf)
 - [Probabilistic Counting and Morris Algorithm - Texas A&M University](http://cesg.tamu.edu/wp-content/uploads/2014/09/ECEN689-lec11.pdf)
+- [Python-based implementation of Morris' algorithm](https://github.com/arpitbbhayani/morris-counter/blob/master/morris-counter.ipynb)
