@@ -26,7 +26,7 @@ Instead of keeping track of the total number of events `n` or some constant mult
 
 ![value in counter Morris algorithm](https://user-images.githubusercontent.com/4745789/89117993-edb31500-d4bf-11ea-9879-1f0032950ff4.png)
 
-Here we try to exploit the core property of *logarithm* - *growth of logarithmic function is inverse of the exponential* - which means the value `v` will grow faster for the smaller values of `n` - providing better approximations. This ensures that the relative error is near-constant i.e. independent of `n` and it does not matter if the number of events is fewer or larger.
+Here we try to exploit the core property of *logarithm* - *the growth of logarithmic function is inverse of the exponential* - which means the value `v` will grow faster for the smaller values of `n` - providing better approximations. This ensures that the relative error is near-constant i.e. independent of `n` and it does not matter if the number of events is fewer or larger.
 
 Now that we have found a function that suits the needs of a good approximate counter, it is time we define what exactly would happen to the counter when we see a new event.
 
@@ -48,7 +48,7 @@ For us to determine if we should increment the value of `v` or not, we need to f
 
 The value of `d` will always be in the interval `(0, 1)` . Smaller the jump between two `n`s larger will be the value of `d` and larger the jump, smaller will be the value of `d`. This also implies that as `n` grows the value of `d` will become smaller and smaller making it harder for us to make the change in `v`.
 
-So we pick a random number `r` uniformly generated in the interval `[0, 1)` and using this random number `r` and previously defined `d` we state that if this `r` is less than `d` increase the counter `v` otherwise we keep it as is. As `n` increases, `d` decreases making it tougher for the odds of pick `r` in the range `[0, d)`.
+So we pick a random number `r` uniformly generated in the interval `[0, 1)` and using this random number `r` and previously defined `d` we state that if this `r` is less than `d` increase the counter `v` otherwise, we keep it as is. As `n` increases, `d` decreases making it tougher for the odds of pick `r` in the range `[0, d)`.
 
 ![defiing d 2](https://user-images.githubusercontent.com/4745789/89120929-f9aad100-d4d7-11ea-8f0e-066fc059c066.png)
 
