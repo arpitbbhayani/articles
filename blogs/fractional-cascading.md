@@ -94,7 +94,7 @@ By picking every other element from lower-level lists, we fill the gaps in value
 ### Position tuples
 A position tuple for Fractional Cascading is a 2 item tuple, associated with each element of the auxiliary list, where the first item is the position of the element in the original list on the same level - serving as the required position - and the second element is the position of the element in the auxiliary list on the lower level - serving as the bridge from one level to another.
 
-![Create position pointerss](https://user-images.githubusercontent.com/4745789/81494709-92122a80-92c8-11ea-89c0-e180a735eb2d.png)
+![Create position pointerss](https://user-images.githubusercontent.com/4745789/89712282-83adda80-d9ad-11ea-888f-2b20d839252f.png)
 
 The position tuple for each element in the auxiliary array can be created by doing a binary search on the original list and the auxiliary list on the lower level. Given a 2-dimensional array `arr` and auxiliary lists `m_arr` we compute the position tuples for element `(i, j)` by performing a binary search on all `k` original and auxiliary lists as shown in python code below
 
