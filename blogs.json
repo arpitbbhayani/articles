@@ -1,5 +1,28 @@
 [
   {
+    "id": "lfu",
+    "title": "Constant Time LFU",
+    "description": "Constant time lfu",
+    "image": "https://user-images.githubusercontent.com/4745789/89711582-cf11ba00-d9a8-11ea-9173-c7069b1537b5.png",
+    "gif": "https://media.giphy.com/media/xl1puJZB0P0JnbRWzD/giphy.gif",
+    "categories": [
+      "algorithms"
+    ],
+    "tags": [
+      "caching",
+      "cache eviction algorithm",
+      "least frequently used",
+      "constant time"
+    ],
+    "published_at": "2020-08-09",
+    "similar": [
+      "rule-30",
+      "copy-on-write",
+      "inheritance-c",
+      "fractional-cascading"
+    ]
+  },
+  {
     "id": "morris-counter",
     "title": "Morris's Algorithm for Approximate Counting",
     "description": "Morris' Algorithm counts a large number of events using a very small space O(log log n). The algorithm uses probabilistic techniques to increment the counter and in this essay, we take a detailed look at Morris' Algorithm and the math behind it.",
