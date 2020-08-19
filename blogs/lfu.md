@@ -34,11 +34,11 @@ Every Frequency Node holds the frequency that it represents in the member `freq`
 
 The overall schematic representation of doubly-linked lists and its arrangement is as shown in the illustration above. The doubly-linked list holding Frequency Nodes is arranged horizontally while the list holding the Value Nodes is arranged vertically, for clearer view and understanding.
 
-Since the cached values `v1` and `v7` both have been accessed 7 times they both are chained in a double linked list and are hooked with the Frequency Node for frequency `7`. Similarly, the Value Nodes holding values `v5`, `v3`, and `v9` are chained in another doubly-linked list and are hooked with the Frequency Node representing frequency `18`.
+Since the cached values `v1` and `v7` both have been accessed `7` times, they both are chained in a doubly-linked list and are hooked with the Frequency Node representing frequency of `7`. Similarly, the Value Nodes holding values `v5`, `v3`, and `v9` are chained in another doubly-linked list and are hooked with the Frequency Node representing frequency `18`.
 
-The Value Node contains the cached value `data`, along with the usual `next` and `prev` pointers pointing to the adjacent Value Nodes in the list. It also holds a `freq_pointer` pointing to the Frequency Node to which it belongs. Having all of these pointers helps us ensure all the three operations happen in constant time.
+The Value Node contains the cached value in member `data`, along with the usual `next` and `prev` pointers pointing to the adjacent Value Nodes in the list. It also holds a `freq_pointer` pointing back to the Frequency Node to which the list if hooked at. Having all of these pointers helps us ensure all the three operations happen in constant time.
 
-Now that we have established all the necessary structures in place, we take a look at the core 3 operations along with their pseudo implementation.
+Now that we have put all the necessary structures in place, we take a look at the 3 core operations along with their pseudo implementation.
 
 ## Adding value to the cache
 
