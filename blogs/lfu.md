@@ -1,4 +1,4 @@
-A common strategy to make any system super-performant is *[Caching](https://en.wikipedia.org/wiki/Cache_(computing)).* Almost all software products, operating at scale, have multiple layers of caches in their architectures. Caching, when done right, does wonder to the response time and is one of the main reasons why products work so well at a massive scale. Cache engines are limited by the amount of memory available and hence once it gets full the engine has to decide which item should be evicted and that is where an eviction algorithm, like [LFU](https://en.wikipedia.org/wiki/Least_frequently_used) and [LRU](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)). kicks in.
+A common strategy to make any system super-performant is *[Caching](https://en.wikipedia.org/wiki/Cache_(computing)).* Almost all software products, operating at scale, have multiple layers of caches in their architectures. Caching, when done right, does wonder to the response time and is one of the main reasons why products work so well on a massive scale. Cache engines are limited by the amount of memory available and hence once it gets full the engine has to decide which item should be evicted and that is where an eviction algorithm, like [LFU](https://en.wikipedia.org/wiki/Least_frequently_used) and [LRU](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)). kicks in.
 
 [LRU](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) (Least Recently Used) cache eviction strategy is one of the most popular strategies out there. LFU (Least Frequently Used) strategy fares well in some use cases but a concern with its most popular implementation, where it uses a min-heap, is that it provides a running time complexity of `O(log n)` for all the three operations - insert, update and delete; because of which, more often than not, it is replaced with a sub-optimal yet extremely fast `O(1)` LRU eviction scheme.
 
@@ -14,7 +14,7 @@ Although the identification of the element to be evicted is quick, but in order 
 
 # Constant time implementation
 
-The LFU cache can be implemented with `O(1)` complexity for all the three operations by using one [Hash Table](https://en.wikipedia.org/wiki/Hash_table) and a bunch of [Doubly Linked Lists](https://en.wikipedia.org/wiki/Doubly_linked_list). As stated by the [RUM Conjecture](https://arpitbhayani.me/blogs/rum), in order to get a constant time reads and updates operations, we have to make a compromise with the memory utilization. This is exactly what we observe in this implementation.
+The LFU cache can be implemented with `O(1)` complexity for all the three operations by using one [Hash Table](https://en.wikipedia.org/wiki/Hash_table) and a bunch of [Doubly Linked Lists](https://en.wikipedia.org/wiki/Doubly_linked_list). As stated by the [RUM Conjecture](https://arpitbhayani.me/blogs/rum), in order to get a constant time reads and updates operations, we have to make a compromise with memory utilization. This is exactly what we observe in this implementation.
 
 ## The Hash Table
 
@@ -22,7 +22,7 @@ The Hash Table stores the mapping of the cached key to the Value Node holding th
 
 ![LFU hash table](https://user-images.githubusercontent.com/4745789/90469594-e2561f80-e136-11ea-9ff4-8369a7ea3df3.png)
 
-The illustration above depicts that the Hash Table holding cache keys `k1`, `k2`, etc are mapped to the nodes holding the values `v1` and `v2` through direct pointers. The nodes are allocated on the heap using dynamic allocation, hence are a little disorganized. The Value Node to which the key maps to, not only hold the cached value, but it also holds a few pointers pointing to different entities in the system, enabling constant time operations.
+The illustration above depicts that the Hash Table holding cache keys `k1`, `k2`, etc are mapped to the nodes holding the values `v1` and `v2` through direct pointers. The nodes are allocated on the heap using dynamic allocation, hence are a little disorganized. The Value Node to which the key maps to, not only hold the cached value, but it also holds a few pointers pointing to different entities in the system, enabling constant-time operations.
 
 ## Doubly Linked Lists
 
@@ -34,14 +34,14 @@ Every Frequency Node holds the frequency that it represents in the member `freq`
 
 The overall schematic representation of doubly-linked lists and its arrangement is as shown in the illustration above. The doubly-linked list holding Frequency Nodes is arranged horizontally while the list holding the Value Nodes is arranged vertically, for clearer view and understanding.
 
-Since the cached values `v1` and `v7` both have been accessed `7` times, they both are chained in a doubly-linked list and are hooked with the Frequency Node representing frequency of `7`. Similarly, the Value Nodes holding values `v5`, `v3`, and `v9` are chained in another doubly-linked list and are hooked with the Frequency Node representing frequency `18`.
+Since the cached values `v1` and `v7` both have been accessed `7` times, they both are chained in a doubly-linked list and are hooked with the Frequency Node representing the frequency of `7`. Similarly, the Value Nodes holding values `v5`, `v3`, and `v9` are chained in another doubly-linked list and are hooked with the Frequency Node representing frequency `18`.
 
 The Value Node contains the cached value in member `data`, along with the usual `next` and `prev` pointers pointing to the adjacent Value Nodes in the list. It also holds a `freq_pointer` pointing back to the Frequency Node to which the list if hooked at. Having all of these pointers helps us ensure all the three operations happen in constant time.
 
 Now that we have put all the necessary structures in place, we take a look at the 3 core operations along with their pseudo implementation.
 
 ## Adding value to the cache
-Adding a new value to the cache is a relatively simpler operation which requires a bunch of pointer manipulations and does the job with a constant time running complexity. While inserting the value in the cache, we first check the existence of the key in the table, if key is already present and we try to put it again the function raises an error. Then we ensures the presence of the Frequency Node representing the frequency of `1`, and in the process we might also need to create a new frequency node also. Then we wrap the value in a Value Node and adds it to the `values_list` of this Frequency Node; and at last we makes an entry in the table acknowledging the completion of the caching process.
+Adding a new value to the cache is a relatively simpler operation that requires a bunch of pointer manipulations and does the job with a constant time running complexity. While inserting the value in the cache, we first check the existence of the key in the table, if the key is already present and we try to put it again the function raises an error. Then we ensure the presence of the Frequency Node representing the frequency of `1`, and in the process, we might also need to create a new frequency node also. Then we wrap the value in a Value Node and adds it to the `values_list` of this Frequency Node; and at last, we make an entry in the table acknowledging the completion of the caching process.
 
 ```python
 def add(key: str, value: object):
@@ -108,7 +108,7 @@ def evict():
 
 Accessing an item from the cache has to be the most common operation of any cache. In the LFU scheme, before returning the cached value, the engine also has to update its access frequency. Ensuring the change in access frequency of one cached value does not require some sort of rebalance or restructuring to maintain the integrity, is what makes this implementation special.
 
-The engine first makes a get call to the Hash Table to check that the key exists in the cache. Before returning the cached value from the retrieved Value Node, the engine performs the following operations - it accesses the Frequency Node and its sibling corresponding to the retrieved Value Node. It ensures that the frequency of the sibling is 1 more than that of the Frequency Node; if not it creates the necessary Frequency Node and place it as the new sibling. The Value Node then changes its affinity to this sibling Frequency Node so that it correctly matches the access frequency. At the end the back pointer from the Value Node to the new Frequency Node is set and the value is returned.
+The engine first makes a get call to the Hash Table to check that the key exists in the cache. Before returning the cached value from the retrieved Value Node, the engine performs the following operations - it accesses the Frequency Node and its sibling corresponding to the retrieved Value Node. It ensures that the frequency of the sibling is 1 more than that of the Frequency Node; if not it creates the necessary Frequency Node and place it as the new sibling. The Value Node then changes its affinity to this sibling Frequency Node so that it correctly matches the access frequency. At the end, the back pointer from the Value Node to the new Frequency Node is set and the value is returned.
 
 ```python
 def get(key: str) -> object:
