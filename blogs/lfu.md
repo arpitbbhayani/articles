@@ -10,19 +10,19 @@ LFU, very commonly, is implemented using a [min-heap](https://en.wikipedia.org/w
 
 ![min-heap LFU](https://user-images.githubusercontent.com/4745789/89717235-0fd1f900-d9d2-11ea-968d-9ed67f52a2db.png)
 
-Although the identification of the element to be evicted is quick, but in order for the heap to maintain its property - element with lowest access frequency be at the top - it demands a rebalance; and this rebalancing process has a running complexity of `O(log n)`. To make things worse, rebalancing is required every single time the frequency of an item is changed; which means that in the cache that implements LFU, every time an item is either inserted, accessed or evicted, it demands a rebalance - making all the three core operations `O(log n)`.
+Although the identification of the element to be evicted is quick, but in order for the heap to maintain its property - element with lowest access frequency be at the top - it demands a rebalance; and this rebalancing process has a running complexity of `O(log n)`. To make things worse, rebalancing is required every single time the frequency of an item is changed; which means that in the cache that implements LFU, every time an item is either inserted, accessed or evicted, a rebalance is required - making all the three core operations to have the time complexity of `O(log n)`.
 
 # Constant time implementation
 
-The LFU cache can be implemented with `O(1)` complexity for all the three operations by using one [Hash Table](https://en.wikipedia.org/wiki/Hash_table) and a bunch of [Doubly Linked Lists](https://en.wikipedia.org/wiki/Doubly_linked_list). As stated by the [RUM Conjecture](https://arpitbhayani.me/blogs/rum), in order to get faster - constant time `O(1)` - reads and updates we have to make a compromise with the memory utilization and we observe exactly that in this implementation.
+The LFU cache can be implemented with `O(1)` complexity for all the three operations by using one [Hash Table](https://en.wikipedia.org/wiki/Hash_table) and a bunch of [Doubly Linked Lists](https://en.wikipedia.org/wiki/Doubly_linked_list). As stated by the [RUM Conjecture](https://arpitbhayani.me/blogs/rum), in order to get a constant time reads and updates operations, we have to make a compromise with the memory utilization. This is exactly what we observe in this implementation.
 
 ## The Hash Table
 
-The Hash Table stores the mapping of the cached key to the Value Node holding the cached value. The value against the key is usually a pointer to the actual Value Node. Given that the lookup complexity of the hash table is `O(1)`  operation to access the value given the key from this Hash Table could be accomplished in constant time.
+The Hash Table stores the mapping of the cached key to the Value Node holding the cached value. The value against the key is usually a pointer to the actual Value Node. Given that the lookup complexity of the hash table is `O(1)`, the operation to access the value given the key from this Hash Table could be accomplished in constant time.
 
 ![LFU hash table](https://user-images.githubusercontent.com/4745789/90469594-e2561f80-e136-11ea-9ff4-8369a7ea3df3.png)
 
-The illustration above depicts the Hash Table holding cache keys `k1`, `k2`, etc mapped to nodes holding the values `v1` and `v2` through direct pointers. The nodes are allocated on the heap using dynamic allocation could be a little disorganized. The Value Node to which the key maps to, not only hold the cached value, but it also holds a bunch of pointers pointing to different entities in the system, as discussed later.
+The illustration above depicts that the Hash Table holding cache keys `k1`, `k2`, etc are mapped to the nodes holding the values `v1` and `v2` through direct pointers. The nodes are allocated on the heap using dynamic allocation, hence are a little disorganized. The Value Node to which the key maps to, not only hold the cached value, but it also holds a few pointers pointing to different entities in the system, enabling constant time operations.
 
 ## Doubly Linked Lists
 
