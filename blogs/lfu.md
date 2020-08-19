@@ -4,7 +4,7 @@ A common strategy to make any system super-performant is *[Caching](https://en.w
 
 In this essay, we take a look at Constant Time LFU implementation based on the paper [An O(1) algorithm for implementing the LFU cache eviction scheme](http://dhruvbird.com/lfu.pdf) by Prof. Ketan Shah, Anirban Mitra and Dhruv Matani, where instead of using a min-heap it uses a combination of [doubly linked lists](https://en.wikipedia.org/wiki/Doubly_linked_list) and [hash table](https://en.wikipedia.org/wiki/Hash_table) to gain a running time complexity of `O(1)` for all the three core operations.
 
-# The LFU **cache eviction strategy
+# The LFU cache eviction strategy
 
 LFU, very commonly, is implemented using a [min-heap](https://en.wikipedia.org/wiki/Min-max_heap) which is organized as per the frequency of access of each element. Each element of this heap holds a pair - cached value and the access frequency; and is structured in order of this frequency such that the cached value with the minimum access frequency sits at the top, making it quick to identify the element to be evicted.
 
@@ -22,7 +22,7 @@ The Hash Table stores the mapping of the cached key to the Value Node holding th
 
 ![https://user-images.githubusercontent.com/4745789/90469594-e2561f80-e136-11ea-9ff4-8369a7ea3df3.png](https://user-images.githubusercontent.com/4745789/90469594-e2561f80-e136-11ea-9ff4-8369a7ea3df3.png)
 
-The illustration above depicts the Hash Table holding cache keys `k1`, `k2`, etc mapped to nodes holding the values `v1` and `v2` through direct pointers. The nodes are allocated on the heap using dynamic allocation could be a little disorganized. The Value Node to which the key maps to, not only holds the cached value, but it also holds a bunch of pointers pointing to different entities in the system, as discussed later.
+The illustration above depicts the Hash Table holding cache keys `k1`, `k2`, etc mapped to nodes holding the values `v1` and `v2` through direct pointers. The nodes are allocated on the heap using dynamic allocation could be a little disorganized. The Value Node to which the key maps to, not only hold the cached value, but it also holds a bunch of pointers pointing to different entities in the system, as discussed later.
 
 ## Doubly Linked Lists
 
@@ -78,7 +78,7 @@ def add(key: str, value: object):
     table[key] = value_node
 ```
 
-As seen in the pseudocode above the entire procedure to add a new item in cache is a bunch of memory allocation along with pointer manipulations, hence we observe that the running complexity of `add` is `O(1)`.
+As seen in the pseudocode above the entire procedure to add a new item in the cache is a bunch of memory allocation along with pointer manipulations, hence we observe that the running complexity of `add` is `O(1)`.
 
 ## Evicting an item from the cache
 
@@ -107,9 +107,9 @@ def evict():
 
 ## Getting a value from the cache
 
-Access to an item from the cache has to be the most common operation that any cache has to support. In LFU scheme, while returning the cached value, also has to update its access frequency. Making this entire process run with a constant time complexity requires a bunch of pointer manipulations.
+Access to an item from the cache has to be the most common operation that any cache has to support. In the LFU scheme, while returning the cached value, also has to update its access frequency. Making this entire process run with a constant time complexity requires a bunch of pointer manipulations.
 
-The engine first makes a get call to the Hash Table ensuring that the key exists in the cache. But before returning the cached value from the value node, the engine needs to update the access frequency; and to do so it access the Frequency node and its sibling of the Value Node. Ensures that the frequency of the sibling is 1 more than that of the frequency node. Changes the affinity of the value node from current frequency to the sibling's and sets the appropriate pointer connections and returns the value.
+The engine first makes a get call to the Hash Table ensuring that the key exists in the cache. But before returning the cached value from the value node, the engine needs to update the access frequency; and to do so it access the Frequency node and its sibling of the Value Node. Ensures that the frequency of the sibling is 1 more than that of the frequency node. Changes the affinity of the value node from the current frequency to the sibling's and sets the appropriate pointer connections and returns the value.
 
 The entire flow, though looks complicated through text, is very simple to understand through code. Since this access function only deals with direct pointer manipulations, it has a constant running time complexity.
 
