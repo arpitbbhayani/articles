@@ -106,7 +106,7 @@ def evict():
 
 ## Getting a value from the cache
 
-Access to an item from the cache has to be the most common operation that any cache has to support. In the LFU scheme, while returning the cached value, also has to update its access frequency. Making this entire process run with a constant time complexity requires a bunch of pointer manipulations.
+Access to an item from the cache has to be the most common operation that any cache has to support. In the LFU scheme, before returning the cached value, the engine also has to update its access frequency. Ensuring the change in access frequency of one element does not require some sort of rebalance in order to maintain the integrity, is what makes this implementation special.
 
 The engine first makes a get call to the Hash Table ensuring that the key exists in the cache. But before returning the cached value from the Value Node, the engine needs to update the access frequency; and to do so it access the Frequency node and its sibling of the Value Node. Ensures that the frequency of the sibling is 1 more than that of the Frequency Node. Changes the affinity of the Value Node from the current frequency to the sibling's and sets the appropriate pointer connections and returns the value.
 
