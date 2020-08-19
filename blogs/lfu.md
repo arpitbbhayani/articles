@@ -34,7 +34,7 @@ Every Frequency Node holds the frequency that it represents in the member `freq`
 
 The overall schematic representation of doubly-linked lists and its arrangement is as shown in the illustration above. The doubly-linked list holding Frequency Nodes is arranged horizontally while the list holding the Value Nodes is arranged vertically, for clearer view and understanding.
 
-Since the cached values `v1` and `v7` both have been accessed `7` times, they both are chained in a doubly-linked list and are hooked with the Frequency Node representing the frequency of `7`. Similarly, the Value Nodes holding values `v5`, `v3`, and `v9` are chained in another doubly-linked list and are hooked with the Frequency Node representing frequency `18`.
+Since the cached values `v1` and `v7` both have been accessed `7` times, they both are chained in a doubly-linked list and are hooked with the Frequency Node representing the frequency of `7`. Similarly, the Value Nodes holding values `v5`, `v3`, and `v9` are chained in another doubly-linked list and are hooked with the Frequency Node representing the frequency of `18`.
 
 The Value Node contains the cached value in member `data`, along with the usual `next` and `prev` pointers pointing to the adjacent Value Nodes in the list. It also holds a `freq_pointer` pointing back to the Frequency Node to which the list if hooked at. Having all of these pointers helps us ensure all the three operations happen in constant time.
 
