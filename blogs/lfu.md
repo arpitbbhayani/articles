@@ -81,7 +81,7 @@ As seen in the pseudocode above the entire procedure to add a new value in the c
 
 ## Evicting an item from the cache
 
-For evicting an item we pick the item with the lowest access frequency which could be found as a first Value Node of the first Frequency Node in the frequency list. Since we keep the frequency list sorted as per the frequency count accessing the Frequency Node with the lowest frequency is done in constant time and the first Value Node belonging to it is flagged for eviction. The entire eviction process thus has a running complexity of `O(1)`
+Eviction, similar to insertion, is a trivial operation where we simply pick the frequency node with lowest access frequency (the first node in the `freq_list`) and remove the first Value Node present in its `values_list`. Since the entire eviction also requires pointer manipulations, it also exhibits a running complexity of `O(1)`.
 
 ```python
 def evict():
