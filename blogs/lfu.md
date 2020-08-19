@@ -108,9 +108,7 @@ def evict():
 
 Access to an item from the cache has to be the most common operation that any cache has to support. In the LFU scheme, before returning the cached value, the engine also has to update its access frequency. Ensuring the change in access frequency of one element does not require some sort of rebalance in order to maintain the integrity, is what makes this implementation special.
 
-The engine first makes a get call to the Hash Table ensuring that the key exists in the cache. But before returning the cached value from the Value Node, the engine needs to update the access frequency; and to do so it access the Frequency node and its sibling of the Value Node. Ensures that the frequency of the sibling is 1 more than that of the Frequency Node. Changes the affinity of the Value Node from the current frequency to the sibling's and sets the appropriate pointer connections and returns the value.
-
-The entire flow, though looks complicated through text, is very simple to understand through code. Since this access function only deals with direct pointer manipulations, it has a constant running time complexity.
+The engine first makes a get call to the Hash Table ensuring that the key exists in the cache. Before returning the cached value from the Value Node retrieved, we perform the following operations - we access the Frequency Node and its sibling corresponding to the Value Node. We ensure that the frequency of the sibling is 1 more than that of the Frequency Node; if not we create the necessary Frequency Node and place it at the right place. The Value Node then changes its affinity to the new or sibling Frequency Node so that it correctly matches the access frequency.
 
 ```python
 def get(key: str) -> object:
@@ -162,6 +160,8 @@ def get(key: str) -> object:
     # returning the value
     return value_node.value
 ```
+
+Again, since this `get` operation also deals with pointer manipulations through direct pointers, the running time complexity of this function is `O(1)` and thus we see that by using a Hash Table along with a bunch of Linked Lists we could achieve a Constant-Time LFU.
 
 # References
 
