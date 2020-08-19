@@ -10,7 +10,7 @@ LFU, very commonly, is implemented using a [min-heap](https://en.wikipedia.org/w
 
 ![min-heap LFU](https://user-images.githubusercontent.com/4745789/89717235-0fd1f900-d9d2-11ea-968d-9ed67f52a2db.png)
 
-Although the identification of the element to be evicted is quick, but in order for the heap to maintain its property - element with lowest access frequency be at the top - it demands a rebalance; and this rebalancing process has a running complexity of `O(log n)`. To make things worse, rebalancing is required every single time the frequency of an item is changed; which means that in the cache that implements LFU, every time an item is either inserted, accessed or evicted, a rebalance is required - making all the three core operations to have the time complexity of `O(log n)`.
+Although the identification of the element to be evicted is quick, but in order for the heap to maintain its property - element with lowest access frequency be at the top - it demands a rebalance, and this rebalancing process has a running complexity of `O(log n)`. To make things worse, rebalancing is required every single time the frequency of an item is changed; which means that in the cache that implements LFU, every time an item is either inserted, accessed or evicted, a rebalance is required - making all the three core operations to have the time complexity of `O(log n)`.
 
 # Constant time implementation
 
