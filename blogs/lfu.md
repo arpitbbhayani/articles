@@ -106,9 +106,9 @@ def evict():
 
 ## Getting a value from the cache
 
-Access to an item from the cache has to be the most common operation that any cache has to support. In the LFU scheme, before returning the cached value, the engine also has to update its access frequency. Ensuring the change in access frequency of one element does not require some sort of rebalance in order to maintain the integrity, is what makes this implementation special.
+Accessing an item from the cache has to be the most common operation of any cache. In the LFU scheme, before returning the cached value, the engine also has to update its access frequency. Ensuring the change in access frequency of one cached value does not require some sort of rebalance or restructuring to maintain the integrity, is what makes this implementation special.
 
-The engine first makes a get call to the Hash Table ensuring that the key exists in the cache. Before returning the cached value from the Value Node retrieved, we perform the following operations - we access the Frequency Node and its sibling corresponding to the Value Node. We ensure that the frequency of the sibling is 1 more than that of the Frequency Node; if not we create the necessary Frequency Node and place it at the right place. The Value Node then changes its affinity to the new or sibling Frequency Node so that it correctly matches the access frequency.
+The engine first makes a get call to the Hash Table to check that the key exists in the cache. Before returning the cached value from the retrieved Value Node, the engine performs the following operations - it accesses the Frequency Node and its sibling corresponding to the retrieved Value Node. It ensures that the frequency of the sibling is 1 more than that of the Frequency Node; if not it creates the necessary Frequency Node and place it as the new sibling. The Value Node then changes its affinity to this sibling Frequency Node so that it correctly matches the access frequency. At the end the back pointer from the Value Node to the new Frequency Node is set and the value is returned.
 
 ```python
 def get(key: str) -> object:
@@ -161,7 +161,7 @@ def get(key: str) -> object:
     return value_node.value
 ```
 
-Again, since this `get` operation also deals with pointer manipulations through direct pointers, the running time complexity of this function is `O(1)` and thus we see that by using a Hash Table along with a bunch of Linked Lists we could achieve a Constant-Time LFU.
+Again, since this operation also only deals with pointer manipulations through direct pointers, the running time complexity of this operation is also constant time. Thus we see the Constant Time LFU implementation where the necessary time complexity is achieved by using Hash Tables and Doubly-Linked Lists.
 
 # References
 
