@@ -41,8 +41,7 @@ The Value Node contains the cached value in member `data`, along with the usual 
 Now that we have put all the necessary structures in place, we take a look at the 3 core operations along with their pseudo implementation.
 
 ## Adding value to the cache
-
-While inserting the value in the cache, we first check the existence of the key in the table, if so we raise the error stating key is already present. Once we are sure to add the key and value in the cache we ensure that the Frequency Node representing the frequency of `1` is present and then we add the value wrapped in a Value Node to its `values_list`, and at last we make an entry in the table acknowledging the caching process.
+Adding a new value to the cache is a relatively simpler operation which requires a bunch of pointer manipulations and does the job with a constant time running complexity. While inserting the value in the cache, we first check the existence of the key in the table, if key is already present and we try to put it again the function raises an error. Then it ensures the presence of the Frequency Node representing the frequency of `1`, and in the process it might need to create a new frequency node also. Then it wraps the value in a Value Node and adds it to the `values_list` of this Frequency Node; and at last it makes an entry in the table acknowledging the completion of the caching process.
 
 ```python
 def add(key: str, value: object):
