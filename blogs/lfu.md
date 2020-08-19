@@ -77,7 +77,7 @@ def add(key: str, value: object):
     table[key] = value_node
 ```
 
-As seen in the pseudocode above the entire procedure to add a new item in the cache is a bunch of memory allocation along with pointer manipulations, hence we observe that the running complexity of `add` is `O(1)`.
+As seen in the pseudocode above the entire procedure to add a new value in the cache is a bunch of memory allocation along with some pointer manipulations, hence we observe that the running complexity of `O(1)` for this operation.
 
 ## Evicting an item from the cache
 
