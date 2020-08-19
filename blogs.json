@@ -4,12 +4,14 @@
     "title": "Constant Time LFU",
     "description": "Constant time lfu",
     "image": "https://user-images.githubusercontent.com/4745789/89711582-cf11ba00-d9a8-11ea-9173-c7069b1537b5.png",
-    "gif": "https://media.giphy.com/media/xl1puJZB0P0JnbRWzD/giphy.gif",
+    "gif": "https://media.giphy.com/media/fWqGY1AC4HVIN3lRyB/giphy.gif",
     "categories": [
       "algorithms"
     ],
     "tags": [
       "caching",
+      "lfu",
+      "least frequently used",
       "cache eviction algorithm",
       "least frequently used",
       "constant time"
