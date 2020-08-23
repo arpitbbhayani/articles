@@ -1,5 +1,30 @@
 [
   {
+    "id": "lfu",
+    "title": "Constant Time LFU",
+    "description": "The most popular implementation of the LFU Cache Eviction Scheme, using a min-heap, implements all three operations with running time complexity of O(log n) and this makes LFU sub-optimal. In this essay, we take a detailed look at a clever algorithm that implements LFU such that all the operations happen with O(1) running time complexity.",
+    "image": "https://user-images.githubusercontent.com/4745789/89711582-cf11ba00-d9a8-11ea-9173-c7069b1537b5.png",
+    "gif": "https://media.giphy.com/media/fWqGY1AC4HVIN3lRyB/giphy.gif",
+    "categories": [
+      "algorithms"
+    ],
+    "tags": [
+      "caching",
+      "lfu",
+      "least frequently used",
+      "cache eviction algorithm",
+      "least frequently used",
+      "constant time"
+    ],
+    "published_at": "2020-08-23",
+    "similar": [
+      "consistent-hashing",
+      "isolation-forest",
+      "phi-accrual",
+      "copy-on-write"
+    ]
+  },
+  {
     "id": "morris-counter",
     "title": "Morris's Algorithm for Approximate Counting",
     "description": "Morris' Algorithm counts a large number of events using a very small space O(log log n). The algorithm uses probabilistic techniques to increment the counter and in this essay, we take a detailed look at Morris' Algorithm and the math behind it.",
@@ -16,10 +41,10 @@
     ],
     "published_at": "2020-08-02",
     "similar": [
-      "rule-30",
       "copy-on-write",
+      "rule-30",
       "inheritance-c",
-      "fractional-cascading"
+      "phi-accrual"
     ]
   },
   {
@@ -41,9 +66,9 @@
     "published_at": "2020-07-26",
     "similar": [
       "isolation-forest",
-      "copy-on-write",
       "morris-counter",
-      "inheritance-c"
+      "inheritance-c",
+      "copy-on-write"
     ]
   },
   {
@@ -63,10 +88,10 @@
     ],
     "published_at": "2020-07-19",
     "similar": [
-      "better-programmer",
       "phi-accrual",
+      "mysql-cache",
       "copy-on-write",
-      "mysql-cache"
+      "better-programmer"
     ]
   },
   {
@@ -86,9 +111,9 @@
     "published_at": "2020-07-12",
     "similar": [
       "copy-on-write",
-      "better-programmer",
       "morris-counter",
-      "bitcask"
+      "bitcask",
+      "better-programmer"
     ]
   },
   {
@@ -184,8 +209,8 @@
     "published_at": "2020-05-31",
     "similar": [
       "bitcask",
-      "phi-accrual",
       "mysql-cache",
+      "phi-accrual",
       "copy-on-write"
     ]
   },
@@ -201,10 +226,10 @@
     "tags": [],
     "published_at": "2020-05-24",
     "similar": [
-      "rum",
+      "lfu",
       "isolation-forest",
-      "mongodb-cursor-skip-is-slow",
-      "slowsort"
+      "rum",
+      "phi-accrual"
     ]
   },
   {
@@ -222,7 +247,7 @@
       "python-prompts",
       "i-changed-my-python",
       "python-iterable-integers",
-      "fsm"
+      "super-long-integers"
     ]
   },
   {
@@ -239,8 +264,8 @@
     "similar": [
       "slowsort",
       "morris-counter",
-      "mongodb-cursor-skip-is-slow",
-      "inheritance-c"
+      "inheritance-c",
+      "rule-30"
     ]
   },
   {
@@ -256,9 +281,9 @@
     "published_at": "2020-05-03",
     "similar": [
       "phi-accrual",
-      "better-programmer",
       "morris-counter",
-      "slowsort"
+      "slowsort",
+      "inheritance-c"
     ]
   },
   {
@@ -274,10 +299,10 @@
     "tags": [],
     "published_at": "2020-04-26",
     "similar": [
-      "image-steganography",
+      "bitcask",
       "better-programmer",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      "image-steganography",
+      "phi-accrual"
     ]
   },
   {
@@ -292,8 +317,8 @@
     "tags": [],
     "published_at": "2020-04-19",
     "similar": [
-      "i-changed-my-python",
       "python-iterable-integers",
+      "i-changed-my-python",
       "python-prompts",
       "python-caches-integers"
     ]
@@ -313,7 +338,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
       "idf",
-      "isolation-forest"
+      "python-prompts"
     ]
   },
   {
@@ -357,10 +382,10 @@
     ],
     "published_at": "2020-03-06",
     "similar": [
-      "bayesian-average",
+      "mongodb-cursor-skip-is-slow",
       "inheritance-c",
-      "i-changed-my-python",
-      "python-caches-integers"
+      "slowsort",
+      "fsm"
     ]
   },
   {
@@ -383,10 +408,10 @@
     ],
     "published_at": "2020-02-28",
     "similar": [
-      "phi-accrual",
-      "copy-on-write",
+      "fast-and-efficient-pagination-in-mongodb",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "bitcask"
+      "efficient-way-to-stop-an-iterating-loop",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ]
   },
   {
@@ -439,8 +464,8 @@
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
       "morris-counter",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "fast-and-efficient-pagination-in-mongodb"
+      "fast-and-efficient-pagination-in-mongodb",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ]
   },
   {
@@ -495,9 +520,9 @@
     "published_at": "2020-01-28",
     "similar": [
       "slowsort",
-      "bayesian-average",
       "copy-on-write",
-      "phi-accrual"
+      "phi-accrual",
+      "morris-counter"
     ]
   },
   {
@@ -532,10 +557,10 @@
     ],
     "published_at": "2020-01-17",
     "similar": [
-      "mysql-cache",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "multiple-mysql-on-same-server-using-docker",
       "sliding-window-ratelimiter",
-      "multiple-mysql-on-same-server-using-docker"
+      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "mysql-cache"
     ]
   },
   {
@@ -601,8 +626,8 @@
     "published_at": "2020-01-03",
     "similar": [
       "python-prompts",
-      "fsm",
       "python-caches-integers",
+      "fsm",
       "python-iterable-integers"
     ]
   },
@@ -627,7 +652,7 @@
     "similar": [
       "fast-and-efficient-pagination-in-mongodb",
       "rule-30",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "better-programmer",
       "bayesian-average"
     ]
   },
@@ -654,9 +679,9 @@
     "published_at": "2017-06-06",
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
+      "better-programmer",
       "rule-30",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "morris-counter"
+      "bayesian-average"
     ]
   },
   {
@@ -707,10 +732,10 @@
     ],
     "published_at": "2017-06-04",
     "similar": [
-      "inheritance-c",
       "idf",
-      "slowsort",
-      "morris-counter"
+      "inheritance-c",
+      "python-caches-integers",
+      "python-prompts"
     ]
   },
   {
@@ -734,10 +759,10 @@
     ],
     "published_at": "2017-07-16",
     "similar": [
-      "rule-30",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "fast-and-efficient-pagination-in-mongodb",
-      "morris-counter"
+      "rule-30",
+      "better-programmer",
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -759,7 +784,7 @@
     "published_at": "2017-07-05",
     "similar": [
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "publish-python-package-on-pypi",
+      "sliding-window-ratelimiter",
       "multiple-mysql-on-same-server-using-docker",
       "setting-up-graphite-using-nginx-on-ubuntu"
     ]
@@ -809,8 +834,8 @@
     "published_at": "2015-12-14",
     "similar": [
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "multiple-mysql-on-same-server-using-docker",
       "sliding-window-ratelimiter",
+      "multiple-mysql-on-same-server-using-docker",
       "making-http-requests-using-netcat"
     ]
   },
@@ -832,10 +857,10 @@
     ],
     "published_at": "2015-12-14",
     "similar": [
-      "making-http-requests-using-netcat",
-      "setting-up-graphite-using-nginx-on-ubuntu",
+      "sliding-window-ratelimiter",
       "multiple-mysql-on-same-server-using-docker",
-      "sliding-window-ratelimiter"
+      "setting-up-graphite-using-nginx-on-ubuntu",
+      "making-http-requests-using-netcat"
     ]
   },
   {
@@ -854,10 +879,10 @@
     ],
     "published_at": "2015-11-10",
     "similar": [
-      "making-http-requests-using-netcat",
       "super-long-integers",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      "fast-and-efficient-pagination-in-mongodb",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
   }
 ]
