@@ -1,8 +1,182 @@
 [
     {
+        "_id": "time-constraint",
+        "b": "The only constraint, that is truly universal and applies to every single one of us, is time.",
+        "d": 20200821,
+        "top": "growth"
+    },
+    {
+        "_id": "you-are-wrong",
+        "b": "Quickly identifying and acknowledging you are wrong is much more beneficial than justifying how you are right.",
+        "d": 20200819,
+        "top": "growth"
+    },
+    {
+        "_id": "greatness-perseverance",
+        "b": "Greatness can be achieved with raw perseverance but success can only be attained when persistent efforts are made in the right direction.",
+        "d": 20200817,
+        "top": "growth"
+    },
+    {
+        "_id": "detachment-execution",
+        "b": "Detachment improves execution.",
+        "d": 20200814,
+        "top": "growth"
+    },
+    {
+        "_id": "compete-better",
+        "b": "Compete with someone who is better than you.",
+        "d": 20200812,
+        "top": "growth"
+    },
+    {
+        "_id": "solve-non-trivial",
+        "b": "Solve non-trivial problems, for there is no easy way to success.",
+        "d": 20200810,
+        "top": "growth"
+    },
+    {
+        "_id": "worst-in-head",
+        "b": "The worst always happens in your head.",
+        "d": 20200807,
+        "top": "growth"
+    },
+    {
+        "_id": "talent-decade",
+        "b": "Talent, more often than not, is just a decade worth of channeled effort and perseverance.",
+        "d": 20200805,
+        "top": "growth"
+    },
+    {
+        "_id": "unlearning",
+        "b": "Unlearning is more important than learning.",
+        "d": 20200803,
+        "top": "growth"
+    },
+    {
+        "_id": "anonymity",
+        "b": "Anonymity allows everyone to say the truth; people who do not long for it, are fearless and, more often than not, are the ones that bring the necessary paradigm shifts.",
+        "d": 20200731,
+        "top": "growth"
+    },
+    {
+        "_id": "true-learning",
+        "b": "True learning happens when we are purely driven by our intellectual curiosity while being devoid of any deadline or a need for external validation.",
+        "d": 20200729,
+        "top": "growth"
+    },
+    {
+        "_id": "victim-card-growth",
+        "b": "Playing the victim card is the first line of defense and a default option that we have developed over our evolutionary course. Growth seekers avoid playing it.",
+        "d": 20200724,
+        "top": "growth"
+    },
+    {
+        "_id": "self-confidence",
+        "b": "We become self-confident once we start repeatedly doing what we thought we couldn't do; while we become overconfident when we mightily overestimate our abilities just to put forth a false persona.",
+        "d": 20200722,
+        "top": "growth"
+    },
+    {
+        "_id": "understood-not-forget",
+        "b": "You never forget what you actually understood.",
+        "d": 20200720,
+        "top": "growth"
+    },
+    {
+        "_id": "time-management",
+        "b": "Managing time is hard, and the ability to do it well is no less than a superpower.",
+        "d": 20200717,
+        "top": "growth"
+    },
+    {
+        "_id": "impulsive-decisions",
+        "b": "Impulsive decisions made while you are having a bad day are, more often than not, detrimental and damaging.",
+        "d": 20200715,
+        "top": "growth"
+    },
+    {
+        "_id": "financial-independence-thoughts",
+        "b": "No thoughts or actions are truly independent without financial independence.",
+        "d": 20200713,
+        "top": "growth"
+    },
+    {
+        "_id": "crazy-plan",
+        "b": "Your plan should always sound a little crazier.",
+        "d": 20200710,
+        "top": "growth"
+    },
+    {
+        "_id": "reaction",
+        "b": "A lot of things in life don't seek your reaction.",
+        "d": 20200708,
+        "top": "growth"
+    },
+    {
+        "_id": "capabilities-and-execution",
+        "b": "Capabilities don't matter until you act on it.",
+        "d": 20200706,
+        "top": "growth"
+    },
+    {
+        "_id": "external-factors",
+        "b": "Blaming externals (people or situations) for our setbacks and failures is an escape, that is best avoided.",
+        "d": 20200703,
+        "top": "growth"
+    },
+    {
+        "_id": "victim-card",
+        "b": "Playing the victim card is an excuse. The world is ruthless and if you want to survive, you need to up your game.",
+        "d": 20200701,
+        "top": "growth"
+    },
+    {
+        "_id": "limits-dne",
+        "b": "Most limits do not exist, they are mere hurdles, your mind has created to keep you in your comfort.",
+        "d": 20200624,
+        "top": "growth"
+    },
+    {
+        "_id": "insecure-teachers",
+        "b": "Insecure teachers try to act and sound smart; they seek validation by dominating struggling students.",
+        "d": 20200622,
+        "top": "growth"
+    },
+    {
+        "_id": "changing-life",
+        "b": "Changing your life is hard and it will take a lot of risk, effort, and time to steer it as you desire.,",
+        "d": 20200619,
+        "top": "growth"
+    },
+    {
+        "_id": "change-habit",
+        "b": "Changing your habit without changing your environment is impossible. Environment, you have been habituated with, will always be a reminder of your past behaviour and practices.",
+        "d": 20200617,
+        "top": "growth"
+    },
+    {
+        "_id": "qualitative-reading",
+        "b": "Reading is important but it should be Qualitative, and not Quantitative. Quality reading translating into daily life action items is calibre.",
+        "d": 20200615,
+        "top": "growth"
+    },
+    {
+        "_id": "interesting-ideas",
+        "b": "Most interesting ideas brew when the participants are few but involved, passionate, and insightful.",
+        "d": 20200612,
+        "top": "growth"
+    },
+    {
         "_id": "cleverness",
         "b": "It is always better to underestimate than to overestimate your cleverness.",
         "d": 20200610,
+        "top": "growth"
+    },
+    {
+        "_id": "habit-tracking",
+        "b": "You do not need habit tracking apps to form a habit; nothing works better than an aggressively defined goal.",
+        "d": 20200608,
         "top": "growth"
     },
     {
