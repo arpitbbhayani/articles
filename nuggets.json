@@ -1,5 +1,53 @@
 [
     {
+        "_id": "failure-failure",
+        "b": "Having a failure is different from being a failure. Unfortunately, we exaggerate.",
+        "d": 20200914,
+        "top": "growth"
+    },
+    {
+        "_id": "seek-progress",
+        "b": "Seek progress and not cheap validation.",
+        "d": 20200812,
+        "top": "growth"
+    },
+    {
+        "_id": "critical-questions",
+        "b": "The right set of critical questions is important to solve any problem better.",
+        "d": 20200911,
+        "top": "growth"
+    },
+    {
+        "_id": "disagreement",
+        "b": "Disagreement should never make you angry.",
+        "d": 20200909,
+        "top": "growth"
+    },
+    {
+        "_id": "write",
+        "b": "To understand what you don't understand - write.",
+        "d": 20200907,
+        "top": "growth"
+    },
+    {
+        "_id": "stupidity-critical",
+        "b": "Be critical of your own stupidity, more often than not, it is the root cause.",
+        "d": 20200904,
+        "top": "growth"
+    },
+    {
+        "_id": "autopilot",
+        "b": "Living on autopilot is easy so don't do that.",
+        "d": 20200902,
+        "top": "growth"
+    },
+    {
+        "_id": "people-surround",
+        "b": "You are a result of the people you choose to be surrounded by.",
+        "d": 20200831,
+        "top": "growth"
+    },
+    {
         "_id": "time-constraint",
         "b": "The only constraint, that is truly universal and applies to every single one of us, is time.",
         "d": 20200821,
