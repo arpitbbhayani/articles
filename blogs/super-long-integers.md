@@ -182,6 +182,9 @@ This optimization can be traced in the macro `IS_SMALL_INT` and the function [ge
 
 ---
 
-This is the second article in the Python Internals series. The first article was [How I changed my Python and made it dubious](https://arpitbhayani.me/blogs/i-changed-my-python) and it helps you take your first steps in Python's source code and paves the way for you to become a Python Core Developer.
+This essay is heavily inspired, and to some extent copied, from [Artem Golubin](https://rushter.com)'s post - [Python internals: Arbitrary-precision integer implementation](https://rushter.com/blog/python-integer-implementation/). In case you want a detailed deep dive on CPython Integers or CPython Internals in general, I recommend you checkout the [CPython Internal Series](https://rushter.com/blog/tags/cpython/) by Artem Golubin.
 
-If you want to read more articles like this, subscribe to my newsletter and get the post delivered directly to your inbox. I write about Engineering, System Design and a bit of programming, every Friday. Give me a shout-out [@arpit_bhayani](https://twitter.com/arpit_bhayani). You can find my previous articles [@arpitbhayani.me/blogs](https://arpitbhayani.me/blogs).
+Thank you Artem Golubin for all the amazing CPython Internal articles.
+This essay is heavily inspired, and to some extent copied, from [Artem Golubin](https://rushter.com)'s post - [Python internals: Arbitrary-precision integer implementation](https://rushter.com/blog/python-integer-implementation/). In case you want a detailed deep dive on CPython Integers or CPython Internals in general, I recommend you check out the [CPython Internal Series](https://rushter.com/blog/tags/cpython/) by Artem Golubin.
+
+Thank you Artem Golubin for all the amazing CPython Internal articles.
