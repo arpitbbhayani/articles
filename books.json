@@ -1,5 +1,17 @@
 [
     {
+        "_id":"monk-ferrari",
+        "n":"The Monk Who Sold His Ferrari",
+        "i":"https://user-images.githubusercontent.com/4745789/93711008-41f57f80-fb68-11ea-9854-8275dd90e5d0.jpg",
+        "d":"In the book, the reader goes through a spiritual journey and into a very old culture that has gathered much wisdom over the millennia. The book advocates about how to live happily, think deep and rightly, value time and relationships, be more disciplined, follow the heart’s call and live every moment of the life.",
+        "plnk":"https://www.amazon.in/Monk-Who-Sold-His-Ferrari/dp/817992162X",
+        "total":200,
+        "pg":200,
+        "com":true,
+        "hgs":[],
+        "uat":15912812500000
+    },
+    {
         "_id":"mindset",
         "n":"Mindset: The New Psychology of Success",
         "i":"https://user-images.githubusercontent.com/4745789/87881807-578be300-ca19-11ea-861a-af548869e777.jpg",
