@@ -1,5 +1,53 @@
 [
     {
+        "_id": "on-judging-others",
+        "b": "Don't keep yourself busy judging others; your brain can only have a limited number of thoughts every day and even your day has a limited number of seconds in it, use them wisely.",
+        "d": 20200923,
+        "top": "growth"
+    },
+    {
+        "_id": "books-for-unknowns",
+        "b": "Books can never replace the actual experience but it does a wonderful job of preparing you for the unknowns.",
+        "d": 20200922,
+        "top": "growth"
+    },
+    {
+        "_id": "compounding-growth",
+        "b": "Growth compounds if you have self-discipline, willpower, and perseverance.",
+        "d": 20200921,
+        "top": "growth"
+    },
+    {
+        "_id": "anxiety-a-fuel",
+        "b": "Anxiety and Restlessness is fuel for someone who knows how to wield it. It provides the necessary nudge to set you in motion.",
+        "d": 20200919,
+        "top": "growth"
+    },
+    {
+        "_id": "impartial-opinions",
+        "b": "Having an opinion about stuff you don't understand is fatal. Impartial opinions always form when you have a deep understanding of the matter.",
+        "d": 20200918,
+        "top": "growth"
+    },
+    {
+        "_id": "discuss-ideas",
+        "b": "Discuss ideas, not people.",
+        "d": 20200917,
+        "top": "growth"
+    },
+    {
+        "_id": "scroll-learn",
+        "b": "If you have time to scroll, you have time to learn.",
+        "d": 20200916,
+        "top": "growth"
+    },
+    {
+        "_id": "24-time-management",
+        "b": "Everyone gets 24 hours every day, what determines success is its optimum utilization. The only skill required to be successful is - Time Management.",
+        "d": 20200915,
+        "top": "growth"
+    },
+    {
         "_id": "failure-failure",
         "b": "Having a failure is different from being a failure. Unfortunately, we exaggerate.",
         "d": 20200914,
