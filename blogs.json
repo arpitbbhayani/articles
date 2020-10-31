@@ -1,5 +1,22 @@
 [
   {
+    "id": "ts-smoothing",
+    "title": "Time Series Smoothing - Making aberrations stand out",
+    "description": "ads",
+    "image": "https://user-images.githubusercontent.com/4745789/89711582-cf11ba00-d9a8-11ea-9173-c7069b1537b5.png",
+    "gif": "https://media.giphy.com/media/fWqGY1AC4HVIN3lRyB/giphy.gif",
+    "categories": [
+      "algorithms"
+    ],
+    "tags": [
+      "time series smoothing",
+      "statistics",
+      "kurtosis smoothing"
+    ],
+    "published_at": "2020-09-01",
+    "similar": []
+  },
+  {
     "id": "lfu",
     "title": "Constant Time LFU",
     "description": "The most popular implementation of the LFU Cache Eviction Scheme, using a min-heap, implements all three operations with running time complexity of O(log n) and this makes LFU sub-optimal. In this essay, we take a detailed look at a clever algorithm that implements LFU such that all the operations happen with O(1) running time complexity.",
