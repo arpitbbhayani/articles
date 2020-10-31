@@ -2,8 +2,8 @@
   {
     "id": "ts-smoothing",
     "title": "Time Series Smoothing - Making aberrations stand out",
-    "description": "ads",
-    "image": "https://user-images.githubusercontent.com/4745789/89711582-cf11ba00-d9a8-11ea-9173-c7069b1537b5.png",
+    "description": "Time Series smoothing algorithms removes short-term irregularities from the plot while preserving long-term trends. But as an observer, it is important that such smoothing techniques or irregularities do not mask anomalies that need attention. In this essay, we take a look at a smoothing algorithm that smooths out a time series plot while making aberrations and anomalies standout.",
+    "image": "https://user-images.githubusercontent.com/4745789/97785060-cbb55580-1bc8-11eb-9d6d-91ff16cc2ddc.png",
     "gif": "https://media.giphy.com/media/fWqGY1AC4HVIN3lRyB/giphy.gif",
     "categories": [
       "algorithms"
