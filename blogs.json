@@ -14,7 +14,12 @@
       "kurtosis smoothing"
     ],
     "published_at": "2020-09-01",
-    "similar": []
+    "similar": [
+      "better-programmer",
+      "image-steganography",
+      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "mysql-cache"
+    ]
   },
   {
     "id": "lfu",
@@ -36,8 +41,8 @@
     "published_at": "2020-08-23",
     "similar": [
       "consistent-hashing",
-      "isolation-forest",
       "phi-accrual",
+      "isolation-forest",
       "copy-on-write"
     ]
   },
@@ -60,8 +65,8 @@
     "similar": [
       "copy-on-write",
       "rule-30",
-      "inheritance-c",
-      "phi-accrual"
+      "phi-accrual",
+      "inheritance-c"
     ]
   },
   {
@@ -84,8 +89,8 @@
     "similar": [
       "isolation-forest",
       "morris-counter",
-      "inheritance-c",
-      "copy-on-write"
+      "copy-on-write",
+      "inheritance-c"
     ]
   },
   {
@@ -107,8 +112,8 @@
     "similar": [
       "phi-accrual",
       "mysql-cache",
-      "copy-on-write",
-      "better-programmer"
+      "ts-smoothing",
+      "copy-on-write"
     ]
   },
   {
@@ -130,7 +135,7 @@
       "copy-on-write",
       "morris-counter",
       "bitcask",
-      "better-programmer"
+      "isolation-forest"
     ]
   },
   {
@@ -228,7 +233,7 @@
       "bitcask",
       "mysql-cache",
       "phi-accrual",
-      "copy-on-write"
+      "ts-smoothing"
     ]
   },
   {
@@ -264,7 +269,7 @@
       "python-prompts",
       "i-changed-my-python",
       "python-iterable-integers",
-      "super-long-integers"
+      "fsm"
     ]
   },
   {
@@ -300,7 +305,7 @@
       "phi-accrual",
       "morris-counter",
       "slowsort",
-      "inheritance-c"
+      "isolation-forest"
     ]
   },
   {
@@ -316,9 +321,9 @@
     "tags": [],
     "published_at": "2020-04-26",
     "similar": [
-      "bitcask",
+      "ts-smoothing",
       "better-programmer",
-      "image-steganography",
+      "bitcask",
       "phi-accrual"
     ]
   },
@@ -354,8 +359,8 @@
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
-      "idf",
-      "python-prompts"
+      "publish-python-package-on-pypi",
+      "idf"
     ]
   },
   {
@@ -402,7 +407,7 @@
       "mongodb-cursor-skip-is-slow",
       "inheritance-c",
       "slowsort",
-      "fsm"
+      "python-prompts"
     ]
   },
   {
@@ -425,10 +430,10 @@
     ],
     "published_at": "2020-02-28",
     "similar": [
+      "ts-smoothing",
       "fast-and-efficient-pagination-in-mongodb",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "efficient-way-to-stop-an-iterating-loop",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -539,7 +544,7 @@
       "slowsort",
       "copy-on-write",
       "phi-accrual",
-      "morris-counter"
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -574,10 +579,10 @@
     ],
     "published_at": "2020-01-17",
     "similar": [
+      "ts-smoothing",
       "multiple-mysql-on-same-server-using-docker",
       "sliding-window-ratelimiter",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "mysql-cache"
+      "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
   },
   {
@@ -609,9 +614,9 @@
     "published_at": "2020-01-10",
     "similar": [
       "python-prompts",
+      "publish-python-package-on-pypi",
       "i-changed-my-python",
-      "python-caches-integers",
-      "publish-python-package-on-pypi"
+      "python-caches-integers"
     ]
   },
   {
@@ -669,8 +674,8 @@
     "similar": [
       "fast-and-efficient-pagination-in-mongodb",
       "rule-30",
-      "better-programmer",
-      "bayesian-average"
+      "bayesian-average",
+      "better-programmer"
     ]
   },
   {
@@ -726,8 +731,8 @@
     "similar": [
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "better-programmer",
-      "efficient-way-to-stop-an-iterating-loop",
-      "fast-and-efficient-pagination-in-mongodb"
+      "ts-smoothing",
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -751,8 +756,8 @@
     "similar": [
       "idf",
       "inheritance-c",
-      "python-caches-integers",
-      "python-prompts"
+      "python-prompts",
+      "python-caches-integers"
     ]
   },
   {
