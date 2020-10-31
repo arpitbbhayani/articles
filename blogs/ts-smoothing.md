@@ -81,7 +81,7 @@ for window_size in range(2, len(raw_plot), 1):
 
 The pseudocode above computes the optimal window size that maximizes the Kurtosis and in turn ensuring that the smoothened plot has a heavy tail, making anomalies and aberrations stand out.
 
-Finding the true optimal window size (that maximizes Kurtosis) is not always a good idea, because doing so can totally distort the plot leading to heavy information loss. Hence a better way to do it is by finding local optimal by pre-defining the limits for the window, which actually depends on the kind of data.
+Finding the global optimal window size, that maximizes Kurtosis, is not always a good idea, because doing so can totally distort the plot leading to heavy information loss. A better way is to find local optimum within pre-defined limits; for example, optimal point for window size between 10 and 40. These limits totally depend on the data at hand. Doing this not only leads to smooth plot that highlights anomalies but also converges the computation to a local optimum much quicker.
 
 # References
 
