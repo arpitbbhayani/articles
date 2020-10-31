@@ -40,13 +40,13 @@ From the over-smoothened plot illustrated above it is clear that having a large 
 
 ## Aberrations and Anomalies
 
-In any data distribution the anomalies and aberrations usually form in the long tail which means they are some extreme values which are far away from the mean. These anomalies are often outliers i.e. data points that does not really fit the distribution.
+In any data distribution, the anomalies and aberrations form in the long tail which means they are some extreme values that are far away from the mean. Being part of the long tail makes these anomalies - outliers i.e. data points that do not really fit the distribution.
 
-Hence in order to find out window size that get rid of irregularities but makes anomalies stand out, we need to statistically find out the window size for which the data distribution is comparatively "heavy" on tail. This is exactly where the famous concept from Statistics come into the picture - Kurtosis.
+Hence in order to find out optimal window size that gets rid of short-term irregularities but makes anomalies stand out, we have to make the resultant distribution "tail heavy" implying the presence of anomalies. This is exactly where [Kurtosis](https://en.wikipedia.org/wiki/Kurtosis) - a famous concept from Statistics comes into the picture.
 
 ## Kurtosis
 
-Kurtosis is the measure of "tailedness" of the probability distribution (data distribution) and it helps in describing the shape of the plot. Kurtosis is the fourth standardized moment and is defined as
+[Kurtosis](https://en.wikipedia.org/wiki/Kurtosis) is the measure of "tailedness" of the probability distribution (data distribution) and it helps in describing the shape of the plot. Kurtosis is the fourth standardized moment and is defined as
 
 ![https://user-images.githubusercontent.com/4745789/94909588-0a1ffd80-04c1-11eb-9b7d-c89bf9dbfb39.png](https://user-images.githubusercontent.com/4745789/94909588-0a1ffd80-04c1-11eb-9b7d-c89bf9dbfb39.png)
 
