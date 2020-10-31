@@ -50,11 +50,11 @@ Hence in order to find out optimal window size that gets rid of short-term irreg
 
 ![https://user-images.githubusercontent.com/4745789/94909588-0a1ffd80-04c1-11eb-9b7d-c89bf9dbfb39.png](https://user-images.githubusercontent.com/4745789/94909588-0a1ffd80-04c1-11eb-9b7d-c89bf9dbfb39.png)
 
-High value of kurtosis implies that the distribution is heavy on either tails and this is evident when we compute Kurtosis of various distributions with and without tail noise, mimicking the anomalies.
+The high value of kurtosis implies that the distribution is heavy on either tail and this is evident when we compute Kurtosis of various distributions with and without any tail noise - mimicking anomalies.
 
 ![https://user-images.githubusercontent.com/4745789/94403183-ac22ab80-018a-11eb-9bca-72f6b2e5f98e.png](https://user-images.githubusercontent.com/4745789/94403183-ac22ab80-018a-11eb-9bca-72f6b2e5f98e.png)
 
-In the illustration above, the small variations (anomaly) is added to the tail of individual distribution and is encircled in red. It clearly shows that even a small amount of anomaly or aberration that deviates from the mean has a huge impact on the Kurtosis.
+In the illustration above, a small variation (anomaly) is added to the tail of the individual distribution and is encircled in red; and we can clearly see that even a tiny tailedness (anomaly and aberration) that makes the distribution deviate from the mean has a heavy impact on the Kurtosis, making it go much higher.
 
 ## Finding the Optimal Window Size
 
