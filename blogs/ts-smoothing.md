@@ -30,7 +30,7 @@ We apply SMA, with window length `11`, to another time series plot and we clearl
 
 # Making Aberrations Stand Out
 
-When an observer is looking at the plot, the primary motive is to spot any aberrations and anomalies. If the plot has irregularities (i.e. it is not smooth enough), spotting anomalies or aberrations becomes tough and hence smoothing plays a vital role here.
+When an observer is looking at the plot, the primary motive is to spot any aberrations and anomalies. If the plot has irregularities (i.e. it is not smooth enough), spotting anomalies or aberrations becomes tough, and hence smoothing plays a vital role here.
 
 Simple Moving Average is a very effective smoothing technique but choosing the optimal window size is a challenge. Picking a smaller window size will not help in getting rid of irregularities while picking the window size that is too large will mask all the anomalies.
 
@@ -58,7 +58,7 @@ In the illustration above, a small variation (anomaly) is added to the tail of t
 
 ## Finding the Optimal Window Size
 
-As established earlier, anomalies and aberrations are extreme values that largely deviate from the mean and hence occupy position on either tail of the distribution. Hence in order to find the optimal window size that neither under-smooths nor over-smooths the plot while ensuring that it makes anomalies and aberrations stand out, we need to **find the window size that maximizes the Kurtosis**.
+As established earlier, anomalies and aberrations are extreme values that largely deviate from the mean and hence occupy a position on either tail of the distribution. Hence in order to find the optimal window size that neither under-smooths nor over-smooths the plot while ensuring that it makes anomalies and aberrations stand out, we need to **find the window size that maximizes the Kurtosis**.
 
 ```python
 from scipy.stats import kurtosis
@@ -81,7 +81,7 @@ for window_size in range(2, len(raw_plot), 1):
 
 The pseudocode above computes the optimal window size that maximizes the Kurtosis and in turn ensuring that the smoothened plot has a heavy tail, making anomalies and aberrations stand out.
 
-Finding the global optimal window size, that maximizes Kurtosis, is not always a good idea, because doing so can totally distort the plot leading to heavy information loss. A better way is to find local optimum within pre-defined limits; for example, optimal point for window size between 10 and 40. These limits totally depend on the data at hand. Doing this not only leads to smooth plot that highlights anomalies but also converges the computation to a local optimum much quicker.
+Finding the global optimal window size, that maximizes Kurtosis, is not always a good idea, because doing so can totally distort the plot leading to heavy information loss. A better way is to find local optimum within pre-defined limits; for example, an optimal point for window size between 10 and 40. These limits totally depend on the data at hand. Doing this not only leads to a smooth plot that highlights anomalies but also converges the computation to a local optimum much quicker.
 
 # References
 
