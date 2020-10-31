@@ -30,13 +30,13 @@ We apply SMA, with window length `11`, to another time series plot and we clearl
 
 # Making Aberrations Stand Out
 
-When the observer is looking at the plot, the primary motive is to make aberrations and anomalies standout. If the plot of not so smooth, spotting anomalies or aberrations could be tough job and hence smoothing plays a vital role here.
+When an observer is looking at the plot, the primary motive is to spot any aberrations and anomalies. If the plot has irregularities (i.e. it is not smooth enough), spotting anomalies or aberrations becomes tough and hence smoothing plays a vital role here.
 
-Simple Moving Average is a very effective smoothing technique but choosing the optimal window size is a challenge. Picking a smaller window size will not help us get rid of irregularities while picking the window size that is too large will mask all the anomalies.
+Simple Moving Average is a very effective smoothing technique but choosing the optimal window size is a challenge. Picking a smaller window size will not help in getting rid of irregularities while picking the window size that is too large will mask all the anomalies.
 
 ![https://user-images.githubusercontent.com/4745789/94897527-76910180-04ad-11eb-92ab-d38574428dbe.png](https://user-images.githubusercontent.com/4745789/94897527-76910180-04ad-11eb-92ab-d38574428dbe.png)
 
-From the over-smoothened plot illustrated above it is clear that having a large window size leads to a huge information loss and in most cases hides the anomalies and aberrations. Hence we reduce our problem statement to *find the optimal window size for a given plot such that we make anomalies and aberrations standout*.
+From the over-smoothened plot illustrated above it is clear that having a large window size leads to a heavy information loss and in most cases hides the anomalies and aberrations. Hence we reduce our problem statement to *find the optimal window size for a given plot such that we make anomalies and aberrations standout*.
 
 ## Aberrations and Anomalies
 
