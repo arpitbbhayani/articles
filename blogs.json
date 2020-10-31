@@ -1,5 +1,27 @@
 [
   {
+    "id": "ts-smoothing",
+    "title": "Time Series Smoothing - Making aberrations stand out",
+    "description": "Time Series smoothing algorithms removes short-term irregularities from the plot while preserving long-term trends. But as an observer, it is important that such smoothing techniques or irregularities do not mask anomalies that need attention. In this essay, we take a look at a smoothing algorithm that smooths out a time series plot while making aberrations and anomalies standout.",
+    "image": "https://user-images.githubusercontent.com/4745789/97785060-cbb55580-1bc8-11eb-9d6d-91ff16cc2ddc.png",
+    "gif": "https://media.giphy.com/media/3orieVe5VYqTdT16qk/giphy.gif",
+    "categories": [
+      "algorithms"
+    ],
+    "tags": [
+      "time series smoothing",
+      "statistics",
+      "kurtosis smoothing"
+    ],
+    "published_at": "2020-09-01",
+    "similar": [
+      "better-programmer",
+      "image-steganography",
+      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "mysql-cache"
+    ]
+  },
+  {
     "id": "lfu",
     "title": "Constant Time LFU",
     "description": "The most popular implementation of the LFU Cache Eviction Scheme, using a min-heap, implements all three operations with running time complexity of O(log n) and this makes LFU sub-optimal. In this essay, we take a detailed look at a clever algorithm that implements LFU such that all the operations happen with O(1) running time complexity.",
@@ -19,8 +41,8 @@
     "published_at": "2020-08-23",
     "similar": [
       "consistent-hashing",
-      "isolation-forest",
       "phi-accrual",
+      "isolation-forest",
       "copy-on-write"
     ]
   },
@@ -43,8 +65,8 @@
     "similar": [
       "copy-on-write",
       "rule-30",
-      "inheritance-c",
-      "phi-accrual"
+      "phi-accrual",
+      "inheritance-c"
     ]
   },
   {
@@ -67,8 +89,8 @@
     "similar": [
       "isolation-forest",
       "morris-counter",
-      "inheritance-c",
-      "copy-on-write"
+      "copy-on-write",
+      "inheritance-c"
     ]
   },
   {
@@ -90,8 +112,8 @@
     "similar": [
       "phi-accrual",
       "mysql-cache",
-      "copy-on-write",
-      "better-programmer"
+      "ts-smoothing",
+      "copy-on-write"
     ]
   },
   {
@@ -113,7 +135,7 @@
       "copy-on-write",
       "morris-counter",
       "bitcask",
-      "better-programmer"
+      "isolation-forest"
     ]
   },
   {
@@ -211,7 +233,7 @@
       "bitcask",
       "mysql-cache",
       "phi-accrual",
-      "copy-on-write"
+      "ts-smoothing"
     ]
   },
   {
@@ -247,7 +269,7 @@
       "python-prompts",
       "i-changed-my-python",
       "python-iterable-integers",
-      "super-long-integers"
+      "fsm"
     ]
   },
   {
@@ -283,7 +305,7 @@
       "phi-accrual",
       "morris-counter",
       "slowsort",
-      "inheritance-c"
+      "isolation-forest"
     ]
   },
   {
@@ -299,9 +321,9 @@
     "tags": [],
     "published_at": "2020-04-26",
     "similar": [
-      "bitcask",
+      "ts-smoothing",
       "better-programmer",
-      "image-steganography",
+      "bitcask",
       "phi-accrual"
     ]
   },
@@ -337,8 +359,8 @@
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
-      "idf",
-      "python-prompts"
+      "publish-python-package-on-pypi",
+      "idf"
     ]
   },
   {
@@ -385,7 +407,7 @@
       "mongodb-cursor-skip-is-slow",
       "inheritance-c",
       "slowsort",
-      "fsm"
+      "python-prompts"
     ]
   },
   {
@@ -408,10 +430,10 @@
     ],
     "published_at": "2020-02-28",
     "similar": [
+      "ts-smoothing",
       "fast-and-efficient-pagination-in-mongodb",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "efficient-way-to-stop-an-iterating-loop",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -522,7 +544,7 @@
       "slowsort",
       "copy-on-write",
       "phi-accrual",
-      "morris-counter"
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -557,10 +579,10 @@
     ],
     "published_at": "2020-01-17",
     "similar": [
+      "ts-smoothing",
       "multiple-mysql-on-same-server-using-docker",
       "sliding-window-ratelimiter",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "mysql-cache"
+      "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
   },
   {
@@ -592,9 +614,9 @@
     "published_at": "2020-01-10",
     "similar": [
       "python-prompts",
+      "publish-python-package-on-pypi",
       "i-changed-my-python",
-      "python-caches-integers",
-      "publish-python-package-on-pypi"
+      "python-caches-integers"
     ]
   },
   {
@@ -652,8 +674,8 @@
     "similar": [
       "fast-and-efficient-pagination-in-mongodb",
       "rule-30",
-      "better-programmer",
-      "bayesian-average"
+      "bayesian-average",
+      "better-programmer"
     ]
   },
   {
@@ -709,8 +731,8 @@
     "similar": [
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "better-programmer",
-      "efficient-way-to-stop-an-iterating-loop",
-      "fast-and-efficient-pagination-in-mongodb"
+      "ts-smoothing",
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -734,8 +756,8 @@
     "similar": [
       "idf",
       "inheritance-c",
-      "python-caches-integers",
-      "python-prompts"
+      "python-prompts",
+      "python-caches-integers"
     ]
   },
   {
