@@ -58,7 +58,7 @@ In the illustration above, a small variation (anomaly) is added to the tail of t
 
 ## Finding the Optimal Window Size
 
-As established earlier, anomalies and aberrations are extreme values that largely deviates from mean and hence occupy position on either tail of the distribution. Hence in order to find the optimal window size that neither under-smooths nor over-smooths the plot while ensuring that it makes anomalies and aberrations stand out, we need to **find the window size that maximises the Kurtosis**.
+As established earlier, anomalies and aberrations are extreme values that largely deviate from the mean and hence occupy position on either tail of the distribution. Hence in order to find the optimal window size that neither under-smooths nor over-smooths the plot while ensuring that it makes anomalies and aberrations stand out, we need to **find the window size that maximizes the Kurtosis**.
 
 ```python
 from scipy.stats import kurtosis
@@ -74,12 +74,14 @@ for window_size in range(2, len(raw_plot), 1):
     kurt = kurtosis(smoothened_plot)
 
     # if kurtosis of the current smoothened plot is greater than the
-    # max we have seen, then we update the optimal window the the max_kurt
+    # max we have seen, then we update the optimal window the max_kurt
     if kurt > max_kurt:
         max_kurt, optimal_window = kurt, window_size
 ```
 
-The pseudocode above will compute the optimal window size that maximises the Kurtosis i.e. ensuring that the smoothened plot will have a heavy tail. Finding the true optimal window size is not always a good idea, because in the process it can distort the plot totally but if depending on the kind of data we can find the sub-optimal window for a given range of window size i.e. limiting the window size will make the process quicker.
+The pseudocode above computes the optimal window size that maximizes the Kurtosis and in turn ensuring that the smoothened plot has a heavy tail, making anomalies and aberrations stand out.
+
+Finding the true optimal window size (that maximizes Kurtosis) is not always a good idea, because doing so can totally distort the plot leading to heavy information loss. Hence a better way to do it is by finding local optimal by pre-defining the limits for the window, which actually depends on the kind of data.
 
 # References
 
