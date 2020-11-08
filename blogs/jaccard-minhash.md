@@ -2,11 +2,11 @@ Set similarity measure finds its application spanning the Computer Science spect
 
 # Jaccard Similarity Coefficient
 
-Jaccard Similarity Coefficient quantifies how similar two *finite* sets really are and is defined as the size of the intersection divided by the size of the union. This similarity measure is very intuitive and we can clearly see that it is a real-valued measure bounded in the interval `[0, 1]`.
+Jaccard Similarity Coefficient quantifies how similar two *finite* sets really are and is defined as the size of their intersection divided by the size of their union. This similarity measure is very intuitive and we can clearly see that it is a real-valued measure bounded in the interval `[0, 1]`.
 
 ![https://user-images.githubusercontent.com/4745789/98461673-302d7180-21d4-11eb-9722-41f473c1fe84.png](https://user-images.githubusercontent.com/4745789/98461673-302d7180-21d4-11eb-9722-41f473c1fe84.png)
 
-The coefficient is `0` when the two sets are mutually exclusive (disjoint) and it is `1` when the sets are equal. Below we see the one-line python function that computes this similarity measure
+The coefficient is `0` when the two sets are mutually exclusive (disjoint) and it is `1` when the sets are equal. Below we see the one-line python function that computes this similarity measure.
 
 ```python
 def similarity_jaccard(a: set, b: set) -> float:
@@ -27,15 +27,15 @@ Computing Jaccard Similarity Coefficient is very simple, all we require is a uni
 
 Computing set similarity is usually a subproblem fitting in a bigger picture, for example, near-duplicate detection which finds near-duplicate articles across millions of documents. When we tokenize the documents and apply raw Jaccard Similarity Coefficient for every two combinations of documents we find that the computation will take [years](https://mccormickml.com/2015/06/12/minhash-tutorial-with-python-code/).
 
-Instead of finding the true value for this coefficient, we can rely on approximation if we can get a considerable speedup and this is where a technique called MinHash comes into the picture.
+Instead of finding the true value for this coefficient, we can rely on an approximation if we can get a considerable speedup and this is where a technique called MinHash fits well.
 
 # MinHash
 
-MinHash algorithm gives us a fast approximation to the Jaccard Similarity Coefficient between the two finite sets. Instead of using every single element of every single set to compute the coefficient, this method creates a *MinHash Signature* for each of the sets and use it to approximate the coefficient.
+MinHash algorithm gives us a fast approximation to the Jaccard Similarity Coefficient between any two finite sets. Instead of computing the unions and the intersections every single time, this method once creates *MinHash Signature* for each set and use it to approximate the coefficient.
 
 ## Computing single MinHash
 
-MinHash `h` of the set `S` is the index of the first element, from a permuted Universal Set, that is present in the set `S`. But since permutation is a computation heavy operation especially for large sets we use a hashing function that typically reorders the elements. One such hashing function is
+MinHash `h` of the set `S` is the index of the first element, from a permuted Universal Set, that is present in the set `S`. But since permutation is a computation heavy operation especially for large sets we use a hashing/mapping function that typically reorders the elements using simple math operation. One such hashing function is
 
 ![https://user-images.githubusercontent.com/4745789/98463097-f7df6080-21de-11eb-8b61-a84ff7ad85de.png](https://user-images.githubusercontent.com/4745789/98463097-f7df6080-21de-11eb-8b61-a84ff7ad85de.png)
 
@@ -46,7 +46,7 @@ def permute_fn(x: int) -> int:
     return (23 * x + 67) % 199
 ```
 
-Now that we have defined permutation as a simple mathematical operation that spits out the new row index, we can find MinHash to be the element that has the minimum new row number. Hence we can define the MinHash function as 
+Now that we have defined permutation as a simple mathematical operation that spits out the new row index, we can find MinHash of a set as the element that has the minimum new row number. Hence we can define the MinHash function as 
 
 ```python
 def minhash(s: set) -> int:
@@ -65,14 +65,16 @@ Hence to approximate Similarity Coefficient using MinHash all we have to do is f
 
 ## MinHash Signature
 
-MinHash Signature of a set `S` is a collection of `k` MinHash values corresponding to `k` different MinHash functions that differ in row permutation functions. The size `k` depends on the error tolerance, keeping it higher leads to more accurate approximations.
+MinHash Signature of a set `S` is a collection of `k` MinHash values corresponding to `k` different MinHash functions. The size `k` depends on the error tolerance, keeping it higher leads to more accurate approximations.
 
 ```python
 def minhash_signature(s: set):
     return [minhash(s) for minhash in minhash_fns]
 ```
 
-Now in order to compute `Pr[h(A) = h(B)]` we have to compare the MinHash Signature of the participating sets `A` and `B` and find how many values in their signatures match; dividing this number by the number of hash functions `k` will give the required probability and in turn an approximation of Similarity Coefficient.
+> MinHash functions usually differ in the permutation parameters i.e. coefficients `a`, `b` and `c`.
+
+Now in order to compute `Pr[h(A) = h(B)]` we have to compare the MinHash Signature of the participating sets `A` and `B` and find how many values in their signatures match; dividing this number by the number of hash functions `k` will give the required probability and in turn an approximation of Jaccard Similarity Coefficient.
 
 ```python
 def similarity_minhash(a: set, b: set) -> float:
@@ -81,13 +83,13 @@ def similarity_minhash(a: set, b: set) -> float:
     return sum([1 for a, b in zip(sign_a, sign_b) if a == b]) / len(sign_a)
 ```
 
-> MinHash Signature has to be computed just once per set.
+> MinHash Signature could well be computed just once per set.
 
-Thus to compute set similarity, we need not perform heavy computation like Union and Intersection and that too across millions of sets at scale, rather we can simply compare the `k` items of the signature and get a fairly good estimate of it.
+Thus to compute set similarity, we need not perform heavy computation like Union and Intersection and that too across millions of sets at scale, rather we can simply compare `k` items of in their signatures and get a fairly good estimate of it.
 
 # How good is the estimate?
 
-In theory, everything holds true but what about in practice. In order to find how close the estimate is we compute Jaccard Similarity and its approximate using MinHash on two disjoint sets having equal cardinality. One of the sets will undergo a transition where one element of it will be replaced with one element of the other set. So with time, the sets will go from disjoint to being equal.
+In order to find how close the estimate is we compute Jaccard Similarity Coefficient and its approximate using MinHash on two disjoint sets having equal cardinality. One of the sets will undergo a transition where one element of it will be replaced with one element of the other set. So with time, the sets will go from disjoint to being equal.
 
 ![https://user-images.githubusercontent.com/4745789/98465023-860e1380-21ec-11eb-8813-7cb6920bc1fd.png](https://user-images.githubusercontent.com/4745789/98465023-860e1380-21ec-11eb-8813-7cb6920bc1fd.png)
 
