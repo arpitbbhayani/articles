@@ -2,7 +2,7 @@
   {
     "id": "jaccard-minhash",
     "title": "Set Similarity using Jaccard Similarity Coefficient and MinHash",
-    "description": "Set similarity measure finds its application spanning the Computer Science spectrum; some applications being - user segmentation, finding near duplicate webpages/documents, clustering, recommendation generation, sequence alignment, and many more. In this essay, we take a detailed look into a set-similarity measure called - Jaccard's Similarity Coefficient and how its computation can be optimised using a neat technique called MinHash.",
+    "description": "Set similarity measure finds its application spanning the Computer Science spectrum; some applications being - user segmentation, finding near-duplicate webpages/documents, clustering, recommendation generation, sequence alignment, and many more. In this essay, we take a detailed look into a set-similarity measure called - Jaccard's Similarity Coefficient and how its computation can be optimized using a neat technique called MinHash.",
     "image": "https://user-images.githubusercontent.com/4745789/98465225-c4580280-21ed-11eb-9f1f-6508ed229925.png",
     "gif": "https://media.giphy.com/media/yvXWADxQxRMkQ4eEID/giphy.gif",
     "categories": [
