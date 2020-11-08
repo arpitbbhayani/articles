@@ -1,8 +1,8 @@
-Set similarity measure finds its application spanning the Computer Science spectrum; some applications being - user segmentation, finding near duplicate webpages/documents, clustering, recommendation generation, sequence alignment, and many more. In this essay, we take a detailed look into a set-similarity measure called - Jaccard's Similarity Coefficient and how its computation can be optimised using a neat technique called MinHash.
+Set similarity measure finds its application spanning the Computer Science spectrum; some applications being - user segmentation, finding near-duplicate webpages/documents, clustering, recommendation generation, sequence alignment, and many more. In this essay, we take a detailed look into a set-similarity measure called - Jaccard's Similarity Coefficient and how its computation can be optimized using a neat technique called MinHash.
 
 # Jaccard Similarity Coefficient
 
-Jaccard Similarity Coefficient quantifies how similar two *finite* sets really are and is defined as the size of intersection divided by the size of union. This similarity measure is very intuitive and we can clearly see that it is real-valued measure bounded in the internal `[0, 1]`.
+Jaccard Similarity Coefficient quantifies how similar two *finite* sets really are and is defined as the size of the intersection divided by the size of the union. This similarity measure is very intuitive and we can clearly see that it is a real-valued measure bounded in the interval `[0, 1]`.
 
 ![https://user-images.githubusercontent.com/4745789/98461673-302d7180-21d4-11eb-9722-41f473c1fe84.png](https://user-images.githubusercontent.com/4745789/98461673-302d7180-21d4-11eb-9722-41f473c1fe84.png)
 
@@ -19,15 +19,15 @@ Jaccard Coefficient can also be interpreted as the probability that an element p
 
 ![https://user-images.githubusercontent.com/4745789/98462221-8dc3bd00-21d8-11eb-95bf-5a9267e88b97.png](https://user-images.githubusercontent.com/4745789/98462221-8dc3bd00-21d8-11eb-95bf-5a9267e88b97.png)
 
-Another analogy for this probability are the chances of throwing a dart and it hitting the intersection. Thus we see how we can transform Jaccard Similarity Coefficient to a simple probability statement. This will come in very handy when we try to optimise the computation at scale.
+Another analogy for this probability is the chances of throwing a dart and it hitting the intersection. Thus we see how we can transform the Jaccard Similarity Coefficient to a simple probability statement. This will come in very handy when we try to optimize the computation at scale.
 
 ## Problem at Scale
 
 Computing Jaccard Similarity Coefficient is very simple, all we require is a union operation and an intersection operation on the participating sets. But these computations go haywire when things run at scale.
 
-Computing set similarity is usually a subproblem fitting in a bigger picture, for example, near duplicate detection which finds near duplicate articles across millions of documents. When we tokenise the documents and apply raw Jaccard Similarity Coefficient for every two combination of document we find that the computation will take [years](https://mccormickml.com/2015/06/12/minhash-tutorial-with-python-code/).
+Computing set similarity is usually a subproblem fitting in a bigger picture, for example, near-duplicate detection which finds near-duplicate articles across millions of documents. When we tokenize the documents and apply raw Jaccard Similarity Coefficient for every two combinations of documents we find that the computation will take [years](https://mccormickml.com/2015/06/12/minhash-tutorial-with-python-code/).
 
-Instead of finding the true value for this coefficient we can rely on approximation if we can get a considerable speedup and this is where technique called MinHash comes into picture.
+Instead of finding the true value for this coefficient, we can rely on approximation if we can get a considerable speedup and this is where a technique called MinHash comes into the picture.
 
 # MinHash
 
@@ -35,18 +35,18 @@ MinHash algorithm gives us a fast approximation to the Jaccard Similarity Coeffi
 
 ## Computing single MinHash
 
-MinHash `h` of the set `S` is the index of first element, from a permuted Universal Set, that is present in the set `S`. But since permutation is a computation heavy operation specially for large sets we use a hashing function that typically reorders the elements. One such hashing function is
+MinHash `h` of the set `S` is the index of the first element, from a permuted Universal Set, that is present in the set `S`. But since permutation is a computation heavy operation especially for large sets we use a hashing function that typically reorders the elements. One such hashing function is
 
 ![https://user-images.githubusercontent.com/4745789/98463097-f7df6080-21de-11eb-8b61-a84ff7ad85de.png](https://user-images.githubusercontent.com/4745789/98463097-f7df6080-21de-11eb-8b61-a84ff7ad85de.png)
 
-If `u` is the total number of elements in the Universal Set `U` then `a` and `b` are the random integers less then `u` and `c` is the prime number slightly higher than `u`.  A sample permute function could be
+If `u` is the total number of elements in the Universal Set `U` then `a` and `b` are the random integers less than `u` and `c` is the prime number slightly higher than `u`.  A sample permute function could be
 
 ```python
 def permute_fn(x: int) -> int:
     return (23 * x + 67) % 199
 ```
 
-Now that we have defined permutation as a simple mathematical operation which spits out the new row index, we can find MinHash to be the element that has the minimum new row number. Hence we can define MinHash function as 
+Now that we have defined permutation as a simple mathematical operation that spits out the new row index, we can find MinHash to be the element that has the minimum new row number. Hence we can define the MinHash function as 
 
 ```python
 def minhash(s: set) -> int:
@@ -59,13 +59,13 @@ MinHash has a surprising property, according to which, the probability that the 
 
 ![https://user-images.githubusercontent.com/4745789/98463732-8229c380-21e3-11eb-9b26-04ec08bc8753.png](https://user-images.githubusercontent.com/4745789/98463732-8229c380-21e3-11eb-9b26-04ec08bc8753.png)
 
-The above equality holds true because, probability of minhash of two sets to be same is the number of elements present in both the sets divided by the total number of elements in both the sets combined; which in fact is the definition of Jaccard Similarity Coefficient.
+The above equality holds true because the probability of MinHash of two sets to be the same is the number of elements present in both the sets divided by the total number of elements in both the sets combined; which in fact is the definition of Jaccard Similarity Coefficient.
 
-Hence to approximate Similarity Coefficient using MinHash all we have to do is find the Probability of MinHash of two sets to be same, and this is where the MinHash Signature comes in to play.
+Hence to approximate Similarity Coefficient using MinHash all we have to do is find the Probability of MinHash of two sets to be the same, and this is where the MinHash Signature comes in to play.
 
 ## MinHash Signature
 
-MinHash Signature of a set `S` is a collection of `k` MinHash values corresponding to `k` different MinHash functions that differs in row permutation functions. The size `k` depends on the error tolerance, keeping it higher leads to more accurate approximations.
+MinHash Signature of a set `S` is a collection of `k` MinHash values corresponding to `k` different MinHash functions that differ in row permutation functions. The size `k` depends on the error tolerance, keeping it higher leads to more accurate approximations.
 
 ```python
 def minhash_signature(s: set):
@@ -87,11 +87,11 @@ Thus to compute set similarity, we need not perform heavy computation like Union
 
 # How good is the estimate?
 
-In theory everything holds true but what about in practice. In order to find how close the estimate is we compute Jaccard Similarity and its approximate using MinHash on two disjoint sets having equal cardinality. One of the set will undergo transition where one element of it will be replaced with one element of the other set. So with time the sets will go from disjoint to being equal.
+In theory, everything holds true but what about in practice. In order to find how close the estimate is we compute Jaccard Similarity and its approximate using MinHash on two disjoint sets having equal cardinality. One of the sets will undergo a transition where one element of it will be replaced with one element of the other set. So with time, the sets will go from disjoint to being equal.
 
 ![https://user-images.githubusercontent.com/4745789/98465023-860e1380-21ec-11eb-8813-7cb6920bc1fd.png](https://user-images.githubusercontent.com/4745789/98465023-860e1380-21ec-11eb-8813-7cb6920bc1fd.png)
 
-The illustration above shows the two plots and we can clearly see that MinHash technique provides a fairly good estimate of Jaccard Similarity Coefficient with much less computations.
+The illustration above shows the two plots and we can clearly see that the MinHash technique provides a fairly good estimate of Jaccard Similarity Coefficient with much fewer computations.
 
 # References
 
