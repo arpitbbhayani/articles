@@ -19,7 +19,7 @@ Jaccard Coefficient can also be interpreted as the probability that an element p
 
 ![https://user-images.githubusercontent.com/4745789/98462221-8dc3bd00-21d8-11eb-95bf-5a9267e88b97.png](https://user-images.githubusercontent.com/4745789/98462221-8dc3bd00-21d8-11eb-95bf-5a9267e88b97.png)
 
-Another analogy for this probability is the chances of throwing a dart and it hitting the intersection. Thus we see how we can transform the Jaccard Similarity Coefficient to a simple probability statement. This will come in very handy when we try to optimize the computation at scale.
+Another analogy for this probability is the chances of throwing a dart and it hitting the intersection. Thus we see how we can transform the Jaccard Similarity Coefficient into a simple probability statement. This will come in very handy when we try to optimize the computation at scale.
 
 ## Problem at Scale
 
@@ -53,7 +53,7 @@ def minhash(s: set) -> int:
     return min([permute_fn(e) for e in s])
 ```
 
-## Surprising property of MinHash
+## A surprising property of MinHash
 
 MinHash has a surprising property, according to which, the probability that the MinHash of random permutation produces the same value for the two sets equals the Jaccard Similarity Coefficient of those sets.
 
@@ -89,7 +89,7 @@ Thus to compute set similarity, we need not perform heavy computation like Union
 
 # How good is the estimate?
 
-In order to find how close the estimate is we compute Jaccard Similarity Coefficient and its approximate using MinHash on two disjoint sets having equal cardinality. One of the sets will undergo a transition where one element of it will be replaced with one element of the other set. So with time, the sets will go from disjoint to being equal.
+In order to find how close the estimate is we compute the Jaccard Similarity Coefficient and its approximate using MinHash on two disjoint sets having equal cardinality. One of the sets will undergo a transition where one element of it will be replaced with one element of the other set. So with time, the sets will go from disjoint to being equal.
 
 ![https://user-images.githubusercontent.com/4745789/98465023-860e1380-21ec-11eb-8813-7cb6920bc1fd.png](https://user-images.githubusercontent.com/4745789/98465023-860e1380-21ec-11eb-8813-7cb6920bc1fd.png)
 
