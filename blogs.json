@@ -1,5 +1,29 @@
 [
   {
+    "id": "jaccard-minhash",
+    "title": "Set Similarity using Jaccard Similarity Coefficient and MinHash",
+    "description": "Set similarity measure finds its application spanning the Computer Science spectrum; some applications being - user segmentation, finding near-duplicate webpages/documents, clustering, recommendation generation, sequence alignment, and many more. In this essay, we take a detailed look into a set-similarity measure called - Jaccard's Similarity Coefficient and how its computation can be optimized using a neat technique called MinHash.",
+    "image": "https://user-images.githubusercontent.com/4745789/98465225-c4580280-21ed-11eb-9f1f-6508ed229925.png",
+    "gif": "https://media.giphy.com/media/yvXWADxQxRMkQ4eEID/giphy.gif",
+    "categories": [
+      "algorithms"
+    ],
+    "tags": [
+      "set similarity",
+      "jaccard similarity coefficient",
+      "jaccard index",
+      "minhash",
+      "minhash signature"
+    ],
+    "published_at": "2020-11-08",
+    "similar": [
+      "idf",
+      "mongodb-cursor-skip-is-slow",
+      "python-prompts",
+      "python-caches-integers"
+    ]
+  },
+  {
     "id": "ts-smoothing",
     "title": "Time Series Smoothing - Making aberrations stand out",
     "description": "Time Series smoothing algorithms removes short-term irregularities from the plot while preserving long-term trends. But as an observer, it is important that such smoothing techniques or irregularities do not mask anomalies that need attention. In this essay, we take a look at a smoothing algorithm that smooths out a time series plot while making aberrations and anomalies standout.",
@@ -89,8 +113,8 @@
     "similar": [
       "isolation-forest",
       "morris-counter",
-      "copy-on-write",
-      "inheritance-c"
+      "inheritance-c",
+      "copy-on-write"
     ]
   },
   {
@@ -359,8 +383,8 @@
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
-      "publish-python-package-on-pypi",
-      "idf"
+      "jaccard-minhash",
+      "publish-python-package-on-pypi"
     ]
   },
   {
@@ -404,10 +428,10 @@
     ],
     "published_at": "2020-03-06",
     "similar": [
+      "jaccard-minhash",
       "mongodb-cursor-skip-is-slow",
       "inheritance-c",
-      "slowsort",
-      "python-prompts"
+      "slowsort"
     ]
   },
   {
@@ -756,8 +780,8 @@
     "similar": [
       "idf",
       "inheritance-c",
-      "python-prompts",
-      "python-caches-integers"
+      "jaccard-minhash",
+      "python-prompts"
     ]
   },
   {
