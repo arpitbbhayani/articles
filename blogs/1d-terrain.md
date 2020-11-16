@@ -200,3 +200,4 @@ If the terrain to be generated is needed to be smoother then instead of using Li
 - [Superposition](https://en.wikipedia.org/wiki/Superposition_principle)
 - [Interpolation Methods](http://paulbourke.net/miscellaneous/interpolation/)
 - [One Lone Coder - Perlin-like Noise](https://github.com/OneLoneCoder/videos/blob/master/OneLoneCoder_PerlinNoise.cpp)
+- [IPython notebook with the source code](https://github.com/arpitbbhayani/1d-terrain/)
