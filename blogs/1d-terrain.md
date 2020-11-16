@@ -78,7 +78,7 @@ The above code snippet computes and estimates intermediate point `c` at a relati
 
 # Smoothing via Interpolation
 
-We can apply interpolation to our naively generated terrain and make transitions smoother leading to fewer spikes. In real-world, the transitions in the terrain are gradual with peaks being widespread; we can mimic the pattern by sampling `k` points from the naive terrain which could become our desired peaks, and interpolate the rest of the points lying between them.
+We can apply interpolation to our naively generated terrain and make transitions smoother leading to fewer spikes. In the real-world, the transitions in the terrain are gradual with peaks being widespread; we can mimic the pattern by sampling `k` points from the naive terrain which could become our desired peaks, and interpolate the rest of the points lying between them.
 
 This should ideally help us reduce the sudden spikes and make the terrain look much closer to really like. A simple python code that outputs linearly interpolated terrain that samples every `sample` points from the naive one is as follows
 
@@ -119,23 +119,23 @@ The above code snippet generates intermediate points using Linear Interpolation 
 
 ![https://user-images.githubusercontent.com/4745789/99227920-e7983880-2811-11eb-9c79-bed5cad2eed3.png](https://user-images.githubusercontent.com/4745789/99227920-e7983880-2811-11eb-9c79-bed5cad2eed3.png)
 
-For each interpolation, the 5 plots shown above are sampled for every `1`, `2`, `3`, `4`, and `5` points respectively. We can clearly see the plots of Cosine Interpolation are much smoother than Linear Interpolated ones. The technique does a good job over naive implementation but it still does not mimic what we see in real world. To make things as close to real world as possible we use the concept of [Superposition](https://en.wikipedia.org/wiki/Superposition_principle).
+For each interpolation, the 5 plots shown above are sampled for every `1`, `2`, `3`, `4`, and `5` points respectively. We can clearly see the plots of Cosine Interpolation are much smoother than Linear Interpolated ones. The technique does a good job over naive implementation but it still does not mimic what we see in the real world. To make things as close to the real-world as possible we use the concept of [Superposition](https://en.wikipedia.org/wiki/Superposition_principle).
 
 # Superposition Sampled Terrains
 
-Sampling and Interpolation are effective in reducing the spikes and making transitions gradual. The concern with this approach is that the sudden changes are not really gone. In order to address this situation, we use the principle of Superposition upon multiple such sampled terrains.
+Sampling and Interpolation are effective in reducing the spikes and making transitions gradual. The concern with this approach is that sudden changes are not really gone. In order to address this situation, we use the principle of Superposition upon multiple such sampled terrains.
 
-The approach we take here is to generate `k` such terrains with different sampling frequency and then perform a normalised weighted sum. This way we get the best of both worlds i.e smoothness from the terrain with least sampled points and aberrations from the one with the most sampled points.
+The approach we take here is to generate `k` such terrains with different sampling frequency and then perform a normalized weighted sum. This way we get the best of both worlds i.e smoothness from the terrain with the least sampled points and aberrations from the one with the most sampled points.
 
-Now the only piece that remains is choosing the weights. The weights and sampling frequency varies by the power of `2`. The number of terrain to be sampled depends on the kind of terrain needed and is to be left for experimentation, but we can assume it to be 6 for most use cases.
+Now the only piece that remains is choosing the weights. The weights and sampling frequency varies by the power of `2`. The number of terrains to be sampled depends on the kind of terrain needed and is to be left for experimentation, but we can assume it to be 6 for most use cases.
 
-The terrain that samples all the points should be given the least weight as it aims to contribute sudden spikes; and as we increase the sampling frequency by the power of `2` we increase the weight by the power of `2` as well. Hence for the first terrain the scale is `0.03125` where were sample all the points `256`, the next terrain is sampled with `128` points and has scale of `0.0625`, and so on till we reach sampled points to be `8` with scale as `1`, giving it the highest weight.
+The terrain that samples all the points should be given the least weight as it aims to contribute sudden spikes; and as we increase the sampling frequency by the power of `2` we increase the weight by the power of `2` as well. Hence for the first terrain, the scale is `0.03125` where were sample all the points `256`, the next terrain is sampled with `128` points and has a scale of `0.0625`, and so on till we reach sampled points to be `8` with scale as `1`, giving it the highest weight.
 
-Once these terrains are generated we perform a normalised weighted sum and generate the final terrain as shown in the illustration below.
+Once these terrains are generated we perform a normalized weighted sum and generate the final terrain as shown in the illustration below.
 
 ![https://user-images.githubusercontent.com/4745789/99264852-0107a780-2847-11eb-9bd1-2e2994c56028.png](https://user-images.githubusercontent.com/4745789/99264852-0107a780-2847-11eb-9bd1-2e2994c56028.png)
 
-The illustration above shows 6 scaled sampled terrains with different sampling frequencies along with the final super-positioned terrain generated from the procedure. It is very clear that the terrain generated using this procedure is much more closer to the real world terrain than any other we have seen before. Python code that generated above terrain is as below
+The illustration above shows 6 scaled sampled terrains with different sampling frequencies along with the final super-positioned terrain generated from the procedure. It is very clear that the terrain generated using this procedure is much more closer to the real world terrain than any other we have seen before. Python code that generated the above terrain is as below
 
 ```python
 def terrain_superpos_linp(naive_terrain, iterations=8) -> List[float]:
@@ -168,7 +168,7 @@ def terrain_superpos_linp(naive_terrain, iterations=8) -> List[float]:
             # append the current sample point (scaled) to the terrain
             terrain.append(weight * sample_points[i])
 
-            # perform interpoation and add all interpolated values to
+            # perform interpolation and add all interpolated values to
             # to the terrain.
             for j in range(sample - 1):
                 # compute relative distance from the left point
@@ -183,7 +183,7 @@ def terrain_superpos_linp(naive_terrain, iterations=8) -> List[float]:
                 terrain.append(weight * v)
 
         # append this terrain to list of terrains preparing
-        # it to be super positioned.
+        # it to be superpositioned.
         terrains.append(terrain)
 
     # perform super position and normalization of terrains to
