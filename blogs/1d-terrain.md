@@ -1,5 +1,3 @@
-# 1D Procedural Terrain Generation
-
 Terrains are at the heart of every Computer Game - be it Counter-Strike, Age of Empires, or even Minecraft. The virtual world that these games generate is the key to a great gaming experience. Generating terrain, manually, requires a ton of effort and hence it makes sense to auto-generate a pseudorandom terrain using some procedure. In this essay, we take a detailed look into generating pseudorandom one-dimensional terrain that is very close to real ones.
 
 # 1D Terrain
