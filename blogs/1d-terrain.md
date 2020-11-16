@@ -53,7 +53,7 @@ def linp(a, b, mu):
     return a * (1 - mu) + b * mu
 ```
 
-The value of parameter `mu` ranges in the interval `[0, 1]` where `0` implies the point being estimated and interpolated is at `a` while `1` implies it is at the second point `b`.
+The value of the parameter `mu` ranges in the interval `[0, 1]` where `0` implies the point being estimated and interpolated is at `a` while `1` implies it is at the second point `b`.
 
 ![https://user-images.githubusercontent.com/4745789/99184683-d0ead680-276a-11eb-9b4d-6c78dbf3c197.png](https://user-images.githubusercontent.com/4745789/99184683-d0ead680-276a-11eb-9b4d-6c78dbf3c197.png)
 
@@ -123,7 +123,7 @@ For each interpolation, the 5 plots shown above are sampled for every `1`, `2`, 
 
 Sampling and Interpolation are effective in reducing the spikes and making transitions gradual. The concern with this approach is that sudden changes are not really gone. In order to address this situation, we use the principle of Superposition upon multiple such sampled terrains.
 
-The approach we take here is to generate `k` such terrains with different sampling frequency and then perform a normalized weighted sum. This way we get the best of both worlds i.e smoothness from the terrain with the least sampled points and aberrations from the one with the most sampled points.
+The approach we take here is to generate `k` such terrains with different sampling frequencies and then perform a normalized weighted sum. This way we get the best of both worlds i.e smoothness from the terrain with the least sampled points and aberrations from the one with the most sampled points.
 
 Now the only piece that remains is choosing the weights. The weights and sampling frequency varies by the power of `2`. The number of terrains to be sampled depends on the kind of terrain needed and is to be left for experimentation, but we can assume it to be 6 for most use cases.
 
