@@ -1,5 +1,28 @@
 [
   {
+    "id": "1d-terrain",
+    "title": "1D Procedural Terrain Generation",
+    "description": "Terrains are at the heart of every Computer Game - be it Counter-Strike, Age of Empires, or even Minecraft. The virtual world that these games generate is the key to a great gaming experience. Generating terrain, manually, requires a ton of effort and hence it makes sense to auto-generate a pseudorandom terrain using some procedure. In this essay, we take a detailed look into generating pseudorandom one-dimensional terrain that is very close to real ones.",
+    "image": "https://user-images.githubusercontent.com/4745789/99261379-a9ffd380-2842-11eb-8f50-36b36ed42a95.png",
+    "gif": "https://media.giphy.com/media/xT5LMTf2CRdBhetWPC/giphy.gif",
+    "categories": [
+      "algorithms"
+    ],
+    "tags": [
+      "algorithm",
+      "terrain generation",
+      "perlin noise",
+      "random terrain generation"
+    ],
+    "published_at": "2020-11-16",
+    "similar": [
+      "idf",
+      "mongodb-cursor-skip-is-slow",
+      "python-prompts",
+      "python-caches-integers"
+    ]
+  },
+  {
     "id": "jaccard-minhash",
     "title": "Set Similarity using Jaccard Similarity Coefficient and MinHash",
     "description": "Set similarity measure finds its application spanning the Computer Science spectrum; some applications being - user segmentation, finding near-duplicate webpages/documents, clustering, recommendation generation, sequence alignment, and many more. In this essay, we take a detailed look into a set-similarity measure called - Jaccard's Similarity Coefficient and how its computation can be optimized using a neat technique called MinHash.",
