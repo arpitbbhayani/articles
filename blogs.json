@@ -2,7 +2,7 @@
   {
     "id": "israeli-queues",
     "title": "Israeli Queues",
-    "description": "Terrains are at the heart of every Computer Game - be it Counter-Strike, Age of Empires, or even Minecraft. The virtual world that these games generate is the key to a great gaming experience. Generating terrain, manually, requires a ton of effort and hence it makes sense to auto-generate a pseudorandom terrain using some procedure. In this essay, we take a detailed look into generating pseudorandom one-dimensional terrain that is very close to real ones.",
+    "description": "Israeli Queues are fondly named after a peculiar behavior observed in Israel. This behavior was mimicked to solve a very particular problem in Polling Systems. In this essay, we find what makes the Israeli Queue different than the traditional FIFO Queue and how it efficiently addresses the problem at hand.",
     "image": "https://user-images.githubusercontent.com/4745789/99896424-64b22a80-2cb6-11eb-92b2-ed1f44a76ba1.png",
     "gif": "https://media.giphy.com/media/3orif9DJNKDfXqXbBS/giphy.gif",
     "categories": [
