@@ -1,4 +1,4 @@
-A queue is a data structure that holds up elements for a brief period of time until the peripheral system is ready to process them. The most common implementation of a queue is a FIFO - First In First Out - implying the element that was inserted first will be evicted first. There are other variations of Queues one of which is called Priority Queue.
+A queue is a data structure that holds up elements for a brief period of time until a peripheral processing system is ready to process them. The most common implementation of a queue is a FIFO queue - First In First Out - that evicts the element that was inserted the first i.e. it evicts the one that has spent the most time in the queue. There are other variations of Queues one of which is called Priority Queue.
 
 In Priority Queue, every element is associated with a priority, usually provided by the user during enqueueing; This associated priority is used during eviction where the element with the highest priority is evicted first during dequeuing.
 
@@ -20,9 +20,15 @@ void enqueue(israeli_queue * q, item * e, item * f);
 
 ## How could this help?
 
-Every Data Structures is designed to solve a niche use case efficiently and Israeli Queues are no different as they prove to be super-efficient where one could batch and process similar items 
+Every Data Structures is designed to solve a niche use case efficiently and Israeli Queues are no different as they prove to be super-efficient where one could batch and process similar items or where the *set-up* cost for a task is high.
 
-Consider a system where a queue is used to hold up heterogeneous tasks and there is a single machine taking care of processing. Now if some of these tasks are similar and have a high *set-up or preparation cost*, for example downloading large metafiles, or spinning up a parallel infrastructure, or even setting up persistent connections with device farms, queuing them closer helps in reducing redundant processing and computation.
+Consider a system where a queue is used to hold up heterogeneous tasks and there is a single machine taking care of processing. Now if some of these tasks are similar and have a high *set-up or preparation cost*, for example downloading large metafiles, or spinning up a parallel infrastructure, or even setting up persistent connections with device farms, queuing them closer and processing them sequentially helps in reducing redundant processing and computation.
+
+## Issue of starvation
+
+By enqueuing elements in between Israeli Queues aims to reduce the redundant processing, but by doing that it makes itself vulnerable to the classical case of starvation. Elements stuck at the rear end of the list could potentially starve for longer durations if elements with "friends" in the queue keep coming in at high frequency.
+
+Classical implementation of Israeli Queues suggests batch processing where it potentially processes a batch (a group of friends) in one go. This proves to be useful when the time required to processes a single task is much lower than the set-up cost for it.
 
 ## Implementation Guidelines
 
