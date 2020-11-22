@@ -15,10 +15,10 @@
     ],
     "published_at": "2020-11-22",
     "similar": [
-      "idf",
-      "mongodb-cursor-skip-is-slow",
-      "python-prompts",
-      "python-caches-integers"
+      "morris-counter",
+      "copy-on-write",
+      "slowsort",
+      "rule-30"
     ]
   },
   {
@@ -39,9 +39,9 @@
     "published_at": "2020-11-16",
     "similar": [
       "idf",
-      "mongodb-cursor-skip-is-slow",
-      "python-prompts",
-      "python-caches-integers"
+      "jaccard-minhash",
+      "slowsort",
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -63,9 +63,9 @@
     "published_at": "2020-11-08",
     "similar": [
       "idf",
+      "1d-terrain",
       "mongodb-cursor-skip-is-slow",
-      "python-prompts",
-      "python-caches-integers"
+      "fsm"
     ]
   },
   {
@@ -134,8 +134,8 @@
     "similar": [
       "copy-on-write",
       "rule-30",
-      "phi-accrual",
-      "inheritance-c"
+      "israeli-queues",
+      "slowsort"
     ]
   },
   {
@@ -156,10 +156,10 @@
     ],
     "published_at": "2020-07-26",
     "similar": [
-      "isolation-forest",
+      "1d-terrain",
       "morris-counter",
-      "inheritance-c",
-      "copy-on-write"
+      "isolation-forest",
+      "inheritance-c"
     ]
   },
   {
@@ -181,8 +181,8 @@
     "similar": [
       "phi-accrual",
       "mysql-cache",
-      "ts-smoothing",
-      "copy-on-write"
+      "copy-on-write",
+      "ts-smoothing"
     ]
   },
   {
@@ -263,8 +263,8 @@
     "tags": [],
     "published_at": "2020-06-14",
     "similar": [
-      "python-caches-integers",
       "fsm",
+      "python-caches-integers",
       "i-changed-my-python",
       "python-prompts"
     ]
@@ -282,9 +282,9 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
-      "morris-counter",
+      "slowsort",
       "idf",
-      "slowsort"
+      "morris-counter"
     ]
   },
   {
@@ -353,10 +353,10 @@
     "tags": [],
     "published_at": "2020-05-10",
     "similar": [
+      "israeli-queues",
       "slowsort",
       "morris-counter",
-      "inheritance-c",
-      "rule-30"
+      "inheritance-c"
     ]
   },
   {
@@ -408,8 +408,8 @@
     "tags": [],
     "published_at": "2020-04-19",
     "similar": [
-      "python-iterable-integers",
       "i-changed-my-python",
+      "python-iterable-integers",
       "python-prompts",
       "python-caches-integers"
     ]
@@ -428,8 +428,8 @@
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
-      "jaccard-minhash",
-      "publish-python-package-on-pypi"
+      "1d-terrain",
+      "jaccard-minhash"
     ]
   },
   {
@@ -474,9 +474,9 @@
     "published_at": "2020-03-06",
     "similar": [
       "jaccard-minhash",
+      "1d-terrain",
       "mongodb-cursor-skip-is-slow",
-      "inheritance-c",
-      "slowsort"
+      "inheritance-c"
     ]
   },
   {
@@ -555,8 +555,8 @@
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
       "morris-counter",
-      "fast-and-efficient-pagination-in-mongodb",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -612,8 +612,8 @@
     "similar": [
       "slowsort",
       "copy-on-write",
-      "phi-accrual",
-      "fast-and-efficient-pagination-in-mongodb"
+      "1d-terrain",
+      "phi-accrual"
     ]
   },
   {
@@ -717,8 +717,8 @@
     "published_at": "2020-01-03",
     "similar": [
       "python-prompts",
-      "python-caches-integers",
       "fsm",
+      "python-caches-integers",
       "python-iterable-integers"
     ]
   },
@@ -826,7 +826,7 @@
       "idf",
       "inheritance-c",
       "jaccard-minhash",
-      "python-prompts"
+      "1d-terrain"
     ]
   },
   {
