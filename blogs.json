@@ -1,5 +1,27 @@
 [
   {
+    "id": "israeli-queues",
+    "title": "Israeli Queues",
+    "description": "Israeli Queues are fondly named after a peculiar behavior observed in Israel. This behavior was mimicked to solve a very particular problem in Polling Systems. In this essay, we find what makes the Israeli Queue different than the traditional FIFO Queue and how it efficiently addresses the problem at hand.",
+    "image": "https://user-images.githubusercontent.com/4745789/99896424-64b22a80-2cb6-11eb-92b2-ed1f44a76ba1.png",
+    "gif": "https://media.giphy.com/media/3orif9DJNKDfXqXbBS/giphy.gif",
+    "categories": [
+      "data-structure"
+    ],
+    "tags": [
+      "data structure",
+      "priority queue",
+      "israeli queue"
+    ],
+    "published_at": "2020-11-22",
+    "similar": [
+      "morris-counter",
+      "copy-on-write",
+      "slowsort",
+      "rule-30"
+    ]
+  },
+  {
     "id": "1d-terrain",
     "title": "1D Procedural Terrain Generation",
     "description": "Terrains are at the heart of every Computer Game - be it Counter-Strike, Age of Empires, or even Minecraft. The virtual world that these games generate is the key to a great gaming experience. Generating terrain, manually, requires a ton of effort and hence it makes sense to auto-generate a pseudorandom terrain using some procedure. In this essay, we take a detailed look into generating pseudorandom one-dimensional terrain that is very close to real ones.",
@@ -17,9 +39,9 @@
     "published_at": "2020-11-16",
     "similar": [
       "idf",
-      "mongodb-cursor-skip-is-slow",
-      "python-prompts",
-      "python-caches-integers"
+      "jaccard-minhash",
+      "slowsort",
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -41,9 +63,9 @@
     "published_at": "2020-11-08",
     "similar": [
       "idf",
+      "1d-terrain",
       "mongodb-cursor-skip-is-slow",
-      "python-prompts",
-      "python-caches-integers"
+      "fsm"
     ]
   },
   {
@@ -112,8 +134,8 @@
     "similar": [
       "copy-on-write",
       "rule-30",
-      "phi-accrual",
-      "inheritance-c"
+      "israeli-queues",
+      "slowsort"
     ]
   },
   {
@@ -134,10 +156,10 @@
     ],
     "published_at": "2020-07-26",
     "similar": [
-      "isolation-forest",
+      "1d-terrain",
       "morris-counter",
-      "inheritance-c",
-      "copy-on-write"
+      "isolation-forest",
+      "inheritance-c"
     ]
   },
   {
@@ -159,8 +181,8 @@
     "similar": [
       "phi-accrual",
       "mysql-cache",
-      "ts-smoothing",
-      "copy-on-write"
+      "copy-on-write",
+      "ts-smoothing"
     ]
   },
   {
@@ -241,8 +263,8 @@
     "tags": [],
     "published_at": "2020-06-14",
     "similar": [
-      "python-caches-integers",
       "fsm",
+      "python-caches-integers",
       "i-changed-my-python",
       "python-prompts"
     ]
@@ -260,9 +282,9 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
-      "morris-counter",
+      "slowsort",
       "idf",
-      "slowsort"
+      "morris-counter"
     ]
   },
   {
@@ -331,10 +353,10 @@
     "tags": [],
     "published_at": "2020-05-10",
     "similar": [
+      "israeli-queues",
       "slowsort",
       "morris-counter",
-      "inheritance-c",
-      "rule-30"
+      "inheritance-c"
     ]
   },
   {
@@ -386,8 +408,8 @@
     "tags": [],
     "published_at": "2020-04-19",
     "similar": [
-      "python-iterable-integers",
       "i-changed-my-python",
+      "python-iterable-integers",
       "python-prompts",
       "python-caches-integers"
     ]
@@ -406,8 +428,8 @@
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
-      "jaccard-minhash",
-      "publish-python-package-on-pypi"
+      "1d-terrain",
+      "jaccard-minhash"
     ]
   },
   {
@@ -452,9 +474,9 @@
     "published_at": "2020-03-06",
     "similar": [
       "jaccard-minhash",
+      "1d-terrain",
       "mongodb-cursor-skip-is-slow",
-      "inheritance-c",
-      "slowsort"
+      "inheritance-c"
     ]
   },
   {
@@ -533,8 +555,8 @@
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
       "morris-counter",
-      "fast-and-efficient-pagination-in-mongodb",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -590,8 +612,8 @@
     "similar": [
       "slowsort",
       "copy-on-write",
-      "phi-accrual",
-      "fast-and-efficient-pagination-in-mongodb"
+      "1d-terrain",
+      "phi-accrual"
     ]
   },
   {
@@ -695,8 +717,8 @@
     "published_at": "2020-01-03",
     "similar": [
       "python-prompts",
-      "python-caches-integers",
       "fsm",
+      "python-caches-integers",
       "python-iterable-integers"
     ]
   },
@@ -804,7 +826,7 @@
       "idf",
       "inheritance-c",
       "jaccard-minhash",
-      "python-prompts"
+      "1d-terrain"
     ]
   },
   {
