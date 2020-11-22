@@ -22,13 +22,13 @@ void enqueue(israeli_queue * q, element * e, element * f);
 
 Every Data Structures is designed to solve a niche use case efficiently and Israeli Queues are no different as they prove to be super-efficient where one could batch and process similar elements or where the *set-up* cost for a task is high.
 
-Consider a system where a queue is used to hold up heterogeneous tasks and there is a single machine taking care of processing. Now if some of these tasks are similar and have they a high *set-up or preparation cost*, for example downloading large metafiles, or spinning up a parallel infrastructure, or even setting up persistent connections with device farms, queuing them closer and processing them sequentially or in batch helps in reducing redundant processing and computation by promoting a reuse.
+Consider a system where a queue is used to hold up heterogeneous tasks and there is a single machine taking care of processing. Now if some of these tasks are similar and have a high *set-up or preparation cost*, for example downloading large metafiles, or spinning up a parallel infrastructure, or even setting up persistent connections with device farms, queuing them closer and processing them sequentially or in batch helps in reducing redundant processing and computation by promoting reuse.
 
 ## Issue of starvation
 
 By enqueuing elements in between Israeli Queues reduces redundant processing, but by doing that it makes itself vulnerable to the classical case of starvation. Elements stuck at the rear end of the list could potentially starve for longer durations if elements having "friends" in the queue keep coming in at high frequency.
 
-Original implementation of Israeli Queues suggests batch processing where instead of processing tasks one at a time, it processes a batch (a group of friends) in one go. This proves to be super-handy when the time required to processes a single task is much lower than the set-up cost for it.
+The original implementation of Israeli Queues suggests batch processing where instead of processing tasks one at a time, it processes a batch (a group of friends) in one go. This proves to be super-handy when the time required to processes a single task is much lower than the set-up cost for it.
 
 ## Implementation Guidelines
 
