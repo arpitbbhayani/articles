@@ -2,7 +2,7 @@ A queue is a data structure that holds up elements for a brief period of time un
 
 In Priority Queue, every element is associated with a priority, usually provided by the user during enqueueing; This associated priority is used during eviction where the element with the highest priority is evicted first during dequeuing.
 
-In this essay, we take a detailed look into a variation of Priority Queue, fondly called Israeli Queues, where the priority of the element is defined by the affinity of it with one of its "friends" in the queue. Israeli Queues were first introduced in paper [Polling with batch service](https://pure.tue.nl/ws/files/2152975/632939.pdf) by Boxma, O. J., Wal, van der, J., & Yechiali, U in the year 2007.
+In this essay, we take a detailed look into a variation of Priority Queue, fondly called Israeli Queues, where the priority of the element is defined by the affinity of it with one of its "friends" in the queue. Israeli Queues were first introduced in the paper [Polling with batch service](https://pure.tue.nl/ws/files/2152975/632939.pdf) by Boxma, O. J., Wal, van der, J., & Yechiali, U in the year 2007.
 
 # Israeli Queues
 
