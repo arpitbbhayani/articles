@@ -2,7 +2,7 @@
   {
     "id": "2q-cache",
     "title": "2Q Cache Management Algorithm",
-    "description": "LRU is one of the most widely used cache eviction algorithm suffers from a bunch of limitations specially when used for managing caches in disk-backed databases. 2Q remediates the limitations and improves upon it by adding multiple parallel buffers.",
+    "description": "LRU is one of the most widely used cache eviction algorithms suffers from a bunch of limitations especially when used for managing caches in disk-backed databases. 2Q remediates the limitations and improves upon it by adding multiple parallel buffers.",
     "image": "https://user-images.githubusercontent.com/4745789/100538603-bf1f2e00-3256-11eb-87dc-32594b25ae30.png",
     "gif": "https://media.giphy.com/media/cfuL5gqFDreXxkWQ4o/giphy.gif",
     "categories": [
