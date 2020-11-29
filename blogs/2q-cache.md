@@ -4,7 +4,7 @@ In this essay, we take a detailed look into the sub-optimality of LRU and how on
 
 # LRU
 
-The [LRU eviction algorithm](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) evicts the page from the buffer which has not been accessed for the longest. LRU is typically implemented using [Doubly Linked List](https://en.wikipedia.org/wiki/Doubly_linked_list) and a [Hash Table](https://en.wikipedia.org/wiki/Hash_table). The intuition of this algorithm is so strong and implementation is so simple that until the early '80s, LRU was the algorithm of choice in nearly all the systems. But as stated above, there are certain situations where LRU performs sub-optimal.
+The [LRU eviction algorithm](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) evicts the page from the buffer which has not been accessed for the longest. LRU is typically implemented using a [Doubly Linked List](https://en.wikipedia.org/wiki/Doubly_linked_list) and a [Hash Table](https://en.wikipedia.org/wiki/Hash_table). The intuition of this algorithm is so strong and implementation is so simple that until the early '80s, LRU was the algorithm of choice in nearly all the systems. But as stated above, there are certain situations where LRU performs sub-optimal.
 
 ![https://user-images.githubusercontent.com/4745789/100534745-43ae8400-3238-11eb-8855-752a6ef2f3c6.png](https://user-images.githubusercontent.com/4745789/100534745-43ae8400-3238-11eb-8855-752a6ef2f3c6.png)
 
