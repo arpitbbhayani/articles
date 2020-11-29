@@ -18,19 +18,19 @@ LRU algorithm works with a single dimension - recency - as it removes the pages 
 
 # 2Q Algorithm
 
-2Q addresses the above-illustrated issues by introducing parallel buffers and supporting queues. Instead of considering just recency as a factor, 2Q also considers access frequency while making the decision, to ensure the page that is really warm gets a place in the LRU cache. It admits only hot pages to the main buffer and tests every page for a second reference.
+2Q addresses the above-illustrated issues by introducing parallel buffers and supporting queues. Instead of considering just recency as a factor, 2Q also considers access frequency while making the decision to ensure the page that is really warm gets a place in the LRU cache. It admits only hot pages to the main buffer and tests every page for a second reference.
 
-The golden rule that 2Q is based on is - *Just because a page is accessed once does not entitle it to stay in the buffer. Instead, it should be decided if it is accessed again then only keep it in the buffer.
+The golden rule that 2Q is based on is - *Just because a page is accessed once does not entitle it to stay in the buffer. Instead, it should be decided if it is accessed again then only keep it in the buffer.*
 
 Below we take a detailed look into two versions of the 2Q algorithm - simplified and improved.
 
 ## Simplified 2Q
 
-Simplified 2Q algorithm works with two buffers - the primary LRU buffer - `Am`  and a secondary FIFO buffer - `A1`. New faulted pages go to the secondary buffer `A1` first and then when the page is referenced again, it moves to the primary LRU buffer `Am`. This ensures that the page that moves to the primary LRU buffer is hot and indeed it needs to be cached.
+Simplified 2Q algorithm works with two buffers: the primary LRU buffer - `Am`  and a secondary FIFO buffer - `A1`. New faulted pages first go to the secondary buffer `A1` and then when the page is referenced again, it moves to the primary LRU buffer `Am`. This ensures that the page that moves to the primary LRU buffer is hot and indeed requires to be cached.
 
 ![https://user-images.githubusercontent.com/4745789/100536835-41a0f100-3249-11eb-920b-0bcaff905906.png](https://user-images.githubusercontent.com/4745789/100536835-41a0f100-3249-11eb-920b-0bcaff905906.png)
 
-If the page residing in `A1` is never referenced again, it eventually gets discarded, implying the page was indeed cold and did not deserve to be cached. Thus this simplified 2Q provides protection against the two listed sub-optimality of simple LRU by adding secondary storage and testing pages for a second reference. The pseudocode for the Simplified 2Q algorithm is as follows:
+If the page residing in `A1` is never referenced again, it eventually gets discarded, implying the page was indeed cold and did not deserve to be cached. Thus this simplified 2Q provides protection against the two listed sub-optimality of the simple LRU scheme by adding a secondary buffer and testing pages for a second reference. The pseudocode for the Simplified 2Q algorithm is as follows:
 
 ```python
 def access_page(X: page):
@@ -57,9 +57,9 @@ def access_page(X: page):
          A1.add_front(X)
 ```
 
-Tuning Simplified 2Q buffer is difficult - if the maximum size of `A1` is too small, the test for hotness becomes too strong and if it is too large then due to memory constraint `Am` will get smaller memory making the primary LRU cache smaller, eventually degrading the database performance.
+Tuning Simplified 2Q buffer is difficult - if the maximum size of `A1` is too small, the test for hotness becomes too strong and if it is too large then due to memory constraint `Am` will get relatively smaller memory making the primary LRU cache smaller, eventually degrading the database performance.
 
-The full version 2Q algorithm remediates this limitation and eliminates tuning to a massive extent while ensure there is no hit in performance.
+The full version 2Q algorithm remediates this limitation and eliminates tuning to a massive extent without taking any hit in performance.
 
 ## 2Q Full Version
 
