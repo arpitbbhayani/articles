@@ -1,4 +1,4 @@
-LRU is one of the most widely used cache eviction algorithms that spans its utility across multiple database systems. Although popular it suffers from a bunch of limitations especially when it is considered to be used for managing caches in disk-backed databases.
+LRU is one of the most widely used cache eviction algorithms that span its utility across multiple database systems. Although popular it suffers from a bunch of limitations especially when it is considered to be used for managing caches in disk-backed databases.
 
 In this essay, we take a detailed look into issues with LRU and how one of its variants named 2Q addresses this limitation and improves upon it. It was first introduced in the paper - [2Q: A low overhead high-performance buffer management replacement algorithm](https://www.semanticscholar.org/paper/2Q%3A-A-Low-Overhead-High-Performance-Buffer-Johnson-Shasha/5fa357b43c8351a5d8e7124429e538ad7d687abc) by Theodore Johnson and Dennis Shasha.
 
