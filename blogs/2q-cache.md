@@ -81,4 +81,4 @@ Postgres uses 2Q as its cache management algorithm due to [patent issues](http:/
 
 - [LRU - Wikipedia](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU))
 - [The Saga of the ARC Algorithm and Patent](http://www.varlena.com/GeneralBits/96.php)
-- [2Q: A low overhead high performance buffer management replacement algorithm](https://www.semanticscholar.org/paper/2Q%3A-A-Low-Overhead-High-Performance-Buffer-Johnson-Shasha/5fa357b43c8351a5d8e7124429e538ad7d687abc)
+- [2Q: A low overhead high-performance buffer management replacement algorithm](https://www.semanticscholar.org/paper/2Q%3A-A-Low-Overhead-High-Performance-Buffer-Johnson-Shasha/5fa357b43c8351a5d8e7124429e538ad7d687abc)
