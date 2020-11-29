@@ -65,9 +65,9 @@ The full version 2Q algorithm remediates this limitation and eliminates tuning t
 
 Although Simplified 2Q algorithm does a decent job there is still scope of improvement when it comes to handling common database access pattern, that suggests, a page generally receives a lot of references for a short period of time and then no reference for a long time. If a page truly needs to be cached then after it receives a lot (not just one) of references in a short span it continues to receive references and hits on regular intervals.
 
-To handle is common database access pattern it splits the secondary buffer `A1` into two buffers `A1-In` and `A1-Out`, where the new element always enters `A1-In` and continues to stay in `A1-In` till it gets accesses ensuring that the most recent first accesses will happen in the memory.
+To handle this common database access pattern, the 2Q algorithm splits the secondary buffer `A1` into two buffers `A1-In` and `A1-Out`, where the new element always enters `A1-In` and continues to stay in `A1-In` till it gets accesses ensuring that the most recent first accesses happen in the memory.
 
-Once the page gets old, it gets thrown own memory but its reference (address) is stored in `A1-Out`. If the page, whose reference is, residing in `A1-Out` is accessed again the page is moved to `Am` LRU implying it indeed is a hot page and requires to be cached.
+Once the page gets old, it gets thrown off the memory but its disk reference is stored in the `A1-Out` buffer. If the page, whose reference is, residing in `A1-Out` is accessed again the page is promoted to `Am` LRU implying it indeed is a hot page that will be accessed again and hence required to be cached.
 
 ![https://user-images.githubusercontent.com/4745789/100538168-0bb53a00-3254-11eb-8f69-ddcaf8d33a84.png](https://user-images.githubusercontent.com/4745789/100538168-0bb53a00-3254-11eb-8f69-ddcaf8d33a84.png)
 
