@@ -71,9 +71,11 @@ Once the page gets old, it gets thrown off the memory but its disk reference is 
 
 ![https://user-images.githubusercontent.com/4745789/100538168-0bb53a00-3254-11eb-8f69-ddcaf8d33a84.png](https://user-images.githubusercontent.com/4745789/100538168-0bb53a00-3254-11eb-8f69-ddcaf8d33a84.png)
 
-# Fun fact
+The `Am` buffer continues to be the usual LRU which means when any page residing in `Am` is accessed it is moved to the head and when a page is needed to be discarded the eviction happens from the tail end.
 
-Postgres uses 2Q as its caching algorithm due to [patent issues](http://www.varlena.com/GeneralBits/96.php) with IBM. Postgres used to have [ARC](https://en.wikipedia.org/wiki/Adaptive_replacement_cache) as its caching algorithm but with IBM getting patent over it, Postgres moved to 2Q. Postgres also claims that the performance of 2Q is similar to ARC.
+# 2Q in Postgres
+
+Postgres uses 2Q as its cache management algorithm due to [patent issues](http://www.varlena.com/GeneralBits/96.php) with IBM. Postgres used to have [ARC](https://en.wikipedia.org/wiki/Adaptive_replacement_cache) as its caching algorithm but with IBM getting a patent over it, Postgres moved to 2Q. Postgres also claims that the performance of 2Q is similar to ARC.
 
 # References
 
