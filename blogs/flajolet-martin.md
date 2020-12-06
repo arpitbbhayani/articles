@@ -8,13 +8,13 @@ In this essay, we dive deep into this algorithm and find how wittily it approxim
 
 The problem statement of determining count-distinct is very simple -
 
-*Given a stream of elements, output the number of total number distinct elements in the stream as efficiently as possible.*
+*Given a stream of elements, output the total number of distinct elements as efficiently as possible.*
 
 ![https://user-images.githubusercontent.com/4745789/101273043-250c3800-37b8-11eb-9e0c-435e386f3529.png](https://user-images.githubusercontent.com/4745789/101273043-250c3800-37b8-11eb-9e0c-435e386f3529.png)
 
 In the illustration above the stream has the following elements `4`, `1`, `7`, `4`, `2`, `7`, `6`, `5`, `3`, `2`, `4`, `7` and `1`. The stream has in all `7` unique elements and hence it is the count-distinct of this stream.
 
-Deterministically computing count-distinct is an easy affair, we need a data structure to hold all the unique elements as we iterate the stream. Data structures like [Set](https://en.wikipedia.org/wiki/Set_(abstract_data_type)) and [Hash Table](https://en.wikipedia.org/wiki/Hash_table) are ideal for this. A simple pythonic implementation of this approach is illustrated below
+Deterministically computing count-distinct is an easy affair, we need a data structure to hold all the unique elements as we iterate the stream. Data structures like [Set](https://en.wikipedia.org/wiki/Set_(abstract_data_type)) and [Hash Table](https://en.wikipedia.org/wiki/Hash_table) suit this use-case particularly well. A simple pythonic implementation of this approach is as programmed below
 
 ```python
 def cardinality(elements: int) -> int:
