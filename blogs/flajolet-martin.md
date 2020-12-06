@@ -1,8 +1,8 @@
-Measuring distinct elements from a stream of values is one of the most common utility that finds its application across the spectrum, ranging from Database Query Optimizations, Network Topology, Internet Routing, Big Data Analytics, and Data Mining.
+Measuring the number of distinct elements from a stream of values is one of the most common utilities that finds its application in the field of Database Query Optimizations, Network Topology, Internet Routing, Big Data Analytics, and Data Mining.
 
-A deterministic count-distinct algorithm either demands an auxiliary space or takes some extra time for its computation. But what if, instead of finding the cardinality deterministically we just approximate, can we do better? This exactly was done in one of the first algorithms in approximating count-distinct introduced in the seminal paper titled [Probabilistic Counting Algorithms for Data Base Applications](http://algo.inria.fr/flajolet/Publications/FlMa85.pdf) by Philippe Flajolet and G. Nigel Martin in 1984.
+A deterministic count-distinct algorithm either demands a large auxiliary space or takes some extra time for its computation. But what if, instead of finding the cardinality deterministically and accurately we just approximate, can we do better? This was addressed in one of the first algorithms in approximating count-distinct introduced in the seminal paper titled [Probabilistic Counting Algorithms for Data Base Applications](http://algo.inria.fr/flajolet/Publications/FlMa85.pdf) by Philippe Flajolet and G. Nigel Martin in 1984.
 
-In this essay, we dive deep into this algorithm and find who beautifully it approximates the count-distinct by making a single pass on the stream of elements and using a fraction of auxiliary space.
+In this essay, we dive deep into this algorithm and find how wittily it approximates the count-distinct by making a single pass on the stream of elements and using a fraction of auxiliary space.
 
 # Deterministic count-distinct
 
