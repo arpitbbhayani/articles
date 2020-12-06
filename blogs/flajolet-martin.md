@@ -33,7 +33,7 @@ Given a good uniform distribution of numbers, the probability that the rightmost
 
 ![https://user-images.githubusercontent.com/4745789/101275842-e635ac80-37ce-11eb-9e00-357b966cbac6.png](https://user-images.githubusercontent.com/4745789/101275842-e635ac80-37ce-11eb-9e00-357b966cbac6.png)
 
-In general, we can say, the probability of the rightmost set bit, in binary presentation, to be at position `k` in a uniform distribution of numbers is
+In general, we can say, the probability of the rightmost set bit, in binary presentation, to be at the position `k` in a uniform distribution of numbers is
 
 ![https://user-images.githubusercontent.com/4745789/101275886-357bdd00-37cf-11eb-9bc6-346332031eb2.png](https://user-images.githubusercontent.com/4745789/101275886-357bdd00-37cf-11eb-9bc6-346332031eb2.png)
 

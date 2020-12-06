@@ -1,7 +1,7 @@
 [
   {
     "id": "flajolet-martin",
-    "title": "Approximate Count Distinct using Flajolet Martin Algorithm",
+    "title": "Approximate Count-Distinct using Flajolet Martin Algorithm",
     "description": "Measuring distinct elements from a stream of values is one of the most common utility that finds its application across the spectrum. Most of these use cases does not expect accurrate count-distincts rraather they expect it to be computed very quick and efficiently. In this essay we deep divee into one of the first Count-Distinct approximation algorithm called Flajlet-Martin Algorithm.",
     "image": "https://user-images.githubusercontent.com/4745789/101244544-31977e80-372d-11eb-9ab4-d9e879496d39.png",
     "gif": "https://media.giphy.com/media/cRMgB2wjHhVN2tDD2z/giphy.gif",
@@ -16,10 +16,10 @@
     ],
     "published_at": "2020-12-06",
     "similar": [
-      "mysql-cache",
-      "ts-smoothing",
-      "image-steganography",
-      "bitcask"
+      "slowsort",
+      "copy-on-write",
+      "isolation-forest",
+      "morris-counter"
     ]
   },
   {
@@ -40,7 +40,7 @@
       "mysql-cache",
       "ts-smoothing",
       "image-steganography",
-      "bitcask"
+      "better-programmer"
     ]
   },
   {
@@ -60,9 +60,9 @@
     "published_at": "2020-11-22",
     "similar": [
       "morris-counter",
+      "flajolet-martin",
       "slowsort",
-      "rule-30",
-      "copy-on-write"
+      "rule-30"
     ]
   },
   {
@@ -154,9 +154,9 @@
     "published_at": "2020-08-23",
     "similar": [
       "consistent-hashing",
+      "flajolet-martin",
       "phi-accrual",
-      "copy-on-write",
-      "isolation-forest"
+      "copy-on-write"
     ]
   },
   {
@@ -200,10 +200,10 @@
     ],
     "published_at": "2020-07-26",
     "similar": [
+      "flajolet-martin",
       "1d-terrain",
       "morris-counter",
-      "copy-on-write",
-      "isolation-forest"
+      "copy-on-write"
     ]
   },
   {
@@ -326,8 +326,8 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
-      "slowsort",
       "idf",
+      "slowsort",
       "morris-counter"
     ]
   },
@@ -398,8 +398,8 @@
     "published_at": "2020-05-10",
     "similar": [
       "israeli-queues",
+      "flajolet-martin",
       "slowsort",
-      "inheritance-c",
       "morris-counter"
     ]
   },
@@ -473,7 +473,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "1d-terrain",
       "fast-and-efficient-pagination-in-mongodb",
-      "jaccard-minhash"
+      "publish-python-package-on-pypi"
     ]
   },
   {
@@ -816,7 +816,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "better-programmer",
       "rule-30",
-      "publish-python-package-on-pypi"
+      "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ]
   },
   {
@@ -992,8 +992,8 @@
     ],
     "published_at": "2015-12-14",
     "similar": [
-      "sliding-window-ratelimiter",
       "multiple-mysql-on-same-server-using-docker",
+      "sliding-window-ratelimiter",
       "setting-up-graphite-using-nginx-on-ubuntu",
       "making-http-requests-using-netcat"
     ]
@@ -1017,7 +1017,7 @@
       "super-long-integers",
       "fast-and-efficient-pagination-in-mongodb",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "efficient-way-to-stop-an-iterating-loop"
+      "bayesian-average"
     ]
   }
 ]
