@@ -21,7 +21,7 @@ def cardinality(elements: int) -> int:
     return len(set(elements))
 ```
 
-Above deterministic approach demands an auxiliary space of `O(n)` so as to accurately measure the cardinality. What if the use cases do not care about the accuracy of count-distinct and can work well with a rough approximation, can we do a little better? This relaxation in constraint gave rise to this seminal algorithm, by Flajolet and Martin, that approximately counts the distinct elements while being super-efficient in using auxiliary space.
+Above deterministic approach demands an auxiliary space of `O(n)` so as to accurately measure the cardinality. But when we are allowed to approximate the count we can do it a fraction of auxiliary space using the Flajolet-Martin Algorithm.
 
 # The Flajolet-Martin Algorithm
 
@@ -93,6 +93,8 @@ def cardinality_fm(stream) -> int:
     # return the approximate cardinality
     return 2 ** b
 ```
+
+The time complexity if O(n) while space complexity is O(log m)
 
 Although the above algorithm does a decent job of approximating count-distinct it has a huge error margin, which can be fixed by averaging the approximations with multiple hash functions. The original Flajolet-Martin algorithm also suggests that the approximation needs a correction by diving the approximation by  `ϕ = 0.77351`.
 
