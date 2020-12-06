@@ -2,7 +2,7 @@
   {
     "id": "flajolet-martin",
     "title": "Approximate Count-Distinct using Flajolet Martin Algorithm",
-    "description": "Measuring distinct elements from a stream of values is one of the most common utility that finds its application across the spectrum. Most of these use cases does not expect accurrate count-distincts rraather they expect it to be computed very quick and efficiently. In this essay we deep divee into one of the first Count-Distinct approximation algorithm called Flajlet-Martin Algorithm.",
+    "description": "Measuring distinct elements from a stream of values is one of the most common utilities that finds its application across the spectrum. Most of these use cases do not expect accurate count-distinct rather they expect it to be computed very quickly and efficiently. In this essay, we deep dive into one of the first Count-Distinct approximation algorithm called Flajlet-Martin Algorithm.",
     "image": "https://user-images.githubusercontent.com/4745789/101244544-31977e80-372d-11eb-9ab4-d9e879496d39.png",
     "gif": "https://media.giphy.com/media/cRMgB2wjHhVN2tDD2z/giphy.gif",
     "categories": [
