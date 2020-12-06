@@ -25,7 +25,7 @@ Above deterministic approach demands an auxiliary space of `O(n)` so as to accur
 
 # The Flajolet-Martin Algorithm
 
-The Flajolet-Martin algorithm uses the position of the rightmost set and an unset bit to approximate the count-distinct in a given stream. The two seemingly unrelated concepts are intertwined using probability. It uses minimal extra storage and provides practical and useful estimates on cardinalities of large collections of data.
+The Flajolet-Martin algorithm uses the position of the rightmost set and unset bit to approximate the count-distinct in a given stream. The two seemingly unrelated concepts are intertwined using probability. It uses extra storage of order `O(log m)` where `m` is the number of unique elements in the stream and provides a practical estimate of the cardinalities.
 
 ## The intuition
 
