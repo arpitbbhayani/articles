@@ -41,7 +41,7 @@ The probability of the rightmost set bit drops by a factor of `1/2` with every p
 
 ![https://user-images.githubusercontent.com/4745789/101276356-1cc0f680-37d2-11eb-858d-3f40061988f0.png](https://user-images.githubusercontent.com/4745789/101276356-1cc0f680-37d2-11eb-858d-3f40061988f0.png)
 
-So if we keep on recording the position of the rightmost set bit for every element in the stream (assuming uniform distribution) we should expect `ρ = 0` to be `0.5`, `ρ = 1` to be `0.25`, and so on. This probability should become `0` when bit position, `b` is `b > log n` while it should be non-zero when `b <= log n` where `n` is the number of distinct elements in the stream.
+So if we keep on recording the position of the rightmost set bit for every element in the stream (assuming uniform distribution) we should expect `ρ = 0` to be `0.5`, `ρ = 1` to be `0.25`, and so on. This probability should become `0` when bit position, `b` is `b > log m` while it should be non-zero when `b <= log m` where `m` is the number of distinct elements in the stream.
 
 Hence, if we find the rightmost unset bit position `b` such that the probability is `0`, we can say that the number of unique elements will approximately be `2 ^ b`. This forms the core intuition behind the Flajolet Martin algorithm.
 
