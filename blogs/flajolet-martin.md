@@ -14,7 +14,7 @@ The problem statement of determining count-distinct is very simple -
 
 In the illustration above the stream has the following elements `4`, `1`, `7`, `4`, `2`, `7`, `6`, `5`, `3`, `2`, `4`, `7` and `1`. The stream has in all `7` unique elements and hence it is the count-distinct of this stream.
 
-Deterministically computing count-distinct is an easy affair, all we need a data structure to hold all the unique elements as we iterate the stream. Data structures like [Set](https://en.wikipedia.org/wiki/Set_(abstract_data_type)) and [Hash Table](https://en.wikipedia.org/wiki/Hash_table) are ideal for this. A simple pythonic implementation of this approach is illustrated below
+Deterministically computing count-distinct is an easy affair, we need a data structure to hold all the unique elements as we iterate the stream. Data structures like [Set](https://en.wikipedia.org/wiki/Set_(abstract_data_type)) and [Hash Table](https://en.wikipedia.org/wiki/Hash_table) are ideal for this. A simple pythonic implementation of this approach is illustrated below
 
 ```python
 def cardinality(elements: int) -> int:
