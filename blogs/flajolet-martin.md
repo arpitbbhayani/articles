@@ -21,7 +21,7 @@ def cardinality(elements: int) -> int:
     return len(set(elements))
 ```
 
-Above deterministic approach demands an auxiliary space of `O(n)` so as to accurately measure the cardinality. But when we are allowed to approximate the count we can do it a fraction of auxiliary space using the Flajolet-Martin Algorithm.
+Above deterministic approach demands an auxiliary space of `O(n)` so as to accurately measure the cardinality. But when we are allowed to approximate the count we can do it with a fraction of auxiliary space using the Flajolet-Martin Algorithm.
 
 # The Flajolet-Martin Algorithm
 
