@@ -74,7 +74,7 @@ def recviz(fn):
     return wrapper
 ```
 
-We use `recursion_level` to keep track of the current recursion level using which we decide the indentation. The value of this variable is increased every time we are about the invoke the function while it is reduced post the execution. In order to pretty-print the invoked function we have a helper method called `pretty_func` whose implementation can be found [here](https://github.com/arpitbbhayani/recviz/blob/master/src/recviz/rec.py).
+We use `recursion_level` to keep track of the current recursion level using which we decide the indentation. The value of this variable is increased every time we are about the invoke the function while it is reduced post the execution. In order to pretty-print the invoked function, we have a helper method called `pretty_func` whose implementation can be found [here](https://github.com/arpitbbhayani/recviz/blob/master/src/recviz/rec.py).
 
 When we decorate our previously defined `fib` function and invoke it with `n = 3` we get the following output.
 
