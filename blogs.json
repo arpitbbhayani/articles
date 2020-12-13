@@ -1,5 +1,27 @@
 [
   {
+    "id": "visualize-recursion-python",
+    "title": "Visualize recursion in Python",
+    "description": "Pretty print recursion tree.",
+    "image": "https://user-images.githubusercontent.com/4745789/102005933-c3f9dc80-3d42-11eb-8a0a-73f6dadd8673.png",
+    "gif": "https://media.giphy.com/media/3ov9jQX2Ow4bM5xxuM/giphy.gif",
+    "categories": [
+      "python"
+    ],
+    "tags": [
+      "recursion tree",
+      "visualize recursion",
+      "print recursion tree"
+    ],
+    "published_at": "2020-12-13",
+    "similar": [
+      "slowsort",
+      "copy-on-write",
+      "isolation-forest",
+      "morris-counter"
+    ]
+  },
+  {
     "id": "flajolet-martin",
     "title": "Approximate Count-Distinct using Flajolet Martin Algorithm",
     "description": "Measuring distinct elements from a stream of values is one of the most common utilities that finds its application across the spectrum. Most of these use cases do not expect accurate count-distinct rather they expect it to be computed very quickly and efficiently. In this essay, we deep dive into one of the first Count-Distinct approximation algorithm called Flajlet-Martin Algorithm.",
