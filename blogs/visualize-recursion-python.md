@@ -1,10 +1,10 @@
-One programming paradigm, that is hardest to visualize, as almost every single programmer out there will agree on, is [Recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)). We usually use pen and paper to visualize the flow and check how recursion is behaving. But what if, this could be done programmatically; and today we address this very problem and try to come up with a simple yet effective solution.
+One programming paradigm, that is hardest to visualize, as almost every single programmer out there will agree on, is [Recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science)). We usually use pen and paper to visualize the flow and check how recursion is behaving. But what if, this could be done programmatically, and today we address this very problem and try to come up with a simple yet effective solution.
 
 This essay is going to be a little different from the usuals; instead of taking a look into a research paper or an algorithm, we will implement a simple and easy recursion visualizer for Python.
 
 # Recursion Tree
 
-Recursion helps in solving a larger problem by breaking it into smaller similar ones. The classic implementation of a recursion in the world of programming is when a function invokes itself using reduced parameters, while having a base terminating condition.
+Recursion helps in solving a larger problem by breaking it into smaller similar ones. The classic implementation of recursion in the world of programming is when a function invokes itself using reduced parameters while having a base terminating condition.
 
 ```python
 def fib(n):
@@ -32,7 +32,7 @@ The decorator that wraps the recursive function and prints the recursion tree is
 ```python
 def recviz(fn):
     """Decorator that pretty prints the recursion tree with
-       args, kwargs and return values.
+       args, kwargs, and return values.
     """
 
     # holds the current recursion level
@@ -41,7 +41,7 @@ def recviz(fn):
     def wrapper(*args, **kwargs):
 
         # we register a nonlocal recursion_level so that
-        # it binds with the the recursion_level variable.
+        # it binds with the recursion_level variable.
         # in this case, it will bind to the one defined
         # in recviz function.
         nonlocal recursion_level
@@ -74,7 +74,7 @@ def recviz(fn):
     return wrapper
 ```
 
-We use `recursion_level` to keep track of the current recursion level using which we decide the indentation. The value of this variable is increased every time we are about the invoke the function while it is reduced post the execution. In order to pretty print the invoked function we have a helper method called `pretty_func` whose implementation can be found [here](https://github.com/arpitbbhayani/recviz/blob/master/src/recviz/rec.py).
+We use `recursion_level` to keep track of the current recursion level using which we decide the indentation. The value of this variable is increased every time we are about the invoke the function while it is reduced post the execution. In order to pretty-print the invoked function we have a helper method called `pretty_func` whose implementation can be found [here](https://github.com/arpitbbhayani/recviz/blob/master/src/recviz/rec.py).
 
 When we decorate our previously defined `fib` function and invoke it with `n = 3` we get the following output.
 
@@ -91,7 +91,7 @@ When we decorate our previously defined `fib` function and invoke it with `n = 3
  <- 3
 ```
 
-The above output renders how recurrence is evaluated and is pretty printed to make it more human readable. The right arrow `->` defines a function invocation while the left arrow `<-` indicates the return value post invocation.
+The above output renders how recurrence is evaluated and is pretty printed to make it more human-readable. The right arrow `->` defines a function invocation while the left arrow `<-` indicates the return value post invocation.
 
 ## Published Package
 
