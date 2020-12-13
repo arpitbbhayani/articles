@@ -19,7 +19,7 @@ def fib(n):
 
 The most common problem that is solved using recursion is computing the `n`th [Fibonacci Number](https://en.wikipedia.org/wiki/Fibonacci_number). A trivial recursive Python function that spits out `n`th Fibonacci Number is as shown below
 
-The most effective way of visualizing recursion is by drawing a recursion tree. It is very useful for visualizing what happens when a recurrence is iterated. Recursion tree for above function `fib` for input `n = 3` is as illustrated below
+The most effective way of visualizing recursion is by drawing a recursion tree. It is very useful for visualizing what happens when a recurrence is iterated. The recursion tree for the above function `fib` for input `n = 3` is as illustrated below
 
 ![https://user-images.githubusercontent.com/4745789/102004754-74fb7980-3d39-11eb-991e-0f54fa7f20c6.png](https://user-images.githubusercontent.com/4745789/102004754-74fb7980-3d39-11eb-991e-0f54fa7f20c6.png)
 
@@ -93,7 +93,7 @@ When we decorate our previously defined `fib` function and invoke it with `n = 3
 
 The above output renders how recurrence is evaluated and is pretty printed to make it more human-readable. The right arrow `->` defines a function invocation while the left arrow `<-` indicates the return value post invocation.
 
-## Published Package
+## Package Published
 
 Everything mentioned above is published in a Python Package and hosted on [PyPI](https://pypi.org/) at [pypi/recviz](https://pypi.org/project/recviz/). So in order to use this, simply install the package `recviz` like a usual Python package using `pip` and decorate the recursive function.
 
