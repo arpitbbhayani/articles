@@ -93,7 +93,7 @@ When we decorate our previously defined `fib` function and invoke it with `n = 3
 
 The above output renders how recurrence is evaluated and is pretty printed to make it more human-readable. The right arrow `->` defines a function invocation while the left arrow `<-` indicates the return value post invocation.
 
-## Package Published
+## Publishing it on PyPI
 
 Everything mentioned above is published in a Python Package and hosted on [PyPI](https://pypi.org/) at [pypi/recviz](https://pypi.org/project/recviz/). So in order to use this, simply install the package `recviz` like a usual Python package using `pip` and decorate the recursive function.
 
