@@ -1,5 +1,28 @@
 [
   {
+    "id": "visualize-recursion-python",
+    "title": "Visualize Recursion in Python",
+    "description": "One of the most complicated concepts to wrap our heads around has to be recursion; to understand it well it always helps to have some sort of recursion visualization. In this essay, we build a super-simple yet effective visualizer for recursive functions in Python.",
+    "image": "https://user-images.githubusercontent.com/4745789/102005933-c3f9dc80-3d42-11eb-8a0a-73f6dadd8673.png",
+    "gif": "https://media.giphy.com/media/3ov9jQX2Ow4bM5xxuM/giphy.gif",
+    "categories": [
+      "python"
+    ],
+    "tags": [
+      "recursion tree",
+      "visualize recursion",
+      "print recursion tree",
+      "recursion tree visualizer for Python"
+    ],
+    "published_at": "2020-12-13",
+    "similar": [
+      "fsm",
+      "python-iterable-integers",
+      "mongodb-cursor-skip-is-slow",
+      "idf"
+    ]
+  },
+  {
     "id": "flajolet-martin",
     "title": "Approximate Count-Distinct using Flajolet Martin Algorithm",
     "description": "Measuring distinct elements from a stream of values is one of the most common utilities that finds its application across the spectrum. Most of these use cases do not expect accurate count-distinct rather they expect it to be computed very quickly and efficiently. In this essay, we deep dive into one of the first Count-Distinct approximation algorithm called Flajlet-Martin Algorithm.",
@@ -19,7 +42,7 @@
       "slowsort",
       "copy-on-write",
       "isolation-forest",
-      "morris-counter"
+      "inheritance-c"
     ]
   },
   {
@@ -109,7 +132,7 @@
       "idf",
       "1d-terrain",
       "mongodb-cursor-skip-is-slow",
-      "python-prompts"
+      "python-caches-integers"
     ]
   },
   {
@@ -203,7 +226,7 @@
       "flajolet-martin",
       "1d-terrain",
       "morris-counter",
-      "copy-on-write"
+      "inheritance-c"
     ]
   },
   {
@@ -326,8 +349,8 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
-      "idf",
       "slowsort",
+      "idf",
       "morris-counter"
     ]
   },
@@ -471,8 +494,8 @@
     "published_at": "2020-04-12",
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
-      "1d-terrain",
       "fast-and-efficient-pagination-in-mongodb",
+      "1d-terrain",
       "publish-python-package-on-pypi"
     ]
   },
@@ -573,8 +596,8 @@
     "similar": [
       "i-changed-my-python",
       "python-caches-integers",
-      "super-long-integers",
-      "fsm"
+      "fsm",
+      "super-long-integers"
     ]
   },
   {
@@ -623,10 +646,10 @@
     ],
     "published_at": "2020-02-07",
     "similar": [
+      "visualize-recursion-python",
       "python-iterable-integers",
       "fsm",
-      "i-changed-my-python",
-      "python-caches-integers"
+      "i-changed-my-python"
     ]
   },
   {
@@ -788,7 +811,7 @@
       "fast-and-efficient-pagination-in-mongodb",
       "rule-30",
       "bayesian-average",
-      "1d-terrain"
+      "better-programmer"
     ]
   },
   {
@@ -816,7 +839,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "better-programmer",
       "rule-30",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      "publish-python-package-on-pypi"
     ]
   },
   {
