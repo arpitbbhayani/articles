@@ -15,10 +15,10 @@
     ],
     "published_at": "2020-12-13",
     "similar": [
-      "slowsort",
-      "copy-on-write",
-      "isolation-forest",
-      "morris-counter"
+      "fsm",
+      "python-iterable-integers",
+      "mongodb-cursor-skip-is-slow",
+      "idf"
     ]
   },
   {
@@ -41,7 +41,7 @@
       "slowsort",
       "copy-on-write",
       "isolation-forest",
-      "morris-counter"
+      "inheritance-c"
     ]
   },
   {
@@ -131,7 +131,7 @@
       "idf",
       "1d-terrain",
       "mongodb-cursor-skip-is-slow",
-      "python-prompts"
+      "python-caches-integers"
     ]
   },
   {
@@ -225,7 +225,7 @@
       "flajolet-martin",
       "1d-terrain",
       "morris-counter",
-      "copy-on-write"
+      "inheritance-c"
     ]
   },
   {
@@ -348,8 +348,8 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
-      "idf",
       "slowsort",
+      "idf",
       "morris-counter"
     ]
   },
@@ -493,8 +493,8 @@
     "published_at": "2020-04-12",
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
-      "1d-terrain",
       "fast-and-efficient-pagination-in-mongodb",
+      "1d-terrain",
       "publish-python-package-on-pypi"
     ]
   },
@@ -595,8 +595,8 @@
     "similar": [
       "i-changed-my-python",
       "python-caches-integers",
-      "super-long-integers",
-      "fsm"
+      "fsm",
+      "super-long-integers"
     ]
   },
   {
@@ -645,10 +645,10 @@
     ],
     "published_at": "2020-02-07",
     "similar": [
+      "visualize-recursion-python",
       "python-iterable-integers",
       "fsm",
-      "i-changed-my-python",
-      "python-caches-integers"
+      "i-changed-my-python"
     ]
   },
   {
@@ -810,7 +810,7 @@
       "fast-and-efficient-pagination-in-mongodb",
       "rule-30",
       "bayesian-average",
-      "1d-terrain"
+      "better-programmer"
     ]
   },
   {
@@ -838,7 +838,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "better-programmer",
       "rule-30",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      "publish-python-package-on-pypi"
     ]
   },
   {
