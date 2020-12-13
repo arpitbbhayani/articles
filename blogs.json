@@ -1,7 +1,7 @@
 [
   {
-    "id": "visualize-recursion-python",
-    "title": "Visualize Recursion in Python",
+    "id": "recursion-visualizer",
+    "title": "A simple recursion visualizer for python",
     "description": "One of the most complicated concepts to wrap our heads around has to be recursion; to understand it well it always helps to have some sort of recursion visualization. In this essay, we build a super-simple yet effective visualizer for recursive functions in Python.",
     "image": "https://user-images.githubusercontent.com/4745789/102005933-c3f9dc80-3d42-11eb-8a0a-73f6dadd8673.png",
     "gif": "https://media.giphy.com/media/3ov9jQX2Ow4bM5xxuM/giphy.gif",
