@@ -1,7 +1,7 @@
 [
   {
     "id": "recursion-visualizer",
-    "title": "A simple recursion visualizer for python",
+    "title": "A Simple Recursion Tree Visualizer for Python",
     "description": "One of the most complicated concepts to wrap our heads around has to be recursion; to understand it well it always helps to have some sort of recursion visualization. In this essay, we build a super-simple yet effective visualizer for recursive functions in Python.",
     "image": "https://user-images.githubusercontent.com/4745789/102006828-0ffc4f80-3d4a-11eb-8ab1-0891dc5ba00f.png",
     "gif": "https://media.giphy.com/media/3ov9jQX2Ow4bM5xxuM/giphy.gif",
@@ -137,7 +137,7 @@
   },
   {
     "id": "ts-smoothing",
-    "title": "Time Series Smoothing - Making aberrations stand out",
+    "title": "Time Series Smoothing - Making Aberrations Stand Out",
     "description": "Time Series smoothing algorithms removes short-term irregularities from the plot while preserving long-term trends. But as an observer, it is important that such smoothing techniques or irregularities do not mask anomalies that need attention. In this essay, we take a look at a smoothing algorithm that smooths out a time series plot while making aberrations and anomalies standout.",
     "image": "https://user-images.githubusercontent.com/4745789/97785060-cbb55580-1bc8-11eb-9d6d-91ff16cc2ddc.png",
     "gif": "https://media.giphy.com/media/3orieVe5VYqTdT16qk/giphy.gif",
@@ -207,7 +207,7 @@
   },
   {
     "id": "slowsort",
-    "title": "Slowsort - a pessimal sorting algorithm",
+    "title": "Slowsort - A Pessimal Sorting Algorithm",
     "description": "Slowsort is a pessimal sorting algorithm based on the Multiply and Surrender paradigm. The algorithm is designed to be deterministically sub-optimal and it could easily be the worst way anyone could sort an array.",
     "image": "https://user-images.githubusercontent.com/4745789/88473025-fabb8b80-cf36-11ea-8390-a807fcd57d93.png",
     "gif": "https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif",
@@ -231,7 +231,7 @@
   },
   {
     "id": "bitcask",
-    "title": "Bitcask - a log-structured fast KV store",
+    "title": "Bitcask - A Log-Structured Fast KV Store",
     "description": "Bitcask is a Key-Value store that persists its data in append-only log files and still reaps super-performant read-write throughputs. In this essay, we take a detailed look into Bitcask, its design, and find the secret sauce that makes it so performant.",
     "image": "https://user-images.githubusercontent.com/4745789/87868516-144b5900-c9b4-11ea-91e3-2de14e80817b.png",
     "gif": "https://media.giphy.com/media/l0NwF1dnk7GRz3pK0/giphy.gif",
@@ -338,7 +338,7 @@
   },
   {
     "id": "inheritance-c",
-    "title": "Powering inheritance in C using structure composition",
+    "title": "Powering Inheritance in C using Structure Composition",
     "description": "C language does not support inheritance however it does support Structure Compositions which can be tweaked to serve use-cases requiring parent-child relationships. In this article we find out how Structure Compositions help us emulate inheritance in C and keep our code extensible. We will also find how it powers two of the most important things to have ever been invented in the field of computer science.",
     "image": "https://user-images.githubusercontent.com/4745789/83960768-2bbdff00-a8aa-11ea-9e82-16b928d2a244.png",
     "gif": "https://media.giphy.com/media/3o6Mbk7C7HVuhyqX3G/giphy.gif",
@@ -392,7 +392,7 @@
   },
   {
     "id": "python-caches-integers",
-    "title": "Python Caches Integers",
+    "title": "Integer Caching in Python",
     "description": "To gain a performance boost and avoid reallocation of frequently used integers, Python creates singleton instances of small integer values and uses them by reference.",
     "image": "https://user-images.githubusercontent.com/4745789/82141979-a620d380-9856-11ea-9a4a-32399c0c01b8.png",
     "gif": "https://media.giphy.com/media/l378kmO7gdbXaesXS/giphy.gif",
@@ -446,7 +446,7 @@
   },
   {
     "id": "mysql-cache",
-    "title": "What makes MySQL LRU cache scan resistant",
+    "title": "Midpoint Insertion Strategy in MySQL LRU Cache",
     "description": "The MySQL InnoDB Storage engine uses LRU cache but it suffers from a notorious problem. In this article, we find how by using Midpoint Insertion Strategy and changing one aspect of LRU, MySQL becomes scan resistant and super performant.",
     "image": "https://user-images.githubusercontent.com/4745789/80304802-0ed7db80-87d6-11ea-98db-bc5d4afe965b.png",
     "gif": "https://media.giphy.com/media/daUOBsa1OztxC/giphy.gif",
@@ -483,7 +483,7 @@
   },
   {
     "id": "bayesian-average",
-    "title": "Solving an age-old problem using Bayesian Average",
+    "title": "Better Ranking using Bayesian Average",
     "description": "Ranking a list of movies, products, books or even restaurants is tricky and in this article, we find what works for such a rating system and the math behind it.",
     "image": "https://user-images.githubusercontent.com/4745789/78990379-ebfdc400-7b53-11ea-88b7-cd64e39eabf6.png",
     "gif": "https://media.giphy.com/media/dJ4vNQ7r72pb4nDhN5/giphy.gif",
@@ -501,7 +501,7 @@
   },
   {
     "id": "sliding-window-ratelimiter",
-    "title": "Designing a sliding window based rate limiter",
+    "title": "Sliding Window based Rate Limiter",
     "description": "A rate limiter is used to control the rate of traffic sent or received on the network and in this article we dive deep and design a sliding window based rate limiter.",
     "image": "https://user-images.githubusercontent.com/4745789/78276848-3c13cf80-7531-11ea-8186-99cb1da58e50.png",
     "gif": "https://media.giphy.com/media/5YuhLwDgrgtRVwI7OY/giphy.gif",
@@ -519,7 +519,7 @@
   },
   {
     "id": "idf",
-    "title": "All you need to know about Inverse Document Frequency",
+    "title": "Inverse Document Frequency",
     "description": "TF-IDF is extensively used in search engines and in various document classification and clustering techniques. Instead of taking the formula by the word, we take a detour and dive deep into the better half of it and find its connection with Probability, the role it plays in document relevance and the intuition behind it.",
     "image": "https://user-images.githubusercontent.com/4745789/76207579-10e4db80-6224-11ea-91ba-b67359125156.png",
     "gif": "https://media.giphy.com/media/3ornjWIRSzXEw61KH6/giphy.gif",
@@ -548,7 +548,7 @@
   },
   {
     "id": "better-programmer",
-    "title": "Eight rituals to be a better programmer",
+    "title": "Eight Rituals to be a Better Programmer",
     "description": "\"How to get better at programming?\" is the question I had been asked quite a few times, and today I lay down the 8 rituals I have been following, and action items for each, to be good and get better at programming.",
     "image": "https://user-images.githubusercontent.com/4745789/75548769-0cfecf80-5a54-11ea-8dd2-1e452ba1298b.png",
     "gif": "https://media.giphy.com/media/14gQ5vtwD050LC/giphy.gif",
@@ -574,7 +574,7 @@
   },
   {
     "id": "python-prompts",
-    "title": "Personalize your python prompt",
+    "title": "Personalize your Python Prompt",
     "description": "Personalization is what we all love. In this article we find how we could personalize the Python interpreter prompt >>>",
     "image": "https://user-images.githubusercontent.com/4745789/74850923-8ade1f00-5360-11ea-8ed5-1072c8a718c2.png",
     "gif": "https://media.giphy.com/media/TFTqzyOQwT2zS/giphy.gif",
@@ -602,7 +602,7 @@
   },
   {
     "id": "rule-30",
-    "title": "Pseudorandom numbers using Cellular Automata - Rule 30",
+    "title": "Pseudorandom Numbers using Cellular Automata - Rule 30",
     "description": "Generating pseudorandom numbers is an interesting problem in Computer Science. In this article, we dive deep into an algorithm for generating pseudorandom numbers using Rule 30 of Cellular Automaton.",
     "image": "https://user-images.githubusercontent.com/4745789/74463952-b07aac80-4eb8-11ea-8d8e-6f286767ec7e.png",
     "gif": "https://media.giphy.com/media/26uflDxU6cEhrhmUg/giphy.gif",
@@ -628,7 +628,7 @@
   },
   {
     "id": "function-overloading",
-    "title": "Function overloading in Python",
+    "title": "Function Overloading in Python",
     "description": "Python natively does not support function overloading - having multiple functions with the same name. Today we see how we can implement and add this functionality to Python by using common language constructs like decorators and dictionaries.",
     "image": "https://user-images.githubusercontent.com/4745789/73909201-04423000-48d2-11ea-8bd0-d7c25f6435c1.png",
     "gif": "https://media.giphy.com/media/WtCHRSPCuqS8E/giphy.gif",
@@ -654,7 +654,7 @@
   },
   {
     "id": "isolation-forest",
-    "title": "Isolation Forest algorithm for anomaly detection",
+    "title": "Isolation Forest Algorithm for Anomaly Detection",
     "description": "Anomaly detection is an age-old problem and in this article, we dive deep into an unsupervised algorithm, Isolation Forest, that beautifully exploits the characteristics of anomalies. Instead of profiling normal points and labeling others as anomalies, the algorithm is actually is tuned to detect anomalies.",
     "image": "https://user-images.githubusercontent.com/4745789/73280907-34743980-4215-11ea-89f0-eac4a71df6e5.png",
     "gif": "https://media.giphy.com/media/xGdvlOVSWaDvi/giphy.gif",
@@ -685,7 +685,7 @@
   },
   {
     "id": "image-steganography",
-    "title": "Everything that you need to know about Image Steganography",
+    "title": "Image Steganography",
     "description": "Steganography has been around since at least 440 BCE but with the rise of computers, the techniques have evolved to handle digital data. In this article, we see the science behind image steganography, how it exploits various properties of images to hide secrets and walkthrough a few techniques in detail.",
     "image": "https://user-images.githubusercontent.com/4745789/72659471-2a1c9900-39e6-11ea-9b93-c11bf3eefc43.png",
     "gif": "https://media.giphy.com/media/V1NxC1YoNEHBe/giphy.gif",
@@ -723,7 +723,7 @@
   },
   {
     "id": "super-long-integers",
-    "title": "How python implements super long integers?",
+    "title": "Super Long Integers in Python",
     "description": "Python must be doing something beautiful internally to support super long integers and today we find out what's under the hood. The article goes in-depth to explain design, storage, and operations on super long integers as implemented by Python.",
     "image": "https://user-images.githubusercontent.com/4745789/72040055-55f49c00-32cd-11ea-9190-8f5a67c2f3d9.png",
     "gif": "https://media.giphy.com/media/SKGo6OYe24EBG/giphy.gif",
@@ -757,7 +757,7 @@
   },
   {
     "id": "i-changed-my-python",
-    "title": "I changed my Python and made it dubious | Python Internals",
+    "title": "Changing Python",
     "description": "I changed the Python's source code and made addition incorrect and unpredictable. The addition operation will internally perform either Subtraction. Multiplication, Floor Division or Power at random.",
     "image": "https://user-images.githubusercontent.com/4745789/71662123-60b3ac00-2d76-11ea-8018-f558cef93a59.png",
     "gif": "https://media.giphy.com/media/aZ5wedD7Jtazm/giphy.gif",
@@ -791,7 +791,7 @@
   },
   {
     "id": "efficient-way-to-stop-an-iterating-loop",
-    "title": "An efficient way to stop an iterating loop",
+    "title": "Stop an Iterating Loop",
     "description": "There are two ways through which we can stop an iterating loop, first by using break statement and second by making loop condition false. Let's see if one is better than the other.",
     "image": "https://user-images.githubusercontent.com/4745789/64327846-02ee9d80-cfea-11e9-8698-4a18bfe76068.png",
     "gif": "https://media.giphy.com/media/cKKXNlTYino7hWNXwl/giphy.gif",
@@ -844,7 +844,7 @@
   },
   {
     "id": "benchmark-and-compare-pagination-approach-in-mongodb",
-    "title": "Benchmark and compare the two approaches to paginate in MongoDB",
+    "title": "Benchmark Pagination Strategies in MongoDB",
     "description": "Benchmark results for two pagination approaches for MongoDB.",
     "image": "https://user-images.githubusercontent.com/4745789/63220759-d514f680-c1ab-11e9-8a38-7b1828946b74.png",
     "gif": "https://media.giphy.com/media/c5eqVJN7oNLTq/giphy.gif",
@@ -873,7 +873,7 @@
   },
   {
     "id": "mongodb-cursor-skip-is-slow",
-    "title": "Why MongoDB's cursor.skip() is slow?",
+    "title": "Why MongoDB's cursor.skip() is Slow?",
     "description": "MongoDB's cursor.skip() is very inefficient, why is that? Even though it is slow and inefficient,  team MongoDB wants to continue keeping it. Find out why ...",
     "image": "https://user-images.githubusercontent.com/4745789/63220620-4d2ded00-c1a9-11e9-8eea-11766291e06f.png",
     "gif": "https://media.giphy.com/media/nqIuAIxYebIt2/giphy.gif",
@@ -898,7 +898,7 @@
   },
   {
     "id": "how-sleepsort-helped-me-understand-concurrency-in-golang",
-    "title": "How Sleepsort helped me understand concurrency in Golang",
+    "title": "Sleepsort and Concurrency in Golang",
     "description": "Understanding concurrency in any programming language is tricky let alone Golang; hence to get my hands dirty the first thing I usually implement is sleepsort.",
     "image": "https://user-images.githubusercontent.com/4745789/63222328-203b0380-c1c4-11e9-9dd0-34c4bd9d1c6b.png",
     "gif": "https://media.giphy.com/media/QmJ3e9So5M9NdNkOGo/giphy.gif",
@@ -925,7 +925,7 @@
   },
   {
     "id": "making-http-requests-using-netcat",
-    "title": "Make HTTP requests using netcat",
+    "title": "HTTP Requests using Netcat",
     "description": "All our lives we have been hitting REST APIs with libraries and utilities like curl and postman. Its time we do it the hard way with netcat, just for fun!",
     "image": "https://user-images.githubusercontent.com/4745789/63222693-a5c0b280-c1c8-11e9-9cd4-808225e579f3.png",
     "gif": "https://media.giphy.com/media/2tSodgDfwCjIMCBY8h/giphy.gif",
