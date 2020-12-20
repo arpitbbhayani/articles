@@ -2,7 +2,7 @@
   {
     "id": "string-interning",
     "title": "String Interning in Python",
-    "description": "String Interning in Python",
+    "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called String Interning.",
     "image": "https://user-images.githubusercontent.com/4745789/102710262-1c971f80-42d7-11eb-9ee4-dcefd540e869.png",
     "gif": "https://media.giphy.com/media/KRNBl0iSS8gg0/giphy.gif",
     "categories": [
@@ -15,10 +15,10 @@
     ],
     "published_at": "2020-12-20",
     "similar": [
-      "fsm",
-      "python-iterable-integers",
-      "mongodb-cursor-skip-is-slow",
-      "idf"
+      "i-changed-my-python",
+      "python-prompts",
+      "python-caches-integers",
+      "super-long-integers"
     ]
   },
   {
@@ -39,9 +39,9 @@
     "published_at": "2020-12-13",
     "similar": [
       "fsm",
-      "python-iterable-integers",
       "mongodb-cursor-skip-is-slow",
-      "idf"
+      "idf",
+      "python-iterable-integers"
     ]
   },
   {
@@ -62,9 +62,9 @@
     "published_at": "2020-12-06",
     "similar": [
       "slowsort",
-      "copy-on-write",
+      "morris-counter",
       "isolation-forest",
-      "inheritance-c"
+      "1d-terrain"
     ]
   },
   {
@@ -84,8 +84,8 @@
     "similar": [
       "mysql-cache",
       "ts-smoothing",
-      "image-steganography",
-      "better-programmer"
+      "bitcask",
+      "image-steganography"
     ]
   },
   {
@@ -130,7 +130,7 @@
       "idf",
       "jaccard-minhash",
       "slowsort",
-      "efficient-way-to-stop-an-iterating-loop"
+      "bayesian-average"
     ]
   },
   {
@@ -154,7 +154,7 @@
       "idf",
       "1d-terrain",
       "mongodb-cursor-skip-is-slow",
-      "python-caches-integers"
+      "fsm"
     ]
   },
   {
@@ -174,8 +174,8 @@
     "published_at": "2020-11-01",
     "similar": [
       "better-programmer",
-      "image-steganography",
       "2q-cache",
+      "image-steganography",
       "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
   },
@@ -201,7 +201,7 @@
       "consistent-hashing",
       "flajolet-martin",
       "phi-accrual",
-      "copy-on-write"
+      "isolation-forest"
     ]
   },
   {
@@ -248,7 +248,7 @@
       "flajolet-martin",
       "1d-terrain",
       "morris-counter",
-      "inheritance-c"
+      "isolation-forest"
     ]
   },
   {
@@ -270,8 +270,8 @@
     "similar": [
       "2q-cache",
       "phi-accrual",
-      "copy-on-write",
-      "ts-smoothing"
+      "ts-smoothing",
+      "copy-on-write"
     ]
   },
   {
@@ -315,7 +315,7 @@
       "decipher-single-xor",
       "bayesian-average",
       "isolation-forest",
-      "efficient-way-to-stop-an-iterating-loop"
+      "1d-terrain"
     ]
   },
   {
@@ -337,7 +337,7 @@
       "decipher-repeated-key-xor",
       "bayesian-average",
       "isolation-forest",
-      "efficient-way-to-stop-an-iterating-loop"
+      "1d-terrain"
     ]
   },
   {
@@ -352,8 +352,8 @@
     "tags": [],
     "published_at": "2020-06-14",
     "similar": [
-      "fsm",
       "python-caches-integers",
+      "fsm",
       "i-changed-my-python",
       "python-prompts"
     ]
@@ -371,9 +371,9 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
-      "slowsort",
       "idf",
-      "morris-counter"
+      "morris-counter",
+      "1d-terrain"
     ]
   },
   {
@@ -427,7 +427,7 @@
       "python-prompts",
       "i-changed-my-python",
       "python-iterable-integers",
-      "fsm"
+      "super-long-integers"
     ]
   },
   {
@@ -462,8 +462,8 @@
     "similar": [
       "phi-accrual",
       "morris-counter",
-      "slowsort",
-      "isolation-forest"
+      "better-programmer",
+      "slowsort"
     ]
   },
   {
@@ -482,7 +482,7 @@
       "2q-cache",
       "ts-smoothing",
       "image-steganography",
-      "better-programmer"
+      "bitcask"
     ]
   },
   {
@@ -497,10 +497,10 @@
     "tags": [],
     "published_at": "2020-04-19",
     "similar": [
-      "i-changed-my-python",
       "python-iterable-integers",
-      "python-prompts",
-      "python-caches-integers"
+      "i-changed-my-python",
+      "recursion-visualizer",
+      "python-prompts"
     ]
   },
   {
@@ -516,9 +516,9 @@
     "published_at": "2020-04-12",
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
-      "fast-and-efficient-pagination-in-mongodb",
       "1d-terrain",
-      "publish-python-package-on-pypi"
+      "fast-and-efficient-pagination-in-mongodb",
+      "jaccard-minhash"
     ]
   },
   {
@@ -591,7 +591,7 @@
       "ts-smoothing",
       "fast-and-efficient-pagination-in-mongodb",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -618,8 +618,8 @@
     "similar": [
       "i-changed-my-python",
       "python-caches-integers",
-      "fsm",
-      "super-long-integers"
+      "super-long-integers",
+      "python-iterable-integers"
     ]
   },
   {
@@ -644,8 +644,8 @@
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
       "morris-counter",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "fast-and-efficient-pagination-in-mongodb"
+      "fast-and-efficient-pagination-in-mongodb",
+      "better-programmer"
     ]
   },
   {
@@ -700,8 +700,8 @@
     "published_at": "2020-01-28",
     "similar": [
       "slowsort",
-      "copy-on-write",
       "1d-terrain",
+      "copy-on-write",
       "phi-accrual"
     ]
   },
@@ -738,8 +738,8 @@
     "published_at": "2020-01-17",
     "similar": [
       "ts-smoothing",
-      "multiple-mysql-on-same-server-using-docker",
       "2q-cache",
+      "mysql-cache",
       "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
   },
@@ -806,9 +806,9 @@
     "published_at": "2020-01-03",
     "similar": [
       "python-prompts",
-      "fsm",
       "python-caches-integers",
-      "python-iterable-integers"
+      "python-iterable-integers",
+      "super-long-integers"
     ]
   },
   {
@@ -833,7 +833,7 @@
       "fast-and-efficient-pagination-in-mongodb",
       "rule-30",
       "bayesian-average",
-      "better-programmer"
+      "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
   },
   {
@@ -861,7 +861,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "better-programmer",
       "rule-30",
-      "publish-python-package-on-pypi"
+      "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
   },
   {
@@ -887,10 +887,10 @@
     ],
     "published_at": "2017-06-02",
     "similar": [
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "better-programmer",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "ts-smoothing",
-      "image-steganography"
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -940,8 +940,8 @@
     "published_at": "2017-07-16",
     "similar": [
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "rule-30",
-      "better-programmer",
+      "publish-python-package-on-pypi",
+      "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb"
     ]
   },
@@ -964,9 +964,9 @@
     "published_at": "2017-07-05",
     "similar": [
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "sliding-window-ratelimiter",
+      "publish-python-package-on-pypi",
       "multiple-mysql-on-same-server-using-docker",
-      "setting-up-graphite-using-nginx-on-ubuntu"
+      "sliding-window-ratelimiter"
     ]
   },
   {
@@ -1014,8 +1014,8 @@
     "published_at": "2015-12-14",
     "similar": [
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "sliding-window-ratelimiter",
       "multiple-mysql-on-same-server-using-docker",
+      "sliding-window-ratelimiter",
       "making-http-requests-using-netcat"
     ]
   },
@@ -1038,8 +1038,8 @@
     "published_at": "2015-12-14",
     "similar": [
       "multiple-mysql-on-same-server-using-docker",
-      "sliding-window-ratelimiter",
       "setting-up-graphite-using-nginx-on-ubuntu",
+      "sliding-window-ratelimiter",
       "making-http-requests-using-netcat"
     ]
   },
@@ -1060,9 +1060,9 @@
     "published_at": "2015-11-10",
     "similar": [
       "super-long-integers",
-      "fast-and-efficient-pagination-in-mongodb",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "bayesian-average"
+      "fast-and-efficient-pagination-in-mongodb",
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   }
 ]
