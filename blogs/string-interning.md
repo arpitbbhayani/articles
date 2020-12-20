@@ -1,4 +1,4 @@
-Every programming language aims to be performant in its niche and achieve superior performance requires a lot of compiler and interpreter level optimizations. Since Strings are an integral part of any programming language, the ability to perform string operations quickly elevates the overall performance of the language. 
+Every programming language aims to be performant in its niche and achieving superior performance requires a bunch of compiler and interpreter level optimizations. Since character Strings are an integral part of any programming language, having an ability to perform string operations quickly elevates the overall performance.
 
 In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called String Interning. As we are diving into language internals expect a lot of code snippets from [CPython - Python's source code](https://github.com/python/cpython/).
 
