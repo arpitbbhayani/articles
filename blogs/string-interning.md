@@ -24,39 +24,26 @@ Just like most other modern programming languages, Python also does [String Inte
 True
 ```
 
-We can use this particular operator to test which all strings are interned and which are not. In CPython, String Interning is implemented through the following functions, declared in [unicodeobject.h](https://github.com/python/cpython/blob/master/Include/unicodeobject.h) and defined in [unicodeobject.c](https://github.com/python/cpython/blob/master/Objects/unicodeobject.c).
+We can use this particular operator to test which all strings are interned and which are not. In CPython, String Interning is implemented through the following function, declared in [unicodeobject.h](https://github.com/python/cpython/blob/master/Include/unicodeobject.h) and defined in [unicodeobject.c](https://github.com/python/cpython/blob/master/Objects/unicodeobject.c).
 
 ```cpp
 PyAPI_FUNC(void) PyUnicode_InternInPlace(PyObject **);
-PyAPI_FUNC(PyObject *) PyUnicode_InternFromString(
-    const char *u              /* UTF-8 encoded string */
-);
-
-// To be deprecated in Python 3.12
-PyAPI_FUNC(void) PyUnicode_InternImmortal(PyObject **);
 ```
 
-The implementation of `PyUnicode_InternInPlace` details out how
-
-In order to check if a Unicode string is interned CPython implements a macro named `PyUnicode_CHECK_INTERNED` again defined in [unicodeobject.h](https://github.com/python/cpython/blob/master/Include/unicodeobject.h).
+In order to check if a String is interned, CPython implements a macro named `PyUnicode_CHECK_INTERNED`, again defined in [unicodeobject.h](https://github.com/python/cpython/blob/master/Include/unicodeobject.h). The macro suggests that the Python maintains a member named `interned` in `PyASCIIObject` structure whose value suggests if the corresponding String is interned or not.
 
 ```cpp
-/* Use only if you know it's a string */
 #define PyUnicode_CHECK_INTERNED(op) \
     (((PyASCIIObject *)(op))->state.interned)
 ```
 
-The above macro suggests that the Python maintains a member named `interned` in `PyASCIIObject` structure that suggests if the string is interned or not. 
-
-When we look for all the references of `PyUnicode_InternInPlace` in the codebase we find what all strings are interned by Python.
-
 ## Internals of String Interning
 
-In CPython, the String references are stored, accessed, and managed using a Dictionary named `interned`. This dictionary is lazily initialized upon the first String Intern invocation and holds the reference to the String objects allocated on the heap.
+In CPython, the String references are stored, accessed, and managed using a Python dictionary named `interned`. This dictionary is lazily initialized upon the first String Intern invocation and holds the reference to all the interned String objects.
 
 ### Interning the String
 
-The core function responsible for interning the String is named `PyUnicode_InternInPlace` defined in [unicodeobject.c](https://github.com/python/cpython/blob/master/Objects/unicodeobject.c) that upon invocation lazily builds the main dictionary to hold all interned strings and then makes an entry into it with the key and the value to be set as the same object.
+The core function responsible for interning the String is named `PyUnicode_InternInPlace` defined in [unicodeobject.c](https://github.com/python/cpython/blob/master/Objects/unicodeobject.c) that upon invocation lazily builds the main dictionary `interned` to hold all interned strings and then registers the object into it with the key and the value both set as the same object reference. Following function snippet shows the String Interning process as implemented in Python.
 
 ```cpp
 void
@@ -94,11 +81,9 @@ PyUnicode_InternInPlace(PyObject **p)
 }
 ```
 
-The function flow also ensures that the two references (one for key and the other for value) made while holding them in the dictionary are not counted as a reference made to the object.
-
 ### Cleanup of Interned Strings
 
-The cleanup function iterates over all the Strings held in the interned dictionary, adjusts the reference counts of the object, and marks them as `NOT_INTERNED` allowing them to be garbage collected. Once all the strings are marked as `NOT_INTERNED` the interned dictionary is cleared. The cleanup function is defined in [unicodeobject.c](https://github.com/python/cpython/blob/master/Objects/unicodeobject.c) by the name `_PyUnicode_ClearInterned`.
+The cleanup function iterates over all the Strings held in the `interned` dictionary, adjusts the reference counts of the object, and marks them as `NOT_INTERNED` allowing them to be garbage collected. Once all the strings are marked as `NOT_INTERNED`, the `interned` dictionary is cleared and deleted. The cleanup function is defined in [unicodeobject.c](https://github.com/python/cpython/blob/master/Objects/unicodeobject.c) by the name `_PyUnicode_ClearInterned`.
 
 ```cpp
 void
@@ -153,7 +138,8 @@ _PyUnicode_ClearInterned(PyThreadState *tstate)
 
 ## String Interning in Action
 
-Now that we understand how String Interning and Cleanup happens, we find out places in Python where String Interning happens.
+Now that we understand the internals of String Interning and Cleanup, we find out what all Strings are interned in Python. To discover the spots all we do is grep for the function invocation for `PyUnicode_InternInPlace` in the CPython source code and peek at the neighbouring code.
+
 
 ### Variables, Constants and Function Names
 
