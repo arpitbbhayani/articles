@@ -6,17 +6,17 @@ In this essay, we dive deep into Python internals and find out how Python makes 
 
 String Interning is a compiler/interpreter optimization method that aims to make some string processing tasks space and time efficient by [caching](https://en.wikipedia.org/wiki/Cache_(computing)) them. Instead of creating a new copy of string every time, this optimization method dictates to keep just one copy of string for every *appropriate* [immutable](https://en.wikipedia.org/wiki/Immutable_object) distinct value.
 
-The single copy of each string is called its ***intern*** and hence the name String Interning. The lookup of string intern, may or may not be exposed as a public interfaced method. Many modern day languages like Java, Python, PHP, Ruby, Julia, and many more, performs String Interning make their compilers and interpreters more performant.
+The single copy of each string is called its ***intern*** and hence the name String Interning. The lookup of string intern, may or may not be exposed as a public interfaced method. Many modern languages like Java, Python, PHP, Ruby, Julia, and many more, performs String Interning make their compilers and interpreters more performant.
 
 ![https://user-images.githubusercontent.com/4745789/102705512-d1691680-42ae-11eb-825f-1e032a7c12c5.png](https://user-images.githubusercontent.com/4745789/102705512-d1691680-42ae-11eb-825f-1e032a7c12c5.png)
 
 ## Why should Strings be interned?
 
-*String Interning speeds up string comparisons*. Without interning if we were to compare two strings the complexity of it would shoot up to `O(n)` where we examine every character from both the strings. Imagine doing this for lookup of compile-time constants like Function and Variable names.
+*String Interning speeds up string comparisons*. Without interning if we were to compare two strings the complexity of it would shoot up to `O(n)` where we examine every character from both the strings. Imagine doing this for a lookup of compile-time constants like Function and Variable names.
 
 *String Interning speeds up string quality equality checks.* With interned strings, a simple object identity test suffices after the original intern operation; this is typically implemented as a pointer equality test, normally just a single machine instruction with no memory reference at all.
 
-*String Interning reduces memory footprint.* if there are many instances of the same string value; for instance, it is read from a network or from storage. Such strings may include magic numbers or network protocol information. For example, XML parsers may intern names of tags and attributes to save memory. Network transfer of objects over Java RMI serialization object streams can transfer strings that are interned more efficiently, as the String object's handle is used in place of duplicate objects upon serialization
+*String Interning reduces the memory footprint.* if there are many instances of the same string value; for instance, it is read from a network or from storage. Such strings may include magic numbers or network protocol information. For example, XML parsers may intern the names of tags and attributes to save memory. Network transfer of objects over Java RMI serialization object streams can transfer strings that are interned more efficiently, as the String object's handle is used in place of duplicate objects upon serialization
 
 # String Interning in Python
 
@@ -41,7 +41,7 @@ PyAPI_FUNC(void) PyUnicode_InternImmortal(PyObject **);
 
 The implementation of `PyUnicode_InternInPlace` details out how
 
-In order to check if a unicode string is interned CPython implements a macro named `PyUnicode_CHECK_INTERNED` again defined in [unicodeobject.h](https://github.com/python/cpython/blob/master/Include/unicodeobject.h).
+In order to check if a Unicode string is interned CPython implements a macro named `PyUnicode_CHECK_INTERNED` again defined in [unicodeobject.h](https://github.com/python/cpython/blob/master/Include/unicodeobject.h).
 
 ```cpp
 /* Use only if you know it's a string */
@@ -49,13 +49,13 @@ In order to check if a unicode string is interned CPython implements a macro nam
     (((PyASCIIObject *)(op))->state.interned)
 ```
 
-Above macro suggests that the Python maintains a member named `interned` in `PyASCIIObject` structure that suggests if the string is interned or not. 
+The above macro suggests that the Python maintains a member named `interned` in `PyASCIIObject` structure that suggests if the string is interned or not. 
 
 When we look for all the references of `PyUnicode_InternInPlace` in the codebase we find what all strings are interned by Python.
 
 ## Internals of String Interning
 
-In CPython, the String references are stored, accessed and managed using a Dictionary named `interned`. This dictionary is lazily initialized upon first String Intern invocation and holds the reference to the String objects allocated on heap.
+In CPython, the String references are stored, accessed, and managed using a Dictionary named `interned`. This dictionary is lazily initialized upon the first String Intern invocation and holds the reference to the String objects allocated on the heap.
 
 ### Interning the String
 
@@ -97,7 +97,7 @@ PyUnicode_InternInPlace(PyObject **p)
 }
 ```
 
-The function flow also ensures that the two references (one for key and other for value) made while holding them in the dictionary are not counted as reference made to the object.
+The function flow also ensures that the two references (one for key and the other for value) made while holding them in the dictionary are not counted as a reference made to the object.
 
 ### Cleanup of Interned Strings
 
@@ -109,12 +109,12 @@ _PyUnicode_ClearInterned(PyThreadState *tstate)
 {
     .........
 
-    // Get all the keys of the interned dictionaary
+    // Get all the keys to the interned dictionary
     PyObject *keys = PyDict_Keys(interned);
 
     .........
 
-    // Interned unicode strings are not forcibly deallocated;
+    // Interned Unicode strings are not forcibly deallocated;
     // rather, we give them their stolen references back
     // and then clear and DECREF the interned dict.
 
@@ -160,7 +160,7 @@ Now that we understand how String Interning and Cleanup happens, we find out pla
 
 ### Variables, Constants and Function Names
 
-CPython performs String Interning on constants such as Function Names, Variable Names, String Literals, etc. Following is the snippet from [codeobject.c](https://github.com/python/cpython/blob/master/Objects/codeobject.c) where the new `PyCode` object is created where we see the interpreter interning all the compile time constants, names, and literals.
+CPython performs String Interning on constants such as Function Names, Variable Names, String Literals, etc. Following is the snippet from [codeobject.c](https://github.com/python/cpython/blob/master/Objects/codeobject.c) where the new `PyCode` object is created where we see the interpreter interning all the compile-time constants, names, and literals.
 
 ```cpp
 ...
@@ -203,7 +203,7 @@ PyCode_NewWithPosOnlyArgs(int argcount, int posonlyargcount, int kwonlyargcount,
 
 ### Dictionary Keys
 
-CPython performs String Interning on the keys of the dictionary. Upon setting an item in the dictionary, the interpreter performs String Interning on the key. The following code taken from [dictobject.c](https://github.com/python/cpython/blob/master/Objects/dictobject.c) that shows how interpreter is Interning the Keys of the dictionary while setting an item.
+CPython performs String Interning on the keys of the dictionary. Upon setting an item in the dictionary, the interpreter performs String Interning on the key. The following code is taken from [dictobject.c](https://github.com/python/cpython/blob/master/Objects/dictobject.c) shows how the interpreter is Interning the Keys of the dictionary while setting an item.
 
 ```cpp
 int
@@ -226,7 +226,7 @@ PyDict_SetItemString(PyObject *v, const char *key, PyObject *item)
 
 ### Attributes of any Object
 
-Objects in Python can have attributes which can be set using `setattr` function. It turns out that all the attribute names are interned. Following is the snippet of the function `PyObject_SetAttr` responsible for setting a new attribute to a Python object, defined in the file [object.c](https://github.com/python/cpython/blob/master/Objects/object.c).
+Objects in Python can have attributes that can be set using `setattr` function. It turns out that all the attribute names are interned. Following is the snippet of the function `PyObject_SetAttr` responsible for setting a new attribute to a Python object, defined in the file [object.c](https://github.com/python/cpython/blob/master/Objects/object.c).
 
 ```cpp
 int
@@ -241,7 +241,7 @@ PyObject_SetAttr(PyObject *v, PyObject *name, PyObject *value)
 }
 ```
 
-Above snippet shows how Python interpreter, while setting an attribute to a Python object, also interns the attribute name.
+The above snippet shows how a Python interpreter, while setting an attribute to a Python object, also interns the attribute name.
 
 ### Explicit Interning
 
@@ -266,9 +266,9 @@ sys_intern_impl(PyObject *module, PyObject *s)
 
 ## Intrinsic details about String Interning
 
-*Only compile-time strings are interned*. Strings that are specified during interpretation or compile time are interned. Dynamically created strings are not interned.
+*Only compile-time strings are interned*. Strings that are specified during interpretation or compile-time are interned. Dynamically created strings are not interned.
 
-*Strings having ASCII letters and underscores are interned*. During compile time when general string literals are observed for interning, CPython ensues that the literals that matches the regular expression `[a-zA-Z0-9_]*` are interned. This is defined in the function named `all_name_chars` in file [codeobject.c](https://github.com/python/cpython/blob/master/Objects/codeobject.c).
+*Strings having ASCII letters and underscores are interned*. During compile time when general string literals are observed for interning, CPython ensues that the literals that match the regular expression `[a-zA-Z0-9_]*` are interned. This is defined in the function named `all_name_chars` in file [codeobject.c](https://github.com/python/cpython/blob/master/Objects/codeobject.c).
 
 # References
 
