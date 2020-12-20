@@ -1,6 +1,6 @@
 Every programming language aims to be performant in its niche and achieving superior performance requires a bunch of compiler and interpreter level optimizations. Since character Strings are an integral part of any programming language, having an ability to perform string operations quickly elevates the overall performance.
 
-In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called String Interning. As we are diving into language internals expect a lot of code snippets from [CPython - Python's source code](https://github.com/python/cpython/).
+In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called [String Interning](https://en.wikipedia.org/wiki/String_interning). This essay not only aims to put forth Python internals but it also aims to make the reader comfortable in navigating through the Python's source code; so expect a lot of code snippets taken from [CPython](https://github.com/python/cpython/).
 
 # String Interning
 
