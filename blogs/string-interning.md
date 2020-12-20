@@ -1,6 +1,6 @@
 Every programming language aims to be performant in its niche and achieving superior performance requires a bunch of compiler and interpreter level optimizations. Since character Strings are an integral part of any programming language, having the ability to perform string operations quickly elevates the overall performance.
 
-In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called [String Interning](https://en.wikipedia.org/wiki/String_interning). This essay not only aims to put forth Python internals but also aims to make the reader comfortable in navigating through the Python's source code; so expect a lot of code snippets taken from [CPython](https://github.com/python/cpython/).
+In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called [String Interning](https://en.wikipedia.org/wiki/String_interning). This essay not only aims to put forth Python internals but also aims to make the reader comfortable in navigating through Python's source code; so expect a lot of code snippets taken from [CPython](https://github.com/python/cpython/).
 
 # String Interning
 
@@ -140,12 +140,11 @@ _PyUnicode_ClearInterned(PyThreadState *tstate)
 
 Now that we understand the internals of String Interning and Cleanup, we find out what all Strings are interned in Python. To discover the spots all we do is grep for the function invocation for `PyUnicode_InternInPlace` in the CPython source code and peek at the neighboring code. Here is a list of interesting spots where String Interning happens in Python.
 
-### Variables, Constants and Function Names
+### Variables, Constants, and Function Names
 
 CPython performs String Interning on constants such as Function Names, Variable Names, String Literals, etc. Following is the snippet from [codeobject.c](https://github.com/python/cpython/blob/master/Objects/codeobject.c) that suggests that when a new `PyCode` object is created the interpreter is interning all the compile-time constants, names, and literals.
 
 ```cpp
-...
 PyCodeObject *
 PyCode_NewWithPosOnlyArgs(int argcount, int posonlyargcount, int kwonlyargcount,
                           int nlocals, int stacksize, int flags,
@@ -180,7 +179,6 @@ PyCode_NewWithPosOnlyArgs(int argcount, int posonlyargcount, int kwonlyargcount,
     ........
 
 }
-...
 ```
 
 ### Dictionary Keys
