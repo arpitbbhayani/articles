@@ -1,10 +1,10 @@
-Every programming language aims to be performant in its niche and achieving superior performance requires a bunch of compiler and interpreter level optimizations. Since character Strings are an integral part of any programming language, having an ability to perform string operations quickly elevates the overall performance.
+Every programming language aims to be performant in its niche and achieving superior performance requires a bunch of compiler and interpreter level optimizations. Since character Strings are an integral part of any programming language, having the ability to perform string operations quickly elevates the overall performance.
 
-In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called [String Interning](https://en.wikipedia.org/wiki/String_interning). This essay not only aims to put forth Python internals but it also aims to make the reader comfortable in navigating through the Python's source code; so expect a lot of code snippets taken from [CPython](https://github.com/python/cpython/).
+In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called [String Interning](https://en.wikipedia.org/wiki/String_interning). This essay not only aims to put forth Python internals but also aims to make the reader comfortable in navigating through the Python's source code; so expect a lot of code snippets taken from [CPython](https://github.com/python/cpython/).
 
 # String Interning
 
-String Interning is a compiler/interpreter optimization method that makes common string processing tasks space and time efficient by [caching](https://en.wikipedia.org/wiki/Cache_(computing)) them. Instead of creating a new copy of string every time, this optimization method dictates to keep just one copy of string for every *appropriate* [immutable](https://en.wikipedia.org/wiki/Immutable_object) distinct value and use the pointer reference wherver referred.
+String Interning is a compiler/interpreter optimization method that makes common string processing tasks space and time efficient by [caching](https://en.wikipedia.org/wiki/Cache_(computing)) them. Instead of creating a new copy of string every time, this optimization method dictates to keep just one copy of string for every *appropriate* [immutable](https://en.wikipedia.org/wiki/Immutable_object) distinct value and use the pointer reference wherever referred.
 
 The single copy of each string is called its ***intern*** and hence the name String Interning. The lookup of string intern, may or may not be exposed as a public interfaced method. Modern programming languages like Java, Python, PHP, Ruby, Julia, and many more, performs String Interning to make their compilers and interpreters performant.
 
@@ -12,12 +12,12 @@ The single copy of each string is called its ***intern*** and hence the name Str
 
 ## Why should Strings be interned?
 
-*String Interning speeds up string comparisons*. Without interning if we were to compare two strings  for equality the complexity of it would shoot up to `O(n)` where we examine every character from both the strings to decide their equality. But if the strings are interned, instead of checking every character, equal strings will have the same object reference so just a pointer quality check would be sufficient to say if two string literals are equal. Since this is a very common operation, this is typically implemented as a pointer equality test, using just a single machine instruction with no memory reference at all.
+*String Interning speeds up string comparisons*. Without interning if we were to compare two strings for equality the complexity of it would shoot up to `O(n)` where we examine every character from both the strings to decide their equality. But if the strings are interned, instead of checking every character, equal strings will have the same object reference so just a pointer quality check would be sufficient to say if two string literals are equal. Since this is a very common operation, this is typically implemented as a pointer equality test, using just a single machine instruction with no memory reference at all.
 
-*String Interning reduces the memory footprint.* If there are many instances of the same string value read from expensive source like Network or Disk, examples magic numbers or network protocol information. Instead of passing the string literals, we can pass references: example: Tag names in XML can be passed as references and thus saving time and memory footprint during serialization.
+*String Interning reduces the memory footprint.* Instead of filling memory with redundant String objects, Python optimizes memory footprint by sharing and reusing already defined objects as dictated by the [flyweight design pattern](https://en.wikipedia.org/wiki/Flyweight_pattern).
 
 # String Interning in Python
-Just like most other modern programming languages, Python also does [String Interning](https://en.wikipedia.org/wiki/String_interning) to gain a performance boost. In Python, we can find if two objects are referring to the same in-memory object using the `is` operator. So if two string objects refer to the same in-memory object, the `is` operator yields `True` ortherwise `False`.
+Just like most other modern programming languages, Python also does [String Interning](https://en.wikipedia.org/wiki/String_interning) to gain a performance boost. In Python, we can find if two objects are referring to the same in-memory object using the `is` operator. So if two string objects refer to the same in-memory object, the `is` operator yields `True` otherwise `False`.
 
 ```bash
 >>> 'python' is 'python'
@@ -43,7 +43,7 @@ In CPython, the String references are stored, accessed, and managed using a Pyth
 
 ### Interning the String
 
-The core function responsible for interning the String is named `PyUnicode_InternInPlace` defined in [unicodeobject.c](https://github.com/python/cpython/blob/master/Objects/unicodeobject.c) that upon invocation lazily builds the main dictionary `interned` to hold all interned strings and then registers the object into it with the key and the value both set as the same object reference. Following function snippet shows the String Interning process as implemented in Python.
+The core function responsible for interning the String is named `PyUnicode_InternInPlace` defined in [unicodeobject.c](https://github.com/python/cpython/blob/master/Objects/unicodeobject.c) that upon invocation lazily builds the main dictionary `interned` to hold all interned strings and then registers the object into it with the key and the value both set as the same object reference. The following function snippet shows the String Interning process as implemented in Python.
 
 ```cpp
 void
@@ -138,7 +138,7 @@ _PyUnicode_ClearInterned(PyThreadState *tstate)
 
 ## String Interning in Action
 
-Now that we understand the internals of String Interning and Cleanup, we find out what all Strings are interned in Python. To discover the spots all we do is grep for the function invocation for `PyUnicode_InternInPlace` in the CPython source code and peek at the neighbouring code. Here is a list of intersting spots where String Interning happens in Python.
+Now that we understand the internals of String Interning and Cleanup, we find out what all Strings are interned in Python. To discover the spots all we do is grep for the function invocation for `PyUnicode_InternInPlace` in the CPython source code and peek at the neighboring code. Here is a list of interesting spots where String Interning happens in Python.
 
 ### Variables, Constants and Function Names
 
@@ -185,9 +185,9 @@ PyCode_NewWithPosOnlyArgs(int argcount, int posonlyargcount, int kwonlyargcount,
 
 ### Dictionary Keys
 
-CPython also interns thee Strings which keys of any dictionary object. Upon putting an item in the dictionary the interpreter String Interning on the key againsst which item is stored. The following code is taken from [dictobject.c](https://github.com/python/cpython/blob/master/Objects/dictobject.c) showcasing the exact behaviour.
+CPython also interns thee Strings which keys of any dictionary object. Upon putting an item in the dictionary the interpreter String Interning on the key against which item is stored. The following code is taken from [dictobject.c](https://github.com/python/cpython/blob/master/Objects/dictobject.c) showcasing the exact behavior.
 
-There is comment next to the `PyUnicode_InternInPlace` function call that suggests, if we really need to intern all the keys in all the dictionaries.
+Fun Fact: There is a comment next to the `PyUnicode_InternInPlace` function call that suggests if we really need to intern all the keys in all the dictionaries.
 
 ```cpp
 int
@@ -250,7 +250,7 @@ sys_intern_impl(PyObject *module, PyObject *s)
 
 *Only compile-time strings are interned*. Strings that are specified during interpretation or compile-time are interned while dynamically created strings are not.
 
-*Strings having ASCII letters and underscores are interned*. During compile time when string literals are observed for interning, [CPython](https://github.com/python/cpython/blob/master/Objects/codeobject.c) ensures that it iterns literraals matching the regular expression `[a-zA-Z0-9_]*` as they closely resemble Python identifiers.
+*Strings having ASCII letters and underscores are interned*. During compile time when string literals are observed for interning, [CPython](https://github.com/python/cpython/blob/master/Objects/codeobject.c) ensures that it only interns the literals matching the regular expression `[a-zA-Z0-9_]*` as they closely resemble Python identifiers.
 
 # References
 
