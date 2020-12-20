@@ -1,5 +1,27 @@
 [
   {
+    "id": "string-interning",
+    "title": "String Interning in Python",
+    "description": "String Interning in Python",
+    "image": "https://user-images.githubusercontent.com/4745789/102710262-1c971f80-42d7-11eb-9ee4-dcefd540e869.png",
+    "gif": "https://media.giphy.com/media/KRNBl0iSS8gg0/giphy.gif",
+    "categories": [
+      "python"
+    ],
+    "tags": [
+      "compiler optimization",
+      "string interning",
+      "cpython internals"
+    ],
+    "published_at": "2020-12-20",
+    "similar": [
+      "fsm",
+      "python-iterable-integers",
+      "mongodb-cursor-skip-is-slow",
+      "idf"
+    ]
+  },
+  {
     "id": "recursion-visualizer",
     "title": "A Simple Recursion Tree Visualizer for Python",
     "description": "One of the most complicated concepts to wrap our heads around has to be recursion; to understand it well it always helps to have some sort of recursion visualization. In this essay, we build a super-simple yet effective visualizer for recursive functions in Python.",
