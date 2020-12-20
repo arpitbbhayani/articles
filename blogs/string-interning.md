@@ -138,8 +138,7 @@ _PyUnicode_ClearInterned(PyThreadState *tstate)
 
 ## String Interning in Action
 
-Now that we understand the internals of String Interning and Cleanup, we find out what all Strings are interned in Python. To discover the spots all we do is grep for the function invocation for `PyUnicode_InternInPlace` in the CPython source code and peek at the neighbouring code.
-
+Now that we understand the internals of String Interning and Cleanup, we find out what all Strings are interned in Python. To discover the spots all we do is grep for the function invocation for `PyUnicode_InternInPlace` in the CPython source code and peek at the neighbouring code. Here is a list of intersting spots where String Interning happens in Python.
 
 ### Variables, Constants and Function Names
 
