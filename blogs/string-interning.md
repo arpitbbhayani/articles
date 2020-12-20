@@ -4,30 +4,27 @@ In this essay, we dive deep into Python internals and find out how Python makes 
 
 # String Interning
 
-String Interning is a compiler/interpreter optimization method that aims to make some string processing tasks space and time efficient by [caching](https://en.wikipedia.org/wiki/Cache_(computing)) them. Instead of creating a new copy of string every time, this optimization method dictates to keep just one copy of string for every *appropriate* [immutable](https://en.wikipedia.org/wiki/Immutable_object) distinct value.
+String Interning is a compiler/interpreter optimization method that makes common string processing tasks space and time efficient by [caching](https://en.wikipedia.org/wiki/Cache_(computing)) them. Instead of creating a new copy of string every time, this optimization method dictates to keep just one copy of string for every *appropriate* [immutable](https://en.wikipedia.org/wiki/Immutable_object) distinct value and use the pointer reference wherver referred.
 
-The single copy of each string is called its ***intern*** and hence the name String Interning. The lookup of string intern, may or may not be exposed as a public interfaced method. Many modern languages like Java, Python, PHP, Ruby, Julia, and many more, performs String Interning make their compilers and interpreters more performant.
+The single copy of each string is called its ***intern*** and hence the name String Interning. The lookup of string intern, may or may not be exposed as a public interfaced method. Modern programming languages like Java, Python, PHP, Ruby, Julia, and many more, performs String Interning to make their compilers and interpreters performant.
 
 ![https://user-images.githubusercontent.com/4745789/102705512-d1691680-42ae-11eb-825f-1e032a7c12c5.png](https://user-images.githubusercontent.com/4745789/102705512-d1691680-42ae-11eb-825f-1e032a7c12c5.png)
 
 ## Why should Strings be interned?
 
-*String Interning speeds up string comparisons*. Without interning if we were to compare two strings the complexity of it would shoot up to `O(n)` where we examine every character from both the strings. Imagine doing this for a lookup of compile-time constants like Function and Variable names.
+*String Interning speeds up string comparisons*. Without interning if we were to compare two strings  for equality the complexity of it would shoot up to `O(n)` where we examine every character from both the strings to decide their equality. But if the strings are interned, instead of checking every character, equal strings will have the same object reference so just a pointer quality check would be sufficient to say if two string literals are equal. Since this is a very common operation, this is typically implemented as a pointer equality test, using just a single machine instruction with no memory reference at all.
 
-*String Interning speeds up string quality equality checks.* With interned strings, a simple object identity test suffices after the original intern operation; this is typically implemented as a pointer equality test, normally just a single machine instruction with no memory reference at all.
-
-*String Interning reduces the memory footprint.* if there are many instances of the same string value; for instance, it is read from a network or from storage. Such strings may include magic numbers or network protocol information. For example, XML parsers may intern the names of tags and attributes to save memory. Network transfer of objects over Java RMI serialization object streams can transfer strings that are interned more efficiently, as the String object's handle is used in place of duplicate objects upon serialization
+*String Interning reduces the memory footprint.* If there are many instances of the same string value read from expensive source like Network or Disk, examples magic numbers or network protocol information. Instead of passing the string literals, we can pass references: example: Tag names in XML can be passed as references and thus saving time and memory footprint during serialization.
 
 # String Interning in Python
-
-Just like most other modern programming languages, Python also does String Interning to gain a performance boost. In Python, we can find if two objects are referring to the same in-memory object using the `is` operator.
+Just like most other modern programming languages, Python also does [String Interning](https://en.wikipedia.org/wiki/String_interning) to gain a performance boost. In Python, we can find if two objects are referring to the same in-memory object using the `is` operator. So if two string objects refer to the same in-memory object, the `is` operator yields `True` ortherwise `False`.
 
 ```bash
 >>> 'python' is 'python'
 True
 ```
 
-In CPython, String Interning is implemented through the following functions, defined in [unicodeobject.h](https://github.com/python/cpython/blob/master/Include/unicodeobject.h).
+We can use this particular operator to test which all strings are interned and which are not. In CPython, String Interning is implemented through the following functions, declared in [unicodeobject.h](https://github.com/python/cpython/blob/master/Include/unicodeobject.h) and defined in [unicodeobject.c](https://github.com/python/cpython/blob/master/Objects/unicodeobject.c).
 
 ```cpp
 PyAPI_FUNC(void) PyUnicode_InternInPlace(PyObject **);
