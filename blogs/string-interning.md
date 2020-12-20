@@ -142,7 +142,7 @@ Now that we understand the internals of String Interning and Cleanup, we find ou
 
 ### Variables, Constants and Function Names
 
-CPython performs String Interning on constants such as Function Names, Variable Names, String Literals, etc. Following is the snippet from [codeobject.c](https://github.com/python/cpython/blob/master/Objects/codeobject.c) where the new `PyCode` object is created where we see the interpreter interning all the compile-time constants, names, and literals.
+CPython performs String Interning on constants such as Function Names, Variable Names, String Literals, etc. Following is the snippet from [codeobject.c](https://github.com/python/cpython/blob/master/Objects/codeobject.c) that suggests that when a new `PyCode` object is created the interpreter is interning all the compile-time constants, names, and literals.
 
 ```cpp
 ...
@@ -185,7 +185,9 @@ PyCode_NewWithPosOnlyArgs(int argcount, int posonlyargcount, int kwonlyargcount,
 
 ### Dictionary Keys
 
-CPython performs String Interning on the keys of the dictionary. Upon setting an item in the dictionary, the interpreter performs String Interning on the key. The following code is taken from [dictobject.c](https://github.com/python/cpython/blob/master/Objects/dictobject.c) shows how the interpreter is Interning the Keys of the dictionary while setting an item.
+CPython also interns thee Strings which keys of any dictionary object. Upon putting an item in the dictionary the interpreter String Interning on the key againsst which item is stored. The following code is taken from [dictobject.c](https://github.com/python/cpython/blob/master/Objects/dictobject.c) showcasing the exact behaviour.
+
+There is comment next to the `PyUnicode_InternInPlace` function call that suggests, if we really need to intern all the keys in all the dictionaries.
 
 ```cpp
 int
@@ -198,7 +200,7 @@ PyDict_SetItemString(PyObject *v, const char *key, PyObject *item)
         return -1;
 
     // Invoking String Interning on the key
-    PyUnicode_InternInPlace(&kv);
+    PyUnicode_InternInPlace(&kv); /* XXX Should we really? */
 
     err = PyDict_SetItem(v, kv, item);
     Py_DECREF(kv);
@@ -208,7 +210,7 @@ PyDict_SetItemString(PyObject *v, const char *key, PyObject *item)
 
 ### Attributes of any Object
 
-Objects in Python can have attributes that can be set using `setattr` function. It turns out that all the attribute names are interned. Following is the snippet of the function `PyObject_SetAttr` responsible for setting a new attribute to a Python object, defined in the file [object.c](https://github.com/python/cpython/blob/master/Objects/object.c).
+Objects in Python can have attributes that can be explicitly set using `setattr` function or are implicitly set as part of Class members or as pre-defined functions on data types. CPython interns all these attribute names, so as to make lookup blazing fast. Following is the snippet of the function `PyObject_SetAttr` responsible for setting a new attribute to a Python object, as defined in the file [object.c](https://github.com/python/cpython/blob/master/Objects/object.c).
 
 ```cpp
 int
@@ -223,11 +225,9 @@ PyObject_SetAttr(PyObject *v, PyObject *name, PyObject *value)
 }
 ```
 
-The above snippet shows how a Python interpreter, while setting an attribute to a Python object, also interns the attribute name.
-
 ### Explicit Interning
 
-Python allows explicit String Interning through the function `intern` defined in `sys` module. When this function is invoked with any String object, the provided String object is interned. Following is the code snippet from the file [sysmodule.c](https://github.com/python/cpython/blob/master/Python/sysmodule.c) that shows how `sys.intern` function interns the provided String.
+Python also allows explicit String Interning through the function `intern` defined in `sys` module. When this function is invoked with any String object, the provided String is interned. Following is the code snippet from the file [sysmodule.c](https://github.com/python/cpython/blob/master/Python/sysmodule.c) that shows String Interning happening in `sys_intern_impl`.
 
 ```cpp
 static PyObject *
@@ -246,11 +246,11 @@ sys_intern_impl(PyObject *module, PyObject *s)
 }
 ```
 
-## Intrinsic details about String Interning
+## Extra nuggets on String Interning
 
-*Only compile-time strings are interned*. Strings that are specified during interpretation or compile-time are interned. Dynamically created strings are not interned.
+*Only compile-time strings are interned*. Strings that are specified during interpretation or compile-time are interned while dynamically created strings are not.
 
-*Strings having ASCII letters and underscores are interned*. During compile time when general string literals are observed for interning, CPython ensues that the literals that match the regular expression `[a-zA-Z0-9_]*` are interned. This is defined in the function named `all_name_chars` in file [codeobject.c](https://github.com/python/cpython/blob/master/Objects/codeobject.c).
+*Strings having ASCII letters and underscores are interned*. During compile time when string literals are observed for interning, [CPython](https://github.com/python/cpython/blob/master/Objects/codeobject.c) ensures that it iterns literraals matching the regular expression `[a-zA-Z0-9_]*` as they closely resemble Python identifiers.
 
 # References
 
