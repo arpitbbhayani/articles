@@ -7,13 +7,13 @@ In this essay, we dive deep and find what exactly is Constant Folding, understan
 In [Constant Folding](https://en.wikipedia.org/wiki/Constant_folding), the engine finds and evaluates constant expressions at compile time rather than computing them at runtime, making the runtime leaner and faster.
 
 ```python
-day_sec = 24 * 60 * 60
+>>> day_sec = 24 * 60 * 60
 ```
 
 When the compiler encounters a constant expression, like above, it evaluates the expression and replaces it with the evaluated value. The expression is usually replaced by the evaluated value in the [Abstract Syntax Tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree), but the implementation is totally up to the language. Hence the above expression is effectively executed as
 
 ```python
-day_sec = 86400
+>>> day_sec = 86400
 ```
 
 # Constant Folding in Python

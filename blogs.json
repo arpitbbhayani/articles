@@ -15,10 +15,10 @@
     ],
     "published_at": "2021-01-10",
     "similar": [
-      "i-changed-my-python",
-      "python-prompts",
-      "python-caches-integers",
-      "super-long-integers"
+      "fsm",
+      "jaccard-minhash",
+      "python-iterable-integers",
+      "idf"
     ]
   },
   {
@@ -61,9 +61,9 @@
     "published_at": "2020-12-13",
     "similar": [
       "fsm",
+      "constant-folding-python",
       "mongodb-cursor-skip-is-slow",
-      "idf",
-      "python-iterable-integers"
+      "idf"
     ]
   },
   {
@@ -175,8 +175,8 @@
     "similar": [
       "idf",
       "1d-terrain",
-      "mongodb-cursor-skip-is-slow",
-      "fsm"
+      "constant-folding-python",
+      "mongodb-cursor-skip-is-slow"
     ]
   },
   {
@@ -519,10 +519,10 @@
     "tags": [],
     "published_at": "2020-04-19",
     "similar": [
+      "constant-folding-python",
       "python-iterable-integers",
       "i-changed-my-python",
-      "recursion-visualizer",
-      "python-prompts"
+      "recursion-visualizer"
     ]
   },
   {
@@ -587,7 +587,7 @@
       "jaccard-minhash",
       "1d-terrain",
       "mongodb-cursor-skip-is-slow",
-      "inheritance-c"
+      "constant-folding-python"
     ]
   },
   {
@@ -693,7 +693,7 @@
       "recursion-visualizer",
       "python-iterable-integers",
       "fsm",
-      "i-changed-my-python"
+      "constant-folding-python"
     ]
   },
   {
@@ -936,8 +936,8 @@
     "similar": [
       "inheritance-c",
       "idf",
-      "jaccard-minhash",
-      "1d-terrain"
+      "constant-folding-python",
+      "jaccard-minhash"
     ]
   },
   {
