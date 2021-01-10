@@ -1,5 +1,27 @@
 [
   {
+    "id": "constant-folding-python",
+    "title": "Constant Folding in Python",
+    "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called Constant Folding.",
+    "image": "https://user-images.githubusercontent.com/4745789/104118331-23e9a000-534e-11eb-9ec8-8369cdae40b1.png",
+    "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
+    "categories": [
+      "python"
+    ],
+    "tags": [
+      "compiler optimization",
+      "constant folding",
+      "cpython internals"
+    ],
+    "published_at": "2021-01-10",
+    "similar": [
+      "i-changed-my-python",
+      "python-prompts",
+      "python-caches-integers",
+      "super-long-integers"
+    ]
+  },
+  {
     "id": "string-interning",
     "title": "String Interning in Python",
     "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called String Interning.",
