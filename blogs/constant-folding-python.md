@@ -1,6 +1,6 @@
-Every programming language aims to be performant in its niche and achieving superior performance requires a lot of compiler level optimizations. One famous optimization technique is [Constant Folding](https://en.wikipedia.org/wiki/Constant_folding) where during compile time the engine tries to recognize constant expressions, evaluate them and replaces the expression with this newly evaluated value, making the runtime leaner.
+Every programming language aims to be performant in its niche and achieving superior performance requires a lot of compiler level optimizations. One famous optimization technique is [Constant Folding](https://en.wikipedia.org/wiki/Constant_folding) where during compile time the engine tries to recognize constant expressions, evaluate them, and replaces the expression with this newly evaluated value, making the runtime leaner.
 
-In this essay, we dive deep and find what exactly is Constant Folding, understand the scope of it in the world of Python and finally go through the Python's source code - [CPython](https://github.com/python/cpython/) - and find out how elegantly Python actually implements it.
+In this essay, we dive deep and find what exactly is Constant Folding, understand the scope of it in the world of Python and finally go through Python's source code - [CPython](https://github.com/python/cpython/) - and find out how elegantly Python actually implements it.
 
 # Constant Folding
 
@@ -10,7 +10,7 @@ In [Constant Folding](https://en.wikipedia.org/wiki/Constant_folding), the engin
 day_sec = 24 * 60 * 60
 ```
 
-When the compiler encounters a constant expression, like above, it evaluates the expression and replaces it with the evaluated value. The expression is usually replaced by the evaluated value in the the [Abstract Syntax Tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree), but the implementation is totally up to the language. Hence the above expression is effectively executed as
+When the compiler encounters a constant expression, like above, it evaluates the expression and replaces it with the evaluated value. The expression is usually replaced by the evaluated value in the [Abstract Syntax Tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree), but the implementation is totally up to the language. Hence the above expression is effectively executed as
 
 ```python
 day_sec = 86400
@@ -30,7 +30,7 @@ In Python, we could use [Disassembler module](https://docs.python.org/3/library/
         6 RETURN_VALUE
 ```
 
-We see that the bytecode, instead of having two binary multiply operations followed by one `LOAD_CONST`, is having just one `LOAD_CONST` with already evaluated value of `86400`. This indicates that the CPython interpreter during parsing and building of Abstract Syntax Tree folded the constant expression, `24 * 60 * 60` and replaced it with the evaluated value `86400`.
+We see that the bytecode, instead of having two binary multiply operations followed by one `LOAD_CONST`, is having just one `LOAD_CONST` with the already evaluated value of `86400`. This indicates that the CPython interpreter during parsing and building of Abstract Syntax Tree folded the constant expression, `24 * 60 * 60` and replaced it with the evaluated value `86400`.
 
 ### Scope of Constant Folding
 
@@ -50,19 +50,19 @@ Now we shift our focus to the internals and find exactly where and how CPython i
 
 ![https://user-images.githubusercontent.com/4745789/103898628-38922200-511b-11eb-965f-fb4d46d3c45c.png](https://user-images.githubusercontent.com/4745789/103898628-38922200-511b-11eb-965f-fb4d46d3c45c.png)
 
-The `astfold_expr` before folding the expression at hand, tries to fold its child expressions (operands) and then delegates the folding to corresponding specific expression folding function. The operation specific folding function evaluates the expression and returns the evaluated constant value, which is then put into the AST.
+The `astfold_expr` before folding the expression at hand, tries to fold its child expressions (operands) and then delegates the folding to the corresponding specific expression folding function. The operation-specific folding function evaluates the expression and returns the evaluated constant value, which is then put into the AST.
 
-For example, whenever `astfold_expr` encounters a binary operation, it recursively folds the two child operand expressions before evaluating the expression at hand using `fold_binop`. The function `fold_binop` returns the evaluated constant value as seen in the snippet below.
+For example, whenever `astfold_expr` encounters a binary operation, it recursively folds the two child operands (expressions) before evaluating the expression at hand using `fold_binop`. The function `fold_binop` returns the evaluated constant value as seen in the snippet below.
 
 ![https://user-images.githubusercontent.com/4745789/103898745-670ffd00-511b-11eb-88a9-f741157473b3.png](https://user-images.githubusercontent.com/4745789/103898745-670ffd00-511b-11eb-88a9-f741157473b3.png)
 
-`fold_binop` function folds the binary operation by checking the kind of operator at hand and then invoking the corresponding evaluation function on them. For example, if the operation at hand is addition then, to evaluate the final value, it invokes `PyNumber_Add` on both its left and right operands.
+`fold_binop` function folds the binary operation by checking the kind of operator at hand and then invoking the corresponding evaluation function on them. For example, if the operation at hand is an addition then, to evaluate the final value, it invokes `PyNumber_Add` on both its left and right operands.
 
 ### What makes this elegant?
 
 Instead of writing special logic to handle certain patterns or types to fold constant expressions efficiently, CPython invokes the same general code. For example, it invokes the same usual `PyNumber_Add` function while folding that it does to perform the usual addition operation.
 
-CPython has thus eradicated need to write special functions to handle constant folding by making sure its code and evaluation process is structured in such a way that the general purpose code itself can handle evaluation of constant expressions.
+CPython has thus eradicated the need to write special functions to handle constant folding by making sure its code and evaluation process is structured in such a way that the general-purpose code itself can handle the evaluation of constant expressions.
 
 # References
 
