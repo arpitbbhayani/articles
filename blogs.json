@@ -1,5 +1,27 @@
 [
   {
+    "id": "constant-folding-python",
+    "title": "Constant Folding in Python",
+    "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called Constant Folding.",
+    "image": "https://user-images.githubusercontent.com/4745789/104118331-23e9a000-534e-11eb-9ec8-8369cdae40b1.png",
+    "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
+    "categories": [
+      "python"
+    ],
+    "tags": [
+      "compiler optimization",
+      "constant folding",
+      "cpython internals"
+    ],
+    "published_at": "2021-01-10",
+    "similar": [
+      "fsm",
+      "jaccard-minhash",
+      "python-iterable-integers",
+      "idf"
+    ]
+  },
+  {
     "id": "string-interning",
     "title": "String Interning in Python",
     "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called String Interning.",
@@ -39,9 +61,9 @@
     "published_at": "2020-12-13",
     "similar": [
       "fsm",
+      "constant-folding-python",
       "mongodb-cursor-skip-is-slow",
-      "idf",
-      "python-iterable-integers"
+      "idf"
     ]
   },
   {
@@ -153,8 +175,8 @@
     "similar": [
       "idf",
       "1d-terrain",
-      "mongodb-cursor-skip-is-slow",
-      "fsm"
+      "constant-folding-python",
+      "mongodb-cursor-skip-is-slow"
     ]
   },
   {
@@ -497,10 +519,10 @@
     "tags": [],
     "published_at": "2020-04-19",
     "similar": [
+      "constant-folding-python",
       "python-iterable-integers",
       "i-changed-my-python",
-      "recursion-visualizer",
-      "python-prompts"
+      "recursion-visualizer"
     ]
   },
   {
@@ -565,7 +587,7 @@
       "jaccard-minhash",
       "1d-terrain",
       "mongodb-cursor-skip-is-slow",
-      "inheritance-c"
+      "constant-folding-python"
     ]
   },
   {
@@ -671,7 +693,7 @@
       "recursion-visualizer",
       "python-iterable-integers",
       "fsm",
-      "i-changed-my-python"
+      "constant-folding-python"
     ]
   },
   {
@@ -914,8 +936,8 @@
     "similar": [
       "inheritance-c",
       "idf",
-      "jaccard-minhash",
-      "1d-terrain"
+      "constant-folding-python",
+      "jaccard-minhash"
     ]
   },
   {
