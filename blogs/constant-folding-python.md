@@ -18,7 +18,7 @@ day_sec = 86400
 
 # Constant Folding in Python
 
-In Python, we could use [Disassembler module](https://docs.python.org/3/library/dis.html#module-dis) to get the CPython bytecode giving us a good peek at how things will be executed. When we disassemble the above constant expression using the `dis` module, we get the following bytecode
+In Python, we could use the [Disassembler module](https://docs.python.org/3/library/dis.html#module-dis) to get the CPython bytecode giving us a good peek at how things will be executed. When we disassemble the above constant expression using the `dis` module, we get the following bytecode
 
 ```python
 >>> import dis
@@ -36,7 +36,7 @@ We see that the bytecode, instead of having two binary multiply operations follo
 
 Python tries to fold every single constant expression present but there are some cases where even though the expression is constant, but Python chooses not to fold it. For example, Python does not fold `x = 4 ** 64` while it does fold `x = 2 ** 64`. 
 
-Apart from the arithmetic expressions, Python also folds expressions involving Strings and Tuples, where constant string expressions till length `4096` are folded.
+Apart from the arithmetic expressions, Python also folds expressions involving Strings and Tuples, where constant string expressions till the length `4096` are folded.
 
 ```python
 >>> a = "-" * 4096   # folded
