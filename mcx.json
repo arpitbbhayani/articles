@@ -1,4 +1,46 @@
 {
+    "outline": [
+        {
+            "section": "Foundation",
+            "title": "Week 1",
+            "body": "The first week is about learning the macro and micro components of System Design."
+        },
+        {
+            "section": "Databases",
+            "title": "Week 2",
+            "body": "This week we will focus on learning everything about databases, right from SQL to NoSQL to Embedded, going through the internals, and understanding how they scale."
+        },
+        {
+            "section": "Going Distributed",
+            "title": "Week 3",
+            "body": "The third week will be about understanding Distributed Systems and the challenges that come while building them."
+        },
+        {
+            "section": "Building Social Networks",
+            "title": "Week 4",
+            "body": "This is when we start modeling and building real-world systems and we start with Social Networks."
+        },
+        {
+            "section": "Building Storages",
+            "title": "Week 5",
+            "body": "This week will be about building ephemeral, persistent, reliable and durable storage engines."
+        },
+        {
+            "section": "Building High Throughput Systems",
+            "title": "Week 6",
+            "body": "This week we level-up and build systems that are heavily concurrent and required to deliver very high throughput."
+        },
+        {
+            "section": "Building Search Engines",
+            "title": "Week 7",
+            "body": "This week is about understanding the internals of Information Retrieval Systems."
+        },
+        {
+            "section": "Building Algorithmic Systems",
+            "title": "Week 8",
+            "body": "The final week will be about exploring systems that are driven by a super-clever algorithm."
+        }
+    ],
     "value_proposition": [
         "40 hours of Live Classes on weekends",
         "1:1 personalized mentorship on weekdays",
