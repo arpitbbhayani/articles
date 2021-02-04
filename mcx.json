@@ -1,0 +1,36 @@
+{
+    "faqs": [
+        {
+            "title": "Is this course right for me?",
+            "body": "This course is for any engineer who wants to learn System Design. The program is most suited to someone who has some industry experience, about 1-5 years."
+        },
+        {
+            "title": "Will you be giving teching for the entire duration?",
+            "body": "Yes. I will be teaching the entire course live over Zoom and will be providing timely feedbacks and 1:1 mentorship."
+        },
+        {
+            "title": "Will there be a class every day?",
+            "body": "The Live Classess will happen on Saturdays and Sundays 4-6pm IST with a possible extension of 30 mins."
+        },
+        {
+            "title": "Will there be assignments and hands-on projects?",
+            "body": "Apart from Live Classess on weekends there will be 4 assignments and 1 group project ensuring you apply what you learn."
+        },
+        {
+            "title": "Will there be a recording available for future reference?",
+            "body": "Every single Live Class will be recorded and you will be given lifetime access to it."
+        },
+        {
+            "title": "Is there a refund policy?",
+            "body": "14 days (from the course commencement) is the window within which you can claim a full refund. No Questions Asked."
+        },
+        {
+            "title": "Where are the classes conducted?",
+            "body": "All Live Classes will be online, over Zoom, and all you need is an internet connection to attend the live sessions."
+        },
+        {
+            "title": "What are the programming pre-requisites?",
+            "body": "You need to have a working knowledge of one language - either Python, Java or Golang - and a will to learn the basics of others. Most of the exercises and assignments will be language agnostic but depending on the problem statement you may have to spick one over other."
+        }
+    ]
+}
