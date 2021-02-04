@@ -1,4 +1,26 @@
 {
+    "benefits": [
+        {
+            "title": "Design systems like a pro",
+            "body": "The course will make you comfortable at designing any system, no matter how stringent the requirements are."
+        },
+        {
+            "title": "Know the unknowns",
+            "body": "Buckle up to learn some super-interesting concepts, super-clever algorithms, and sophisticated architectures. You are bound to have mind-blown moments."
+        },
+        {
+            "title": "Crack the interview",
+            "body": "Be it FAANG or your dream startup, you would be at ease while designing systems in the interview round."
+        },
+        {
+            "title": "Upskill and level-up",
+            "body": "Learn the designing paradigms and upskill yourself to accelerate your career growth and stand out."
+        },
+        {
+            "title": "Network and Community",
+            "body": "Perhaps the most interesting takeaway will be your new network, friends, and a lot of memories."
+        }
+    ],
     "outline": [
         {
             "section": "Foundation",
