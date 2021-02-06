@@ -1,4 +1,18 @@
 {
+    "benefits_cohort": [
+        {
+            "title": "Small and Focusses Group",
+            "body": "Each cohort will have close to ~25 people ensuring you have a richer learning experience."
+        },
+        {
+            "title": "Thrive Together",
+            "body": "Unlike MOOCs, each cohort will thrive on interactions and collaborations."
+        },
+        {
+            "title": "Discuss and Learn",
+            "body": "Learning happens when we discuss, and hence everyone is encouraged to speak, put forth opinions, and discuss."
+        }
+    ],
     "benefits": [
         {
             "title": "Design systems like a pro",
