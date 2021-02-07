@@ -1,5 +1,20 @@
 [
   {
+    "id": "persistent-data-structures-introduction",
+    "title": "Persistent Data Structures - An Introduction",
+    "description": "P",
+    "image": "https://user-images.githubusercontent.com/4745789/107117196-9347a680-689e-11eb-8d3f-75da045b7baf.png",
+    "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
+    "categories": [
+      "data structures"
+    ],
+    "tags": [
+      "persistent data structures"
+    ],
+    "published_at": "2021-02-07",
+    "similar": []
+  },
+  {
     "id": "constant-folding-python",
     "title": "Constant Folding in Python",
     "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called Constant Folding.",
