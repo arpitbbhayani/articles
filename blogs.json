@@ -12,7 +12,12 @@
       "persistent data structures"
     ],
     "published_at": "2021-02-07",
-    "similar": []
+    "similar": [
+      "bitcask",
+      "rum",
+      "2q-cache",
+      "phi-accrual"
+    ]
   },
   {
     "id": "constant-folding-python",
@@ -31,9 +36,9 @@
     "published_at": "2021-01-10",
     "similar": [
       "fsm",
-      "jaccard-minhash",
       "python-iterable-integers",
-      "idf"
+      "jaccard-minhash",
+      "python-caches-integers"
     ]
   },
   {
@@ -54,8 +59,8 @@
     "similar": [
       "i-changed-my-python",
       "python-prompts",
-      "python-caches-integers",
-      "super-long-integers"
+      "super-long-integers",
+      "python-caches-integers"
     ]
   },
   {
@@ -122,7 +127,7 @@
       "mysql-cache",
       "ts-smoothing",
       "bitcask",
-      "image-steganography"
+      "better-programmer"
     ]
   },
   {
@@ -143,8 +148,8 @@
     "similar": [
       "morris-counter",
       "flajolet-martin",
-      "slowsort",
-      "rule-30"
+      "rule-30",
+      "slowsort"
     ]
   },
   {
@@ -210,10 +215,10 @@
     ],
     "published_at": "2020-11-01",
     "similar": [
-      "better-programmer",
       "2q-cache",
+      "better-programmer",
       "image-steganography",
-      "benchmark-and-compare-pagination-approach-in-mongodb"
+      "mysql-cache"
     ]
   },
   {
@@ -305,10 +310,10 @@
     ],
     "published_at": "2020-07-19",
     "similar": [
+      "persistent-data-structures-introduction",
       "2q-cache",
       "phi-accrual",
-      "ts-smoothing",
-      "copy-on-write"
+      "ts-smoothing"
     ]
   },
   {
@@ -408,8 +413,8 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
-      "idf",
       "morris-counter",
+      "idf",
       "1d-terrain"
     ]
   },
@@ -425,10 +430,10 @@
     "tags": [],
     "published_at": "2020-05-31",
     "similar": [
+      "persistent-data-structures-introduction",
       "bitcask",
       "2q-cache",
-      "mysql-cache",
-      "phi-accrual"
+      "mysql-cache"
     ]
   },
   {
@@ -445,8 +450,8 @@
     "similar": [
       "lfu",
       "isolation-forest",
-      "rum",
-      "phi-accrual"
+      "persistent-data-structures-introduction",
+      "rum"
     ]
   },
   {
@@ -536,8 +541,8 @@
     "similar": [
       "constant-folding-python",
       "python-iterable-integers",
-      "i-changed-my-python",
-      "recursion-visualizer"
+      "recursion-visualizer",
+      "i-changed-my-python"
     ]
   },
   {
@@ -628,7 +633,7 @@
       "ts-smoothing",
       "fast-and-efficient-pagination-in-mongodb",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "efficient-way-to-stop-an-iterating-loop"
+      "copy-on-write"
     ]
   },
   {
@@ -737,9 +742,9 @@
     "published_at": "2020-01-28",
     "similar": [
       "slowsort",
+      "phi-accrual",
       "1d-terrain",
-      "copy-on-write",
-      "phi-accrual"
+      "copy-on-write"
     ]
   },
   {
@@ -777,7 +782,7 @@
       "ts-smoothing",
       "2q-cache",
       "mysql-cache",
-      "benchmark-and-compare-pagination-approach-in-mongodb"
+      "sliding-window-ratelimiter"
     ]
   },
   {
@@ -949,10 +954,10 @@
     ],
     "published_at": "2017-06-04",
     "similar": [
-      "inheritance-c",
       "idf",
-      "constant-folding-python",
-      "jaccard-minhash"
+      "inheritance-c",
+      "jaccard-minhash",
+      "constant-folding-python"
     ]
   },
   {
@@ -978,8 +983,8 @@
     "similar": [
       "benchmark-and-compare-pagination-approach-in-mongodb",
       "publish-python-package-on-pypi",
-      "efficient-way-to-stop-an-iterating-loop",
-      "fast-and-efficient-pagination-in-mongodb"
+      "fast-and-efficient-pagination-in-mongodb",
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -1001,8 +1006,8 @@
     "published_at": "2017-07-05",
     "similar": [
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "publish-python-package-on-pypi",
       "multiple-mysql-on-same-server-using-docker",
+      "publish-python-package-on-pypi",
       "sliding-window-ratelimiter"
     ]
   },
