@@ -1,6 +1,6 @@
 Ordinary data structures are ephemeral implying that any update made to it destroys the old version and all we are left with is the updated latest one. Persistent Data Structures change this notion and allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in "time" and access any version that we want.
 
-In this essay, we take a detailed look into the world of Persistent Data Structures and see the basics of its implementation along with where exactly we can find them in action. This essay is meant to act as an exhaustive introduction to the topic and in future essays, we will dive deeper into the specifics and implementation details of each data structure.
+In this essay, we take a detailed look into the world of Persistent Data Structures and see the basics of its implementation along with where exactly we can find them in action. This essay is meant to act as an exhaustive introduction to the topic and in future essays, we will dive deeper into the specifics of each data structure.
 
 This essay is loosely based on the iconic paper published in 1986 titled [Making Data Structures Persistent](https://www.cs.cmu.edu/~sleator/papers/making-data-structures-persistent.pdf) by James R. Driscoll, Neil Sarnak, Daniel D. Sleator, and Robert E. Tarjan.
 
@@ -32,7 +32,7 @@ Persistent Data Structures find their applications spanning the entire spectrum 
 
 ## Functional Programming Languages
 
-Functional Programming Languages are ideal candidates for incorporating Persistent Data Structures as they forbid, if not discourage, the mutability of underlying structures. These languages pass around states within functions and expect that they return to a new state, leaving the old one unaltered. Programming languages like Haskell, Clojure, Elm, Javascript, Scala have native Persistent implementations of data structures like Lists, Maps, Sets, and Trees.
+Functional Programming Languages are ideal candidates for incorporating Persistent Data Structures as they forbid, while some discourage, the mutability of underlying structures. These languages pass around states within functions and expect that they do not update the existing one but return a new state. Programming languages like Haskell, Clojure, Elm, Javascript, Scala have native Persistent implementations of data structures like Lists, Maps, Sets, and Trees.
 
 ## Computational Geometry
 
@@ -75,9 +75,9 @@ The Node-Copying method eliminates all the problems with the Fat Node method. It
 
 Having this structure helps in making update operation slightly efficient by reducing the number of nodes to be copied during writes, considering the in-degrees to each node is bounded.
 
-## Path Copying Method
+## Path-Copying Method
 
-The path copying method copies all the nodes coming in the path from the root to the node being modified. This way it tries to minimize the copy and promotes reusing some of the unmodified data. This method comes in super handy in Linked Data Structures like Lists and Trees.
+The path-copying method copies all the nodes coming in the path from the root to the node being modified. This way it tries to minimize the copy and promotes reusing some of the unmodified data. This method comes in super handy in Linked Data Structures like Lists and Trees.
 
 ![https://user-images.githubusercontent.com/4745789/107144006-33b0d000-695e-11eb-9e13-959eaeba44f4.png](https://user-images.githubusercontent.com/4745789/107144006-33b0d000-695e-11eb-9e13-959eaeba44f4.png)
 
@@ -85,7 +85,9 @@ The path copying method copies all the nodes coming in the path from the root to
 
 # Reducing the memory footprint
 
-Since persistent data structures thrive on high memory usage, they require some garbage collection system like [Reference Counting](https://en.wikipedia.org/wiki/Reference_counting) or [Mark and Sweep](https://en.wikipedia.org/wiki/Mark_and_sweep). These garbage collection systems free up the memory of historical versions that are not being referenced anymore in the program space.
+Since persistent data structures thrive on high memory usage, they require some garbage collection system to prevent memory leaks. Algorithms like [Reference Counting](https://en.wikipedia.org/wiki/Reference_counting) or [Mark and Sweep](https://en.wikipedia.org/wiki/Mark_and_sweep) serves the purpose pretty well.
+
+Thus when a historical version is not referenced anymore in the program space, the corresponding objects and nodes are freed up.
 
 # References
 
