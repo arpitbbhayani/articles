@@ -4,7 +4,7 @@
     "title": "Persistent Data Structures - An Introduction",
     "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want.",
     "image": "https://user-images.githubusercontent.com/4745789/107117196-9347a680-689e-11eb-8d3f-75da045b7baf.png",
-    "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
+    "gif": "https://media.giphy.com/media/1hVi7JFFzplHW/giphy.gif",
     "categories": [
       "data structures"
     ],
