@@ -1,5 +1,26 @@
 [
   {
+    "id": "persistent-data-structures-arrays",
+    "title": "Persistent Data Structures - Arrays",
+    "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want.",
+    "image": "https://user-images.githubusercontent.com/4745789/107936682-f0331300-6fa8-11eb-9088-e431a77aaa00.png",
+    "gif": "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
+    "categories": [
+      "data structures"
+    ],
+    "tags": [
+      "persistent data structures",
+      "fully persistent arrays"
+    ],
+    "published_at": "2021-02-14",
+    "similar": [
+      "bitcask",
+      "rum",
+      "2q-cache",
+      "phi-accrual"
+    ]
+  },
+  {
     "id": "persistent-data-structures-introduction",
     "title": "Persistent Data Structures - An Introduction",
     "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want.",
