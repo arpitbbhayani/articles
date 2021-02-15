@@ -1,10 +1,10 @@
-[Persistent Data Structures](https://arpitbhayani.me/blogs/persistent-data-structures-introduction) preserve previous versions of themselves allowing us to revisit and audit any historical version. While we already did an exhaustive introduction in the [previous essay](https://arpitbhayani.me/blogs/persistent-data-structures-introduction), in this essay, we take a detailed look into how we can implement ***Fully Persistent*** variant of most common data structure - ***Arrays***.
+[Persistent Data Structures](https://arpitbhayani.me/blogs/persistent-data-structures-introduction) preserve previous versions of themselves allowing us to revisit and audit any historical version. While we already did an exhaustive introduction in the [previous essay](https://arpitbhayani.me/blogs/persistent-data-structures-introduction), in this essay, we take a detailed look into how we can implement the ***Fully Persistent*** variant of the most common data structure - ***Arrays***.
 
-The essay is loosely based on the paper titled [Fully Persistent Arrays for Efficient Incremental Updates and Voluminous Reads](https://link.springer.com/chapter/10.1007/3-540-55253-7_7) by Tyng-Ruey Chuang and we implement it using Backer's trick elaborated in paper [A Persistent Union-Find Data Structure](https://www.lri.fr/~filliatr/ftp/publis/puf-wml07.pdf).
+The essay is loosely based on the paper titled [Fully Persistent Arrays for Efficient Incremental Updates and Voluminous Reads](https://link.springer.com/chapter/10.1007/3-540-55253-7_7) by Tyng-Ruey Chuang and we implement it using Backer's trick elaborated in the paper [A Persistent Union-Find Data Structure](https://www.lri.fr/~filliatr/ftp/publis/puf-wml07.pdf).
 
 # Fully Persistent Arrays
 
-An array is an abstract data structure consisting of `n` slots to hold a maximum of `n` elements such that each element is identified by at least one index. A typical array allows following functions - `create(n)`, `update(index, value)` and `get(index)`.
+An array is an abstract data structure consisting of `n` slots to hold a maximum of `n` elements such that each element is identified by at least one index. A typical array allows the following functions - `create(n)`, `update(index, value)` and `get(index)`.
 
 The simplest form of an array, that we all are familiar with, is the Linear Array that is designed to hold elements in consecutive memory locations, leveraging spatial locality for faster and more efficient retrievals and scans. Before we jump into the implementation details of Fully Persistent Arrays, let's reiterate what exactly are Fully Persistent Data Structures.
 
@@ -14,9 +14,9 @@ Persistent Data Structures preserve previous versions of themselves allowing us 
 
 Fully Persistent Arrays are arrays that support Full Persistence which means it supports usual array operations while also allowing us to go back in time and make updates to any of the previous versions. We define the following operations on Fully Persistent Arrays -
 
-- `create(n)` - returns array of size `n` having all the slots uninitialized
+- `create(n)` - returns an array of size `n` having all the slots uninitialized
 - `update(array, index, value)` - returns a new array identical to `array` except for the element at the position `index`. The parent array `array` remains unaffected and is still accessible.
-- `get(array, index)` - returns the element present at index `index` in array `array`
+- `get(array, index)` - returns the element present at the index `index` in array `array`
 
 # Implementing Fully Persistent Array
 
