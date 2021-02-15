@@ -2,7 +2,7 @@
   {
     "id": "persistent-data-structures-arrays",
     "title": "Persistent Data Structures - Arrays",
-    "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want. In this essay we take a detailed look into implementation Fully Persistent Arrays.",
+    "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want. In this essay, we take a detailed look into the implementation of Fully Persistent Arrays.",
     "image": "https://user-images.githubusercontent.com/4745789/107936682-f0331300-6fa8-11eb-9088-e431a77aaa00.png",
     "gif": "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
     "categories": [
