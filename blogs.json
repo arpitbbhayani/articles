@@ -14,10 +14,10 @@
     ],
     "published_at": "2021-02-14",
     "similar": [
-      "bitcask",
-      "rum",
-      "2q-cache",
-      "phi-accrual"
+      "lfu",
+      "persistent-data-structures-introduction",
+      "phi-accrual",
+      "bitcask"
     ]
   },
   {
@@ -34,10 +34,10 @@
     ],
     "published_at": "2021-02-07",
     "similar": [
-      "bitcask",
       "rum",
-      "2q-cache",
-      "phi-accrual"
+      "bitcask",
+      "fully-persistent-arrays",
+      "2q-cache"
     ]
   },
   {
@@ -59,7 +59,7 @@
       "fsm",
       "python-iterable-integers",
       "jaccard-minhash",
-      "python-caches-integers"
+      "idf"
     ]
   },
   {
@@ -80,8 +80,8 @@
     "similar": [
       "i-changed-my-python",
       "python-prompts",
-      "super-long-integers",
-      "python-caches-integers"
+      "python-caches-integers",
+      "super-long-integers"
     ]
   },
   {
@@ -261,9 +261,9 @@
     ],
     "published_at": "2020-08-23",
     "similar": [
+      "fully-persistent-arrays",
       "consistent-hashing",
       "flajolet-martin",
-      "phi-accrual",
       "isolation-forest"
     ]
   },
@@ -285,8 +285,8 @@
     "published_at": "2020-08-02",
     "similar": [
       "copy-on-write",
-      "rule-30",
       "slowsort",
+      "rule-30",
       "phi-accrual"
     ]
   },
@@ -309,8 +309,8 @@
     "published_at": "2020-07-26",
     "similar": [
       "flajolet-martin",
-      "1d-terrain",
       "morris-counter",
+      "1d-terrain",
       "isolation-forest"
     ]
   },
@@ -331,8 +331,8 @@
     ],
     "published_at": "2020-07-19",
     "similar": [
-      "persistent-data-structures-introduction",
       "2q-cache",
+      "persistent-data-structures-introduction",
       "phi-accrual",
       "ts-smoothing"
     ]
@@ -356,7 +356,7 @@
       "copy-on-write",
       "morris-counter",
       "bitcask",
-      "isolation-forest"
+      "slowsort"
     ]
   },
   {
@@ -453,8 +453,8 @@
     "similar": [
       "persistent-data-structures-introduction",
       "bitcask",
-      "2q-cache",
-      "mysql-cache"
+      "fully-persistent-arrays",
+      "2q-cache"
     ]
   },
   {
@@ -470,9 +470,9 @@
     "published_at": "2020-05-24",
     "similar": [
       "lfu",
+      "fully-persistent-arrays",
       "isolation-forest",
-      "persistent-data-structures-introduction",
-      "rum"
+      "persistent-data-structures-introduction"
     ]
   },
   {
@@ -545,7 +545,7 @@
       "2q-cache",
       "ts-smoothing",
       "image-steganography",
-      "bitcask"
+      "better-programmer"
     ]
   },
   {
@@ -562,8 +562,8 @@
     "similar": [
       "constant-folding-python",
       "python-iterable-integers",
-      "recursion-visualizer",
-      "i-changed-my-python"
+      "i-changed-my-python",
+      "recursion-visualizer"
     ]
   },
   {
@@ -764,8 +764,8 @@
     "similar": [
       "slowsort",
       "phi-accrual",
-      "1d-terrain",
-      "copy-on-write"
+      "copy-on-write",
+      "1d-terrain"
     ]
   },
   {
@@ -802,8 +802,8 @@
     "similar": [
       "ts-smoothing",
       "2q-cache",
-      "mysql-cache",
-      "sliding-window-ratelimiter"
+      "multiple-mysql-on-same-server-using-docker",
+      "mysql-cache"
     ]
   },
   {
@@ -950,10 +950,10 @@
     ],
     "published_at": "2017-06-02",
     "similar": [
-      "better-programmer",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "ts-smoothing",
-      "efficient-way-to-stop-an-iterating-loop"
+      "better-programmer",
+      "efficient-way-to-stop-an-iterating-loop",
+      "ts-smoothing"
     ]
   },
   {
@@ -975,8 +975,8 @@
     ],
     "published_at": "2017-06-04",
     "similar": [
-      "idf",
       "inheritance-c",
+      "idf",
       "jaccard-minhash",
       "constant-folding-python"
     ]
@@ -1027,9 +1027,9 @@
     "published_at": "2017-07-05",
     "similar": [
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "multiple-mysql-on-same-server-using-docker",
       "publish-python-package-on-pypi",
-      "sliding-window-ratelimiter"
+      "sliding-window-ratelimiter",
+      "setting-up-graphite-using-nginx-on-ubuntu"
     ]
   },
   {
@@ -1102,8 +1102,8 @@
     "similar": [
       "multiple-mysql-on-same-server-using-docker",
       "setting-up-graphite-using-nginx-on-ubuntu",
-      "sliding-window-ratelimiter",
-      "making-http-requests-using-netcat"
+      "making-http-requests-using-netcat",
+      "sliding-window-ratelimiter"
     ]
   },
   {
@@ -1124,8 +1124,8 @@
     "similar": [
       "super-long-integers",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "fast-and-efficient-pagination-in-mongodb",
-      "efficient-way-to-stop-an-iterating-loop"
+      "efficient-way-to-stop-an-iterating-loop",
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   }
 ]
