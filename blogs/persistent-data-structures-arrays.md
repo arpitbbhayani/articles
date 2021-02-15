@@ -38,11 +38,11 @@ The tree of modifications is an `n`-ary tree that holds all the versions of the 
 
 Each node of the tree holds three fields - `index`, `value`, and a pointer to the `parent`, making this tree pointing upwards towards to root. Thus each node holds the changed `value`, where did the change happen `index` and on which version the change happened `parent`.
 
-Say we changed the element at index `1` of the array `9, 6, 3, 5, 1`  to `7` we get array `9, 7, 3, 5, 1`. The tree of modifications has 2 nodes one root node `a0` pointing to the initial array, and another node `a1` denoting the updated version.
+Say we changed the element at the index `1` of the array `9, 6, 3, 5, 1`  to `7` we get array `9, 7, 3, 5, 1`. The tree of modifications has 2 nodes one root node `a0` pointing to the initial array, and another node `a1` denoting the updated version.
 
 ![https://user-images.githubusercontent.com/4745789/107858298-996af380-6e59-11eb-99dc-7a68ea25f5b4.png](https://user-images.githubusercontent.com/4745789/107858298-996af380-6e59-11eb-99dc-7a68ea25f5b4.png)
 
-The node `a1` has 3 fields, `index` set to `1`, `value` set to `7` and `parent` pointing to `a0`. The node implies that it was derived from `a0` by changing the value of the element at index `1` to `7`. If we try to branch of `a0` with another change say index `4` set to value `9` we would have 3 nodes in the tree. Thus we see how an update translates into just creating a new node and adding it at the right place in the tree.
+The node `a1` has 3 fields, `index` set to `1`, `value` set to `7` and `parent` pointing to `a0`. The node implies that it was derived from `a0` by changing the value of the element at the index `1` to `7`. If we try to branch off `a0` with another change say index `4` set to value `9` we would have 3 nodes in the tree. Thus we see how an update translates into just creating a new node and adding it at the right place in the tree.
 
 Now we see with this design how we implement the three functions of an array `create`, `update`, and `get`.
 
@@ -66,7 +66,7 @@ The overall complexity of this operation is `O(n)` space and `O(n)` time.
 The `update` operation takes in the `index` that needs to be updated, the `value`, and the version of the array on which update is to be made.
 
 ```python
-# The function updates the element at index `index` with value
+# The function updates the element at the index `index` with value
 # `value` on array `array` and returns the newly updated array
 # keeping the old one accessible.
 def update(array: Array, index: int, value: object) -> Array:
