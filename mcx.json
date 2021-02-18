@@ -116,7 +116,7 @@
         },
         {
             "title": "What are the programming pre-requisites?",
-            "body": "You need to have a working knowledge of one language - either Python, Java or Golang - and a will to learn the basics of others. Most of the exercises and assignments will be language agnostic but depending on the problem statement you may have to spick one over other."
+            "body": "You need to have a working knowledge of one language - either Python, Java, Golang or NodeJS - and a will to learn the basics of others. Most of the exercises and assignments will be language agnostic but depending on the problem statement you may have to spick one over other."
         }
     ]
 }
