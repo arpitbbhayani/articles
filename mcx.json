@@ -119,7 +119,7 @@
             "body": "You need to have a working knowledge of one language - either Python, Java, Golang or NodeJS - and a will to learn the basics of others. Most of the exercises and assignments will be language agnostic but depending on the problem statement you may have to spick one over other."
         },
         {
-            "title": "How is this course different from free resources and videos already available?",
+            "title": "How is this course different from free videos on YouTube?",
             "body": "This cohort-based course aims to be live, intense, and interactive. Traditional MooCs (existing videos on the internet) cannot offer these benefits as they primarily are unidirectional and one-to-many. With this course, you will get 1:1 mentorship which means an instant resolution to your doubts. The existing content is mostly abstract and they never go in-depth, for example, Consistent Hashing, everyone explains it by stating it as a ring and putting nodes post hashing and all; but none of them dives into its low-level implementation which becomes a major miss either during the interviews or while using it at your current job. The discussion, collaboration, and networking will have a major impact on your overall learning as there will be cross-pollination of information."
         }
     ]
