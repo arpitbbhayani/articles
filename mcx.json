@@ -117,6 +117,10 @@
         {
             "title": "What are the programming pre-requisites?",
             "body": "You need to have a working knowledge of one language - either Python, Java, Golang or NodeJS - and a will to learn the basics of others. Most of the exercises and assignments will be language agnostic but depending on the problem statement you may have to spick one over other."
+        },
+        {
+            "title": "How is this course different from free resources and videos already available?",
+            "body": "This cohort-based course aims to be live, intense, and interactive. Traditional MooCs (existing videos on the internet) cannot offer these benefits as they primarily are unidirectional or one-to-many. But since this a cohort-based course it is many-to-many, live, and interactive. With this course, you will get 1:1 mentorship which means an instant resolution to your doubts. The existing content is mostly abstract and they never go in-depth, for example, Consistent Hashing, everyone explains it by stating it as a ring and putting nodes post hashing and all; but none of them dives into its low-level implementation which becomes a major issue either during the interviews or while using it at your current job. You will learn directly from someone who has implemented and scaled systems for quite some time now so you know the information is correct and trustworthy. The discussion, collaboration, and networking will have a major impact on your overall learning as there will be cross-pollination of information."
         }
     ]
 }
