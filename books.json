@@ -1,218 +1,114 @@
 [
     {
-        "_id":"show-your-work",
-        "n":"Show Your Work!",
-        "i":"https://images-na.ssl-images-amazon.com/images/I/51N+Ba1mYOL._SY498_BO1,204,203,200_.jpg",
-        "d":"Show Your Work! is about why generosity trumps genius. It s about getting findable, about using the network instead of wasting time networking. It s not self-promotion, it s self-discovery let others into your process, then let them steal from you.",
-        "plnk":"https://www.amazon.in/Show-Your-Work-Austin-Kleon/dp/076117897X/",
-        "total":150,
-        "pg":150,
-        "com":true,
-        "hgs":[],
-        "uat":15912812400000
+        "_id": "show-your-work",
+        "n": "Show Your Work!",
+        "i": "https://images-na.ssl-images-amazon.com/images/I/51N+Ba1mYOL._SY498_BO1,204,203,200_.jpg",
+        "d": "Show Your Work! is about why generosity trumps genius. It s about getting findable, about using the network instead of wasting time networking. It s not self-promotion, it s self-discovery let others into your process, then let them steal from you.",
+        "plnk": "https://www.amazon.in/Show-Your-Work-Austin-Kleon/dp/076117897X/",
+        "total": 150
     },
     {
-        "_id":"mindset",
-        "n":"Mindset: The New Psychology of Success",
-        "i":"https://user-images.githubusercontent.com/4745789/87881807-578be300-ca19-11ea-861a-af548869e777.jpg",
-        "d":"Mindset reveals how great parents, teachers, managers, and athletes can put this idea to use to foster outstanding accomplishment.",
-        "plnk":"https://www.amazon.in/Mindset-Updated-Changing-Fulfil-Potential/dp/147213995X/",
-        "total":332,
-        "pg":332,
-        "com":true,
-        "hgs":[],
-        "uat":15912812400000
+        "_id": "mindset",
+        "n": "Mindset: The New Psychology of Success",
+        "i": "https://user-images.githubusercontent.com/4745789/87881807-578be300-ca19-11ea-861a-af548869e777.jpg",
+        "d": "Mindset reveals how great parents, teachers, managers, and athletes can put this idea to use to foster outstanding accomplishment.",
+        "plnk": "https://www.amazon.in/Mindset-Updated-Changing-Fulfil-Potential/dp/147213995X/",
+        "total": 332
     },
     {
-        "_id":"kepler-the-new-astronomy",
-        "n":"Johannes Kepler: And the New Astronomy",
-        "i":"https://user-images.githubusercontent.com/4745789/86531338-fffc5c00-bedd-11ea-8d4e-6efd4d66a465.jpg",
-        "d":"An examination of the life of the great medieval astronomer--who endured religious prosecution for challenging church doctrine and supporting the then-iconoclastic theory of a sun-centered solar system--provides a rich background in physics and details Kepler's scientific achievements.",
-        "plnk":"https://www.amazon.in/Johannes-Kepler-Astronomy-Portraits-Science/dp/0195116801",
-        "total":145,
-        "pg":145,
-        "com":false,
-        "hgs":[],
-        "uat":15912812300000
+        "_id": "kepler-the-new-astronomy",
+        "n": "Johannes Kepler: And the New Astronomy",
+        "i": "https://user-images.githubusercontent.com/4745789/86531338-fffc5c00-bedd-11ea-8d4e-6efd4d66a465.jpg",
+        "d": "An examination of the life of the great medieval astronomer--who endured religious prosecution for challenging church doctrine and supporting the then-iconoclastic theory of a sun-centered solar system--provides a rich background in physics and details Kepler's scientific achievements.",
+        "plnk": "https://www.amazon.in/Johannes-Kepler-Astronomy-Portraits-Science/dp/0195116801",
+        "total": 145
     },
     {
-        "_id":"flow",
-        "n":"Flow: The Classic Work On How To Achieve Happiness",
-        "i":"https://user-images.githubusercontent.com/4745789/83770231-74a16800-a69e-11ea-9e05-d07c59bc29d2.jpg",
-        "d":"analyses the behaviour of all kinds of people and tries to answer a simple question - What makes people happy? The author tries to explore the innermost feelings of people who remain happy, and calls this deeply edifying state of mind as ‘flow’, which also happens to be the title of this book.",
-        "plnk":"https://www.amazon.in/Flow-Classic-Work-Achieve-Happiness/dp/0712657592",
-        "total":320,
-        "pg":29,
-        "com":false,
-        "hgs":[],
-        "uat":15912812300000
+        "_id": "flow",
+        "n": "Flow: The Classic Work On How To Achieve Happiness",
+        "i": "https://user-images.githubusercontent.com/4745789/83770231-74a16800-a69e-11ea-9e05-d07c59bc29d2.jpg",
+        "d": "analyses the behaviour of all kinds of people and tries to answer a simple question - What makes people happy? The author tries to explore the innermost feelings of people who remain happy, and calls this deeply edifying state of mind as \u2018flow\u2019, which also happens to be the title of this book.",
+        "plnk": "https://www.amazon.in/Flow-Classic-Work-Achieve-Happiness/dp/0712657592",
+        "total": 320
     },
     {
-        "_id":"range",
-        "n":"Range: How Generalists Triumph in a Specialized World",
-        "i":"https://user-images.githubusercontent.com/4745789/83667500-216edd00-a5ec-11ea-8209-6ecd869547c7.jpg",
-        "d":"why in most fields - especially those that are complex and unpredictable - generalists, not specialists are primed to excel. No matter what you do, where you are in life, whether you are a teacher, student, scientist, business analyst, parent, job hunter, retiree, you will see the world differently after you've read Range. You'll understand better how we solve problems, how we learn and how we succeed. You'll see why failing a test is the best way to learn and why frequent quitters end up with the most fulfilling careers",
-        "plnk":"https://www.amazon.in/Range-Generalists-Triumph-Specialized-World/dp/1509843507",
-        "total":353,
-        "pg":353,
-        "com":false,
-        "hgs":[],
-        "uat":1591204620000
+        "_id": "range",
+        "n": "Range: How Generalists Triumph in a Specialized World",
+        "i": "https://user-images.githubusercontent.com/4745789/83667500-216edd00-a5ec-11ea-8209-6ecd869547c7.jpg",
+        "d": "why in most fields - especially those that are complex and unpredictable - generalists, not specialists are primed to excel. No matter what you do, where you are in life, whether you are a teacher, student, scientist, business analyst, parent, job hunter, retiree, you will see the world differently after you've read Range. You'll understand better how we solve problems, how we learn and how we succeed. You'll see why failing a test is the best way to learn and why frequent quitters end up with the most fulfilling careers",
+        "plnk": "https://www.amazon.in/Range-Generalists-Triumph-Specialized-World/dp/1509843507",
+        "total": 353
     },
     {
-        "_id":"how-to-write-a-lot",
-        "n":"How to Write a Lot",
-        "i":"https://user-images.githubusercontent.com/4745789/83501763-365d4a80-a4de-11ea-884a-d4714d9a366b.jpg",
-        "d":"Fresh advice to help you overcome barriers to writing and use your time more productively. After addressing some common excuses and bad habits, he provides practical strategies to motivate students, professors, researchers, and other academics to become better and more prolific writers",
-        "plnk":"https://www.amazon.in/How-Write-Lot-Practical-Productive/dp/1433829738",
-        "total":124,
-        "pg":124,
-        "com":false,
-        "hgs":[],
-        "uat":1591088739000
+        "_id": "how-to-write-a-lot",
+        "n": "How to Write a Lot",
+        "i": "https://user-images.githubusercontent.com/4745789/83501763-365d4a80-a4de-11ea-884a-d4714d9a366b.jpg",
+        "d": "Fresh advice to help you overcome barriers to writing and use your time more productively. After addressing some common excuses and bad habits, he provides practical strategies to motivate students, professors, researchers, and other academics to become better and more prolific writers",
+        "plnk": "https://www.amazon.in/How-Write-Lot-Practical-Productive/dp/1433829738",
+        "total": 124
     },
     {
-        "_id":"database-internals",
-        "n":"Database Internals",
-        "i":"https://user-images.githubusercontent.com/4745789/78269780-a6277700-7527-11ea-9a95-a77c99831e8f.png",
-        "d":"When it comes to choosing, using, and maintaining a database, understanding its internals is essential. But with so many distributed databases and tools available today, it’s often difficult to understand what each one offers and how they differ. With this practical guide, Alex Petrov guides developers through the concepts behind modern database and storage engine internals.",
-        "plnk":"https://amzn.to/2JADF9o",
-        "total":495,
-        "pg":495,
-        "com":false,
-        "hgs":[],
-        "uat":1585842678000
+        "_id": "database-internals",
+        "n": "Database Internals",
+        "i": "https://user-images.githubusercontent.com/4745789/78269780-a6277700-7527-11ea-9a95-a77c99831e8f.png",
+        "d": "When it comes to choosing, using, and maintaining a database, understanding its internals is essential. But with so many distributed databases and tools available today, it\u2019s often difficult to understand what each one offers and how they differ. With this practical guide, Alex Petrov guides developers through the concepts behind modern database and storage engine internals.",
+        "plnk": "https://amzn.to/2JADF9o",
+        "total": 495
     },
     {
-        "_id":"designing-data-internsive-applications",
-        "n":"Designing Data-Intensive Applications",
-        "i":"https://user-images.githubusercontent.com/4745789/78270119-09b1a480-7528-11ea-848a-70c30114ac47.jpg",
-        "d":"In this practical and comprehensive guide, author Martin Kleppmann helps you navigate this diverse landscape by examining the pros and cons of various technologies for processing and storing data. Software keeps changing, but the fundamental principles remain the same.",
-        "plnk":"https://amzn.to/3dO42GT",
-        "total":616,
-        "pg":616,
-        "com":true,
-        "hgs":[],
-        "uat":1585842677000
+        "_id": "designing-data-internsive-applications",
+        "n": "Designing Data-Intensive Applications",
+        "i": "https://user-images.githubusercontent.com/4745789/78270119-09b1a480-7528-11ea-848a-70c30114ac47.jpg",
+        "d": "In this practical and comprehensive guide, author Martin Kleppmann helps you navigate this diverse landscape by examining the pros and cons of various technologies for processing and storing data. Software keeps changing, but the fundamental principles remain the same.",
+        "plnk": "https://amzn.to/3dO42GT",
+        "total": 616
     },
     {
-        "_id":"Measure-What-Matters",
-        "n":"Measure What Matters",
-        "i":"https://user-images.githubusercontent.com/4745789/71710580-f6a51080-2e22-11ea-915d-e493ef7b6e22.jpg",
-        "d":"The book is about musing Objectives and Key Results (OKRs) to make tough choices on business priorities.",
-        "plnk":"https://amzn.to/37xuDEg",
-        "total":320,
-        "pg":320,
-        "com":true,
-        "hgs":[
-            {
-                "t":"It almost does not matter what you know, knowledge is secondary and execution all important.",
-                "at":1578034395261
-            }
-        ],
-        "uat":1578127567000
+        "_id": "Measure-What-Matters",
+        "n": "Measure What Matters",
+        "i": "https://user-images.githubusercontent.com/4745789/71710580-f6a51080-2e22-11ea-915d-e493ef7b6e22.jpg",
+        "d": "The book is about musing Objectives and Key Results (OKRs) to make tough choices on business priorities.",
+        "plnk": "https://amzn.to/37xuDEg",
+        "total": 320
     },
     {
-        "_id":"The Fabric of the Cosmos",
-        "n":"The Fabric of the Cosmos",
-        "i":"https://user-images.githubusercontent.com/4745789/69913016-49705e80-1458-11ea-8d1a-40fba62cf80e.jpg",
-        "d":"Brian Greene's The Fabric of the Cosmos takes us on an irresistible and revelatory journey through the biggest of the big questions.",
-        "plnk":"https://amzn.to/2P7pjzY",
-        "total":592,
-        "pg":40,
-        "com":false,
-        "hgs":[
-            {
-                "t":"In the book, The Myth of Sisyphus, Camus asked best known existential question\n\n\"There is really only one serious philosophical question, and that is suicide.\"\n\nIn a not so harsh way, it can be put as \"Is your life worth living?\" and that is what all boils down to, everything else is just detail.",
-                "at":1575224628709
-            },
-            {
-                "t":"Reality is revealed to us by our experiences.",
-                "at":1575969846194
-            },
-            {
-                "t":"By deepening our understanding of the true nature of physical reality, we profoundly reconfigure our sense of ourselves and our experience of the universe.",
-                "at":1575969988878
-            },
-            {
-                "t":"The happenings in the universe not only are explicable but predictable. The true power of science is to foretell the aspects of the future - consistently and quantitatively.",
-                "at":1575970353931
-            },
-            {
-                "t":"Space and Time were merely the vocabulary of relations between where objects were and when events took place. But to Albert Einstein, they were the raw material underlying reality.",
-                "at":1575970534746
-            },
-            {
-                "t":"Understanding requires context, insights must be anchored.",
-                "at":1575970577016
-            },
-            {
-                "t":"Space and Time are far from being rigid and unchanging structures as envisioned by Newton. Einstein showed that Space and Time wrap and curve, and thus participate and shape the cosmic evolution.",
-                "at":1575972470562
-            },
-            {
-                "t":"Even though Newton's notion of space and time was incorrect, Newtonian physics provides an extremely accurate approximations to be used in various situations. It breaks only in conditions with extreme speed or gravity.",
-                "at":1575972764825
-            },
-            {
-                "t":"According to Quantum Mechanics, universe participates in a game of chance.",
-                "at":1575999433345
-            }
-        ],
-        "uat":1578127566000
+        "_id": "The Fabric of the Cosmos",
+        "n": "The Fabric of the Cosmos",
+        "i": "https://user-images.githubusercontent.com/4745789/69913016-49705e80-1458-11ea-8d1a-40fba62cf80e.jpg",
+        "d": "Brian Greene's The Fabric of the Cosmos takes us on an irresistible and revelatory journey through the biggest of the big questions.",
+        "plnk": "https://amzn.to/2P7pjzY",
+        "total": 592
     },
     {
-        "_id":"Hooked:-How-to-Build-Habit-Forming-Products",
-        "n":"Hooked: How to Build Habit-Forming Products",
-        "i":"https://user-images.githubusercontent.com/4745789/71711331-8bf5d400-2e26-11ea-91a7-a8746e312a4a.jpg",
-        "d":"Hooked is based on Eyal’s years of research, consulting, and practical experience.  It explains Why do some products capture widespread attention while others flop? What makes us engage with certain products out of sheer habit? Is there a pattern underlying how technologies hook us?",
-        "plnk":"https://amzn.to/2sLp8TF",
-        "total":243,
-        "pg":243,
-        "com":true,
-        "hgs":[
-
-        ],
-        "uat":1578127565000
+        "_id": "Hooked:-How-to-Build-Habit-Forming-Products",
+        "n": "Hooked: How to Build Habit-Forming Products",
+        "i": "https://user-images.githubusercontent.com/4745789/71711331-8bf5d400-2e26-11ea-91a7-a8746e312a4a.jpg",
+        "d": "Hooked is based on Eyal\u2019s years of research, consulting, and practical experience.  It explains Why do some products capture widespread attention while others flop? What makes us engage with certain products out of sheer habit? Is there a pattern underlying how technologies hook us?",
+        "plnk": "https://amzn.to/2sLp8TF",
+        "total": 243
     },
     {
-        "_id":"Brief-Answers-to-the-Big-Questions:-the-final-book-from-Stephen-Hawking",
-        "n":"Brief Answers to the Big Questions: the final book from Stephen Hawking",
-        "i":"https://user-images.githubusercontent.com/4745789/71715326-0af30880-2e37-11ea-9f55-a0b4f924ae47.jpg",
-        "d":"Stephen Hawking's final thoughts on the universe's biggest questions in this brilliant posthumous work. Is there a God? How did it all begin? Can we predict the future? What is inside a black hole? Is there other intelligent life in the universe? Will artificial intelligence outsmart us? and many more.",
-        "plnk":"https://amzn.to/2SMiSWb",
-        "total":256,
-        "pg":256,
-        "com":true,
-        "hgs":[
-
-        ],
-        "uat":1578127564000
+        "_id": "Brief-Answers-to-the-Big-Questions:-the-final-book-from-Stephen-Hawking",
+        "n": "Brief Answers to the Big Questions: the final book from Stephen Hawking",
+        "i": "https://user-images.githubusercontent.com/4745789/71715326-0af30880-2e37-11ea-9f55-a0b4f924ae47.jpg",
+        "d": "Stephen Hawking's final thoughts on the universe's biggest questions in this brilliant posthumous work. Is there a God? How did it all begin? Can we predict the future? What is inside a black hole? Is there other intelligent life in the universe? Will artificial intelligence outsmart us? and many more.",
+        "plnk": "https://amzn.to/2SMiSWb",
+        "total": 256
     },
     {
-        "_id":"Before-You-Know-It",
-        "n":"Before You Know It",
-        "i":"https://user-images.githubusercontent.com/4745789/71726921-9633c480-2e5e-11ea-8b5a-fb280cdd9f61.jpg",
-        "d":"Before You Know profoundly changes the way you understand yourself by introducing you to a fascinating world only recently discovered, the world that exists below the surface of your awareness and yet is the key to unlocking new ways of thinking, feeling and behaving.",
-        "plnk":"https://amzn.to/37tXt8v",
-        "total":352,
-        "pg":352,
-        "com":true,
-        "hgs":[
-
-        ],
-        "uat":1578127563000
+        "_id": "Before-You-Know-It",
+        "n": "Before You Know It",
+        "i": "https://user-images.githubusercontent.com/4745789/71726921-9633c480-2e5e-11ea-8b5a-fb280cdd9f61.jpg",
+        "d": "Before You Know profoundly changes the way you understand yourself by introducing you to a fascinating world only recently discovered, the world that exists below the surface of your awareness and yet is the key to unlocking new ways of thinking, feeling and behaving.",
+        "plnk": "https://amzn.to/37tXt8v",
+        "total": 352
     },
     {
-        "_id":"monk-ferrari",
-        "n":"The Monk Who Sold His Ferrari",
-        "i":"https://user-images.githubusercontent.com/4745789/93711008-41f57f80-fb68-11ea-9854-8275dd90e5d0.jpg",
-        "d":"In the book, the reader goes through a spiritual journey and into a very old culture that has gathered much wisdom over the millennia. The book advocates about how to live happily, think deep and rightly, value time and relationships, be more disciplined, follow the heart’s call and live every moment of the life.",
-        "plnk":"https://www.amazon.in/Monk-Who-Sold-His-Ferrari/dp/817992162X",
-        "total":200,
-        "pg":200,
-        "com":true,
-        "hgs":[],
-        "uat":15912812500000
+        "_id": "monk-ferrari",
+        "n": "The Monk Who Sold His Ferrari",
+        "i": "https://user-images.githubusercontent.com/4745789/93711008-41f57f80-fb68-11ea-9854-8275dd90e5d0.jpg",
+        "d": "In the book, the reader goes through a spiritual journey and into a very old culture that has gathered much wisdom over the millennia. The book advocates about how to live happily, think deep and rightly, value time and relationships, be more disciplined, follow the heart\u2019s call and live every moment of the life.",
+        "plnk": "https://www.amazon.in/Monk-Who-Sold-His-Ferrari/dp/817992162X",
+        "total": 200
     }
 ]
