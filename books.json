@@ -1,5 +1,17 @@
 [
     {
+        "_id":"show-your-work",
+        "n":"Show Your Work!",
+        "i":"https://images-na.ssl-images-amazon.com/images/I/51N+Ba1mYOL._SY498_BO1,204,203,200_.jpg",
+        "d":"Show Your Work! is about why generosity trumps genius. It s about getting findable, about using the network instead of wasting time networking. It s not self-promotion, it s self-discovery let others into your process, then let them steal from you.",
+        "plnk":"https://www.amazon.in/Show-Your-Work-Austin-Kleon/dp/076117897X/",
+        "total":150,
+        "pg":150,
+        "com":true,
+        "hgs":[],
+        "uat":15912812400000
+    },
+    {
         "_id":"mindset",
         "n":"Mindset: The New Psychology of Success",
         "i":"https://user-images.githubusercontent.com/4745789/87881807-578be300-ca19-11ea-861a-af548869e777.jpg",
