@@ -115,6 +115,10 @@
             "body": "All Live Classes will be online, over Zoom, and all you need is an internet connection to attend the live sessions."
         },
         {
+            "title": "Who you be the only one teaching this course?",
+            "body": "The entire course including Live Classes will be conducted by me, Arpit Bhayani, no external TAs, mentors, etc. You will get to learn everything from the horse's mouth."
+        },
+        {
             "title": "What are the programming pre-requisites?",
             "body": "You need to have a working knowledge of one language - either Python, Java, Golang or NodeJS - and a will to learn the basics of others. Most of the exercises and assignments will be language agnostic but depending on the problem statement you may have to spick one over other."
         },
