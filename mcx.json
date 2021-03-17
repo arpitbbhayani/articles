@@ -78,9 +78,9 @@
         }
     ],
     "value_proposition": [
-        "40 hours of Live Interactive Classes on Weekends",
-        "1:1 Personalized Mentorship on Weekdays",
-        "4 Individual Assignments, 1 Group Project",
+        "48 hours of Live Interactive Classes on Weekends",
+        "1:1 Personalized Mentorship on Weekdays upon request",
+        "Multiple assignments and projects",
         "Lifetime access to all the Curriculum Resources",
         "Lifetime access to the Network and Community",
         "Exclusive Freebies and Swags"
@@ -92,15 +92,19 @@
         },
         {
             "title": "Will you be giving teching for the entire duration?",
-            "body": "Yes. I will be teaching the entire course live over Zoom and will be providing timely feedbacks and 1:1 mentorship."
+            "body": "Yes. I will be teaching the entire course live over Zoom and will be providing timely feedbacks and 1:1 mentorship upon request."
         },
         {
             "title": "Will there be a class every day?",
-            "body": "The Live Classess will happen on Saturdays and Sundays 4-6pm IST with a possible extension of 30 mins."
+            "body": "The Live Classess will happen on Saturdays and Sundays 4-7pm IST with a possible extension of 30 mins."
         },
         {
             "title": "Will there be assignments and hands-on projects?",
-            "body": "Apart from Live Classess on weekends there will be 4 assignments and 1 group project ensuring you apply what you learn."
+            "body": "Apart from Live Classess on weekends there will be multiple assignments and projects ensuring you apply what you learn."
+        },
+        {
+            "title": "Will we also implement and see the systems in action?",
+            "body": "Due to time constraint it is not possible to implement every system; it is recommended that you self-implement the system and understand the low level details. Course although will cover systems from every aspect."
         },
         {
             "title": "Will there be a recording available for future reference?",
