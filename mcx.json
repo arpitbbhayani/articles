@@ -92,15 +92,15 @@
         },
         {
             "title": "Will you be giving teching for the entire duration?",
-            "body": "Yes. I will be teaching the entire course live over Zoom and will be providing timely feedbacks and 1:1 mentorship."
+            "body": "Yes. I will be teaching the entire course live over Zoom and will be providing feedbacks and 1:1 mentorship."
         },
         {
             "title": "Will there be a class every day?",
-            "body": "The Live Classess will happen on Saturdays and Sundays 4-7pm IST with a possible extension of 30 mins."
+            "body": "The Live Classess will happen on Saturdays and Sundays 4-6pm IST with a possible extension of 30/45 mins."
         },
         {
             "title": "Will there be assignments and hands-on projects?",
-            "body": "Apart from Live Classess on weekends there will be multiple assignments and projects ensuring you apply what you learn."
+            "body": "Apart from Live Classess on weekends there will be multiple assignments and projects ensuring you apply what you learn. Unfortunately due to time constraints the evaluations of assignments is not possible, but I highly encourage you to implement all the assignments and seek help during 1:1 sessions."
         },
         {
             "title": "Will we also implement and see the systems in action?",
@@ -124,11 +124,15 @@
         },
         {
             "title": "What are the programming pre-requisites?",
-            "body": "You need to have work experience of 6 months at the least and a working knowledge of one language - either Python, Java, Golang, or NodeJS - and a will to learn the basics of others. Most of the exercises and assignments will be language agnostic but depending on the problem statement you may have to pick one over the other."
+            "body": "You need to have work experience of 6 months at the least and a working knowledge of one language - either Python, Java, Golang, or NodeJS. Most of the exercises and assignments will be language agnostic but depending on the problem statement you may have to pick one over the other."
         },
         {
             "title": "How is this course different from free videos on YouTube?",
             "body": "This cohort-based course aims to be live, intense, and interactive. Traditional MooCs (existing videos on the internet) cannot offer these benefits as are unidirectional and optimizes for one-to-many. With this course being live you can get instant resolution to your doubts. The discussion, collaboration, and networking will have a major impact on your overall learning as there will be cross-pollination of information."
+        },
+        {
+            "title": "If I have already watched System Design videos on YouTube, is this course still helpful?",
+            "body": "Yes. The kind of depth which is touched in this System Design is unmatched. Even if you have watched all the System Design videos out there, you will still have moments that will blow your mind."
         }
     ]
 }
