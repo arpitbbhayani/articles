@@ -99,8 +99,16 @@
             "body": "The Live Classess will happen on Saturdays and Sundays 4-6pm IST with a possible extension of 30/45 mins."
         },
         {
+            "title": "Will there be a reserved slots for 1:1 mentorship?",
+            "body": "Drop me a message a day prior and I will get our call scheduled."
+        },
+        {
             "title": "Will there be assignments and hands-on projects?",
             "body": "Apart from Live Classess on weekends there will be multiple assignments and projects ensuring you apply what you learn. Unfortunately due to time constraints the evaluations of assignments is not possible, but I highly encourage you to implement all the assignments and seek help during 1:1 sessions."
+        },
+        {
+            "title": "Are assignments and projects mandatory?",
+            "body": "No. But it is advisable that you complete them to get a better understanding of the system, algorithm and business logic."
         },
         {
             "title": "Will we also implement and see the systems in action?",
