@@ -78,7 +78,7 @@
         }
     ],
     "value_proposition": [
-        "48 hours of Live Interactive Classes on Weekends",
+        "40 hours of Live Interactive Classes on Weekends",
         "1:1 Personalized Mentorship on Weekdays",
         "Multiple assignments and projects",
         "Lifetime access to all the Curriculum Resources",
@@ -128,7 +128,7 @@
         },
         {
             "title": "How is this course different from free videos on YouTube?",
-            "body": "This cohort-based course aims to be live, intense, and interactive. Traditional MooCs (existing videos on the internet) cannot offer these benefits as they primarily are unidirectional and one-to-many. With this course, you will get 1:1 mentorship which means an instant resolution to your doubts. The existing content is mostly abstract and they never go in-depth, for example, Consistent Hashing, everyone explains it by stating it as a ring and putting nodes post hashing and all; but none of them dives into its low-level implementation which becomes a major miss either during the interviews or while using it at your current job. The discussion, collaboration, and networking will have a major impact on your overall learning as there will be cross-pollination of information."
+            "body": "This cohort-based course aims to be live, intense, and interactive. Traditional MooCs (existing videos on the internet) cannot offer these benefits as are unidirectional and optimizes for one-to-many. With this course being live you can get instant resolution to your doubts. The discussion, collaboration, and networking will have a major impact on your overall learning as there will be cross-pollination of information."
         }
     ]
 }
