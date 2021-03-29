@@ -41,9 +41,9 @@ If you thought, that was weird wait till we wrap the exact same statement with p
 
 What! it worked! How? What happened here? Just by wrapping the statement by parenthesis made an invalid Syntax valid? Isn't it weird? This behavior is pointed out in a Github repository called [wtf-python](https://github.com/satwikkansal/wtfpython#-first-things-first-). The theoretical explanation for this behavior is simple; Python disallows non-parenthesized Assignment Expressions but it allows non-parenthesized assignment statements.
 
-In this essay, we dig deep into CPython and find out hows' and the whys'.
+In this essay, we dig deep into CPython and find out hows and the whys.
 
-# The hows' and the whys'
+# The hows and the whys
 
 Few points to note:
 
