@@ -1,5 +1,28 @@
 [
   {
+    "id": "the-weird-walrus",
+    "title": "The Weird Walrus",
+    "description": "In this essay, we alter the Python Grammar and allow it run Assignment Expressions without any parenthesis.",
+    "image": "https://user-images.githubusercontent.com/4745789/112817071-ac4f2580-909f-11eb-8d56-f89536cfa065.png",
+    "gif": "https://media.giphy.com/media/SbIJjAaist696ywQXx/giphy.gif",
+    "yt_video_id": null,
+    "categories": [
+      "cpython internals"
+    ],
+    "tags": [
+      "cpython internals",
+      "walrus operator",
+      "changing cpython grammar"
+    ],
+    "published_at": "2021-03-29",
+    "similar": [
+      "lfu",
+      "persistent-data-structures-introduction",
+      "phi-accrual",
+      "bitcask"
+    ]
+  },
+  {
     "id": "fully-persistent-arrays",
     "title": "Fully Persistent Arrays",
     "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want. In this essay, we take a detailed look into the implementation of Fully Persistent Arrays.",
