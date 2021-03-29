@@ -1,10 +1,12 @@
 # The Weird Walrus
 
-Python in version 3.8 introduced Assignment Expressions and to use it we have used the Walrus Operator `:=`. The specialty of this expression is that you assign and return the value in the same expression helping you write concise code.
+Python in version 3.8 introduced [Assignment Expressions](https://realpython.com/lessons/assignment-expressions/) which can be used with the help of the Walrus Operator `:=`. This expression does assign and return in the same expression helping in writing a concise code.
 
-Let's take an example: Say you are building a `bash` kind of shell in Python. It takes in input `shell` commands and you execute them. Your shell stops running upon receiving the command `exit`. A super simple Python code that does this is:
+Say you are building your own shell in Python. It takes commands and input from the prompt, executes it on your shell, and renders the output. The shell should stop the execution as soon as it receives the `exit` command. This seemingly complicated problem can be built using just 6 lines of Python code.
 
 ```python
+import os
+
 command = input(">>> ")
 while command != "exit":
     os.system(command)
