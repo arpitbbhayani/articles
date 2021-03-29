@@ -137,7 +137,7 @@ $ make && ./python.exe
 
 On the fresh prompt that would have popped up try putting in `a := 10`, once you do this you will find out that this does not give any error and it executes seamlessly and it works just like a normal assignment statement, the behavior that we were seeking.
 
-So with these changes, we have our Python interpreter that supports all the three statements
+So with these changes, we have our Python interpreter that supports all three statements without any Error.
 
 ```python
 >>> a = 10
