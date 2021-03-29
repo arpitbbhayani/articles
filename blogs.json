@@ -2,7 +2,7 @@
   {
     "id": "the-weird-walrus",
     "title": "The Weird Walrus",
-    "description": "The Weird Walrus",
+    "description": "In this essay, we alter the Python Grammar and allow it run Assignment Expressions without any parenthesis.",
     "image": "https://user-images.githubusercontent.com/4745789/112817071-ac4f2580-909f-11eb-8d56-f89536cfa065.png",
     "gif": "https://media.giphy.com/media/SbIJjAaist696ywQXx/giphy.gif",
     "yt_video_id": null,
@@ -11,6 +11,7 @@
     ],
     "tags": [
       "cpython internals",
+      "walrus operator",
       "changing cpython grammar"
     ],
     "published_at": "2021-03-29",
