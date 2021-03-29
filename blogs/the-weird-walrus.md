@@ -113,7 +113,7 @@ expr_stmt: testlist_star_expr (annassign | augassign (yield_expr|testlist) |
                      [('=' (yield_expr|testlist_star_expr))+ [TYPE_COMMENT]] )
 ```
 
-The regular assignment statements are allowed as per `expr_stmt` rule which is in turn a `small_stmt`, `simple_stmt`, and `stmt`. Rules are self-explanatory and skimming them would help you understand what exactly is happening in there.
+The regular assignment statements are allowed as per `expr_stmt` rule which is, in turn, a `small_stmt`, `simple_stmt`, and `stmt`. Rules are self-explanatory and skimming them would help you understand what exactly is happening in there.
 
 In order to mimic the behavior of `:=` to be the same as `=` how about adding a new rule in `expr_stmt` that suggests matching the same pattern as `=`. So we make the following change in `expr_stmt`.
 
