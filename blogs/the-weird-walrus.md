@@ -18,7 +18,7 @@ while (command := input(">>> ")) != "exit":
     os.system(command)
 ```
 
-# What's weird with Walrus operator?
+# What's weird with the Walrus operator?
 
 Now that we have established how useful the Walrus Operator could be for us, let's dive into the weird stuff. Since the Walrus operator has functioning similar to an assignment operator `=`, we would expect the following code to work fine, but it actually gives an error, not just any but a `SyntaxError`.
 
@@ -50,7 +50,7 @@ Few points to note:
 
 ## The Grammar
 
-If `a := 10` is giving us a Syntax Error then it must be linked to the Grammar specification of the language. The grammar of Python can be found in file [Grammar/Grammar](https://github.com/python/cpython/blob/3.8/Grammar/Grammar). So if we grep `namedexpr` in the Grammar file we get the following rules
+If `a := 10` is giving us a Syntax Error then it must be linked to the Grammar specification of the language. The grammar of Python can be found in the file [Grammar/Grammar](https://github.com/python/cpython/blob/3.8/Grammar/Grammar). So if we grep `namedexpr` in the Grammar file we get the following rules
 
 ```
 namedexpr_test: test [':=' test]
@@ -92,7 +92,7 @@ According to the rule `if_stmt` and `while_stmt` you can have named expressions 
 while command := input(">>> ") != "exit":
 ```
 
-Answer is simple, [Operator Precedence](https://en.wikipedia.org/wiki/Order_of_operations); because of the configured precedence the above statement sets `command` as `bool` after evaluating `input(">>> ") != "exit"` but we do not want this behaviour. Instead, we want `command` to be set as a command given as an input through `input` call and hence we wrap the expression with parenthesis for specifying explicit precedence.
+The answer is simple, [Operator Precedence](https://en.wikipedia.org/wiki/Order_of_operations); because of the configured precedence the above statement sets `command` as `bool` after evaluating `input(">>> ") != "exit"` but we do not want this behaviour. Instead, we want `command` to be set as a command given as an input through `input` call and hence we wrap the expression with parenthesis for specifying explicit precedence.
 
 # Allowing `a := 10`
 
@@ -144,7 +144,7 @@ So with these changes, we have our Python interpreter that supports all three st
 >>> c := 10
 ```
 
-All of these changes were made on my own [fork of cpython](https://github.com/arpitbbhayani/cpython) and the PR can be found [here](https://github.com/arpitbbhayani/cpython/pull/8).
+All of these changes were made on my own [fork of CPython](https://github.com/arpitbbhayani/cpython) and the PR can be found [here](https://github.com/arpitbbhayani/cpython/pull/8).
 
 # References
 
