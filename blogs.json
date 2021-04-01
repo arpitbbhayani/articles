@@ -150,7 +150,7 @@
       "slowsort",
       "morris-counter",
       "isolation-forest",
-      "israeli-queues"
+      "1d-terrain"
     ]
   },
   {
@@ -975,8 +975,8 @@
     "similar": [
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "better-programmer",
-      "the-weird-walrus",
-      "efficient-way-to-stop-an-iterating-loop"
+      "efficient-way-to-stop-an-iterating-loop",
+      "the-weird-walrus"
     ]
   },
   {
@@ -1050,8 +1050,8 @@
     "published_at": "2017-07-05",
     "similar": [
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "publish-python-package-on-pypi",
       "the-weird-walrus",
+      "publish-python-package-on-pypi",
       "setting-up-graphite-using-nginx-on-ubuntu"
     ]
   },
