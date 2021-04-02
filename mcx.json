@@ -1,6 +1,7 @@
 {
     "seats_total": 35,
-    "seats_available": 26,
+    "seats_available": 24,
+    "seats_confirmed": 11,
     "benefits_cohort": [
         {
             "title": "Small and Focussed Group",
