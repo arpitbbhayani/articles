@@ -250,6 +250,8 @@ sys_intern_impl(PyObject *module, PyObject *s)
 
 *Strings having ASCII letters and underscores are interned*. During compile time when string literals are observed for interning, [CPython](https://github.com/python/cpython/blob/master/Objects/codeobject.c) ensures that it only interns the literals matching the regular expression `[a-zA-Z0-9_]*` as they closely resemble Python identifiers.
 
+Comments on how CPython does String Interning internally (as discussed in the [Video](https://youtu.be/QpGK69LzfpY)) can be found in [this PR](https://github.com/arpitbbhayani/cpython/pull/9]).
+
 # References
 
 - [String Interning](https://en.wikipedia.org/wiki/String_interning)
