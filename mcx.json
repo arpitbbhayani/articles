@@ -2,6 +2,18 @@
     "seats_total": 35,
     "seats_available": 10,
     "seats_confirmed": 25,
+    "testimonials": [
+        {
+            "name": "Aman Agarwal",
+            "message": "Evolving through the different solutions helped me understand the System Design Concepts in much better way. Also the freedom of speaking our mind out was really crucial and then understanding the +ves and -ves of multiple approaches through discussions.",
+            "cohort": "March 2021"
+        },
+        {
+            "name": "Tejas Agrawal",
+            "message": "Had a super fun in learning how to learn and think system design. I am already using Arpit's teachings at my work, I dont think anything more needs to be said.",
+            "cohort": "March 2021"
+        }
+    ],
     "benefits_cohort": [
         {
             "title": "Small and Focussed Group",
