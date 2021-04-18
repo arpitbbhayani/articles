@@ -125,7 +125,7 @@ The SQL query above fetches all the child topics of a given parent topic with `i
 
 Udemy, on its home page, puts out all the categories under a dropdown menu enabling users to explore top categories and topics in a glimpse.
 
-One peculiar behavior of this is it shows all categories and top `k` sub-categories within each. Once we hover upon a sub-category it makes a network call to fetch top topics within that sub-catgory. This means we need to write a query that fetches all categories and `k` sub-categories within each category from the entire `topics` table.
+One peculiar behavior of this is it shows all categories and top `k` sub-categories within each. Once we hover upon a sub-category it makes a network call to fetch top topics within that sub-category. This means we need to write a query that fetches all categories and `k` sub-categories within each category from the entire `topics` table.
 
 Although it looks very complicated at first, it is very easy to do with a single SQL query.
 
