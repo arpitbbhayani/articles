@@ -172,7 +172,7 @@ Although we covered quite a bit of this DB design there is always something inte
 - explore how DB engines behave when there are no indexes, you can use `EXPLAIN` to understand the behavior
 - find if there could be a better alternative to paginate results apart from `LIMIT/OFFSET`
 
-Thus we designed a neat [Taxonomy](https://en.wikipedia.org/wiki/Taxonomy) on top of SQL-based relational databases like MySQL, Postgres, etc; wrote queries for some common scenarios and determined the indexes to make taxonomy efficient.
+Thus we designed a neat [Taxonomy](https://en.wikipedia.org/wiki/Taxonomy) on top of SQL-based relational databases like MySQL, Postgres, etc; wrote queries for some common scenarios, and determined the indexes to make taxonomy efficient.
 
 # References
 
