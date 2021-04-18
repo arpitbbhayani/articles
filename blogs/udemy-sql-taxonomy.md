@@ -1,10 +1,12 @@
-In this essay, we will model [taxonomy](https://en.wikipedia.org/wiki/Taxonomy) on top of a relational database, and as a specific example, we will try to build [Udemy's Taxonomy](https://www.udemy.com/). The primary focus of this essay is to understand how to design taxonomy on top of [SQL based relational DB](https://en.wikipedia.org/wiki/Relational_database), define and write queries that are computationally efficient along with deciding indexes to ensure efficiency.
+In this essay, we will model [taxonomy](https://en.wikipedia.org/wiki/Taxonomy) on top of a relational database, and as a specific example, we will try to build [Udemy's Taxonomy](https://www.udemy.com/). The primary focus of this essay is to understand how to design taxonomy on top of [SQL based relational DB](https://en.wikipedia.org/wiki/Relational_database), define and write queries that are computationally efficient along with deciding indexes on the designed tables.
+
+In the process, we will also understand a very interesting SQL construct like Window Functions that helps us solve seemingly complex use-cases with a single SQL query.
 
 # Udemy's Taxonomy
 
-Udemy's Taxonomy is very simple; it features top-level categories - like Software Engineering, Arts, and Business - each category has multiple sub-categories - like Programming Languages, Databases, Sketching - and each sub-category has niche topics like - Python, Javascript, MySQL, etc.
+[Udemy's Taxonomy](https://www.udemy.com/) is very simple; it features top-level categories - like Software Engineering, Arts, and Business - each category has multiple sub-categories - like Programming Languages, Databases, Sketching - and each sub-category has niche topics like - Python, Javascript, MySQL, etc.
 
-To keep things simpler, we see that one topic can be part of just one sub-category and one sub-category can belong to one top-level category. The maximum number of levels in this taxonomy is just 3. This kind of design is evident when we try to browse through categories on [Udemy's homepage](https://www.udemy.com/).
+To keep things simpler, we restrain that one topic can be part of only one sub-category and one sub-category can belong to only one top-level category; and that makes the maximum levels in this taxonomy as `3`.
 
 ![https://user-images.githubusercontent.com/4745789/115139853-fcdbf200-a051-11eb-94f1-00382bd26db1.png](https://user-images.githubusercontent.com/4745789/115139853-fcdbf200-a051-11eb-94f1-00382bd26db1.png)
 
