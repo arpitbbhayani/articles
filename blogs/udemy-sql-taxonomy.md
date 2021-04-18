@@ -1,26 +1,26 @@
-In this essay we will model [taxonomy](https://en.wikipedia.org/wiki/Taxonomy) on top of a relational database; and as a specific example we will try to build [Udemy's Taxonomy](https://www.udemy.com/). The primary focus of this essay is to understand how to design taxonomy on top of [SQL based relational DB](https://en.wikipedia.org/wiki/Relational_database), define and write queries that are computationally efficient along with deciding indexes to ensure efficiency.
+In this essay, we will model [taxonomy](https://en.wikipedia.org/wiki/Taxonomy) on top of a relational database, and as a specific example, we will try to build [Udemy's Taxonomy](https://www.udemy.com/). The primary focus of this essay is to understand how to design taxonomy on top of [SQL based relational DB](https://en.wikipedia.org/wiki/Relational_database), define and write queries that are computationally efficient along with deciding indexes to ensure efficiency.
 
 # Udemy's Taxonomy
 
-Udemy's Taxonomy is very simple; it features top level categories - like Software Engnieering, Arts, and Business - each category has multiple sub-categories - like Programming Languages, Databases, Sketching - and each sub-category has niche topics like - Python, Javascript, MySQL etc.
+Udemy's Taxonomy is very simple; it features top-level categories - like Software Engineering, Arts, and Business - each category has multiple sub-categories - like Programming Languages, Databases, Sketching - and each sub-category has niche topics like - Python, Javascript, MySQL, etc.
 
-To keep things simpler, we see that one topic can be part of just one sub-category and one sub-category can belong to one top level category. The maximum number of levels in this taxonomy is just 3. This kind of design is evident when we try to browse through categories on [Udemy's homepage](https://www.udemy.com/).
+To keep things simpler, we see that one topic can be part of just one sub-category and one sub-category can belong to one top-level category. The maximum number of levels in this taxonomy is just 3. This kind of design is evident when we try to browse through categories on [Udemy's homepage](https://www.udemy.com/).
 
 ![https://user-images.githubusercontent.com/4745789/115139853-fcdbf200-a051-11eb-94f1-00382bd26db1.png](https://user-images.githubusercontent.com/4745789/115139853-fcdbf200-a051-11eb-94f1-00382bd26db1.png)
 
 # Database Design
 
-Out of intuition we can have one table for categories, one for holding subcategories and one for topics, and [foreign keys](https://en.wikipedia.org/wiki/Foreign_key) that weaves them together. But is this the best we can come up with? A few issues with this design is
+Out of intuition, we can have one table for categories, one for holding subcategories, and one for topics, and [foreign keys](https://en.wikipedia.org/wiki/Foreign_key) that weaves them together. But is this the best we can come up with? A few issues with this design is
 
-- all the 3 tables will have identical schema, but still keeping data separate.
+- all the 3 tables will have an identical schema, but still keeping data separate.
 - if we were to introduce a new level, say concept that sits between sub-category and topic, we will have to create a new table to accommodate it, making this design cumbersome to future requirements.
-- what if for a few topics we want it to be a child of a category, leaving out sub-category all together; handling this while having separate tables will be very tricky.
+- what if for a few topics we want it to be a child of a category, leaving out sub-categories altogether; handling this while having separate tables will be very tricky.
 
-So, a better design is to have a single table called `topics` that holds categories, sub-categories and topics differentiated with a column called `type` that helps us identify what is it. The schema of this table `topics` would be
+So, a better design is to have a single table called `topics` that holds categories, sub-categories, and topics differentiated with a column called `type` that helps us identify what is it. The schema of this table `topics` would be
 
 ![https://user-images.githubusercontent.com/4745789/115140362-8260a180-a054-11eb-8820-2a830dcc025e.png](https://user-images.githubusercontent.com/4745789/115140362-8260a180-a054-11eb-8820-2a830dcc025e.png)
 
-Now that we have the table `topics` ready, we see how following two topics are stored
+Now that we have the table `topics` ready, we see how the following two topics are stored
 
 - Software Engineering > Programming Languages > Python
 - Software Engineering > Programming Languages > Javascript
@@ -29,7 +29,7 @@ Now that we have the table `topics` ready, we see how following two topics are s
 
 # Indexes on `topics`
 
-Picking the right set of indexes is one of the most critical decision that you will be taking while designing this system. A good set of indexes boosts the overall performance of the system, while poor ones or missing ones will put your database under terrible load, specially at scale.
+Picking the right set of indexes is one of the most critical decisions that you will be taking while designing this system. A good set of indexes boosts the overall performance of the system, while poor ones or missing ones will put your database under terrible load, especially at scale.
 
 But how do we pick which indexes do we want on `topics`? The answer here is very simple, it depends on the kind of queries we have to support. So, let's list down queries that we will need and then determine indexes to make them efficient.
 
@@ -41,17 +41,17 @@ The most common query that we have to support is getting a topic by its `id` and
 SELECT * FROM topics WHERE id = 531;
 ```
 
-## Get topic path
+## Get the topic path
 
-Getting topic path is an interesting use case. While rendering any category, sub-category or a topic page we would need to render breadcrumbs that holds the path to it. For example, for Python's page we will need to render a path like
+Getting a topic path is an interesting use case. While rendering any category, sub-category, or topic page we would need to render breadcrumbs that hold the path to it. For example, for Python's page, we will need to render a path like
 
 ```python
 Software Engineering > Programming Languages > Python
 ```
 
-This path helps user explore and discover new categories, sub-categories or topics. So, using our current schema, how could we compute the topic path, given a topic id.
+This path helps users explore and discover new categories, sub-categories, or topics. So, using our current schema, how could we compute the topic path, given a topic id.
 
-Doing it on the application side is the first approach that comes to mind but it is a poor one because we would be making `n` selects for `n` levels. So with out constraints we will be making `3` selects to compute the topic path. The application pseudocode would look something like this
+Doing it on the application side is the first approach that comes to mind but it is a poor one because we would be making `n` selects for `n` levels. So without constraints, we will be making `3` selects to compute the topic path. The application pseudocode would look something like this
 
 ```python
 def get_topicpath(topic_id):
@@ -67,9 +67,9 @@ def get_topicpath(topic_id):
     return path
 ```
 
-We can do a lot better than this. Since we know that the hierarchy has at max 3 levels, we can just do this in one SQL query with some edge case handling on application side.
+We can do a lot better than this. Since we know that the hierarchy has at max 3 levels, we can just do this in one SQL query with some edge case handling on the application side.
 
-The SQL query would have joining `3` instances of `topics` table, each one handling one level in the hierarchy. The SQL query looks that fetches `id` and `name` of the topics in the topic path is as follows
+The SQL query would have to join `3` instances of the `topics` table, each one handling one level in the hierarchy. The SQL query looks that fetches `id` and `name` of the topics in the topic path is as follows
 
 ```sql
 SELECT topics_level1.id, topics_level1.name,
@@ -85,45 +85,45 @@ FROM topics AS topics_level3
 WHERE topics_level3.id = 610;
 ```
 
-In the SQL query above we fetch the topic path for topic id `610`. We join table `topics` twice each handling a distinct level. Since we are using JOIN, if parent is `NULL` and join param does not match anything then it results into `NULL` during selects. This comes in very handy when we compute topic path for anything other than `topic`.
+In the SQL query above we fetch the topic path for topic id `610`. We join table `topics` twice each handling a distinct level. Since we are using JOIN, if a parent is `NULL` and the join param does not match anything then it results in `NULL` during selects. This comes in very handy when we compute the topic path for anything other than `topic`.
 
-If topic with `610` id is of type `topic` then
+If the topic with `610` id is of type `topic` then
 
 - `topics_level1.id`, `topics_level1.name` will be category
 - `topics_level2.id`, `topics_level2.name` will be sub-category
 - `topics_level3.id`, `topics_level3.name` will be topic
 
-If topic with `610` id is of type `sub-category` then
+If the topic with `610` id is of type `sub-category` then
 
 - `topics_level1.id`, `topics_level1.name` will be `NULL`
 - `topics_level2.id`, `topics_level2.name` will be category
 - `topics_level3.id`, `topics_level3.name` will be sub-category
 
-If topic with `610` id is of type `category` then
+If the topic with `610` id is of type `category` then
 
 - `topics_level1.id`, `topics_level1.name` will be `NULL`
 - `topics_level2.id`, `topics_level2.name` will be `NULL`
 - `topics_level3.id`, `topics_level3.name` will be category
 
-So, in the application code we still access all the selected columns but we create the topic path considering the `NULL` values of the selected columns.
+So, in the application code, we still access all the selected columns but we create the topic path considering the `NULL` values of the selected columns.
 
 To support this query, our table only requires Primary Key on `id` and Foreign Key on `parent_id`.
 
 ## Get all the children of a category or a sub-category
 
-Getting all the children of a category or a sub-category will be heavily used to drive the "Browse and Explore" page, where user would want to drill down and explore the kind of topics Udemy is covering. SQL Query for this has to support pagination and will be required to output all children for a given parent.
+Getting all the children of a category or a sub-category will be heavily used to drive the "Browse and Explore" page, where users would want to drill down and explore the kind of topics Udemy is covering. SQL Query for this has to support pagination and will be required to output all children for a given parent.
 
 ```sql
 SELECT * FROM topics WHERE parent_id = 123 ORDER BY score DESC;
 ```
 
-The SQL query above fetches all the child topics of a given parent topic with `id` = `123`. The child topics have to be ordered by `score` because we would want the most popular topic to be returned first. For this query to be efficient we create a [composite index](https://en.wikipedia.org/wiki/Composite_index_(database)) on `(parent_id, score)`. 
+The SQL query above fetches all the child topics of a given parent topic with `id` = `123`. The child-topics have to be ordered by `score` because we would want the most popular topic to be returned first. For this query to be efficient we create a [composite index](https://en.wikipedia.org/wiki/Composite_index_(database)) on `(parent_id, score)`. 
 
 ## Get category hierarchy
 
-Udemy, on its home page, puts out all the categories under a dropdown menu enabling users to explore courses. One peculiar behaviour of this is it renders all categories and top `k` sub-categories within it. Once we hover upon a sub-category it makes a network call to fetch top topics within that. It means we will need to fetch all categories and top `k` sub-categories from entire `topics` table.
+Udemy, on its home page, puts out all the categories under a dropdown menu enabling users to explore courses. One peculiar behavior of this is it renders all categories and top `k` sub-categories within it. Once we hover upon a sub-category it makes a network call to fetch top topics within that. It means we will need to fetch all categories and top `k` sub-categories from the entire `topics` table.
 
-Although it looks very complicated at first, but it is very easy to do with SQL query.
+Although it looks very complicated at first, it is very easy to do with a single SQL query.
 
 ```sql
 SELECT t1_id, t1_name, t2_id, t2_name, t2_score
@@ -145,13 +145,13 @@ WHERE row_num <= 10;
 
 Above SQL query picks all categories and top `10` sub-categories from each category and returns it as part of `SELECT`. To do this we use a very interesting SQL construct called Window Functions, specifically [`ROW_NUMBER`](https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_row-number) and `PARTITION BY`.
 
-We perform the usual join on `topics` once where left operand is categories and right one is sub-categories. We then partition this join by `id` of categories and then compute `ROW_NUMBER` for sub-categories within it.
+We perform the usual join on `topics` once where the left operand is categories and the right one is a sub-category. We then partition this join by `id` of categories and then compute `ROW_NUMBER` for sub-categories within it.
 
-The row numbers are computed for each partition separately so it goes as `1, 2, 3, ..., n` for `n` rows in it. We then apply a simple `WHERE` clause check on this row number to be `<= k` which then typically allows first `k` row within each partition i.e. sub-categories within every category.
+The row numbers are computed for each partition separately so it goes as `1, 2, 3, ..., n` for `n` rows in it. We then apply a simple `WHERE` clause check on this row number to be `<= k` which then typically allows the first `k` row within each partition i.e. sub-categories within every category.
 
-Note: to get "top" `k` sub-categories we just apply an additional `ORDER BY` on `score` that sorts the sub-categories ensuring top sub-categories are fetched first. This way the first `k` rows we filter out from the partition are essentially the top sub-categories within the category.
+Note: to get "top" `k` sub-categories we just apply for an additional `ORDER BY` on `score` that sorts the sub-categories ensuring top sub-categories are fetched first. This way the first `k` rows we filter out from the partition are essentially the top sub-categories within the category.
 
-To make this SQL query efficient we would need foreign key on `parent_id` and an index on `score` to make `ORDER BY` efficient.
+To make this SQL query efficient we would need a foreign key on `parent_id` and an index on `score` to make `ORDER BY` efficient.
 
 ## Summary of indexes we need on `topics`
 
@@ -162,13 +162,13 @@ To make this SQL query efficient we would need foreign key on `parent_id` and an
 
 # Explore more
 
-Although we covered quite a bit but it will be a fun exercise to
+Although we covered quite a bit it will be a fun exercise to
 
 - explore [Nested Set Model](https://en.wikipedia.org/wiki/Nested_set_model) to design Taxonomy on relational databases
-- explore how DB engines behaves when there are no indexes
+- explore how DB engines behave when there are no indexes
 - find if there could be a better alternative to paginate results apart from `LIMIT/OFFSET`
 
-So this way, we can design Taxonomy on top of SQL based relational databases like MySQL, Postgres etc. We also saw the determined the indexes we would need to make taxonomy efficient.
+So this way, we can design Taxonomy on top of SQL-based relational databases like MySQL, Postgres, etc. We also saw determined the indexes we would need to make taxonomy efficient.
 
 # References
 
