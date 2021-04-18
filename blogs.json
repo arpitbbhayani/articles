@@ -1,5 +1,28 @@
 [
   {
+    "id": "udemy-sql-taxonomy",
+    "title": "Taxonomy on a SQL-based Relational DB",
+    "description": "In this essay, understand design taxonomy on a SQL-based Relational database.",
+    "image": "https://user-images.githubusercontent.com/4745789/112817071-ac4f2580-909f-11eb-8d56-f89536cfa065.png",
+    "gif": "https://media.giphy.com/media/SbIJjAaist696ywQXx/giphy.gif",
+    "yt_video_id": "rWb7VYz1q1U",
+    "categories": [
+      "database"
+    ],
+    "tags": [
+      "database design",
+      "udemy design",
+      "taxonomy on SQL database"
+    ],
+    "published_at": "2021-04-18",
+    "similar": [
+      "publish-python-package-on-pypi",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "super-long-integers",
+      "benchmark-and-compare-pagination-approach-in-mongodb"
+    ]
+  },
+  {
     "id": "the-weird-walrus",
     "title": "The Weird Walrus",
     "description": "In this essay, we alter the Python Grammar and allow it run Assignment Expressions without any parenthesis.",
