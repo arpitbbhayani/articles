@@ -113,13 +113,13 @@ To support this query, our table only requires [Primary Key](https://en.wikipedi
 
 ## Get all the children of a category or a sub-category
 
-Getting all the children of a category or a sub-category will be heavily used to drive the "Browse and Explore" page, where users would want to drill down and explore the kind of topics Udemy is covering. SQL Query for this has to support pagination and will be required to output all children for a given parent.
+Getting all the children of a category or a sub-category will be heavily used to drive the "Browse and Explore" page, where users would want to drill down and explore the kind of topics Udemy covers. SQL Query for this has to support pagination and will be required to output all children for a given parent, in order of `score` such that more popular children are returned first.
 
 ```sql
 SELECT * FROM topics WHERE parent_id = 123 ORDER BY score DESC;
 ```
 
-The SQL query above fetches all the child topics of a given parent topic with `id` = `123`. The child-topics have to be ordered by `score` because we would want the most popular topic to be returned first. For this query to be efficient we create a [composite index](https://en.wikipedia.org/wiki/Composite_index_(database)) on `(parent_id, score)`. 
+The SQL query above fetches all the child topics of a given parent topic with `id` = `123`. Since we are ordering by `score`, for this query to be efficient we create a [composite index](https://en.wikipedia.org/wiki/Composite_index_(database)) on `(parent_id, score)`.
 
 ## Get category hierarchy
 
