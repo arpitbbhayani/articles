@@ -147,15 +147,15 @@ FROM (
 WHERE row_num <= 10;
 ```
 
-Above SQL query picks all categories and top `10` sub-categories from each category and returns it as part of `SELECT`. To do this we use a very interesting SQL construct called Window Functions, specifically [`ROW_NUMBER`](https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_row-number) and `PARTITION BY`.
+Above SQL query picks all categories and top `10` sub-categories from each category and returns it as part of `SELECT`. It uses a very interesting SQL construct called Window Functions, specifically [`ROW_NUMBER`](https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_row-number) and `PARTITION BY`.
 
-We perform the usual join on `topics` once where the left operand is categories and the right one is a sub-category. We then partition this join by `id` of categories and then compute `ROW_NUMBER` for sub-categories within it.
+We perform the usual join on `topics` once where the left operand is categories (topics with `type = 1`) and the right one is a sub-category (topics with `type = 2`). We then partition this join by category `id` and then compute `ROW_NUMBER` for sub-categories within it.
 
-The row numbers are computed for each partition separately so it goes as `1, 2, 3, ..., n` for `n` rows in it. We then apply a simple `WHERE` clause check on this row number to be `<= k` which then typically allows the first `k` row within each partition i.e. sub-categories within every category.
+The row numbers are computed for each partition separately so it goes as `1, 2, 3, ..., n` for `n` rows within each category. We then apply a simple `WHERE` clause check on this row number to be `<= k` which then typically matches the first `k` row within each partition i.e category.
 
-Note: to get "top" `k` sub-categories we just apply for an additional `ORDER BY` on `score` that sorts the sub-categories ensuring top sub-categories are fetched first. This way the first `k` rows we filter out from the partition are essentially the top sub-categories within the category.
+Note: to get "top" `k` sub-categories we just apply for an additional `ORDER BY` on `score` that sorts the sub-categories ensuring top sub-categories are fetched first. This way the first `k` rows we consider from the partition are essentially the top sub-categories within the category.
 
-To make this SQL query efficient we would need a foreign key on `parent_id` and an index on `score` to make `ORDER BY` efficient.
+To make this SQL query efficient we would need a [foreign key](https://en.wikipedia.org/wiki/Foreign_key) on `parent_id` and an index on `score` to make `ORDER BY` efficient.
 
 ## Summary of indexes we need on `topics`
 
@@ -166,13 +166,13 @@ To make this SQL query efficient we would need a foreign key on `parent_id` and 
 
 # Explore more
 
-Although we covered quite a bit it will be a fun exercise to
+Although we covered quite a bit of this DB design there is always something interesting in exploring something new around this topic; so
 
 - explore [Nested Set Model](https://en.wikipedia.org/wiki/Nested_set_model) to design Taxonomy on relational databases
-- explore how DB engines behave when there are no indexes
+- explore how DB engines behave when there are no indexes, you can use `EXPLAIN` to understand the behavior
 - find if there could be a better alternative to paginate results apart from `LIMIT/OFFSET`
 
-So this way, we can design Taxonomy on top of SQL-based relational databases like MySQL, Postgres, etc. We also saw determined the indexes we would need to make taxonomy efficient.
+Thus we designed a neat [Taxonomy](https://en.wikipedia.org/wiki/Taxonomy) on top of SQL-based relational databases like MySQL, Postgres, etc; wrote queries for some common scenarios and determined the indexes to make taxonomy efficient.
 
 # References
 
