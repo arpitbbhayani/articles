@@ -87,7 +87,7 @@ FROM topics AS topics_level3
 WHERE topics_level3.id = 610;
 ```
 
-In the SQL query above we fetch the topic path for topic id `610`. We join table `topics` twice (3 instances of topics table) each handling a distinct level. Since we are using JOIN, if a `parent_id` is `NULL` and the join parameter would not match on anything which would result `NULL` selects for those columns. These `NULL` values come in very handy when we compute the topic path for sub-categories and categories.
+In the SQL query above we fetch the topic path for topic id `610`. We join table `topics` twice (3 instances of topics table) each handling a distinct level. Since we are using JOIN, if a `parent_id` is `NULL` and the join parameter would not match anything which would result `NULL` selects for those columns. These `NULL` values come in very handy when we compute the topic path for sub-categories and categories.
 
 If the topic with `610` id is of type `topic` then
 
