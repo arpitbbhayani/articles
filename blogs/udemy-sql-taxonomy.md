@@ -37,7 +37,7 @@ But how do we pick which indexes do we want on `topics`? The answer here is very
 
 ## Get topic by ID
 
-The most common query that we have to support is getting a topic by its `id` and this is very well facilitated by making `id` as a [primary key](https://en.wikipedia.org/wiki/Primary_key) of the table.
+The most common query that we'd need is getting a topic by its `id` and this is very well facilitated by making `id` as a [primary key](https://en.wikipedia.org/wiki/Primary_key) of the table.
 
 ```sql
 SELECT * FROM topics WHERE id = 531;
@@ -45,15 +45,15 @@ SELECT * FROM topics WHERE id = 531;
 
 ## Get the topic path
 
-Getting a topic path is an interesting use case. While rendering any category, sub-category, or topic page we would need to render breadcrumbs that hold the path to it. For example, for Python's page, we will need to render a path like
+Getting a topic path is an interesting use case. While rendering any category, sub-category, or topic page we would need to render breadcrumbs that hold the path of it in the taxonomy. For example, for Python's page, we will need to render a path like
 
 ```python
 Software Engineering > Programming Languages > Python
 ```
 
-This path helps users explore and discover new categories, sub-categories, or topics. So, using our current schema, how could we compute the topic path, given a topic id.
+This path helps users explore and discover new categories, sub-categories, or topics. So, with our current schema, how could we compute the topic path for a given topic id.
 
-Doing it on the application side is the first approach that comes to mind but it is a poor one because we would be making `n` selects for `n` levels. So without constraints, we will be making `3` selects to compute the topic path. The application pseudocode would look something like this
+Doing it on the application side is the first approach that comes to mind but it is a poor one because we would be making `n` selects for `n` levels. In the case of our current system, we will be making `3` selects to compute the topic path; with the application pseudocode looking something like this
 
 ```python
 def get_topicpath(topic_id):
@@ -69,9 +69,9 @@ def get_topicpath(topic_id):
     return path
 ```
 
-We can do a lot better than this. Since we know that the hierarchy has at max 3 levels, we can just do this in one SQL query with some edge case handling on the application side.
+We can do a lot better than this. Since we know that the hierarchy has at max 3 levels, we can just do this in one SQL query with minor `NULL` handling on the application side.
 
-The SQL query would have to join `3` instances of the `topics` table, each one handling one level in the hierarchy. The SQL query looks that fetches `id` and `name` of the topics in the topic path is as follows
+The SQL query to get the topic path would have to join `3` instances of the `topics` table, each one handling one level in the hierarchy and joining with its parent on `parent_id`. The SQL query would fetch the `id` and the `name` of the topics in the topic path.
 
 ```sql
 SELECT topics_level1.id, topics_level1.name,
@@ -87,7 +87,7 @@ FROM topics AS topics_level3
 WHERE topics_level3.id = 610;
 ```
 
-In the SQL query above we fetch the topic path for topic id `610`. We join table `topics` twice each handling a distinct level. Since we are using JOIN, if a parent is `NULL` and the join param does not match anything then it results in `NULL` during selects. This comes in very handy when we compute the topic path for anything other than `topic`.
+In the SQL query above we fetch the topic path for topic id `610`. We join table `topics` twice (3 instances of topics table) each handling a distinct level. Since we are using JOIN, if a `parent_id` is `NULL` and the join parameter would not match on anything which would result `NULL` selects for those columns. These `NULL` values come in very handy when we compute the topic path for sub-categories and categories.
 
 If the topic with `610` id is of type `topic` then
 
@@ -107,9 +107,9 @@ If the topic with `610` id is of type `category` then
 - `topics_level2.id`, `topics_level2.name` will be `NULL`
 - `topics_level3.id`, `topics_level3.name` will be category
 
-So, in the application code, we still access all the selected columns but we create the topic path considering the `NULL` values of the selected columns.
+So, in the application code, we still access all the selected columns but we create the topic path skipping the `NULL` values accordingly.
 
-To support this query, our table only requires Primary Key on `id` and Foreign Key on `parent_id`.
+To support this query, our table only requires [Primary Key](https://en.wikipedia.org/wiki/Primary_key) on `id` and [Foreign Key](https://en.wikipedia.org/wiki/Foreign_key) on `parent_id`.
 
 ## Get all the children of a category or a sub-category
 
