@@ -12,11 +12,11 @@ To keep things simpler, we restrain that one topic can be part of only one sub-c
 
 # Database Design
 
-Out of intuition, we can have one table for categories, one for holding subcategories, and one for topics, and [foreign keys](https://en.wikipedia.org/wiki/Foreign_key) that weaves them together. But is this the best we can come up with? A few issues with this design is
+Out of our intuition, we can have one table for categories, one for holding sub-categories, and one for topics, and a bunch of [foreign keys](https://en.wikipedia.org/wiki/Foreign_key) that weaves them together. But is this the best we can come up with? A few issues with this design is
 
-- all the 3 tables will have an identical schema, but still keeping data separate.
-- if we were to introduce a new level, say concept that sits between sub-category and topic, we will have to create a new table to accommodate it, making this design cumbersome to future requirements.
-- what if for a few topics we want it to be a child of a category, leaving out sub-categories altogether; handling this while having separate tables will be very tricky.
+- all the 3 tables will have an identical schema
+- if we were to introduce a new level, say `concept` that sits between sub-category and topic, we will have to create a new table to accommodate it, making this design cumbersome to future features and extensions.
+- what if for a few topics we want it to be a child of a category, leaving out sub-categories altogether; handling this with this design will be very tricky.
 
 So, a better design is to have a single table called `topics` that holds categories, sub-categories, and topics differentiated with a column called `type` that helps us identify what is it. The schema of this table `topics` would be
 
