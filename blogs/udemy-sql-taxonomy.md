@@ -18,20 +18,20 @@ Out of our intuition, we can have one table for categories, one for holding sub-
 - if we were to introduce a new level, say `concept` that sits between sub-category and topic, we will have to create a new table to accommodate it, making this design cumbersome to future features and extensions.
 - what if for a few topics we want it to be a child of a category, leaving out sub-categories altogether; handling this with this design will be very tricky.
 
-So, a better design is to have a single table called `topics` that holds categories, sub-categories, and topics differentiated with a column called `type` that helps us identify what is it. The schema of this table `topics` would be
+So, we need a better design, that is robust and extensible and hence we go for a single table called `topics` that holds categories, sub-categories, and topics differentiated with a column called `type` distinguishing between the 3. The schema of this table `topics` would be
 
-![https://user-images.githubusercontent.com/4745789/115140362-8260a180-a054-11eb-8820-2a830dcc025e.png](https://user-images.githubusercontent.com/4745789/115140362-8260a180-a054-11eb-8820-2a830dcc025e.png)
+![SQL Schema - Taxonomy Udemy](https://user-images.githubusercontent.com/4745789/115140362-8260a180-a054-11eb-8820-2a830dcc025e.png)
 
 Now that we have the table `topics` ready, we see how the following two topics are stored
 
 - Software Engineering > Programming Languages > Python
 - Software Engineering > Programming Languages > Javascript
 
-![https://user-images.githubusercontent.com/4745789/115140389-b340d680-a054-11eb-8a6d-b39a9f15fde8.png](https://user-images.githubusercontent.com/4745789/115140389-b340d680-a054-11eb-8a6d-b39a9f15fde8.png)
+![Sample Data - Taxonomy Udemy](https://user-images.githubusercontent.com/4745789/115140389-b340d680-a054-11eb-8a6d-b39a9f15fde8.png)
 
 # Indexes on `topics`
 
-Picking the right set of indexes is one of the most critical decisions that you will be taking while designing this system. A good set of indexes boosts the overall performance of the system, while poor ones or missing ones will put your database under terrible load, especially at scale.
+Picking the right set of indexes is one of the most critical decisions that you will be taking while designing this system. A good set of indexes boosts the overall performance of the system, while poor and/or missing ones will put your database under a terrible load, especially at scale.
 
 But how do we pick which indexes do we want on `topics`? The answer here is very simple, it depends on the kind of queries we have to support. So, let's list down queries that we will need and then determine indexes to make them efficient.
 
