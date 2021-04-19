@@ -1,5 +1,29 @@
 [
   {
+    "id": "udemy-sql-taxonomy",
+    "title": "Designing Taxonomy on a Relational DB",
+    "description": "In this essay, design taxonomy on a SQL-based Relational database by taking Udemy as an example, write SQL queries covering common use-cases, and determine necessary indexes to make queries efficient.",
+    "image": "https://user-images.githubusercontent.com/4745789/115157736-83bbb980-a0a8-11eb-8974-545b7a9cba9d.png",
+    "gif": "https://media.giphy.com/media/3o6Mbsop5cXzqVqfgA/giphy.gif",
+    "yt_video_id": "4_jlmX_oB94",
+    "categories": [
+      "database"
+    ],
+    "tags": [
+      "database design",
+      "udemy design",
+      "taxonomy on SQL database",
+      "system design - udemy"
+    ],
+    "published_at": "2021-04-18",
+    "similar": [
+      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "better-programmer",
+      "ts-smoothing",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang"
+    ]
+  },
+  {
     "id": "the-weird-walrus",
     "title": "The Weird Walrus",
     "description": "In this essay, we alter the Python Grammar and allow it run Assignment Expressions without any parenthesis.",
@@ -40,7 +64,7 @@
       "lfu",
       "persistent-data-structures-introduction",
       "phi-accrual",
-      "bitcask"
+      "isolation-forest"
     ]
   },
   {
@@ -105,7 +129,7 @@
       "i-changed-my-python",
       "python-prompts",
       "python-caches-integers",
-      "super-long-integers"
+      "python-iterable-integers"
     ]
   },
   {
@@ -127,8 +151,8 @@
     "similar": [
       "fsm",
       "constant-folding-python",
-      "mongodb-cursor-skip-is-slow",
-      "idf"
+      "idf",
+      "mongodb-cursor-skip-is-slow"
     ]
   },
   {
@@ -172,7 +196,7 @@
       "mysql-cache",
       "ts-smoothing",
       "bitcask",
-      "better-programmer"
+      "image-steganography"
     ]
   },
   {
@@ -192,9 +216,9 @@
     "published_at": "2020-11-22",
     "similar": [
       "morris-counter",
+      "rule-30",
       "flajolet-martin",
-      "slowsort",
-      "rule-30"
+      "slowsort"
     ]
   },
   {
@@ -217,7 +241,7 @@
       "idf",
       "jaccard-minhash",
       "slowsort",
-      "bayesian-average"
+      "mongodb-cursor-skip-is-slow"
     ]
   },
   {
@@ -260,10 +284,10 @@
     ],
     "published_at": "2020-11-01",
     "similar": [
-      "2q-cache",
       "better-programmer",
+      "2q-cache",
       "image-steganography",
-      "mysql-cache"
+      "udemy-sql-taxonomy"
     ]
   },
   {
@@ -357,8 +381,8 @@
     "similar": [
       "2q-cache",
       "persistent-data-structures-introduction",
-      "phi-accrual",
-      "ts-smoothing"
+      "ts-smoothing",
+      "phi-accrual"
     ]
   },
   {
@@ -379,8 +403,8 @@
     "similar": [
       "copy-on-write",
       "morris-counter",
-      "bitcask",
-      "slowsort"
+      "slowsort",
+      "isolation-forest"
     ]
   },
   {
@@ -441,7 +465,7 @@
     "similar": [
       "python-caches-integers",
       "fsm",
-      "i-changed-my-python",
+      "python-prompts",
       "constant-folding-python"
     ]
   },
@@ -458,8 +482,8 @@
     "published_at": "2020-06-07",
     "similar": [
       "mongodb-cursor-skip-is-slow",
-      "morris-counter",
       "idf",
+      "morris-counter",
       "1d-terrain"
     ]
   },
@@ -514,7 +538,7 @@
       "python-prompts",
       "i-changed-my-python",
       "python-iterable-integers",
-      "super-long-integers"
+      "constant-folding-python"
     ]
   },
   {
@@ -549,8 +573,8 @@
     "similar": [
       "phi-accrual",
       "morris-counter",
-      "better-programmer",
-      "slowsort"
+      "slowsort",
+      "better-programmer"
     ]
   },
   {
@@ -586,7 +610,7 @@
     "similar": [
       "constant-folding-python",
       "python-iterable-integers",
-      "i-changed-my-python",
+      "python-prompts",
       "recursion-visualizer"
     ]
   },
@@ -602,9 +626,9 @@
     "tags": [],
     "published_at": "2020-04-12",
     "similar": [
-      "1d-terrain",
       "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
+      "1d-terrain",
       "jaccard-minhash"
     ]
   },
@@ -675,10 +699,10 @@
     ],
     "published_at": "2020-02-28",
     "similar": [
+      "udemy-sql-taxonomy",
       "ts-smoothing",
-      "fast-and-efficient-pagination-in-mongodb",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "copy-on-write"
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -732,7 +756,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "morris-counter",
       "fast-and-efficient-pagination-in-mongodb",
-      "better-programmer"
+      "1d-terrain"
     ]
   },
   {
@@ -827,7 +851,7 @@
       "ts-smoothing",
       "2q-cache",
       "mysql-cache",
-      "sliding-window-ratelimiter"
+      "udemy-sql-taxonomy"
     ]
   },
   {
@@ -919,8 +943,8 @@
     "similar": [
       "fast-and-efficient-pagination-in-mongodb",
       "rule-30",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "bayesian-average"
+      "bayesian-average",
+      "udemy-sql-taxonomy"
     ]
   },
   {
@@ -947,8 +971,8 @@
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
       "better-programmer",
-      "rule-30",
-      "benchmark-and-compare-pagination-approach-in-mongodb"
+      "udemy-sql-taxonomy",
+      "rule-30"
     ]
   },
   {
@@ -974,9 +998,9 @@
     ],
     "published_at": "2017-06-02",
     "similar": [
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "udemy-sql-taxonomy",
       "better-programmer",
-      "efficient-way-to-stop-an-iterating-loop",
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "the-weird-walrus"
     ]
   },
@@ -999,8 +1023,8 @@
     ],
     "published_at": "2017-06-04",
     "similar": [
-      "idf",
       "inheritance-c",
+      "idf",
       "jaccard-minhash",
       "constant-folding-python"
     ]
@@ -1026,10 +1050,10 @@
     ],
     "published_at": "2017-07-16",
     "similar": [
+      "udemy-sql-taxonomy",
       "the-weird-walrus",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "publish-python-package-on-pypi",
-      "fast-and-efficient-pagination-in-mongodb"
+      "better-programmer"
     ]
   },
   {
@@ -1149,7 +1173,7 @@
       "the-weird-walrus",
       "super-long-integers",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "making-http-requests-using-netcat"
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   }
 ]
