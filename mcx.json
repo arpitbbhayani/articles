@@ -174,5 +174,37 @@
             "title": "Will I be getting an invoice of Payment?",
             "body": "Yes. An invoice will be issued to you with all the legal and necessary details. This means your employer can choose to process this invoice and provide reimbursement."
         }
+    ],
+    "organizations": [
+        {
+            "name": "Tesla",
+            "logo": "https://user-images.githubusercontent.com/4745789/115350088-46ebe180-a1d2-11eb-95b6-1f2cbd39e2b8.png",
+            "url": "https://www.tesla.com"
+        },
+        {
+            "name": "Flipkart",
+            "logo": "https://user-images.githubusercontent.com/4745789/115350183-684ccd80-a1d2-11eb-9891-620ff043bcfa.png",
+            "url": "https://www.flipkart.com"
+        },
+        {
+            "name": "OYO",
+            "logo": "https://user-images.githubusercontent.com/4745789/115350331-992d0280-a1d2-11eb-8a18-aea32a3b0bb6.png",
+            "url": "https://www.oyo.com/"
+        },
+        {
+            "name": "Amazon",
+            "logo": "https://user-images.githubusercontent.com/4745789/115350714-10629680-a1d3-11eb-8c9e-068ce8c64cee.png",
+            "url": "https://www.amazon.com/"
+        },
+        {
+            "name": "BrowserStack",
+            "logo": "https://user-images.githubusercontent.com/4745789/115350976-5f103080-a1d3-11eb-812d-99568d38e3e3.png",
+            "url": "https://www.browserstack.com/"
+        },
+        {
+            "name": "Yelp",
+            "logo": "https://user-images.githubusercontent.com/4745789/115351392-d47c0100-a1d3-11eb-8418-ae0a4e344d9f.png",
+            "url": "https://www.yelp.com/"
+        }
     ]
 }
