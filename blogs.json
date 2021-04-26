@@ -7,7 +7,8 @@
     "gif": "https://media.giphy.com/media/3o6Mbsop5cXzqVqfgA/giphy.gif",
     "yt_video_id": "4_jlmX_oB94",
     "categories": [
-      "database"
+      "databases",
+      "system design"
     ],
     "tags": [
       "database design",
@@ -31,9 +32,11 @@
     "gif": "https://media.giphy.com/media/SbIJjAaist696ywQXx/giphy.gif",
     "yt_video_id": "rWb7VYz1q1U",
     "categories": [
-      "cpython internals"
+      "python internals",
+      "python"
     ],
     "tags": [
+      "python internals",
       "cpython internals",
       "walrus operator",
       "changing cpython grammar"
@@ -53,7 +56,8 @@
     "image": "https://user-images.githubusercontent.com/4745789/107943189-55d7cd00-6fb2-11eb-9e03-a1da3870e718.png",
     "gif": "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
     "categories": [
-      "data structures"
+      "data structures",
+      "algorithms"
     ],
     "tags": [
       "persistent data structures",
@@ -94,6 +98,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/104118331-23e9a000-534e-11eb-9ec8-8369cdae40b1.png",
     "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
     "categories": [
+      "python internals",
       "python"
     ],
     "tags": [
@@ -117,6 +122,7 @@
     "gif": "https://media.giphy.com/media/KRNBl0iSS8gg0/giphy.gif",
     "yt_video_id": "QpGK69LzfpY",
     "categories": [
+      "python internals",
       "python"
     ],
     "tags": [
@@ -165,10 +171,10 @@
       "algorithms"
     ],
     "tags": [
-      "approximation algorithm",
+      "approximation algorithms",
       "count-distinct approximation",
-      "flajolet algorithm",
-      "fm algorithm"
+      "flajolet algorithms",
+      "fm algorithms"
     ],
     "published_at": "2020-12-06",
     "similar": [
@@ -185,11 +191,12 @@
     "image": "https://user-images.githubusercontent.com/4745789/100538603-bf1f2e00-3256-11eb-87dc-32594b25ae30.png",
     "gif": "https://media.giphy.com/media/cfuL5gqFDreXxkWQ4o/giphy.gif",
     "categories": [
-      "algorithms"
+      "algorithms",
+      "databases"
     ],
     "tags": [
       "postgres internals",
-      "cache management algorithm"
+      "cache management algorithms"
     ],
     "published_at": "2020-11-29",
     "similar": [
@@ -206,7 +213,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/99896424-64b22a80-2cb6-11eb-92b2-ed1f44a76ba1.png",
     "gif": "https://media.giphy.com/media/3orif9DJNKDfXqXbBS/giphy.gif",
     "categories": [
-      "data-structure"
+      "data structures"
     ],
     "tags": [
       "data structure",
@@ -228,10 +235,11 @@
     "image": "https://user-images.githubusercontent.com/4745789/99261379-a9ffd380-2842-11eb-8f50-36b36ed42a95.png",
     "gif": "https://media.giphy.com/media/xT5LMTf2CRdBhetWPC/giphy.gif",
     "categories": [
-      "algorithms"
+      "algorithms",
+      "python"
     ],
     "tags": [
-      "algorithm",
+      "algorithms",
       "terrain generation",
       "perlin noise",
       "random terrain generation"
@@ -303,7 +311,7 @@
       "caching",
       "lfu",
       "least frequently used",
-      "cache eviction algorithm",
+      "cache eviction algorithms",
       "least frequently used",
       "constant time"
     ],
@@ -328,7 +336,7 @@
       "approximate counting",
       "morris counter",
       "hyperloglog",
-      "morris algorithm"
+      "morris algorithms"
     ],
     "published_at": "2020-08-02",
     "similar": [
@@ -351,7 +359,7 @@
       "slowsort",
       "pessimal algorithms",
       "slowsort vs bogosort",
-      "worst sorting algorithm",
+      "worst sorting algorithms",
       "multiply and surrender"
     ],
     "published_at": "2020-07-26",
@@ -396,7 +404,7 @@
     ],
     "tags": [
       "distributed systems",
-      "heartbeat algorithm",
+      "heartbeat algorithms",
       "failure detection"
     ],
     "published_at": "2020-07-12",
@@ -458,7 +466,8 @@
     "image": "https://user-images.githubusercontent.com/4745789/84585100-bf06af80-ae29-11ea-8797-16c70aee5cc4.png",
     "gif": "https://media.giphy.com/media/k4ta29T68xlfi/giphy.gif",
     "categories": [
-      "python"
+      "python",
+      "python internals"
     ],
     "tags": [],
     "published_at": "2020-06-14",
@@ -476,7 +485,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/83960768-2bbdff00-a8aa-11ea-9e82-16b928d2a244.png",
     "gif": "https://media.giphy.com/media/3o6Mbk7C7HVuhyqX3G/giphy.gif",
     "categories": [
-      "engineering"
+      "data structures"
     ],
     "tags": [],
     "published_at": "2020-06-07",
@@ -494,7 +503,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/83344735-64009300-a328-11ea-858a-587d440136f1.png",
     "gif": "https://media.giphy.com/media/1n7B7bJ917pqZGHG9m/giphy.gif",
     "categories": [
-      "engineering"
+      "system design"
     ],
     "tags": [],
     "published_at": "2020-05-31",
@@ -512,7 +521,8 @@
     "image": "https://user-images.githubusercontent.com/4745789/82760647-92efa400-9e12-11ea-9533-5003bc3c46df.png",
     "gif": "https://media.giphy.com/media/3ofSBqzxwsiN0npCak/giphy.gif",
     "categories": [
-      "algorithms"
+      "algorithms",
+      "system design"
     ],
     "tags": [],
     "published_at": "2020-05-24",
@@ -530,7 +540,8 @@
     "image": "https://user-images.githubusercontent.com/4745789/82141979-a620d380-9856-11ea-9a4a-32399c0c01b8.png",
     "gif": "https://media.giphy.com/media/l378kmO7gdbXaesXS/giphy.gif",
     "categories": [
-      "python"
+      "python",
+      "python internals"
     ],
     "tags": [],
     "published_at": "2020-05-17",
@@ -548,7 +559,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/82142043-352deb80-9857-11ea-9801-878d771248da.png",
     "gif": "https://media.giphy.com/media/1k5k3J5K3BywQOrpNA/giphy.gif",
     "categories": [
-      "algorithm"
+      "algorithms"
     ],
     "tags": [],
     "published_at": "2020-05-10",
@@ -566,7 +577,8 @@
     "image": "https://user-images.githubusercontent.com/4745789/80913860-73121680-8d65-11ea-87f8-d02460f05a22.png",
     "gif": "https://media.giphy.com/media/GIrIC3g657AYg/giphy.gif",
     "categories": [
-      "engineering"
+      "data structures",
+      "system design"
     ],
     "tags": [],
     "published_at": "2020-05-03",
@@ -584,8 +596,8 @@
     "image": "https://user-images.githubusercontent.com/4745789/80304802-0ed7db80-87d6-11ea-98db-bc5d4afe965b.png",
     "gif": "https://media.giphy.com/media/daUOBsa1OztxC/giphy.gif",
     "categories": [
-      "mysql",
-      "algorithm"
+      "databases",
+      "algorithms"
     ],
     "tags": [],
     "published_at": "2020-04-26",
@@ -621,7 +633,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/78990379-ebfdc400-7b53-11ea-88b7-cd64e39eabf6.png",
     "gif": "https://media.giphy.com/media/dJ4vNQ7r72pb4nDhN5/giphy.gif",
     "categories": [
-      "statistics"
+      "algorithms"
     ],
     "tags": [],
     "published_at": "2020-04-12",
@@ -639,7 +651,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/78276848-3c13cf80-7531-11ea-8186-99cb1da58e50.png",
     "gif": "https://media.giphy.com/media/5YuhLwDgrgtRVwI7OY/giphy.gif",
     "categories": [
-      "algorithm"
+      "system design"
     ],
     "tags": [],
     "published_at": "2020-04-05",
@@ -657,7 +669,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/76207579-10e4db80-6224-11ea-91ba-b67359125156.png",
     "gif": "https://media.giphy.com/media/3ornjWIRSzXEw61KH6/giphy.gif",
     "categories": [
-      "algorithm"
+      "algorithms"
     ],
     "tags": [
       "tfidf",
@@ -740,10 +752,10 @@
     "image": "https://user-images.githubusercontent.com/4745789/74463952-b07aac80-4eb8-11ea-8d8e-6f286767ec7e.png",
     "gif": "https://media.giphy.com/media/26uflDxU6cEhrhmUg/giphy.gif",
     "categories": [
-      "algorithm"
+      "algorithms"
     ],
     "tags": [
-      "algorithm",
+      "algorithms",
       "cellular automata",
       "rule 30",
       "pseudorandom number generator",
@@ -792,11 +804,11 @@
     "image": "https://user-images.githubusercontent.com/4745789/73280907-34743980-4215-11ea-89f0-eac4a71df6e5.png",
     "gif": "https://media.giphy.com/media/xGdvlOVSWaDvi/giphy.gif",
     "categories": [
-      "algorithm",
-      "data science"
+      "algorithms",
+      "python"
     ],
     "tags": [
-      "algorithm",
+      "algorithms",
       "machine learning",
       "anomaly detection",
       "data science",
@@ -804,7 +816,7 @@
       "ml",
       "ds",
       "ai",
-      "unsupervised algorithm",
+      "unsupervised algorithms",
       "fast anomaly detection",
       "efficient anomaly detection"
     ],
@@ -823,8 +835,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/72659471-2a1c9900-39e6-11ea-9b93-c11bf3eefc43.png",
     "gif": "https://media.giphy.com/media/V1NxC1YoNEHBe/giphy.gif",
     "categories": [
-      "steganography",
-      "image"
+      "cryptography"
     ],
     "tags": [
       "steganography",
@@ -861,7 +872,6 @@
     "image": "https://user-images.githubusercontent.com/4745789/72040055-55f49c00-32cd-11ea-9190-8f5a67c2f3d9.png",
     "gif": "https://media.giphy.com/media/SKGo6OYe24EBG/giphy.gif",
     "categories": [
-      "programming",
       "python",
       "python internals"
     ],
@@ -895,7 +905,6 @@
     "image": "https://user-images.githubusercontent.com/4745789/71662123-60b3ac00-2d76-11ea-8018-f558cef93a59.png",
     "gif": "https://media.giphy.com/media/aZ5wedD7Jtazm/giphy.gif",
     "categories": [
-      "programming",
       "python",
       "python internals"
     ],
@@ -929,8 +938,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/64327846-02ee9d80-cfea-11e9-8698-4a18bfe76068.png",
     "gif": "https://media.giphy.com/media/cKKXNlTYino7hWNXwl/giphy.gif",
     "categories": [
-      "programming",
-      "benchmark"
+      "benchmarks"
     ],
     "tags": [
       "programming",
@@ -954,9 +962,8 @@
     "image": "https://user-images.githubusercontent.com/4745789/63153080-1336dc80-c02b-11e9-931f-0c7552a63ebc.png",
     "gif": "https://media.giphy.com/media/lRnUWhmllPI9a/giphy.gif",
     "categories": [
-      "database",
-      "mongodb",
-      "scale"
+      "databases",
+      "benchmarks"
     ],
     "tags": [
       "mongodb",
@@ -982,9 +989,8 @@
     "image": "https://user-images.githubusercontent.com/4745789/63220759-d514f680-c1ab-11e9-8a38-7b1828946b74.png",
     "gif": "https://media.giphy.com/media/c5eqVJN7oNLTq/giphy.gif",
     "categories": [
-      "database",
-      "mongodb",
-      "benchmark"
+      "databases",
+      "benchmarks"
     ],
     "tags": [
       "mongodb",
@@ -1011,8 +1017,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/63220620-4d2ded00-c1a9-11e9-8eea-11766291e06f.png",
     "gif": "https://media.giphy.com/media/nqIuAIxYebIt2/giphy.gif",
     "categories": [
-      "database",
-      "mongodb"
+      "databases"
     ],
     "tags": [
       "mongodb",
@@ -1036,9 +1041,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/63222328-203b0380-c1c4-11e9-9dd0-34c4bd9d1c6b.png",
     "gif": "https://media.giphy.com/media/QmJ3e9So5M9NdNkOGo/giphy.gif",
     "categories": [
-      "golang",
-      "programming",
-      "concurrency"
+      "algorithms"
     ],
     "tags": [
       "golang",
@@ -1063,8 +1066,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/63222693-a5c0b280-c1c8-11e9-9cd4-808225e579f3.png",
     "gif": "https://media.giphy.com/media/2tSodgDfwCjIMCBY8h/giphy.gif",
     "categories": [
-      "python",
-      "programming"
+      "python"
     ],
     "tags": [
       "netcat",
@@ -1087,10 +1089,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/63222993-74e27c80-c1cc-11e9-8229-dd7e5d4f1173.png",
     "gif": "https://media.giphy.com/media/GIrIC3g657AYg/giphy.gif",
     "categories": [
-      "mysql",
-      "database",
-      "docker",
-      "devops"
+      "databases"
     ],
     "tags": [
       "devops",
@@ -1114,7 +1113,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/63223138-c68c0680-c1ce-11e9-942b-60b92d3f8a28.png",
     "gif": "https://media.giphy.com/media/l4FGzAPvg5PbZrVlK/giphy.gif",
     "categories": [
-      "devops"
+      "monitoring"
     ],
     "tags": [
       "devops",
@@ -1137,7 +1136,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/63223314-e58b9800-c1d0-11e9-83d8-e263ce3eb874.png",
     "gif": "https://media.giphy.com/media/Me1GB9z50XUKQ/giphy.gif",
     "categories": [
-      "devops"
+      "monitoring"
     ],
     "tags": [
       "devops",
