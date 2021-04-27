@@ -1,7 +1,7 @@
 [
   {
     "id": "chained-operators-python",
-    "title": "Internals of chained operators in Python",
+    "title": "Internals of Chained Comparison Operators of Python",
     "description": "In this essay, design taxonomy on a SQL-based Relational database by taking Udemy as an example, write SQL queries covering common use-cases, and determine necessary indexes to make queries efficient.",
     "image": "https://user-images.githubusercontent.com/4745789/115157736-83bbb980-a0a8-11eb-8974-545b7a9cba9d.png",
     "gif": "https://media.giphy.com/media/3o6Mbsop5cXzqVqfgA/giphy.gif",
