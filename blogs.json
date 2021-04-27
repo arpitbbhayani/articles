@@ -4,8 +4,8 @@
     "title": "Internals of Chained Comparison Operators of Python",
     "description": "In this essay, we find how chained comparison expressions are evaluated, understand how short-circuit evaluations happen internally, and alter Python's expression evaluation strategy.",
     "image": "https://user-images.githubusercontent.com/4745789/115157736-83bbb980-a0a8-11eb-8974-545b7a9cba9d.png",
-    "gif": "https://media.giphy.com/media/3o6Mbsop5cXzqVqfgA/giphy.gif",
-    "yt_video_id": "4_jlmX_oB94",
+    "gif": "https://media.giphy.com/media/LpLd2NGvpaiys/giphy.gif",
+    "yt_video_id": "",
     "categories": [
       "python",
       "python internals"
