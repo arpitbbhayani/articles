@@ -1,9 +1,9 @@
 [
   {
     "id": "chained-operators-python",
-    "title": "Internals of Chained Comparison Operators of Python",
+    "title": "Chained Comparison Operators in Python",
     "description": "In this essay, we find how chained comparison expressions are evaluated, understand how short-circuit evaluations happen internally, and alter Python's expression evaluation strategy.",
-    "image": "https://user-images.githubusercontent.com/4745789/115157736-83bbb980-a0a8-11eb-8974-545b7a9cba9d.png",
+    "image": "https://user-images.githubusercontent.com/4745789/116305344-47334080-a7c1-11eb-888a-a60b203ebe9d.png",
     "gif": "https://media.giphy.com/media/LpLd2NGvpaiys/giphy.gif",
     "yt_video_id": "",
     "categories": [
