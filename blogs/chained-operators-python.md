@@ -1,13 +1,13 @@
-Python supports chaining of comparison operators, which means if we wanted to find out if `b` lies between `a` and `c` we can do `a < b < c`, making code super-intuitive. Python evaluates such expressions like how we do in mathematics. which means `a < b < c` is evaluated as `(a < b) and (b < c)`. C language, on the other hand, evaluates `a < b < c` as `((a < b) < c)`.
+Python supports chaining of comparison operators, which means if we wanted to find out if `b` lies between `a` and `c` we can do `a < b < c`, making code super-intuitive. Python evaluates such expressions like how we do in mathematics. which means `a < b < c` is evaluated as `(a < b) and (b < c)`. C language on the other hand, evaluates `a < b < c` as `((a < b) < c)`.
 
-Depending on how we evaluate such expressions, the final evaluated changes.
+Depending on how we evaluate such expressions, the final evaluated changes. So, in python, if we evaluate `-3 < -2 < -1`, we get `True`
 
 ```python
 >>> -3 < -2 < -1
 True
 ```
 
-But on the other hand, if we evaluate this very expression in C language the output is False.
+But on the other hand, if we evaluate this very expression in C language the output is `False`.
 
 ```c
 #include <stdio.h>
@@ -22,7 +22,7 @@ $ ./a.out
 0
 ```
 
-Try finding why C is returning `0` for this expression, you already have the hint on how C evaluates the chained expressions. Also, to get a better understanding of how such expressions evaluate, try playing around with different values and see if your predicted value matches the actual output.
+It does so because `(-3 < -2) = True = 1` and `1 < -1 is False`. Also, to get a better understanding of how such expressions evaluate, try playing around with different values and see if your predicted value matches the actual output.
 
 This essay is going to be extra special; in this one, we find out
 
@@ -89,7 +89,7 @@ Then comes the instruction `JUMP_IF_FALSE_OR_POP` which checks the top of the st
 
 Now `COMPARE_OP` pops out two elements, compares them, and since `2 < 3` it evaluates to `True` and this `True` is stacked on top. After this operation, the stack has just one element `True`.
 
-The next instruction is `RETURN_VALUE`, which pops out the top of the stack i.e. `True`, and returns it, and this is how the expression `1 < 2 < 3` is evaluated to `True`.
+The next instruction is `RETURN_VALUE`, which pops out the top of the stack i.e. `True`, and returns it; and this is how the expression `1 < 2 < 3` is evaluated to `True`.
 
 ## Short-circuit Evaluation
 
@@ -179,7 +179,7 @@ compiler_compare(struct compiler *c, expr_ty e)
 }
 ```
 
-Recall that the expression `-3 < -2 < -1` on a usual Python interpreter evaluates to `True` because `-2` is between `-3` and `-1`. But post these changes, if we build the binary and start the interpreter we would see the output of the expression `-3 < -2 < -1` as `False`, just like C; as it evaluated the expression from left to right and kept reusing the output of the previous comparison as the first operand of the next one.
+Recall that the expression `-3 < -2 < -1` on a usual Python interpreter evaluates to `True` because `-2` is between `-3` and `-1`. But post these changes, if we build the binary and start the interpreter we would see the output of expression `-3 < -2 < -1` as `False`, just like C; as it evaluated the expression from left to right and kept reusing the output of the previous comparison as the first operand of the next one.
 
 ![https://user-images.githubusercontent.com/4745789/116240488-8477de00-a781-11eb-811f-e692312d5a5d.png](https://user-images.githubusercontent.com/4745789/116240488-8477de00-a781-11eb-811f-e692312d5a5d.png)
 
