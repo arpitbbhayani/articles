@@ -30,7 +30,7 @@ This essay is going to be extra special; in this one, we find out
 - how Python implements short-circuiting?
 - how could you make Python-like evaluation a C-like evaluation? implying at the end of this essay we alter the CPython source code such that the expression `-3 < -2 < -1` will evaluate to `False`.
 
-If this sounds tempting, let's jump right into it.
+I know this sounds tempting, so let's jump right into it.
 
 # Chaining comparison operators
 
