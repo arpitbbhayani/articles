@@ -1,10 +1,12 @@
 Python supports chaining of comparison operators, which means if we wanted to find out if `b` lies between `a` and `c` we can do `a < b < c`, making code super-intuitive. Python evaluates such expressions like how we do in mathematics. which means `a < b < c` is evaluated as `(a < b) and (b < c)`. C language on the other hand, evaluates `a < b < c` as `((a < b) < c)`.
 
-Depending on how we evaluate such expressions, the final evaluated changes. So, in python, if we evaluate `-3 < -2 < -1`, we get `True`
+Depending on how we evaluate such expressions, the final evaluated changes. So, in python, if we evaluate `-3 < -2 < -1`, we get `True` and if evaluate `3 > 2 == 1` we get `False`.
 
 ```python
 >>> -3 < -2 < -1
 True
+>>> 3 > 2 == 1
+False
 ```
 
 But on the other hand, if we evaluate this very expression in C language the output is `False`.
@@ -14,12 +16,14 @@ But on the other hand, if we evaluate this very expression in C language the out
 
 int main(int argc, char *argv[]) {
     printf("%d\n", -3 < -2 < -1);
+    printf("%d\n", 3 > 2 == 1);
     return 0;
 }
 
 $ gcc test.cpp
 $ ./a.out
 0
+1
 ```
 
 It does so because `(-3 < -2) = True = 1` and `1 < -1 is False`. Also, to get a better understanding of how such expressions evaluate, try playing around with different values and see if your predicted value matches the actual output.
@@ -179,9 +183,15 @@ compiler_compare(struct compiler *c, expr_ty e)
 }
 ```
 
-Recall that the expression `-3 < -2 < -1` on a usual Python interpreter evaluates to `True` because `-2` is between `-3` and `-1`. But post these changes, if we build the binary and start the interpreter we would see the output of expression `-3 < -2 < -1` as `False`, just like C; as it evaluated the expression from left to right and kept reusing the output of the previous comparison as the first operand of the next one.
+Recall that the expression `-3 < -2 < -1` on a usual Python interpreter evaluates to `True` because `-2` is between `-3` and `-1`. But post these changes, if we build the binary and start the interpreter we would see the output of expression `-3 < -2 < -1` as `False`, just like C; as it evaluated the expression from left to right and kept reusing the output of the previous comparison as the first operand of the next one. 
 
-![https://user-images.githubusercontent.com/4745789/116240488-8477de00-a781-11eb-811f-e692312d5a5d.png](https://user-images.githubusercontent.com/4745789/116240488-8477de00-a781-11eb-811f-e692312d5a5d.png)
+Here is the disassembled code and an instruction by instruction execution post our changes.
+
+![https://user-images.githubusercontent.com/4745789/116272065-37eecb80-a79e-11eb-8345-cae342a8441c.png](https://user-images.githubusercontent.com/4745789/116272065-37eecb80-a79e-11eb-8345-cae342a8441c.png)
+
+The engine first evaluated `-3 < -2`, and put the result `True` on top of the stack and then loaded `-1` to perform the comparison `True < -1`. Since `True == 1` the expression `True < -1` is evaluated as `False` and hence the output of the entire statement is `False`, just like in C. This also means that the expression `3 > 2 == 1` should evaluate to `True` and it actually does.
+
+![https://user-images.githubusercontent.com/4745789/116272093-3d4c1600-a79e-11eb-9981-655744c86348.png](https://user-images.githubusercontent.com/4745789/116272093-3d4c1600-a79e-11eb-9981-655744c86348.png)
 
 # References
 
