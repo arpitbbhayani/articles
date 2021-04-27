@@ -5,7 +5,7 @@
     "description": "In this essay, we find how chained comparison expressions are evaluated, understand how short-circuit evaluations happen internally, and alter Python's expression evaluation strategy.",
     "image": "https://user-images.githubusercontent.com/4745789/116305344-47334080-a7c1-11eb-888a-a60b203ebe9d.png",
     "gif": "https://media.giphy.com/media/LpLd2NGvpaiys/giphy.gif",
-    "yt_video_id": "",
+    "yt_video_id": "zz2Lu5ht_jA",
     "categories": [
       "python",
       "python internals"
