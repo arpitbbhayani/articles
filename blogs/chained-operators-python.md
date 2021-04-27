@@ -40,7 +40,7 @@ Python has a plethora of comparison operators like `<`, `>`, `<=`, `>=`, `==`, `
 >>> a < b < c
 ```
 
-This is possible because internally Python evaluates this chained expression `a < b < c` as `(a < b) and (b < c)`. To make this efficient, the sub-expression `b` is evaluated only once and the evaluation also follows short-circuit evaluation; which means, if `(a < b)` is evaluated as `False` then Python would not evaluate further sub-expressions - `c` and `(b < c)`. Now that we have set the context, let's jump right into CPython and find out what happens under the hood.
+This is possible because internally Python evaluates this chained expression `a < b < c` as `(a < b) and (b < c)`. To make this efficient, the sub-expression `b` is evaluated only once and the evaluation also follows short-circuit evaluation; which means, if `(a < b)` is evaluated as `False` then Python would not evaluate further sub-expressions - `c` and `(b < c)`. Now that we have set the context, let's find out what happens under the hood.
 
 # Chaining under the hood
 
