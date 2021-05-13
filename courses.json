@@ -1,0 +1,12 @@
+[
+    {
+        "id": "python-internals",
+        "name": "The Honest Python - Python Internals",
+        "description": "We dissect features, behaviors, and not-so-obvious outputs by diving deeper into the CPython source code. Along with the exploration, we alter the code and try to understand the internals to its core. This course, or should I say series, is ideal for someone looking to explore Python internals."
+    },
+    {
+        "id": "recursion",
+        "name": "Recursion",
+        "description": "Recursion is one of the most fascinating language paradigms. We can see recursion in action across the spectrum ranging from Language Internals, computations, games, real-world modeling, generative art, AI, and many more. In this series we explore wide range of application of recursion starting with the most basic ones and going into advanced use cases."
+    }
+]
