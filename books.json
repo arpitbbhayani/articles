@@ -1,5 +1,14 @@
 [
     {
+        "_id": "the-little-prince",
+        "n": "The Little Prince",
+        "i": "https://images-na.ssl-images-amazon.com/images/I/41udrPrjRpL._SX324_BO1,204,203,200_.jpg",
+        "d": "The little prince is one of the most popular and widely translated classics written for children and grown-ups. While trying to repair his crashed Aeroplane in the middle of the Sahara desert, an Airman meets a little boy-the little prince-originally an inhabitant of asteroid b-612 where he would diligently remove small baobabs as soon as they appeared, and where he has left behind three volcanoes and a rose.",
+        "plnk": "https://www.amazon.in/little-prince-Antoine-Saint-Exupery/dp/9385609920/",
+        "total": 120,
+        "has_nuggets": false
+    },
+    {
         "_id": "show-your-work",
         "n": "Show Your Work!",
         "i": "https://images-na.ssl-images-amazon.com/images/I/51N+Ba1mYOL._SY498_BO1,204,203,200_.jpg",
