@@ -1,7 +1,7 @@
 {
     "seats_total": 35,
-    "seats_available": 1,
-    "seats_confirmed": 34,
+    "seats_available": 33,
+    "seats_confirmed": 2,
     "what_worked": [
         "structured and well organised",
         "quality and non-repetitive content",
@@ -122,8 +122,7 @@
         "1:1 Personalized Mentorship on Weekdays",
         "Multiple assignments and projects",
         "Lifetime access to all the Curriculum Resources",
-        "Lifetime access to the Network and Community",
-        "Exclusive Freebies and Swags"
+        "Lifetime access to the Network and Community"
     ],
     "faqs": [
         {
