@@ -1,5 +1,14 @@
 [
     {
+        "_id": "altering-pythons-evaluation-strategy",
+        "title": "Altering Python Evaluation Strategy",
+        "description": "The talk is focused on altering Python's evaluation strategy when it comes to chained comparison operators and makes it C-like. To achieve this we explore the internals, trace to the root, and change the runtime a bit.",
+        "image": "https://user-images.githubusercontent.com/4745789/120460764-09749980-c3b7-11eb-8768-6d100e18fe7a.png",
+        "canva_design_id": "DAEevZhbOSQ",
+        "deliveredOn": "20210602",
+        "publishedOn": "2021-06-02"
+    },
+    {
         "_id": "search-as-you-should-know-it",
         "title": "Search - As you should know it",
         "description": "The talk is focussed on basics of Information Retrieval. We cover lookups, indexing, relevance by intuition, math behind relevance, building a toy search engine and squeezing out the performance from it.",
