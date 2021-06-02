@@ -1,5 +1,41 @@
 [
     {
+        "_id": "order-of-time",
+        "n": "The Order of Time",
+        "i": "https://images-na.ssl-images-amazon.com/images/I/511qfHRaLtL._SX323_BO1,204,203,200_.jpg",
+        "d": "-",
+        "plnk": "https://www.amazon.in/Order-Time-Carlo-Rovelli/dp/0141984961/",
+        "total": 224,
+        "has_nuggets": false
+    },
+    {
+        "_id": "euclid-alex-bellos",
+        "n": "Here's Looking at Euclid",
+        "i": "https://images-na.ssl-images-amazon.com/images/I/51-dSzPWJ7L._SX324_BO1,204,203,200_.jpg",
+        "d": "-",
+        "plnk": "https://www.amazon.in/Heres-Looking-Euclid-Counting-Awe-Inspiring/dp/1416588280/",
+        "total": 336,
+        "has_nuggets": false
+    },
+    {
+        "_id": "problems-alex-bellos",
+        "n": "So You Think You've Got Problems?",
+        "i": "https://m.media-amazon.com/images/I/518jDG8F5HL.jpg",
+        "d": "-",
+        "plnk": "https://www.amazon.in/You-Think-Youve-Got-Problems-ebook/dp/B07V1PX145/",
+        "total": 268,
+        "has_nuggets": false
+    },
+    {
+        "_id": "alexs-adventures-in-numberland",
+        "n": "Alex's Adventures in Numberland",
+        "i": "https://images-na.ssl-images-amazon.com/images/I/510RmIKuZVL._SX322_BO1,204,203,200_.jpg",
+        "d": "-",
+        "plnk": "https://www.amazon.in/Alexs-Adventures-Numberland-Tenth-Anniversary/dp/1526623994/",
+        "total": 448,
+        "has_nuggets": false
+    },
+    {
         "_id": "the-unfair-advantage",
         "n": "The Unfair Advantage",
         "i": "https://images-na.ssl-images-amazon.com/images/I/41UnwAG62bL._SX308_BO1,204,203,200_.jpg",
