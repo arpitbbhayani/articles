@@ -1,7 +1,7 @@
 [
     {
         "_id": "altering-pythons-evaluation-strategy",
-        "title": "Altering Python Evaluation Strategy",
+        "title": "Altering Python's Evaluation Strategy",
         "description": "The talk is focused on altering Python's evaluation strategy when it comes to chained comparison operators and makes it C-like. To achieve this we explore the internals, trace to the root, and change the runtime a bit.",
         "image": "https://user-images.githubusercontent.com/4745789/120460764-09749980-c3b7-11eb-8768-6d100e18fe7a.png",
         "canva_design_id": "DAEevZhbOSQ",
