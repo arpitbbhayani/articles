@@ -95,7 +95,8 @@
             "title": "Week 2",
             "body": "This week, we will focus on learning everything about databases, from SQL to NoSQL to Embedded, learn how to scale them.",
             "topics": [
-                "Database Transactions, Indexes and Locking",
+                "SQL Transactions",
+                "Database Indexes and Locking",
                 "Scaling relational databases",
                 "Designing SQL backed KV Store",
                 "NoSQL databases: when, where and why?",
