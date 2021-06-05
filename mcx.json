@@ -145,9 +145,8 @@
             "topics": [
                 "Designing S3",
                 "Designing LSM Trees",
-                "Designing Video Pipeline for YouTube",
-                "Designing Flash Sale",
-                "Open QnA and Doubt Resolution"
+                "Designing Video Processing Pipeline",
+                "Designing Flash Sale"
             ]
         },
         {
