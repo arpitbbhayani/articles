@@ -93,7 +93,7 @@
         {
             "section": "Databases",
             "title": "Week 2",
-            "body": "This week, we will focus on learning everything about databases, from SQL to NoSQL to Embedded, learn how to scale them.",
+            "body": "This week, we learn everything about databases, from SQL to NoSQL to Embedded, learn how to scale them.",
             "topics": [
                 "SQL Transactions",
                 "Database Indexes and Locking",
