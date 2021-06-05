@@ -79,42 +79,50 @@
         {
             "section": "Foundation",
             "title": "Week 1",
-            "body": "The first week is about learning the macro and micro components of System Design."
+            "body": "The first week is about learning the macro and micro components of System Design.",
+            "topics": []
         },
         {
             "section": "Databases",
             "title": "Week 2",
-            "body": "This week we will focus on learning everything about databases, right from SQL to NoSQL to Embedded, going through the internals, and understanding how they scale."
+            "body": "This week we will focus on learning everything about databases, right from SQL to NoSQL to Embedded, going through the internals, and understanding how they scale.",
+            "topics": []
         },
         {
             "section": "Going Distributed",
             "title": "Week 3",
-            "body": "The third week will be about understanding Distributed Systems and the challenges that come while building them."
+            "body": "The third week will be about understanding Distributed Systems and the challenges that come while building them.",
+            "topics": []
         },
         {
             "section": "Building Social Networks",
             "title": "Week 4",
-            "body": "This is when we start modeling and building real-world systems and we start with Social Networks."
+            "body": "This is when we start modeling and building real-world systems and we start with Social Networks.",
+            "topics": []
         },
         {
             "section": "Building Storages",
             "title": "Week 5",
-            "body": "This week will be about building ephemeral, persistent, reliable and durable storage engines."
+            "body": "This week will be about building ephemeral, persistent, reliable and durable storage engines.",
+            "topics": []
         },
         {
             "section": "Building High Throughput Systems",
             "title": "Week 6",
-            "body": "This week we level-up and build systems that are heavily concurrent and required to deliver very high throughput."
+            "body": "This week we level-up and build systems that are heavily concurrent and required to deliver very high throughput.",
+            "topics": []
         },
         {
             "section": "Building Search Engines",
             "title": "Week 7",
-            "body": "This week is about understanding the internals of Information Retrieval Systems."
+            "body": "This week is about understanding the internals of Information Retrieval Systems.",
+            "topics": []
         },
         {
             "section": "Building Algorithmic Systems",
             "title": "Week 8",
-            "body": "The final week will be about exploring systems that are driven by a super-clever algorithm."
+            "body": "The final week will be about exploring systems that are driven by a super-clever algorithm.",
+            "topics": []
         }
     ],
     "value_proposition": [
