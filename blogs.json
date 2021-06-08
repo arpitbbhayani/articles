@@ -1,5 +1,29 @@
 [
   {
+    "id": "fork-bomb",
+    "title": "Fork Bomb",
+    "description": "In this essay, we explore a simple yet effective DoS attack called Fork Bomb, also called Rabbit Virus. This attack forks out processes infinitely, starving them for any resources.",
+    "image": "https://user-images.githubusercontent.com/4745789/121253160-69db6d80-c8c6-11eb-8b05-202ec958324e.png",
+    "gif": "https://media.giphy.com/media/l0HeiaW8q9B6tqoHS/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "algorithms"
+    ],
+    "tags": [
+      "dos attack",
+      "fork bomb",
+      "understanding fork bomb",
+      "understanding fork bomb bash"
+    ],
+    "published_at": "2021-06-09",
+    "similar": [
+      "publish-python-package-on-pypi",
+      "bayesian-average",
+      "fast-and-efficient-pagination-in-mongodb",
+      "python-prompts"
+    ]
+  },
+  {
     "id": "chained-operators-python",
     "title": "Chained Comparison Operators in Python",
     "description": "In this essay, we find how chained comparison expressions are evaluated, understand how short-circuit evaluations happen internally, and alter Python's expression evaluation strategy.",
@@ -20,7 +44,7 @@
       "the-weird-walrus",
       "making-http-requests-using-netcat",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu"
+      "multiple-mysql-on-same-server-using-docker"
     ]
   },
   {
@@ -662,10 +686,10 @@
     "tags": [],
     "published_at": "2020-04-12",
     "similar": [
+      "fork-bomb",
       "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
-      "publish-python-package-on-pypi",
-      "jaccard-minhash"
+      "publish-python-package-on-pypi"
     ]
   },
   {
@@ -1003,7 +1027,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "better-programmer",
       "bayesian-average",
-      "udemy-sql-taxonomy"
+      "fork-bomb"
     ]
   },
   {
@@ -1103,7 +1127,7 @@
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "the-weird-walrus",
       "publish-python-package-on-pypi",
-      "setting-up-graphite-using-nginx-on-ubuntu"
+      "multiple-mysql-on-same-server-using-docker"
     ]
   },
   {
@@ -1195,8 +1219,8 @@
     "similar": [
       "super-long-integers",
       "the-weird-walrus",
-      "efficient-way-to-stop-an-iterating-loop",
-      "fast-and-efficient-pagination-in-mongodb"
+      "fork-bomb",
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   }
 ]
