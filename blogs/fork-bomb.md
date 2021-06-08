@@ -6,7 +6,7 @@ Online Coding Platforms and Code Evaluators are susceptible to this attack as th
 
 Fork bombs can be summarized in just three words: *Fork until possible*. When executed, fork bombs continuously fork out non-terminating processes, demanding machine resources like CPU (mostly) and memory.
 
-![https://user-images.githubusercontent.com/4745789/121252662-e752ae00-c8c5-11eb-9524-a1c7d4fc24fc.png](https://user-images.githubusercontent.com/4745789/121252662-e752ae00-c8c5-11eb-9524-a1c7d4fc24fc.png)
+![Fork Bomb](https://user-images.githubusercontent.com/4745789/121252662-e752ae00-c8c5-11eb-9524-a1c7d4fc24fc.png)
 
 Fork Bomb
 
