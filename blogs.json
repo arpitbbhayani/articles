@@ -7,13 +7,16 @@
     "gif": "https://media.giphy.com/media/l0HeiaW8q9B6tqoHS/giphy.gif",
     "yt_video_id": "",
     "categories": [
-      "algorithms"
+      "security"
     ],
     "tags": [
       "dos attack",
       "fork bomb",
       "understanding fork bomb",
-      "understanding fork bomb bash"
+      "understanding fork bomb bash",
+      "linux fork bomb",
+      "windows fork bomb",
+      ":() { :|:& };:"
     ],
     "published_at": "2021-06-09",
     "similar": [
