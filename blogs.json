@@ -17,10 +17,10 @@
     ],
     "published_at": "2021-06-09",
     "similar": [
-      "the-weird-walrus",
-      "making-http-requests-using-netcat",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu"
+      "publish-python-package-on-pypi",
+      "bayesian-average",
+      "fast-and-efficient-pagination-in-mongodb",
+      "python-prompts"
     ]
   },
   {
@@ -44,7 +44,7 @@
       "the-weird-walrus",
       "making-http-requests-using-netcat",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu"
+      "multiple-mysql-on-same-server-using-docker"
     ]
   },
   {
@@ -686,10 +686,10 @@
     "tags": [],
     "published_at": "2020-04-12",
     "similar": [
+      "fork-bomb",
       "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
-      "publish-python-package-on-pypi",
-      "jaccard-minhash"
+      "publish-python-package-on-pypi"
     ]
   },
   {
@@ -1027,7 +1027,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "better-programmer",
       "bayesian-average",
-      "udemy-sql-taxonomy"
+      "fork-bomb"
     ]
   },
   {
@@ -1127,7 +1127,7 @@
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "the-weird-walrus",
       "publish-python-package-on-pypi",
-      "setting-up-graphite-using-nginx-on-ubuntu"
+      "multiple-mysql-on-same-server-using-docker"
     ]
   },
   {
@@ -1219,8 +1219,8 @@
     "similar": [
       "super-long-integers",
       "the-weird-walrus",
-      "efficient-way-to-stop-an-iterating-loop",
-      "fast-and-efficient-pagination-in-mongodb"
+      "fork-bomb",
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   }
 ]
