@@ -8,8 +8,6 @@ Fork bombs can be summarized in just three words: *Fork until possible*. When ex
 
 ![Fork Bomb](https://user-images.githubusercontent.com/4745789/121252662-e752ae00-c8c5-11eb-9524-a1c7d4fc24fc.png)
 
-Fork Bomb
-
 With so many processes competing for the CPU and other resources (if provisioned), the scheduler and CPU are put under tremendous load. After a specific limit, the entire system stalls.
 
 # Implementing Fork Bombs
