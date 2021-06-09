@@ -57,7 +57,7 @@ bomb() {
 
 # How to prevent them?
 
-To protect our system against Form Bombs, we can cap the processes owned by a certain user, thus blocking process creation at that cap.
+To protect our system against Fork Bombs, we can cap the processes owned by a certain user, thus blocking process creation at that cap.
 
 Using the *nix utility called `ulimit`, we can set the maximum number of processes that a user can execute in the system, using the flag `-u`. By setting this value to an appropriate (lower) value, we can cap the process creation for a user, ensuring we can never be fork bombed by that user.
 
