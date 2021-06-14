@@ -38,6 +38,16 @@
             "name": "Vineet Mago",
             "message": "Arpit has done a wonderful job wading through complex design issues faced for designing systems at scale. Personally, for me, I loved interacting with the members of the cohort, understanding how each one of us approached the problem at hand. And then, in the end , Arpit would explain the right trade-offs to make and finalize a solution. I loved it, highly recommend it for folks who are looking at expanding their horizons on system design.",
             "cohort": "March 2021"
+        },
+        {
+            "name": "Nubra Jarial",
+            "message": "The course was very enriching and made me think about software design in unexpected ways. There are so many systems that we take for granted and don't look into - load balancers , cloud storages, database engines etc. even though they're often the ones doing the heavy lifting in enterprise applications. Arpit provides great insight into why things are the way they are and also introduces some neat spinoffs! Completely worth both the time and money!",
+            "cohort": "May 2021"
+        },
+        {
+            "name": "Akanksha Singh",
+            "message": "The course was like a roller coaster ride. At start Arpit will be explaining basics, and at the very next moment you'll realize he is making you answer high level concepts. Arpit is delivering his years of experience and research in this course. At start of course, even after reading/watching so many resources , I wasn't sure of system design. By the end of this course I have already started implementing system design's lego blocks and have so many  ideas which i want to implement and test myself.",
+            "cohort": "May 2021"
         }
     ],
     "benefits_cohort": [
