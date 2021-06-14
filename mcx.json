@@ -249,6 +249,10 @@
         {
             "title": "Will I be getting an invoice of Payment?",
             "body": "Yes. An invoice will be issued to you with all the legal and necessary details. This means your employer can choose to process this invoice and provide reimbursement."
+        },
+        {
+            "title": "Can I use my Credit Card to make the payment?",
+            "body": "Yes, we support Credit Card, Debit Card, UPI, and Credit Card based EMIs having a duration of 3 months, 6 months, 12 months, and 24 months as offered by Razorpay."
         }
     ],
     "organizations": [
