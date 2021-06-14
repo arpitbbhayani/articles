@@ -2,6 +2,7 @@
     "seats_total": 35,
     "seats_available": 10,
     "seats_confirmed": 25,
+    "payment_page": "https://pages.razorpay.com/arpit-july21",
     "what_worked": [
         "structured and well organised",
         "quality and non-repetitive content",
