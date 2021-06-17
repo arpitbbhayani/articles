@@ -1,5 +1,29 @@
 [
   {
+    "id": "mistaken-beliefs-of-distributed-systems",
+    "title": "Mistaken Beliefs of Distributed Systems",
+    "description": "In this essay, we learn about a set of false assumptions that programmers new to distributed applications invariably make. Understand these to build robust distributed systems.",
+    "image": "https://user-images.githubusercontent.com/4745789/122346879-11137100-cf67-11eb-95a1-5e717dd53810.png",
+    "gif": "https://media.giphy.com/media/SqmkZ5IdwzTP2/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design"
+    ],
+    "tags": [
+      "distributed systems",
+      "myths of distributed systems",
+      "system design",
+      "build robust distributed systems"
+    ],
+    "published_at": "2021-06-17",
+    "similar": [
+      "persistent-data-structures-introduction",
+      "bitcask",
+      "fully-persistent-arrays",
+      "rum"
+    ]
+  },
+  {
     "id": "fork-bomb",
     "title": "Fork Bomb",
     "description": "In this essay, we explore a simple yet effective DoS attack called Fork Bomb, also called Rabbit Virus. This attack forks out processes infinitely, starving them for any resources.",
@@ -116,10 +140,10 @@
     ],
     "published_at": "2021-02-14",
     "similar": [
+      "mistaken-beliefs-of-distributed-systems",
       "lfu",
       "persistent-data-structures-introduction",
-      "phi-accrual",
-      "isolation-forest"
+      "phi-accrual"
     ]
   },
   {
@@ -136,10 +160,10 @@
     ],
     "published_at": "2021-02-07",
     "similar": [
+      "mistaken-beliefs-of-distributed-systems",
       "rum",
       "bitcask",
-      "fully-persistent-arrays",
-      "phi-accrual"
+      "fully-persistent-arrays"
     ]
   },
   {
@@ -369,9 +393,9 @@
     "published_at": "2020-08-23",
     "similar": [
       "fully-persistent-arrays",
+      "mistaken-beliefs-of-distributed-systems",
       "consistent-hashing",
-      "isolation-forest",
-      "phi-accrual"
+      "isolation-forest"
     ]
   },
   {
@@ -418,7 +442,7 @@
       "morris-counter",
       "flajolet-martin",
       "1d-terrain",
-      "isolation-forest"
+      "copy-on-write"
     ]
   },
   {
@@ -440,8 +464,8 @@
     "similar": [
       "2q-cache",
       "ts-smoothing",
-      "persistent-data-structures-introduction",
-      "mysql-cache"
+      "mistaken-beliefs-of-distributed-systems",
+      "persistent-data-structures-introduction"
     ]
   },
   {
@@ -524,8 +548,8 @@
     "published_at": "2020-06-14",
     "similar": [
       "constant-folding-python",
-      "python-prompts",
       "python-caches-integers",
+      "python-prompts",
       "i-changed-my-python"
     ]
   },
@@ -544,7 +568,7 @@
       "mongodb-cursor-skip-is-slow",
       "morris-counter",
       "rule-30",
-      "fast-and-efficient-pagination-in-mongodb"
+      "idf"
     ]
   },
   {
@@ -560,9 +584,9 @@
     "published_at": "2020-05-31",
     "similar": [
       "persistent-data-structures-introduction",
+      "mistaken-beliefs-of-distributed-systems",
       "fully-persistent-arrays",
-      "bitcask",
-      "2q-cache"
+      "bitcask"
     ]
   },
   {
@@ -580,8 +604,8 @@
     "similar": [
       "fully-persistent-arrays",
       "lfu",
-      "persistent-data-structures-introduction",
-      "rum"
+      "mistaken-beliefs-of-distributed-systems",
+      "persistent-data-structures-introduction"
     ]
   },
   {
