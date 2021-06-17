@@ -1,5 +1,29 @@
 [
   {
+    "id": "mistaken-beliefs-of-distributed-systems",
+    "title": "Mistaken Beliefs of Distributed Systems",
+    "description": "In this essay, we learn about a set of false assumptions that programmers new to distributed applications invariably make. Understand these to build robust distributed systems.",
+    "image": "https://user-images.githubusercontent.com/4745789/122346879-11137100-cf67-11eb-95a1-5e717dd53810.png",
+    "gif": "https://media.giphy.com/media/SqmkZ5IdwzTP2/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design"
+    ],
+    "tags": [
+      "distributed systems",
+      "myths of distributed systems",
+      "system design",
+      "build robust distributed systems"
+    ],
+    "published_at": "2021-06-17",
+    "similar": [
+      "publish-python-package-on-pypi",
+      "bayesian-average",
+      "fast-and-efficient-pagination-in-mongodb",
+      "python-prompts"
+    ]
+  },
+  {
     "id": "fork-bomb",
     "title": "Fork Bomb",
     "description": "In this essay, we explore a simple yet effective DoS attack called Fork Bomb, also called Rabbit Virus. This attack forks out processes infinitely, starving them for any resources.",
