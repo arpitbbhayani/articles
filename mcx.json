@@ -263,6 +263,10 @@
         {
             "title": "Can I use my Credit Card or avail EMI to make the payment?",
             "body": "Yes, we support Credit Card, Debit Card, UPI, and Credit Card based EMIs having a duration of 3 months, 6 months, 12 months, and 24 months as offered by Razorpay."
+        },
+        {
+            "title": "Will I get access to videos and resources of past cohort?",
+            "body": "No. You will get access to all the live sessions happened in your enrolled cohort only."
         }
     ],
     "organizations": [
