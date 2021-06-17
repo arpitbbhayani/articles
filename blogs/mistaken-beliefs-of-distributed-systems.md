@@ -1,26 +1,26 @@
-The only way to infinitely scale your system is by making it distributed, which means adding more servers to serve your requests, more nodes to computed in parallel, or more storage nodes to store partitioned data. But while building that, we tend to assume a few things to be true, which in reality are definitely not.
+The only way to infinitely scale your system is by making it distributed, which means adding more servers to serve your requests, more nodes to perform computations in parallel, and more nodes to store your partitioned data. But while building such a complex system, we tend to assume a few things to be true, which in reality are definitely not.
 
-These fallacies are a set of assertions made by [L Peter Deutsch](https://en.wikipedia.org/wiki/L._Peter_Deutsch) and others at Sun Microsystems describing false assumptions that programmers new to distributed applications invariably make.
+These mistaken beliefs were documented by [L Peter Deutsch](https://en.wikipedia.org/wiki/L._Peter_Deutsch) and others at Sun Microsystems and it describes a set of false assumptions that programmers new to distributed applications invariably make.
 
-# Myth 1: The network is reliable;
+## Myth 1: The network is reliable;
 
-No. The network is not reliable. There are packet drops, connection interruptions, and data corruptions when it is transferred over the wire. In addition, there are network outages, router restarts, and switch failures. Such an unreliable network has to be considered while designing a robust Distributed System.
+No. The network is not reliable. There are packet drops, connection interruptions, and data corruptions when they are transferred over the wire. In addition, there are network outages, router restarts, and switch failures to make the matter worse. Such an unreliable network has to be considered while designing a robust Distributed System.
 
 # Myth 2: Latency is zero;
 
-Network latency is real. Do not assume everything happens instantaneously. For every 10 meters of fiber optic wire, we add 3 nanoseconds to the network latency. Now imagine your data moving across Transatlantic communications cable. This is why we keep components closer wherever possible.
+Network latency is real and we should not assume that everything happens instantaneously. For every 10 meters of fiber optic wire, we add 3 nanoseconds to the network latency. Now imagine your data moving across the transatlantic communications cable. This is why we keep components closer wherever possible and have to handle out-of-order messages.
 
 # Myth 3: Bandwidth is infinite;
 
-A big no. The bandwidth is not infinite; neither of your machine or the wire over which the communication is happening. Therefore, the metric which is least tracked is packets transferred in and out of your systems. This typically results in massive bottlenecks, and if relevant metrics are not tracked, it will be impossible to spot them.
+The bandwidth is not infinite; neither of your machine, or the server, or the wire over which the communication is happening. Hence we should always measure the number of packets (bytes) of data transferred in and out of your systems. When unregulated, this results in a massive bottleneck, and if untracked it becomes near impossible to spot them.
 
 # Myth 4: The network is secure;
 
-Security is critical, assuming that data that flows across your network is secure and will put you in terrible shape. This is because many malicious users are trying to sniff every packet over the wire and decide what is being communicated. So, where your data is at rest or in transit, encrypt it.
+We put our system in a terrible shape when we assume that the data flowing across the network is secure. There are many malicious users that are constantly trying to sniff every packet over the wire and de-code what is being communicated. So, ensure that your data is encrypted when at rest and also in transit.
 
 # Myth 5: Topology doesn't change;
 
-Network topology changes due to software or hardware failures. When the topology changes, you might see a sudden difference in latency and packet transfer times. Be ready to embrace such a sudden change while building a robust Distributed System.
+Network topology changes due to software or hardware failures. When the topology changes, you might see a sudden deviation in latency and packet transfer times. So, these metrics need to be monitored for any anomalous behavior and our systems would be ready to embrace this change.
 
 # Myth 6: There is one administrator;
 
