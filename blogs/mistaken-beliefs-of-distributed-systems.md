@@ -4,7 +4,7 @@ These fallacies are a set of assertions made by [L Peter Deutsch](https://en.wik
 
 # Myth 1: The network is reliable;
 
-No. The network is not reliable. There are packet drops, connection interruptions, and data corruptions when it is transferred over the wire. There are network outages, router restarts, and switch failures. Such an unreliable network has to be considered while designing a robust Distributed System.
+No. The network is not reliable. There are packet drops, connection interruptions, and data corruptions when it is transferred over the wire. In addition, there are network outages, router restarts, and switch failures. Such an unreliable network has to be considered while designing a robust Distributed System.
 
 # Myth 2: Latency is zero;
 
@@ -12,11 +12,11 @@ Network latency is real. Do not assume everything happens instantaneously. For e
 
 # Myth 3: Bandwidth is infinite;
 
-A big no. The bandwidth is not infinite; neither of your machine or the wire over which the communication is happening. The metric which is least tracked is packets transferred in and out of your systems. This typically results in massive bottlenecks, and if relevant metrics are not tracked, it will be impossible to spot them.
+A big no. The bandwidth is not infinite; neither of your machine or the wire over which the communication is happening. Therefore, the metric which is least tracked is packets transferred in and out of your systems. This typically results in massive bottlenecks, and if relevant metrics are not tracked, it will be impossible to spot them.
 
 # Myth 4: The network is secure;
 
-Security is critical, assuming that data that flows across your network is secure and will put you in terrible shape. There are so many malicious users trying to sniff every packet that is over the wire and decide what is being communicated. So, where your data is at rest or in transit, encrypt it.
+Security is critical, assuming that data that flows across your network is secure and will put you in terrible shape. This is because many malicious users are trying to sniff every packet over the wire and decide what is being communicated. So, where your data is at rest or in transit, encrypt it.
 
 # Myth 5: Topology doesn't change;
 
@@ -24,7 +24,7 @@ Network topology changes due to software or hardware failures. When the topology
 
 # Myth 6: There is one administrator;
 
-There is one internet, and everyone is competing for the same set of resources (optic cables and other communication channels). So, when building a super-critical Distributed system, you need to know which path your packets are following to avoid high-traffic competing areas.
+There is one internet, and everyone is competing for the same resources (optic cables and other communication channels). So, when building a super-critical Distributed system, you need to know which path your packets are following to avoid high-traffic competing areas.
 
 # Myth 7: Transport cost is zero;
 
