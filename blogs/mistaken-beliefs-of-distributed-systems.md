@@ -32,7 +32,7 @@ There is a hidden cost of hardware, software, and maintenance that we all bear w
 
 # Myth 8: The network is homogeneous.
 
-The network is not homogeneous, and your packets travel to all sorts of communication channels like optic cables, 4g bands, 3g bands, and even 2g bands before reaching the user's device. This is also true when the packets move within your VPC through different types of connecting wires, and network cards. When there is a lot of heterogeneity in the network, it becomes harder to find the bottleneck; hence having a setup that gives us enough transparency is the key to a good Distributed System design.
+The network is not homogeneous, and your packets travel to all sorts of communication channels like optic cables, 4G bands, 3G bands, and even 2G bands before reaching the user's device. This is also true when the packets move within your VPC through different types of connecting wires, and network cards. When there is a lot of heterogeneity in the network, it becomes harder to find the bottleneck; hence having a setup that gives us enough transparency is the key to a good Distributed System design.
 
 # References
 
