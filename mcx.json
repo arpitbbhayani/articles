@@ -53,6 +53,16 @@
             "name": "Ujjwal",
             "message": "Wish this cohort never ended. The enthusiasm with which Arpit teaches, his engineering adventures with large scale systems and his patience to handle even the most fundamental doubts makes this cohort special !",
             "cohort": "May 2021"
+        },
+        {
+            "name": "Abhijit Jain",
+            "message": "I appreciate not only the depth and breadth of topics covered but also Arpit's friendly teaching style and patience. The topics covered in class were non-trivial but were introduced perfectly like they were lego blocks - smaller components adding up to bigger and better systems. What sets this masterclass apart is the focus on designing systems the way a real company would do (think companies you admire, eg FANG). This is a course that'll improve your design thinking, empower you to ask the right questions and help you make the right tradeoffs for your system. Highly recommend!",
+            "cohort": "May 2021"
+        },
+        {
+            "name": "Saurav Daruka",
+            "message": "System Design Masterclass was a very immersive, interesting and a completely unique asset to learn System Design. The course structure was clear, logical and effective. Arpit is an expert Technologist and has obviously put a lot of thought and expertise into designing the course. But it wasn’t just about the knowledge. Additional benefits came from doing assignments, receiving individual feedback and interacting with Arpit and other participants. My perspective has been changed in the way I look at Systems now. I didn’t just learn \"how\" to design systems – \"what\" and \"why\" also became much clearer. Investment of time, effort and money on this course is a value add to my skills and it made me a better Software Engineer!",
+            "cohort": "May 2021"
         }
     ],
     "benefits_cohort": [
