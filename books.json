@@ -1,5 +1,14 @@
 [
     {
+        "_id": "four-hour-work-week",
+        "n": "The 4-Hour Work Week",
+        "i": "https://images-na.ssl-images-amazon.com/images/I/51iGkLC6jhL._SX314_BO1,204,203,200_.jpg",
+        "d": "-",
+        "plnk": "https://www.amazon.in/4-Hour-Work-Week-Escape-Anywhere/dp/0091929113/",
+        "total": 416,
+        "has_nuggets": false
+    },
+    {
         "_id": "critique-of-pure-reason",
         "n": "Critique of Pure Reason",
         "i": "https://images-na.ssl-images-amazon.com/images/I/41yaac8jpiL._SX324_BO1,204,203,200_.jpg",
