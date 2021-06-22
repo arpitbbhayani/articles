@@ -1,5 +1,29 @@
 [
   {
+    "id": "architectures-in-distributed-systems",
+    "title": "Architectures in Distributed Systems",
+    "description": "While designing a Distributed System, it is essential to pick the right kind of architecture. Usually, architectures are evolving, but picking the right one at the inception could make your system thrive.",
+    "image": "https://user-images.githubusercontent.com/4745789/122890572-6d103800-d361-11eb-92e0-c0f226c6821c.png",
+    "gif": "https://media.giphy.com/media/3orieKSJONEWV51x3q/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design"
+    ],
+    "tags": [
+      "distributed systems",
+      "architectures in distributed systems",
+      "system design",
+      "build robust distributed systems"
+    ],
+    "published_at": "2021-06-22",
+    "similar": [
+      "persistent-data-structures-introduction",
+      "bitcask",
+      "fully-persistent-arrays",
+      "rum"
+    ]
+  },
+  {
     "id": "mistaken-beliefs-of-distributed-systems",
     "title": "Mistaken Beliefs of Distributed Systems",
     "description": "In this essay, we learn about a set of false assumptions that programmers new to distributed applications invariably make. Understand these to build robust distributed systems.",
