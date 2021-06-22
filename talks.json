@@ -1,5 +1,14 @@
 [
     {
+        "_id": "on-technical-writing",
+        "title": "On Technical Writing",
+        "description": "In this one, I talk about writing quality technical articles, why you should often write, the kind of benefits you would get by writing consistently, and a basic set of rules to follow that makes writing more effective.",
+        "image": "https://user-images.githubusercontent.com/4745789/122918772-1a447980-d37d-11eb-9169-4998e2b8ff93.png",
+        "canva_design_id": "DAEiGUyW1Hk",
+        "deliveredOn": "20210623",
+        "publishedOn": "2021-06-23"
+    },
+    {
         "_id": "altering-pythons-evaluation-strategy",
         "title": "Altering Python's Evaluation Strategy",
         "description": "The talk is focused on altering Python's evaluation strategy when it comes to chained comparison operators and makes it C-like. To achieve this we explore the internals, trace to the root, and change the runtime a bit.",
