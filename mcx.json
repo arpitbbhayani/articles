@@ -3,6 +3,7 @@
     "seats_available": 7,
     "seats_confirmed": 28,
     "payment_page": "https://pages.razorpay.com/arpit-july21",
+    "worldmap": "https://user-images.githubusercontent.com/4745789/123130053-104c7480-d46a-11eb-9a3c-01bc1b1d9c1c.png",
     "what_worked": [
         "structured and well organised",
         "quality and non-repetitive content",
@@ -329,6 +330,36 @@
         {
             "name": "Yelp",
             "logo": "https://user-images.githubusercontent.com/4745789/115351392-d47c0100-a1d3-11eb-8418-ae0a4e344d9f.png",
+            "url": "https://www.yelp.com/"
+        },
+        {
+            "name": "PayTM",
+            "logo": "https://user-images.githubusercontent.com/4745789/123135938-0299ed80-d470-11eb-823a-54c0fc9647dd.png",
+            "url": "https://www.paytm.com/"
+        },
+        {
+            "name": "Yelp",
+            "logo": "https://user-images.githubusercontent.com/4745789/123136405-8358e980-d470-11eb-8889-7d34e1c9e11e.png",
+            "url": "https://www.yelp.com/"
+        },
+        {
+            "name": "Yelp",
+            "logo": "https://user-images.githubusercontent.com/4745789/123137306-738dd500-d471-11eb-8676-feb5726e5ecc.png",
+            "url": "https://www.yelp.com/"
+        },
+        {
+            "name": "Yelp",
+            "logo": "https://user-images.githubusercontent.com/4745789/123136596-bbf8c300-d470-11eb-9f92-c0cdcc04b559.png",
+            "url": "https://www.yelp.com/"
+        },
+        {
+            "name": "Yelp",
+            "logo": "https://user-images.githubusercontent.com/4745789/123137481-a2a44680-d471-11eb-9a05-096fe56ceb85.png",
+            "url": "https://www.yelp.com/"
+        },
+        {
+            "name": "Yelp",
+            "logo": "https://user-images.githubusercontent.com/4745789/123138316-805ef880-d472-11eb-9242-6554213d2b43.png",
             "url": "https://www.yelp.com/"
         }
     ]
