@@ -1,7 +1,7 @@
 {
     "seats_total": 35,
     "seats_available": 35,
-    "seats_confirmed": 0,
+    "seats_confirmed": 2,
     "payment_page": "https://rzp.io/l/arpit-sept21",
     "worldmap": "https://user-images.githubusercontent.com/4745789/123199916-6c94b000-d4cd-11eb-82eb-4cd2de80ce24.png",
     "what_worked": [
