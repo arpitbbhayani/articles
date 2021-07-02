@@ -1,5 +1,29 @@
 [
   {
+    "id": "consistency",
+    "title": "\"C\" in ACID - Consistency",
+    "description": "In the context of databases, Consistency is Correctness, which means that under no circumstance will the data lose its correctness.",
+    "image": "https://user-images.githubusercontent.com/4745789/124225698-86657100-db25-11eb-8284-9771f5a0b545.png",
+    "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "databases"
+    ],
+    "tags": [
+      "ACID in databases",
+      "ACID Transactions",
+      "Consistency in databases"
+    ],
+    "published_at": "2021-07-02",
+    "similar": [
+      "ts-smoothing",
+      "better-programmer",
+      "mistaken-beliefs-of-distributed-systems",
+      "image-steganography"
+    ]
+  },
+  {
     "id": "atomicity",
     "title": "\"A\" in ACID - Atomicity",
     "description": "A single database transaction often contains multiple statements to be executed on the database. In Relational Databases, these are usually multiple SQL statements, while in the case of non-Relational Databases, these could be multiple database commands.",
