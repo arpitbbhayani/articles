@@ -1,5 +1,29 @@
 [
   {
+    "id": "atomicity",
+    "title": "\"A\" in ACID - Atomicity",
+    "description": "A single database transaction often contains multiple statements to be executed on the database. In Relational Databases, these are usually multiple SQL statements, while in the case of non-Relational Databases, these could be multiple database commands.",
+    "image": "https://user-images.githubusercontent.com/4745789/124224260-ef97b500-db22-11eb-8d0f-cc808093eb00.png",
+    "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "databases"
+    ],
+    "tags": [
+      "ACID in databases",
+      "ACID Transactions",
+      "Atomicity in databases"
+    ],
+    "published_at": "2021-06-28",
+    "similar": [
+      "ts-smoothing",
+      "better-programmer",
+      "mistaken-beliefs-of-distributed-systems",
+      "image-steganography"
+    ]
+  },
+  {
     "id": "architectures-in-distributed-systems",
     "title": "Architectures in Distributed Systems",
     "description": "While designing a Distributed System, it is essential to pick the right kind of architecture. Usually, architectures are evolving, but picking the right one at the inception could make your system thrive.",
@@ -18,9 +42,9 @@
     "published_at": "2021-06-22",
     "similar": [
       "mistaken-beliefs-of-distributed-systems",
+      "atomicity",
       "bitcask",
-      "image-steganography",
-      "sliding-window-ratelimiter"
+      "image-steganography"
     ]
   },
   {
@@ -42,9 +66,9 @@
     "published_at": "2021-06-17",
     "similar": [
       "architectures-in-distributed-systems",
+      "atomicity",
       "bitcask",
-      "image-steganography",
-      "ts-smoothing"
+      "image-steganography"
     ]
   },
   {
@@ -210,7 +234,7 @@
       "python-prompts",
       "python-caches-integers",
       "python-iterable-integers",
-      "i-changed-my-python"
+      "fsm"
     ]
   },
   {
@@ -302,7 +326,7 @@
       "mysql-cache",
       "ts-smoothing",
       "bitcask",
-      "image-steganography"
+      "atomicity"
     ]
   },
   {
@@ -323,8 +347,8 @@
     "similar": [
       "morris-counter",
       "rule-30",
-      "flajolet-martin",
-      "slowsort"
+      "slowsort",
+      "flajolet-martin"
     ]
   },
   {
@@ -391,10 +415,10 @@
     ],
     "published_at": "2020-11-01",
     "similar": [
+      "atomicity",
       "2q-cache",
       "image-steganography",
-      "better-programmer",
-      "bitcask"
+      "better-programmer"
     ]
   },
   {
@@ -488,9 +512,9 @@
     "published_at": "2020-07-19",
     "similar": [
       "2q-cache",
+      "atomicity",
       "ts-smoothing",
-      "mistaken-beliefs-of-distributed-systems",
-      "persistent-data-structures-introduction"
+      "mistaken-beliefs-of-distributed-systems"
     ]
   },
   {
@@ -573,8 +597,8 @@
     "published_at": "2020-06-14",
     "similar": [
       "constant-folding-python",
-      "python-caches-integers",
       "python-prompts",
+      "python-caches-integers",
       "i-changed-my-python"
     ]
   },
@@ -592,8 +616,8 @@
     "similar": [
       "mongodb-cursor-skip-is-slow",
       "morris-counter",
-      "rule-30",
-      "idf"
+      "idf",
+      "rule-30"
     ]
   },
   {
@@ -738,8 +762,8 @@
     "tags": [],
     "published_at": "2020-04-12",
     "similar": [
-      "fork-bomb",
       "efficient-way-to-stop-an-iterating-loop",
+      "fork-bomb",
       "fast-and-efficient-pagination-in-mongodb",
       "publish-python-package-on-pypi"
     ]
@@ -813,8 +837,8 @@
     "similar": [
       "udemy-sql-taxonomy",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "ts-smoothing",
-      "fast-and-efficient-pagination-in-mongodb"
+      "atomicity",
+      "ts-smoothing"
     ]
   },
   {
@@ -960,9 +984,9 @@
     "published_at": "2020-01-17",
     "similar": [
       "ts-smoothing",
+      "atomicity",
       "2q-cache",
-      "better-programmer",
-      "mistaken-beliefs-of-distributed-systems"
+      "better-programmer"
     ]
   },
   {
@@ -1179,7 +1203,7 @@
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "the-weird-walrus",
       "publish-python-package-on-pypi",
-      "multiple-mysql-on-same-server-using-docker"
+      "setting-up-graphite-using-nginx-on-ubuntu"
     ]
   },
   {
@@ -1202,8 +1226,8 @@
     "similar": [
       "sliding-window-ratelimiter",
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "setting-up-graphite-using-nginx-on-ubuntu",
-      "udemy-sql-taxonomy"
+      "udemy-sql-taxonomy",
+      "setting-up-graphite-using-nginx-on-ubuntu"
     ]
   },
   {
