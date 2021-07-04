@@ -1,42 +1,46 @@
-In this short essay, we dive deep and understand the "C" in ACID - Consistency.
+In this short essay, we dive deep and understand the "A" of ACID - Atomicity.
 
-In this quick read, we will take a detailed look into [Consistency](https://en.wikipedia.org/wiki/Consistency_(database_systems)), understand its importance, functioning, and how the database implements it.
+In this quick read, we will take a detailed look into [Atomicity](https://en.wikipedia.org/wiki/Atomicity_(database_systems)), understand its importance, and learn about implementing it at various levels.
 
-# What is Consistency?
+# What is atomicity?
 
-In the context of databases, Consistency is Correctness, which means that under no circumstance will the data lose its correctness.
+A single database transaction often contains multiple statements to be executed on the database. In Relational Databases, these are usually multiple SQL statements, while in the case of non-Relational Databases, these could be multiple database commands.
 
-Database systems allow us to define rules that the data residing in our database are mandated to adhere to. Few handy rules could be
+Atomicity in ACID mandates that each transaction should be treated as a single unit of execution, which means either all the statements/commands of that transaction are executed, or none of them are.
 
- - balance of an account should never be negative
- - no orphan mapping: there should not be any mapping of a person whose entry from the database is deleted.
- - no orphan comment: there should not be any comment in the database that does not belong to an existing blog.
+At the end of the successful transaction or after a failure while applying the transaction, the database should never be in a state where only a subset of statements/commands is applied.
 
-These rules can be defined on a database using Constraints, [Cascades](https://en.wikipedia.org/wiki/Foreign_key#CASCADE), and Triggers; for example, [Foreign Key constraints](https://en.wikipedia.org/wiki/Foreign_key), [Check constraints](https://en.wikipedia.org/wiki/Check_constraint), On Delete Cascades, On Update Cascades, etc.
+An atomic system thus guarantees atomicity in every situation, including successful completion of transactions or after power failures, errors, and crashes.
 
-### Role of the database engine in ensuring Consistency
-An ACID-compliant database engine compliant has to ensure that the data residing in the database continues to adhere to all the configured rules. Thus, even while executing thousands of concurrent transactions, the database always moves from one consistent state to another.
+![Atomicity ACID](https://user-images.githubusercontent.com/4745789/124223798-0e497c00-db22-11eb-868d-8faefc44361c.png)
 
-### What happens when the database discovers a violation?
-Database Engine rollbacks the changes, which ensures that the database is reverted to a previous consistent state.
+A great example of seeing why it is critical to have atomicity is Money Transfers.
 
-### What happens when the database does not find any violation?
-Database Engine will continue to apply the changes, and once the transaction is marked successful, this state of the database becomes the newer consistent state.
+Imagine transferring money from bank account A to B. The transaction involves subtracting balance from A and adding balance to B. If any of these changes are partially applied to the database, it will lead to money either not debited or credited, depending on when it failed.
 
-# Why is consistency important?
-The answer is very relatable. Would you ever want your account to have a negative balance? No. This is thus defined as a rule that the database engine would have to enforce while applying any change to the data.
+# How is atomicity implemented?
 
-# How does the database ensure Consistency?
-Integrity constraints are checked when the changes are being applied to the data.
+## Atomicity in Databases
+Most databases implement Atomicty using logging; the engine logs all the changes and notes when the transaction started and finished. Depending on the final state of the transactions, the changes are either applied or dropped.
 
-Cascade operations are performed synchronously along with the transaction. This means that the transaction is not complete until the primary set of queries, along with all the eligible cascades, are applied. Most database engines also provide a way to make them asynchronous, allowing us to keep our transactions leaner.
+Atomicity can also be implemented by keeping a copy of the data before starting the transaction and using it during rollbacks.
 
-✨ Next up is "I" in ACID - Isolation. Stay tuned.
+## Atomicity in File Systems
+At the file system level, atomicity is attained by atomically opening and locking the file using system calls: open and flock. We can choose to lock the file in either Shared or Exclusive mode.
+
+## Atomicity at Hardware Level
+At the hardware level, atomicity is implemented through instructions such as Test-and-set, Fetch-and-add, Compare-and-swap.
+
+## Atomicity in Business Logic
+The construct of atomicity can be implemented at a high-level language or business logic by burrowing the concept of atomic instructions; for example, you can use compare and swap to update the value of a variable shared across threads concurrently.
+
+Atomicity is not just restricted to Databases; it is a notion that can be applied to any system out there.
+
+✨ Next up is "C" in ACID - Consistency. Stay tuned.
 
 # References
  - [ACID - Wikipedia](https://en.wikipedia.org/wiki/ACID)
- - [Consistency](https://en.wikipedia.org/wiki/Consistency_(database_systems))
- - [Foreign Key Constraints](https://en.wikipedia.org/wiki/Foreign_key)
+ - [Atomicity - Wikipedia](https://en.wikipedia.org/wiki/Atomicity_(database_systems))
  - [ACID Explained - BMC](https://www.bmc.com/blogs/acid-atomic-consistent-isolated-durable/)
  - [ACID properties of transactions](https://www.ibm.com/docs/en/cics-ts/5.4?topic=processing-acid-properties-transactions)
  - [ACID Compliance: What It Means and Why You Should Care](https://mariadb.com/resources/blog/acid-compliance-what-it-means-and-why-you-should-care/)
