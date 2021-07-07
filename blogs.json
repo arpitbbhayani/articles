@@ -1,5 +1,29 @@
 [
   {
+    "id": "isolation",
+    "title": "\"I\" in ACID - Isolation",
+    "description": "Isolation is the ability of the database to concurrently process multiple transactions in a way that changes made in one do not another.",
+    "image": "https://user-images.githubusercontent.com/4745789/124763085-36d1db80-df51-11eb-985e-1d98e9b78cba.png",
+    "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "databases"
+    ],
+    "tags": [
+      "ACID in databases",
+      "ACID Transactions",
+      "Isolation in databases"
+    ],
+    "published_at": "2021-07-05",
+    "similar": [
+      "atomicity",
+      "consistency",
+      "ts-smoothing",
+      "mistaken-beliefs-of-distributed-systems"
+    ]
+  },
+  {
     "id": "consistency",
     "title": "\"C\" in ACID - Consistency",
     "description": "In the context of databases, Consistency is Correctness, which means that under no circumstance will the data lose its correctness.",
@@ -17,9 +41,9 @@
     ],
     "published_at": "2021-07-02",
     "similar": [
+      "isolation",
       "atomicity",
       "image-steganography",
-      "sliding-window-ratelimiter",
       "mistaken-beliefs-of-distributed-systems"
     ]
   },
@@ -41,9 +65,9 @@
     ],
     "published_at": "2021-06-28",
     "similar": [
+      "isolation",
       "consistency",
-      "image-steganography",
-      "sliding-window-ratelimiter",
+      "ts-smoothing",
       "mistaken-beliefs-of-distributed-systems"
     ]
   },
@@ -66,9 +90,9 @@
     "published_at": "2021-06-22",
     "similar": [
       "mistaken-beliefs-of-distributed-systems",
+      "isolation",
       "consistency",
-      "atomicity",
-      "bitcask"
+      "atomicity"
     ]
   },
   {
@@ -90,9 +114,9 @@
     "published_at": "2021-06-17",
     "similar": [
       "architectures-in-distributed-systems",
-      "atomicity",
+      "isolation",
       "consistency",
-      "bitcask"
+      "atomicity"
     ]
   },
   {
@@ -350,7 +374,7 @@
       "mysql-cache",
       "ts-smoothing",
       "bitcask",
-      "image-steganography"
+      "isolation"
     ]
   },
   {
@@ -439,10 +463,10 @@
     ],
     "published_at": "2020-11-01",
     "similar": [
+      "isolation",
+      "atomicity",
       "2q-cache",
-      "image-steganography",
-      "better-programmer",
-      "atomicity"
+      "image-steganography"
     ]
   },
   {
@@ -536,9 +560,9 @@
     "published_at": "2020-07-19",
     "similar": [
       "2q-cache",
+      "atomicity",
       "ts-smoothing",
-      "mistaken-beliefs-of-distributed-systems",
-      "persistent-data-structures-introduction"
+      "mistaken-beliefs-of-distributed-systems"
     ]
   },
   {
@@ -696,8 +720,8 @@
     "similar": [
       "python-prompts",
       "constant-folding-python",
-      "i-changed-my-python",
-      "python-iterable-integers"
+      "python-iterable-integers",
+      "i-changed-my-python"
     ]
   },
   {
@@ -787,8 +811,8 @@
     "published_at": "2020-04-12",
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
-      "fork-bomb",
       "fast-and-efficient-pagination-in-mongodb",
+      "fork-bomb",
       "publish-python-package-on-pypi"
     ]
   },
@@ -806,8 +830,8 @@
     "similar": [
       "multiple-mysql-on-same-server-using-docker",
       "consistency",
-      "atomicity",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu"
+      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+      "setting-up-graphite-using-nginx-on-ubuntu"
     ]
   },
   {
@@ -861,8 +885,8 @@
     "similar": [
       "udemy-sql-taxonomy",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "ts-smoothing",
-      "fast-and-efficient-pagination-in-mongodb"
+      "atomicity",
+      "isolation"
     ]
   },
   {
@@ -1007,10 +1031,10 @@
     ],
     "published_at": "2020-01-17",
     "similar": [
-      "atomicity",
       "consistency",
       "ts-smoothing",
-      "2q-cache"
+      "isolation",
+      "atomicity"
     ]
   },
   {
@@ -1099,8 +1123,8 @@
     "similar": [
       "fast-and-efficient-pagination-in-mongodb",
       "bayesian-average",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "publish-python-package-on-pypi"
+      "publish-python-package-on-pypi",
+      "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
   },
   {
