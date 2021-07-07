@@ -2,6 +2,8 @@
     "seats_total": 35,
     "seats_available": 33,
     "seats_confirmed": 2,
+    "taught": "100+",
+    "total_cohorts": "3",
     "payment_page": "https://rzp.io/l/arpit-sept21",
     "worldmap": "https://user-images.githubusercontent.com/4745789/123199916-6c94b000-d4cd-11eb-82eb-4cd2de80ce24.png",
     "what_worked": [
