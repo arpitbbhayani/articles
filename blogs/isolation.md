@@ -2,7 +2,7 @@ After talking about the "A" and the "C" in ACID, let's talk about the "I" in ACI
 
 # What is Isolation?
 
-Isolation is the ability of the database to concurrently process multiple transactions in a way that changes made in one do not another. A simple analogy is how we have to make our data structures and variables thread-safe in a multi-threaded (concurrent) environment.
+Isolation is the ability of the database to concurrently process multiple transactions in a way that changes made in one does not affect the other. A simple analogy is how we have to make our data structures and variables thread-safe in a multi-threaded (concurrent) environment.
 
 And similar to how we use Mutex and Semaphores to protect variables, the database uses locks (shared and exclusive) to protect transactions from one another.
 

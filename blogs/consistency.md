@@ -17,7 +17,7 @@ These rules can be defined on a database using Constraints, [Cascades](https://e
 ![Consistency ACID Database](https://user-images.githubusercontent.com/4745789/124226533-e7417900-db26-11eb-8e88-1c50a9391c44.png)
 
 ### Role of the database engine in ensuring Consistency
-An ACID-compliant database engine compliant has to ensure that the data residing in the database continues to adhere to all the configured rules. Thus, even while executing thousands of concurrent transactions, the database always moves from one consistent state to another.
+An ACID-compliant database engine has to ensure that the data residing in the database continues to adhere to all the configured rules. Thus, even while executing thousands of concurrent transactions, the database always moves from one consistent state to another.
 
 ### What happens when the database discovers a violation?
 Database Engine rollbacks the changes, which ensures that the database is reverted to a previous consistent state.
