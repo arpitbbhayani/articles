@@ -1,6 +1,6 @@
-After discussing the "[A](https://arpitbhayani.me/blogs/atomicity)", the "[C](https://arpitbhayani.me/blogs/consistency)", and the "[I](https://arpitbhayani.me/blogs/isolation)", it is time to understand the "D" of ACID - [Durability](https://en.wikipedia.org/wiki/Durability_(database_systems)).
+After discussing the "[A](https://arpitbhayani.me/blogs/atomicity)", the "[C](https://arpitbhayani.me/blogs/consistency)", and the "[I](https://arpitbhayani.me/blogs/isolation)", it is time to take a look at the "D" of ACID - [Durability](https://en.wikipedia.org/wiki/Durability_(database_systems)).
 
-Durability seems to be a taken-for-granted requirement from a distance, but to be honest, it is the most important one. Let's deep dive and find why it is so important? How do databases achieve durability in the midst of thousands of concurrent transactions? And how to achieve durability in a distributed setting?
+Durability seems to be a taken-for-granted requirement, but to be honest, it is the most important one. Let's deep dive and find why it is so important? How do databases achieve durability in the midst of thousands of concurrent transactions? And how to achieve durability in a distributed setting?
 
 # What is Durability?
 
@@ -22,7 +22,7 @@ This flushed transactional log enables us to reprocess and replay the transactio
 
 If the database is distributed, it supports Distributed Transactions, ensuring durability becomes even more important and trickier to handle. In such a setting, the participating database servers coordinate before the commit using a Two-Phase Commit Protocol.
 
-The distributed computed is converged into a step-by-step process where the coordinator communicates the commit to all the participants, waits for all acknowledgments, and then further communicates the commit or rollback. This entire process is split into two phases - Prepare and Commit.
+The distributed computation is converged into a step-by-step process where the coordinator communicates the commit to all the participants, waits for all acknowledgments, and then further communicates the commit or rollback. This entire process is split into two phases - Prepare and Commit.
 
 # References
  - [ACID - Wikipedia](https://en.wikipedia.org/wiki/ACID)
