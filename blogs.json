@@ -2,7 +2,7 @@
   {
     "id": "durability",
     "title": "\"D\" in ACID - Durability",
-    "description": "Isolation is the ability of the database to concurrently process multiple transactions in a way that changes made in one do not another.",
+    "description": "Durability seems to be a taken-for-granted requirement, but to be honest, it is the most important one. Let's deep dive and find why it is so important? How do databases achieve durability in the midst of thousands of concurrent transactions? And how to achieve durability in a distributed setting?",
     "image": "https://user-images.githubusercontent.com/4745789/126130275-10c1c4cf-483a-42d7-bd78-2f0ff4da4947.png",
     "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
     "yt_video_id": "",
