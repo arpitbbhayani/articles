@@ -1,5 +1,29 @@
 [
   {
+    "id": "durability",
+    "title": "\"D\" in ACID - Durability",
+    "description": "Isolation is the ability of the database to concurrently process multiple transactions in a way that changes made in one do not another.",
+    "image": "https://user-images.githubusercontent.com/4745789/126130275-10c1c4cf-483a-42d7-bd78-2f0ff4da4947.png",
+    "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "databases"
+    ],
+    "tags": [
+      "ACID in databases",
+      "ACID Transactions",
+      "Durability in databases"
+    ],
+    "published_at": "2021-07-19",
+    "similar": [
+      "atomicity",
+      "consistency",
+      "ts-smoothing",
+      "mistaken-beliefs-of-distributed-systems"
+    ]
+  },
+  {
     "id": "isolation",
     "title": "\"I\" in ACID - Isolation",
     "description": "Isolation is the ability of the database to concurrently process multiple transactions in a way that changes made in one do not another.",
