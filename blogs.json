@@ -18,9 +18,9 @@
     "published_at": "2021-07-19",
     "similar": [
       "atomicity",
-      "consistency",
-      "ts-smoothing",
-      "mistaken-beliefs-of-distributed-systems"
+      "isolation",
+      "mistaken-beliefs-of-distributed-systems",
+      "bitcask"
     ]
   },
   {
@@ -42,9 +42,9 @@
     "published_at": "2021-07-05",
     "similar": [
       "atomicity",
+      "durability",
       "consistency",
-      "ts-smoothing",
-      "mistaken-beliefs-of-distributed-systems"
+      "ts-smoothing"
     ]
   },
   {
@@ -68,7 +68,7 @@
       "isolation",
       "atomicity",
       "image-steganography",
-      "mistaken-beliefs-of-distributed-systems"
+      "durability"
     ]
   },
   {
@@ -90,9 +90,9 @@
     "published_at": "2021-06-28",
     "similar": [
       "isolation",
+      "durability",
       "consistency",
-      "ts-smoothing",
-      "mistaken-beliefs-of-distributed-systems"
+      "ts-smoothing"
     ]
   },
   {
@@ -114,9 +114,9 @@
     "published_at": "2021-06-22",
     "similar": [
       "mistaken-beliefs-of-distributed-systems",
+      "durability",
       "isolation",
-      "consistency",
-      "atomicity"
+      "consistency"
     ]
   },
   {
@@ -138,8 +138,8 @@
     "published_at": "2021-06-17",
     "similar": [
       "architectures-in-distributed-systems",
+      "durability",
       "isolation",
-      "consistency",
       "atomicity"
     ]
   },
@@ -353,7 +353,7 @@
       "fsm",
       "idf",
       "mongodb-cursor-skip-is-slow",
-      "jaccard-minhash"
+      "constant-folding-python"
     ]
   },
   {
@@ -490,7 +490,7 @@
       "isolation",
       "atomicity",
       "2q-cache",
-      "image-steganography"
+      "durability"
     ]
   },
   {
@@ -514,8 +514,8 @@
     "similar": [
       "fully-persistent-arrays",
       "consistent-hashing",
-      "isolation-forest",
-      "flajolet-martin"
+      "flajolet-martin",
+      "isolation-forest"
     ]
   },
   {
@@ -583,10 +583,10 @@
     ],
     "published_at": "2020-07-19",
     "similar": [
+      "durability",
       "2q-cache",
-      "atomicity",
       "ts-smoothing",
-      "mistaken-beliefs-of-distributed-systems"
+      "atomicity"
     ]
   },
   {
@@ -819,7 +819,7 @@
       "recursion-visualizer",
       "constant-folding-python",
       "python-iterable-integers",
-      "jaccard-minhash"
+      "python-prompts"
     ]
   },
   {
@@ -936,8 +936,8 @@
     "published_at": "2020-02-21",
     "similar": [
       "python-caches-integers",
-      "i-changed-my-python",
       "constant-folding-python",
+      "i-changed-my-python",
       "python-iterable-integers"
     ]
   },
@@ -963,8 +963,8 @@
     "similar": [
       "morris-counter",
       "jaccard-minhash",
-      "fast-and-efficient-pagination-in-mongodb",
-      "slowsort"
+      "slowsort",
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
