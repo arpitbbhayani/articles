@@ -1,7 +1,7 @@
 {
     "seats_total": 35,
-    "seats_available": 33,
-    "seats_confirmed": 2,
+    "seats_available": 24,
+    "seats_confirmed": 11,
     "taught": "100+",
     "total_cohorts": "3",
     "payment_page": "https://rzp.io/l/arpit-sept21",
