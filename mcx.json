@@ -280,7 +280,7 @@
         },
         {
             "title": "What are the programming pre-requisites?",
-            "body": "You need to have work experience of 6 months at the least and a working knowledge of one language - either Python, Java, Golang, or NodeJS. Most of the exercises and assignments will be language-agnostic, but depending on the problem statement, you may have to pick one over the other."
+            "body": "It would help if you had to have work experience of 6 months, plus a basic understanding of one of the cloud providers like AWS, GCP, plus some basic understanding of high-level system design by watching already available YouTube videos."
         },
         {
             "title": "How is this course different from free videos on YouTube?",
