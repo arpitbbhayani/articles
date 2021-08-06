@@ -1,4 +1,4 @@
-Master-Replica architecture is one the most common high-level architectural pattern prevalent in distributed systems. We can find it in use across databases, brokers, and custom-built storage engines. In this essay, we talk about everything we should know about Master-Replica replication patten.
+Master-Replica architecture is one the most common high-level architectural pattern prevalent in distributed systems. We can find it in use across databases, brokers, and custom-built storage engines. In this essay, we talk about everything we should know about the Master-Replica replication pattern.
 
 A system that adheres to the Master-Replica replication architecture contains multiple nodes and each node, called Replica, holds an identical copy of the entire data. Thus if there are N nodes in the system, there will be N copies of the data.
 
