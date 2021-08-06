@@ -1,7 +1,7 @@
 {
     "seats_total": 35,
-    "seats_available": 22,
-    "seats_confirmed": 13,
+    "seats_available": 12,
+    "seats_confirmed": 23,
     "taught": "100+",
     "total_cohorts": "3",
     "payment_page": "https://rzp.io/l/arpit-sept21",
@@ -87,7 +87,7 @@
     "benefits_cohort": [
         {
             "title": "Small and Focussed Group",
-            "body": "Each cohort will have close to ~25 people ensuring you have a richer learning experience."
+            "body": "Each cohort will have close to ~35 people ensuring you have a richer learning experience."
         },
         {
             "title": "Thrive Together",
