@@ -2,6 +2,8 @@ Master-Replica architecture is one the most common high-level architectural patt
 
 A system that adheres to the Master-Replica replication architecture contains multiple nodes and each node, called Replica, holds an identical copy of the entire data. Thus if there are N nodes in the system, there will be N copies of the data.
 
+![Master-Replica Replication](https://user-images.githubusercontent.com/4745789/128564165-92d3413a-a329-4456-b055-177ed83e989a.png)
+
 # Scaling Reads
 
 With  N nodes capable of serving the data, we easily scale up the reads by a  factor of N. Hence, this pattern is commonly put in place to amplify and scale the reads that the system can handle.
