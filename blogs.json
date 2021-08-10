@@ -1,5 +1,31 @@
 [
   {
+    "id": "replication-strategies",
+    "title": "Replication Strategies",
+    "description": "In this essay, we take a quick yet verbose look into Synchronous, Asynchronous, and Semisynchronous replication strategies and understand their implications.",
+    "image": "https://user-images.githubusercontent.com/4745789/128717208-a0f495c1-ccf6-4039-b936-f1cc29d722f3.png",
+    "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "distributed systems"
+    ],
+    "tags": [
+      "distributed systems",
+      "replication",
+      "synchronous replication",
+      "asynchronous replication",
+      "semi-synchronous replication"
+    ],
+    "published_at": "2021-08-10",
+    "similar": [
+      "persistent-data-structures-introduction",
+      "rum",
+      "architectures-in-distributed-systems",
+      "mistaken-beliefs-of-distributed-systems"
+    ]
+  },
+  {
     "id": "master-replica-replication",
     "title": "Master-Replica Replication",
     "description": "In this essay, we talk about everything we should know about Master-Replica replication pattern.",
@@ -22,7 +48,7 @@
       "persistent-data-structures-introduction",
       "fully-persistent-arrays",
       "rum",
-      "bitcask"
+      "replication-strategies"
     ]
   },
   {
@@ -92,8 +118,8 @@
     "published_at": "2021-07-02",
     "similar": [
       "isolation",
-      "atomicity",
       "image-steganography",
+      "atomicity",
       "durability"
     ]
   },
@@ -166,7 +192,7 @@
       "architectures-in-distributed-systems",
       "durability",
       "isolation",
-      "atomicity"
+      "consistency"
     ]
   },
   {
@@ -215,8 +241,8 @@
     "published_at": "2021-04-27",
     "similar": [
       "the-weird-walrus",
-      "making-http-requests-using-netcat",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "making-http-requests-using-netcat",
       "setting-up-graphite-grafana-using-nginx-on-ubuntu"
     ]
   },
@@ -266,8 +292,8 @@
     "similar": [
       "publish-python-package-on-pypi",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "making-http-requests-using-netcat",
-      "super-long-integers"
+      "super-long-integers",
+      "making-http-requests-using-netcat"
     ]
   },
   {
@@ -308,8 +334,8 @@
     "similar": [
       "rum",
       "master-replica-replication",
-      "bitcask",
-      "fully-persistent-arrays"
+      "replication-strategies",
+      "bitcask"
     ]
   },
   {
@@ -470,7 +496,7 @@
       "idf",
       "jaccard-minhash",
       "slowsort",
-      "mongodb-cursor-skip-is-slow"
+      "rule-30"
     ]
   },
   {
@@ -494,7 +520,7 @@
       "idf",
       "1d-terrain",
       "constant-folding-python",
-      "mongodb-cursor-skip-is-slow"
+      "rule-30"
     ]
   },
   {
@@ -516,7 +542,7 @@
       "isolation",
       "atomicity",
       "2q-cache",
-      "image-steganography"
+      "durability"
     ]
   },
   {
@@ -561,8 +587,8 @@
     ],
     "published_at": "2020-08-02",
     "similar": [
-      "copy-on-write",
       "slowsort",
+      "copy-on-write",
       "rule-30",
       "phi-accrual"
     ]
@@ -732,7 +758,7 @@
     "similar": [
       "persistent-data-structures-introduction",
       "master-replica-replication",
-      "fully-persistent-arrays",
+      "replication-strategies",
       "bitcask"
     ]
   },
@@ -845,7 +871,7 @@
       "recursion-visualizer",
       "constant-folding-python",
       "python-iterable-integers",
-      "python-prompts"
+      "jaccard-minhash"
     ]
   },
   {
@@ -860,8 +886,8 @@
     "tags": [],
     "published_at": "2020-04-12",
     "similar": [
-      "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
+      "efficient-way-to-stop-an-iterating-loop",
       "fork-bomb",
       "publish-python-package-on-pypi"
     ]
@@ -990,7 +1016,7 @@
       "morris-counter",
       "jaccard-minhash",
       "slowsort",
-      "fast-and-efficient-pagination-in-mongodb"
+      "efficient-way-to-stop-an-iterating-loop"
     ]
   },
   {
@@ -1082,8 +1108,8 @@
     "published_at": "2020-01-17",
     "similar": [
       "consistency",
-      "ts-smoothing",
       "isolation",
+      "ts-smoothing",
       "atomicity"
     ]
   },
@@ -1324,8 +1350,8 @@
     "similar": [
       "sliding-window-ratelimiter",
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "udemy-sql-taxonomy",
-      "setting-up-graphite-using-nginx-on-ubuntu"
+      "setting-up-graphite-using-nginx-on-ubuntu",
+      "udemy-sql-taxonomy"
     ]
   },
   {
@@ -1345,8 +1371,8 @@
     ],
     "published_at": "2015-12-14",
     "similar": [
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "multiple-mysql-on-same-server-using-docker",
+      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "sliding-window-ratelimiter",
       "making-http-requests-using-netcat"
     ]
@@ -1370,8 +1396,8 @@
     "published_at": "2015-12-14",
     "similar": [
       "multiple-mysql-on-same-server-using-docker",
-      "setting-up-graphite-using-nginx-on-ubuntu",
       "making-http-requests-using-netcat",
+      "setting-up-graphite-using-nginx-on-ubuntu",
       "sliding-window-ratelimiter"
     ]
   },
