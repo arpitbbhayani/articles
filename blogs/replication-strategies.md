@@ -37,6 +37,7 @@ Asynchronous Replication is the default strategy for most data stores because it
 In Semi-synchronous Replication, which sits right between the Synchronous and Asynchronous Replication strategies, once the Master node updates its own copy of the data, it synchronously replicates the data to a subset of Replicas and asynchronously to others.
 
 ![semi-synchronous replication](https://user-images.githubusercontent.com/4745789/128833772-d0bbae7d-5e00-4771-90e5-996326affb60.png)
+
 The Semi-synchronous Replication thus addresses the durability of data, in case of Master crash, at the cost of degrading the Client's throughput by a marginal factor.
 
 Most of the distributed data stores available have configurable replication strategies. Depending on the problem at hand and the criticality of the data, we can choose one over the other.
