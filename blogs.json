@@ -1,5 +1,31 @@
 [
   {
+    "id": "replication-formats",
+    "title": "Replication FOrmats",
+    "description": "When we are employing a Master-Replica pattern to improve availability, throughput, and fault-tolerance, the big question that pops up is how the writes happening on the Master propagates to the  Replica. In this essay, we will talk about exactly this and find out about Replication Formats.",
+    "image": "https://user-images.githubusercontent.com/4745789/129456630-73db5669-5fb9-47a6-bd13-72fd0c5a2e54.png",
+    "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "distributed systems"
+    ],
+    "tags": [
+      "distributed systems",
+      "replication",
+      "replication formats",
+      "row-based replication",
+      "statement-based replication"
+    ],
+    "published_at": "2021-08-15",
+    "similar": [
+      "rum",
+      "persistent-data-structures-introduction",
+      "replication-strategies",
+      "master-replica-replication"
+    ]
+  },
+  {
     "id": "replication-strategies",
     "title": "Replication Strategies",
     "description": "In this essay, we take a quick yet verbose look into Synchronous, Asynchronous, and Semisynchronous replication strategies and understand their implications.",
@@ -19,10 +45,10 @@
     ],
     "published_at": "2021-08-10",
     "similar": [
-      "persistent-data-structures-introduction",
+      "replication-formats",
       "rum",
-      "architectures-in-distributed-systems",
-      "mistaken-beliefs-of-distributed-systems"
+      "persistent-data-structures-introduction",
+      "architectures-in-distributed-systems"
     ]
   },
   {
@@ -45,10 +71,10 @@
     ],
     "published_at": "2021-08-07",
     "similar": [
+      "replication-formats",
       "persistent-data-structures-introduction",
-      "fully-persistent-arrays",
       "rum",
-      "replication-strategies"
+      "fully-persistent-arrays"
     ]
   },
   {
@@ -71,8 +97,8 @@
     "similar": [
       "atomicity",
       "isolation",
-      "mistaken-beliefs-of-distributed-systems",
-      "bitcask"
+      "bitcask",
+      "mistaken-beliefs-of-distributed-systems"
     ]
   },
   {
@@ -243,7 +269,7 @@
       "the-weird-walrus",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "making-http-requests-using-netcat",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu"
+      "multiple-mysql-on-same-server-using-docker"
     ]
   },
   {
@@ -332,9 +358,9 @@
     ],
     "published_at": "2021-02-07",
     "similar": [
+      "replication-formats",
       "rum",
       "master-replica-replication",
-      "replication-strategies",
       "bitcask"
     ]
   },
@@ -588,8 +614,8 @@
     "published_at": "2020-08-02",
     "similar": [
       "slowsort",
-      "copy-on-write",
       "rule-30",
+      "copy-on-write",
       "phi-accrual"
     ]
   },
@@ -615,7 +641,7 @@
       "morris-counter",
       "flajolet-martin",
       "1d-terrain",
-      "copy-on-write"
+      "isolation-forest"
     ]
   },
   {
@@ -638,7 +664,7 @@
       "durability",
       "2q-cache",
       "atomicity",
-      "ts-smoothing"
+      "isolation"
     ]
   },
   {
@@ -720,8 +746,8 @@
     "tags": [],
     "published_at": "2020-06-14",
     "similar": [
-      "python-prompts",
       "python-caches-integers",
+      "python-prompts",
       "constant-folding-python",
       "i-changed-my-python"
     ]
@@ -756,10 +782,10 @@
     "tags": [],
     "published_at": "2020-05-31",
     "similar": [
+      "replication-formats",
       "persistent-data-structures-introduction",
       "master-replica-replication",
-      "replication-strategies",
-      "bitcask"
+      "replication-strategies"
     ]
   },
   {
@@ -775,10 +801,10 @@
     "tags": [],
     "published_at": "2020-05-24",
     "similar": [
-      "master-replica-replication",
       "fully-persistent-arrays",
+      "master-replica-replication",
       "lfu",
-      "persistent-data-structures-introduction"
+      "replication-formats"
     ]
   },
   {
@@ -853,7 +879,7 @@
       "2q-cache",
       "ts-smoothing",
       "bitcask",
-      "image-steganography"
+      "isolation"
     ]
   },
   {
@@ -886,8 +912,8 @@
     "tags": [],
     "published_at": "2020-04-12",
     "similar": [
-      "fast-and-efficient-pagination-in-mongodb",
       "efficient-way-to-stop-an-iterating-loop",
+      "fast-and-efficient-pagination-in-mongodb",
       "fork-bomb",
       "publish-python-package-on-pypi"
     ]
@@ -988,8 +1014,8 @@
     "published_at": "2020-02-21",
     "similar": [
       "python-caches-integers",
-      "constant-folding-python",
       "i-changed-my-python",
+      "constant-folding-python",
       "python-iterable-integers"
     ]
   },
@@ -1016,7 +1042,7 @@
       "morris-counter",
       "jaccard-minhash",
       "slowsort",
-      "efficient-way-to-stop-an-iterating-loop"
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -1327,7 +1353,7 @@
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "the-weird-walrus",
       "publish-python-package-on-pypi",
-      "setting-up-graphite-using-nginx-on-ubuntu"
+      "sliding-window-ratelimiter"
     ]
   },
   {
@@ -1371,8 +1397,8 @@
     ],
     "published_at": "2015-12-14",
     "similar": [
-      "multiple-mysql-on-same-server-using-docker",
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+      "multiple-mysql-on-same-server-using-docker",
       "sliding-window-ratelimiter",
       "making-http-requests-using-netcat"
     ]
@@ -1397,8 +1423,8 @@
     "similar": [
       "multiple-mysql-on-same-server-using-docker",
       "making-http-requests-using-netcat",
-      "setting-up-graphite-using-nginx-on-ubuntu",
-      "sliding-window-ratelimiter"
+      "sliding-window-ratelimiter",
+      "setting-up-graphite-using-nginx-on-ubuntu"
     ]
   },
   {
