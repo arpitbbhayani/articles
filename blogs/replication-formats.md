@@ -62,6 +62,6 @@ Hence, one operation on the Master is fanned out as series of updates on the dat
 The major advantage of the Row-based format is that all the changes can be safely and predictably applied on the Replica. This approach is safe even with the non-deterministic operations because what gets written is the computed value.
 
 ### Disadvantages
-When the Master node completes the operation, it takes the lock on the Replication Log file and then records the events. Since the number of events recorded in the log file will be the number of data items changed, the lock taken by the Master node will be longer, chocking the throughput.
+When the Master node completes the operation, it takes the lock on the Replication Log file and then records the events. Since the number of events recorded in the log file will be the number of data items changed, the lock taken by the Master node will be longer, choking the throughput.
 
 Another obvious disadvantage in this approach is fan-out. If an operation changes 5000 data items, it will result in 5000 events in the Log file, and if such operations are frequent, this will make Logfile take a lot of storage space.
