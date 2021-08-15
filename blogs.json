@@ -1,7 +1,7 @@
 [
   {
     "id": "replication-formats",
-    "title": "Replication FOrmats",
+    "title": "Replication Formats",
     "description": "When we are employing a Master-Replica pattern to improve availability, throughput, and fault-tolerance, the big question that pops up is how the writes happening on the Master propagates to the  Replica. In this essay, we will talk about exactly this and find out about Replication Formats.",
     "image": "https://user-images.githubusercontent.com/4745789/129456630-73db5669-5fb9-47a6-bd13-72fd0c5a2e54.png",
     "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
