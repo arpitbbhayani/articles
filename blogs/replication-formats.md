@@ -35,7 +35,7 @@ The biggest and the most significant disadvantage of the Statement-based format 
 
 Since the Replica node, apart from replicating from the Master, is also actively handling requests, some locks might be taken on some of its entities by the executing queries. When a conflicting query is fired from the replication thread, it could result in unpredictable deadlock or stalls.
 
-## Row-based
+## Row-based Format
 In Row-based format, the Master node logs the updates on the individual data item instead of the operation. So the entry made in the Log file would indicate how the data has changed on the Master. Hence, when the Replica reads this log, it updates its copy of the data by applying the changes on its data items. This way, the operation on the Master node happens on the Replica, and the Replica nodes remain in sync with the Master.
 
 Say the Client fires an operation on the Master to bulk update all the `5` tasks of a user to be marked as `done`. The operation fired by the Client on the Master node would look something like this.
