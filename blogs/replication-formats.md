@@ -25,12 +25,12 @@ When the write operation is completed on the Master, this exact operation is rec
 
 ![statement based replication](https://user-images.githubusercontent.com/4745789/129456634-be745df6-541b-4e75-a1e3-4f4f625cc45e.png)
 
-## Advantages
+### Advantages
 The events recorded in the Replication Log are the actual operations that happen on the Master. Hence, the log files take up the bare minimum storage space required. It will not matter if the operation affects one row or thousand; it will be recorded as one event in the Log file.
 
 Another great benefit of this format is that it can be used to audit the operations on the database because we are recording the operations verbatim in the Log file.
 
-## Disadvantages
+### Disadvantages
 The biggest and the most significant disadvantage of the Statement-based format show up when the non-deterministic operations are fired on the Master. The operations such as `UUID()`, `RAND()`, `NOW()`, etc, generate value depending on factors that are not under our control. When these operations fire on the Replica, they might generate values different from the value they yielded on the Master, leading to data corruption.
 
 Since the Replica node, apart from replicating from the Master, is also actively handling requests, some locks might be taken on some of its entities by the executing queries. When a conflicting query is fired from the replication thread, it could result in unpredictable deadlock or stalls.
@@ -58,10 +58,10 @@ Hence, one operation on the Master is fanned out as series of updates on the dat
 
 ![row based replication](https://user-images.githubusercontent.com/4745789/129456632-ad7b67ae-7ff0-4d35-97b0-0ea6d6a3bd87.png)
 
-## Advantages
+### Advantages
 The major advantage of the Row-based format is that all the changes can be safely and predictably applied on the Replica. This approach is safe even with the non-deterministic operations because what gets written is the computed value.
 
-## Disadvantages
+### Disadvantages
 When the Master node completes the operation, it takes the lock on the Replication Log file and then records the events. Since the number of events recorded in the log file will be the number of data items changed, the lock taken by the Master node will be longer, chocking the throughput.
 
 Another obvious disadvantage in this approach is fan-out. If an operation changes 5000 data items, it will result in 5000 events in the Log file, and if such operations are frequent, this will make Logfile take a lot of storage space.
