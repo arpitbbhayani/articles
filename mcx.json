@@ -220,14 +220,14 @@
             ]
         },
         {
-            "section": "Information Retrieval Systems",
+            "section": "IR Systems and Adhoc Designs",
             "title": "Week 7",
-            "body": "This week is about understanding the internals of Information Retrieval Systems.",
+            "body": "This week is about understanding Information Retrieval Systems and discuss some interesting adhoc systems.",
             "topics": [
                 "Designing Search Engines",
-                "Designing Recent and Related Searches",
-                "Designing Query Correction",
                 "Designing Realtime Recommendation System",
+                "Distributed Task Scheduler",
+                "Designing Message Brokers like SQS",
                 "Open QnA and Doubt Resolution"
             ]
         },
