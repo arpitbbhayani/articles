@@ -4,14 +4,14 @@ A distributed data store adds Replica to scale their reads and improve availabil
 
 In the [Master-Replica setup](https://arpitbhayani.me/blogs/master-replica-replication), Replica is a node that follows the Master. The updates happening on the Master are communicated to the Replica through the process called Replication. The Master publishes the updates on the Replication Log, which are then pulled by the Replica and applied on its own copy of data.
 
-The Replica nodes are read-only in the Master-Replica setup, making this architecture pattern very suitable to scale reads and improve availability. The most typical steps taken when a new Replica is set up are
+The Replica nodes are read-only in the Master-Replica setup, making this architecture pattern suitable for scale reads and improving availability. The most typical steps taken when a new Replica is set up are
 
 1.  Take a point-in-time **snapshot** of the Master data.
 2.  **Spin up** a Replica node with this snapshot.
 3.  **Start** the process on the Replica and configure it to follow the Master.
 4.  The process of **Replication** begins, and the Replica eventually **catches up**.
 
-Now that we have talked about the general process of setting up a new Replica let's dissect the steps and answer really quirky questions about it.
+Now that we have talked about the general process of setting up a new Replica, let's dissect the steps and answer really quirky questions about it.
 
 ## Replica keeping track of Replication
 
@@ -29,7 +29,7 @@ Now that we know how a Replica keeps track of the replication, we answer an inte
 
 The answer to this situation is simple; it is not mandatory to take a point-in-time snapshot of Master and create Replica out of it. We can also do it on a blank data node with no hiccups at all. The only caveat here is that when we set up Replication on a blank data node, it will have to pull in all the update operations on the Master node and apply them to its own copy of the data.
 
-When a Replica needs to pull in literally every single update operation and apply, it will take a far longer time to catch up with the Master. Replica will start with an extremely high Replica lag, but eventually, this lag will reduce. Nonetheless, it will take a lot of time to catch the Master, rendering this approach unsuitable.
+When a Replica needs to pull in literally every single update operation and apply, it will take a far longer time to catch up with the Master. The Replica will start with an extremely high Replica lag, but eventually, this lag will reduce. Nonetheless, it will take a lot of time to catch the Master, rendering this approach unsuitable.
 
 When the point-in-time snapshot is taken, the sequence number of the Master, at that instant, is also captured. This way, when the Replication is set up on this copy of data, it will have far fewer operations to replicate before it catches up with the Master. Hence, instead of creating Replica from scratch, setting it up from a recent point-in-time snapshot of Master makes the Replica quickly catch up with the Master.
 
@@ -43,7 +43,7 @@ The entire Replication process is run by a separate Replication thread that pull
 
 If the progress of Replication depends on the CPU cycles that the Replication thread gets, does this mean it is possible for a Replica never to catch the Master?
 
-Yes. It is very much possible for a replica to never catch up with the Master. Since the Replica typically also serves the live read traffic, if some queries are CPU intensive or takes massive locks on the tables, there are chances that the Replication thread might get a minimal CPU to continue to replication.
+Yes. It is very much possible for a replica to never catch up with the Master. Since the Replica typically also serves the live read traffic, if some queries are CPU intensive or take massive locks on the tables, there are chances that the Replication thread might get a minimal CPU to continue to replication.
 
 Another popular reason a Replica might never catch up with the Master is when the Master is overwhelmed with many write operations. The influx of write is more than what Replica can process, leading to an ever-increasing Replica lag.
 
