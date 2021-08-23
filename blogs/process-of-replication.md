@@ -1,10 +1,10 @@
-A distributed data store adds Replica to scale their reads and improve availability. This is the most common and logical way to scale the throughput of a system without massively changing the architecture. In the previous essays, we talked about [Master-Replica Replication](https://arpitbhayani.me/blogs/master-replica-replication), different types of [Replication Strategies](https://arpitbhayani.me/blogs/replication-strategies), and [Replication Formats](https://arpitbhayani.me/blogs/replication-formats). In this one, we take a look into how these Replicas are set up, and understand some quirky nuances.
+A distributed data store adds Replica to scale their reads and improve availability. This is the most common and logical way to scale the throughput of a system without massively changing the architecture. In the previous essays, we talked about [Master-Replica Replication](https://arpitbhayani.me/blogs/master-replica-replication), different [Replication Strategies](https://arpitbhayani.me/blogs/replication-strategies), and [Replication Formats](https://arpitbhayani.me/blogs/replication-formats). In this one, we take a look into how these Replicas are set up and understand some quirky nuances.
 
 # Setting up a Replica
-In [Master-Replica setup](https://arpitbhayani.me/blogs/master-replica-replication), Replica is a node that follows the Master. The updates happening on the Master are communicated to the Replica through the process called Replication. The Master publishes the updates on the Replication Log, which are then pulled by the Replica and applied on its own copy of data.
+In the [Master-Replica setup](https://arpitbhayani.me/blogs/master-replica-replication), Replica is a node that follows the Master. The updates happening on the Master are communicated to the Replica through the process called Replication. The Master publishes the updates on the Replication Log, which are then pulled by the Replica and applied on its own copy of data.
 
 In the Master-Replica setup, the Replica nodes are read-only, making this architecture pattern very suitable to scale reads and improve availability. The most typical steps taken when a new Replica is set up are
- 1. Take a point in time **snapshot** of the Master data.
+ 1. Take a point-in-time **snapshot** of the Master data.
  2. **Spin up** a Replica node with this snapshot.
  3. **Start** the process on the Replica and configure it to follow the Master.
  4. The process of **Replication** begins, and the Replica eventually **catches up**.
