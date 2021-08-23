@@ -1,5 +1,31 @@
 [
   {
+    "id": "new-replica",
+    "title": "The New Replica",
+    "description": "In this one, we take a look into how these Replicas are set up and understand some quirky nuances about Replication.",
+    "image": "https://user-images.githubusercontent.com/4745789/130425162-e02fcffe-3c61-4e90-98b6-6c7a25cb884e.png",
+    "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "distributed systems"
+    ],
+    "tags": [
+      "distributed systems",
+      "replication",
+      "replication formats",
+      "row-based replication",
+      "statement-based replication"
+    ],
+    "published_at": "2021-08-23",
+    "similar": [
+      "rum",
+      "persistent-data-structures-introduction",
+      "replication-strategies",
+      "master-replica-replication"
+    ]
+  },
+  {
     "id": "replication-formats",
     "title": "Replication Formats",
     "description": "When we are employing a Master-Replica pattern to improve availability, throughput, and fault-tolerance, the big question that pops up is how the writes happening on the Master propagates to the  Replica. In this essay, we will talk about exactly this and find out about Replication Formats.",
