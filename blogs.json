@@ -19,10 +19,10 @@
     ],
     "published_at": "2021-08-23",
     "similar": [
-      "rum",
-      "persistent-data-structures-introduction",
       "replication-strategies",
-      "master-replica-replication"
+      "replication-formats",
+      "rum",
+      "architectures-in-distributed-systems"
     ]
   },
   {
@@ -46,7 +46,7 @@
     "published_at": "2021-08-15",
     "similar": [
       "rum",
-      "persistent-data-structures-introduction",
+      "new-replica",
       "replication-strategies",
       "master-replica-replication"
     ]
@@ -71,10 +71,10 @@
     ],
     "published_at": "2021-08-10",
     "similar": [
+      "new-replica",
       "replication-formats",
       "rum",
-      "persistent-data-structures-introduction",
-      "architectures-in-distributed-systems"
+      "persistent-data-structures-introduction"
     ]
   },
   {
@@ -97,8 +97,8 @@
     ],
     "published_at": "2021-08-07",
     "similar": [
-      "replication-formats",
       "persistent-data-structures-introduction",
+      "replication-formats",
       "rum",
       "fully-persistent-arrays"
     ]
@@ -124,7 +124,7 @@
       "atomicity",
       "isolation",
       "bitcask",
-      "mistaken-beliefs-of-distributed-systems"
+      "consistency"
     ]
   },
   {
@@ -219,8 +219,8 @@
     "similar": [
       "mistaken-beliefs-of-distributed-systems",
       "durability",
-      "isolation",
-      "consistency"
+      "consistency",
+      "isolation"
     ]
   },
   {
@@ -243,8 +243,8 @@
     "similar": [
       "architectures-in-distributed-systems",
       "durability",
-      "isolation",
-      "consistency"
+      "consistency",
+      "isolation"
     ]
   },
   {
@@ -384,9 +384,9 @@
     ],
     "published_at": "2021-02-07",
     "similar": [
-      "replication-formats",
-      "rum",
       "master-replica-replication",
+      "rum",
+      "replication-formats",
       "bitcask"
     ]
   },
@@ -617,9 +617,9 @@
     "published_at": "2020-08-23",
     "similar": [
       "fully-persistent-arrays",
-      "master-replica-replication",
       "consistent-hashing",
-      "flajolet-martin"
+      "flajolet-martin",
+      "isolation-forest"
     ]
   },
   {
@@ -664,8 +664,8 @@
     ],
     "published_at": "2020-07-26",
     "similar": [
-      "morris-counter",
       "flajolet-martin",
+      "morris-counter",
       "1d-terrain",
       "isolation-forest"
     ]
@@ -755,8 +755,8 @@
     "similar": [
       "decipher-repeated-key-xor",
       "bayesian-average",
-      "1d-terrain",
-      "isolation-forest"
+      "isolation-forest",
+      "1d-terrain"
     ]
   },
   {
@@ -811,7 +811,7 @@
       "replication-formats",
       "persistent-data-structures-introduction",
       "master-replica-replication",
-      "replication-strategies"
+      "new-replica"
     ]
   },
   {
@@ -828,9 +828,9 @@
     "published_at": "2020-05-24",
     "similar": [
       "fully-persistent-arrays",
-      "master-replica-replication",
       "lfu",
-      "replication-formats"
+      "master-replica-replication",
+      "persistent-data-structures-introduction"
     ]
   },
   {
@@ -885,8 +885,8 @@
     "similar": [
       "phi-accrual",
       "morris-counter",
-      "slowsort",
-      "2q-cache"
+      "2q-cache",
+      "bitcask"
     ]
   },
   {
@@ -938,8 +938,8 @@
     "tags": [],
     "published_at": "2020-04-12",
     "similar": [
-      "efficient-way-to-stop-an-iterating-loop",
       "fast-and-efficient-pagination-in-mongodb",
+      "efficient-way-to-stop-an-iterating-loop",
       "fork-bomb",
       "publish-python-package-on-pypi"
     ]
@@ -1014,7 +1014,7 @@
       "udemy-sql-taxonomy",
       "benchmark-and-compare-pagination-approach-in-mongodb",
       "atomicity",
-      "isolation"
+      "ts-smoothing"
     ]
   },
   {
@@ -1067,8 +1067,8 @@
     "similar": [
       "morris-counter",
       "jaccard-minhash",
-      "slowsort",
-      "fast-and-efficient-pagination-in-mongodb"
+      "fast-and-efficient-pagination-in-mongodb",
+      "slowsort"
     ]
   },
   {
