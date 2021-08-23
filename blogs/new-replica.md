@@ -11,6 +11,8 @@ The Replica nodes are read-only in the Master-Replica setup, making this archite
 3.  **Start** the process on the Replica and configure it to follow the Master.
 4.  The process of **Replication** begins, and the Replica eventually **catches up**.
 
+![The new Replica](https://user-images.githubusercontent.com/4745789/130204028-db759df1-2ea9-4aa5-98f4-6cb3e2b16813.png)
+
 Now that we have talked about the general process of setting up a new Replica, let's dissect the steps and answer really quirky questions about it.
 
 ## Replica keeping track of Replication
@@ -20,6 +22,8 @@ Once the Replication is set up between the Replica and the Master, one of the ke
 The idea to achieve this is simple. Every update on the Master is associated with a monotonically increasing **sequence number**. Both the Master and the Replica keep track of this sequence number, and it denotes the sequence number of the last operation executed on their respective copy of the data.
 
 Since the Master generates the sequence number, it holds the latest one. The Replica could be a couple of sequence numbers behind, as it needs to pull the updates from the Master, apply the updates, and then update the sequence number. Thus, by tracking the sequence number, the Replica keeps track of the Replication, order of the updates, and understands the Replication lag.
+
+![Sequence Number: Replica](https://user-images.githubusercontent.com/4745789/130345784-8892f5f4-7ed1-4588-bbac-08ce39b7c752.png)
 
 Since the Replica persists the sequence number on disk, even if the server reboots, it can continue to resume the Replication since the reboot.
 
