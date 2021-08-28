@@ -207,7 +207,8 @@
     "gif": "https://media.giphy.com/media/3orieKSJONEWV51x3q/giphy.gif",
     "yt_video_id": "",
     "categories": [
-      "system design"
+      "system design",
+      "distributed systems"
     ],
     "tags": [
       "distributed systems",
@@ -231,7 +232,8 @@
     "gif": "https://media.giphy.com/media/SqmkZ5IdwzTP2/giphy.gif",
     "yt_video_id": "",
     "categories": [
-      "system design"
+      "system design",
+      "distributed systems"
     ],
     "tags": [
       "distributed systems",
