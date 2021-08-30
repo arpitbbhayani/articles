@@ -400,6 +400,16 @@
             "url": "https://www.makemytrip.com/"
         },
         {
+            "name": "Dream11",
+            "logo": "https://user-images.githubusercontent.com/4745789/131296736-5735286e-811f-4d3f-a95c-9280bd063b93.png",
+            "url": "https://www.dream11.com/"
+        },
+        {
+            "name": "Unacademy",
+            "logo": "https://user-images.githubusercontent.com/4745789/131297119-59302b5d-2375-428e-ad80-9230a06a9b67.png",
+            "url": "https://www.unacademy.com/"
+        },
+        {
             "name": "BrowserStack",
             "logo": "https://user-images.githubusercontent.com/4745789/115350976-5f103080-a1d3-11eb-812d-99568d38e3e3.png",
             "url": "https://www.browserstack.com/"
