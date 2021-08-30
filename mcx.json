@@ -350,14 +350,14 @@
             "url": "https://www.tesla.com"
         },
         {
-            "name": "Flipkart",
-            "logo": "https://user-images.githubusercontent.com/4745789/115350183-684ccd80-a1d2-11eb-9891-620ff043bcfa.png",
-            "url": "https://www.flipkart.com"
+            "name": "Google",
+            "logo": "https://user-images.githubusercontent.com/4745789/131295363-04dc4fdf-4674-49f7-a453-90a42ec581f9.png",
+            "url": "https://www.google.com"
         },
         {
-            "name": "OYO",
-            "logo": "https://user-images.githubusercontent.com/4745789/115350331-992d0280-a1d2-11eb-8a18-aea32a3b0bb6.png",
-            "url": "https://www.oyo.com/"
+            "name": "Microsoft",
+            "logo": "https://user-images.githubusercontent.com/4745789/131295468-f8f52c8a-0bc1-4765-baa6-009490eb808e.png",
+            "url": "https://www.microsoft.com"
         },
         {
             "name": "Amazon",
@@ -365,14 +365,14 @@
             "url": "https://www.amazon.com/"
         },
         {
-            "name": "BrowserStack",
-            "logo": "https://user-images.githubusercontent.com/4745789/115350976-5f103080-a1d3-11eb-812d-99568d38e3e3.png",
-            "url": "https://www.browserstack.com/"
+            "name": "GitHub",
+            "logo": "https://user-images.githubusercontent.com/4745789/131295948-fe68928f-69de-476e-a1e5-bd0843d91e8c.png",
+            "url": "https://www.github.com/"
         },
         {
-            "name": "Yelp",
-            "logo": "https://user-images.githubusercontent.com/4745789/115351392-d47c0100-a1d3-11eb-8418-ae0a4e344d9f.png",
-            "url": "https://www.yelp.com/"
+            "name": "Flipkart",
+            "logo": "https://user-images.githubusercontent.com/4745789/115350183-684ccd80-a1d2-11eb-9891-620ff043bcfa.png",
+            "url": "https://www.flipkart.com"
         },
         {
             "name": "PayTM",
@@ -380,29 +380,44 @@
             "url": "https://www.paytm.com/"
         },
         {
+            "name": "OYO",
+            "logo": "https://user-images.githubusercontent.com/4745789/115350331-992d0280-a1d2-11eb-8a18-aea32a3b0bb6.png",
+            "url": "https://www.oyo.com/"
+        },
+        {
+            "name": "PayPal",
+            "logo": "https://user-images.githubusercontent.com/4745789/131295708-22a60122-645f-41bc-a810-265a8b4a2bd0.png",
+            "url": "https://www.paypal.com/"
+        },
+        {
+            "name": "Grab",
+            "logo": "https://user-images.githubusercontent.com/4745789/131296241-97d9a0b9-e4c2-477e-8cbd-badb9289a5b5.png",
+            "url": "https://www.grab.com/"
+        },
+        {
+            "name": "MakeMyTrip",
+            "logo": "https://user-images.githubusercontent.com/4745789/131296448-35521312-94d1-43f7-9648-331cac056ad1.png",
+            "url": "https://www.makemytrip.com/"
+        },
+        {
+            "name": "BrowserStack",
+            "logo": "https://user-images.githubusercontent.com/4745789/115350976-5f103080-a1d3-11eb-812d-99568d38e3e3.png",
+            "url": "https://www.browserstack.com/"
+        },
+        {
             "name": "Practo",
             "logo": "https://user-images.githubusercontent.com/4745789/123136405-8358e980-d470-11eb-8889-7d34e1c9e11e.png",
             "url": "https://www.yelp.com/"
         },
         {
-            "name": "Rippling",
-            "logo": "https://user-images.githubusercontent.com/4745789/123137306-738dd500-d471-11eb-8676-feb5726e5ecc.png",
+            "name": "Yelp",
+            "logo": "https://user-images.githubusercontent.com/4745789/115351392-d47c0100-a1d3-11eb-8418-ae0a4e344d9f.png",
             "url": "https://www.yelp.com/"
         },
         {
-            "name": "Nutanix",
-            "logo": "https://user-images.githubusercontent.com/4745789/123136596-bbf8c300-d470-11eb-9f92-c0cdcc04b559.png",
-            "url": "https://www.yelp.com/"
-        },
-        {
-            "name": "Zynga",
-            "logo": "https://user-images.githubusercontent.com/4745789/123137481-a2a44680-d471-11eb-9a05-096fe56ceb85.png",
-            "url": "https://www.yelp.com/"
-        },
-        {
-            "name": "Cisco",
-            "logo": "https://user-images.githubusercontent.com/4745789/123138316-805ef880-d472-11eb-9242-6554213d2b43.png",
-            "url": "https://www.yelp.com/"
+            "name": "Adobe",
+            "logo": "https://user-images.githubusercontent.com/4745789/131296081-d5f560a1-a97f-4d40-8afb-b9886aa1ae58.jpg",
+            "url": "https://www.adobe.com/"
         }
     ]
 }
