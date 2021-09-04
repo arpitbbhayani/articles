@@ -163,6 +163,7 @@
             "body": "The first week is about learning the macro and micro components of System Design.",
             "topics": [
                 "How to approach System Design",
+                "Designing Online/Offline indicator",
                 "Designing a Blog",
                 "Scaling and Caching strategy for Blog",
                 "Delegation and Async Processing",
