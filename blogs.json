@@ -1,5 +1,30 @@
 [
   {
+    "id": "handling-outages-master-replica",
+    "title": "Handling outages in a Master-Replica setup",
+    "description": "This essay talks about the worse - nodes going down - impact,  recovery, and real-world practices.",
+    "image": "https://user-images.githubusercontent.com/4745789/132286179-14358b33-95cf-4d48-9419-5eaa727ffd56.png",
+    "gif": "https://media.giphy.com/media/xT5LMskx2CiLPpAkk8/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "distributed systems"
+    ],
+    "tags": [
+      "distributed systems",
+      "handling outage master-replica",
+      "master crash",
+      "replica crash"
+    ],
+    "published_at": "2021-09-07",
+    "similar": [
+      "replication-strategies",
+      "replication-formats",
+      "rum",
+      "architectures-in-distributed-systems"
+    ]
+  },
+  {
     "id": "new-replica",
     "title": "The New Replica",
     "description": "In this one, we take a look into how these Replicas are set up and understand some quirky nuances about Replication.",
