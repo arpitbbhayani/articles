@@ -1,7 +1,7 @@
 {
     "seats_total": 45,
-    "seats_available": 1,
-    "seats_confirmed": 44,
+    "seats_available": 44,
+    "seats_confirmed": 1,
     "total_taught": "160+",
     "total_cohorts": "4",
     "total_countries": "6",
