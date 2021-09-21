@@ -17,9 +17,9 @@
     "published_at": "2021-09-22",
     "similar": [
       "new-replica",
+      "handling-outages-master-replica",
       "replication-strategies",
-      "replication-formats",
-      "rum"
+      "architectures-in-distributed-systems"
     ]
   },
   {
@@ -41,10 +41,10 @@
     ],
     "published_at": "2021-09-07",
     "similar": [
-      "new-replica",
       "replication-strategies",
       "replication-formats",
-      "rum"
+      "new-replica",
+      "read-your-write-consistency"
     ]
   },
   {
@@ -67,10 +67,10 @@
     ],
     "published_at": "2021-08-23",
     "similar": [
-      "handling-outages-master-replica",
       "replication-strategies",
-      "replication-formats",
-      "rum"
+      "handling-outages-master-replica",
+      "read-your-write-consistency",
+      "replication-formats"
     ]
   },
   {
@@ -94,8 +94,8 @@
     "published_at": "2021-08-15",
     "similar": [
       "handling-outages-master-replica",
-      "rum",
       "replication-strategies",
+      "rum",
       "new-replica"
     ]
   },
@@ -122,7 +122,7 @@
       "handling-outages-master-replica",
       "new-replica",
       "replication-formats",
-      "rum"
+      "read-your-write-consistency"
     ]
   },
   {
@@ -267,9 +267,9 @@
     "published_at": "2021-06-22",
     "similar": [
       "mistaken-beliefs-of-distributed-systems",
-      "durability",
+      "read-your-write-consistency",
       "handling-outages-master-replica",
-      "consistency"
+      "durability"
     ]
   },
   {
@@ -321,7 +321,7 @@
       "publish-python-package-on-pypi",
       "bayesian-average",
       "fast-and-efficient-pagination-in-mongodb",
-      "python-prompts"
+      "mongodb-cursor-skip-is-slow"
     ]
   },
   {
@@ -344,8 +344,8 @@
     "similar": [
       "the-weird-walrus",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "making-http-requests-using-netcat",
-      "super-long-integers"
+      "super-long-integers",
+      "making-http-requests-using-netcat"
     ]
   },
   {
@@ -414,10 +414,10 @@
     ],
     "published_at": "2021-02-14",
     "similar": [
-      "persistent-data-structures-introduction",
       "phi-accrual",
+      "persistent-data-structures-introduction",
       "lfu",
-      "master-replica-replication"
+      "copy-on-write"
     ]
   },
   {
@@ -434,10 +434,10 @@
     ],
     "published_at": "2021-02-07",
     "similar": [
+      "bitcask",
       "rum",
       "master-replica-replication",
-      "bitcask",
-      "handling-outages-master-replica"
+      "fully-persistent-arrays"
     ]
   },
   {
@@ -506,8 +506,8 @@
     "similar": [
       "fsm",
       "idf",
-      "mongodb-cursor-skip-is-slow",
-      "constant-folding-python"
+      "constant-folding-python",
+      "mongodb-cursor-skip-is-slow"
     ]
   },
   {
@@ -551,8 +551,8 @@
     "similar": [
       "mysql-cache",
       "ts-smoothing",
-      "bitcask",
-      "isolation"
+      "copy-on-write",
+      "atomicity"
     ]
   },
   {
@@ -598,7 +598,7 @@
       "idf",
       "jaccard-minhash",
       "slowsort",
-      "rule-30"
+      "flajolet-martin"
     ]
   },
   {
@@ -643,8 +643,8 @@
     "similar": [
       "atomicity",
       "isolation",
-      "2q-cache",
-      "durability"
+      "durability",
+      "2q-cache"
     ]
   },
   {
@@ -689,10 +689,10 @@
     ],
     "published_at": "2020-08-02",
     "similar": [
-      "slowsort",
       "rule-30",
+      "slowsort",
       "copy-on-write",
-      "phi-accrual"
+      "israeli-queues"
     ]
   },
   {
@@ -740,7 +740,7 @@
       "durability",
       "atomicity",
       "isolation",
-      "2q-cache"
+      "ts-smoothing"
     ]
   },
   {
@@ -762,7 +762,7 @@
       "copy-on-write",
       "morris-counter",
       "2q-cache",
-      "isolation-forest"
+      "mysql-cache"
     ]
   },
   {
@@ -822,8 +822,8 @@
     "tags": [],
     "published_at": "2020-06-14",
     "similar": [
-      "python-caches-integers",
       "python-prompts",
+      "python-caches-integers",
       "constant-folding-python",
       "i-changed-my-python"
     ]
@@ -858,8 +858,8 @@
     "tags": [],
     "published_at": "2020-05-31",
     "similar": [
-      "replication-formats",
       "master-replica-replication",
+      "replication-formats",
       "persistent-data-structures-introduction",
       "handling-outages-master-replica"
     ]
@@ -917,7 +917,7 @@
       "israeli-queues",
       "flajolet-martin",
       "slowsort",
-      "morris-counter"
+      "rule-30"
     ]
   },
   {
@@ -936,7 +936,7 @@
       "phi-accrual",
       "morris-counter",
       "2q-cache",
-      "bitcask"
+      "mysql-cache"
     ]
   },
   {
@@ -954,8 +954,8 @@
     "similar": [
       "2q-cache",
       "ts-smoothing",
-      "bitcask",
-      "isolation"
+      "copy-on-write",
+      "bitcask"
     ]
   },
   {
@@ -988,8 +988,8 @@
     "tags": [],
     "published_at": "2020-04-12",
     "similar": [
-      "fast-and-efficient-pagination-in-mongodb",
       "fork-bomb",
+      "fast-and-efficient-pagination-in-mongodb",
       "efficient-way-to-stop-an-iterating-loop",
       "publish-python-package-on-pypi"
     ]
@@ -1008,8 +1008,8 @@
     "similar": [
       "multiple-mysql-on-same-server-using-docker",
       "consistency",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "setting-up-graphite-using-nginx-on-ubuntu"
+      "setting-up-graphite-using-nginx-on-ubuntu",
+      "image-steganography"
     ]
   },
   {
@@ -1116,9 +1116,9 @@
     "published_at": "2020-02-14",
     "similar": [
       "morris-counter",
-      "jaccard-minhash",
       "efficient-way-to-stop-an-iterating-loop",
-      "slowsort"
+      "jaccard-minhash",
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -1144,7 +1144,7 @@
       "recursion-visualizer",
       "fsm",
       "python-iterable-integers",
-      "constant-folding-python"
+      "string-interning"
     ]
   },
   {
@@ -1173,8 +1173,8 @@
     "published_at": "2020-01-28",
     "similar": [
       "slowsort",
-      "phi-accrual",
       "flajolet-martin",
+      "phi-accrual",
       "1d-terrain"
     ]
   },
@@ -1276,8 +1276,8 @@
     "published_at": "2020-01-03",
     "similar": [
       "python-prompts",
-      "python-caches-integers",
       "super-long-integers",
+      "python-caches-integers",
       "python-iterable-integers"
     ]
   },
@@ -1302,7 +1302,7 @@
       "fast-and-efficient-pagination-in-mongodb",
       "publish-python-package-on-pypi",
       "bayesian-average",
-      "the-weird-walrus"
+      "rule-30"
     ]
   },
   {
@@ -1381,7 +1381,7 @@
       "inheritance-c",
       "idf",
       "jaccard-minhash",
-      "1d-terrain"
+      "fork-bomb"
     ]
   },
   {
@@ -1428,8 +1428,8 @@
     "similar": [
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "the-weird-walrus",
-      "publish-python-package-on-pypi",
-      "setting-up-graphite-using-nginx-on-ubuntu"
+      "setting-up-graphite-using-nginx-on-ubuntu",
+      "multiple-mysql-on-same-server-using-docker"
     ]
   },
   {
@@ -1451,9 +1451,9 @@
     "published_at": "2016-05-13",
     "similar": [
       "sliding-window-ratelimiter",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "setting-up-graphite-using-nginx-on-ubuntu",
-      "udemy-sql-taxonomy"
+      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+      "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
   },
   {
@@ -1474,8 +1474,8 @@
     "published_at": "2015-12-14",
     "similar": [
       "multiple-mysql-on-same-server-using-docker",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "sliding-window-ratelimiter",
+      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "making-http-requests-using-netcat"
     ]
   },
@@ -1497,10 +1497,10 @@
     ],
     "published_at": "2015-12-14",
     "similar": [
-      "multiple-mysql-on-same-server-using-docker",
       "making-http-requests-using-netcat",
+      "multiple-mysql-on-same-server-using-docker",
       "setting-up-graphite-using-nginx-on-ubuntu",
-      "sliding-window-ratelimiter"
+      "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
   },
   {
