@@ -1,5 +1,28 @@
 [
   {
+    "id": "read-your-write-consistency",
+    "title": "Read-your-write Consistency",
+    "description": "Read-Your-Writes consistency states that the system guarantees that, once an item has been updated, any attempt to read the record by the same client will return the updated value.",
+    "image": "https://user-images.githubusercontent.com/4745789/134203710-5284102a-4d0f-43b1-bcd9-6668040ac550.png",
+    "gif": "https://media.giphy.com/media/3o6MbsTCszAbi6f1aE/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "distributed systems"
+    ],
+    "tags": [
+      "distributed systems",
+      "read your write consistency"
+    ],
+    "published_at": "2021-09-22",
+    "similar": [
+      "new-replica",
+      "replication-strategies",
+      "replication-formats",
+      "rum"
+    ]
+  },
+  {
     "id": "handling-outages-master-replica",
     "title": "Handling outages in a Master-Replica setup",
     "description": "This essay talks about the worse - nodes going down - impact,  recovery, and real-world practices.",
