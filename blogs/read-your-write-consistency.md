@@ -2,7 +2,7 @@ The most common way to scale the reads hitting a distributed data store is by ad
 
 # The Problem
 
-In a [Master-Replica](https://arpitbhayani.me/blogs/master-replica-replication) setup, the Writes happening on the Master take some time to reach the Replica. This dealay in propagation is called Replication Lag. If a client has made a Write and is immediately trying to read the written item, this read may go to the Read Replica that is yet to sync with the Master.
+In a [Master-Replica](https://arpitbhayani.me/blogs/master-replica-replication) setup, the Writes happening on the Master take some time to reach the Replica. This delay in propagation is called Replication Lag. If a client has made a Write and is immediately trying to read the written item, this read may go to the Read Replica that is yet to sync with the Master.
 
 When the client issues the Read on a Replica that has yet to receive the write, it leads to an undesirable behavior wherein the client will see the old value (or null) and think that the write it made was lost.
 
