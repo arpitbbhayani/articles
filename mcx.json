@@ -1,8 +1,6 @@
 {
-    "seats_total": 45,
-    "seats_available": 44,
-    "seats_confirmed": 1,
-    "total_taught": "160+",
+    "seats_available": 20,
+    "total_taught": "170+",
     "total_cohorts": "4",
     "total_countries": "6",
     "payment_page": "https://rzp.io/l/arpit-systemdesign-masterclass",
@@ -123,7 +121,7 @@
     "benefits_cohort": [
         {
             "title": "Small and Focussed Group",
-            "body": "Each cohort will have close to ~35 people ensuring you have a richer learning experience."
+            "body": "Each cohort will have close to ~45 people ensuring you have a richer learning experience."
         },
         {
             "title": "Thrive Together",
