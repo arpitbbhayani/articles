@@ -16,10 +16,10 @@
     ],
     "published_at": "2021-10-03",
     "similar": [
-      "new-replica",
-      "handling-outages-master-replica",
-      "replication-strategies",
-      "architectures-in-distributed-systems"
+      "architectures-in-distributed-systems",
+      "mistaken-beliefs-of-distributed-systems",
+      "read-your-write-consistency",
+      "handling-outages-master-replica"
     ]
   },
   {
@@ -41,8 +41,8 @@
     "similar": [
       "new-replica",
       "handling-outages-master-replica",
-      "replication-strategies",
-      "architectures-in-distributed-systems"
+      "monotonic-reads",
+      "replication-strategies"
     ]
   },
   {
@@ -119,7 +119,7 @@
       "handling-outages-master-replica",
       "replication-strategies",
       "rum",
-      "new-replica"
+      "master-replica-replication"
     ]
   },
   {
@@ -290,9 +290,9 @@
     "published_at": "2021-06-22",
     "similar": [
       "mistaken-beliefs-of-distributed-systems",
+      "monotonic-reads",
       "read-your-write-consistency",
-      "handling-outages-master-replica",
-      "durability"
+      "handling-outages-master-replica"
     ]
   },
   {
@@ -315,9 +315,9 @@
     "published_at": "2021-06-17",
     "similar": [
       "architectures-in-distributed-systems",
+      "monotonic-reads",
       "durability",
-      "consistency",
-      "isolation"
+      "consistency"
     ]
   },
   {
@@ -507,7 +507,7 @@
       "i-changed-my-python",
       "python-caches-integers",
       "python-prompts",
-      "super-long-integers"
+      "python-iterable-integers"
     ]
   },
   {
@@ -667,7 +667,7 @@
       "atomicity",
       "isolation",
       "durability",
-      "2q-cache"
+      "consistency"
     ]
   },
   {
@@ -996,7 +996,7 @@
       "recursion-visualizer",
       "constant-folding-python",
       "python-iterable-integers",
-      "jaccard-minhash"
+      "idf"
     ]
   },
   {
@@ -1324,8 +1324,8 @@
     "similar": [
       "fast-and-efficient-pagination-in-mongodb",
       "publish-python-package-on-pypi",
-      "bayesian-average",
-      "rule-30"
+      "rule-30",
+      "bayesian-average"
     ]
   },
   {
@@ -1522,8 +1522,8 @@
     "similar": [
       "making-http-requests-using-netcat",
       "multiple-mysql-on-same-server-using-docker",
-      "setting-up-graphite-using-nginx-on-ubuntu",
-      "benchmark-and-compare-pagination-approach-in-mongodb"
+      "benchmark-and-compare-pagination-approach-in-mongodb",
+      "setting-up-graphite-using-nginx-on-ubuntu"
     ]
   },
   {
