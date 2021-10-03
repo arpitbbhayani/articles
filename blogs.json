@@ -1,5 +1,28 @@
 [
   {
+    "id": "monotonic-reads",
+    "title": "Monotonic Reads",
+    "description": "Asynchronous replication leads to a fascinating situation where it feels like we are going through a wormhole traveling back and forth in time. In this essay, we understand why this happens and the consequences and devise a quick solution to address it.",
+    "image": "https://user-images.githubusercontent.com/4745789/135490742-ecf2f507-2a61-465d-a2de-515a913f5588.png",
+    "gif": "https://media.giphy.com/media/3o6Mb84ODTP8FgQQuI/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "distributed systems"
+    ],
+    "tags": [
+      "distributed systems",
+      "monotonic reads"
+    ],
+    "published_at": "2021-10-03",
+    "similar": [
+      "new-replica",
+      "handling-outages-master-replica",
+      "replication-strategies",
+      "architectures-in-distributed-systems"
+    ]
+  },
+  {
     "id": "read-your-write-consistency",
     "title": "Read-your-write Consistency",
     "description": "Read-Your-Writes consistency states that the system guarantees that, once an item has been updated, any attempt to read the record by the same client will return the updated value.",
