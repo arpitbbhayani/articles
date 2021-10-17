@@ -18,6 +18,21 @@
     ],
     "testimonials": [
         {
+            "name": "Naman Bhalla",
+            "message": "The way Arpit delivers his content shows his experience, enthusiasm and love for the topics he is teaching. He shares his experience over multiple years of career and reading multiple blogs, papers etc. with everyone. The problem statements discussed are very practical and cover advanced topics related to large scale system design very well. He takes a pragmatic approach to the problems and comes to the solution via foundational principles. The assignments are quite challenging so be ready for a lot of fun building them!",
+            "cohort": "September 2021"
+        },
+        {
+            "name": "Anshul Saxena",
+            "message": "Taking this course has turned out to be one of the best things I've ever done in my software engineering career. Arpit has changed everything for me and helped me to develop intuitions for designing the systems at scale. This course was a perfect mixture of theory that we needs to know for understanding and designing massive systems, and real world examples for implementing those concepts. This course is not like any other courses out there, its not one way video based communication as it is cohort based, it provides the experience of solving the problem in real world like a team of 45 engineers working together to solve a problem which in itself was a  awesome experience .It was a great learning experience for me and would recommend the course to everyone who wants to develop understanding of how massive systems functions.",
+            "cohort": "September 2021"
+        },
+        {
+            "name": "Shashank Tiwari",
+            "message": "In this course, you will learn topics and building blocks that will help you design any system. Along with this, you will also get to know the trade-offs of one component over the others. There is always something new to learn things like Live streaming using CDN, implementing the KV store using MySql, and building a word dictionary were eye-opening for me. The two best parts about the course are the discussion and brainstorming between the amazing folks of Cohorts and the 1:1 mentorship from Arpit. Overall if you are prepping for interviews you will get an amazing head start. Or if you want to get better at system design in general this is the best thing you have got. Absolutely, worth the money and time, highly recommended 🙂.",
+            "cohort": "September 2021"
+        },
+        {
             "name": "Ganesh Iyer",
             "message": "Course is awesome! Lots of incredible stuff packed in 8 weeks. Helped me crack Principal Engineer interview at Microsoft.",
             "cohort": "March 2021"
