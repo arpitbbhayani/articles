@@ -29,7 +29,7 @@
         },
         {
             "name": "Shashank Tiwari",
-            "message": "In this course, you will learn topics and building blocks that will help you design any system. Along with this, you will also get to know the trade-offs of one component over the others. There is always something new to learn things like Live streaming using CDN, implementing the KV store using MySql, and building a word dictionary were eye-opening for me. The two best parts about the course are the discussion and brainstorming between the amazing folks of Cohorts and the 1:1 mentorship from Arpit. Overall if you are prepping for interviews you will get an amazing head start. Or if you want to get better at system design in general this is the best thing you have got. Absolutely, worth the money and time, highly recommended 🙂.",
+            "message": "In this course, you will learn topics and building blocks that will help you design any system. Along with this, you will also get to know the trade-offs of one component over the others. There is always something new to learn things like Live streaming using CDN, implementing the KV store using MySql, and building a word dictionary were eye-opening for me. The two best parts about the course are the discussion and brainstorming between the amazing folks of Cohorts and the 1:1 mentorship from Arpit. Overall if you are prepping for interviews you will get an amazing head start. Or if you want to get better at system design in general this is the best thing you have got. Absolutely, worth the money and time, highly recommended \ud83d\ude42.",
             "cohort": "September 2021"
         },
         {
@@ -79,12 +79,12 @@
         },
         {
             "name": "Saurav Daruka",
-            "message": "System Design Masterclass was a very immersive, interesting and a completely unique asset to learn System Design. The course structure was clear, logical and effective. Arpit is an expert Technologist and has obviously put a lot of thought and expertise into designing the course. But it wasn’t just about the knowledge. Additional benefits came from doing assignments, receiving individual feedback and interacting with Arpit and other participants. My perspective has been changed in the way I look at Systems now. I didn’t just learn \"how\" to design systems – \"what\" and \"why\" also became much clearer. Investment of time, effort and money on this course is a value add to my skills and it made me a better Software Engineer!",
+            "message": "System Design Masterclass was a very immersive, interesting and a completely unique asset to learn System Design. The course structure was clear, logical and effective. Arpit is an expert Technologist and has obviously put a lot of thought and expertise into designing the course. But it wasn\u2019t just about the knowledge. Additional benefits came from doing assignments, receiving individual feedback and interacting with Arpit and other participants. My perspective has been changed in the way I look at Systems now. I didn\u2019t just learn \"how\" to design systems \u2013 \"what\" and \"why\" also became much clearer. Investment of time, effort and money on this course is a value add to my skills and it made me a better Software Engineer!",
             "cohort": "May 2021"
         },
         {
             "name": "Shitiz Bhutani",
-            "message": "I found this course useful as it provided me with a lot of breadth in System Design with appropriate depth. I really liked Arpit’s way of explaining complex problems in a neat and simple way. The course structure is organized in such a way that you can easily connect the dots. I highly recommend it.",
+            "message": "I found this course useful as it provided me with a lot of breadth in System Design with appropriate depth. I really liked Arpit\u2019s way of explaining complex problems in a neat and simple way. The course structure is organized in such a way that you can easily connect the dots. I highly recommend it.",
             "cohort": "May 2021"
         },
         {
@@ -442,6 +442,68 @@
             "name": "Adobe",
             "logo": "https://user-images.githubusercontent.com/4745789/131296081-d5f560a1-a97f-4d40-8afb-b9886aa1ae58.jpg",
             "url": "https://www.adobe.com/"
+        }
+    ],
+    "prerequisites": [
+        {
+            "id": "RH915oGKuyg",
+            "url": "http://youtu.be/RH915oGKuyg",
+            "title": "System design: How to do Hardware Capacity Planning ?"
+        },
+        {
+            "id": "XkFL5sAmp-g",
+            "url": "http://youtu.be/XkFL5sAmp-g",
+            "title": "Capacity Estimation: Back-Of-The-Envelope Calculation for System Design | Twitter Example"
+        },
+        {
+            "id": "fMZMm_0ZhK4",
+            "url": "http://youtu.be/fMZMm_0ZhK4",
+            "title": "System Design : Design a service like TinyUrl"
+        },
+        {
+            "id": "zKPNUMkwOJE",
+            "url": "http://youtu.be/zKPNUMkwOJE",
+            "title": "System Design : Design messaging/chat service like Facebook Messenger or Whatsapp"
+        },
+        {
+            "id": "us0qySiUsGU",
+            "url": "http://youtu.be/us0qySiUsGU",
+            "title": "System design : Design Autocomplete or Typeahead Suggestions for Google search"
+        },
+        {
+            "id": "BFcNDPt6SlE",
+            "url": "http://youtu.be/BFcNDPt6SlE",
+            "title": "System design basics: What is asynchronous processing?"
+        },
+        {
+            "id": "S4FnmSeRpAY",
+            "url": "http://youtu.be/S4FnmSeRpAY",
+            "title": "Do you know Distributed transactions?"
+        },
+        {
+            "id": "FU4WlwfS3G0",
+            "url": "http://youtu.be/FU4WlwfS3G0",
+            "title": "System Design Interview - Rate Limiting (local and distributed)"
+        },
+        {
+            "id": "mhUQe4BKZXs",
+            "url": "http://youtu.be/mhUQe4BKZXs",
+            "title": "Rate Limiting system design | TOKEN BUCKET, Leaky Bucket, Sliding Logs"
+        },
+        {
+            "id": "sCR3SAVdyCc",
+            "url": "http://youtu.be/sCR3SAVdyCc",
+            "title": "What is a Load Balancer?"
+        },
+        {
+            "id": "hWRRdICvMNs",
+            "url": "http://youtu.be/hWRRdICvMNs",
+            "title": "What is an API Gateway?"
+        },
+        {
+            "id": "aj9CDZm0Glc",
+            "url": "http://youtu.be/aj9CDZm0Glc",
+            "title": "What is Kafka?"
         }
     ]
 }
