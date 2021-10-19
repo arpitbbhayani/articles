@@ -446,51 +446,6 @@
     ],
     "prerequisites": [
         {
-            "id": "RH915oGKuyg",
-            "url": "http://youtu.be/RH915oGKuyg",
-            "title": "System design: How to do Hardware Capacity Planning ?"
-        },
-        {
-            "id": "XkFL5sAmp-g",
-            "url": "http://youtu.be/XkFL5sAmp-g",
-            "title": "Capacity Estimation: Back-Of-The-Envelope Calculation for System Design | Twitter Example"
-        },
-        {
-            "id": "fMZMm_0ZhK4",
-            "url": "http://youtu.be/fMZMm_0ZhK4",
-            "title": "System Design : Design a service like TinyUrl"
-        },
-        {
-            "id": "zKPNUMkwOJE",
-            "url": "http://youtu.be/zKPNUMkwOJE",
-            "title": "System Design : Design messaging/chat service like Facebook Messenger or Whatsapp"
-        },
-        {
-            "id": "us0qySiUsGU",
-            "url": "http://youtu.be/us0qySiUsGU",
-            "title": "System design : Design Autocomplete or Typeahead Suggestions for Google search"
-        },
-        {
-            "id": "BFcNDPt6SlE",
-            "url": "http://youtu.be/BFcNDPt6SlE",
-            "title": "System design basics: What is asynchronous processing?"
-        },
-        {
-            "id": "S4FnmSeRpAY",
-            "url": "http://youtu.be/S4FnmSeRpAY",
-            "title": "Do you know Distributed transactions?"
-        },
-        {
-            "id": "FU4WlwfS3G0",
-            "url": "http://youtu.be/FU4WlwfS3G0",
-            "title": "System Design Interview - Rate Limiting (local and distributed)"
-        },
-        {
-            "id": "mhUQe4BKZXs",
-            "url": "http://youtu.be/mhUQe4BKZXs",
-            "title": "Rate Limiting system design | TOKEN BUCKET, Leaky Bucket, Sliding Logs"
-        },
-        {
             "id": "sCR3SAVdyCc",
             "url": "http://youtu.be/sCR3SAVdyCc",
             "title": "What is a Load Balancer?"
@@ -504,6 +459,31 @@
             "id": "aj9CDZm0Glc",
             "url": "http://youtu.be/aj9CDZm0Glc",
             "title": "What is Kafka?"
+        },
+        {
+            "id": "CdBtNQZH8a4",
+            "url": "http://youtu.be/CdBtNQZH8a4",
+            "title": "What are Microservices?"
+        },
+        {
+            "id": "lsMQRaeKNDk",
+            "url": "http://youtu.be/lsMQRaeKNDk",
+            "title": "What is a REST API?"
+        },
+        {
+            "id": "vxJobGtqKVM",
+            "url": "http://youtu.be/vxJobGtqKVM",
+            "title": "What is Serverless?"
+        },
+        {
+            "id": "k4tK2ttdSDg",
+            "url": "http://youtu.be/k4tK2ttdSDg",
+            "title": "What is a Data Warehouse?"
+        },
+        {
+            "id": "muqiHwa8UvQ",
+            "url": "http://youtu.be/muqiHwa8UvQ",
+            "title": "What is Redis?"
         }
     ]
 }
