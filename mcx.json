@@ -484,6 +484,36 @@
             "id": "muqiHwa8UvQ",
             "url": "http://youtu.be/muqiHwa8UvQ",
             "title": "What is Redis?"
+        },
+        {
+            "id": "_I14_sXHO8U",
+            "url": "http://youtu.be/_I14_sXHO8U",
+            "title": "Introduction to Amazon S3"
+        },
+        {
+            "id": "AT-nHW3_SVI",
+            "url": "http://youtu.be/AT-nHW3_SVI",
+            "title": "Introduction to Amazon CloudFront"
+        },
+        {
+            "id": "sI-zciHAh-4",
+            "url": "http://youtu.be/sI-zciHAh-4",
+            "title": "What is Amazon DynamoDB?"
+        },
+        {
+            "id": "_qKm6o1zK3U",
+            "url": "http://youtu.be/_qKm6o1zK3U",
+            "title": "Introduction to Data Warehousing on AWS with Amazon Redshift"
+        },
+        {
+            "id": "RGWgfhZByAI",
+            "url": "http://youtu.be/RGWgfhZByAI",
+            "title": "Amazon Route 53"
+        },
+        {
+            "id": "XrX7rb6M3jw",
+            "url": "http://youtu.be/XrX7rb6M3jw",
+            "title": "Introducing Amazon Simple Queue Service (SQS) FIFO Queues \u2013 Messaging on AWS"
         }
     ]
 }
