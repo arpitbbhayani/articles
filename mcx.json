@@ -177,7 +177,7 @@
             "topics": [
                 "How to approach System Design",
                 "Designing Online/Offline indicator",
-                "Designing a Blog",
+                "Designing a Blogging Platform",
                 "Scaling and Caching strategy for Blog",
                 "Delegation and Async Processing",
                 "Supporting million concurrent users",
@@ -191,8 +191,9 @@
             "topics": [
                 "SQL Transactions",
                 "Database Indexes and Locking",
-                "Scaling relational databases",
+                "Designing Airline Check-in System",
                 "Designing SQL backed KV Store",
+                "Scaling relational databases",
                 "NoSQL databases: when, where and why?",
                 "Designing Google Firestore"
             ]
