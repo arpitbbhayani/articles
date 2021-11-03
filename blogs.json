@@ -1,5 +1,29 @@
 [
   {
+    "id": "multi-master-replication",
+    "title": "Multi-Master Replication",
+    "description": "In this essay, we look at what Multi-Master Replication is, the core challenge it addresses, use-cases we can find this replication in action, and the possible concerns of using it.",
+    "image": "https://user-images.githubusercontent.com/4745789/135490742-ecf2f507-2a61-465d-a2de-515a913f5588.png",
+    "gif": "https://media.giphy.com/media/3orieW7ikndkDjQuT6/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "distributed systems"
+    ],
+    "tags": [
+      "distributed systems",
+      "multi-master replication",
+      "multi-master setup"
+    ],
+    "published_at": "2021-11-03",
+    "similar": [
+      "handling-outages-master-replica",
+      "replication-formats",
+      "replication-strategies",
+      "read-your-write-consistency"
+    ]
+  },
+  {
     "id": "monotonic-reads",
     "title": "Monotonic Reads",
     "description": "Asynchronous replication leads to a fascinating situation where it feels like we are going through a wormhole traveling back and forth in time. In this essay, we understand why this happens and the consequences and devise a quick solution to address it.",
@@ -17,9 +41,9 @@
     "published_at": "2021-10-03",
     "similar": [
       "architectures-in-distributed-systems",
-      "mistaken-beliefs-of-distributed-systems",
       "read-your-write-consistency",
-      "handling-outages-master-replica"
+      "mistaken-beliefs-of-distributed-systems",
+      "multi-master-replication"
     ]
   },
   {
@@ -41,8 +65,8 @@
     "similar": [
       "new-replica",
       "handling-outages-master-replica",
-      "monotonic-reads",
-      "replication-strategies"
+      "multi-master-replication",
+      "monotonic-reads"
     ]
   },
   {
@@ -64,10 +88,10 @@
     ],
     "published_at": "2021-09-07",
     "similar": [
+      "multi-master-replication",
       "replication-strategies",
       "replication-formats",
-      "new-replica",
-      "read-your-write-consistency"
+      "new-replica"
     ]
   },
   {
@@ -118,7 +142,7 @@
     "similar": [
       "handling-outages-master-replica",
       "replication-strategies",
-      "rum",
+      "multi-master-replication",
       "master-replica-replication"
     ]
   },
@@ -145,7 +169,7 @@
       "handling-outages-master-replica",
       "new-replica",
       "replication-formats",
-      "read-your-write-consistency"
+      "multi-master-replication"
     ]
   },
   {
@@ -170,7 +194,7 @@
     "similar": [
       "rum",
       "replication-formats",
-      "persistent-data-structures-introduction",
+      "multi-master-replication",
       "handling-outages-master-replica"
     ]
   },
@@ -219,7 +243,7 @@
       "atomicity",
       "durability",
       "consistency",
-      "ts-smoothing"
+      "image-steganography"
     ]
   },
   {
@@ -291,8 +315,8 @@
     "similar": [
       "mistaken-beliefs-of-distributed-systems",
       "monotonic-reads",
-      "read-your-write-consistency",
-      "handling-outages-master-replica"
+      "multi-master-replication",
+      "read-your-write-consistency"
     ]
   },
   {
@@ -368,7 +392,7 @@
       "the-weird-walrus",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "super-long-integers",
-      "making-http-requests-using-netcat"
+      "setting-up-graphite-grafana-using-nginx-on-ubuntu"
     ]
   },
   {
@@ -460,7 +484,7 @@
       "bitcask",
       "rum",
       "master-replica-replication",
-      "fully-persistent-arrays"
+      "durability"
     ]
   },
   {
@@ -505,8 +529,8 @@
     "published_at": "2020-12-20",
     "similar": [
       "i-changed-my-python",
-      "python-caches-integers",
       "python-prompts",
+      "python-caches-integers",
       "python-iterable-integers"
     ]
   },
@@ -530,7 +554,7 @@
       "fsm",
       "idf",
       "constant-folding-python",
-      "mongodb-cursor-skip-is-slow"
+      "python-iterable-integers"
     ]
   },
   {
@@ -575,7 +599,7 @@
       "mysql-cache",
       "ts-smoothing",
       "copy-on-write",
-      "atomicity"
+      "phi-accrual"
     ]
   },
   {
@@ -597,7 +621,7 @@
       "morris-counter",
       "rule-30",
       "slowsort",
-      "flajolet-martin"
+      "phi-accrual"
     ]
   },
   {
@@ -619,8 +643,8 @@
     "published_at": "2020-11-16",
     "similar": [
       "idf",
-      "jaccard-minhash",
       "slowsort",
+      "jaccard-minhash",
       "flajolet-martin"
     ]
   },
@@ -666,8 +690,8 @@
     "similar": [
       "atomicity",
       "isolation",
-      "durability",
-      "consistency"
+      "2q-cache",
+      "better-programmer"
     ]
   },
   {
@@ -714,8 +738,8 @@
     "similar": [
       "rule-30",
       "slowsort",
-      "copy-on-write",
-      "israeli-queues"
+      "israeli-queues",
+      "copy-on-write"
     ]
   },
   {
@@ -763,7 +787,7 @@
       "durability",
       "atomicity",
       "isolation",
-      "ts-smoothing"
+      "persistent-data-structures-introduction"
     ]
   },
   {
@@ -884,7 +908,7 @@
       "master-replica-replication",
       "replication-formats",
       "persistent-data-structures-introduction",
-      "handling-outages-master-replica"
+      "multi-master-replication"
     ]
   },
   {
@@ -902,7 +926,7 @@
     "similar": [
       "fully-persistent-arrays",
       "lfu",
-      "master-replica-replication",
+      "isolation-forest",
       "persistent-data-structures-introduction"
     ]
   },
@@ -940,7 +964,7 @@
       "israeli-queues",
       "flajolet-martin",
       "slowsort",
-      "rule-30"
+      "morris-counter"
     ]
   },
   {
@@ -957,8 +981,8 @@
     "published_at": "2020-05-03",
     "similar": [
       "phi-accrual",
-      "morris-counter",
       "2q-cache",
+      "morris-counter",
       "mysql-cache"
     ]
   },
@@ -978,7 +1002,7 @@
       "2q-cache",
       "ts-smoothing",
       "copy-on-write",
-      "bitcask"
+      "atomicity"
     ]
   },
   {
@@ -996,7 +1020,7 @@
       "recursion-visualizer",
       "constant-folding-python",
       "python-iterable-integers",
-      "idf"
+      "python-prompts"
     ]
   },
   {
@@ -1058,10 +1082,10 @@
     ],
     "published_at": "2020-03-06",
     "similar": [
-      "1d-terrain",
       "jaccard-minhash",
-      "mongodb-cursor-skip-is-slow",
-      "slowsort"
+      "1d-terrain",
+      "slowsort",
+      "mongodb-cursor-skip-is-slow"
     ]
   },
   {
@@ -1140,8 +1164,8 @@
     "similar": [
       "morris-counter",
       "efficient-way-to-stop-an-iterating-loop",
-      "jaccard-minhash",
-      "fast-and-efficient-pagination-in-mongodb"
+      "fast-and-efficient-pagination-in-mongodb",
+      "jaccard-minhash"
     ]
   },
   {
@@ -1325,7 +1349,7 @@
       "fast-and-efficient-pagination-in-mongodb",
       "publish-python-package-on-pypi",
       "rule-30",
-      "bayesian-average"
+      "the-weird-walrus"
     ]
   },
   {
@@ -1351,8 +1375,8 @@
     "similar": [
       "efficient-way-to-stop-an-iterating-loop",
       "bayesian-average",
-      "fork-bomb",
-      "better-programmer"
+      "rule-30",
+      "fork-bomb"
     ]
   },
   {
@@ -1403,8 +1427,8 @@
     "similar": [
       "inheritance-c",
       "idf",
-      "jaccard-minhash",
-      "fork-bomb"
+      "fork-bomb",
+      "jaccard-minhash"
     ]
   },
   {
@@ -1428,8 +1452,8 @@
     "similar": [
       "udemy-sql-taxonomy",
       "the-weird-walrus",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "better-programmer"
+      "better-programmer",
+      "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
   },
   {
@@ -1452,7 +1476,7 @@
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "the-weird-walrus",
       "setting-up-graphite-using-nginx-on-ubuntu",
-      "multiple-mysql-on-same-server-using-docker"
+      "sliding-window-ratelimiter"
     ]
   },
   {
@@ -1473,8 +1497,8 @@
     ],
     "published_at": "2016-05-13",
     "similar": [
-      "sliding-window-ratelimiter",
       "setting-up-graphite-using-nginx-on-ubuntu",
+      "sliding-window-ratelimiter",
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
       "benchmark-and-compare-pagination-approach-in-mongodb"
     ]
@@ -1523,7 +1547,7 @@
       "making-http-requests-using-netcat",
       "multiple-mysql-on-same-server-using-docker",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "setting-up-graphite-using-nginx-on-ubuntu"
+      "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ]
   },
   {
@@ -1544,8 +1568,8 @@
     "similar": [
       "super-long-integers",
       "the-weird-walrus",
-      "fork-bomb",
-      "efficient-way-to-stop-an-iterating-loop"
+      "efficient-way-to-stop-an-iterating-loop",
+      "fork-bomb"
     ]
   }
 ]
