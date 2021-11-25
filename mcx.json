@@ -440,6 +440,11 @@
             "url": "https://www.yelp.com/"
         },
         {
+            "name": "Gojek",
+            "logo": "https://user-images.githubusercontent.com/4745789/143415343-8dc38908-401f-4f69-a15f-563c04ee2841.png",
+            "url": "https://www.gojek.io/"
+        },
+        {
             "name": "Scaler",
             "logo": "https://user-images.githubusercontent.com/4745789/143414790-6c4d69d6-fc3b-4129-b64e-2f6eb46f7e21.png",
             "url": "https://www.scaler.com/"
