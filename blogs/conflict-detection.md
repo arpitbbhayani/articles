@@ -10,7 +10,7 @@ Now, say the user added another book `B5` to the cart, and this request went to 
 
 ![Conflict in real world - shopping cart](https://user-images.githubusercontent.com/4745789/143672208-5be61867-13ba-41dd-bae5-d3f856512d54.png)
 
-Thus, we have two versions of the same shopping cart. When the two master nodes syn, they will detect a conflict that needs to be resolved. The resolution to this conflict is not as simple as replacing one with the other because replacement will lead to the loss of information
+Thus, we have two versions of the same shopping cart. When the two master nodes syn, they will detect a conflict that needs to be resolved. The resolution to this conflict is not as simple as replacing one with the other because replacement will lead to the loss of information.
 
 The correct way to address this situation is that we will have to merge the two versions of the cart such similar to the set union. This is a classical case of Conflict Detection and Resolution, and the possible resolution strategy depends on the application and context.
 
