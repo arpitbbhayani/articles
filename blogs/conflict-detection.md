@@ -1,4 +1,4 @@
-Every multi-master replication setup comes with a side-effect - Conflicts. Conflict happens when two or more database accepts conflicting updates on the same record. We say that the updates are conflicting when we are unable to resolve them to one value deterministically. In this essay, we talk about conflicts and understand what they are, how to detect them.
+Every [multi-master replication](https://arpitbhayani.me/blogs/multi-master-replication) setup comes with a side-effect - Conflicts. Conflict happens when two or more database accepts conflicting updates on the same record. We say that the updates are conflicting when we are unable to resolve them to one value deterministically. In this essay, we talk about conflicts and understand what they are, how to detect them.
 
 # Conflicts
 
@@ -20,11 +20,11 @@ In the above example, we saw a custom conflict resolution strategy in a real use
 
 Detecting conflict is simple when we have a single Master node, given that we can serialize all the writes going through it - the second write waits while the first one executes.
 
-But when we have a multi-master setup, all the Master nodes can accept the writes and successfully apply them to their copy of data. When the changes _asynchronously_ propagate to other Master nodes, the conflict is detected. Given that both the writes requests were successfully accepted and applied, there is no way to communicate the conflict to the client.
+But when we have a multi-master setup, all the Master nodes can accept the writes and successfully apply them to their copy of data. When the changes [asynchronously](https://arpitbhayani.me/blogs/replication-strategies) propagate to other Master nodes, the conflict is detected. Given that both the writes requests were successfully accepted and applied, there is no way to communicate the conflict to the client.
 
 ![Conflict Detection - Async Replication](https://user-images.githubusercontent.com/4745789/143669401-7dbe6429-a802-496a-83ec-aafc58ca2989.png)
 
-Given that it becomes tough to do something after we detect a conflict when the master-master replication is asynchronous, a possibly easier way out would be to make replication synchronous. In this setup, when one of the Master nodes accepts write, let is successfully apply to its own copy of data and synchronously propagate the write to other Master nodes before responding to the client.
+Given that it becomes tough to do something after we detect a conflict when the master-master replication is asynchronous, a possibly easier way out would be to make replication [synchronous](https://arpitbhayani.me/blogs/replication-strategies). In this setup, when one of the Master nodes accepts write, let is successfully apply to its own copy of data and synchronously propagate the write to other Master nodes before responding to the client.
 
 ![Conflict Detection - Sync Replication](https://user-images.githubusercontent.com/4745789/143669672-51fcf264-97df-434e-940b-f77e3bfd3f2a.png)
 
