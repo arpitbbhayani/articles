@@ -18,6 +18,11 @@
     ],
     "testimonials": [
         {
+            "name": "Sai Subramanyam Chittilla",
+            "message": "Arpit is a passionate individual who teaches one of best system design course, his explanation comes from real implementation and exposure to the problem. He makes sure that individuals in his cohort develop critical thinking when approaching system design.\n\nI would highly recommend his course for any one who tries to build systems to scale.",
+            "cohort": "September 2021"
+        },
+        {
             "name": "Naman Bhalla",
             "message": "The way Arpit delivers his content shows his experience, enthusiasm and love for the topics he is teaching. He shares his experience over multiple years of career and reading multiple blogs, papers etc. with everyone. The problem statements discussed are very practical and cover advanced topics related to large scale system design very well.\n\nHe takes a pragmatic approach to the problems and comes to the solution via foundational principles. The assignments are quite challenging so be ready for a lot of fun building them!",
             "cohort": "September 2021"
