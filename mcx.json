@@ -38,29 +38,39 @@
             "cohort": "September 2021"
         },
         {
-            "name": "Ganesh Iyer",
-            "message": "Course is awesome! Lots of incredible stuff packed in 8 weeks. Helped me crack Principal Engineer interview at Microsoft.",
-            "cohort": "March 2021"
+            "name": "Sandeep",
+            "message": "The course is very intensive, some sessions need to watch 2-3 times to get good understanding of the topic.\n\nArpit made the sessions beautiful with all the experience he had in building large scale systems. 1. Loved the brainstorming sessions that happened for an application and pros and cons discussion of every decision by an individual done by Arpit is really Good. 2. Some sessions are like iterative building blocks of an app from scratch is eye opener on many concepts. ex: building  word dictionary. 3.Its not bounded only to curriculum mentioned but new system designs has come into picture and session went for 3hrs. Content Worth the price!!",
+            "cohort": "July 2021"
         },
         {
-            "name": "Aman Agarwal",
-            "message": "A true masterclass with flavors of evolving solutions, interesting peer discussions. A great learning experience not just for interviews but for real. The openness to speak our minds out is the best part. #PaisaWasoolExperience",
-            "cohort": "March 2021"
+            "name": "Shivam",
+            "message": "The biggest selling point of the course is Arpit's genuine love and enthusiasm towards designing systems , I feel like I've become a better engineer.",
+            "cohort": "July 2021"
         },
         {
-            "name": "Tejas Agrawal",
-            "message": "Had a super fun in learning how to learn and think system design. I am already using Arpit's teachings at my work, and I don't think anything more needs to be said.",
-            "cohort": "March 2021"
+            "name": "Sanjith Joseph",
+            "message": "Arpit has great working experience with distributed systems and he brings out his experience in very engaging discussions. He actively encourages collaboration during class to help us think on our feet. He is quite generous with time and often veers off the planned route for impromptu discussions.",
+            "cohort": "July 2021"
         },
         {
-            "name": "Rohan Chougule",
-            "message": "It's easy to throw jargons and assume that a system can be built. But then keeping things simple and starting from the basics, the approach to be taken, taking baby steps, and then heading towards a direction is indeed best taught by Arpit. Plus, his enthusiasm!",
-            "cohort": "March 2021"
+            "name": "Chandan Nayak",
+            "message": "After watching many YouTube videos and going through the available materials ,I wanted to strengthen my knowledge pertaining to system design, then came across this amazing course, which helped me to think better when it comes to scalable system and touched upon many missing points of YouTube videos, Hands down the best system design course I have encountered.",
+            "cohort": "July 2021"
         },
         {
-            "name": "Vineet Mago",
-            "message": "Arpit has done a wonderful job wading through complex design issues faced for designing systems at scale. Personally, for me, I loved interacting with the members of the cohort, understanding how each one of us approached the problem at hand. And then, in the end , Arpit would explain the right trade-offs to make and finalize a solution. I loved it, highly recommend it for folks who are looking at expanding their horizons on system design.",
-            "cohort": "March 2021"
+            "name": "Manav Desai",
+            "message": "Arpit's masterclass for engineers is like cartoons for kids. You JUST CANT MISS IT ! You'll be surprised every single week by how real systems are built. The knowledge this guy has, you're missing out if you aren't picking his brains. Totally recommended.",
+            "cohort": "July 2021"
+        },
+        {
+            "name": "Sarthak Sahu",
+            "message": "Enrolling in this course was one of the best decisions I have taken in my life. As the name suggests this truly is a 'Masterclass'. The content is crisp, very engaging and the discussions are fun and of very high quality. The breadth and depth of topics covered would definitely help in work as well as interviews.\n\nI had the chance to take few 1:1 mentorship sessions as well and collected some valuable wisdom from those sessions. Very few courses out there leave such an impact and this one definitely made me a better engineer.\n\nAnd the cherry on top - I was able to crack SDE 2 interview at Coinbase :)",
+            "cohort": "July 2021"
+        },
+        {
+            "name": "Umang",
+            "message": "One of the best courses out there on system design, not to mention the learning alongside the amazing set of people who have been a part of the course.\n\nThe one best thing about the course is the cohort based approach which ignites discussion when different people dives into with their real world experiences and pitches in their solutions, adding more depth to every system design.\n\nEven if someone has watched all the system design videos out there, there would be moments of amazement and would help connect the dots to various pieces of puzzles out there in production systems.\n\nThe final cheery on top is the Mentorship session which Arpit provides for any abstract discussions outside the course content as well. Its was not just about learning designing a 'xyz' system but to build an intuition, and the building blocks needed to tackle a problem statement one might come across leveraging the content and experience which Arpit provides and eventually target to be a better Software Engineer.",
+            "cohort": "July 2021"
         },
         {
             "name": "Nubra Jarial",
@@ -103,39 +113,29 @@
             "cohort": "May 2021"
         },
         {
-            "name": "Sandeep",
-            "message": "The course is very intensive, some sessions need to watch 2-3 times to get good understanding of the topic.\n\nArpit made the sessions beautiful with all the experience he had in building large scale systems. 1. Loved the brainstorming sessions that happened for an application and pros and cons discussion of every decision by an individual done by Arpit is really Good. 2. Some sessions are like iterative building blocks of an app from scratch is eye opener on many concepts. ex: building  word dictionary. 3.Its not bounded only to curriculum mentioned but new system designs has come into picture and session went for 3hrs. Content Worth the price!!",
-            "cohort": "July 2021"
+            "name": "Ganesh Iyer",
+            "message": "Course is awesome! Lots of incredible stuff packed in 8 weeks. Helped me crack Principal Engineer interview at Microsoft.",
+            "cohort": "March 2021"
         },
         {
-            "name": "Shivam",
-            "message": "The biggest selling point of the course is Arpit's genuine love and enthusiasm towards designing systems , I feel like I've become a better engineer.",
-            "cohort": "July 2021"
+            "name": "Aman Agarwal",
+            "message": "A true masterclass with flavors of evolving solutions, interesting peer discussions. A great learning experience not just for interviews but for real. The openness to speak our minds out is the best part. #PaisaWasoolExperience",
+            "cohort": "March 2021"
         },
         {
-            "name": "Sanjith Joseph",
-            "message": "Arpit has great working experience with distributed systems and he brings out his experience in very engaging discussions. He actively encourages collaboration during class to help us think on our feet. He is quite generous with time and often veers off the planned route for impromptu discussions.",
-            "cohort": "July 2021"
+            "name": "Tejas Agrawal",
+            "message": "Had a super fun in learning how to learn and think system design. I am already using Arpit's teachings at my work, and I don't think anything more needs to be said.",
+            "cohort": "March 2021"
         },
         {
-            "name": "Chandan Nayak",
-            "message": "After watching many YouTube videos and going through the available materials ,I wanted to strengthen my knowledge pertaining to system design, then came across this amazing course, which helped me to think better when it comes to scalable system and touched upon many missing points of YouTube videos, Hands down the best system design course I have encountered.",
-            "cohort": "July 2021"
+            "name": "Rohan Chougule",
+            "message": "It's easy to throw jargons and assume that a system can be built. But then keeping things simple and starting from the basics, the approach to be taken, taking baby steps, and then heading towards a direction is indeed best taught by Arpit. Plus, his enthusiasm!",
+            "cohort": "March 2021"
         },
         {
-            "name": "Manav Desai",
-            "message": "Arpit's masterclass for engineers is like cartoons for kids. You JUST CANT MISS IT ! You'll be surprised every single week by how real systems are built. The knowledge this guy has, you're missing out if you aren't picking his brains. Totally recommended.",
-            "cohort": "July 2021"
-        },
-        {
-            "name": "Sarthak Sahu",
-            "message": "Enrolling in this course was one of the best decisions I have taken in my life. As the name suggests this truly is a 'Masterclass'. The content is crisp, very engaging and the discussions are fun and of very high quality. The breadth and depth of topics covered would definitely help in work as well as interviews.\n\nI had the chance to take few 1:1 mentorship sessions as well and collected some valuable wisdom from those sessions. Very few courses out there leave such an impact and this one definitely made me a better engineer.\n\nAnd the cherry on top - I was able to crack SDE 2 interview at Coinbase :)",
-            "cohort": "July 2021"
-        },
-        {
-            "name": "Umang",
-            "message": "One of the best courses out there on system design, not to mention the learning alongside the amazing set of people who have been a part of the course.\n\nThe one best thing about the course is the cohort based approach which ignites discussion when different people dives into with their real world experiences and pitches in their solutions, adding more depth to every system design.\n\nEven if someone has watched all the system design videos out there, there would be moments of amazement and would help connect the dots to various pieces of puzzles out there in production systems.\n\nThe final cheery on top is the Mentorship session which Arpit provides for any abstract discussions outside the course content as well. Its was not just about learning designing a 'xyz' system but to build an intuition, and the building blocks needed to tackle a problem statement one might come across leveraging the content and experience which Arpit provides and eventually target to be a better Software Engineer.",
-            "cohort": "July 2021"
+            "name": "Vineet Mago",
+            "message": "Arpit has done a wonderful job wading through complex design issues faced for designing systems at scale. Personally, for me, I loved interacting with the members of the cohort, understanding how each one of us approached the problem at hand. And then, in the end , Arpit would explain the right trade-offs to make and finalize a solution. I loved it, highly recommend it for folks who are looking at expanding their horizons on system design.",
+            "cohort": "March 2021"
         }
     ],
     "benefits_cohort": [
