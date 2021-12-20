@@ -18,6 +18,51 @@
     ],
     "testimonials": [
         {
+            "name": "Jay Vasant",
+            "message": "You might ask, is it HLD, LLD, or the internals of all major systems? It's real engineering at its best, thanks to the precise problem statements which artfully places foundational topics at the core of scalable systems. As a whole it covers all the standard practices along with extensive discussions about approaches so that no doubt remains unresolved.\n\nThanks to these discussions, I now have a clearer picture of thinking about and observing the recurring patterns in scaling systems better than ever, along with memories of interactions with peers having years of experience and wisdom.",
+            "cohort": "November 2021"
+        },
+        {
+            "name": "Vaibhav",
+            "message": "One of the best courses i have ever attended. Arpit's knowledge in system design is commendable and his research and composition in this course material is concise and to the point that it provokes several parallel thoughts and gives you a ready to use tool-kit to tackle any types of system.\n\nMost of the system design courses out there mostly talk about company driven architecture such as how Netflix tackled this problem vs how Google handled this. But the beauty of this course is that every class starts with one basic problem statement,  common design pattern, different area of concerns( front end, backend, caching, DB), separation of concerns, then deep dive into one of the most relevant and problematic areas you could face in that type of system, how to solve them and then finally go to details about how this use-case could be applicable to these many systems.\n\nThis gives you a building blocks to handle any system based on the need rather than sticking to the pre-defined approach about how one leading company did it.\n\nAnother best part of this course is the classroom discussions:- 30-40 highly skilled and driven engineers are coming together in one forum, asking questions, sharing their knowledge and discussing system design problems which can not get any better.",
+            "cohort": "November 2021"
+        },
+        {
+            "name": "Gaurav Jaiswal",
+            "message": "One of the best courses out there on system design. I really liked Arpit’s way of explaining complex problems in simple way. Course Structure is well organised , alongSide you get to learn with amazing set of people. Course Certainly made me a better engineer.  I am already using Arpit's teachings at my work.\n\nAnd the cherry on top - I was able to crack SDE 2 interview at Walmart, Apna, Swiggy, BukuWarung, DealShare.\n\nMy best investment ever :)",
+            "cohort": "May 2021"
+        },
+        {
+            "name": "Kushal Mahajan",
+            "message": "Arpit is a gold standard as an instructor. The discussions are on-ground and will discuss the things which are beyond 101. I have been directly able to map a few lectures ( read use cases ) to my job. I am a frontend engineer and most things are a learning to me. But having experience of system design implementations with me peers, it will surely take an edge.\n\nMore than the courses, you will be overwhelmed by his enthusiasm, clarity with breadth and depth. I believe, I have found the person I can look upto and have a chat about the things which actually improve the internet. I will invest anytime in a person which shapes the thinking patterns than just delivering the knowledge. ",
+            "cohort": "September 2021"
+        },
+        {
+            "name": "Kishor Pawar",
+            "message": "First time had the great experience with someone providing online education. Live class interaction really helped. Not only learned from you Arpit, but almost everyone in the class. Not only you learn the concepts from Arpit, but you also learn the way he learns, and it's contagious. One of the best decision I had taken to join Arpit's cohort. ",
+            "cohort": "May 2021"
+        },
+        {
+            "name": "Bhargav",
+            "message": "The system design course by Arpit is a great one for a number of reasons. It covers a wide range of topics, design paradigms and building blocks necessary to build a distributed system. For every system design topic discussed in the sessions, it is built from ground up starting with a simple model (which everyone brainstorms together) which is then iteratively enhanced to overcome limitations until the end design meets all the requirements such as scalability, availability etc. This exercise in my opinion is the most useful thing that I got from the course as it builds such a great intuition when you have to design a complex system from ground up and when you look at some popular distributed systems in use, you will know how they were built or what design patterns might have been used.\n\nSince this is a cohort, you benefit greatly from the discussions that happen during the brainstorming segment of the class where you learn from other people’s diverse experiences and of course the 1:1 sessions with Arpit are invaluable.\n\nOverall, I would highly recommend this course to anyone, at any stage in their careers who is interested in learning how to design distributed systems. This is indeed a fun course.",
+            "cohort": "September 2021"
+        },
+        {
+            "name": "Preeti Pranayeta",
+            "message": "Course was an eye opening for me with lots of real world experiences that we face while implementing systems.Every session need to be revisited so as to understand effectively.Arpit makes sure to walkthrough the science behind building the system design.I simply loved the course and this implants a curiosity of learning everyday within us.",
+            "cohort": "September 2021"
+        },
+        {
+            "name": "Harshit Agarwal",
+            "message": "I had initially registered for the 2nd cohort, but did not end up going through with making the payment as I thought it was too expensive. Now, after having finished the course as part of 4th cohort - I think this was probably the best investments I have made in my life !\n\nThis course taught me to think of system design from a first principles perspective. It taught me about how to use smaller simple systems as reusable building blocks for larger systems. Arpit's enthusiasm is infectious and he's an excellent teacher. I learnt a lot from not just him but also from other people in the cohort. 👌🏾",
+            "cohort": "September 2021"
+        },
+        {
+            "name": "Jimit Gandhi",
+            "message": "The breadth of the systems covered as part of Cohort is really amazing. I learned so many systems which I didn't have much clue about earlier like Stream processing, Log Structured storage and many more. The enthusiasm with which Arpit conducts the sessions helps create curiosity.\n\nThe most important part is that  Arpit helps build the intuition to learn system design and uses building blocks to build systems gradually. This cohort is a value addition for experienced professionals to build Large scale systems and develop know-how for making trade-offs for design choices.",
+            "cohort": "September 2021"
+        },
+        {
             "name": "Sai Subramanyam Chittilla",
             "message": "Arpit is a passionate individual who teaches one of best system design course, his explanation comes from real implementation and exposure to the problem. He makes sure that individuals in his cohort develop critical thinking when approaching system design.\n\nI would highly recommend his course for any one who tries to build systems to scale.",
             "cohort": "September 2021"
