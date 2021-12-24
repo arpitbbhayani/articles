@@ -18,6 +18,16 @@
     ],
     "testimonials": [
         {
+            "name": "Akshay",
+            "message": "Being form non-CS background and having worked for 6 years in semiconductor domain, I did not have any prior experience of designing/working on large scale systems. When I switched domain, I also decided to take this course and I have enjoyed it throughout the span of 2 months.\n\nIt's not just the content of the course but also the way Arpit delivers it. He always starts from day 0 architecture and gradually builds on top of it. There are no buzzwords thrown around or random assumptions made. You will not only learn new things but also get some of your preconceived notions corrected. Also there were many \"wow\" moments during the course which are invaluable. There are tonnes of YouTube videos on system design but none of them come remotely close to this cohort.\n\nThe only negative feedback I have about the course is that it ends.",
+            "cohort": "November 2021"
+        },
+        {
+            "name": "Mahendhar",
+            "message": "Arpit is a brilliant and passionate engineer who will help you with building the intuition behind each and every system design he discusses. He makes sure everyone understands the problem and also the live brainstorming sessions have good participation. His cohort is attended by brilliant and well accomplished people themselves which makes this cohort all the more valuable.\n\nI can confidently say I lost the fear of system design now because of this cohort.",
+            "cohort": "November 2021"
+        },
+        {
             "name": "Jay Vasant",
             "message": "You might ask, is it HLD, LLD, or the internals of all major systems? It's real engineering at its best, thanks to the precise problem statements which artfully places foundational topics at the core of scalable systems. As a whole it covers all the standard practices along with extensive discussions about approaches so that no doubt remains unresolved.\n\nThanks to these discussions, I now have a clearer picture of thinking about and observing the recurring patterns in scaling systems better than ever, along with memories of interactions with peers having years of experience and wisdom.",
             "cohort": "November 2021"
