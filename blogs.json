@@ -1,5 +1,29 @@
 [
   {
+    "id": "conflict-resolution",
+    "title": "Conflict Resolution",
+    "description": "In this essay, go in-depth to understand ways to resolve and avoid conflicts in a multi-master setup.",
+    "image": "https://user-images.githubusercontent.com/4745789/148543014-5b785b5a-fa6c-4ef5-8e8a-656177033e9f.png",
+    "gif": "https://media.giphy.com/media/l2JeiBuUsaFNQIfEk/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "distributed systems"
+    ],
+    "tags": [
+      "distributed systems",
+      "multi-master replication",
+      "multi-master setup"
+    ],
+    "published_at": "2022-01-09",
+    "similar": [
+      "architectures-in-distributed-systems",
+      "mistaken-beliefs-of-distributed-systems",
+      "conflict-detection",
+      "monotonic-reads"
+    ]
+  },
+  {
     "id": "conflict-detection",
     "title": "Conflict Detection",
     "description": "In this essay, we talk about conflicts and understand what they are, how to detect them in a multi-master setup.",
@@ -19,8 +43,8 @@
     "similar": [
       "architectures-in-distributed-systems",
       "mistaken-beliefs-of-distributed-systems",
-      "monotonic-reads",
-      "multi-master-replication"
+      "conflict-resolution",
+      "monotonic-reads"
     ]
   },
   {
@@ -66,8 +90,8 @@
     "similar": [
       "conflict-detection",
       "architectures-in-distributed-systems",
-      "read-your-write-consistency",
-      "mistaken-beliefs-of-distributed-systems"
+      "conflict-resolution",
+      "read-your-write-consistency"
     ]
   },
   {
@@ -337,10 +361,10 @@
     ],
     "published_at": "2021-06-22",
     "similar": [
+      "conflict-resolution",
       "conflict-detection",
       "mistaken-beliefs-of-distributed-systems",
-      "monotonic-reads",
-      "multi-master-replication"
+      "monotonic-reads"
     ]
   },
   {
@@ -364,8 +388,8 @@
     "similar": [
       "architectures-in-distributed-systems",
       "conflict-detection",
-      "monotonic-reads",
-      "durability"
+      "conflict-resolution",
+      "monotonic-reads"
     ]
   },
   {
@@ -553,9 +577,9 @@
     "published_at": "2020-12-20",
     "similar": [
       "i-changed-my-python",
+      "python-iterable-integers",
       "python-prompts",
-      "python-caches-integers",
-      "python-iterable-integers"
+      "python-caches-integers"
     ]
   },
   {
@@ -645,7 +669,7 @@
       "morris-counter",
       "rule-30",
       "slowsort",
-      "phi-accrual"
+      "2q-cache"
     ]
   },
   {
@@ -1162,8 +1186,8 @@
     "similar": [
       "python-caches-integers",
       "constant-folding-python",
-      "i-changed-my-python",
-      "python-iterable-integers"
+      "python-iterable-integers",
+      "i-changed-my-python"
     ]
   },
   {
@@ -1349,7 +1373,7 @@
       "python-prompts",
       "super-long-integers",
       "python-caches-integers",
-      "python-iterable-integers"
+      "publish-python-package-on-pypi"
     ]
   },
   {
@@ -1569,8 +1593,8 @@
     "published_at": "2015-12-14",
     "similar": [
       "making-http-requests-using-netcat",
-      "multiple-mysql-on-same-server-using-docker",
       "benchmark-and-compare-pagination-approach-in-mongodb",
+      "multiple-mysql-on-same-server-using-docker",
       "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ]
   },
