@@ -18,6 +18,26 @@
     ],
     "testimonials": [
         {
+            "name": "Manoranjith",
+            "message": "One of the best learning experiences I ever had.\n\nIn the the 8 weeks, Arpit takes the cohort through a series of discussions starting from fundamental ideas around system design and explains how to apply them in a various contexts.\n\nEach week was only better than the previous. The discussions usually started with a clear description of the problem to be solved, followed by an open ended discussion and then an extensive discussion of the optimal solution. The best thing about this approach is that, it helped me understand the thinking that could have possibly gone behind designing a particular system, rather than just understanding how it was designed.\n\nAnother aspect is that, most resources on the internet either focused on the high level ideas on designing a system or on the specifics of how to implement a system/feature using a particular product. But, in these course, Arpit blends both these aspects very well. It helped me gain a holistic understanding of the high level design, what products can be used, why and how to use them.\n\nOn a personal note, Arpit is a truly curious engineer and a passionate teacher. He is genuinely interested in sharing the knowledge and insights he has gained over the past few years and takes a lot of effort in doing it in the best possible way.",
+            "cohort": "November 2021"
+        },
+        {
+            "name": "Rakshit Tiwari",
+            "message": "The course structure for this CBC is curated in a fantastic way. Cherry on top of that is Arpit's passion while teaching (even any complex topic like algorithmic systems) which really helps generate more curiosity while going in depth and brainstorming about anything.\n\nUnlike most videos on YT or essays/blogs which people generally follow for system design, this course contains discussion of very specific systems and goes in depth of what can break at scale and how one should build with these problems in mind. Be it topics like designing your own S3, load balancer, your own search engine, it has been quite a journey to learn how to build such massive systems with first principles.\n\nAnother great thing is the community of people attending this course which makes the discussions 10x better. There are very experienced senior engineers attending this course alongside who have built stuff for a huge scale and its pretty amazing not to learn just from Arpit but also their collective experience.",
+            "cohort": "November 2021"
+        },
+        {
+            "name": "Abhishek",
+            "message": "The course is so crisp and detailed. It was a terrific experience to be join this course.\n\nArpit has really put out a lot of efforts in creating this course and knows in-depth of each system. It covers each design in a great depth with multiple solutions for each case and thats the best part of it.\n\nThe way Arpit first creates a base and then puts everthing on top of it which makes a design intuitive for everyone and very easy to understand. Concepts is focused here so that later when some new requirements come, there will be a way to figure out on own about how to design it. ",
+            "cohort": "November 2021"
+        },
+        {
+            "name": "Atul Nene",
+            "message": "Arpit’s cohort involves\n\n- A collection of current and highly relevant software design issues of scale, in the industry\n\n- Problem solving from simple to more complex takes students through all nuances and gives deep understanding\n\n- Brainstorming sessions where everyone participates with their thoughts with enough space for questions and clarifications \n\n- Arpit’s enthusiasm and his conversational style that is friendly and encourages participation\n\n- Both online as well as offline modes are super convenient for busy, working students\n\nA rare course that contributes to engineering maturity in the tech space. Highly recommended, especially for experienced techies! It is one of the best re-learning decisions I made in the recent past.",
+            "cohort": "November 2021"
+        },
+        {
             "name": "Akshay",
             "message": "Being form non-CS background and having worked for 6 years in semiconductor domain, I did not have any prior experience of designing/working on large scale systems. When I switched domain, I also decided to take this course and I have enjoyed it throughout the span of 2 months.\n\nIt's not just the content of the course but also the way Arpit delivers it. He always starts from day 0 architecture and gradually builds on top of it. There are no buzzwords thrown around or random assumptions made. You will not only learn new things but also get some of your preconceived notions corrected. Also there were many \"wow\" moments during the course which are invaluable. There are tonnes of YouTube videos on system design but none of them come remotely close to this cohort.\n\nThe only negative feedback I have about the course is that it ends.",
             "cohort": "November 2021"
