@@ -1,4 +1,4 @@
-Partitioning plays a vital role in scaling a database beyond a certain scale of reads and writes. In this essay, we take a detailed look into Partitioning basics and understand a few nuances around it to build a strong foundation for distributed systems.
+Partitioning plays a vital role in scaling a database beyond a certain scale of reads and writes. In this essay, we take a detailed look into Partitioning basics and understand how it can help us scale our Reads and Writes beyond a single machine.
 
 # What is Partitioning?
 
