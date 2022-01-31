@@ -1,5 +1,31 @@
 [
   {
+    "id": "data-partitioning-strategies",
+    "title": "Data Partitioning Strategies",
+    "description": "In this essay, we take a detailed look into the two common approaches to horizontally partition the data - Hash Based and Range Based Partitioning.",
+    "image": "https://user-images.githubusercontent.com/4745789/151733223-2f1f5611-7b4a-463d-aadf-fd522b535d67.png",
+    "gif": "https://media.giphy.com/media/xTiTnrliW65rlwud8I/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "distributed systems"
+    ],
+    "tags": [
+      "distributed systems",
+      "data partitioning",
+      "data partitioning strategies",
+      "range-based partitioning",
+      "hash-based partitioning"
+    ],
+    "published_at": "2022-01-31",
+    "similar": [
+      "mistaken-beliefs-of-distributed-systems",
+      "data-partitioning",
+      "conflict-resolution",
+      "architectures-in-distributed-systems"
+    ]
+  },
+  {
     "id": "data-partitioning",
     "title": "Data Partitioning",
     "description": "In this essay, we take a detailed look into Partitioning basics and understand how it can help us scale our Reads and Writes beyond a single machine.",
@@ -19,7 +45,7 @@
       "conflict-resolution",
       "multi-master-replication",
       "conflict-detection",
-      "architectures-in-distributed-systems"
+      "handling-outages-master-replica"
     ]
   },
   {
@@ -137,7 +163,7 @@
     "similar": [
       "conflict-detection",
       "conflict-resolution",
-      "read-your-write-consistency",
+      "data-partitioning",
       "architectures-in-distributed-systems"
     ]
   },
@@ -288,8 +314,8 @@
     "published_at": "2021-08-07",
     "similar": [
       "leaderless-replication",
-      "replication-formats",
       "rum",
+      "replication-formats",
       "multi-master-replication"
     ]
   },
@@ -311,8 +337,8 @@
     ],
     "published_at": "2021-07-19",
     "similar": [
-      "atomicity",
       "isolation",
+      "atomicity",
       "bitcask",
       "consistency"
     ]
@@ -411,7 +437,7 @@
       "mistaken-beliefs-of-distributed-systems",
       "conflict-detection",
       "conflict-resolution",
-      "data-partitioning"
+      "monotonic-reads"
     ]
   },
   {
@@ -435,8 +461,8 @@
     "similar": [
       "architectures-in-distributed-systems",
       "conflict-detection",
-      "conflict-resolution",
-      "data-partitioning"
+      "data-partitioning-strategies",
+      "conflict-resolution"
     ]
   },
   {
@@ -487,7 +513,7 @@
       "the-weird-walrus",
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "super-long-integers",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu"
+      "publish-python-package-on-pypi"
     ]
   },
   {
@@ -579,7 +605,7 @@
       "bitcask",
       "rum",
       "leaderless-replication",
-      "durability"
+      "data-partitioning-strategies"
     ]
   },
   {
@@ -670,8 +696,8 @@
     "published_at": "2020-12-06",
     "similar": [
       "slowsort",
-      "1d-terrain",
       "isolation-forest",
+      "1d-terrain",
       "morris-counter"
     ]
   },
@@ -716,7 +742,7 @@
       "morris-counter",
       "rule-30",
       "2q-cache",
-      "slowsort"
+      "mysql-cache"
     ]
   },
   {
@@ -764,7 +790,7 @@
       "idf",
       "1d-terrain",
       "rule-30",
-      "constant-folding-python"
+      "fast-and-efficient-pagination-in-mongodb"
     ]
   },
   {
@@ -1003,7 +1029,7 @@
       "leaderless-replication",
       "master-replica-replication",
       "persistent-data-structures-introduction",
-      "data-partitioning"
+      "replication-formats"
     ]
   },
   {
@@ -1232,8 +1258,8 @@
     "published_at": "2020-02-21",
     "similar": [
       "python-caches-integers",
-      "constant-folding-python",
       "python-iterable-integers",
+      "constant-folding-python",
       "i-changed-my-python"
     ]
   },
@@ -1547,8 +1573,8 @@
     "similar": [
       "udemy-sql-taxonomy",
       "better-programmer",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "the-weird-walrus"
+      "the-weird-walrus",
+      "setting-up-graphite-grafana-using-nginx-on-ubuntu"
     ]
   },
   {
@@ -1569,8 +1595,8 @@
     "published_at": "2017-07-05",
     "similar": [
       "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "the-weird-walrus",
       "setting-up-graphite-using-nginx-on-ubuntu",
+      "the-weird-walrus",
       "sliding-window-ratelimiter"
     ]
   },
@@ -1640,9 +1666,9 @@
     "published_at": "2015-12-14",
     "similar": [
       "making-http-requests-using-netcat",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "benchmark-and-compare-pagination-approach-in-mongodb",
-      "the-weird-walrus"
+      "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "udemy-sql-taxonomy"
     ]
   },
   {
