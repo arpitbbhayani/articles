@@ -1,5 +1,31 @@
 [
   {
+    "id": "indexing-on-partitioned-data",
+    "title": "Indexing on Partitioned Data",
+    "description": "In this essay, we will take a detailed look into how we could index the partitioned data, allowing us to query the data on secondary attributes quickly.",
+    "image": "https://user-images.githubusercontent.com/4745789/152698544-c62436c9-8735-4490-90be-4d117902736b.png",
+    "gif": "https://media.giphy.com/media/3o6Mb9cGKe3JzhbqPC/giphy.gif",
+    "yt_video_id": "",
+    "categories": [
+      "system design",
+      "distributed systems"
+    ],
+    "tags": [
+      "distributed systems",
+      "data partitioning",
+      "data partitioning indexes",
+      "global secondary indexes",
+      "local secondary indexes"
+    ],
+    "published_at": "2022-02-07",
+    "similar": [
+      "mistaken-beliefs-of-distributed-systems",
+      "data-partitioning",
+      "conflict-resolution",
+      "architectures-in-distributed-systems"
+    ]
+  },
+  {
     "id": "data-partitioning-strategies",
     "title": "Data Partitioning Strategies",
     "description": "In this essay, we take a detailed look into the two common approaches to horizontally partition the data - Hash Based and Range Based Partitioning.",
