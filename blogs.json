@@ -7,15 +7,12 @@
     "gif": "https://media.giphy.com/media/3orieLKAOlnwdqkTCg/giphy.gif",
     "yt_video_id": "",
     "categories": [
-      "system design",
-      "distributed systems"
+      "algorithms"
     ],
     "tags": [
-      "distributed systems",
-      "data partitioning",
-      "data partitioning indexes",
-      "global secondary indexes",
-      "local secondary indexes"
+      "lfsr",
+      "linear feedback shift registers",
+      "pseudo-random number generation algorithm"
     ],
     "published_at": "2022-02-21",
     "similar": [
