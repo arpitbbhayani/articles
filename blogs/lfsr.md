@@ -1,10 +1,10 @@
-A few essays back, we saw how pseudo-random numbers are generated using [Cellular Automaton - Rule 30](https://arpitbhayani.me/blogs/rule-30). This essay takes a detailed look into random number generation using [LFSR - Linear Feedback Shift Registers](https://en.wikipedia.org/wiki/Linear-feedback_shift_register). LFSR is widely adopted to generate random numbers on microcontrollers because they are very simple, efficient, and easy to adopt both hardware and software.
+A few essays back, we saw how pseudorandom numbers are generated using [Cellular Automaton - Rule 30](https://arpitbhayani.me/blogs/rule-30). This essay takes a detailed look into random number generation using [LFSR - Linear Feedback Shift Registers](https://en.wikipedia.org/wiki/Linear-feedback_shift_register). LFSR is widely adopted to generate random numbers on microcontrollers because they are very simple, efficient, and easy to adopt both hardware and software.
 
-# Pseudo-random Number Generators
+# Pseudorandom Number Generators
 
-A [pseudo-random number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) produces numbers that seem aperiodic (random) but are deterministic. It uses a seed value and generates a sequence of random numbers as a function of the current state and some previous states.
+A [pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) produces numbers that seem aperiodic (random) but are deterministic. It uses a seed value and generates a sequence of random numbers as a function of the current state and some previous states.
 
-These are pseudo-random (not truly random) because the following numbers can be determined algorithmically if the seed value is known. True random numbers are either generated using hardware or from natural phenomena like blood volume pulse, atmospheric pressure, thermal noise, quantum phenomenon, etc.
+These are pseudorandom (not truly random) because the following numbers can be determined algorithmically if the seed value is known. True random numbers are either generated using hardware or from natural phenomena like blood volume pulse, atmospheric pressure, thermal noise, quantum phenomenon, etc.
 
 # What is LFSR
 
@@ -27,7 +27,7 @@ When the shift happens, the leftmost latch gets vacant, and it is either
 -   filled with a result of some boolean logic on the latches
     
 
-LFSR that we used to generate pseudo-random numbers goes with the third approach and applies a boolean XOR on a set of chosen latches, called _taps_, and puts the resultant bit in the leftmost latch, creating a Linear Feedback.
+LFSR that we used to generate pseudorandom numbers goes with the third approach and applies a boolean XOR on a set of chosen latches, called _taps_, and puts the resultant bit in the leftmost latch, creating a Linear Feedback.
 
 ## A simple 4-bit LFSR
 
@@ -47,7 +47,7 @@ After all the above operations are completed, the set of bits in the LFSR become
 
 > The above example is taken from the Computerphile's [video](https://www.youtube.com/watch?v=Ks1pw1X22y4) on this same topic.
 
-Golang-based implementation of the above LFSR is as shown below. We define a struct holding LFSR with the mentioned three parameters - the number of bits in the register, the seed, and the position of the taps. We define the function named `NextBit` on it that returns a pseudo-random bit generated with the logic mentioned above.
+Golang-based implementation of the above LFSR is as shown below. We define a struct holding LFSR with the mentioned three parameters - the number of bits in the register, the seed, and the position of the taps. We define the function named `NextBit` on it that returns a pseudorandom bit generated with the logic mentioned above.
 
 ```go
 type LFSR struct {
@@ -111,7 +111,7 @@ By carefully selecting the seed and the taps, we can ensure that the cycle is lo
 
 ## LFSR Bits to Number
 
-Although LFSR generates pseudo-random bits, generating random numbers is fairly simple using it. To generate a `k`-bit random number we need to generate `k` random bits using our routine LFSR and accumulate them in a `k`-bit integer, which becomes our random number.
+Although LFSR generates pseudorandom bits, generating random numbers is fairly simple using it. To generate a `k`-bit random number we need to generate `k` random bits using our routine LFSR and accumulate them in a `k`-bit integer, which becomes our random number.
 
 Golang-based implementation of the above logic can be seen in the function named `NextNumber` defined below.
 
@@ -150,7 +150,7 @@ We can see that the numbers are fairly random and are within the limits of an 8-
 
 # Applications of LFSR
 
-LFSRs find their application across a wide spectrum of use cases, given how efficient they generate randomness. Their applications include digital counters, generating pseudo-random numbers, pseudo-noise, scramble radio frequencies, and in general, a stream of bytes. We take a detailed look into LFSR for scrambling.
+LFSRs find their application across a wide spectrum of use cases, given how efficient they generate randomness. Their applications include digital counters, generating pseudorandom numbers, pseudo-noise, scramble radio frequencies, and in general, a stream of bytes. We take a detailed look into LFSR for scrambling.
 
 ## Scrambling using LFSR
 

@@ -1,8 +1,8 @@
 [
   {
     "id": "lfsr",
-    "title": "Pseudo-random Number Generation using LFSR",
-    "description": "This essay takes a detailed look into pseudo-random number generation using LFSR, a widely adopted technique to generate random numbers on hardware and on software.",
+    "title": "Pseudorandom Number Generation using LFSR",
+    "description": "This essay takes a detailed look into pseudorandom number generation using LFSR, a widely adopted technique to generate random numbers on hardware and on software.",
     "image": "https://user-images.githubusercontent.com/4745789/154754358-c1bbd5ff-2a0b-4028-b1ec-05cf90300d83.png",
     "gif": "https://media.giphy.com/media/3orieLKAOlnwdqkTCg/giphy.gif",
     "yt_video_id": "",
@@ -12,7 +12,7 @@
     "tags": [
       "lfsr",
       "linear feedback shift registers",
-      "pseudo-random number generation algorithm"
+      "pseudorandom number generation algorithm"
     ],
     "published_at": "2022-02-21",
     "similar": [
