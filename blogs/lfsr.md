@@ -42,7 +42,9 @@ We build a simple `4`-bit LFSR with a seed value of `0b1001` and tap position of
 -   XOR the output bit with the bit in the `1`st position (indexed at 0) from the right
 -   shift the bits of the register by one to the right
 -   set the vacant leftmost bit with the output of the XOR operation
-    
+
+![4-bit LFSR](https://user-images.githubusercontent.com/4745789/154893624-b7a8c040-9e26-4f05-b24d-b0b60bcf88a7.png)
+
 After all the above operations are completed, the set of bits in the LFSR becomes the current state and is then used to output the next random bit, thus continuing the cycle.
 
 > The above example is taken from the Computerphile's [video](https://www.youtube.com/watch?v=Ks1pw1X22y4) on this same topic.
