@@ -18,6 +18,16 @@
   ],
   "testimonials": [
     {
+      "name": "Dhiren Mathur",
+      "message": "The course makes you go back to basics and learn the foundational concepts of how systems work. It teaches you how to approach system design in a manner that makes it seem natural. I can definitely say that it's helped me develop an \"intuition\" for designing systems at scale. Especially designing systems with compliance/analytics in mind, and understanding the kind of tradeoffs that could be made at different levels of scale (startup vs enterprise) etc. The learning from rabbit holes you fall into while reading about something you heard in class is a \"feature\" in itself. ",
+      "cohort": "Jan 2022"
+    },
+    {
+      "name": "Kiran Raj S R",
+      "message": "TLDR - Arpit's enthusiasm!\n\nHowever, if you want my detailed testimonial it is below.\n\nTop to bottom approach based learning - Instead of learning what cache is, what load balancer is. He picks a problem, designs a solution that is acceptable for Day 0, then introduces failures using scale/reliability/... and introduces these components to solve the failures.\n\nArpit neither spoon feeds you nor gives you just an overview of things. He explains concepts that are theoretical (for example: log based file system) and pushes you to experiment few things to learn yourself (for example: reservation systems using different kinds of locks). Arpit wants you to feel the same magic he felt when implementing these systems.\n\nEvery problem feels like a typical interview question and answer, but he has some gotchas or wow moments which make you realize this is so cool (from his past experience). And best part is he tries to push everyone in this direction and make them answer instead of giving the answer away.\n\nArpit also explains the philosophical side of engineering, why you shouldn't over engineer things on Day 0, how technology inspires from real-world (he explained how flash sale happens offline and how it mimics the similar behavior) and makes it fun throughout.\n\nThough Arpit does 90% of the things, you still need to do 10% which will help you in long run,\n1. Read the pre-reads that he shares every week.\n2. Ask questions - Arpit loves answering them even if it is dumb. Also, one question doesn't have one correct answer. Express your thoughts about the problem/solution, Arpit will listen, learn and improvise it for next cohort. He added at least 2 new cool stuff based on learning from the past cohorts.\n3. Take note of keywords or new concepts and explore them later. 40 hours is never enough for Arpit to teach you everything.\n4. Try to implement whatever is possible.\n5. Schedule 1:1 with him anytime to discuss more.",
+      "cohort": "Jan 2022"
+    },
+    {
       "name": "Deepankar Roy",
       "message": "Truly a ‘Masterclass’ in Systems Design. Arpit is very passionate about the subject and it has been awesome learning from him. Highly Recommended!",
       "cohort": "Jan 2022"
