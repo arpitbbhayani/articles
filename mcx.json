@@ -18,6 +18,36 @@
   ],
   "testimonials": [
     {
+      "name": "Abhishek Kumar",
+      "message": "I will highly recommend everyone to Arpit's System Design master class and I feel that it was one of my best decision in my life to attend his master class.",
+      "cohort": "Jan 2022"
+    },
+    {
+      "name": "Dharan Aditya",
+      "message": "I am in my early stage of my career, i took a bet on this cohort just our curiosity and desire to learn how to make things work at scale. Trust me, It is a gem a of course, worth investing your time and money. It is not like any any other course out there, reason Arpit. Aprit has simplified and presented the concepts in such a way, improved understanding concepts & whitest covering design complexities. It has broaden my understanding to approach design problems at scale. It's not everyday you get to meet and learn from Engineers like Arpit, i am glad that i meet and learned from.",
+      "cohort": "Jan 2022"
+    },
+    {
+      "name": "Alok",
+      "message": "Really great course. Highly recommended specially for people starting out to learn system design.The course is well structured and covers many major concepts in great detail.Also, Arpit is awsome at expaling stuff.",
+      "cohort": "Jan 2022"
+    },
+    {
+      "name": "Nikhil Neela",
+      "message": "Arpit's passion towards teaching and depth is designing systems is simply amazing. His teaching and way of presenting concepts always brought an 'Aha' moment. The course is so nicely organized and linking concepts from earlier sessions into future sessions helps to  correlate and augment learning. I would 100% bet my time and money on this course anytime.",
+      "cohort": "Jan 2022"
+    },
+    {
+      "name": "Swapnil Gupta",
+      "message": "I have worked and also learnt from Arpit in the past, and have always enjoyed it. \n\nI wanted to refresh my knowledge and learn more about system design and I am very happy with my decision. Even though I had a busy travel schedule, I would always tune in somehow to join in the live class to feel the team discussion vibe again. \n\nI love the energy he has, and the attitude towards problem solving. \n\nQuestions and discussions are highly encouraged and the ecosystem he has built towards this community is amazing. \n\n8 weeks of intense master class - covering so many different aspects of system designs, something rarely most of us get to touch in real life even with years of experience. \n\nHighly recommented. This is #AsliEngineering.\n\nMaza aaya. **insert Rahul Gandhi meme here**",
+      "cohort": "Jan 2022"
+    },
+    {
+      "name": "Mohammed Kashif",
+      "message": "I will start from the beginning. I have been following Arpit on LinkedIn, reading his blogs and YouTube videos, etc., since quite some time. What really struck out to me was the fact in every video he was covering topics that were not usually covered by people who were targetting for interviews. Just take a look at his CPython tutorials on YouTube and you will undestand what I mean. You could see genuine interest for engineering and breaking things apart to understand how they work only to put it back together and build it again from the scratch. This is what really caught my interest. You don't see that interest usually in other engineering or CS related blogs. This course was no different. \n\nRight from the beginning he made it pretty clear this is not some course you would use for your interview prep but rather expand upon your software engineering understanding. Even before day 1, he shared topics and reading material saying that you should come prepared after reading these topics in order to understand whats going to be discussed in the classes. The best part that I liked about his classes were, that he approached every system design problem with a Day 0 approach and then build upon the scaling part. I mean, it was not like \"Hey, this is the most optimal solution with some jargon thrown around\", but rather, \"This is our problem, lets build the most basic solution possible, and then try to scale it up and understand concepts while we do that.\". His energy is downright contagious when he is explaining difficult topics. I have seen him answer the most basic questions and go to extreme lengths to explain rather difficult topics in a very basic manner. My favourite lecture by far was Distributed ID Generators. Such a simple concept, such a simple design and he just nails every concept in the head. You would genuinely be amazed at his ability to spark that curiosity inside of you to search for the solution yourself.\n\nAdditionally, he takes effort to make the class as engaging as possible. It's not like, he will go on blabbering for 2-3 hours continuously and take questions or queries in the end. No, he makes sure that people are engaged, he keeps asking questions about the solution, poking holes and making us question the design ourselves. You must have heard about some Physics/Chemistry/Maths teachers who make the class so interesting and genuinely develop curiosity for those subjects in the students mind. Arpit, does exactly that for system design. He genuinely has a passion for teaching. \n\nI really enjoyed my time in this course. There are lot of things that I have to learn from my end to fully grasp the concepts and implement the concepts that I learned, and thanks to Arpit, I know where to look for them now :D \n\nTo summarize, 12/10 would highly recommend this course :D.",
+      "cohort": "Jan 2022"
+    },
+    {
       "name": "Dhiren Mathur",
       "message": "The course makes you go back to basics and learn the foundational concepts of how systems work. It teaches you how to approach system design in a manner that makes it seem natural. I can definitely say that it's helped me develop an \"intuition\" for designing systems at scale. Especially designing systems with compliance/analytics in mind, and understanding the kind of tradeoffs that could be made at different levels of scale (startup vs enterprise) etc. The learning from rabbit holes you fall into while reading about something you heard in class is a \"feature\" in itself. ",
       "cohort": "Jan 2022"
