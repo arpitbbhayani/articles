@@ -1,7 +1,7 @@
 {
-  "seats_available": 12,
-  "total_taught": "320+",
-  "total_cohorts": "6",
+  "seats_available": 75,
+  "total_taught": "400+",
+  "total_cohorts": "7",
   "total_countries": "9",
   "payment_page": "https://rzp.io/l/arpit-systemdesign-masterclass",
   "worldmap": "https://user-images.githubusercontent.com/4745789/150691848-810b04e7-bee8-45d4-9234-513660f42254.png",
@@ -424,7 +424,7 @@
       }
   ],
   "value_proposition": [
-      "40 hours of Live Classes on Weekends, 4-6:30 pm IST",
+      "40 hours of Live Classes on Weekends IST",
       "1:1 Mentorship Sessions over Weekdays",
       "Lifetime access to all the Recordings",
       "Lifetime access to the Network and Community",
