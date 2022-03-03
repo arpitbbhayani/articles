@@ -18,6 +18,11 @@
   ],
   "testimonials": [
     {
+      "name": "Ankit",
+      "message": "Finally a course that's not obssessed with cracking interviews and is about actually building something. My biggest learning from this course is that it introduced me to engineering blogs and the ocean of information that's lying in there.",
+      "cohort": "Jan 2022"
+    },
+    {
       "name": "Abhishek Kumar",
       "message": "I will highly recommend everyone to Arpit's System Design master class and I feel that it was one of my best decision in my life to attend his master class.",
       "cohort": "Jan 2022"
