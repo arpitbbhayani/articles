@@ -18,6 +18,11 @@
   ],
   "testimonials": [
     {
+      "name": "Ronak Mutha",
+      "message": "Arpit's enthusiasm for teaching is contagious. It's not a course, but it gives you a glimpse into the realm of system design. It gets better every week, and it's brilliantly curated. It was one of the most memorable experiences of my life.\n\nThere will be no slides or presentations, but there will be effective whiteboarding sessions. It helped me have a better knowledge of system design patterns.\n\nIt's not every day that you get to learn from engineers like Arpit, so I consider myself fortunate.\n\nArpit is a rare find. If you haven't already signed up for this masterclass, please do so right now.",
+      "cohort": "Jan 2022"
+    },
+    {
       "name": "Ankit",
       "message": "Finally a course that's not obssessed with cracking interviews and is about actually building something. My biggest learning from this course is that it introduced me to engineering blogs and the ocean of information that's lying in there.",
       "cohort": "Jan 2022"
