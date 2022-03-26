@@ -1,0 +1,37 @@
+{
+  "topic": "Database Engineering",
+  "videos": [
+    {
+      "title": "What are Embedded Databases?",
+      "published_at": "25 Mar, 2022",
+      "video_id": "xELqRiovEcI"
+    },
+    {
+      "title": "How to handle database outages?",
+      "published_at": "22 Mar, 2022",
+      "video_id": "UT_TVldzA64"
+    },
+    {
+      "title": "How do indexes make databases read faster?",
+      "published_at": "22 Mar, 2022",
+      "video_id": "3G293is403I"
+    },
+    {
+      "title": "Handling timeouts in a microservice architecture",
+      "published_at": "22 Mar, 2022",
+      "video_id": "Hxja4crycBg"
+    },
+    {
+      "title": "How does the database guarantee reliability using write-ahead logging?",
+      "published_at": "22 Mar, 2022",
+      "video_id": "wI4hKwl1Cn4"
+    },
+    {
+      "title": "5 million + random rows in less than 100 seconds using SQL",
+      "published_at": "10 Apr, 2021",
+      "video_id": "x1XmcuosZNk"
+    }
+  ],
+  "total_essays": 0,
+  "essays": []
+}

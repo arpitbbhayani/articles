@@ -1,0 +1,261 @@
+{
+  "topic": "Python Internals",
+  "videos": [
+    {
+      "title": "How \"is\" operator is implemented in python?",
+      "published_at": "31 May, 2021",
+      "video_id": "Q8luYnxiFFE"
+    },
+    {
+      "title": "How id() function is implemented in python?",
+      "published_at": "23 May, 2021",
+      "video_id": "IGLnxdmJu2c"
+    },
+    {
+      "title": "How python compares a float and an int objects?",
+      "published_at": "12 May, 2021",
+      "video_id": "u4tfIy--4GM"
+    },
+    {
+      "title": "How python optimizes integers?",
+      "published_at": "05 May, 2021",
+      "video_id": "6mhXGEXRXG0"
+    },
+    {
+      "title": "How python implements chained comparison operators?",
+      "published_at": "27 Apr, 2021",
+      "video_id": "zz2Lu5ht_jA"
+    },
+    {
+      "title": "How python optimizes strings using String Interning?",
+      "published_at": "13 Apr, 2021",
+      "video_id": "QpGK69LzfpY"
+    },
+    {
+      "title": "Changing python grammar to support standalone walrus assignments",
+      "published_at": "07 Apr, 2021",
+      "video_id": "rWb7VYz1q1U"
+    },
+    {
+      "title": "Setting up cpython locally and making your first change",
+      "published_at": "04 Apr, 2021",
+      "video_id": "k5isLG6vqss"
+    },
+    {
+      "title": "Series Introduction: The Honest Python",
+      "published_at": "03 Apr, 2021",
+      "video_id": "E-3J8X5DulY"
+    }
+  ],
+  "total_essays": 8,
+  "essays": [
+    {
+      "id": "chained-operators-python",
+      "title": "Chained Comparison Operators in Python",
+      "description": "In this essay, we find how chained comparison expressions are evaluated, understand how short-circuit evaluations happen internally, and alter Python's expression evaluation strategy.",
+      "image": "https://user-images.githubusercontent.com/4745789/116305344-47334080-a7c1-11eb-888a-a60b203ebe9d.png",
+      "gif": "https://media.giphy.com/media/LpLd2NGvpaiys/giphy.gif",
+      "yt_video_id": "zz2Lu5ht_jA",
+      "categories": [
+        "python",
+        "python internals"
+      ],
+      "tags": [
+        "python",
+        "python internals",
+        "internals of chained comparison operators"
+      ],
+      "published_at": "2021-04-27",
+      "similar": [
+        "the-weird-walrus",
+        "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+        "making-http-requests-using-netcat",
+        "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      ],
+      "total_views": 275
+    },
+    {
+      "id": "the-weird-walrus",
+      "title": "The Weird Walrus",
+      "description": "In this essay, we alter the Python Grammar and allow it run Assignment Expressions without any parenthesis.",
+      "image": "https://user-images.githubusercontent.com/4745789/112817071-ac4f2580-909f-11eb-8d56-f89536cfa065.png",
+      "gif": "https://media.giphy.com/media/SbIJjAaist696ywQXx/giphy.gif",
+      "yt_video_id": "rWb7VYz1q1U",
+      "categories": [
+        "python internals",
+        "python"
+      ],
+      "tags": [
+        "python internals",
+        "cpython internals",
+        "walrus operator",
+        "changing cpython grammar"
+      ],
+      "published_at": "2021-03-29",
+      "similar": [
+        "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+        "super-long-integers",
+        "making-http-requests-using-netcat",
+        "how-sleepsort-helped-me-understand-concurrency-in-golang"
+      ],
+      "total_views": 2377
+    },
+    {
+      "id": "constant-folding-python",
+      "title": "Constant Folding in Python",
+      "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called Constant Folding.",
+      "image": "https://user-images.githubusercontent.com/4745789/104118331-23e9a000-534e-11eb-9ec8-8369cdae40b1.png",
+      "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
+      "categories": [
+        "python internals",
+        "python"
+      ],
+      "tags": [
+        "compiler optimization",
+        "constant folding",
+        "cpython internals"
+      ],
+      "published_at": "2021-01-10",
+      "similar": [
+        "python-prompts",
+        "python-caches-integers",
+        "python-iterable-integers",
+        "fsm"
+      ],
+      "total_views": 3917
+    },
+    {
+      "id": "string-interning",
+      "title": "String Interning in Python",
+      "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called String Interning.",
+      "image": "https://user-images.githubusercontent.com/4745789/102710262-1c971f80-42d7-11eb-9ee4-dcefd540e869.png",
+      "gif": "https://media.giphy.com/media/KRNBl0iSS8gg0/giphy.gif",
+      "yt_video_id": "QpGK69LzfpY",
+      "categories": [
+        "python internals",
+        "python"
+      ],
+      "tags": [
+        "compiler optimization",
+        "string interning",
+        "cpython internals"
+      ],
+      "published_at": "2020-12-20",
+      "similar": [
+        "i-changed-my-python",
+        "python-caches-integers",
+        "python-iterable-integers",
+        "super-long-integers"
+      ],
+      "total_views": 1480
+    },
+    {
+      "id": "python-iterable-integers",
+      "title": "Making Python Integers Iterable",
+      "description": "In Python, Integers are not iterables but we can make them iterable by implementing __iter__ function. In this essay, we change Python's source code and implement iter function for integers.",
+      "image": "https://user-images.githubusercontent.com/4745789/84585100-bf06af80-ae29-11ea-8797-16c70aee5cc4.png",
+      "gif": "https://media.giphy.com/media/k4ta29T68xlfi/giphy.gif",
+      "categories": [
+        "python",
+        "python internals"
+      ],
+      "tags": [],
+      "published_at": "2020-06-14",
+      "similar": [
+        "python-caches-integers",
+        "python-prompts",
+        "constant-folding-python",
+        "i-changed-my-python"
+      ],
+      "total_views": 1790
+    },
+    {
+      "id": "python-caches-integers",
+      "title": "Integer Caching in Python",
+      "description": "To gain a performance boost and avoid reallocation of frequently used integers, Python creates singleton instances of small integer values and uses them by reference.",
+      "image": "https://user-images.githubusercontent.com/4745789/82141979-a620d380-9856-11ea-9a4a-32399c0c01b8.png",
+      "gif": "https://media.giphy.com/media/l378kmO7gdbXaesXS/giphy.gif",
+      "categories": [
+        "python",
+        "python internals"
+      ],
+      "tags": [],
+      "published_at": "2020-05-17",
+      "similar": [
+        "python-prompts",
+        "python-iterable-integers",
+        "constant-folding-python",
+        "i-changed-my-python"
+      ],
+      "total_views": 1824
+    },
+    {
+      "id": "super-long-integers",
+      "title": "Super Long Integers in Python",
+      "description": "Python must be doing something beautiful internally to support super long integers and today we find out what's under the hood. The article goes in-depth to explain design, storage, and operations on super long integers as implemented by Python.",
+      "image": "https://user-images.githubusercontent.com/4745789/72040055-55f49c00-32cd-11ea-9190-8f5a67c2f3d9.png",
+      "gif": "https://media.giphy.com/media/SKGo6OYe24EBG/giphy.gif",
+      "categories": [
+        "python",
+        "python internals"
+      ],
+      "tags": [
+        "programming",
+        "python",
+        "cpython source code",
+        "python internals",
+        "understanding python source code",
+        "coding",
+        "developer",
+        "technology",
+        "code",
+        "pythonprogramming",
+        "python programming",
+        "data science",
+        "tech"
+      ],
+      "published_at": "2020-01-10",
+      "similar": [
+        "i-changed-my-python",
+        "the-weird-walrus",
+        "python-caches-integers",
+        "python-prompts"
+      ],
+      "total_views": 3584
+    },
+    {
+      "id": "i-changed-my-python",
+      "title": "Changing Python",
+      "description": "I changed the Python's source code and made addition incorrect and unpredictable. The addition operation will internally perform either Subtraction. Multiplication, Floor Division or Power at random.",
+      "image": "https://user-images.githubusercontent.com/4745789/71662123-60b3ac00-2d76-11ea-8018-f558cef93a59.png",
+      "gif": "https://media.giphy.com/media/aZ5wedD7Jtazm/giphy.gif",
+      "categories": [
+        "python",
+        "python internals"
+      ],
+      "tags": [
+        "programming",
+        "python",
+        "cpython source code",
+        "python internals",
+        "understanding python source code",
+        "coding",
+        "developer",
+        "technology",
+        "code",
+        "pythonprogramming",
+        "python programming",
+        "data science",
+        "tech"
+      ],
+      "published_at": "2020-01-03",
+      "similar": [
+        "super-long-integers",
+        "python-caches-integers",
+        "python-iterable-integers",
+        "python-prompts"
+      ],
+      "total_views": 1121
+    }
+  ]
+}

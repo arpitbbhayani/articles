@@ -21,7 +21,7 @@
       "flajolet-martin",
       "1d-terrain"
     ],
-    "total_views": 437
+    "total_views": 441
   },
   {
     "id": "lfsr",
@@ -45,7 +45,7 @@
       "the-weird-walrus",
       "jaccard-minhash"
     ],
-    "total_views": 608
+    "total_views": 609
   },
   {
     "id": "indexing-on-partitioned-data",
@@ -99,7 +99,7 @@
       "mistaken-beliefs-of-distributed-systems",
       "conflict-detection"
     ],
-    "total_views": 301
+    "total_views": 302
   },
   {
     "id": "data-partitioning",
@@ -123,7 +123,7 @@
       "handling-outages-master-replica",
       "data-partitioning-strategies"
     ],
-    "total_views": 433
+    "total_views": 435
   },
   {
     "id": "leaderless-replication",
@@ -247,7 +247,7 @@
       "conflict-resolution",
       "indexing-on-partitioned-data"
     ],
-    "total_views": 345
+    "total_views": 348
   },
   {
     "id": "read-your-write-consistency",
@@ -271,7 +271,7 @@
       "multi-master-replication",
       "replication-strategies"
     ],
-    "total_views": 1119
+    "total_views": 1120
   },
   {
     "id": "handling-outages-master-replica",
@@ -585,7 +585,7 @@
       "inheritance-c",
       "super-long-integers"
     ],
-    "total_views": 424
+    "total_views": 425
   },
   {
     "id": "chained-operators-python",
@@ -636,7 +636,7 @@
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "multiple-mysql-on-same-server-using-docker"
     ],
-    "total_views": 1302
+    "total_views": 1303
   },
   {
     "id": "the-weird-walrus",
@@ -662,7 +662,7 @@
       "making-http-requests-using-netcat",
       "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ],
-    "total_views": 2367
+    "total_views": 2377
   },
   {
     "id": "fully-persistent-arrays",
@@ -706,7 +706,7 @@
       "master-replica-replication",
       "rum"
     ],
-    "total_views": 1859
+    "total_views": 1861
   },
   {
     "id": "constant-folding-python",
@@ -779,7 +779,7 @@
       "constant-folding-python",
       "python-iterable-integers"
     ],
-    "total_views": 4139
+    "total_views": 4140
   },
   {
     "id": "flajolet-martin",
@@ -803,7 +803,7 @@
       "isolation-forest",
       "morris-counter"
     ],
-    "total_views": 3130
+    "total_views": 3131
   },
   {
     "id": "2q-cache",
@@ -849,7 +849,7 @@
       "morris-counter",
       "copy-on-write"
     ],
-    "total_views": 7247
+    "total_views": 7250
   },
   {
     "id": "1d-terrain",
@@ -922,7 +922,7 @@
       "2q-cache",
       "atomicity"
     ],
-    "total_views": 498
+    "total_views": 499
   },
   {
     "id": "lfu",
@@ -948,7 +948,7 @@
       "flajolet-martin",
       "consistent-hashing"
     ],
-    "total_views": 6034
+    "total_views": 6035
   },
   {
     "id": "morris-counter",
@@ -972,7 +972,7 @@
       "fast-and-efficient-pagination-in-mongodb",
       "phi-accrual"
     ],
-    "total_views": 2119
+    "total_views": 2120
   },
   {
     "id": "slowsort",
@@ -1068,7 +1068,7 @@
       "lfsr",
       "isolation-forest"
     ],
-    "total_views": 2789
+    "total_views": 2797
   },
   {
     "id": "decipher-single-xor",
@@ -1091,7 +1091,7 @@
       "lfsr",
       "isolation-forest"
     ],
-    "total_views": 1998
+    "total_views": 1999
   },
   {
     "id": "python-iterable-integers",
@@ -1169,7 +1169,7 @@
       "leaderless-replication",
       "persistent-data-structures-introduction"
     ],
-    "total_views": 1259
+    "total_views": 1262
   },
   {
     "id": "python-caches-integers",
@@ -1305,7 +1305,7 @@
       "image-steganography",
       "multiple-mysql-on-same-server-using-docker"
     ],
-    "total_views": 1054
+    "total_views": 1056
   },
   {
     "id": "idf",
@@ -1583,7 +1583,7 @@
       "python-iterable-integers",
       "python-prompts"
     ],
-    "total_views": 1119
+    "total_views": 1121
   },
   {
     "id": "efficient-way-to-stop-an-iterating-loop",
@@ -1608,7 +1608,7 @@
       "publish-python-package-on-pypi",
       "setting-up-graphite-grafana-using-nginx-on-ubuntu"
     ],
-    "total_views": 425
+    "total_views": 426
   },
   {
     "id": "fast-and-efficient-pagination-in-mongodb",
@@ -1636,7 +1636,7 @@
       "jaccard-minhash",
       "bayesian-average"
     ],
-    "total_views": 3895
+    "total_views": 3898
   },
   {
     "id": "benchmark-and-compare-pagination-approach-in-mongodb",
@@ -1665,7 +1665,7 @@
       "better-programmer",
       "sliding-window-ratelimiter"
     ],
-    "total_views": 3537
+    "total_views": 3538
   },
   {
     "id": "mongodb-cursor-skip-is-slow",
@@ -1690,7 +1690,7 @@
       "idf",
       "copy-on-write"
     ],
-    "total_views": 2087
+    "total_views": 2088
   },
   {
     "id": "how-sleepsort-helped-me-understand-concurrency-in-golang",
@@ -1765,7 +1765,7 @@
       "udemy-sql-taxonomy",
       "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ],
-    "total_views": 284
+    "total_views": 285
   },
   {
     "id": "setting-up-graphite-using-nginx-on-ubuntu",
