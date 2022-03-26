@@ -6,17 +6,20 @@
         {
           "title": "What are Embedded Databases?",
           "published_at": "25 Mar, 2022",
-          "video_id": "xELqRiovEcI"
+          "video_id": "xELqRiovEcI",
+          "img": "https://i.ytimg.com/vi/xELqRiovEcI/default.jpg"
         },
         {
           "title": "How does the database guarantee reliability using write-ahead logging?",
           "published_at": "21 Mar, 2022",
-          "video_id": "wI4hKwl1Cn4"
+          "video_id": "wI4hKwl1Cn4",
+          "img": "https://i.ytimg.com/vi/wI4hKwl1Cn4/default.jpg"
         },
         {
           "title": "Handling timeouts in a microservice architecture",
           "published_at": "18 Mar, 2022",
-          "video_id": "Hxja4crycBg"
+          "video_id": "Hxja4crycBg",
+          "img": "https://i.ytimg.com/vi/Hxja4crycBg/default.jpg"
         }
       ],
       "total_essays": 25,
@@ -108,17 +111,20 @@
         {
           "title": "What are Embedded Databases?",
           "published_at": "25 Mar, 2022",
-          "video_id": "xELqRiovEcI"
+          "video_id": "xELqRiovEcI",
+          "img": "https://i.ytimg.com/vi/xELqRiovEcI/default.jpg"
         },
         {
           "title": "How to handle database outages?",
           "published_at": "22 Mar, 2022",
-          "video_id": "UT_TVldzA64"
+          "video_id": "UT_TVldzA64",
+          "img": "https://i.ytimg.com/vi/UT_TVldzA64/default.jpg"
         },
         {
           "title": "How do indexes make databases read faster?",
           "published_at": "22 Mar, 2022",
-          "video_id": "3G293is403I"
+          "video_id": "3G293is403I",
+          "img": "https://i.ytimg.com/vi/3G293is403I/default.jpg"
         }
       ],
       "total_essays": 0,
@@ -131,12 +137,14 @@
         {
           "title": "Dissecting GitHub Outage: ID column reaching the max value 2147483647",
           "published_at": "23 Mar, 2022",
-          "video_id": "ZFRAFTn0cQ0"
+          "video_id": "ZFRAFTn0cQ0",
+          "img": "https://i.ytimg.com/vi/ZFRAFTn0cQ0/default.jpg"
         },
         {
           "title": "Dissecting Spotify's Global Outage - March 8, 2022",
           "published_at": "22 Mar, 2022",
-          "video_id": "h5hXivWws7k"
+          "video_id": "h5hXivWws7k",
+          "img": "https://i.ytimg.com/vi/h5hXivWws7k/default.jpg"
         }
       ],
       "total_essays": 0,
@@ -235,17 +243,20 @@
         {
           "title": "How \"is\" operator is implemented in python?",
           "published_at": "31 May, 2021",
-          "video_id": "Q8luYnxiFFE"
+          "video_id": "Q8luYnxiFFE",
+          "img": "https://i.ytimg.com/vi/Q8luYnxiFFE/default.jpg"
         },
         {
           "title": "How id() function is implemented in python?",
           "published_at": "23 May, 2021",
-          "video_id": "IGLnxdmJu2c"
+          "video_id": "IGLnxdmJu2c",
+          "img": "https://i.ytimg.com/vi/IGLnxdmJu2c/default.jpg"
         },
         {
           "title": "How python compares a float and an int objects?",
           "published_at": "12 May, 2021",
-          "video_id": "u4tfIy--4GM"
+          "video_id": "u4tfIy--4GM",
+          "img": "https://i.ytimg.com/vi/u4tfIy--4GM/default.jpg"
         }
       ],
       "total_essays": 8,

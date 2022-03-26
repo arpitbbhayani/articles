@@ -4,47 +4,56 @@
     {
       "title": "How \"is\" operator is implemented in python?",
       "published_at": "31 May, 2021",
-      "video_id": "Q8luYnxiFFE"
+      "video_id": "Q8luYnxiFFE",
+      "img": "https://i.ytimg.com/vi/Q8luYnxiFFE/default.jpg"
     },
     {
       "title": "How id() function is implemented in python?",
       "published_at": "23 May, 2021",
-      "video_id": "IGLnxdmJu2c"
+      "video_id": "IGLnxdmJu2c",
+      "img": "https://i.ytimg.com/vi/IGLnxdmJu2c/default.jpg"
     },
     {
       "title": "How python compares a float and an int objects?",
       "published_at": "12 May, 2021",
-      "video_id": "u4tfIy--4GM"
+      "video_id": "u4tfIy--4GM",
+      "img": "https://i.ytimg.com/vi/u4tfIy--4GM/default.jpg"
     },
     {
       "title": "How python optimizes integers?",
       "published_at": "05 May, 2021",
-      "video_id": "6mhXGEXRXG0"
+      "video_id": "6mhXGEXRXG0",
+      "img": "https://i.ytimg.com/vi/6mhXGEXRXG0/default.jpg"
     },
     {
       "title": "How python implements chained comparison operators?",
       "published_at": "27 Apr, 2021",
-      "video_id": "zz2Lu5ht_jA"
+      "video_id": "zz2Lu5ht_jA",
+      "img": "https://i.ytimg.com/vi/zz2Lu5ht_jA/default.jpg"
     },
     {
       "title": "How python optimizes strings using String Interning?",
       "published_at": "13 Apr, 2021",
-      "video_id": "QpGK69LzfpY"
+      "video_id": "QpGK69LzfpY",
+      "img": "https://i.ytimg.com/vi/QpGK69LzfpY/default.jpg"
     },
     {
       "title": "Changing python grammar to support standalone walrus assignments",
       "published_at": "07 Apr, 2021",
-      "video_id": "rWb7VYz1q1U"
+      "video_id": "rWb7VYz1q1U",
+      "img": "https://i.ytimg.com/vi/rWb7VYz1q1U/default.jpg"
     },
     {
       "title": "Setting up cpython locally and making your first change",
       "published_at": "04 Apr, 2021",
-      "video_id": "k5isLG6vqss"
+      "video_id": "k5isLG6vqss",
+      "img": "https://i.ytimg.com/vi/k5isLG6vqss/default.jpg"
     },
     {
       "title": "Series Introduction: The Honest Python",
       "published_at": "03 Apr, 2021",
-      "video_id": "E-3J8X5DulY"
+      "video_id": "E-3J8X5DulY",
+      "img": "https://i.ytimg.com/vi/E-3J8X5DulY/default.jpg"
     }
   ],
   "total_essays": 8,

@@ -4,32 +4,38 @@
     {
       "title": "What are Embedded Databases?",
       "published_at": "25 Mar, 2022",
-      "video_id": "xELqRiovEcI"
+      "video_id": "xELqRiovEcI",
+      "img": "https://i.ytimg.com/vi/xELqRiovEcI/default.jpg"
     },
     {
       "title": "How to handle database outages?",
       "published_at": "22 Mar, 2022",
-      "video_id": "UT_TVldzA64"
+      "video_id": "UT_TVldzA64",
+      "img": "https://i.ytimg.com/vi/UT_TVldzA64/default.jpg"
     },
     {
       "title": "How do indexes make databases read faster?",
       "published_at": "22 Mar, 2022",
-      "video_id": "3G293is403I"
+      "video_id": "3G293is403I",
+      "img": "https://i.ytimg.com/vi/3G293is403I/default.jpg"
     },
     {
       "title": "Handling timeouts in a microservice architecture",
       "published_at": "22 Mar, 2022",
-      "video_id": "Hxja4crycBg"
+      "video_id": "Hxja4crycBg",
+      "img": "https://i.ytimg.com/vi/Hxja4crycBg/default.jpg"
     },
     {
       "title": "How does the database guarantee reliability using write-ahead logging?",
       "published_at": "22 Mar, 2022",
-      "video_id": "wI4hKwl1Cn4"
+      "video_id": "wI4hKwl1Cn4",
+      "img": "https://i.ytimg.com/vi/wI4hKwl1Cn4/default.jpg"
     },
     {
       "title": "5 million + random rows in less than 100 seconds using SQL",
       "published_at": "10 Apr, 2021",
-      "video_id": "x1XmcuosZNk"
+      "video_id": "x1XmcuosZNk",
+      "img": "https://i.ytimg.com/vi/x1XmcuosZNk/default.jpg"
     }
   ],
   "total_essays": 0,
