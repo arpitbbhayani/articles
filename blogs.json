@@ -21,7 +21,7 @@
       "flajolet-martin",
       "1d-terrain"
     ],
-    "total_views": 345
+    "total_views": 437
   },
   {
     "id": "lfsr",
@@ -45,7 +45,7 @@
       "the-weird-walrus",
       "jaccard-minhash"
     ],
-    "total_views": 587
+    "total_views": 608
   },
   {
     "id": "indexing-on-partitioned-data",
@@ -72,7 +72,7 @@
       "data-partitioning-strategies",
       "architectures-in-distributed-systems"
     ],
-    "total_views": 344
+    "total_views": 380
   },
   {
     "id": "data-partitioning-strategies",
@@ -99,7 +99,7 @@
       "mistaken-beliefs-of-distributed-systems",
       "conflict-detection"
     ],
-    "total_views": 277
+    "total_views": 301
   },
   {
     "id": "data-partitioning",
@@ -123,7 +123,7 @@
       "handling-outages-master-replica",
       "data-partitioning-strategies"
     ],
-    "total_views": 408
+    "total_views": 433
   },
   {
     "id": "leaderless-replication",
@@ -148,7 +148,7 @@
       "persistent-data-structures-introduction",
       "replication-formats"
     ],
-    "total_views": 427
+    "total_views": 444
   },
   {
     "id": "conflict-resolution",
@@ -173,7 +173,7 @@
       "mistaken-beliefs-of-distributed-systems",
       "monotonic-reads"
     ],
-    "total_views": 267
+    "total_views": 275
   },
   {
     "id": "conflict-detection",
@@ -198,7 +198,7 @@
       "indexing-on-partitioned-data",
       "monotonic-reads"
     ],
-    "total_views": 700
+    "total_views": 709
   },
   {
     "id": "multi-master-replication",
@@ -223,7 +223,7 @@
       "replication-formats",
       "data-partitioning-strategies"
     ],
-    "total_views": 467
+    "total_views": 497
   },
   {
     "id": "monotonic-reads",
@@ -247,7 +247,7 @@
       "conflict-resolution",
       "indexing-on-partitioned-data"
     ],
-    "total_views": 319
+    "total_views": 345
   },
   {
     "id": "read-your-write-consistency",
@@ -271,7 +271,7 @@
       "multi-master-replication",
       "replication-strategies"
     ],
-    "total_views": 1058
+    "total_views": 1119
   },
   {
     "id": "handling-outages-master-replica",
@@ -297,7 +297,7 @@
       "replication-strategies",
       "data-partitioning"
     ],
-    "total_views": 372
+    "total_views": 375
   },
   {
     "id": "new-replica",
@@ -324,7 +324,7 @@
       "handling-outages-master-replica",
       "multi-master-replication"
     ],
-    "total_views": 287
+    "total_views": 293
   },
   {
     "id": "replication-formats",
@@ -351,7 +351,7 @@
       "replication-strategies",
       "rum"
     ],
-    "total_views": 326
+    "total_views": 334
   },
   {
     "id": "replication-strategies",
@@ -378,7 +378,7 @@
       "replication-formats",
       "multi-master-replication"
     ],
-    "total_views": 799
+    "total_views": 821
   },
   {
     "id": "master-replica-replication",
@@ -405,7 +405,7 @@
       "replication-formats",
       "multi-master-replication"
     ],
-    "total_views": 338
+    "total_views": 350
   },
   {
     "id": "durability",
@@ -430,7 +430,7 @@
       "bitcask",
       "consistency"
     ],
-    "total_views": 323
+    "total_views": 335
   },
   {
     "id": "isolation",
@@ -455,7 +455,7 @@
       "consistency",
       "image-steganography"
     ],
-    "total_views": 290
+    "total_views": 301
   },
   {
     "id": "consistency",
@@ -480,7 +480,7 @@
       "durability",
       "atomicity"
     ],
-    "total_views": 378
+    "total_views": 387
   },
   {
     "id": "atomicity",
@@ -505,7 +505,7 @@
       "consistency",
       "image-steganography"
     ],
-    "total_views": 717
+    "total_views": 748
   },
   {
     "id": "architectures-in-distributed-systems",
@@ -531,7 +531,7 @@
       "conflict-resolution",
       "monotonic-reads"
     ],
-    "total_views": 544
+    "total_views": 563
   },
   {
     "id": "mistaken-beliefs-of-distributed-systems",
@@ -557,7 +557,7 @@
       "conflict-resolution",
       "data-partitioning-strategies"
     ],
-    "total_views": 345
+    "total_views": 358
   },
   {
     "id": "fork-bomb",
@@ -585,7 +585,7 @@
       "inheritance-c",
       "super-long-integers"
     ],
-    "total_views": 409
+    "total_views": 424
   },
   {
     "id": "chained-operators-python",
@@ -610,7 +610,7 @@
       "making-http-requests-using-netcat",
       "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ],
-    "total_views": 269
+    "total_views": 275
   },
   {
     "id": "udemy-sql-taxonomy",
@@ -636,7 +636,7 @@
       "how-sleepsort-helped-me-understand-concurrency-in-golang",
       "multiple-mysql-on-same-server-using-docker"
     ],
-    "total_views": 1268
+    "total_views": 1302
   },
   {
     "id": "the-weird-walrus",
@@ -662,7 +662,7 @@
       "making-http-requests-using-netcat",
       "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ],
-    "total_views": 2150
+    "total_views": 2367
   },
   {
     "id": "fully-persistent-arrays",
@@ -685,7 +685,7 @@
       "copy-on-write",
       "lfu"
     ],
-    "total_views": 613
+    "total_views": 618
   },
   {
     "id": "persistent-data-structures-introduction",
@@ -706,7 +706,7 @@
       "master-replica-replication",
       "rum"
     ],
-    "total_views": 1837
+    "total_views": 1859
   },
   {
     "id": "constant-folding-python",
@@ -730,7 +730,7 @@
       "python-iterable-integers",
       "fsm"
     ],
-    "total_views": 3903
+    "total_views": 3917
   },
   {
     "id": "string-interning",
@@ -755,7 +755,7 @@
       "python-iterable-integers",
       "super-long-integers"
     ],
-    "total_views": 1464
+    "total_views": 1480
   },
   {
     "id": "recursion-visualizer",
@@ -779,7 +779,7 @@
       "constant-folding-python",
       "python-iterable-integers"
     ],
-    "total_views": 4074
+    "total_views": 4139
   },
   {
     "id": "flajolet-martin",
@@ -803,7 +803,7 @@
       "isolation-forest",
       "morris-counter"
     ],
-    "total_views": 3041
+    "total_views": 3130
   },
   {
     "id": "2q-cache",
@@ -826,7 +826,7 @@
       "ts-smoothing",
       "phi-accrual"
     ],
-    "total_views": 1681
+    "total_views": 1705
   },
   {
     "id": "israeli-queues",
@@ -849,7 +849,7 @@
       "morris-counter",
       "copy-on-write"
     ],
-    "total_views": 7137
+    "total_views": 7247
   },
   {
     "id": "1d-terrain",
@@ -874,7 +874,7 @@
       "jaccard-minhash",
       "idf"
     ],
-    "total_views": 1054
+    "total_views": 1062
   },
   {
     "id": "jaccard-minhash",
@@ -899,7 +899,7 @@
       "publish-python-package-on-pypi",
       "rule-30"
     ],
-    "total_views": 1436
+    "total_views": 1481
   },
   {
     "id": "ts-smoothing",
@@ -922,7 +922,7 @@
       "2q-cache",
       "atomicity"
     ],
-    "total_views": 497
+    "total_views": 498
   },
   {
     "id": "lfu",
@@ -948,7 +948,7 @@
       "flajolet-martin",
       "consistent-hashing"
     ],
-    "total_views": 6011
+    "total_views": 6034
   },
   {
     "id": "morris-counter",
@@ -972,7 +972,7 @@
       "fast-and-efficient-pagination-in-mongodb",
       "phi-accrual"
     ],
-    "total_views": 2047
+    "total_views": 2119
   },
   {
     "id": "slowsort",
@@ -998,7 +998,7 @@
       "morris-counter",
       "isolation-forest"
     ],
-    "total_views": 6480
+    "total_views": 6485
   },
   {
     "id": "bitcask",
@@ -1022,7 +1022,7 @@
       "isolation",
       "atomicity"
     ],
-    "total_views": 571
+    "total_views": 574
   },
   {
     "id": "phi-accrual",
@@ -1045,7 +1045,7 @@
       "2q-cache",
       "morris-counter"
     ],
-    "total_views": 466
+    "total_views": 478
   },
   {
     "id": "decipher-repeated-key-xor",
@@ -1068,7 +1068,7 @@
       "lfsr",
       "isolation-forest"
     ],
-    "total_views": 2655
+    "total_views": 2789
   },
   {
     "id": "decipher-single-xor",
@@ -1091,7 +1091,7 @@
       "lfsr",
       "isolation-forest"
     ],
-    "total_views": 1989
+    "total_views": 1998
   },
   {
     "id": "python-iterable-integers",
@@ -1111,7 +1111,7 @@
       "constant-folding-python",
       "i-changed-my-python"
     ],
-    "total_views": 1785
+    "total_views": 1790
   },
   {
     "id": "inheritance-c",
@@ -1130,7 +1130,7 @@
       "fast-and-efficient-pagination-in-mongodb",
       "idf"
     ],
-    "total_views": 3847
+    "total_views": 3850
   },
   {
     "id": "rum",
@@ -1149,7 +1149,7 @@
       "replication-formats",
       "multi-master-replication"
     ],
-    "total_views": 667
+    "total_views": 670
   },
   {
     "id": "consistent-hashing",
@@ -1169,7 +1169,7 @@
       "leaderless-replication",
       "persistent-data-structures-introduction"
     ],
-    "total_views": 1236
+    "total_views": 1259
   },
   {
     "id": "python-caches-integers",
@@ -1189,7 +1189,7 @@
       "constant-folding-python",
       "i-changed-my-python"
     ],
-    "total_views": 1823
+    "total_views": 1824
   },
   {
     "id": "fractional-cascading",
@@ -1208,7 +1208,7 @@
       "slowsort",
       "1d-terrain"
     ],
-    "total_views": 480
+    "total_views": 486
   },
   {
     "id": "copy-on-write",
@@ -1228,7 +1228,7 @@
       "mysql-cache",
       "ts-smoothing"
     ],
-    "total_views": 553
+    "total_views": 559
   },
   {
     "id": "mysql-cache",
@@ -1248,7 +1248,7 @@
       "israeli-queues",
       "copy-on-write"
     ],
-    "total_views": 463
+    "total_views": 466
   },
   {
     "id": "fsm",
@@ -1267,7 +1267,7 @@
       "python-prompts",
       "python-iterable-integers"
     ],
-    "total_views": 7613
+    "total_views": 7625
   },
   {
     "id": "bayesian-average",
@@ -1286,7 +1286,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "the-weird-walrus"
     ],
-    "total_views": 521
+    "total_views": 526
   },
   {
     "id": "sliding-window-ratelimiter",
@@ -1305,7 +1305,7 @@
       "image-steganography",
       "multiple-mysql-on-same-server-using-docker"
     ],
-    "total_views": 1031
+    "total_views": 1054
   },
   {
     "id": "idf",
@@ -1335,7 +1335,7 @@
       "recursion-visualizer",
       "constant-folding-python"
     ],
-    "total_views": 415
+    "total_views": 417
   },
   {
     "id": "better-programmer",
@@ -1362,7 +1362,7 @@
       "ts-smoothing",
       "atomicity"
     ],
-    "total_views": 2693
+    "total_views": 2709
   },
   {
     "id": "python-prompts",
@@ -1391,7 +1391,7 @@
       "python-iterable-integers",
       "i-changed-my-python"
     ],
-    "total_views": 1761
+    "total_views": 1763
   },
   {
     "id": "rule-30",
@@ -1418,7 +1418,7 @@
       "jaccard-minhash",
       "fast-and-efficient-pagination-in-mongodb"
     ],
-    "total_views": 1004
+    "total_views": 1011
   },
   {
     "id": "function-overloading",
@@ -1445,7 +1445,7 @@
       "fsm",
       "string-interning"
     ],
-    "total_views": 12344
+    "total_views": 12359
   },
   {
     "id": "isolation-forest",
@@ -1477,7 +1477,7 @@
       "phi-accrual",
       "morris-counter"
     ],
-    "total_views": 1118
+    "total_views": 1134
   },
   {
     "id": "image-steganography",
@@ -1515,7 +1515,7 @@
       "atomicity",
       "durability"
     ],
-    "total_views": 296
+    "total_views": 304
   },
   {
     "id": "super-long-integers",
@@ -1549,7 +1549,7 @@
       "python-caches-integers",
       "python-prompts"
     ],
-    "total_views": 3569
+    "total_views": 3584
   },
   {
     "id": "i-changed-my-python",
@@ -1583,7 +1583,7 @@
       "python-iterable-integers",
       "python-prompts"
     ],
-    "total_views": 1113
+    "total_views": 1119
   },
   {
     "id": "efficient-way-to-stop-an-iterating-loop",
@@ -1608,7 +1608,7 @@
       "publish-python-package-on-pypi",
       "setting-up-graphite-grafana-using-nginx-on-ubuntu"
     ],
-    "total_views": 416
+    "total_views": 425
   },
   {
     "id": "fast-and-efficient-pagination-in-mongodb",
@@ -1636,7 +1636,7 @@
       "jaccard-minhash",
       "bayesian-average"
     ],
-    "total_views": 3846
+    "total_views": 3895
   },
   {
     "id": "benchmark-and-compare-pagination-approach-in-mongodb",
@@ -1665,7 +1665,7 @@
       "better-programmer",
       "sliding-window-ratelimiter"
     ],
-    "total_views": 3498
+    "total_views": 3537
   },
   {
     "id": "mongodb-cursor-skip-is-slow",
@@ -1690,7 +1690,7 @@
       "idf",
       "copy-on-write"
     ],
-    "total_views": 2071
+    "total_views": 2087
   },
   {
     "id": "how-sleepsort-helped-me-understand-concurrency-in-golang",
@@ -1740,7 +1740,7 @@
       "benchmark-and-compare-pagination-approach-in-mongodb",
       "setting-up-graphite-grafana-using-nginx-on-ubuntu"
     ],
-    "total_views": 633
+    "total_views": 657
   },
   {
     "id": "multiple-mysql-on-same-server-using-docker",
@@ -1765,7 +1765,7 @@
       "udemy-sql-taxonomy",
       "how-sleepsort-helped-me-understand-concurrency-in-golang"
     ],
-    "total_views": 280
+    "total_views": 284
   },
   {
     "id": "setting-up-graphite-using-nginx-on-ubuntu",
@@ -1789,7 +1789,7 @@
       "benchmark-and-compare-pagination-approach-in-mongodb",
       "udemy-sql-taxonomy"
     ],
-    "total_views": 723
+    "total_views": 728
   },
   {
     "id": "setting-up-graphite-grafana-using-nginx-on-ubuntu",
@@ -1814,7 +1814,7 @@
       "efficient-way-to-stop-an-iterating-loop",
       "udemy-sql-taxonomy"
     ],
-    "total_views": 274
+    "total_views": 278
   },
   {
     "id": "publish-python-package-on-pypi",
@@ -1837,6 +1837,6 @@
       "python-prompts",
       "jaccard-minhash"
     ],
-    "total_views": 315
+    "total_views": 321
   }
 ]
