@@ -99,7 +99,8 @@
           ],
           "total_views": 435
         }
-      ]
+      ],
+      "id": "system-design"
     },
     {
       "topic": "Database Engineering",
@@ -121,7 +122,8 @@
         }
       ],
       "total_essays": 0,
-      "essays": []
+      "essays": [],
+      "id": "database-engineering"
     },
     {
       "topic": "Outage Dissections",
@@ -138,7 +140,8 @@
         }
       ],
       "total_essays": 0,
-      "essays": []
+      "essays": [],
+      "id": "outage-dissections"
     },
     {
       "topic": "Distributed Systems",
@@ -223,7 +226,8 @@
           ],
           "total_views": 435
         }
-      ]
+      ],
+      "id": "distributed-systems"
     },
     {
       "topic": "Python Internals",
@@ -321,7 +325,8 @@
           ],
           "total_views": 3917
         }
-      ]
+      ],
+      "id": "python-internals"
     }
   ],
   "total_essays": 74,
