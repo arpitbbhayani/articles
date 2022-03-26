@@ -7,7 +7,7 @@
     "gif": "https://media.giphy.com/media/3orieTU2tBje4i5SzS/giphy.gif",
     "yt_video_id": "",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "genetic algorithm",
@@ -31,7 +31,7 @@
     "gif": "https://media.giphy.com/media/3orieLKAOlnwdqkTCg/giphy.gif",
     "yt_video_id": "",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "lfsr",
@@ -672,7 +672,7 @@
     "gif": "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
     "categories": [
       "data structures",
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "persistent data structures",
@@ -788,7 +788,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/101244544-31977e80-372d-11eb-9ab4-d9e879496d39.png",
     "gif": "https://media.giphy.com/media/cRMgB2wjHhVN2tDD2z/giphy.gif",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "approximation algorithms",
@@ -812,7 +812,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/100538603-bf1f2e00-3256-11eb-87dc-32594b25ae30.png",
     "gif": "https://media.giphy.com/media/cfuL5gqFDreXxkWQ4o/giphy.gif",
     "categories": [
-      "algorithms",
+      "advanced algorithms",
       "databases"
     ],
     "tags": [
@@ -858,11 +858,11 @@
     "image": "https://user-images.githubusercontent.com/4745789/99261379-a9ffd380-2842-11eb-8f50-36b36ed42a95.png",
     "gif": "https://media.giphy.com/media/xT5LMTf2CRdBhetWPC/giphy.gif",
     "categories": [
-      "algorithms",
+      "advanced algorithms",
       "python"
     ],
     "tags": [
-      "algorithms",
+      "advanced algorithms",
       "terrain generation",
       "perlin noise",
       "random terrain generation"
@@ -883,7 +883,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/98465225-c4580280-21ed-11eb-9f1f-6508ed229925.png",
     "gif": "https://media.giphy.com/media/yvXWADxQxRMkQ4eEID/giphy.gif",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "set similarity",
@@ -908,7 +908,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/97785060-cbb55580-1bc8-11eb-9d6d-91ff16cc2ddc.png",
     "gif": "https://media.giphy.com/media/3orieVe5VYqTdT16qk/giphy.gif",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "time series smoothing",
@@ -931,7 +931,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/89711582-cf11ba00-d9a8-11ea-9173-c7069b1537b5.png",
     "gif": "https://media.giphy.com/media/fWqGY1AC4HVIN3lRyB/giphy.gif",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "caching",
@@ -957,7 +957,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/89116441-b9d0f300-d4b1-11ea-99e5-cca7c4cef5fb.png",
     "gif": "https://media.giphy.com/media/uWXxbGPMbFkxsni3tc/giphy.gif",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "approximate counting",
@@ -982,7 +982,7 @@
     "gif": "https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif",
     "yt_video_id": "TzxLYTC8HL8",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "slowsort",
@@ -1031,7 +1031,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/87240958-c5de0d80-c43b-11ea-8e1b-2a7c70586b9b.png",
     "gif": "https://media.giphy.com/media/gLoMzjGQB2tQlQtB9P/giphy.gif",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "distributed systems",
@@ -1158,7 +1158,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/82760647-92efa400-9e12-11ea-9533-5003bc3c46df.png",
     "gif": "https://media.giphy.com/media/3ofSBqzxwsiN0npCak/giphy.gif",
     "categories": [
-      "algorithms",
+      "advanced algorithms",
       "system design"
     ],
     "tags": [],
@@ -1198,7 +1198,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/82142043-352deb80-9857-11ea-9801-878d771248da.png",
     "gif": "https://media.giphy.com/media/1k5k3J5K3BywQOrpNA/giphy.gif",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [],
     "published_at": "2020-05-10",
@@ -1238,7 +1238,7 @@
     "gif": "https://media.giphy.com/media/daUOBsa1OztxC/giphy.gif",
     "categories": [
       "databases",
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [],
     "published_at": "2020-04-26",
@@ -1276,7 +1276,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/78990379-ebfdc400-7b53-11ea-88b7-cd64e39eabf6.png",
     "gif": "https://media.giphy.com/media/dJ4vNQ7r72pb4nDhN5/giphy.gif",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [],
     "published_at": "2020-04-12",
@@ -1314,7 +1314,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/76207579-10e4db80-6224-11ea-91ba-b67359125156.png",
     "gif": "https://media.giphy.com/media/3ornjWIRSzXEw61KH6/giphy.gif",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "tfidf",
@@ -1400,10 +1400,10 @@
     "image": "https://user-images.githubusercontent.com/4745789/74463952-b07aac80-4eb8-11ea-8d8e-6f286767ec7e.png",
     "gif": "https://media.giphy.com/media/26uflDxU6cEhrhmUg/giphy.gif",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
-      "algorithms",
+      "advanced algorithms",
       "cellular automata",
       "rule 30",
       "pseudorandom number generator",
@@ -1454,11 +1454,11 @@
     "image": "https://user-images.githubusercontent.com/4745789/73280907-34743980-4215-11ea-89f0-eac4a71df6e5.png",
     "gif": "https://media.giphy.com/media/xGdvlOVSWaDvi/giphy.gif",
     "categories": [
-      "algorithms",
+      "advanced algorithms",
       "python"
     ],
     "tags": [
-      "algorithms",
+      "advanced algorithms",
       "machine learning",
       "anomaly detection",
       "data science",
@@ -1699,7 +1699,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/63222328-203b0380-c1c4-11e9-9dd0-34c4bd9d1c6b.png",
     "gif": "https://media.giphy.com/media/QmJ3e9So5M9NdNkOGo/giphy.gif",
     "categories": [
-      "algorithms"
+      "advanced algorithms"
     ],
     "tags": [
       "golang",
