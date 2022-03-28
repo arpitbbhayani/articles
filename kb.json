@@ -388,12 +388,12 @@
     {
       "id": "system-design-masterclass",
       "name": "System Design Masterclass",
-      "url": "https://arpitbhayani.me/masterclass"
+      "url": "/masterclass"
     },
     {
       "id": "all-things-redis",
       "name": "All Things Redis",
-      "url": "https://arpitbhayani.me/all-things-redis"
+      "url": "/all-things-redis"
     }
   ]
 }
