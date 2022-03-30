@@ -7,19 +7,31 @@
           "title": "Implementing Distributed Transactions using Two Phase Commit Protocol",
           "published_at": "30 Mar, 2022",
           "video_id": "oMhESvU87jM",
-          "img": "https://i.ytimg.com/vi/oMhESvU87jM/mqdefault.jpg"
+          "img": {
+            "url": "https://i.ytimg.com/vi/oMhESvU87jM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          }
         },
         {
           "title": "Distributed Transactions: Two-Phase Commit Protocol",
           "published_at": "28 Mar, 2022",
           "video_id": "7FgU1D4EnpQ",
-          "img": "https://i.ytimg.com/vi/7FgU1D4EnpQ/mqdefault.jpg"
+          "img": {
+            "url": "https://i.ytimg.com/vi/7FgU1D4EnpQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          }
         },
         {
           "title": "What are Embedded Databases?",
           "published_at": "25 Mar, 2022",
           "video_id": "xELqRiovEcI",
-          "img": "https://i.ytimg.com/vi/xELqRiovEcI/mqdefault.jpg"
+          "img": {
+            "url": "https://i.ytimg.com/vi/xELqRiovEcI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          }
         }
       ],
       "total_essays": 25,
