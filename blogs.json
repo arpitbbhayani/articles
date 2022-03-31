@@ -609,7 +609,6 @@
     "gif": "https://media.giphy.com/media/LpLd2NGvpaiys/giphy.gif",
     "yt_video_id": "zz2Lu5ht_jA",
     "categories": [
-      "python",
       "python internals"
     ],
     "tags": [
@@ -661,7 +660,6 @@
     "yt_video_id": "rWb7VYz1q1U",
     "categories": [
       "python internals",
-      "python"
     ],
     "tags": [
       "python internals",
@@ -729,8 +727,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/104118331-23e9a000-534e-11eb-9ec8-8369cdae40b1.png",
     "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
     "categories": [
-      "python internals",
-      "python"
+      "python internals"
     ],
     "tags": [
       "compiler optimization",
@@ -754,8 +751,7 @@
     "gif": "https://media.giphy.com/media/KRNBl0iSS8gg0/giphy.gif",
     "yt_video_id": "QpGK69LzfpY",
     "categories": [
-      "python internals",
-      "python"
+      "python internals"
     ],
     "tags": [
       "compiler optimization",
@@ -778,7 +774,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/102006828-0ffc4f80-3d4a-11eb-8ab1-0891dc5ba00f.png",
     "gif": "https://media.giphy.com/media/3ov9jQX2Ow4bM5xxuM/giphy.gif",
     "categories": [
-      "python"
+      "utility"
     ],
     "tags": [
       "recursion tree",
@@ -872,8 +868,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/99261379-a9ffd380-2842-11eb-8f50-36b36ed42a95.png",
     "gif": "https://media.giphy.com/media/xT5LMTf2CRdBhetWPC/giphy.gif",
     "categories": [
-      "advanced algorithms",
-      "python"
+      "advanced algorithms"
     ],
     "tags": [
       "advanced algorithms",
@@ -1114,7 +1109,6 @@
     "image": "https://user-images.githubusercontent.com/4745789/84585100-bf06af80-ae29-11ea-8797-16c70aee5cc4.png",
     "gif": "https://media.giphy.com/media/k4ta29T68xlfi/giphy.gif",
     "categories": [
-      "python",
       "python internals"
     ],
     "tags": [],
@@ -1192,7 +1186,6 @@
     "image": "https://user-images.githubusercontent.com/4745789/82141979-a620d380-9856-11ea-9a4a-32399c0c01b8.png",
     "gif": "https://media.giphy.com/media/l378kmO7gdbXaesXS/giphy.gif",
     "categories": [
-      "python",
       "python internals"
     ],
     "tags": [],
@@ -1271,7 +1264,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/79684359-3ebf3600-824e-11ea-97cc-0f06c2919aeb.png",
     "gif": "https://media.giphy.com/media/KhdQ2Ia3FJuKs/giphy.gif",
     "categories": [
-      "python"
+      "advanced algorithms"
     ],
     "tags": [],
     "published_at": "2020-04-19",
@@ -1385,7 +1378,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/74850923-8ade1f00-5360-11ea-8ed5-1072c8a718c2.png",
     "gif": "https://media.giphy.com/media/TFTqzyOQwT2zS/giphy.gif",
     "categories": [
-      "python"
+      "utility"
     ],
     "tags": [
       "python",
@@ -1441,7 +1434,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/73909201-04423000-48d2-11ea-8bd0-d7c25f6435c1.png",
     "gif": "https://media.giphy.com/media/WtCHRSPCuqS8E/giphy.gif",
     "categories": [
-      "python"
+      "python internals"
     ],
     "tags": [
       "python",
@@ -1468,8 +1461,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/73280907-34743980-4215-11ea-89f0-eac4a71df6e5.png",
     "gif": "https://media.giphy.com/media/xGdvlOVSWaDvi/giphy.gif",
     "categories": [
-      "advanced algorithms",
-      "python"
+      "advanced algorithms"
     ],
     "tags": [
       "advanced algorithms",
@@ -1538,7 +1530,6 @@
     "image": "https://user-images.githubusercontent.com/4745789/72040055-55f49c00-32cd-11ea-9190-8f5a67c2f3d9.png",
     "gif": "https://media.giphy.com/media/SKGo6OYe24EBG/giphy.gif",
     "categories": [
-      "python",
       "python internals"
     ],
     "tags": [
@@ -1572,7 +1563,6 @@
     "image": "https://user-images.githubusercontent.com/4745789/71662123-60b3ac00-2d76-11ea-8018-f558cef93a59.png",
     "gif": "https://media.giphy.com/media/aZ5wedD7Jtazm/giphy.gif",
     "categories": [
-      "python",
       "python internals"
     ],
     "tags": [
@@ -1739,7 +1729,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/63222693-a5c0b280-c1c8-11e9-9cd4-808225e579f3.png",
     "gif": "https://media.giphy.com/media/2tSodgDfwCjIMCBY8h/giphy.gif",
     "categories": [
-      "python"
+      "utility"
     ],
     "tags": [
       "netcat",
@@ -1837,7 +1827,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/63223433-e45b6a80-c1d2-11e9-921f-c2cc0153cf4a.png",
     "gif": "https://media.giphy.com/media/TfKfqjt2i4GIM/giphy.gif",
     "categories": [
-      "python"
+      "utility"
     ],
     "tags": [
       "python",
