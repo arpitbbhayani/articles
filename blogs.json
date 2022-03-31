@@ -56,7 +56,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -83,7 +84,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -110,7 +112,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -134,7 +137,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -159,7 +163,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -184,7 +189,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -209,7 +215,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -234,7 +241,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -258,7 +266,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -282,7 +291,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -308,7 +318,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -335,7 +346,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -362,7 +374,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -389,7 +402,8 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "distributed systems"
+      "distributed systems",
+      "database engineering"
     ],
     "tags": [
       "distributed systems",
@@ -416,7 +430,7 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "databases"
+      "database engineering"
     ],
     "tags": [
       "ACID in databases",
@@ -441,7 +455,7 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "databases"
+      "database engineering"
     ],
     "tags": [
       "ACID in databases",
@@ -466,7 +480,7 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "databases"
+      "database engineering"
     ],
     "tags": [
       "ACID in databases",
@@ -491,7 +505,7 @@
     "yt_video_id": "",
     "categories": [
       "system design",
-      "databases"
+      "database engineering"
     ],
     "tags": [
       "ACID in databases",
@@ -620,7 +634,7 @@
     "gif": "https://media.giphy.com/media/3o6Mbsop5cXzqVqfgA/giphy.gif",
     "yt_video_id": "4_jlmX_oB94",
     "categories": [
-      "databases",
+      "database engineering",
       "system design"
     ],
     "tags": [
@@ -813,7 +827,7 @@
     "gif": "https://media.giphy.com/media/cfuL5gqFDreXxkWQ4o/giphy.gif",
     "categories": [
       "advanced algorithms",
-      "databases"
+      "database engineering"
     ],
     "tags": [
       "postgres internals",
@@ -1237,7 +1251,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/80304802-0ed7db80-87d6-11ea-98db-bc5d4afe965b.png",
     "gif": "https://media.giphy.com/media/daUOBsa1OztxC/giphy.gif",
     "categories": [
-      "databases",
+      "database engineering",
       "advanced algorithms"
     ],
     "tags": [],
