@@ -3,6 +3,7 @@
   "videos": [
     {
       "title": "Implementing Distributed Transactions using Two Phase Commit Protocol",
+      "published_at_iso": "2022-03-30T04:30:07Z",
       "published_at": "30 Mar, 2022",
       "video_id": "oMhESvU87jM",
       "img": {
@@ -26,6 +27,7 @@
     },
     {
       "title": "Distributed Transactions: Two-Phase Commit Protocol",
+      "published_at_iso": "2022-03-28T04:30:03Z",
       "published_at": "28 Mar, 2022",
       "video_id": "7FgU1D4EnpQ",
       "img": {
@@ -49,6 +51,7 @@
     },
     {
       "title": "What are Embedded Databases?",
+      "published_at_iso": "2022-03-25T04:30:14Z",
       "published_at": "25 Mar, 2022",
       "video_id": "xELqRiovEcI",
       "img": {
@@ -72,6 +75,7 @@
     },
     {
       "title": "How does the database guarantee reliability using write-ahead logging?",
+      "published_at_iso": "2022-03-21T04:30:09Z",
       "published_at": "21 Mar, 2022",
       "video_id": "wI4hKwl1Cn4",
       "img": {
@@ -95,6 +99,7 @@
     },
     {
       "title": "Handling timeouts in a microservice architecture",
+      "published_at_iso": "2022-03-18T04:30:06Z",
       "published_at": "18 Mar, 2022",
       "video_id": "Hxja4crycBg",
       "img": {
@@ -118,6 +123,7 @@
     },
     {
       "title": "How do indexes make databases read faster?",
+      "published_at_iso": "2022-03-16T04:30:00Z",
       "published_at": "16 Mar, 2022",
       "video_id": "3G293is403I",
       "img": {
@@ -141,6 +147,7 @@
     },
     {
       "title": "How to handle database outages?",
+      "published_at_iso": "2022-03-14T04:30:05Z",
       "published_at": "14 Mar, 2022",
       "video_id": "UT_TVldzA64",
       "img": {
@@ -164,7 +171,8 @@
     },
     {
       "title": "Scaling Taxonomy Service and Database",
-      "published_at": "01 May, 2021",
+      "published_at_iso": "2021-05-02T03:30:06Z",
+      "published_at": "02 May, 2021",
       "video_id": "dTPh3KcKPYo",
       "img": {
         "url": "https://i.ytimg.com/vi/dTPh3KcKPYo/mqdefault.jpg",
@@ -187,6 +195,7 @@
     },
     {
       "title": "Designing Taxonomy on SQL",
+      "published_at_iso": "2021-04-19T11:27:51Z",
       "published_at": "19 Apr, 2021",
       "video_id": "4_jlmX_oB94",
       "img": {
@@ -210,6 +219,7 @@
     },
     {
       "title": "End-to-end Message Encryption",
+      "published_at_iso": "2021-04-05T17:16:01Z",
       "published_at": "05 Apr, 2021",
       "video_id": "m_7xSIhxZL8",
       "img": {
@@ -219,7 +229,7 @@
       },
       "duration": "15:57",
       "view_count": {
-        "abs": "3219",
+        "abs": "3220",
         "str": "3.22k"
       },
       "like_count": {
@@ -233,6 +243,7 @@
     },
     {
       "title": "Scaling Notifications | How Instagram manages notifications at scale? | System Design",
+      "published_at_iso": "2021-04-01T12:46:04Z",
       "published_at": "01 Apr, 2021",
       "video_id": "kIP8L-CSl2Y",
       "img": {

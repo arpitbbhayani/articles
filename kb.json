@@ -5,6 +5,7 @@
       "videos": [
         {
           "title": "Implementing Distributed Transactions using Two Phase Commit Protocol",
+          "published_at_iso": "2022-03-30T04:30:07Z",
           "published_at": "30 Mar, 2022",
           "video_id": "oMhESvU87jM",
           "img": {
@@ -28,6 +29,7 @@
         },
         {
           "title": "Distributed Transactions: Two-Phase Commit Protocol",
+          "published_at_iso": "2022-03-28T04:30:03Z",
           "published_at": "28 Mar, 2022",
           "video_id": "7FgU1D4EnpQ",
           "img": {
@@ -51,6 +53,7 @@
         },
         {
           "title": "What are Embedded Databases?",
+          "published_at_iso": "2022-03-25T04:30:14Z",
           "published_at": "25 Mar, 2022",
           "video_id": "xELqRiovEcI",
           "img": {
@@ -164,6 +167,7 @@
       "videos": [
         {
           "title": "What are Embedded Databases?",
+          "published_at_iso": "2022-03-25T04:30:14Z",
           "published_at": "25 Mar, 2022",
           "video_id": "xELqRiovEcI",
           "img": {
@@ -186,31 +190,33 @@
           }
         },
         {
-          "title": "How to handle database outages?",
-          "published_at": "22 Mar, 2022",
-          "video_id": "UT_TVldzA64",
+          "title": "How does the database guarantee reliability using write-ahead logging?",
+          "published_at_iso": "2022-03-21T04:30:09Z",
+          "published_at": "21 Mar, 2022",
+          "video_id": "wI4hKwl1Cn4",
           "img": {
-            "url": "https://i.ytimg.com/vi/UT_TVldzA64/mqdefault.jpg",
+            "url": "https://i.ytimg.com/vi/wI4hKwl1Cn4/mqdefault.jpg",
             "width": 320,
             "height": 180
           },
-          "duration": "30:38",
+          "duration": "22:6",
           "view_count": {
-            "abs": "1230",
-            "str": "1.23k"
+            "abs": "930",
+            "str": 930
           },
           "like_count": {
-            "abs": "93",
-            "str": 93
+            "abs": "66",
+            "str": 66
           },
           "comment_count": {
-            "abs": "10",
-            "str": 10
+            "abs": "5",
+            "str": 5
           }
         },
         {
           "title": "How do indexes make databases read faster?",
-          "published_at": "22 Mar, 2022",
+          "published_at_iso": "2022-03-16T04:30:00Z",
+          "published_at": "16 Mar, 2022",
           "video_id": "3G293is403I",
           "img": {
             "url": "https://i.ytimg.com/vi/3G293is403I/mqdefault.jpg",
@@ -323,6 +329,7 @@
       "videos": [
         {
           "title": "Dissecting GitHub Outage: ID column reaching the max value 2147483647",
+          "published_at_iso": "2022-03-23T04:30:05Z",
           "published_at": "23 Mar, 2022",
           "video_id": "ZFRAFTn0cQ0",
           "img": {
@@ -346,7 +353,8 @@
         },
         {
           "title": "Dissecting Spotify's Global Outage - March 8, 2022",
-          "published_at": "22 Mar, 2022",
+          "published_at_iso": "2022-03-12T05:19:27Z",
+          "published_at": "12 Mar, 2022",
           "video_id": "h5hXivWws7k",
           "img": {
             "url": "https://i.ytimg.com/vi/h5hXivWws7k/mqdefault.jpg",
@@ -376,31 +384,33 @@
       "topic": "Distributed Systems",
       "videos": [
         {
-          "title": "Handling timeouts in a microservice architecture",
-          "published_at": "31 Mar, 2022",
-          "video_id": "Hxja4crycBg",
+          "title": "Implementing Distributed Transactions using Two Phase Commit Protocol",
+          "published_at_iso": "2022-03-30T04:30:07Z",
+          "published_at": "30 Mar, 2022",
+          "video_id": "oMhESvU87jM",
           "img": {
-            "url": "https://i.ytimg.com/vi/Hxja4crycBg/mqdefault.jpg",
+            "url": "https://i.ytimg.com/vi/oMhESvU87jM/mqdefault.jpg",
             "width": 320,
             "height": 180
           },
-          "duration": "23:38",
+          "duration": "39:24",
           "view_count": {
-            "abs": "1249",
-            "str": "1.25k"
+            "abs": "352",
+            "str": 352
           },
           "like_count": {
-            "abs": "87",
-            "str": 87
+            "abs": "26",
+            "str": 26
           },
           "comment_count": {
-            "abs": "12",
-            "str": 12
+            "abs": "1",
+            "str": 1
           }
         },
         {
           "title": "Distributed Transactions: Two-Phase Commit Protocol",
-          "published_at": "31 Mar, 2022",
+          "published_at_iso": "2022-03-28T04:30:03Z",
+          "published_at": "28 Mar, 2022",
           "video_id": "7FgU1D4EnpQ",
           "img": {
             "url": "https://i.ytimg.com/vi/7FgU1D4EnpQ/mqdefault.jpg",
@@ -422,26 +432,27 @@
           }
         },
         {
-          "title": "Implementing Distributed Transactions using Two Phase Commit Protocol",
-          "published_at": "31 Mar, 2022",
-          "video_id": "oMhESvU87jM",
+          "title": "Handling timeouts in a microservice architecture",
+          "published_at_iso": "2022-03-18T04:30:06Z",
+          "published_at": "18 Mar, 2022",
+          "video_id": "Hxja4crycBg",
           "img": {
-            "url": "https://i.ytimg.com/vi/oMhESvU87jM/mqdefault.jpg",
+            "url": "https://i.ytimg.com/vi/Hxja4crycBg/mqdefault.jpg",
             "width": 320,
             "height": 180
           },
-          "duration": "39:24",
+          "duration": "23:38",
           "view_count": {
-            "abs": "352",
-            "str": 352
+            "abs": "1249",
+            "str": "1.25k"
           },
           "like_count": {
-            "abs": "26",
-            "str": 26
+            "abs": "87",
+            "str": 87
           },
           "comment_count": {
-            "abs": "1",
-            "str": 1
+            "abs": "12",
+            "str": 12
           }
         }
       ],
@@ -536,6 +547,7 @@
       "videos": [
         {
           "title": "How \"is\" operator is implemented in python?",
+          "published_at_iso": "2021-05-31T13:15:50Z",
           "published_at": "31 May, 2021",
           "video_id": "Q8luYnxiFFE",
           "img": {
@@ -559,7 +571,8 @@
         },
         {
           "title": "How id() function is implemented in python?",
-          "published_at": "23 May, 2021",
+          "published_at_iso": "2021-05-24T03:30:02Z",
+          "published_at": "24 May, 2021",
           "video_id": "IGLnxdmJu2c",
           "img": {
             "url": "https://i.ytimg.com/vi/IGLnxdmJu2c/mqdefault.jpg",
@@ -582,7 +595,8 @@
         },
         {
           "title": "How python compares a float and an int objects?",
-          "published_at": "12 May, 2021",
+          "published_at_iso": "2021-05-13T03:30:06Z",
+          "published_at": "13 May, 2021",
           "video_id": "u4tfIy--4GM",
           "img": {
             "url": "https://i.ytimg.com/vi/u4tfIy--4GM/mqdefault.jpg",

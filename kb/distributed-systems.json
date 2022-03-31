@@ -2,31 +2,33 @@
   "topic": "Distributed Systems",
   "videos": [
     {
-      "title": "Handling timeouts in a microservice architecture",
-      "published_at": "31 Mar, 2022",
-      "video_id": "Hxja4crycBg",
+      "title": "Implementing Distributed Transactions using Two Phase Commit Protocol",
+      "published_at_iso": "2022-03-30T04:30:07Z",
+      "published_at": "30 Mar, 2022",
+      "video_id": "oMhESvU87jM",
       "img": {
-        "url": "https://i.ytimg.com/vi/Hxja4crycBg/mqdefault.jpg",
+        "url": "https://i.ytimg.com/vi/oMhESvU87jM/mqdefault.jpg",
         "width": 320,
         "height": 180
       },
-      "duration": "23:38",
+      "duration": "39:24",
       "view_count": {
-        "abs": "1249",
-        "str": "1.25k"
+        "abs": "352",
+        "str": 352
       },
       "like_count": {
-        "abs": "87",
-        "str": 87
+        "abs": "26",
+        "str": 26
       },
       "comment_count": {
-        "abs": "12",
-        "str": 12
+        "abs": "1",
+        "str": 1
       }
     },
     {
       "title": "Distributed Transactions: Two-Phase Commit Protocol",
-      "published_at": "31 Mar, 2022",
+      "published_at_iso": "2022-03-28T04:30:03Z",
+      "published_at": "28 Mar, 2022",
       "video_id": "7FgU1D4EnpQ",
       "img": {
         "url": "https://i.ytimg.com/vi/7FgU1D4EnpQ/mqdefault.jpg",
@@ -48,26 +50,27 @@
       }
     },
     {
-      "title": "Implementing Distributed Transactions using Two Phase Commit Protocol",
-      "published_at": "31 Mar, 2022",
-      "video_id": "oMhESvU87jM",
+      "title": "Handling timeouts in a microservice architecture",
+      "published_at_iso": "2022-03-18T04:30:06Z",
+      "published_at": "18 Mar, 2022",
+      "video_id": "Hxja4crycBg",
       "img": {
-        "url": "https://i.ytimg.com/vi/oMhESvU87jM/mqdefault.jpg",
+        "url": "https://i.ytimg.com/vi/Hxja4crycBg/mqdefault.jpg",
         "width": 320,
         "height": 180
       },
-      "duration": "39:24",
+      "duration": "23:38",
       "view_count": {
-        "abs": "352",
-        "str": 352
+        "abs": "1249",
+        "str": "1.25k"
       },
       "like_count": {
-        "abs": "26",
-        "str": 26
+        "abs": "87",
+        "str": 87
       },
       "comment_count": {
-        "abs": "1",
-        "str": 1
+        "abs": "12",
+        "str": 12
       }
     }
   ],

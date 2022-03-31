@@ -3,6 +3,7 @@
   "videos": [
     {
       "title": "Dissecting GitHub Outage: ID column reaching the max value 2147483647",
+      "published_at_iso": "2022-03-23T04:30:05Z",
       "published_at": "23 Mar, 2022",
       "video_id": "ZFRAFTn0cQ0",
       "img": {
@@ -26,7 +27,8 @@
     },
     {
       "title": "Dissecting Spotify's Global Outage - March 8, 2022",
-      "published_at": "22 Mar, 2022",
+      "published_at_iso": "2022-03-12T05:19:27Z",
+      "published_at": "12 Mar, 2022",
       "video_id": "h5hXivWws7k",
       "img": {
         "url": "https://i.ytimg.com/vi/h5hXivWws7k/mqdefault.jpg",
