@@ -1596,7 +1596,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/64327846-02ee9d80-cfea-11e9-8698-4a18bfe76068.png",
     "gif": "https://media.giphy.com/media/cKKXNlTYino7hWNXwl/giphy.gif",
     "categories": [
-      "benchmarks"
+      "explorations"
     ],
     "tags": [
       "programming",
@@ -1621,8 +1621,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/63153080-1336dc80-c02b-11e9-931f-0c7552a63ebc.png",
     "gif": "https://media.giphy.com/media/lRnUWhmllPI9a/giphy.gif",
     "categories": [
-      "databases",
-      "benchmarks"
+      "database engineering"
     ],
     "tags": [
       "mongodb",
@@ -1649,8 +1648,7 @@
     "image": "https://user-images.githubusercontent.com/4745789/63220759-d514f680-c1ab-11e9-8a38-7b1828946b74.png",
     "gif": "https://media.giphy.com/media/c5eqVJN7oNLTq/giphy.gif",
     "categories": [
-      "databases",
-      "benchmarks"
+      "database engineering"
     ],
     "tags": [
       "mongodb",
