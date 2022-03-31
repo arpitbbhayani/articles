@@ -1,1844 +1,1843 @@
-[
-  {
-    "id": "genetic-knapsack",
-    "title": "Genetic Algorithm to solve the Knapsack Problem",
-    "description": "The 0/1 Knapsack Problem has a pseudo-polynomial run-time complexity. In this essay, we look at an approximation algorithm inspired by genetics that finds a high-quality solution to it in polynomial time.",
-    "image": "https://user-images.githubusercontent.com/4745789/156910296-48167efc-dc08-4f26-88b8-7037fdfc6ae3.png",
-    "gif": "https://media.giphy.com/media/3orieTU2tBje4i5SzS/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "genetic algorithm",
-      "the 0/1 knapsack problem",
-      "approximation algorithm for knapsack problem"
-    ],
-    "published_at": "2022-03-07",
-    "similar": [
-      "fractional-cascading",
-      "rule-30",
-      "flajolet-martin",
-      "1d-terrain"
-    ],
-    "total_views": 441
-  },
-  {
-    "id": "lfsr",
-    "title": "Pseudorandom Number Generation using LFSR",
-    "description": "This essay takes a detailed look into pseudorandom number generation using LFSR, a widely adopted technique to generate random numbers on hardware and on software.",
-    "image": "https://user-images.githubusercontent.com/4745789/154754358-c1bbd5ff-2a0b-4028-b1ec-05cf90300d83.png",
-    "gif": "https://media.giphy.com/media/3orieLKAOlnwdqkTCg/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "lfsr",
-      "linear feedback shift registers",
-      "pseudorandom number generation algorithm"
-    ],
-    "published_at": "2022-02-21",
-    "similar": [
-      "publish-python-package-on-pypi",
-      "efficient-way-to-stop-an-iterating-loop",
-      "the-weird-walrus",
-      "jaccard-minhash"
-    ],
-    "total_views": 609
-  },
-  {
-    "id": "indexing-on-partitioned-data",
-    "title": "Indexing on Partitioned Data",
-    "description": "In this essay, we will take a detailed look into how we could index the partitioned data, allowing us to query the data on secondary attributes quickly.",
-    "image": "https://user-images.githubusercontent.com/4745789/152698544-c62436c9-8735-4490-90be-4d117902736b.png",
-    "gif": "https://media.giphy.com/media/3o6Mb9cGKe3JzhbqPC/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "data partitioning",
-      "data partitioning indexes",
-      "global secondary indexes",
-      "local secondary indexes"
-    ],
-    "published_at": "2022-02-07",
-    "similar": [
-      "data-partitioning",
-      "conflict-detection",
-      "data-partitioning-strategies",
-      "architectures-in-distributed-systems"
-    ],
-    "total_views": 380
-  },
-  {
-    "id": "data-partitioning-strategies",
-    "title": "Data Partitioning Strategies",
-    "description": "In this essay, we take a detailed look into the two common approaches to horizontally partition the data - Hash Based and Range Based Partitioning.",
-    "image": "https://user-images.githubusercontent.com/4745789/151733223-2f1f5611-7b4a-463d-aadf-fd522b535d67.png",
-    "gif": "https://media.giphy.com/media/xTiTnrliW65rlwud8I/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "data partitioning",
-      "data partitioning strategies",
-      "range-based partitioning",
-      "hash-based partitioning"
-    ],
-    "published_at": "2022-01-31",
-    "similar": [
-      "indexing-on-partitioned-data",
-      "data-partitioning",
-      "mistaken-beliefs-of-distributed-systems",
-      "conflict-detection"
-    ],
-    "total_views": 302
-  },
-  {
-    "id": "data-partitioning",
-    "title": "Data Partitioning",
-    "description": "In this essay, we take a detailed look into Partitioning basics and understand how it can help us scale our Reads and Writes beyond a single machine.",
-    "image": "https://user-images.githubusercontent.com/4745789/150692301-6abb0b95-c91f-4a8f-8d10-6e0f49b4d58d.png",
-    "gif": "https://media.giphy.com/media/l0G17UXa1wk36OIAE/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "data partitioning"
-    ],
-    "published_at": "2022-01-24",
-    "similar": [
-      "multi-master-replication",
-      "indexing-on-partitioned-data",
-      "handling-outages-master-replica",
-      "data-partitioning-strategies"
-    ],
-    "total_views": 435
-  },
-  {
-    "id": "leaderless-replication",
-    "title": "Leaderless Replication",
-    "description": "In this essay, we take a look into a different way of replication, called Leaderless Replication, that comes in handy in a multi-master setup that demands strong consistency.",
-    "image": "https://user-images.githubusercontent.com/4745789/149646378-0d38d51f-af73-483b-8f05-d5251d6e5b4b.png",
-    "gif": "https://media.giphy.com/media/HUkOv6BNWc1HO/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "leadeless replication",
-      "highly consistent systems"
-    ],
-    "published_at": "2022-01-16",
-    "similar": [
-      "rum",
-      "master-replica-replication",
-      "persistent-data-structures-introduction",
-      "replication-formats"
-    ],
-    "total_views": 444
-  },
-  {
-    "id": "conflict-resolution",
-    "title": "Conflict Resolution",
-    "description": "In this essay, go in-depth to understand ways to resolve and avoid conflicts in a multi-master setup.",
-    "image": "https://user-images.githubusercontent.com/4745789/148543014-5b785b5a-fa6c-4ef5-8e8a-656177033e9f.png",
-    "gif": "https://media.giphy.com/media/l2JeiBuUsaFNQIfEk/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "multi-master replication",
-      "multi-master setup"
-    ],
-    "published_at": "2022-01-09",
-    "similar": [
-      "architectures-in-distributed-systems",
-      "conflict-detection",
-      "mistaken-beliefs-of-distributed-systems",
-      "monotonic-reads"
-    ],
-    "total_views": 275
-  },
-  {
-    "id": "conflict-detection",
-    "title": "Conflict Detection",
-    "description": "In this essay, we talk about conflicts and understand what they are, how to detect them in a multi-master setup.",
-    "image": "https://user-images.githubusercontent.com/4745789/143674841-79dc836f-e989-4d25-bfce-ee2939843ad4.png",
-    "gif": "https://media.giphy.com/media/3o6MbiJPqtMPHykonK/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "multi-master replication",
-      "multi-master setup"
-    ],
-    "published_at": "2021-11-28",
-    "similar": [
-      "architectures-in-distributed-systems",
-      "mistaken-beliefs-of-distributed-systems",
-      "indexing-on-partitioned-data",
-      "monotonic-reads"
-    ],
-    "total_views": 709
-  },
-  {
-    "id": "multi-master-replication",
-    "title": "Multi-Master Replication",
-    "description": "In this essay, we look at what Multi-Master Replication is, the core challenge it addresses, use-cases we can find this replication in action, and the possible concerns of using it.",
-    "image": "https://user-images.githubusercontent.com/4745789/140054768-d9bd1eaf-4d26-49bc-9035-024e4a7e010a.png",
-    "gif": "https://media.giphy.com/media/3orieW7ikndkDjQuT6/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "multi-master replication",
-      "multi-master setup"
-    ],
-    "published_at": "2021-11-03",
-    "similar": [
-      "handling-outages-master-replica",
-      "data-partitioning",
-      "replication-formats",
-      "data-partitioning-strategies"
-    ],
-    "total_views": 497
-  },
-  {
-    "id": "monotonic-reads",
-    "title": "Monotonic Reads",
-    "description": "Asynchronous replication leads to a fascinating situation where it feels like we are going through a wormhole traveling back and forth in time. In this essay, we understand why this happens and the consequences and devise a quick solution to address it.",
-    "image": "https://user-images.githubusercontent.com/4745789/135490742-ecf2f507-2a61-465d-a2de-515a913f5588.png",
-    "gif": "https://media.giphy.com/media/3o6Mb84ODTP8FgQQuI/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "monotonic reads"
-    ],
-    "published_at": "2021-10-03",
-    "similar": [
-      "conflict-detection",
-      "architectures-in-distributed-systems",
-      "conflict-resolution",
-      "indexing-on-partitioned-data"
-    ],
-    "total_views": 348
-  },
-  {
-    "id": "read-your-write-consistency",
-    "title": "Read-your-write Consistency",
-    "description": "Read-Your-Writes consistency states that the system guarantees that, once an item has been updated, any attempt to read the record by the same client will return the updated value.",
-    "image": "https://user-images.githubusercontent.com/4745789/134203710-5284102a-4d0f-43b1-bcd9-6668040ac550.png",
-    "gif": "https://media.giphy.com/media/3o6MbsTCszAbi6f1aE/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "read your write consistency"
-    ],
-    "published_at": "2021-09-22",
-    "similar": [
-      "new-replica",
-      "handling-outages-master-replica",
-      "multi-master-replication",
-      "replication-strategies"
-    ],
-    "total_views": 1120
-  },
-  {
-    "id": "handling-outages-master-replica",
-    "title": "Handling outages in a Master-Replica setup",
-    "description": "This essay talks about the worse - nodes going down - impact,  recovery, and real-world practices.",
-    "image": "https://user-images.githubusercontent.com/4745789/132286179-14358b33-95cf-4d48-9419-5eaa727ffd56.png",
-    "gif": "https://media.giphy.com/media/xT5LMskx2CiLPpAkk8/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "handling outage master-replica",
-      "master crash",
-      "replica crash"
-    ],
-    "published_at": "2021-09-07",
-    "similar": [
-      "multi-master-replication",
-      "replication-formats",
-      "replication-strategies",
-      "data-partitioning"
-    ],
-    "total_views": 375
-  },
-  {
-    "id": "new-replica",
-    "title": "The New Replica",
-    "description": "In this one, we take a look into how these Replicas are set up and understand some quirky nuances about Replication.",
-    "image": "https://user-images.githubusercontent.com/4745789/130425162-e02fcffe-3c61-4e90-98b6-6c7a25cb884e.png",
-    "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "replication",
-      "replication formats",
-      "row-based replication",
-      "statement-based replication"
-    ],
-    "published_at": "2021-08-23",
-    "similar": [
-      "replication-strategies",
-      "read-your-write-consistency",
-      "handling-outages-master-replica",
-      "multi-master-replication"
-    ],
-    "total_views": 293
-  },
-  {
-    "id": "replication-formats",
-    "title": "Replication Formats",
-    "description": "When we are employing a Master-Replica pattern to improve availability, throughput, and fault-tolerance, the big question that pops up is how the writes happening on the Master propagates to the  Replica. In this essay, we will talk about exactly this and find out about Replication Formats.",
-    "image": "https://user-images.githubusercontent.com/4745789/129456630-73db5669-5fb9-47a6-bd13-72fd0c5a2e54.png",
-    "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "replication",
-      "replication formats",
-      "row-based replication",
-      "statement-based replication"
-    ],
-    "published_at": "2021-08-15",
-    "similar": [
-      "handling-outages-master-replica",
-      "multi-master-replication",
-      "replication-strategies",
-      "rum"
-    ],
-    "total_views": 334
-  },
-  {
-    "id": "replication-strategies",
-    "title": "Replication Strategies",
-    "description": "In this essay, we take a quick yet verbose look into Synchronous, Asynchronous, and Semisynchronous replication strategies and understand their implications.",
-    "image": "https://user-images.githubusercontent.com/4745789/128717208-a0f495c1-ccf6-4039-b936-f1cc29d722f3.png",
-    "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "replication",
-      "synchronous replication",
-      "asynchronous replication",
-      "semi-synchronous replication"
-    ],
-    "published_at": "2021-08-10",
-    "similar": [
-      "new-replica",
-      "handling-outages-master-replica",
-      "replication-formats",
-      "multi-master-replication"
-    ],
-    "total_views": 821
-  },
-  {
-    "id": "master-replica-replication",
-    "title": "Master-Replica Replication",
-    "description": "In this essay, we talk about everything we should know about Master-Replica replication pattern.",
-    "image": "https://user-images.githubusercontent.com/4745789/128563709-a95f9f55-f87b-458d-b6c4-562ef894805d.png",
-    "gif": "https://media.giphy.com/media/l1KtVkekpcV4gKjyE/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems",
-      "database engineering"
-    ],
-    "tags": [
-      "distributed systems",
-      "replication",
-      "master replica replication",
-      "master slave replication",
-      "leader follower replication"
-    ],
-    "published_at": "2021-08-07",
-    "similar": [
-      "rum",
-      "leaderless-replication",
-      "replication-formats",
-      "multi-master-replication"
-    ],
-    "total_views": 350
-  },
-  {
-    "id": "durability",
-    "title": "\"D\" in ACID - Durability",
-    "description": "Durability seems to be a taken-for-granted requirement, but to be honest, it is the most important one. Let's deep dive and find why it is so important? How do databases achieve durability in the midst of thousands of concurrent transactions? And how to achieve durability in a distributed setting?",
-    "image": "https://user-images.githubusercontent.com/4745789/126130275-10c1c4cf-483a-42d7-bd78-2f0ff4da4947.png",
-    "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "database engineering"
-    ],
-    "tags": [
-      "ACID in databases",
-      "ACID Transactions",
-      "Durability in databases"
-    ],
-    "published_at": "2021-07-19",
-    "similar": [
-      "isolation",
-      "atomicity",
-      "bitcask",
-      "consistency"
-    ],
-    "total_views": 335
-  },
-  {
-    "id": "isolation",
-    "title": "\"I\" in ACID - Isolation",
-    "description": "Isolation is the ability of the database to concurrently process multiple transactions in a way that changes made in one do not another.",
-    "image": "https://user-images.githubusercontent.com/4745789/124763085-36d1db80-df51-11eb-985e-1d98e9b78cba.png",
-    "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "database engineering"
-    ],
-    "tags": [
-      "ACID in databases",
-      "ACID Transactions",
-      "Isolation in databases"
-    ],
-    "published_at": "2021-07-05",
-    "similar": [
-      "atomicity",
-      "durability",
-      "consistency",
-      "image-steganography"
-    ],
-    "total_views": 301
-  },
-  {
-    "id": "consistency",
-    "title": "\"C\" in ACID - Consistency",
-    "description": "In the context of databases, Consistency is Correctness, which means that under no circumstance will the data lose its correctness.",
-    "image": "https://user-images.githubusercontent.com/4745789/124225698-86657100-db25-11eb-8284-9771f5a0b545.png",
-    "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "database engineering"
-    ],
-    "tags": [
-      "ACID in databases",
-      "ACID Transactions",
-      "Consistency in databases"
-    ],
-    "published_at": "2021-07-02",
-    "similar": [
-      "image-steganography",
-      "isolation",
-      "durability",
-      "atomicity"
-    ],
-    "total_views": 387
-  },
-  {
-    "id": "atomicity",
-    "title": "\"A\" in ACID - Atomicity",
-    "description": "A single database transaction often contains multiple statements to be executed on the database. In Relational Databases, these are usually multiple SQL statements, while in the case of non-Relational Databases, these could be multiple database commands.",
-    "image": "https://user-images.githubusercontent.com/4745789/124224260-ef97b500-db22-11eb-8d0f-cc808093eb00.png",
-    "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "database engineering"
-    ],
-    "tags": [
-      "ACID in databases",
-      "ACID Transactions",
-      "Atomicity in databases"
-    ],
-    "published_at": "2021-06-28",
-    "similar": [
-      "isolation",
-      "durability",
-      "consistency",
-      "image-steganography"
-    ],
-    "total_views": 748
-  },
-  {
-    "id": "architectures-in-distributed-systems",
-    "title": "Architectures in Distributed Systems",
-    "description": "While designing a Distributed System, it is essential to pick the right kind of architecture. Usually, architectures are evolving, but picking the right one at the inception could make your system thrive.",
-    "image": "https://user-images.githubusercontent.com/4745789/122890572-6d103800-d361-11eb-92e0-c0f226c6821c.png",
-    "gif": "https://media.giphy.com/media/3orieKSJONEWV51x3q/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems"
-    ],
-    "tags": [
-      "distributed systems",
-      "architectures in distributed systems",
-      "system design",
-      "build robust distributed systems"
-    ],
-    "published_at": "2021-06-22",
-    "similar": [
-      "conflict-detection",
-      "mistaken-beliefs-of-distributed-systems",
-      "conflict-resolution",
-      "monotonic-reads"
-    ],
-    "total_views": 563
-  },
-  {
-    "id": "mistaken-beliefs-of-distributed-systems",
-    "title": "Mistaken Beliefs of Distributed Systems",
-    "description": "In this essay, we learn about a set of false assumptions that programmers new to distributed applications invariably make. Understand these to build robust distributed systems.",
-    "image": "https://user-images.githubusercontent.com/4745789/122346879-11137100-cf67-11eb-95a1-5e717dd53810.png",
-    "gif": "https://media.giphy.com/media/SqmkZ5IdwzTP2/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "system design",
-      "distributed systems"
-    ],
-    "tags": [
-      "distributed systems",
-      "myths of distributed systems",
-      "system design",
-      "build robust distributed systems"
-    ],
-    "published_at": "2021-06-17",
-    "similar": [
-      "conflict-detection",
-      "architectures-in-distributed-systems",
-      "conflict-resolution",
-      "data-partitioning-strategies"
-    ],
-    "total_views": 358
-  },
-  {
-    "id": "fork-bomb",
-    "title": "Fork Bomb",
-    "description": "In this essay, we explore a simple yet effective DoS attack called Fork Bomb, also called Rabbit Virus. This attack forks out processes infinitely, starving them for any resources.",
-    "image": "https://user-images.githubusercontent.com/4745789/121253160-69db6d80-c8c6-11eb-8b05-202ec958324e.png",
-    "gif": "https://media.giphy.com/media/l0HeiaW8q9B6tqoHS/giphy.gif",
-    "yt_video_id": "",
-    "categories": [
-      "security"
-    ],
-    "tags": [
-      "dos attack",
-      "fork bomb",
-      "understanding fork bomb",
-      "understanding fork bomb bash",
-      "linux fork bomb",
-      "windows fork bomb",
-      ":() { :|:& };:"
-    ],
-    "published_at": "2021-06-09",
-    "similar": [
-      "bayesian-average",
-      "mongodb-cursor-skip-is-slow",
-      "inheritance-c",
-      "super-long-integers"
-    ],
-    "total_views": 425
-  },
-  {
-    "id": "chained-operators-python",
-    "title": "Chained Comparison Operators in Python",
-    "description": "In this essay, we find how chained comparison expressions are evaluated, understand how short-circuit evaluations happen internally, and alter Python's expression evaluation strategy.",
-    "image": "https://user-images.githubusercontent.com/4745789/116305344-47334080-a7c1-11eb-888a-a60b203ebe9d.png",
-    "gif": "https://media.giphy.com/media/LpLd2NGvpaiys/giphy.gif",
-    "yt_video_id": "zz2Lu5ht_jA",
-    "categories": [
-      "python internals"
-    ],
-    "tags": [
-      "python",
-      "python internals",
-      "internals of chained comparison operators"
-    ],
-    "published_at": "2021-04-27",
-    "similar": [
-      "the-weird-walrus",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "making-http-requests-using-netcat",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
-    ],
-    "total_views": 275
-  },
-  {
-    "id": "udemy-sql-taxonomy",
-    "title": "Designing Taxonomy on a Relational DB",
-    "description": "In this essay, design taxonomy on a SQL-based Relational database by taking Udemy as an example, write SQL queries covering common use-cases, and determine necessary indexes to make queries efficient.",
-    "image": "https://user-images.githubusercontent.com/4745789/115157736-83bbb980-a0a8-11eb-8974-545b7a9cba9d.png",
-    "gif": "https://media.giphy.com/media/3o6Mbsop5cXzqVqfgA/giphy.gif",
-    "yt_video_id": "4_jlmX_oB94",
-    "categories": [
-      "database engineering",
-      "system design"
-    ],
-    "tags": [
-      "database design",
-      "udemy design",
-      "taxonomy on SQL database",
-      "system design - udemy"
-    ],
-    "published_at": "2021-04-18",
-    "similar": [
-      "better-programmer",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "multiple-mysql-on-same-server-using-docker"
-    ],
-    "total_views": 1303
-  },
-  {
-    "id": "the-weird-walrus",
-    "title": "The Weird Walrus",
-    "description": "In this essay, we alter the Python Grammar and allow it run Assignment Expressions without any parenthesis.",
-    "image": "https://user-images.githubusercontent.com/4745789/112817071-ac4f2580-909f-11eb-8d56-f89536cfa065.png",
-    "gif": "https://media.giphy.com/media/SbIJjAaist696ywQXx/giphy.gif",
-    "yt_video_id": "rWb7VYz1q1U",
-    "categories": [
-      "python internals",
-    ],
-    "tags": [
-      "python internals",
-      "cpython internals",
-      "walrus operator",
-      "changing cpython grammar"
-    ],
-    "published_at": "2021-03-29",
-    "similar": [
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "super-long-integers",
-      "making-http-requests-using-netcat",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
-    ],
-    "total_views": 2377
-  },
-  {
-    "id": "fully-persistent-arrays",
-    "title": "Fully Persistent Arrays",
-    "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want. In this essay, we take a detailed look into the implementation of Fully Persistent Arrays.",
-    "image": "https://user-images.githubusercontent.com/4745789/107943189-55d7cd00-6fb2-11eb-9e03-a1da3870e718.png",
-    "gif": "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
-    "categories": [
-      "data structures",
-      "advanced algorithms"
-    ],
-    "tags": [
-      "persistent data structures",
-      "fully persistent arrays"
-    ],
-    "published_at": "2021-02-14",
-    "similar": [
-      "phi-accrual",
-      "persistent-data-structures-introduction",
-      "copy-on-write",
-      "lfu"
-    ],
-    "total_views": 618
-  },
-  {
-    "id": "persistent-data-structures-introduction",
-    "title": "Persistent Data Structures - An Introduction",
-    "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want.",
-    "image": "https://user-images.githubusercontent.com/4745789/107117196-9347a680-689e-11eb-8d3f-75da045b7baf.png",
-    "gif": "https://media.giphy.com/media/1hVi7JFFzplHW/giphy.gif",
-    "categories": [
-      "data structures"
-    ],
-    "tags": [
-      "persistent data structures"
-    ],
-    "published_at": "2021-02-07",
-    "similar": [
-      "bitcask",
-      "leaderless-replication",
-      "master-replica-replication",
-      "rum"
-    ],
-    "total_views": 1861
-  },
-  {
-    "id": "constant-folding-python",
-    "title": "Constant Folding in Python",
-    "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called Constant Folding.",
-    "image": "https://user-images.githubusercontent.com/4745789/104118331-23e9a000-534e-11eb-9ec8-8369cdae40b1.png",
-    "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
-    "categories": [
-      "python internals"
-    ],
-    "tags": [
-      "compiler optimization",
-      "constant folding",
-      "cpython internals"
-    ],
-    "published_at": "2021-01-10",
-    "similar": [
-      "python-prompts",
-      "python-caches-integers",
-      "python-iterable-integers",
-      "fsm"
-    ],
-    "total_views": 3917
-  },
-  {
-    "id": "string-interning",
-    "title": "String Interning in Python",
-    "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called String Interning.",
-    "image": "https://user-images.githubusercontent.com/4745789/102710262-1c971f80-42d7-11eb-9ee4-dcefd540e869.png",
-    "gif": "https://media.giphy.com/media/KRNBl0iSS8gg0/giphy.gif",
-    "yt_video_id": "QpGK69LzfpY",
-    "categories": [
-      "python internals"
-    ],
-    "tags": [
-      "compiler optimization",
-      "string interning",
-      "cpython internals"
-    ],
-    "published_at": "2020-12-20",
-    "similar": [
-      "i-changed-my-python",
-      "python-caches-integers",
-      "python-iterable-integers",
-      "super-long-integers"
-    ],
-    "total_views": 1480
-  },
-  {
-    "id": "recursion-visualizer",
-    "title": "A Simple Recursion Tree Visualizer for Python",
-    "description": "One of the most complicated concepts to wrap our heads around has to be recursion; to understand it well it always helps to have some sort of recursion visualization. In this essay, we build a super-simple yet effective visualizer for recursive functions in Python.",
-    "image": "https://user-images.githubusercontent.com/4745789/102006828-0ffc4f80-3d4a-11eb-8ab1-0891dc5ba00f.png",
-    "gif": "https://media.giphy.com/media/3ov9jQX2Ow4bM5xxuM/giphy.gif",
-    "categories": [
-      "utility"
-    ],
-    "tags": [
-      "recursion tree",
-      "visualize recursion",
-      "print recursion tree",
-      "recursion tree visualizer for Python"
-    ],
-    "published_at": "2020-12-13",
-    "similar": [
-      "fsm",
-      "idf",
-      "constant-folding-python",
-      "python-iterable-integers"
-    ],
-    "total_views": 4140
-  },
-  {
-    "id": "flajolet-martin",
-    "title": "Approximate Count-Distinct using Flajolet Martin Algorithm",
-    "description": "Measuring distinct elements from a stream of values is one of the most common utilities that finds its application across the spectrum. Most of these use cases do not expect accurate count-distinct rather they expect it to be computed very quickly and efficiently. In this essay, we deep dive into one of the first Count-Distinct approximation algorithm called Flajlet-Martin Algorithm.",
-    "image": "https://user-images.githubusercontent.com/4745789/101244544-31977e80-372d-11eb-9ab4-d9e879496d39.png",
-    "gif": "https://media.giphy.com/media/cRMgB2wjHhVN2tDD2z/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "approximation algorithms",
-      "count-distinct approximation",
-      "flajolet algorithms",
-      "fm algorithms"
-    ],
-    "published_at": "2020-12-06",
-    "similar": [
-      "slowsort",
-      "1d-terrain",
-      "isolation-forest",
-      "morris-counter"
-    ],
-    "total_views": 3131
-  },
-  {
-    "id": "2q-cache",
-    "title": "2Q Cache Management Algorithm",
-    "description": "LRU is one of the most widely used cache eviction algorithms suffers from a bunch of limitations especially when used for managing caches in disk-backed databases. 2Q remediates the limitations and improves upon it by adding multiple parallel buffers.",
-    "image": "https://user-images.githubusercontent.com/4745789/100538603-bf1f2e00-3256-11eb-87dc-32594b25ae30.png",
-    "gif": "https://media.giphy.com/media/cfuL5gqFDreXxkWQ4o/giphy.gif",
-    "categories": [
-      "advanced algorithms",
-      "database engineering"
-    ],
-    "tags": [
-      "postgres internals",
-      "cache management algorithms"
-    ],
-    "published_at": "2020-11-29",
-    "similar": [
-      "mysql-cache",
-      "israeli-queues",
-      "ts-smoothing",
-      "phi-accrual"
-    ],
-    "total_views": 1705
-  },
-  {
-    "id": "israeli-queues",
-    "title": "Israeli Queues",
-    "description": "Israeli Queues are fondly named after a peculiar behavior observed in Israel. This behavior was mimicked to solve a very particular problem in Polling Systems. In this essay, we find what makes the Israeli Queue different than the traditional FIFO Queue and how it efficiently addresses the problem at hand.",
-    "image": "https://user-images.githubusercontent.com/4745789/99896424-64b22a80-2cb6-11eb-92b2-ed1f44a76ba1.png",
-    "gif": "https://media.giphy.com/media/3orif9DJNKDfXqXbBS/giphy.gif",
-    "categories": [
-      "data structures"
-    ],
-    "tags": [
-      "data structure",
-      "priority queue",
-      "israeli queue"
-    ],
-    "published_at": "2020-11-22",
-    "similar": [
-      "2q-cache",
-      "phi-accrual",
-      "morris-counter",
-      "copy-on-write"
-    ],
-    "total_views": 7250
-  },
-  {
-    "id": "1d-terrain",
-    "title": "1D Procedural Terrain Generation",
-    "description": "Terrains are at the heart of every Computer Game - be it Counter-Strike, Age of Empires, or even Minecraft. The virtual world that these games generate is the key to a great gaming experience. Generating terrain, manually, requires a ton of effort and hence it makes sense to auto-generate a pseudorandom terrain using some procedure. In this essay, we take a detailed look into generating pseudorandom one-dimensional terrain that is very close to real ones.",
-    "image": "https://user-images.githubusercontent.com/4745789/99261379-a9ffd380-2842-11eb-8f50-36b36ed42a95.png",
-    "gif": "https://media.giphy.com/media/xT5LMTf2CRdBhetWPC/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "advanced algorithms",
-      "terrain generation",
-      "perlin noise",
-      "random terrain generation"
-    ],
-    "published_at": "2020-11-16",
-    "similar": [
-      "slowsort",
-      "flajolet-martin",
-      "jaccard-minhash",
-      "idf"
-    ],
-    "total_views": 1062
-  },
-  {
-    "id": "jaccard-minhash",
-    "title": "Set Similarity using Jaccard Similarity Coefficient and MinHash",
-    "description": "Set similarity measure finds its application spanning the Computer Science spectrum; some applications being - user segmentation, finding near-duplicate webpages/documents, clustering, recommendation generation, sequence alignment, and many more. In this essay, we take a detailed look into a set-similarity measure called - Jaccard's Similarity Coefficient and how its computation can be optimized using a neat technique called MinHash.",
-    "image": "https://user-images.githubusercontent.com/4745789/98465225-c4580280-21ed-11eb-9f1f-6508ed229925.png",
-    "gif": "https://media.giphy.com/media/yvXWADxQxRMkQ4eEID/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "set similarity",
-      "jaccard similarity coefficient",
-      "jaccard index",
-      "minhash",
-      "minhash signature"
-    ],
-    "published_at": "2020-11-08",
-    "similar": [
-      "idf",
-      "constant-folding-python",
-      "publish-python-package-on-pypi",
-      "rule-30"
-    ],
-    "total_views": 1481
-  },
-  {
-    "id": "ts-smoothing",
-    "title": "Time Series Smoothing - Making Aberrations Stand Out",
-    "description": "Time Series smoothing algorithms removes short-term irregularities from the plot while preserving long-term trends. But as an observer, it is important that such smoothing techniques or irregularities do not mask anomalies that need attention. In this essay, we take a look at a smoothing algorithm that smooths out a time series plot while making aberrations and anomalies standout.",
-    "image": "https://user-images.githubusercontent.com/4745789/97785060-cbb55580-1bc8-11eb-9d6d-91ff16cc2ddc.png",
-    "gif": "https://media.giphy.com/media/3orieVe5VYqTdT16qk/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "time series smoothing",
-      "statistics",
-      "kurtosis smoothing"
-    ],
-    "published_at": "2020-11-01",
-    "similar": [
-      "better-programmer",
-      "mysql-cache",
-      "2q-cache",
-      "atomicity"
-    ],
-    "total_views": 499
-  },
-  {
-    "id": "lfu",
-    "title": "Constant Time LFU",
-    "description": "The most popular implementation of the LFU Cache Eviction Scheme, using a min-heap, implements all three operations with running time complexity of O(log n) and this makes LFU sub-optimal. In this essay, we take a detailed look at a clever algorithm that implements LFU such that all the operations happen with O(1) running time complexity.",
-    "image": "https://user-images.githubusercontent.com/4745789/89711582-cf11ba00-d9a8-11ea-9173-c7069b1537b5.png",
-    "gif": "https://media.giphy.com/media/fWqGY1AC4HVIN3lRyB/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "caching",
-      "lfu",
-      "least frequently used",
-      "cache eviction algorithms",
-      "least frequently used",
-      "constant time"
-    ],
-    "published_at": "2020-08-23",
-    "similar": [
-      "fully-persistent-arrays",
-      "isolation-forest",
-      "flajolet-martin",
-      "consistent-hashing"
-    ],
-    "total_views": 6035
-  },
-  {
-    "id": "morris-counter",
-    "title": "Morris's Algorithm for Approximate Counting",
-    "description": "Morris' Algorithm counts a large number of events using a very small space O(log log n). The algorithm uses probabilistic techniques to increment the counter and in this essay, we take a detailed look at Morris' Algorithm and the math behind it.",
-    "image": "https://user-images.githubusercontent.com/4745789/89116441-b9d0f300-d4b1-11ea-99e5-cca7c4cef5fb.png",
-    "gif": "https://media.giphy.com/media/uWXxbGPMbFkxsni3tc/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "approximate counting",
-      "morris counter",
-      "hyperloglog",
-      "morris algorithms"
-    ],
-    "published_at": "2020-08-02",
-    "similar": [
-      "israeli-queues",
-      "slowsort",
-      "fast-and-efficient-pagination-in-mongodb",
-      "phi-accrual"
-    ],
-    "total_views": 2120
-  },
-  {
-    "id": "slowsort",
-    "title": "Slowsort - A Pessimal Sorting Algorithm",
-    "description": "Slowsort is a pessimal sorting algorithm based on the Multiply and Surrender paradigm. The algorithm is designed to be deterministically sub-optimal and it could easily be the worst way anyone could sort an array.",
-    "image": "https://user-images.githubusercontent.com/4745789/88473025-fabb8b80-cf36-11ea-8390-a807fcd57d93.png",
-    "gif": "https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif",
-    "yt_video_id": "TzxLYTC8HL8",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "slowsort",
-      "pessimal algorithms",
-      "slowsort vs bogosort",
-      "worst sorting algorithms",
-      "multiply and surrender"
-    ],
-    "published_at": "2020-07-26",
-    "similar": [
-      "flajolet-martin",
-      "1d-terrain",
-      "morris-counter",
-      "isolation-forest"
-    ],
-    "total_views": 6485
-  },
-  {
-    "id": "bitcask",
-    "title": "Bitcask - A Log-Structured Fast KV Store",
-    "description": "Bitcask is a Key-Value store that persists its data in append-only log files and still reaps super-performant read-write throughputs. In this essay, we take a detailed look into Bitcask, its design, and find the secret sauce that makes it so performant.",
-    "image": "https://user-images.githubusercontent.com/4745789/87868516-144b5900-c9b4-11ea-91e3-2de14e80817b.png",
-    "gif": "https://media.giphy.com/media/l0NwF1dnk7GRz3pK0/giphy.gif",
-    "categories": [
-      "databases"
-    ],
-    "tags": [
-      "database",
-      "embedded database",
-      "key value store",
-      "log structured database"
-    ],
-    "published_at": "2020-07-19",
-    "similar": [
-      "durability",
-      "persistent-data-structures-introduction",
-      "isolation",
-      "atomicity"
-    ],
-    "total_views": 574
-  },
-  {
-    "id": "phi-accrual",
-    "title": "Phi \u03c6 Accrual Failure Detection",
-    "description": "Phi \u03c6 Accrual Failure Detection algorithm, unlike conventional algorithms, is an adaptive failure detection algorithm that instead of providing output as a boolean (system being up or down), outputs the suspicion information (level) on a continuous scale.",
-    "image": "https://user-images.githubusercontent.com/4745789/87240958-c5de0d80-c43b-11ea-8e1b-2a7c70586b9b.png",
-    "gif": "https://media.giphy.com/media/gLoMzjGQB2tQlQtB9P/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "distributed systems",
-      "heartbeat algorithms",
-      "failure detection"
-    ],
-    "published_at": "2020-07-12",
-    "similar": [
-      "israeli-queues",
-      "copy-on-write",
-      "2q-cache",
-      "morris-counter"
-    ],
-    "total_views": 478
-  },
-  {
-    "id": "decipher-repeated-key-xor",
-    "title": "Deciphering Repeated-key XOR Ciphertext",
-    "description": "Deciphering is the process of recovering the original message from an encrypted byte stream, usually, without having any knowledge of the encryption key. In this essay, we look at how we can use Hamming Distance, Linguistics to recover the original message from a Repeated-key XORed Ciphertext.",
-    "image": "https://user-images.githubusercontent.com/4745789/86505243-d52bde00-bddf-11ea-9fb2-bd9c25e51bd4.png",
-    "gif": "https://media.giphy.com/media/b5Hcaz7EPz26I/giphy.gif",
-    "categories": [
-      "cryptography"
-    ],
-    "tags": [
-      "python",
-      "cryptography",
-      "cryptopals"
-    ],
-    "published_at": "2020-07-04",
-    "similar": [
-      "decipher-single-xor",
-      "bayesian-average",
-      "lfsr",
-      "isolation-forest"
-    ],
-    "total_views": 2797
-  },
-  {
-    "id": "decipher-single-xor",
-    "title": "Deciphering Single-byte XOR Ciphertext",
-    "description": "Deciphering is the process of recovering the original message from an encrypted byte stream, usually, without having any knowledge of the encryption key. In this essay, we look at how we can use linguistics to recover the original message from a Single-byte XORed Ciphertext.",
-    "image": "https://user-images.githubusercontent.com/4745789/85223233-0ddeb700-b3df-11ea-9bb8-5bd1cf0cabcb.png",
-    "gif": "https://media.giphy.com/media/l3vRmVv5P01I5NDAA/giphy.gif",
-    "categories": [
-      "cryptography"
-    ],
-    "tags": [
-      "python",
-      "cryptography",
-      "cryptopals"
-    ],
-    "published_at": "2020-06-21",
-    "similar": [
-      "decipher-repeated-key-xor",
-      "bayesian-average",
-      "lfsr",
-      "isolation-forest"
-    ],
-    "total_views": 1999
-  },
-  {
-    "id": "python-iterable-integers",
-    "title": "Making Python Integers Iterable",
-    "description": "In Python, Integers are not iterables but we can make them iterable by implementing __iter__ function. In this essay, we change Python's source code and implement iter function for integers.",
-    "image": "https://user-images.githubusercontent.com/4745789/84585100-bf06af80-ae29-11ea-8797-16c70aee5cc4.png",
-    "gif": "https://media.giphy.com/media/k4ta29T68xlfi/giphy.gif",
-    "categories": [
-      "python internals"
-    ],
-    "tags": [],
-    "published_at": "2020-06-14",
-    "similar": [
-      "python-caches-integers",
-      "python-prompts",
-      "constant-folding-python",
-      "i-changed-my-python"
-    ],
-    "total_views": 1790
-  },
-  {
-    "id": "inheritance-c",
-    "title": "Powering Inheritance in C using Structure Composition",
-    "description": "C language does not support inheritance however it does support Structure Compositions which can be tweaked to serve use-cases requiring parent-child relationships. In this article we find out how Structure Compositions help us emulate inheritance in C and keep our code extensible. We will also find how it powers two of the most important things to have ever been invented in the field of computer science.",
-    "image": "https://user-images.githubusercontent.com/4745789/83960768-2bbdff00-a8aa-11ea-9e82-16b928d2a244.png",
-    "gif": "https://media.giphy.com/media/3o6Mbk7C7HVuhyqX3G/giphy.gif",
-    "categories": [
-      "data structures"
-    ],
-    "tags": [],
-    "published_at": "2020-06-07",
-    "similar": [
-      "mongodb-cursor-skip-is-slow",
-      "fork-bomb",
-      "fast-and-efficient-pagination-in-mongodb",
-      "idf"
-    ],
-    "total_views": 3850
-  },
-  {
-    "id": "rum",
-    "title": "The RUM Conjecture",
-    "description": "While designing any storage system the three main aspects we optimize for are Reads, Updates, and auxiliary Memory. RUM Conjecture states that these three form a competing triangle and we could only optimize two at the expense of the third.",
-    "image": "https://user-images.githubusercontent.com/4745789/83344735-64009300-a328-11ea-858a-587d440136f1.png",
-    "gif": "https://media.giphy.com/media/1n7B7bJ917pqZGHG9m/giphy.gif",
-    "categories": [
-      "system design"
-    ],
-    "tags": [],
-    "published_at": "2020-05-31",
-    "similar": [
-      "master-replica-replication",
-      "leaderless-replication",
-      "replication-formats",
-      "multi-master-replication"
-    ],
-    "total_views": 670
-  },
-  {
-    "id": "consistent-hashing",
-    "title": "Consistent Hashing",
-    "description": "Consistent Hashing is one of the most sought after techniques when it comes to designing highly scalable distributed systems. In this article, we dive deep into the need for Consistent Hashing, the internals of it, and more importantly along the way implement it using arrays and binary search.",
-    "image": "https://user-images.githubusercontent.com/4745789/82760647-92efa400-9e12-11ea-9533-5003bc3c46df.png",
-    "gif": "https://media.giphy.com/media/3ofSBqzxwsiN0npCak/giphy.gif",
-    "categories": [
-      "advanced algorithms",
-      "system design"
-    ],
-    "tags": [],
-    "published_at": "2020-05-24",
-    "similar": [
-      "fully-persistent-arrays",
-      "lfu",
-      "leaderless-replication",
-      "persistent-data-structures-introduction"
-    ],
-    "total_views": 1262
-  },
-  {
-    "id": "python-caches-integers",
-    "title": "Integer Caching in Python",
-    "description": "To gain a performance boost and avoid reallocation of frequently used integers, Python creates singleton instances of small integer values and uses them by reference.",
-    "image": "https://user-images.githubusercontent.com/4745789/82141979-a620d380-9856-11ea-9a4a-32399c0c01b8.png",
-    "gif": "https://media.giphy.com/media/l378kmO7gdbXaesXS/giphy.gif",
-    "categories": [
-      "python internals"
-    ],
-    "tags": [],
-    "published_at": "2020-05-17",
-    "similar": [
-      "python-prompts",
-      "python-iterable-integers",
-      "constant-folding-python",
-      "i-changed-my-python"
-    ],
-    "total_views": 1824
-  },
-  {
-    "id": "fractional-cascading",
-    "title": "Fractional Cascading - Speeding up Binary Searches",
-    "description": "The performance of binary search when applied on k lists independently can be improved using bridges and the technique is called Fractional Cascading. Fractional Cascading also sees its application in Geometric Data Structures, Segment Trees, and Databases.",
-    "image": "https://user-images.githubusercontent.com/4745789/82142043-352deb80-9857-11ea-9801-878d771248da.png",
-    "gif": "https://media.giphy.com/media/1k5k3J5K3BywQOrpNA/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [],
-    "published_at": "2020-05-10",
-    "similar": [
-      "genetic-knapsack",
-      "flajolet-martin",
-      "slowsort",
-      "1d-terrain"
-    ],
-    "total_views": 486
-  },
-  {
-    "id": "copy-on-write",
-    "title": "Copy-on-Write Semantics",
-    "description": "Copy-on-write is used to model Time Travel, build databases with no locks, and makes the fork system call super-efficient.",
-    "image": "https://user-images.githubusercontent.com/4745789/80913860-73121680-8d65-11ea-87f8-d02460f05a22.png",
-    "gif": "https://media.giphy.com/media/GIrIC3g657AYg/giphy.gif",
-    "categories": [
-      "data structures",
-      "system design"
-    ],
-    "tags": [],
-    "published_at": "2020-05-03",
-    "similar": [
-      "phi-accrual",
-      "israeli-queues",
-      "mysql-cache",
-      "ts-smoothing"
-    ],
-    "total_views": 559
-  },
-  {
-    "id": "mysql-cache",
-    "title": "Midpoint Insertion Strategy in MySQL LRU Cache",
-    "description": "The MySQL InnoDB Storage engine uses LRU cache but it suffers from a notorious problem. In this article, we find how by using Midpoint Insertion Strategy and changing one aspect of LRU, MySQL becomes scan resistant and super performant.",
-    "image": "https://user-images.githubusercontent.com/4745789/80304802-0ed7db80-87d6-11ea-98db-bc5d4afe965b.png",
-    "gif": "https://media.giphy.com/media/daUOBsa1OztxC/giphy.gif",
-    "categories": [
-      "database engineering",
-      "advanced algorithms"
-    ],
-    "tags": [],
-    "published_at": "2020-04-26",
-    "similar": [
-      "2q-cache",
-      "ts-smoothing",
-      "israeli-queues",
-      "copy-on-write"
-    ],
-    "total_views": 466
-  },
-  {
-    "id": "fsm",
-    "title": "Building Finite State Machines with Python Coroutines",
-    "description": "The most intuitive way of building and implementing Finite State Machines is by using Python Coroutines and in this article, we find how and why.",
-    "image": "https://user-images.githubusercontent.com/4745789/79684359-3ebf3600-824e-11ea-97cc-0f06c2919aeb.png",
-    "gif": "https://media.giphy.com/media/KhdQ2Ia3FJuKs/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [],
-    "published_at": "2020-04-19",
-    "similar": [
-      "recursion-visualizer",
-      "constant-folding-python",
-      "python-prompts",
-      "python-iterable-integers"
-    ],
-    "total_views": 7625
-  },
-  {
-    "id": "bayesian-average",
-    "title": "Better Ranking using Bayesian Average",
-    "description": "Ranking a list of movies, products, books or even restaurants is tricky and in this article, we find what works for such a rating system and the math behind it.",
-    "image": "https://user-images.githubusercontent.com/4745789/78990379-ebfdc400-7b53-11ea-88b7-cd64e39eabf6.png",
-    "gif": "https://media.giphy.com/media/dJ4vNQ7r72pb4nDhN5/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [],
-    "published_at": "2020-04-12",
-    "similar": [
-      "fork-bomb",
-      "fast-and-efficient-pagination-in-mongodb",
-      "efficient-way-to-stop-an-iterating-loop",
-      "the-weird-walrus"
-    ],
-    "total_views": 526
-  },
-  {
-    "id": "sliding-window-ratelimiter",
-    "title": "Sliding Window based Rate Limiter",
-    "description": "A rate limiter is used to control the rate of traffic sent or received on the network and in this article we dive deep and design a sliding window based rate limiter.",
-    "image": "https://user-images.githubusercontent.com/4745789/78276848-3c13cf80-7531-11ea-8186-99cb1da58e50.png",
-    "gif": "https://media.giphy.com/media/5YuhLwDgrgtRVwI7OY/giphy.gif",
-    "categories": [
-      "system design"
-    ],
-    "tags": [],
-    "published_at": "2020-04-05",
-    "similar": [
-      "consistency",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "image-steganography",
-      "multiple-mysql-on-same-server-using-docker"
-    ],
-    "total_views": 1056
-  },
-  {
-    "id": "idf",
-    "title": "Inverse Document Frequency",
-    "description": "TF-IDF is extensively used in search engines and in various document classification and clustering techniques. Instead of taking the formula by the word, we take a detour and dive deep into the better half of it and find its connection with Probability, the role it plays in document relevance and the intuition behind it.",
-    "image": "https://user-images.githubusercontent.com/4745789/76207579-10e4db80-6224-11ea-91ba-b67359125156.png",
-    "gif": "https://media.giphy.com/media/3ornjWIRSzXEw61KH6/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "tfidf",
-      "idf",
-      "inverse document frequency",
-      "term frequency inverse document frequency",
-      "term frequency",
-      "understanding tfidf",
-      "understanding idf",
-      "math behind tfidf",
-      "math behind idf",
-      "idf as probability"
-    ],
-    "published_at": "2020-03-06",
-    "similar": [
-      "jaccard-minhash",
-      "inheritance-c",
-      "recursion-visualizer",
-      "constant-folding-python"
-    ],
-    "total_views": 417
-  },
-  {
-    "id": "better-programmer",
-    "title": "Eight Rituals to be a Better Programmer",
-    "description": "\"How to get better at programming?\" is the question I had been asked quite a few times, and today I lay down the 8 rituals I have been following, and action items for each, to be good and get better at programming.",
-    "image": "https://user-images.githubusercontent.com/4745789/75548769-0cfecf80-5a54-11ea-8dd2-1e452ba1298b.png",
-    "gif": "https://media.giphy.com/media/14gQ5vtwD050LC/giphy.gif",
-    "categories": [
-      "productivity"
-    ],
-    "tags": [
-      "better programmer",
-      "todo of better programmer",
-      "good programmer",
-      "get better at programming",
-      "top coder",
-      "codechef",
-      "hackerrank"
-    ],
-    "published_at": "2020-02-28",
-    "similar": [
-      "udemy-sql-taxonomy",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "ts-smoothing",
-      "atomicity"
-    ],
-    "total_views": 2709
-  },
-  {
-    "id": "python-prompts",
-    "title": "Personalize your Python Prompt",
-    "description": "Personalization is what we all love. In this article we find how we could personalize the Python interpreter prompt >>>",
-    "image": "https://user-images.githubusercontent.com/4745789/74850923-8ade1f00-5360-11ea-8ed5-1072c8a718c2.png",
-    "gif": "https://media.giphy.com/media/TFTqzyOQwT2zS/giphy.gif",
-    "categories": [
-      "utility"
-    ],
-    "tags": [
-      "python",
-      "interpreter",
-      "prompt",
-      "customize",
-      "personalize",
-      "colorize",
-      "ps1",
-      "ps2",
-      "fun"
-    ],
-    "published_at": "2020-02-21",
-    "similar": [
-      "python-caches-integers",
-      "constant-folding-python",
-      "python-iterable-integers",
-      "i-changed-my-python"
-    ],
-    "total_views": 1763
-  },
-  {
-    "id": "rule-30",
-    "title": "Pseudorandom Number Generation using Cellular Automata - Rule 30",
-    "description": "Generating pseudorandom numbers is an interesting problem in Computer Science. In this article, we dive deep into an algorithm for generating pseudorandom numbers using Rule 30 of Cellular Automaton.",
-    "image": "https://user-images.githubusercontent.com/4745789/74463952-b07aac80-4eb8-11ea-8d8e-6f286767ec7e.png",
-    "gif": "https://media.giphy.com/media/26uflDxU6cEhrhmUg/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "advanced algorithms",
-      "cellular automata",
-      "rule 30",
-      "pseudorandom number generator",
-      "random numbers",
-      "elementary cellular automata",
-      "1d cellular automata"
-    ],
-    "published_at": "2020-02-14",
-    "similar": [
-      "efficient-way-to-stop-an-iterating-loop",
-      "publish-python-package-on-pypi",
-      "jaccard-minhash",
-      "fast-and-efficient-pagination-in-mongodb"
-    ],
-    "total_views": 1011
-  },
-  {
-    "id": "function-overloading",
-    "title": "Function Overloading in Python",
-    "description": "Python natively does not support function overloading - having multiple functions with the same name. Today we see how we can implement and add this functionality to Python by using common language constructs like decorators and dictionaries.",
-    "image": "https://user-images.githubusercontent.com/4745789/73909201-04423000-48d2-11ea-8bd0-d7c25f6435c1.png",
-    "gif": "https://media.giphy.com/media/WtCHRSPCuqS8E/giphy.gif",
-    "categories": [
-      "python internals"
-    ],
-    "tags": [
-      "python",
-      "function overloading",
-      "language constructs",
-      "decorator",
-      "function",
-      "namespace",
-      "advanced python"
-    ],
-    "published_at": "2020-02-07",
-    "similar": [
-      "python-iterable-integers",
-      "recursion-visualizer",
-      "fsm",
-      "string-interning"
-    ],
-    "total_views": 12359
-  },
-  {
-    "id": "isolation-forest",
-    "title": "Isolation Forest Algorithm for Anomaly Detection",
-    "description": "Anomaly detection is an age-old problem and in this article, we dive deep into an unsupervised algorithm, Isolation Forest, that beautifully exploits the characteristics of anomalies. Instead of profiling normal points and labeling others as anomalies, the algorithm is actually is tuned to detect anomalies.",
-    "image": "https://user-images.githubusercontent.com/4745789/73280907-34743980-4215-11ea-89f0-eac4a71df6e5.png",
-    "gif": "https://media.giphy.com/media/xGdvlOVSWaDvi/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "advanced algorithms",
-      "machine learning",
-      "anomaly detection",
-      "data science",
-      "artificial intelligence",
-      "ml",
-      "ds",
-      "ai",
-      "unsupervised algorithms",
-      "fast anomaly detection",
-      "efficient anomaly detection"
-    ],
-    "published_at": "2020-01-28",
-    "similar": [
-      "slowsort",
-      "flajolet-martin",
-      "phi-accrual",
-      "morris-counter"
-    ],
-    "total_views": 1134
-  },
-  {
-    "id": "image-steganography",
-    "title": "Image Steganography",
-    "description": "Steganography has been around since at least 440 BCE but with the rise of computers, the techniques have evolved to handle digital data. In this article, we see the science behind image steganography, how it exploits various properties of images to hide secrets and walkthrough a few techniques in detail.",
-    "image": "https://user-images.githubusercontent.com/4745789/72659471-2a1c9900-39e6-11ea-9b93-c11bf3eefc43.png",
-    "gif": "https://media.giphy.com/media/V1NxC1YoNEHBe/giphy.gif",
-    "categories": [
-      "cryptography"
-    ],
-    "tags": [
-      "steganography",
-      "image steganography",
-      "image steganography internals",
-      "DCT JPEG",
-      "JPEG",
-      "LSB",
-      "Least Significant Bit Substitution",
-      "Adaptive Least Significant Bit Substitution",
-      "ancient greece",
-      "Discrete Cosine Transform",
-      "Discrete Fourier Transform",
-      "Lossy and Lossless image formats",
-      "rgb color model",
-      "YCbCr color model",
-      "technology",
-      "code",
-      "data science",
-      "tech"
-    ],
-    "published_at": "2020-01-17",
-    "similar": [
-      "consistency",
-      "isolation",
-      "atomicity",
-      "durability"
-    ],
-    "total_views": 304
-  },
-  {
-    "id": "super-long-integers",
-    "title": "Super Long Integers in Python",
-    "description": "Python must be doing something beautiful internally to support super long integers and today we find out what's under the hood. The article goes in-depth to explain design, storage, and operations on super long integers as implemented by Python.",
-    "image": "https://user-images.githubusercontent.com/4745789/72040055-55f49c00-32cd-11ea-9190-8f5a67c2f3d9.png",
-    "gif": "https://media.giphy.com/media/SKGo6OYe24EBG/giphy.gif",
-    "categories": [
-      "python internals"
-    ],
-    "tags": [
-      "programming",
-      "python",
-      "cpython source code",
-      "python internals",
-      "understanding python source code",
-      "coding",
-      "developer",
-      "technology",
-      "code",
-      "pythonprogramming",
-      "python programming",
-      "data science",
-      "tech"
-    ],
-    "published_at": "2020-01-10",
-    "similar": [
-      "i-changed-my-python",
-      "the-weird-walrus",
-      "python-caches-integers",
-      "python-prompts"
-    ],
-    "total_views": 3584
-  },
-  {
-    "id": "i-changed-my-python",
-    "title": "Changing Python",
-    "description": "I changed the Python's source code and made addition incorrect and unpredictable. The addition operation will internally perform either Subtraction. Multiplication, Floor Division or Power at random.",
-    "image": "https://user-images.githubusercontent.com/4745789/71662123-60b3ac00-2d76-11ea-8018-f558cef93a59.png",
-    "gif": "https://media.giphy.com/media/aZ5wedD7Jtazm/giphy.gif",
-    "categories": [
-      "python internals"
-    ],
-    "tags": [
-      "programming",
-      "python",
-      "cpython source code",
-      "python internals",
-      "understanding python source code",
-      "coding",
-      "developer",
-      "technology",
-      "code",
-      "pythonprogramming",
-      "python programming",
-      "data science",
-      "tech"
-    ],
-    "published_at": "2020-01-03",
-    "similar": [
-      "super-long-integers",
-      "python-caches-integers",
-      "python-iterable-integers",
-      "python-prompts"
-    ],
-    "total_views": 1121
-  },
-  {
-    "id": "efficient-way-to-stop-an-iterating-loop",
-    "title": "Stop an Iterating Loop",
-    "description": "There are two ways through which we can stop an iterating loop, first by using break statement and second by making loop condition false. Let's see if one is better than the other.",
-    "image": "https://user-images.githubusercontent.com/4745789/64327846-02ee9d80-cfea-11e9-8698-4a18bfe76068.png",
-    "gif": "https://media.giphy.com/media/cKKXNlTYino7hWNXwl/giphy.gif",
-    "categories": [
-      "explorations"
-    ],
-    "tags": [
-      "programming",
-      "benchmark",
-      "efficient way to stop loop",
-      "break or condition",
-      "efficient for loop"
-    ],
-    "published_at": "2019-09-06",
-    "similar": [
-      "fast-and-efficient-pagination-in-mongodb",
-      "rule-30",
-      "publish-python-package-on-pypi",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu"
-    ],
-    "total_views": 426
-  },
-  {
-    "id": "fast-and-efficient-pagination-in-mongodb",
-    "title": "Fast and Efficient Pagination in MongoDB",
-    "description": "MongoDB is a document based data store and hence pagination is one of the most common use case of it. Find out how you can paginate the results ...",
-    "image": "https://user-images.githubusercontent.com/4745789/63153080-1336dc80-c02b-11e9-931f-0c7552a63ebc.png",
-    "gif": "https://media.giphy.com/media/lRnUWhmllPI9a/giphy.gif",
-    "categories": [
-      "database engineering"
-    ],
-    "tags": [
-      "mongodb",
-      "scalability",
-      "pagination",
-      "fast",
-      "scale",
-      "mongodb skip limit",
-      "mongodb skip limit fast pagination"
-    ],
-    "published_at": "2017-06-06",
-    "similar": [
-      "efficient-way-to-stop-an-iterating-loop",
-      "morris-counter",
-      "jaccard-minhash",
-      "bayesian-average"
-    ],
-    "total_views": 3898
-  },
-  {
-    "id": "benchmark-and-compare-pagination-approach-in-mongodb",
-    "title": "Benchmark Pagination Strategies in MongoDB",
-    "description": "Benchmark results for two pagination approaches for MongoDB.",
-    "image": "https://user-images.githubusercontent.com/4745789/63220759-d514f680-c1ab-11e9-8a38-7b1828946b74.png",
-    "gif": "https://media.giphy.com/media/c5eqVJN7oNLTq/giphy.gif",
-    "categories": [
-      "database engineering"
-    ],
-    "tags": [
-      "mongodb",
-      "scalability",
-      "pagination",
-      "fast",
-      "scale",
-      "mongodb skip limit",
-      "mongodb skip limit fast pagination",
-      "benchmark results"
-    ],
-    "published_at": "2017-06-02",
-    "similar": [
-      "udemy-sql-taxonomy",
-      "multiple-mysql-on-same-server-using-docker",
-      "better-programmer",
-      "sliding-window-ratelimiter"
-    ],
-    "total_views": 3538
-  },
-  {
-    "id": "mongodb-cursor-skip-is-slow",
-    "title": "Why MongoDB's cursor.skip() is Slow?",
-    "description": "MongoDB's cursor.skip() is very inefficient, why is that? Even though it is slow and inefficient,  team MongoDB wants to continue keeping it. Find out why ...",
-    "image": "https://user-images.githubusercontent.com/4745789/63220620-4d2ded00-c1a9-11e9-8eea-11766291e06f.png",
-    "gif": "https://media.giphy.com/media/nqIuAIxYebIt2/giphy.gif",
-    "categories": [
-      "databases"
-    ],
-    "tags": [
-      "mongodb",
-      "cursor",
-      "slow",
-      "mongodb cursor slow",
-      "mongodb skip limit"
-    ],
-    "published_at": "2017-06-04",
-    "similar": [
-      "inheritance-c",
-      "fork-bomb",
-      "idf",
-      "copy-on-write"
-    ],
-    "total_views": 2088
-  },
-  {
-    "id": "how-sleepsort-helped-me-understand-concurrency-in-golang",
-    "title": "Sleepsort and Concurrency in Golang",
-    "description": "Understanding concurrency in any programming language is tricky let alone Golang; hence to get my hands dirty the first thing I usually implement is sleepsort.",
-    "image": "https://user-images.githubusercontent.com/4745789/63222328-203b0380-c1c4-11e9-9dd0-34c4bd9d1c6b.png",
-    "gif": "https://media.giphy.com/media/QmJ3e9So5M9NdNkOGo/giphy.gif",
-    "categories": [
-      "advanced algorithms"
-    ],
-    "tags": [
-      "golang",
-      "programming",
-      "concurrency",
-      "sleepsort",
-      "concurrency in golang",
-      "sleepsort in golang"
-    ],
-    "published_at": "2017-07-16",
-    "similar": [
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-      "udemy-sql-taxonomy",
-      "setting-up-graphite-using-nginx-on-ubuntu",
-      "the-weird-walrus"
-    ],
-    "total_views": 460
-  },
-  {
-    "id": "making-http-requests-using-netcat",
-    "title": "HTTP Requests using Netcat",
-    "description": "All our lives we have been hitting REST APIs with libraries and utilities like curl and postman. Its time we do it the hard way with netcat, just for fun!",
-    "image": "https://user-images.githubusercontent.com/4745789/63222693-a5c0b280-c1c8-11e9-9cd4-808225e579f3.png",
-    "gif": "https://media.giphy.com/media/2tSodgDfwCjIMCBY8h/giphy.gif",
-    "categories": [
-      "utility"
-    ],
-    "tags": [
-      "netcat",
-      "python",
-      "flask",
-      "netcat with flask"
-    ],
-    "published_at": "2017-07-05",
-    "similar": [
-      "the-weird-walrus",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "setting-up-graphite-grafana-using-nginx-on-ubuntu"
-    ],
-    "total_views": 657
-  },
-  {
-    "id": "multiple-mysql-on-same-server-using-docker",
-    "title": "Multiple MySQL server running on same Ubuntu server",
-    "description": "Have multiple MySQL versions running on same server within 5 minutes.",
-    "image": "https://user-images.githubusercontent.com/4745789/63222993-74e27c80-c1cc-11e9-8229-dd7e5d4f1173.png",
-    "gif": "https://media.giphy.com/media/GIrIC3g657AYg/giphy.gif",
-    "categories": [
-      "databases"
-    ],
-    "tags": [
-      "devops",
-      "database",
-      "docker",
-      "mysql",
-      "running mysql using docker"
-    ],
-    "published_at": "2016-05-13",
-    "similar": [
-      "setting-up-graphite-using-nginx-on-ubuntu",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "udemy-sql-taxonomy",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang"
-    ],
-    "total_views": 285
-  },
-  {
-    "id": "setting-up-graphite-using-nginx-on-ubuntu",
-    "title": "Setting up Graphite using Nginx on an Ubuntu server",
-    "description": "Part 1: Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.",
-    "image": "https://user-images.githubusercontent.com/4745789/63223138-c68c0680-c1ce-11e9-942b-60b92d3f8a28.png",
-    "gif": "https://media.giphy.com/media/l4FGzAPvg5PbZrVlK/giphy.gif",
-    "categories": [
-      "monitoring"
-    ],
-    "tags": [
-      "devops",
-      "ubuntu",
-      "graphite on ubuntu",
-      "graphite and nginx on ubuntu"
-    ],
-    "published_at": "2015-12-14",
-    "similar": [
-      "multiple-mysql-on-same-server-using-docker",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "benchmark-and-compare-pagination-approach-in-mongodb",
-      "udemy-sql-taxonomy"
-    ],
-    "total_views": 728
-  },
-  {
-    "id": "setting-up-graphite-grafana-using-nginx-on-ubuntu",
-    "title": "Setting up Graphite and Grafana on an Ubuntu server",
-    "description": "Part 2: Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.",
-    "image": "https://user-images.githubusercontent.com/4745789/63223314-e58b9800-c1d0-11e9-83d8-e263ce3eb874.png",
-    "gif": "https://media.giphy.com/media/Me1GB9z50XUKQ/giphy.gif",
-    "categories": [
-      "monitoring"
-    ],
-    "tags": [
-      "devops",
-      "ubuntu",
-      "grafana",
-      "graphite and grafana on ubuntu",
-      "grafana and graphite and nginx on ubuntu"
-    ],
-    "published_at": "2015-12-14",
-    "similar": [
-      "the-weird-walrus",
-      "how-sleepsort-helped-me-understand-concurrency-in-golang",
-      "efficient-way-to-stop-an-iterating-loop",
-      "udemy-sql-taxonomy"
-    ],
-    "total_views": 278
-  },
-  {
-    "id": "publish-python-package-on-pypi",
-    "title": "Publish python package on PyPI",
-    "description": "If you have written something cool in Python and want to make it installable via pip and easy_install, this post will help you publish your python online.",
-    "image": "https://user-images.githubusercontent.com/4745789/63223433-e45b6a80-c1d2-11e9-921f-c2cc0153cf4a.png",
-    "gif": "https://media.giphy.com/media/TfKfqjt2i4GIM/giphy.gif",
-    "categories": [
-      "utility"
-    ],
-    "tags": [
-      "python",
-      "publish python package",
-      "pypi"
-    ],
-    "published_at": "2015-11-10",
-    "similar": [
-      "efficient-way-to-stop-an-iterating-loop",
-      "rule-30",
-      "python-prompts",
-      "jaccard-minhash"
-    ],
-    "total_views": 321
-  }
+[{
+  "id": "genetic-knapsack",
+  "title": "Genetic Algorithm to solve the Knapsack Problem",
+  "description": "The 0/1 Knapsack Problem has a pseudo-polynomial run-time complexity. In this essay, we look at an approximation algorithm inspired by genetics that finds a high-quality solution to it in polynomial time.",
+  "image": "https://user-images.githubusercontent.com/4745789/156910296-48167efc-dc08-4f26-88b8-7037fdfc6ae3.png",
+  "gif": "https://media.giphy.com/media/3orieTU2tBje4i5SzS/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "genetic algorithm",
+    "the 0/1 knapsack problem",
+    "approximation algorithm for knapsack problem"
+  ],
+  "published_at": "2022-03-07",
+  "similar": [
+    "fractional-cascading",
+    "rule-30",
+    "flajolet-martin",
+    "1d-terrain"
+  ],
+  "total_views": 441
+},
+{
+  "id": "lfsr",
+  "title": "Pseudorandom Number Generation using LFSR",
+  "description": "This essay takes a detailed look into pseudorandom number generation using LFSR, a widely adopted technique to generate random numbers on hardware and on software.",
+  "image": "https://user-images.githubusercontent.com/4745789/154754358-c1bbd5ff-2a0b-4028-b1ec-05cf90300d83.png",
+  "gif": "https://media.giphy.com/media/3orieLKAOlnwdqkTCg/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "lfsr",
+    "linear feedback shift registers",
+    "pseudorandom number generation algorithm"
+  ],
+  "published_at": "2022-02-21",
+  "similar": [
+    "publish-python-package-on-pypi",
+    "efficient-way-to-stop-an-iterating-loop",
+    "the-weird-walrus",
+    "jaccard-minhash"
+  ],
+  "total_views": 609
+},
+{
+  "id": "indexing-on-partitioned-data",
+  "title": "Indexing on Partitioned Data",
+  "description": "In this essay, we will take a detailed look into how we could index the partitioned data, allowing us to query the data on secondary attributes quickly.",
+  "image": "https://user-images.githubusercontent.com/4745789/152698544-c62436c9-8735-4490-90be-4d117902736b.png",
+  "gif": "https://media.giphy.com/media/3o6Mb9cGKe3JzhbqPC/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "data partitioning",
+    "data partitioning indexes",
+    "global secondary indexes",
+    "local secondary indexes"
+  ],
+  "published_at": "2022-02-07",
+  "similar": [
+    "data-partitioning",
+    "conflict-detection",
+    "data-partitioning-strategies",
+    "architectures-in-distributed-systems"
+  ],
+  "total_views": 380
+},
+{
+  "id": "data-partitioning-strategies",
+  "title": "Data Partitioning Strategies",
+  "description": "In this essay, we take a detailed look into the two common approaches to horizontally partition the data - Hash Based and Range Based Partitioning.",
+  "image": "https://user-images.githubusercontent.com/4745789/151733223-2f1f5611-7b4a-463d-aadf-fd522b535d67.png",
+  "gif": "https://media.giphy.com/media/xTiTnrliW65rlwud8I/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "data partitioning",
+    "data partitioning strategies",
+    "range-based partitioning",
+    "hash-based partitioning"
+  ],
+  "published_at": "2022-01-31",
+  "similar": [
+    "indexing-on-partitioned-data",
+    "data-partitioning",
+    "mistaken-beliefs-of-distributed-systems",
+    "conflict-detection"
+  ],
+  "total_views": 302
+},
+{
+  "id": "data-partitioning",
+  "title": "Data Partitioning",
+  "description": "In this essay, we take a detailed look into Partitioning basics and understand how it can help us scale our Reads and Writes beyond a single machine.",
+  "image": "https://user-images.githubusercontent.com/4745789/150692301-6abb0b95-c91f-4a8f-8d10-6e0f49b4d58d.png",
+  "gif": "https://media.giphy.com/media/l0G17UXa1wk36OIAE/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "data partitioning"
+  ],
+  "published_at": "2022-01-24",
+  "similar": [
+    "multi-master-replication",
+    "indexing-on-partitioned-data",
+    "handling-outages-master-replica",
+    "data-partitioning-strategies"
+  ],
+  "total_views": 435
+},
+{
+  "id": "leaderless-replication",
+  "title": "Leaderless Replication",
+  "description": "In this essay, we take a look into a different way of replication, called Leaderless Replication, that comes in handy in a multi-master setup that demands strong consistency.",
+  "image": "https://user-images.githubusercontent.com/4745789/149646378-0d38d51f-af73-483b-8f05-d5251d6e5b4b.png",
+  "gif": "https://media.giphy.com/media/HUkOv6BNWc1HO/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "leadeless replication",
+    "highly consistent systems"
+  ],
+  "published_at": "2022-01-16",
+  "similar": [
+    "rum",
+    "master-replica-replication",
+    "persistent-data-structures-introduction",
+    "replication-formats"
+  ],
+  "total_views": 444
+},
+{
+  "id": "conflict-resolution",
+  "title": "Conflict Resolution",
+  "description": "In this essay, go in-depth to understand ways to resolve and avoid conflicts in a multi-master setup.",
+  "image": "https://user-images.githubusercontent.com/4745789/148543014-5b785b5a-fa6c-4ef5-8e8a-656177033e9f.png",
+  "gif": "https://media.giphy.com/media/l2JeiBuUsaFNQIfEk/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "multi-master replication",
+    "multi-master setup"
+  ],
+  "published_at": "2022-01-09",
+  "similar": [
+    "architectures-in-distributed-systems",
+    "conflict-detection",
+    "mistaken-beliefs-of-distributed-systems",
+    "monotonic-reads"
+  ],
+  "total_views": 275
+},
+{
+  "id": "conflict-detection",
+  "title": "Conflict Detection",
+  "description": "In this essay, we talk about conflicts and understand what they are, how to detect them in a multi-master setup.",
+  "image": "https://user-images.githubusercontent.com/4745789/143674841-79dc836f-e989-4d25-bfce-ee2939843ad4.png",
+  "gif": "https://media.giphy.com/media/3o6MbiJPqtMPHykonK/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "multi-master replication",
+    "multi-master setup"
+  ],
+  "published_at": "2021-11-28",
+  "similar": [
+    "architectures-in-distributed-systems",
+    "mistaken-beliefs-of-distributed-systems",
+    "indexing-on-partitioned-data",
+    "monotonic-reads"
+  ],
+  "total_views": 709
+},
+{
+  "id": "multi-master-replication",
+  "title": "Multi-Master Replication",
+  "description": "In this essay, we look at what Multi-Master Replication is, the core challenge it addresses, use-cases we can find this replication in action, and the possible concerns of using it.",
+  "image": "https://user-images.githubusercontent.com/4745789/140054768-d9bd1eaf-4d26-49bc-9035-024e4a7e010a.png",
+  "gif": "https://media.giphy.com/media/3orieW7ikndkDjQuT6/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "multi-master replication",
+    "multi-master setup"
+  ],
+  "published_at": "2021-11-03",
+  "similar": [
+    "handling-outages-master-replica",
+    "data-partitioning",
+    "replication-formats",
+    "data-partitioning-strategies"
+  ],
+  "total_views": 497
+},
+{
+  "id": "monotonic-reads",
+  "title": "Monotonic Reads",
+  "description": "Asynchronous replication leads to a fascinating situation where it feels like we are going through a wormhole traveling back and forth in time. In this essay, we understand why this happens and the consequences and devise a quick solution to address it.",
+  "image": "https://user-images.githubusercontent.com/4745789/135490742-ecf2f507-2a61-465d-a2de-515a913f5588.png",
+  "gif": "https://media.giphy.com/media/3o6Mb84ODTP8FgQQuI/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "monotonic reads"
+  ],
+  "published_at": "2021-10-03",
+  "similar": [
+    "conflict-detection",
+    "architectures-in-distributed-systems",
+    "conflict-resolution",
+    "indexing-on-partitioned-data"
+  ],
+  "total_views": 348
+},
+{
+  "id": "read-your-write-consistency",
+  "title": "Read-your-write Consistency",
+  "description": "Read-Your-Writes consistency states that the system guarantees that, once an item has been updated, any attempt to read the record by the same client will return the updated value.",
+  "image": "https://user-images.githubusercontent.com/4745789/134203710-5284102a-4d0f-43b1-bcd9-6668040ac550.png",
+  "gif": "https://media.giphy.com/media/3o6MbsTCszAbi6f1aE/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "read your write consistency"
+  ],
+  "published_at": "2021-09-22",
+  "similar": [
+    "new-replica",
+    "handling-outages-master-replica",
+    "multi-master-replication",
+    "replication-strategies"
+  ],
+  "total_views": 1120
+},
+{
+  "id": "handling-outages-master-replica",
+  "title": "Handling outages in a Master-Replica setup",
+  "description": "This essay talks about the worse - nodes going down - impact,  recovery, and real-world practices.",
+  "image": "https://user-images.githubusercontent.com/4745789/132286179-14358b33-95cf-4d48-9419-5eaa727ffd56.png",
+  "gif": "https://media.giphy.com/media/xT5LMskx2CiLPpAkk8/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "handling outage master-replica",
+    "master crash",
+    "replica crash"
+  ],
+  "published_at": "2021-09-07",
+  "similar": [
+    "multi-master-replication",
+    "replication-formats",
+    "replication-strategies",
+    "data-partitioning"
+  ],
+  "total_views": 375
+},
+{
+  "id": "new-replica",
+  "title": "The New Replica",
+  "description": "In this one, we take a look into how these Replicas are set up and understand some quirky nuances about Replication.",
+  "image": "https://user-images.githubusercontent.com/4745789/130425162-e02fcffe-3c61-4e90-98b6-6c7a25cb884e.png",
+  "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "replication",
+    "replication formats",
+    "row-based replication",
+    "statement-based replication"
+  ],
+  "published_at": "2021-08-23",
+  "similar": [
+    "replication-strategies",
+    "read-your-write-consistency",
+    "handling-outages-master-replica",
+    "multi-master-replication"
+  ],
+  "total_views": 293
+},
+{
+  "id": "replication-formats",
+  "title": "Replication Formats",
+  "description": "When we are employing a Master-Replica pattern to improve availability, throughput, and fault-tolerance, the big question that pops up is how the writes happening on the Master propagates to the  Replica. In this essay, we will talk about exactly this and find out about Replication Formats.",
+  "image": "https://user-images.githubusercontent.com/4745789/129456630-73db5669-5fb9-47a6-bd13-72fd0c5a2e54.png",
+  "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "replication",
+    "replication formats",
+    "row-based replication",
+    "statement-based replication"
+  ],
+  "published_at": "2021-08-15",
+  "similar": [
+    "handling-outages-master-replica",
+    "multi-master-replication",
+    "replication-strategies",
+    "rum"
+  ],
+  "total_views": 334
+},
+{
+  "id": "replication-strategies",
+  "title": "Replication Strategies",
+  "description": "In this essay, we take a quick yet verbose look into Synchronous, Asynchronous, and Semisynchronous replication strategies and understand their implications.",
+  "image": "https://user-images.githubusercontent.com/4745789/128717208-a0f495c1-ccf6-4039-b936-f1cc29d722f3.png",
+  "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "replication",
+    "synchronous replication",
+    "asynchronous replication",
+    "semi-synchronous replication"
+  ],
+  "published_at": "2021-08-10",
+  "similar": [
+    "new-replica",
+    "handling-outages-master-replica",
+    "replication-formats",
+    "multi-master-replication"
+  ],
+  "total_views": 821
+},
+{
+  "id": "master-replica-replication",
+  "title": "Master-Replica Replication",
+  "description": "In this essay, we talk about everything we should know about Master-Replica replication pattern.",
+  "image": "https://user-images.githubusercontent.com/4745789/128563709-a95f9f55-f87b-458d-b6c4-562ef894805d.png",
+  "gif": "https://media.giphy.com/media/l1KtVkekpcV4gKjyE/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems",
+    "database engineering"
+  ],
+  "tags": [
+    "distributed systems",
+    "replication",
+    "master replica replication",
+    "master slave replication",
+    "leader follower replication"
+  ],
+  "published_at": "2021-08-07",
+  "similar": [
+    "rum",
+    "leaderless-replication",
+    "replication-formats",
+    "multi-master-replication"
+  ],
+  "total_views": 350
+},
+{
+  "id": "durability",
+  "title": "\"D\" in ACID - Durability",
+  "description": "Durability seems to be a taken-for-granted requirement, but to be honest, it is the most important one. Let's deep dive and find why it is so important? How do databases achieve durability in the midst of thousands of concurrent transactions? And how to achieve durability in a distributed setting?",
+  "image": "https://user-images.githubusercontent.com/4745789/126130275-10c1c4cf-483a-42d7-bd78-2f0ff4da4947.png",
+  "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "database engineering"
+  ],
+  "tags": [
+    "ACID in databases",
+    "ACID Transactions",
+    "Durability in databases"
+  ],
+  "published_at": "2021-07-19",
+  "similar": [
+    "isolation",
+    "atomicity",
+    "bitcask",
+    "consistency"
+  ],
+  "total_views": 335
+},
+{
+  "id": "isolation",
+  "title": "\"I\" in ACID - Isolation",
+  "description": "Isolation is the ability of the database to concurrently process multiple transactions in a way that changes made in one do not another.",
+  "image": "https://user-images.githubusercontent.com/4745789/124763085-36d1db80-df51-11eb-985e-1d98e9b78cba.png",
+  "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "database engineering"
+  ],
+  "tags": [
+    "ACID in databases",
+    "ACID Transactions",
+    "Isolation in databases"
+  ],
+  "published_at": "2021-07-05",
+  "similar": [
+    "atomicity",
+    "durability",
+    "consistency",
+    "image-steganography"
+  ],
+  "total_views": 301
+},
+{
+  "id": "consistency",
+  "title": "\"C\" in ACID - Consistency",
+  "description": "In the context of databases, Consistency is Correctness, which means that under no circumstance will the data lose its correctness.",
+  "image": "https://user-images.githubusercontent.com/4745789/124225698-86657100-db25-11eb-8284-9771f5a0b545.png",
+  "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "database engineering"
+  ],
+  "tags": [
+    "ACID in databases",
+    "ACID Transactions",
+    "Consistency in databases"
+  ],
+  "published_at": "2021-07-02",
+  "similar": [
+    "image-steganography",
+    "isolation",
+    "durability",
+    "atomicity"
+  ],
+  "total_views": 387
+},
+{
+  "id": "atomicity",
+  "title": "\"A\" in ACID - Atomicity",
+  "description": "A single database transaction often contains multiple statements to be executed on the database. In Relational Databases, these are usually multiple SQL statements, while in the case of non-Relational Databases, these could be multiple database commands.",
+  "image": "https://user-images.githubusercontent.com/4745789/124224260-ef97b500-db22-11eb-8d0f-cc808093eb00.png",
+  "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "database engineering"
+  ],
+  "tags": [
+    "ACID in databases",
+    "ACID Transactions",
+    "Atomicity in databases"
+  ],
+  "published_at": "2021-06-28",
+  "similar": [
+    "isolation",
+    "durability",
+    "consistency",
+    "image-steganography"
+  ],
+  "total_views": 748
+},
+{
+  "id": "architectures-in-distributed-systems",
+  "title": "Architectures in Distributed Systems",
+  "description": "While designing a Distributed System, it is essential to pick the right kind of architecture. Usually, architectures are evolving, but picking the right one at the inception could make your system thrive.",
+  "image": "https://user-images.githubusercontent.com/4745789/122890572-6d103800-d361-11eb-92e0-c0f226c6821c.png",
+  "gif": "https://media.giphy.com/media/3orieKSJONEWV51x3q/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems"
+  ],
+  "tags": [
+    "distributed systems",
+    "architectures in distributed systems",
+    "system design",
+    "build robust distributed systems"
+  ],
+  "published_at": "2021-06-22",
+  "similar": [
+    "conflict-detection",
+    "mistaken-beliefs-of-distributed-systems",
+    "conflict-resolution",
+    "monotonic-reads"
+  ],
+  "total_views": 563
+},
+{
+  "id": "mistaken-beliefs-of-distributed-systems",
+  "title": "Mistaken Beliefs of Distributed Systems",
+  "description": "In this essay, we learn about a set of false assumptions that programmers new to distributed applications invariably make. Understand these to build robust distributed systems.",
+  "image": "https://user-images.githubusercontent.com/4745789/122346879-11137100-cf67-11eb-95a1-5e717dd53810.png",
+  "gif": "https://media.giphy.com/media/SqmkZ5IdwzTP2/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "system design",
+    "distributed systems"
+  ],
+  "tags": [
+    "distributed systems",
+    "myths of distributed systems",
+    "system design",
+    "build robust distributed systems"
+  ],
+  "published_at": "2021-06-17",
+  "similar": [
+    "conflict-detection",
+    "architectures-in-distributed-systems",
+    "conflict-resolution",
+    "data-partitioning-strategies"
+  ],
+  "total_views": 358
+},
+{
+  "id": "fork-bomb",
+  "title": "Fork Bomb",
+  "description": "In this essay, we explore a simple yet effective DoS attack called Fork Bomb, also called Rabbit Virus. This attack forks out processes infinitely, starving them for any resources.",
+  "image": "https://user-images.githubusercontent.com/4745789/121253160-69db6d80-c8c6-11eb-8b05-202ec958324e.png",
+  "gif": "https://media.giphy.com/media/l0HeiaW8q9B6tqoHS/giphy.gif",
+  "yt_video_id": "",
+  "categories": [
+    "security"
+  ],
+  "tags": [
+    "dos attack",
+    "fork bomb",
+    "understanding fork bomb",
+    "understanding fork bomb bash",
+    "linux fork bomb",
+    "windows fork bomb",
+    ":() { :|:& };:"
+  ],
+  "published_at": "2021-06-09",
+  "similar": [
+    "bayesian-average",
+    "mongodb-cursor-skip-is-slow",
+    "inheritance-c",
+    "super-long-integers"
+  ],
+  "total_views": 425
+},
+{
+  "id": "chained-operators-python",
+  "title": "Chained Comparison Operators in Python",
+  "description": "In this essay, we find how chained comparison expressions are evaluated, understand how short-circuit evaluations happen internally, and alter Python's expression evaluation strategy.",
+  "image": "https://user-images.githubusercontent.com/4745789/116305344-47334080-a7c1-11eb-888a-a60b203ebe9d.png",
+  "gif": "https://media.giphy.com/media/LpLd2NGvpaiys/giphy.gif",
+  "yt_video_id": "zz2Lu5ht_jA",
+  "categories": [
+    "python internals"
+  ],
+  "tags": [
+    "python",
+    "python internals",
+    "internals of chained comparison operators"
+  ],
+  "published_at": "2021-04-27",
+  "similar": [
+    "the-weird-walrus",
+    "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+    "making-http-requests-using-netcat",
+    "how-sleepsort-helped-me-understand-concurrency-in-golang"
+  ],
+  "total_views": 275
+},
+{
+  "id": "udemy-sql-taxonomy",
+  "title": "Designing Taxonomy on a Relational DB",
+  "description": "In this essay, design taxonomy on a SQL-based Relational database by taking Udemy as an example, write SQL queries covering common use-cases, and determine necessary indexes to make queries efficient.",
+  "image": "https://user-images.githubusercontent.com/4745789/115157736-83bbb980-a0a8-11eb-8974-545b7a9cba9d.png",
+  "gif": "https://media.giphy.com/media/3o6Mbsop5cXzqVqfgA/giphy.gif",
+  "yt_video_id": "4_jlmX_oB94",
+  "categories": [
+    "database engineering",
+    "system design"
+  ],
+  "tags": [
+    "database design",
+    "udemy design",
+    "taxonomy on SQL database",
+    "system design - udemy"
+  ],
+  "published_at": "2021-04-18",
+  "similar": [
+    "better-programmer",
+    "benchmark-and-compare-pagination-approach-in-mongodb",
+    "how-sleepsort-helped-me-understand-concurrency-in-golang",
+    "multiple-mysql-on-same-server-using-docker"
+  ],
+  "total_views": 1303
+},
+{
+  "id": "the-weird-walrus",
+  "title": "The Weird Walrus",
+  "description": "In this essay, we alter the Python Grammar and allow it run Assignment Expressions without any parenthesis.",
+  "image": "https://user-images.githubusercontent.com/4745789/112817071-ac4f2580-909f-11eb-8d56-f89536cfa065.png",
+  "gif": "https://media.giphy.com/media/SbIJjAaist696ywQXx/giphy.gif",
+  "yt_video_id": "rWb7VYz1q1U",
+  "categories": [
+    "python internals"
+  ],
+  "tags": [
+    "python internals",
+    "cpython internals",
+    "walrus operator",
+    "changing cpython grammar"
+  ],
+  "published_at": "2021-03-29",
+  "similar": [
+    "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+    "super-long-integers",
+    "making-http-requests-using-netcat",
+    "how-sleepsort-helped-me-understand-concurrency-in-golang"
+  ],
+  "total_views": 2377
+},
+{
+  "id": "fully-persistent-arrays",
+  "title": "Fully Persistent Arrays",
+  "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want. In this essay, we take a detailed look into the implementation of Fully Persistent Arrays.",
+  "image": "https://user-images.githubusercontent.com/4745789/107943189-55d7cd00-6fb2-11eb-9e03-a1da3870e718.png",
+  "gif": "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
+  "categories": [
+    "data structures",
+    "advanced algorithms"
+  ],
+  "tags": [
+    "persistent data structures",
+    "fully persistent arrays"
+  ],
+  "published_at": "2021-02-14",
+  "similar": [
+    "phi-accrual",
+    "persistent-data-structures-introduction",
+    "copy-on-write",
+    "lfu"
+  ],
+  "total_views": 618
+},
+{
+  "id": "persistent-data-structures-introduction",
+  "title": "Persistent Data Structures - An Introduction",
+  "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want.",
+  "image": "https://user-images.githubusercontent.com/4745789/107117196-9347a680-689e-11eb-8d3f-75da045b7baf.png",
+  "gif": "https://media.giphy.com/media/1hVi7JFFzplHW/giphy.gif",
+  "categories": [
+    "data structures"
+  ],
+  "tags": [
+    "persistent data structures"
+  ],
+  "published_at": "2021-02-07",
+  "similar": [
+    "bitcask",
+    "leaderless-replication",
+    "master-replica-replication",
+    "rum"
+  ],
+  "total_views": 1861
+},
+{
+  "id": "constant-folding-python",
+  "title": "Constant Folding in Python",
+  "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called Constant Folding.",
+  "image": "https://user-images.githubusercontent.com/4745789/104118331-23e9a000-534e-11eb-9ec8-8369cdae40b1.png",
+  "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
+  "categories": [
+    "python internals"
+  ],
+  "tags": [
+    "compiler optimization",
+    "constant folding",
+    "cpython internals"
+  ],
+  "published_at": "2021-01-10",
+  "similar": [
+    "python-prompts",
+    "python-caches-integers",
+    "python-iterable-integers",
+    "fsm"
+  ],
+  "total_views": 3917
+},
+{
+  "id": "string-interning",
+  "title": "String Interning in Python",
+  "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called String Interning.",
+  "image": "https://user-images.githubusercontent.com/4745789/102710262-1c971f80-42d7-11eb-9ee4-dcefd540e869.png",
+  "gif": "https://media.giphy.com/media/KRNBl0iSS8gg0/giphy.gif",
+  "yt_video_id": "QpGK69LzfpY",
+  "categories": [
+    "python internals"
+  ],
+  "tags": [
+    "compiler optimization",
+    "string interning",
+    "cpython internals"
+  ],
+  "published_at": "2020-12-20",
+  "similar": [
+    "i-changed-my-python",
+    "python-caches-integers",
+    "python-iterable-integers",
+    "super-long-integers"
+  ],
+  "total_views": 1480
+},
+{
+  "id": "recursion-visualizer",
+  "title": "A Simple Recursion Tree Visualizer for Python",
+  "description": "One of the most complicated concepts to wrap our heads around has to be recursion; to understand it well it always helps to have some sort of recursion visualization. In this essay, we build a super-simple yet effective visualizer for recursive functions in Python.",
+  "image": "https://user-images.githubusercontent.com/4745789/102006828-0ffc4f80-3d4a-11eb-8ab1-0891dc5ba00f.png",
+  "gif": "https://media.giphy.com/media/3ov9jQX2Ow4bM5xxuM/giphy.gif",
+  "categories": [
+    "utility"
+  ],
+  "tags": [
+    "recursion tree",
+    "visualize recursion",
+    "print recursion tree",
+    "recursion tree visualizer for Python"
+  ],
+  "published_at": "2020-12-13",
+  "similar": [
+    "fsm",
+    "idf",
+    "constant-folding-python",
+    "python-iterable-integers"
+  ],
+  "total_views": 4140
+},
+{
+  "id": "flajolet-martin",
+  "title": "Approximate Count-Distinct using Flajolet Martin Algorithm",
+  "description": "Measuring distinct elements from a stream of values is one of the most common utilities that finds its application across the spectrum. Most of these use cases do not expect accurate count-distinct rather they expect it to be computed very quickly and efficiently. In this essay, we deep dive into one of the first Count-Distinct approximation algorithm called Flajlet-Martin Algorithm.",
+  "image": "https://user-images.githubusercontent.com/4745789/101244544-31977e80-372d-11eb-9ab4-d9e879496d39.png",
+  "gif": "https://media.giphy.com/media/cRMgB2wjHhVN2tDD2z/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "approximation algorithms",
+    "count-distinct approximation",
+    "flajolet algorithms",
+    "fm algorithms"
+  ],
+  "published_at": "2020-12-06",
+  "similar": [
+    "slowsort",
+    "1d-terrain",
+    "isolation-forest",
+    "morris-counter"
+  ],
+  "total_views": 3131
+},
+{
+  "id": "2q-cache",
+  "title": "2Q Cache Management Algorithm",
+  "description": "LRU is one of the most widely used cache eviction algorithms suffers from a bunch of limitations especially when used for managing caches in disk-backed databases. 2Q remediates the limitations and improves upon it by adding multiple parallel buffers.",
+  "image": "https://user-images.githubusercontent.com/4745789/100538603-bf1f2e00-3256-11eb-87dc-32594b25ae30.png",
+  "gif": "https://media.giphy.com/media/cfuL5gqFDreXxkWQ4o/giphy.gif",
+  "categories": [
+    "advanced algorithms",
+    "database engineering"
+  ],
+  "tags": [
+    "postgres internals",
+    "cache management algorithms"
+  ],
+  "published_at": "2020-11-29",
+  "similar": [
+    "mysql-cache",
+    "israeli-queues",
+    "ts-smoothing",
+    "phi-accrual"
+  ],
+  "total_views": 1705
+},
+{
+  "id": "israeli-queues",
+  "title": "Israeli Queues",
+  "description": "Israeli Queues are fondly named after a peculiar behavior observed in Israel. This behavior was mimicked to solve a very particular problem in Polling Systems. In this essay, we find what makes the Israeli Queue different than the traditional FIFO Queue and how it efficiently addresses the problem at hand.",
+  "image": "https://user-images.githubusercontent.com/4745789/99896424-64b22a80-2cb6-11eb-92b2-ed1f44a76ba1.png",
+  "gif": "https://media.giphy.com/media/3orif9DJNKDfXqXbBS/giphy.gif",
+  "categories": [
+    "data structures"
+  ],
+  "tags": [
+    "data structure",
+    "priority queue",
+    "israeli queue"
+  ],
+  "published_at": "2020-11-22",
+  "similar": [
+    "2q-cache",
+    "phi-accrual",
+    "morris-counter",
+    "copy-on-write"
+  ],
+  "total_views": 7250
+},
+{
+  "id": "1d-terrain",
+  "title": "1D Procedural Terrain Generation",
+  "description": "Terrains are at the heart of every Computer Game - be it Counter-Strike, Age of Empires, or even Minecraft. The virtual world that these games generate is the key to a great gaming experience. Generating terrain, manually, requires a ton of effort and hence it makes sense to auto-generate a pseudorandom terrain using some procedure. In this essay, we take a detailed look into generating pseudorandom one-dimensional terrain that is very close to real ones.",
+  "image": "https://user-images.githubusercontent.com/4745789/99261379-a9ffd380-2842-11eb-8f50-36b36ed42a95.png",
+  "gif": "https://media.giphy.com/media/xT5LMTf2CRdBhetWPC/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "advanced algorithms",
+    "terrain generation",
+    "perlin noise",
+    "random terrain generation"
+  ],
+  "published_at": "2020-11-16",
+  "similar": [
+    "slowsort",
+    "flajolet-martin",
+    "jaccard-minhash",
+    "idf"
+  ],
+  "total_views": 1062
+},
+{
+  "id": "jaccard-minhash",
+  "title": "Set Similarity using Jaccard Similarity Coefficient and MinHash",
+  "description": "Set similarity measure finds its application spanning the Computer Science spectrum; some applications being - user segmentation, finding near-duplicate webpages/documents, clustering, recommendation generation, sequence alignment, and many more. In this essay, we take a detailed look into a set-similarity measure called - Jaccard's Similarity Coefficient and how its computation can be optimized using a neat technique called MinHash.",
+  "image": "https://user-images.githubusercontent.com/4745789/98465225-c4580280-21ed-11eb-9f1f-6508ed229925.png",
+  "gif": "https://media.giphy.com/media/yvXWADxQxRMkQ4eEID/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "set similarity",
+    "jaccard similarity coefficient",
+    "jaccard index",
+    "minhash",
+    "minhash signature"
+  ],
+  "published_at": "2020-11-08",
+  "similar": [
+    "idf",
+    "constant-folding-python",
+    "publish-python-package-on-pypi",
+    "rule-30"
+  ],
+  "total_views": 1481
+},
+{
+  "id": "ts-smoothing",
+  "title": "Time Series Smoothing - Making Aberrations Stand Out",
+  "description": "Time Series smoothing algorithms removes short-term irregularities from the plot while preserving long-term trends. But as an observer, it is important that such smoothing techniques or irregularities do not mask anomalies that need attention. In this essay, we take a look at a smoothing algorithm that smooths out a time series plot while making aberrations and anomalies standout.",
+  "image": "https://user-images.githubusercontent.com/4745789/97785060-cbb55580-1bc8-11eb-9d6d-91ff16cc2ddc.png",
+  "gif": "https://media.giphy.com/media/3orieVe5VYqTdT16qk/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "time series smoothing",
+    "statistics",
+    "kurtosis smoothing"
+  ],
+  "published_at": "2020-11-01",
+  "similar": [
+    "better-programmer",
+    "mysql-cache",
+    "2q-cache",
+    "atomicity"
+  ],
+  "total_views": 499
+},
+{
+  "id": "lfu",
+  "title": "Constant Time LFU",
+  "description": "The most popular implementation of the LFU Cache Eviction Scheme, using a min-heap, implements all three operations with running time complexity of O(log n) and this makes LFU sub-optimal. In this essay, we take a detailed look at a clever algorithm that implements LFU such that all the operations happen with O(1) running time complexity.",
+  "image": "https://user-images.githubusercontent.com/4745789/89711582-cf11ba00-d9a8-11ea-9173-c7069b1537b5.png",
+  "gif": "https://media.giphy.com/media/fWqGY1AC4HVIN3lRyB/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "caching",
+    "lfu",
+    "least frequently used",
+    "cache eviction algorithms",
+    "least frequently used",
+    "constant time"
+  ],
+  "published_at": "2020-08-23",
+  "similar": [
+    "fully-persistent-arrays",
+    "isolation-forest",
+    "flajolet-martin",
+    "consistent-hashing"
+  ],
+  "total_views": 6035
+},
+{
+  "id": "morris-counter",
+  "title": "Morris's Algorithm for Approximate Counting",
+  "description": "Morris' Algorithm counts a large number of events using a very small space O(log log n). The algorithm uses probabilistic techniques to increment the counter and in this essay, we take a detailed look at Morris' Algorithm and the math behind it.",
+  "image": "https://user-images.githubusercontent.com/4745789/89116441-b9d0f300-d4b1-11ea-99e5-cca7c4cef5fb.png",
+  "gif": "https://media.giphy.com/media/uWXxbGPMbFkxsni3tc/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "approximate counting",
+    "morris counter",
+    "hyperloglog",
+    "morris algorithms"
+  ],
+  "published_at": "2020-08-02",
+  "similar": [
+    "israeli-queues",
+    "slowsort",
+    "fast-and-efficient-pagination-in-mongodb",
+    "phi-accrual"
+  ],
+  "total_views": 2120
+},
+{
+  "id": "slowsort",
+  "title": "Slowsort - A Pessimal Sorting Algorithm",
+  "description": "Slowsort is a pessimal sorting algorithm based on the Multiply and Surrender paradigm. The algorithm is designed to be deterministically sub-optimal and it could easily be the worst way anyone could sort an array.",
+  "image": "https://user-images.githubusercontent.com/4745789/88473025-fabb8b80-cf36-11ea-8390-a807fcd57d93.png",
+  "gif": "https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif",
+  "yt_video_id": "TzxLYTC8HL8",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "slowsort",
+    "pessimal algorithms",
+    "slowsort vs bogosort",
+    "worst sorting algorithms",
+    "multiply and surrender"
+  ],
+  "published_at": "2020-07-26",
+  "similar": [
+    "flajolet-martin",
+    "1d-terrain",
+    "morris-counter",
+    "isolation-forest"
+  ],
+  "total_views": 6485
+},
+{
+  "id": "bitcask",
+  "title": "Bitcask - A Log-Structured Fast KV Store",
+  "description": "Bitcask is a Key-Value store that persists its data in append-only log files and still reaps super-performant read-write throughputs. In this essay, we take a detailed look into Bitcask, its design, and find the secret sauce that makes it so performant.",
+  "image": "https://user-images.githubusercontent.com/4745789/87868516-144b5900-c9b4-11ea-91e3-2de14e80817b.png",
+  "gif": "https://media.giphy.com/media/l0NwF1dnk7GRz3pK0/giphy.gif",
+  "categories": [
+    "databases"
+  ],
+  "tags": [
+    "database",
+    "embedded database",
+    "key value store",
+    "log structured database"
+  ],
+  "published_at": "2020-07-19",
+  "similar": [
+    "durability",
+    "persistent-data-structures-introduction",
+    "isolation",
+    "atomicity"
+  ],
+  "total_views": 574
+},
+{
+  "id": "phi-accrual",
+  "title": "Phi \u03c6 Accrual Failure Detection",
+  "description": "Phi \u03c6 Accrual Failure Detection algorithm, unlike conventional algorithms, is an adaptive failure detection algorithm that instead of providing output as a boolean (system being up or down), outputs the suspicion information (level) on a continuous scale.",
+  "image": "https://user-images.githubusercontent.com/4745789/87240958-c5de0d80-c43b-11ea-8e1b-2a7c70586b9b.png",
+  "gif": "https://media.giphy.com/media/gLoMzjGQB2tQlQtB9P/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "distributed systems",
+    "heartbeat algorithms",
+    "failure detection"
+  ],
+  "published_at": "2020-07-12",
+  "similar": [
+    "israeli-queues",
+    "copy-on-write",
+    "2q-cache",
+    "morris-counter"
+  ],
+  "total_views": 478
+},
+{
+  "id": "decipher-repeated-key-xor",
+  "title": "Deciphering Repeated-key XOR Ciphertext",
+  "description": "Deciphering is the process of recovering the original message from an encrypted byte stream, usually, without having any knowledge of the encryption key. In this essay, we look at how we can use Hamming Distance, Linguistics to recover the original message from a Repeated-key XORed Ciphertext.",
+  "image": "https://user-images.githubusercontent.com/4745789/86505243-d52bde00-bddf-11ea-9fb2-bd9c25e51bd4.png",
+  "gif": "https://media.giphy.com/media/b5Hcaz7EPz26I/giphy.gif",
+  "categories": [
+    "cryptography"
+  ],
+  "tags": [
+    "python",
+    "cryptography",
+    "cryptopals"
+  ],
+  "published_at": "2020-07-04",
+  "similar": [
+    "decipher-single-xor",
+    "bayesian-average",
+    "lfsr",
+    "isolation-forest"
+  ],
+  "total_views": 2797
+},
+{
+  "id": "decipher-single-xor",
+  "title": "Deciphering Single-byte XOR Ciphertext",
+  "description": "Deciphering is the process of recovering the original message from an encrypted byte stream, usually, without having any knowledge of the encryption key. In this essay, we look at how we can use linguistics to recover the original message from a Single-byte XORed Ciphertext.",
+  "image": "https://user-images.githubusercontent.com/4745789/85223233-0ddeb700-b3df-11ea-9bb8-5bd1cf0cabcb.png",
+  "gif": "https://media.giphy.com/media/l3vRmVv5P01I5NDAA/giphy.gif",
+  "categories": [
+    "cryptography"
+  ],
+  "tags": [
+    "python",
+    "cryptography",
+    "cryptopals"
+  ],
+  "published_at": "2020-06-21",
+  "similar": [
+    "decipher-repeated-key-xor",
+    "bayesian-average",
+    "lfsr",
+    "isolation-forest"
+  ],
+  "total_views": 1999
+},
+{
+  "id": "python-iterable-integers",
+  "title": "Making Python Integers Iterable",
+  "description": "In Python, Integers are not iterables but we can make them iterable by implementing __iter__ function. In this essay, we change Python's source code and implement iter function for integers.",
+  "image": "https://user-images.githubusercontent.com/4745789/84585100-bf06af80-ae29-11ea-8797-16c70aee5cc4.png",
+  "gif": "https://media.giphy.com/media/k4ta29T68xlfi/giphy.gif",
+  "categories": [
+    "python internals"
+  ],
+  "tags": [],
+  "published_at": "2020-06-14",
+  "similar": [
+    "python-caches-integers",
+    "python-prompts",
+    "constant-folding-python",
+    "i-changed-my-python"
+  ],
+  "total_views": 1790
+},
+{
+  "id": "inheritance-c",
+  "title": "Powering Inheritance in C using Structure Composition",
+  "description": "C language does not support inheritance however it does support Structure Compositions which can be tweaked to serve use-cases requiring parent-child relationships. In this article we find out how Structure Compositions help us emulate inheritance in C and keep our code extensible. We will also find how it powers two of the most important things to have ever been invented in the field of computer science.",
+  "image": "https://user-images.githubusercontent.com/4745789/83960768-2bbdff00-a8aa-11ea-9e82-16b928d2a244.png",
+  "gif": "https://media.giphy.com/media/3o6Mbk7C7HVuhyqX3G/giphy.gif",
+  "categories": [
+    "data structures"
+  ],
+  "tags": [],
+  "published_at": "2020-06-07",
+  "similar": [
+    "mongodb-cursor-skip-is-slow",
+    "fork-bomb",
+    "fast-and-efficient-pagination-in-mongodb",
+    "idf"
+  ],
+  "total_views": 3850
+},
+{
+  "id": "rum",
+  "title": "The RUM Conjecture",
+  "description": "While designing any storage system the three main aspects we optimize for are Reads, Updates, and auxiliary Memory. RUM Conjecture states that these three form a competing triangle and we could only optimize two at the expense of the third.",
+  "image": "https://user-images.githubusercontent.com/4745789/83344735-64009300-a328-11ea-858a-587d440136f1.png",
+  "gif": "https://media.giphy.com/media/1n7B7bJ917pqZGHG9m/giphy.gif",
+  "categories": [
+    "system design"
+  ],
+  "tags": [],
+  "published_at": "2020-05-31",
+  "similar": [
+    "master-replica-replication",
+    "leaderless-replication",
+    "replication-formats",
+    "multi-master-replication"
+  ],
+  "total_views": 670
+},
+{
+  "id": "consistent-hashing",
+  "title": "Consistent Hashing",
+  "description": "Consistent Hashing is one of the most sought after techniques when it comes to designing highly scalable distributed systems. In this article, we dive deep into the need for Consistent Hashing, the internals of it, and more importantly along the way implement it using arrays and binary search.",
+  "image": "https://user-images.githubusercontent.com/4745789/82760647-92efa400-9e12-11ea-9533-5003bc3c46df.png",
+  "gif": "https://media.giphy.com/media/3ofSBqzxwsiN0npCak/giphy.gif",
+  "categories": [
+    "advanced algorithms",
+    "system design"
+  ],
+  "tags": [],
+  "published_at": "2020-05-24",
+  "similar": [
+    "fully-persistent-arrays",
+    "lfu",
+    "leaderless-replication",
+    "persistent-data-structures-introduction"
+  ],
+  "total_views": 1262
+},
+{
+  "id": "python-caches-integers",
+  "title": "Integer Caching in Python",
+  "description": "To gain a performance boost and avoid reallocation of frequently used integers, Python creates singleton instances of small integer values and uses them by reference.",
+  "image": "https://user-images.githubusercontent.com/4745789/82141979-a620d380-9856-11ea-9a4a-32399c0c01b8.png",
+  "gif": "https://media.giphy.com/media/l378kmO7gdbXaesXS/giphy.gif",
+  "categories": [
+    "python internals"
+  ],
+  "tags": [],
+  "published_at": "2020-05-17",
+  "similar": [
+    "python-prompts",
+    "python-iterable-integers",
+    "constant-folding-python",
+    "i-changed-my-python"
+  ],
+  "total_views": 1824
+},
+{
+  "id": "fractional-cascading",
+  "title": "Fractional Cascading - Speeding up Binary Searches",
+  "description": "The performance of binary search when applied on k lists independently can be improved using bridges and the technique is called Fractional Cascading. Fractional Cascading also sees its application in Geometric Data Structures, Segment Trees, and Databases.",
+  "image": "https://user-images.githubusercontent.com/4745789/82142043-352deb80-9857-11ea-9801-878d771248da.png",
+  "gif": "https://media.giphy.com/media/1k5k3J5K3BywQOrpNA/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [],
+  "published_at": "2020-05-10",
+  "similar": [
+    "genetic-knapsack",
+    "flajolet-martin",
+    "slowsort",
+    "1d-terrain"
+  ],
+  "total_views": 486
+},
+{
+  "id": "copy-on-write",
+  "title": "Copy-on-Write Semantics",
+  "description": "Copy-on-write is used to model Time Travel, build databases with no locks, and makes the fork system call super-efficient.",
+  "image": "https://user-images.githubusercontent.com/4745789/80913860-73121680-8d65-11ea-87f8-d02460f05a22.png",
+  "gif": "https://media.giphy.com/media/GIrIC3g657AYg/giphy.gif",
+  "categories": [
+    "data structures",
+    "system design"
+  ],
+  "tags": [],
+  "published_at": "2020-05-03",
+  "similar": [
+    "phi-accrual",
+    "israeli-queues",
+    "mysql-cache",
+    "ts-smoothing"
+  ],
+  "total_views": 559
+},
+{
+  "id": "mysql-cache",
+  "title": "Midpoint Insertion Strategy in MySQL LRU Cache",
+  "description": "The MySQL InnoDB Storage engine uses LRU cache but it suffers from a notorious problem. In this article, we find how by using Midpoint Insertion Strategy and changing one aspect of LRU, MySQL becomes scan resistant and super performant.",
+  "image": "https://user-images.githubusercontent.com/4745789/80304802-0ed7db80-87d6-11ea-98db-bc5d4afe965b.png",
+  "gif": "https://media.giphy.com/media/daUOBsa1OztxC/giphy.gif",
+  "categories": [
+    "database engineering",
+    "advanced algorithms"
+  ],
+  "tags": [],
+  "published_at": "2020-04-26",
+  "similar": [
+    "2q-cache",
+    "ts-smoothing",
+    "israeli-queues",
+    "copy-on-write"
+  ],
+  "total_views": 466
+},
+{
+  "id": "fsm",
+  "title": "Building Finite State Machines with Python Coroutines",
+  "description": "The most intuitive way of building and implementing Finite State Machines is by using Python Coroutines and in this article, we find how and why.",
+  "image": "https://user-images.githubusercontent.com/4745789/79684359-3ebf3600-824e-11ea-97cc-0f06c2919aeb.png",
+  "gif": "https://media.giphy.com/media/KhdQ2Ia3FJuKs/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [],
+  "published_at": "2020-04-19",
+  "similar": [
+    "recursion-visualizer",
+    "constant-folding-python",
+    "python-prompts",
+    "python-iterable-integers"
+  ],
+  "total_views": 7625
+},
+{
+  "id": "bayesian-average",
+  "title": "Better Ranking using Bayesian Average",
+  "description": "Ranking a list of movies, products, books or even restaurants is tricky and in this article, we find what works for such a rating system and the math behind it.",
+  "image": "https://user-images.githubusercontent.com/4745789/78990379-ebfdc400-7b53-11ea-88b7-cd64e39eabf6.png",
+  "gif": "https://media.giphy.com/media/dJ4vNQ7r72pb4nDhN5/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [],
+  "published_at": "2020-04-12",
+  "similar": [
+    "fork-bomb",
+    "fast-and-efficient-pagination-in-mongodb",
+    "efficient-way-to-stop-an-iterating-loop",
+    "the-weird-walrus"
+  ],
+  "total_views": 526
+},
+{
+  "id": "sliding-window-ratelimiter",
+  "title": "Sliding Window based Rate Limiter",
+  "description": "A rate limiter is used to control the rate of traffic sent or received on the network and in this article we dive deep and design a sliding window based rate limiter.",
+  "image": "https://user-images.githubusercontent.com/4745789/78276848-3c13cf80-7531-11ea-8186-99cb1da58e50.png",
+  "gif": "https://media.giphy.com/media/5YuhLwDgrgtRVwI7OY/giphy.gif",
+  "categories": [
+    "system design"
+  ],
+  "tags": [],
+  "published_at": "2020-04-05",
+  "similar": [
+    "consistency",
+    "benchmark-and-compare-pagination-approach-in-mongodb",
+    "image-steganography",
+    "multiple-mysql-on-same-server-using-docker"
+  ],
+  "total_views": 1056
+},
+{
+  "id": "idf",
+  "title": "Inverse Document Frequency",
+  "description": "TF-IDF is extensively used in search engines and in various document classification and clustering techniques. Instead of taking the formula by the word, we take a detour and dive deep into the better half of it and find its connection with Probability, the role it plays in document relevance and the intuition behind it.",
+  "image": "https://user-images.githubusercontent.com/4745789/76207579-10e4db80-6224-11ea-91ba-b67359125156.png",
+  "gif": "https://media.giphy.com/media/3ornjWIRSzXEw61KH6/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "tfidf",
+    "idf",
+    "inverse document frequency",
+    "term frequency inverse document frequency",
+    "term frequency",
+    "understanding tfidf",
+    "understanding idf",
+    "math behind tfidf",
+    "math behind idf",
+    "idf as probability"
+  ],
+  "published_at": "2020-03-06",
+  "similar": [
+    "jaccard-minhash",
+    "inheritance-c",
+    "recursion-visualizer",
+    "constant-folding-python"
+  ],
+  "total_views": 417
+},
+{
+  "id": "better-programmer",
+  "title": "Eight Rituals to be a Better Programmer",
+  "description": "\"How to get better at programming?\" is the question I had been asked quite a few times, and today I lay down the 8 rituals I have been following, and action items for each, to be good and get better at programming.",
+  "image": "https://user-images.githubusercontent.com/4745789/75548769-0cfecf80-5a54-11ea-8dd2-1e452ba1298b.png",
+  "gif": "https://media.giphy.com/media/14gQ5vtwD050LC/giphy.gif",
+  "categories": [
+    "productivity"
+  ],
+  "tags": [
+    "better programmer",
+    "todo of better programmer",
+    "good programmer",
+    "get better at programming",
+    "top coder",
+    "codechef",
+    "hackerrank"
+  ],
+  "published_at": "2020-02-28",
+  "similar": [
+    "udemy-sql-taxonomy",
+    "benchmark-and-compare-pagination-approach-in-mongodb",
+    "ts-smoothing",
+    "atomicity"
+  ],
+  "total_views": 2709
+},
+{
+  "id": "python-prompts",
+  "title": "Personalize your Python Prompt",
+  "description": "Personalization is what we all love. In this article we find how we could personalize the Python interpreter prompt >>>",
+  "image": "https://user-images.githubusercontent.com/4745789/74850923-8ade1f00-5360-11ea-8ed5-1072c8a718c2.png",
+  "gif": "https://media.giphy.com/media/TFTqzyOQwT2zS/giphy.gif",
+  "categories": [
+    "utility"
+  ],
+  "tags": [
+    "python",
+    "interpreter",
+    "prompt",
+    "customize",
+    "personalize",
+    "colorize",
+    "ps1",
+    "ps2",
+    "fun"
+  ],
+  "published_at": "2020-02-21",
+  "similar": [
+    "python-caches-integers",
+    "constant-folding-python",
+    "python-iterable-integers",
+    "i-changed-my-python"
+  ],
+  "total_views": 1763
+},
+{
+  "id": "rule-30",
+  "title": "Pseudorandom Number Generation using Cellular Automata - Rule 30",
+  "description": "Generating pseudorandom numbers is an interesting problem in Computer Science. In this article, we dive deep into an algorithm for generating pseudorandom numbers using Rule 30 of Cellular Automaton.",
+  "image": "https://user-images.githubusercontent.com/4745789/74463952-b07aac80-4eb8-11ea-8d8e-6f286767ec7e.png",
+  "gif": "https://media.giphy.com/media/26uflDxU6cEhrhmUg/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "advanced algorithms",
+    "cellular automata",
+    "rule 30",
+    "pseudorandom number generator",
+    "random numbers",
+    "elementary cellular automata",
+    "1d cellular automata"
+  ],
+  "published_at": "2020-02-14",
+  "similar": [
+    "efficient-way-to-stop-an-iterating-loop",
+    "publish-python-package-on-pypi",
+    "jaccard-minhash",
+    "fast-and-efficient-pagination-in-mongodb"
+  ],
+  "total_views": 1011
+},
+{
+  "id": "function-overloading",
+  "title": "Function Overloading in Python",
+  "description": "Python natively does not support function overloading - having multiple functions with the same name. Today we see how we can implement and add this functionality to Python by using common language constructs like decorators and dictionaries.",
+  "image": "https://user-images.githubusercontent.com/4745789/73909201-04423000-48d2-11ea-8bd0-d7c25f6435c1.png",
+  "gif": "https://media.giphy.com/media/WtCHRSPCuqS8E/giphy.gif",
+  "categories": [
+    "python internals"
+  ],
+  "tags": [
+    "python",
+    "function overloading",
+    "language constructs",
+    "decorator",
+    "function",
+    "namespace",
+    "advanced python"
+  ],
+  "published_at": "2020-02-07",
+  "similar": [
+    "python-iterable-integers",
+    "recursion-visualizer",
+    "fsm",
+    "string-interning"
+  ],
+  "total_views": 12359
+},
+{
+  "id": "isolation-forest",
+  "title": "Isolation Forest Algorithm for Anomaly Detection",
+  "description": "Anomaly detection is an age-old problem and in this article, we dive deep into an unsupervised algorithm, Isolation Forest, that beautifully exploits the characteristics of anomalies. Instead of profiling normal points and labeling others as anomalies, the algorithm is actually is tuned to detect anomalies.",
+  "image": "https://user-images.githubusercontent.com/4745789/73280907-34743980-4215-11ea-89f0-eac4a71df6e5.png",
+  "gif": "https://media.giphy.com/media/xGdvlOVSWaDvi/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "advanced algorithms",
+    "machine learning",
+    "anomaly detection",
+    "data science",
+    "artificial intelligence",
+    "ml",
+    "ds",
+    "ai",
+    "unsupervised algorithms",
+    "fast anomaly detection",
+    "efficient anomaly detection"
+  ],
+  "published_at": "2020-01-28",
+  "similar": [
+    "slowsort",
+    "flajolet-martin",
+    "phi-accrual",
+    "morris-counter"
+  ],
+  "total_views": 1134
+},
+{
+  "id": "image-steganography",
+  "title": "Image Steganography",
+  "description": "Steganography has been around since at least 440 BCE but with the rise of computers, the techniques have evolved to handle digital data. In this article, we see the science behind image steganography, how it exploits various properties of images to hide secrets and walkthrough a few techniques in detail.",
+  "image": "https://user-images.githubusercontent.com/4745789/72659471-2a1c9900-39e6-11ea-9b93-c11bf3eefc43.png",
+  "gif": "https://media.giphy.com/media/V1NxC1YoNEHBe/giphy.gif",
+  "categories": [
+    "cryptography"
+  ],
+  "tags": [
+    "steganography",
+    "image steganography",
+    "image steganography internals",
+    "DCT JPEG",
+    "JPEG",
+    "LSB",
+    "Least Significant Bit Substitution",
+    "Adaptive Least Significant Bit Substitution",
+    "ancient greece",
+    "Discrete Cosine Transform",
+    "Discrete Fourier Transform",
+    "Lossy and Lossless image formats",
+    "rgb color model",
+    "YCbCr color model",
+    "technology",
+    "code",
+    "data science",
+    "tech"
+  ],
+  "published_at": "2020-01-17",
+  "similar": [
+    "consistency",
+    "isolation",
+    "atomicity",
+    "durability"
+  ],
+  "total_views": 304
+},
+{
+  "id": "super-long-integers",
+  "title": "Super Long Integers in Python",
+  "description": "Python must be doing something beautiful internally to support super long integers and today we find out what's under the hood. The article goes in-depth to explain design, storage, and operations on super long integers as implemented by Python.",
+  "image": "https://user-images.githubusercontent.com/4745789/72040055-55f49c00-32cd-11ea-9190-8f5a67c2f3d9.png",
+  "gif": "https://media.giphy.com/media/SKGo6OYe24EBG/giphy.gif",
+  "categories": [
+    "python internals"
+  ],
+  "tags": [
+    "programming",
+    "python",
+    "cpython source code",
+    "python internals",
+    "understanding python source code",
+    "coding",
+    "developer",
+    "technology",
+    "code",
+    "pythonprogramming",
+    "python programming",
+    "data science",
+    "tech"
+  ],
+  "published_at": "2020-01-10",
+  "similar": [
+    "i-changed-my-python",
+    "the-weird-walrus",
+    "python-caches-integers",
+    "python-prompts"
+  ],
+  "total_views": 3584
+},
+{
+  "id": "i-changed-my-python",
+  "title": "Changing Python",
+  "description": "I changed the Python's source code and made addition incorrect and unpredictable. The addition operation will internally perform either Subtraction. Multiplication, Floor Division or Power at random.",
+  "image": "https://user-images.githubusercontent.com/4745789/71662123-60b3ac00-2d76-11ea-8018-f558cef93a59.png",
+  "gif": "https://media.giphy.com/media/aZ5wedD7Jtazm/giphy.gif",
+  "categories": [
+    "python internals"
+  ],
+  "tags": [
+    "programming",
+    "python",
+    "cpython source code",
+    "python internals",
+    "understanding python source code",
+    "coding",
+    "developer",
+    "technology",
+    "code",
+    "pythonprogramming",
+    "python programming",
+    "data science",
+    "tech"
+  ],
+  "published_at": "2020-01-03",
+  "similar": [
+    "super-long-integers",
+    "python-caches-integers",
+    "python-iterable-integers",
+    "python-prompts"
+  ],
+  "total_views": 1121
+},
+{
+  "id": "efficient-way-to-stop-an-iterating-loop",
+  "title": "Stop an Iterating Loop",
+  "description": "There are two ways through which we can stop an iterating loop, first by using break statement and second by making loop condition false. Let's see if one is better than the other.",
+  "image": "https://user-images.githubusercontent.com/4745789/64327846-02ee9d80-cfea-11e9-8698-4a18bfe76068.png",
+  "gif": "https://media.giphy.com/media/cKKXNlTYino7hWNXwl/giphy.gif",
+  "categories": [
+    "explorations"
+  ],
+  "tags": [
+    "programming",
+    "benchmark",
+    "efficient way to stop loop",
+    "break or condition",
+    "efficient for loop"
+  ],
+  "published_at": "2019-09-06",
+  "similar": [
+    "fast-and-efficient-pagination-in-mongodb",
+    "rule-30",
+    "publish-python-package-on-pypi",
+    "setting-up-graphite-grafana-using-nginx-on-ubuntu"
+  ],
+  "total_views": 426
+},
+{
+  "id": "fast-and-efficient-pagination-in-mongodb",
+  "title": "Fast and Efficient Pagination in MongoDB",
+  "description": "MongoDB is a document based data store and hence pagination is one of the most common use case of it. Find out how you can paginate the results ...",
+  "image": "https://user-images.githubusercontent.com/4745789/63153080-1336dc80-c02b-11e9-931f-0c7552a63ebc.png",
+  "gif": "https://media.giphy.com/media/lRnUWhmllPI9a/giphy.gif",
+  "categories": [
+    "database engineering"
+  ],
+  "tags": [
+    "mongodb",
+    "scalability",
+    "pagination",
+    "fast",
+    "scale",
+    "mongodb skip limit",
+    "mongodb skip limit fast pagination"
+  ],
+  "published_at": "2017-06-06",
+  "similar": [
+    "efficient-way-to-stop-an-iterating-loop",
+    "morris-counter",
+    "jaccard-minhash",
+    "bayesian-average"
+  ],
+  "total_views": 3898
+},
+{
+  "id": "benchmark-and-compare-pagination-approach-in-mongodb",
+  "title": "Benchmark Pagination Strategies in MongoDB",
+  "description": "Benchmark results for two pagination approaches for MongoDB.",
+  "image": "https://user-images.githubusercontent.com/4745789/63220759-d514f680-c1ab-11e9-8a38-7b1828946b74.png",
+  "gif": "https://media.giphy.com/media/c5eqVJN7oNLTq/giphy.gif",
+  "categories": [
+    "database engineering"
+  ],
+  "tags": [
+    "mongodb",
+    "scalability",
+    "pagination",
+    "fast",
+    "scale",
+    "mongodb skip limit",
+    "mongodb skip limit fast pagination",
+    "benchmark results"
+  ],
+  "published_at": "2017-06-02",
+  "similar": [
+    "udemy-sql-taxonomy",
+    "multiple-mysql-on-same-server-using-docker",
+    "better-programmer",
+    "sliding-window-ratelimiter"
+  ],
+  "total_views": 3538
+},
+{
+  "id": "mongodb-cursor-skip-is-slow",
+  "title": "Why MongoDB's cursor.skip() is Slow?",
+  "description": "MongoDB's cursor.skip() is very inefficient, why is that? Even though it is slow and inefficient,  team MongoDB wants to continue keeping it. Find out why ...",
+  "image": "https://user-images.githubusercontent.com/4745789/63220620-4d2ded00-c1a9-11e9-8eea-11766291e06f.png",
+  "gif": "https://media.giphy.com/media/nqIuAIxYebIt2/giphy.gif",
+  "categories": [
+    "databases"
+  ],
+  "tags": [
+    "mongodb",
+    "cursor",
+    "slow",
+    "mongodb cursor slow",
+    "mongodb skip limit"
+  ],
+  "published_at": "2017-06-04",
+  "similar": [
+    "inheritance-c",
+    "fork-bomb",
+    "idf",
+    "copy-on-write"
+  ],
+  "total_views": 2088
+},
+{
+  "id": "how-sleepsort-helped-me-understand-concurrency-in-golang",
+  "title": "Sleepsort and Concurrency in Golang",
+  "description": "Understanding concurrency in any programming language is tricky let alone Golang; hence to get my hands dirty the first thing I usually implement is sleepsort.",
+  "image": "https://user-images.githubusercontent.com/4745789/63222328-203b0380-c1c4-11e9-9dd0-34c4bd9d1c6b.png",
+  "gif": "https://media.giphy.com/media/QmJ3e9So5M9NdNkOGo/giphy.gif",
+  "categories": [
+    "advanced algorithms"
+  ],
+  "tags": [
+    "golang",
+    "programming",
+    "concurrency",
+    "sleepsort",
+    "concurrency in golang",
+    "sleepsort in golang"
+  ],
+  "published_at": "2017-07-16",
+  "similar": [
+    "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+    "udemy-sql-taxonomy",
+    "setting-up-graphite-using-nginx-on-ubuntu",
+    "the-weird-walrus"
+  ],
+  "total_views": 460
+},
+{
+  "id": "making-http-requests-using-netcat",
+  "title": "HTTP Requests using Netcat",
+  "description": "All our lives we have been hitting REST APIs with libraries and utilities like curl and postman. Its time we do it the hard way with netcat, just for fun!",
+  "image": "https://user-images.githubusercontent.com/4745789/63222693-a5c0b280-c1c8-11e9-9cd4-808225e579f3.png",
+  "gif": "https://media.giphy.com/media/2tSodgDfwCjIMCBY8h/giphy.gif",
+  "categories": [
+    "utility"
+  ],
+  "tags": [
+    "netcat",
+    "python",
+    "flask",
+    "netcat with flask"
+  ],
+  "published_at": "2017-07-05",
+  "similar": [
+    "the-weird-walrus",
+    "how-sleepsort-helped-me-understand-concurrency-in-golang",
+    "benchmark-and-compare-pagination-approach-in-mongodb",
+    "setting-up-graphite-grafana-using-nginx-on-ubuntu"
+  ],
+  "total_views": 657
+},
+{
+  "id": "multiple-mysql-on-same-server-using-docker",
+  "title": "Multiple MySQL server running on same Ubuntu server",
+  "description": "Have multiple MySQL versions running on same server within 5 minutes.",
+  "image": "https://user-images.githubusercontent.com/4745789/63222993-74e27c80-c1cc-11e9-8229-dd7e5d4f1173.png",
+  "gif": "https://media.giphy.com/media/GIrIC3g657AYg/giphy.gif",
+  "categories": [
+    "databases"
+  ],
+  "tags": [
+    "devops",
+    "database",
+    "docker",
+    "mysql",
+    "running mysql using docker"
+  ],
+  "published_at": "2016-05-13",
+  "similar": [
+    "setting-up-graphite-using-nginx-on-ubuntu",
+    "benchmark-and-compare-pagination-approach-in-mongodb",
+    "udemy-sql-taxonomy",
+    "how-sleepsort-helped-me-understand-concurrency-in-golang"
+  ],
+  "total_views": 285
+},
+{
+  "id": "setting-up-graphite-using-nginx-on-ubuntu",
+  "title": "Setting up Graphite using Nginx on an Ubuntu server",
+  "description": "Part 1: Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.",
+  "image": "https://user-images.githubusercontent.com/4745789/63223138-c68c0680-c1ce-11e9-942b-60b92d3f8a28.png",
+  "gif": "https://media.giphy.com/media/l4FGzAPvg5PbZrVlK/giphy.gif",
+  "categories": [
+    "monitoring"
+  ],
+  "tags": [
+    "devops",
+    "ubuntu",
+    "graphite on ubuntu",
+    "graphite and nginx on ubuntu"
+  ],
+  "published_at": "2015-12-14",
+  "similar": [
+    "multiple-mysql-on-same-server-using-docker",
+    "how-sleepsort-helped-me-understand-concurrency-in-golang",
+    "benchmark-and-compare-pagination-approach-in-mongodb",
+    "udemy-sql-taxonomy"
+  ],
+  "total_views": 728
+},
+{
+  "id": "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+  "title": "Setting up Graphite and Grafana on an Ubuntu server",
+  "description": "Part 2: Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.",
+  "image": "https://user-images.githubusercontent.com/4745789/63223314-e58b9800-c1d0-11e9-83d8-e263ce3eb874.png",
+  "gif": "https://media.giphy.com/media/Me1GB9z50XUKQ/giphy.gif",
+  "categories": [
+    "monitoring"
+  ],
+  "tags": [
+    "devops",
+    "ubuntu",
+    "grafana",
+    "graphite and grafana on ubuntu",
+    "grafana and graphite and nginx on ubuntu"
+  ],
+  "published_at": "2015-12-14",
+  "similar": [
+    "the-weird-walrus",
+    "how-sleepsort-helped-me-understand-concurrency-in-golang",
+    "efficient-way-to-stop-an-iterating-loop",
+    "udemy-sql-taxonomy"
+  ],
+  "total_views": 278
+},
+{
+  "id": "publish-python-package-on-pypi",
+  "title": "Publish python package on PyPI",
+  "description": "If you have written something cool in Python and want to make it installable via pip and easy_install, this post will help you publish your python online.",
+  "image": "https://user-images.githubusercontent.com/4745789/63223433-e45b6a80-c1d2-11e9-921f-c2cc0153cf4a.png",
+  "gif": "https://media.giphy.com/media/TfKfqjt2i4GIM/giphy.gif",
+  "categories": [
+    "utility"
+  ],
+  "tags": [
+    "python",
+    "publish python package",
+    "pypi"
+  ],
+  "published_at": "2015-11-10",
+  "similar": [
+    "efficient-way-to-stop-an-iterating-loop",
+    "rule-30",
+    "python-prompts",
+    "jaccard-minhash"
+  ],
+  "total_views": 321
+}
 ]
