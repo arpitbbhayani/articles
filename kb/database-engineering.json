@@ -9,6 +9,19 @@
         "url": "https://i.ytimg.com/vi/xELqRiovEcI/mqdefault.jpg",
         "width": 320,
         "height": 180
+      },
+      "duration": "15:57",
+      "view_count": {
+        "abs": "1162",
+        "str": "1.16k"
+      },
+      "like_count": {
+        "abs": "51",
+        "str": 51
+      },
+      "comment_count": {
+        "abs": "14",
+        "str": 14
       }
     },
     {
@@ -19,6 +32,19 @@
         "url": "https://i.ytimg.com/vi/UT_TVldzA64/mqdefault.jpg",
         "width": 320,
         "height": 180
+      },
+      "duration": "30:38",
+      "view_count": {
+        "abs": "1230",
+        "str": "1.23k"
+      },
+      "like_count": {
+        "abs": "93",
+        "str": 93
+      },
+      "comment_count": {
+        "abs": "10",
+        "str": 10
       }
     },
     {
@@ -29,6 +55,19 @@
         "url": "https://i.ytimg.com/vi/3G293is403I/mqdefault.jpg",
         "width": 320,
         "height": 180
+      },
+      "duration": "23:25",
+      "view_count": {
+        "abs": "1653",
+        "str": "1.65k"
+      },
+      "like_count": {
+        "abs": "128",
+        "str": 128
+      },
+      "comment_count": {
+        "abs": "22",
+        "str": 22
       }
     },
     {
@@ -39,6 +78,19 @@
         "url": "https://i.ytimg.com/vi/Hxja4crycBg/mqdefault.jpg",
         "width": 320,
         "height": 180
+      },
+      "duration": "23:38",
+      "view_count": {
+        "abs": "1249",
+        "str": "1.25k"
+      },
+      "like_count": {
+        "abs": "87",
+        "str": 87
+      },
+      "comment_count": {
+        "abs": "12",
+        "str": 12
       }
     },
     {
@@ -49,6 +101,19 @@
         "url": "https://i.ytimg.com/vi/wI4hKwl1Cn4/mqdefault.jpg",
         "width": 320,
         "height": 180
+      },
+      "duration": "22:6",
+      "view_count": {
+        "abs": "930",
+        "str": 930
+      },
+      "like_count": {
+        "abs": "66",
+        "str": 66
+      },
+      "comment_count": {
+        "abs": "5",
+        "str": 5
       }
     },
     {
@@ -59,6 +124,19 @@
         "url": "https://i.ytimg.com/vi/x1XmcuosZNk/mqdefault.jpg",
         "width": 320,
         "height": 180
+      },
+      "duration": "26:3",
+      "view_count": {
+        "abs": "1580",
+        "str": "1.58k"
+      },
+      "like_count": {
+        "abs": "50",
+        "str": 50
+      },
+      "comment_count": {
+        "abs": "19",
+        "str": 19
       }
     }
   ],

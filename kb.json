@@ -14,12 +14,12 @@
           },
           "duration": "39:24",
           "view_count": {
-            "abs": "350",
-            "str": 350
+            "abs": "351",
+            "str": 351
           },
           "like_count": {
-            "abs": "24",
-            "str": 24
+            "abs": "25",
+            "str": 25
           },
           "comment_count": {
             "abs": "1",
@@ -37,8 +37,8 @@
           },
           "duration": "21:21",
           "view_count": {
-            "abs": "2174",
-            "str": "2.17k"
+            "abs": "2186",
+            "str": "2.19k"
           },
           "like_count": {
             "abs": "95",
@@ -155,6 +155,376 @@
         }
       ],
       "id": "system-design"
+    },
+    {
+      "topic": "Database Engineering",
+      "videos": [
+        {
+          "title": "What are Embedded Databases?",
+          "published_at": "25 Mar, 2022",
+          "video_id": "xELqRiovEcI",
+          "img": {
+            "url": "https://i.ytimg.com/vi/xELqRiovEcI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "duration": "15:57",
+          "view_count": {
+            "abs": "1162",
+            "str": "1.16k"
+          },
+          "like_count": {
+            "abs": "51",
+            "str": 51
+          },
+          "comment_count": {
+            "abs": "14",
+            "str": 14
+          }
+        },
+        {
+          "title": "How to handle database outages?",
+          "published_at": "22 Mar, 2022",
+          "video_id": "UT_TVldzA64",
+          "img": {
+            "url": "https://i.ytimg.com/vi/UT_TVldzA64/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "duration": "30:38",
+          "view_count": {
+            "abs": "1230",
+            "str": "1.23k"
+          },
+          "like_count": {
+            "abs": "93",
+            "str": 93
+          },
+          "comment_count": {
+            "abs": "10",
+            "str": 10
+          }
+        },
+        {
+          "title": "How do indexes make databases read faster?",
+          "published_at": "22 Mar, 2022",
+          "video_id": "3G293is403I",
+          "img": {
+            "url": "https://i.ytimg.com/vi/3G293is403I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "duration": "23:25",
+          "view_count": {
+            "abs": "1653",
+            "str": "1.65k"
+          },
+          "like_count": {
+            "abs": "128",
+            "str": 128
+          },
+          "comment_count": {
+            "abs": "22",
+            "str": 22
+          }
+        }
+      ],
+      "total_essays": 0,
+      "essays": [],
+      "id": "database-engineering"
+    },
+    {
+      "topic": "Outage Dissections",
+      "videos": [
+        {
+          "title": "Dissecting GitHub Outage: ID column reaching the max value 2147483647",
+          "published_at": "23 Mar, 2022",
+          "video_id": "ZFRAFTn0cQ0",
+          "img": {
+            "url": "https://i.ytimg.com/vi/ZFRAFTn0cQ0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "duration": "24:34",
+          "view_count": {
+            "abs": "1058",
+            "str": "1.06k"
+          },
+          "like_count": {
+            "abs": "92",
+            "str": 92
+          },
+          "comment_count": {
+            "abs": "24",
+            "str": 24
+          }
+        },
+        {
+          "title": "Dissecting Spotify's Global Outage - March 8, 2022",
+          "published_at": "22 Mar, 2022",
+          "video_id": "h5hXivWws7k",
+          "img": {
+            "url": "https://i.ytimg.com/vi/h5hXivWws7k/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "duration": "26:",
+          "view_count": {
+            "abs": "2306",
+            "str": "2.31k"
+          },
+          "like_count": {
+            "abs": "145",
+            "str": 145
+          },
+          "comment_count": {
+            "abs": "20",
+            "str": 20
+          }
+        }
+      ],
+      "total_essays": 0,
+      "essays": [],
+      "id": "outage-dissections"
+    },
+    {
+      "topic": "Distributed Systems",
+      "videos": [],
+      "total_essays": 16,
+      "essays": [
+        {
+          "id": "indexing-on-partitioned-data",
+          "title": "Indexing on Partitioned Data",
+          "description": "In this essay, we will take a detailed look into how we could index the partitioned data, allowing us to query the data on secondary attributes quickly.",
+          "image": "https://user-images.githubusercontent.com/4745789/152698544-c62436c9-8735-4490-90be-4d117902736b.png",
+          "gif": "https://media.giphy.com/media/3o6Mb9cGKe3JzhbqPC/giphy.gif",
+          "yt_video_id": "",
+          "categories": [
+            "system design",
+            "distributed systems"
+          ],
+          "tags": [
+            "distributed systems",
+            "data partitioning",
+            "data partitioning indexes",
+            "global secondary indexes",
+            "local secondary indexes"
+          ],
+          "published_at": "2022-02-07",
+          "similar": [
+            "data-partitioning",
+            "conflict-detection",
+            "data-partitioning-strategies",
+            "architectures-in-distributed-systems"
+          ],
+          "total_views": 380
+        },
+        {
+          "id": "data-partitioning-strategies",
+          "title": "Data Partitioning Strategies",
+          "description": "In this essay, we take a detailed look into the two common approaches to horizontally partition the data - Hash Based and Range Based Partitioning.",
+          "image": "https://user-images.githubusercontent.com/4745789/151733223-2f1f5611-7b4a-463d-aadf-fd522b535d67.png",
+          "gif": "https://media.giphy.com/media/xTiTnrliW65rlwud8I/giphy.gif",
+          "yt_video_id": "",
+          "categories": [
+            "system design",
+            "distributed systems"
+          ],
+          "tags": [
+            "distributed systems",
+            "data partitioning",
+            "data partitioning strategies",
+            "range-based partitioning",
+            "hash-based partitioning"
+          ],
+          "published_at": "2022-01-31",
+          "similar": [
+            "indexing-on-partitioned-data",
+            "data-partitioning",
+            "mistaken-beliefs-of-distributed-systems",
+            "conflict-detection"
+          ],
+          "total_views": 302
+        },
+        {
+          "id": "data-partitioning",
+          "title": "Data Partitioning",
+          "description": "In this essay, we take a detailed look into Partitioning basics and understand how it can help us scale our Reads and Writes beyond a single machine.",
+          "image": "https://user-images.githubusercontent.com/4745789/150692301-6abb0b95-c91f-4a8f-8d10-6e0f49b4d58d.png",
+          "gif": "https://media.giphy.com/media/l0G17UXa1wk36OIAE/giphy.gif",
+          "yt_video_id": "",
+          "categories": [
+            "system design",
+            "distributed systems"
+          ],
+          "tags": [
+            "distributed systems",
+            "data partitioning"
+          ],
+          "published_at": "2022-01-24",
+          "similar": [
+            "multi-master-replication",
+            "indexing-on-partitioned-data",
+            "handling-outages-master-replica",
+            "data-partitioning-strategies"
+          ],
+          "total_views": 435
+        }
+      ],
+      "id": "distributed-systems"
+    },
+    {
+      "topic": "Python Internals",
+      "videos": [
+        {
+          "title": "How \"is\" operator is implemented in python?",
+          "published_at": "31 May, 2021",
+          "video_id": "Q8luYnxiFFE",
+          "img": {
+            "url": "https://i.ytimg.com/vi/Q8luYnxiFFE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "duration": "19:12",
+          "view_count": {
+            "abs": "333",
+            "str": 333
+          },
+          "like_count": {
+            "abs": "24",
+            "str": 24
+          },
+          "comment_count": {
+            "abs": "6",
+            "str": 6
+          }
+        },
+        {
+          "title": "How id() function is implemented in python?",
+          "published_at": "23 May, 2021",
+          "video_id": "IGLnxdmJu2c",
+          "img": {
+            "url": "https://i.ytimg.com/vi/IGLnxdmJu2c/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "duration": "10:46",
+          "view_count": {
+            "abs": "224",
+            "str": 224
+          },
+          "like_count": {
+            "abs": "13",
+            "str": 13
+          },
+          "comment_count": {
+            "abs": "0",
+            "str": 0
+          }
+        },
+        {
+          "title": "How python compares a float and an int objects?",
+          "published_at": "12 May, 2021",
+          "video_id": "u4tfIy--4GM",
+          "img": {
+            "url": "https://i.ytimg.com/vi/u4tfIy--4GM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "duration": "20:34",
+          "view_count": {
+            "abs": "204",
+            "str": 204
+          },
+          "like_count": {
+            "abs": "8",
+            "str": 8
+          },
+          "comment_count": {
+            "abs": "1",
+            "str": 1
+          }
+        }
+      ],
+      "total_essays": 8,
+      "essays": [
+        {
+          "id": "chained-operators-python",
+          "title": "Chained Comparison Operators in Python",
+          "description": "In this essay, we find how chained comparison expressions are evaluated, understand how short-circuit evaluations happen internally, and alter Python's expression evaluation strategy.",
+          "image": "https://user-images.githubusercontent.com/4745789/116305344-47334080-a7c1-11eb-888a-a60b203ebe9d.png",
+          "gif": "https://media.giphy.com/media/LpLd2NGvpaiys/giphy.gif",
+          "yt_video_id": "zz2Lu5ht_jA",
+          "categories": [
+            "python",
+            "python internals"
+          ],
+          "tags": [
+            "python",
+            "python internals",
+            "internals of chained comparison operators"
+          ],
+          "published_at": "2021-04-27",
+          "similar": [
+            "the-weird-walrus",
+            "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+            "making-http-requests-using-netcat",
+            "how-sleepsort-helped-me-understand-concurrency-in-golang"
+          ],
+          "total_views": 275
+        },
+        {
+          "id": "the-weird-walrus",
+          "title": "The Weird Walrus",
+          "description": "In this essay, we alter the Python Grammar and allow it run Assignment Expressions without any parenthesis.",
+          "image": "https://user-images.githubusercontent.com/4745789/112817071-ac4f2580-909f-11eb-8d56-f89536cfa065.png",
+          "gif": "https://media.giphy.com/media/SbIJjAaist696ywQXx/giphy.gif",
+          "yt_video_id": "rWb7VYz1q1U",
+          "categories": [
+            "python internals",
+            "python"
+          ],
+          "tags": [
+            "python internals",
+            "cpython internals",
+            "walrus operator",
+            "changing cpython grammar"
+          ],
+          "published_at": "2021-03-29",
+          "similar": [
+            "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+            "super-long-integers",
+            "making-http-requests-using-netcat",
+            "how-sleepsort-helped-me-understand-concurrency-in-golang"
+          ],
+          "total_views": 2377
+        },
+        {
+          "id": "constant-folding-python",
+          "title": "Constant Folding in Python",
+          "description": "Every programming language aims to be performant and Python is no exception. In this essay, we dive deep into Python internals and find out how Python makes its interpreter performant using a technique called Constant Folding.",
+          "image": "https://user-images.githubusercontent.com/4745789/104118331-23e9a000-534e-11eb-9ec8-8369cdae40b1.png",
+          "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
+          "categories": [
+            "python internals",
+            "python"
+          ],
+          "tags": [
+            "compiler optimization",
+            "constant folding",
+            "cpython internals"
+          ],
+          "published_at": "2021-01-10",
+          "similar": [
+            "python-prompts",
+            "python-caches-integers",
+            "python-iterable-integers",
+            "fsm"
+          ],
+          "total_views": 3917
+        }
+      ],
+      "id": "python-internals"
     }
   ],
   "total_essays": 74,
