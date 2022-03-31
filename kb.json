@@ -14,8 +14,8 @@
           },
           "duration": "39:24",
           "view_count": {
-            "abs": "351",
-            "str": 351
+            "abs": "352",
+            "str": 352
           },
           "like_count": {
             "abs": "25",
@@ -37,7 +37,7 @@
           },
           "duration": "21:21",
           "view_count": {
-            "abs": "2186",
+            "abs": "2188",
             "str": "2.19k"
           },
           "like_count": {
@@ -84,7 +84,8 @@
           "yt_video_id": "",
           "categories": [
             "system design",
-            "distributed systems"
+            "distributed systems",
+            "database engineering"
           ],
           "tags": [
             "distributed systems",
@@ -111,7 +112,8 @@
           "yt_video_id": "",
           "categories": [
             "system design",
-            "distributed systems"
+            "distributed systems",
+            "database engineering"
           ],
           "tags": [
             "distributed systems",
@@ -138,7 +140,8 @@
           "yt_video_id": "",
           "categories": [
             "system design",
-            "distributed systems"
+            "distributed systems",
+            "database engineering"
           ],
           "tags": [
             "distributed systems",
@@ -229,8 +232,90 @@
           }
         }
       ],
-      "total_essays": 0,
-      "essays": [],
+      "total_essays": 21,
+      "essays": [
+        {
+          "id": "indexing-on-partitioned-data",
+          "title": "Indexing on Partitioned Data",
+          "description": "In this essay, we will take a detailed look into how we could index the partitioned data, allowing us to query the data on secondary attributes quickly.",
+          "image": "https://user-images.githubusercontent.com/4745789/152698544-c62436c9-8735-4490-90be-4d117902736b.png",
+          "gif": "https://media.giphy.com/media/3o6Mb9cGKe3JzhbqPC/giphy.gif",
+          "yt_video_id": "",
+          "categories": [
+            "system design",
+            "distributed systems",
+            "database engineering"
+          ],
+          "tags": [
+            "distributed systems",
+            "data partitioning",
+            "data partitioning indexes",
+            "global secondary indexes",
+            "local secondary indexes"
+          ],
+          "published_at": "2022-02-07",
+          "similar": [
+            "data-partitioning",
+            "conflict-detection",
+            "data-partitioning-strategies",
+            "architectures-in-distributed-systems"
+          ],
+          "total_views": 380
+        },
+        {
+          "id": "data-partitioning-strategies",
+          "title": "Data Partitioning Strategies",
+          "description": "In this essay, we take a detailed look into the two common approaches to horizontally partition the data - Hash Based and Range Based Partitioning.",
+          "image": "https://user-images.githubusercontent.com/4745789/151733223-2f1f5611-7b4a-463d-aadf-fd522b535d67.png",
+          "gif": "https://media.giphy.com/media/xTiTnrliW65rlwud8I/giphy.gif",
+          "yt_video_id": "",
+          "categories": [
+            "system design",
+            "distributed systems",
+            "database engineering"
+          ],
+          "tags": [
+            "distributed systems",
+            "data partitioning",
+            "data partitioning strategies",
+            "range-based partitioning",
+            "hash-based partitioning"
+          ],
+          "published_at": "2022-01-31",
+          "similar": [
+            "indexing-on-partitioned-data",
+            "data-partitioning",
+            "mistaken-beliefs-of-distributed-systems",
+            "conflict-detection"
+          ],
+          "total_views": 302
+        },
+        {
+          "id": "data-partitioning",
+          "title": "Data Partitioning",
+          "description": "In this essay, we take a detailed look into Partitioning basics and understand how it can help us scale our Reads and Writes beyond a single machine.",
+          "image": "https://user-images.githubusercontent.com/4745789/150692301-6abb0b95-c91f-4a8f-8d10-6e0f49b4d58d.png",
+          "gif": "https://media.giphy.com/media/l0G17UXa1wk36OIAE/giphy.gif",
+          "yt_video_id": "",
+          "categories": [
+            "system design",
+            "distributed systems",
+            "database engineering"
+          ],
+          "tags": [
+            "distributed systems",
+            "data partitioning"
+          ],
+          "published_at": "2022-01-24",
+          "similar": [
+            "multi-master-replication",
+            "indexing-on-partitioned-data",
+            "handling-outages-master-replica",
+            "data-partitioning-strategies"
+          ],
+          "total_views": 435
+        }
+      ],
       "id": "database-engineering"
     },
     {
@@ -247,7 +332,7 @@
           },
           "duration": "24:34",
           "view_count": {
-            "abs": "1058",
+            "abs": "1059",
             "str": "1.06k"
           },
           "like_count": {
@@ -301,7 +386,8 @@
           "yt_video_id": "",
           "categories": [
             "system design",
-            "distributed systems"
+            "distributed systems",
+            "database engineering"
           ],
           "tags": [
             "distributed systems",
@@ -328,7 +414,8 @@
           "yt_video_id": "",
           "categories": [
             "system design",
-            "distributed systems"
+            "distributed systems",
+            "database engineering"
           ],
           "tags": [
             "distributed systems",
@@ -355,7 +442,8 @@
           "yt_video_id": "",
           "categories": [
             "system design",
-            "distributed systems"
+            "distributed systems",
+            "database engineering"
           ],
           "tags": [
             "distributed systems",

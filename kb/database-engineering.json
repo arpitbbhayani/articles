@@ -140,7 +140,551 @@
       }
     }
   ],
-  "total_essays": 0,
-  "essays": [],
+  "total_essays": 21,
+  "essays": [
+    {
+      "id": "indexing-on-partitioned-data",
+      "title": "Indexing on Partitioned Data",
+      "description": "In this essay, we will take a detailed look into how we could index the partitioned data, allowing us to query the data on secondary attributes quickly.",
+      "image": "https://user-images.githubusercontent.com/4745789/152698544-c62436c9-8735-4490-90be-4d117902736b.png",
+      "gif": "https://media.giphy.com/media/3o6Mb9cGKe3JzhbqPC/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "data partitioning",
+        "data partitioning indexes",
+        "global secondary indexes",
+        "local secondary indexes"
+      ],
+      "published_at": "2022-02-07",
+      "similar": [
+        "data-partitioning",
+        "conflict-detection",
+        "data-partitioning-strategies",
+        "architectures-in-distributed-systems"
+      ],
+      "total_views": 380
+    },
+    {
+      "id": "data-partitioning-strategies",
+      "title": "Data Partitioning Strategies",
+      "description": "In this essay, we take a detailed look into the two common approaches to horizontally partition the data - Hash Based and Range Based Partitioning.",
+      "image": "https://user-images.githubusercontent.com/4745789/151733223-2f1f5611-7b4a-463d-aadf-fd522b535d67.png",
+      "gif": "https://media.giphy.com/media/xTiTnrliW65rlwud8I/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "data partitioning",
+        "data partitioning strategies",
+        "range-based partitioning",
+        "hash-based partitioning"
+      ],
+      "published_at": "2022-01-31",
+      "similar": [
+        "indexing-on-partitioned-data",
+        "data-partitioning",
+        "mistaken-beliefs-of-distributed-systems",
+        "conflict-detection"
+      ],
+      "total_views": 302
+    },
+    {
+      "id": "data-partitioning",
+      "title": "Data Partitioning",
+      "description": "In this essay, we take a detailed look into Partitioning basics and understand how it can help us scale our Reads and Writes beyond a single machine.",
+      "image": "https://user-images.githubusercontent.com/4745789/150692301-6abb0b95-c91f-4a8f-8d10-6e0f49b4d58d.png",
+      "gif": "https://media.giphy.com/media/l0G17UXa1wk36OIAE/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "data partitioning"
+      ],
+      "published_at": "2022-01-24",
+      "similar": [
+        "multi-master-replication",
+        "indexing-on-partitioned-data",
+        "handling-outages-master-replica",
+        "data-partitioning-strategies"
+      ],
+      "total_views": 435
+    },
+    {
+      "id": "leaderless-replication",
+      "title": "Leaderless Replication",
+      "description": "In this essay, we take a look into a different way of replication, called Leaderless Replication, that comes in handy in a multi-master setup that demands strong consistency.",
+      "image": "https://user-images.githubusercontent.com/4745789/149646378-0d38d51f-af73-483b-8f05-d5251d6e5b4b.png",
+      "gif": "https://media.giphy.com/media/HUkOv6BNWc1HO/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "leadeless replication",
+        "highly consistent systems"
+      ],
+      "published_at": "2022-01-16",
+      "similar": [
+        "rum",
+        "master-replica-replication",
+        "persistent-data-structures-introduction",
+        "replication-formats"
+      ],
+      "total_views": 444
+    },
+    {
+      "id": "conflict-resolution",
+      "title": "Conflict Resolution",
+      "description": "In this essay, go in-depth to understand ways to resolve and avoid conflicts in a multi-master setup.",
+      "image": "https://user-images.githubusercontent.com/4745789/148543014-5b785b5a-fa6c-4ef5-8e8a-656177033e9f.png",
+      "gif": "https://media.giphy.com/media/l2JeiBuUsaFNQIfEk/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "multi-master replication",
+        "multi-master setup"
+      ],
+      "published_at": "2022-01-09",
+      "similar": [
+        "architectures-in-distributed-systems",
+        "conflict-detection",
+        "mistaken-beliefs-of-distributed-systems",
+        "monotonic-reads"
+      ],
+      "total_views": 275
+    },
+    {
+      "id": "conflict-detection",
+      "title": "Conflict Detection",
+      "description": "In this essay, we talk about conflicts and understand what they are, how to detect them in a multi-master setup.",
+      "image": "https://user-images.githubusercontent.com/4745789/143674841-79dc836f-e989-4d25-bfce-ee2939843ad4.png",
+      "gif": "https://media.giphy.com/media/3o6MbiJPqtMPHykonK/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "multi-master replication",
+        "multi-master setup"
+      ],
+      "published_at": "2021-11-28",
+      "similar": [
+        "architectures-in-distributed-systems",
+        "mistaken-beliefs-of-distributed-systems",
+        "indexing-on-partitioned-data",
+        "monotonic-reads"
+      ],
+      "total_views": 709
+    },
+    {
+      "id": "multi-master-replication",
+      "title": "Multi-Master Replication",
+      "description": "In this essay, we look at what Multi-Master Replication is, the core challenge it addresses, use-cases we can find this replication in action, and the possible concerns of using it.",
+      "image": "https://user-images.githubusercontent.com/4745789/140054768-d9bd1eaf-4d26-49bc-9035-024e4a7e010a.png",
+      "gif": "https://media.giphy.com/media/3orieW7ikndkDjQuT6/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "multi-master replication",
+        "multi-master setup"
+      ],
+      "published_at": "2021-11-03",
+      "similar": [
+        "handling-outages-master-replica",
+        "data-partitioning",
+        "replication-formats",
+        "data-partitioning-strategies"
+      ],
+      "total_views": 497
+    },
+    {
+      "id": "monotonic-reads",
+      "title": "Monotonic Reads",
+      "description": "Asynchronous replication leads to a fascinating situation where it feels like we are going through a wormhole traveling back and forth in time. In this essay, we understand why this happens and the consequences and devise a quick solution to address it.",
+      "image": "https://user-images.githubusercontent.com/4745789/135490742-ecf2f507-2a61-465d-a2de-515a913f5588.png",
+      "gif": "https://media.giphy.com/media/3o6Mb84ODTP8FgQQuI/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "monotonic reads"
+      ],
+      "published_at": "2021-10-03",
+      "similar": [
+        "conflict-detection",
+        "architectures-in-distributed-systems",
+        "conflict-resolution",
+        "indexing-on-partitioned-data"
+      ],
+      "total_views": 348
+    },
+    {
+      "id": "read-your-write-consistency",
+      "title": "Read-your-write Consistency",
+      "description": "Read-Your-Writes consistency states that the system guarantees that, once an item has been updated, any attempt to read the record by the same client will return the updated value.",
+      "image": "https://user-images.githubusercontent.com/4745789/134203710-5284102a-4d0f-43b1-bcd9-6668040ac550.png",
+      "gif": "https://media.giphy.com/media/3o6MbsTCszAbi6f1aE/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "read your write consistency"
+      ],
+      "published_at": "2021-09-22",
+      "similar": [
+        "new-replica",
+        "handling-outages-master-replica",
+        "multi-master-replication",
+        "replication-strategies"
+      ],
+      "total_views": 1120
+    },
+    {
+      "id": "handling-outages-master-replica",
+      "title": "Handling outages in a Master-Replica setup",
+      "description": "This essay talks about the worse - nodes going down - impact,  recovery, and real-world practices.",
+      "image": "https://user-images.githubusercontent.com/4745789/132286179-14358b33-95cf-4d48-9419-5eaa727ffd56.png",
+      "gif": "https://media.giphy.com/media/xT5LMskx2CiLPpAkk8/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "handling outage master-replica",
+        "master crash",
+        "replica crash"
+      ],
+      "published_at": "2021-09-07",
+      "similar": [
+        "multi-master-replication",
+        "replication-formats",
+        "replication-strategies",
+        "data-partitioning"
+      ],
+      "total_views": 375
+    },
+    {
+      "id": "new-replica",
+      "title": "The New Replica",
+      "description": "In this one, we take a look into how these Replicas are set up and understand some quirky nuances about Replication.",
+      "image": "https://user-images.githubusercontent.com/4745789/130425162-e02fcffe-3c61-4e90-98b6-6c7a25cb884e.png",
+      "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "replication",
+        "replication formats",
+        "row-based replication",
+        "statement-based replication"
+      ],
+      "published_at": "2021-08-23",
+      "similar": [
+        "replication-strategies",
+        "read-your-write-consistency",
+        "handling-outages-master-replica",
+        "multi-master-replication"
+      ],
+      "total_views": 293
+    },
+    {
+      "id": "replication-formats",
+      "title": "Replication Formats",
+      "description": "When we are employing a Master-Replica pattern to improve availability, throughput, and fault-tolerance, the big question that pops up is how the writes happening on the Master propagates to the  Replica. In this essay, we will talk about exactly this and find out about Replication Formats.",
+      "image": "https://user-images.githubusercontent.com/4745789/129456630-73db5669-5fb9-47a6-bd13-72fd0c5a2e54.png",
+      "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "replication",
+        "replication formats",
+        "row-based replication",
+        "statement-based replication"
+      ],
+      "published_at": "2021-08-15",
+      "similar": [
+        "handling-outages-master-replica",
+        "multi-master-replication",
+        "replication-strategies",
+        "rum"
+      ],
+      "total_views": 334
+    },
+    {
+      "id": "replication-strategies",
+      "title": "Replication Strategies",
+      "description": "In this essay, we take a quick yet verbose look into Synchronous, Asynchronous, and Semisynchronous replication strategies and understand their implications.",
+      "image": "https://user-images.githubusercontent.com/4745789/128717208-a0f495c1-ccf6-4039-b936-f1cc29d722f3.png",
+      "gif": "https://media.giphy.com/media/l0HlyVvfbfr1RKR0I/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "replication",
+        "synchronous replication",
+        "asynchronous replication",
+        "semi-synchronous replication"
+      ],
+      "published_at": "2021-08-10",
+      "similar": [
+        "new-replica",
+        "handling-outages-master-replica",
+        "replication-formats",
+        "multi-master-replication"
+      ],
+      "total_views": 821
+    },
+    {
+      "id": "master-replica-replication",
+      "title": "Master-Replica Replication",
+      "description": "In this essay, we talk about everything we should know about Master-Replica replication pattern.",
+      "image": "https://user-images.githubusercontent.com/4745789/128563709-a95f9f55-f87b-458d-b6c4-562ef894805d.png",
+      "gif": "https://media.giphy.com/media/l1KtVkekpcV4gKjyE/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "distributed systems",
+        "database engineering"
+      ],
+      "tags": [
+        "distributed systems",
+        "replication",
+        "master replica replication",
+        "master slave replication",
+        "leader follower replication"
+      ],
+      "published_at": "2021-08-07",
+      "similar": [
+        "rum",
+        "leaderless-replication",
+        "replication-formats",
+        "multi-master-replication"
+      ],
+      "total_views": 350
+    },
+    {
+      "id": "durability",
+      "title": "\"D\" in ACID - Durability",
+      "description": "Durability seems to be a taken-for-granted requirement, but to be honest, it is the most important one. Let's deep dive and find why it is so important? How do databases achieve durability in the midst of thousands of concurrent transactions? And how to achieve durability in a distributed setting?",
+      "image": "https://user-images.githubusercontent.com/4745789/126130275-10c1c4cf-483a-42d7-bd78-2f0ff4da4947.png",
+      "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "database engineering"
+      ],
+      "tags": [
+        "ACID in databases",
+        "ACID Transactions",
+        "Durability in databases"
+      ],
+      "published_at": "2021-07-19",
+      "similar": [
+        "isolation",
+        "atomicity",
+        "bitcask",
+        "consistency"
+      ],
+      "total_views": 335
+    },
+    {
+      "id": "isolation",
+      "title": "\"I\" in ACID - Isolation",
+      "description": "Isolation is the ability of the database to concurrently process multiple transactions in a way that changes made in one do not another.",
+      "image": "https://user-images.githubusercontent.com/4745789/124763085-36d1db80-df51-11eb-985e-1d98e9b78cba.png",
+      "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "database engineering"
+      ],
+      "tags": [
+        "ACID in databases",
+        "ACID Transactions",
+        "Isolation in databases"
+      ],
+      "published_at": "2021-07-05",
+      "similar": [
+        "atomicity",
+        "durability",
+        "consistency",
+        "image-steganography"
+      ],
+      "total_views": 301
+    },
+    {
+      "id": "consistency",
+      "title": "\"C\" in ACID - Consistency",
+      "description": "In the context of databases, Consistency is Correctness, which means that under no circumstance will the data lose its correctness.",
+      "image": "https://user-images.githubusercontent.com/4745789/124225698-86657100-db25-11eb-8284-9771f5a0b545.png",
+      "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "database engineering"
+      ],
+      "tags": [
+        "ACID in databases",
+        "ACID Transactions",
+        "Consistency in databases"
+      ],
+      "published_at": "2021-07-02",
+      "similar": [
+        "image-steganography",
+        "isolation",
+        "durability",
+        "atomicity"
+      ],
+      "total_views": 387
+    },
+    {
+      "id": "atomicity",
+      "title": "\"A\" in ACID - Atomicity",
+      "description": "A single database transaction often contains multiple statements to be executed on the database. In Relational Databases, these are usually multiple SQL statements, while in the case of non-Relational Databases, these could be multiple database commands.",
+      "image": "https://user-images.githubusercontent.com/4745789/124224260-ef97b500-db22-11eb-8d0f-cc808093eb00.png",
+      "gif": "https://media.giphy.com/media/iB4PoTVka0Xnul7UaC/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "system design",
+        "database engineering"
+      ],
+      "tags": [
+        "ACID in databases",
+        "ACID Transactions",
+        "Atomicity in databases"
+      ],
+      "published_at": "2021-06-28",
+      "similar": [
+        "isolation",
+        "durability",
+        "consistency",
+        "image-steganography"
+      ],
+      "total_views": 748
+    },
+    {
+      "id": "udemy-sql-taxonomy",
+      "title": "Designing Taxonomy on a Relational DB",
+      "description": "In this essay, design taxonomy on a SQL-based Relational database by taking Udemy as an example, write SQL queries covering common use-cases, and determine necessary indexes to make queries efficient.",
+      "image": "https://user-images.githubusercontent.com/4745789/115157736-83bbb980-a0a8-11eb-8974-545b7a9cba9d.png",
+      "gif": "https://media.giphy.com/media/3o6Mbsop5cXzqVqfgA/giphy.gif",
+      "yt_video_id": "4_jlmX_oB94",
+      "categories": [
+        "database engineering",
+        "system design"
+      ],
+      "tags": [
+        "database design",
+        "udemy design",
+        "taxonomy on SQL database",
+        "system design - udemy"
+      ],
+      "published_at": "2021-04-18",
+      "similar": [
+        "better-programmer",
+        "benchmark-and-compare-pagination-approach-in-mongodb",
+        "how-sleepsort-helped-me-understand-concurrency-in-golang",
+        "multiple-mysql-on-same-server-using-docker"
+      ],
+      "total_views": 1303
+    },
+    {
+      "id": "2q-cache",
+      "title": "2Q Cache Management Algorithm",
+      "description": "LRU is one of the most widely used cache eviction algorithms suffers from a bunch of limitations especially when used for managing caches in disk-backed databases. 2Q remediates the limitations and improves upon it by adding multiple parallel buffers.",
+      "image": "https://user-images.githubusercontent.com/4745789/100538603-bf1f2e00-3256-11eb-87dc-32594b25ae30.png",
+      "gif": "https://media.giphy.com/media/cfuL5gqFDreXxkWQ4o/giphy.gif",
+      "categories": [
+        "advanced algorithms",
+        "database engineering"
+      ],
+      "tags": [
+        "postgres internals",
+        "cache management algorithms"
+      ],
+      "published_at": "2020-11-29",
+      "similar": [
+        "mysql-cache",
+        "israeli-queues",
+        "ts-smoothing",
+        "phi-accrual"
+      ],
+      "total_views": 1705
+    },
+    {
+      "id": "mysql-cache",
+      "title": "Midpoint Insertion Strategy in MySQL LRU Cache",
+      "description": "The MySQL InnoDB Storage engine uses LRU cache but it suffers from a notorious problem. In this article, we find how by using Midpoint Insertion Strategy and changing one aspect of LRU, MySQL becomes scan resistant and super performant.",
+      "image": "https://user-images.githubusercontent.com/4745789/80304802-0ed7db80-87d6-11ea-98db-bc5d4afe965b.png",
+      "gif": "https://media.giphy.com/media/daUOBsa1OztxC/giphy.gif",
+      "categories": [
+        "database engineering",
+        "advanced algorithms"
+      ],
+      "tags": [],
+      "published_at": "2020-04-26",
+      "similar": [
+        "2q-cache",
+        "ts-smoothing",
+        "israeli-queues",
+        "copy-on-write"
+      ],
+      "total_views": 466
+    }
+  ],
   "id": "database-engineering"
 }
