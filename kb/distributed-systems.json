@@ -1,6 +1,76 @@
 {
   "topic": "Distributed Systems",
-  "videos": [],
+  "videos": [
+    {
+      "title": "Handling timeouts in a microservice architecture",
+      "published_at": "31 Mar, 2022",
+      "video_id": "Hxja4crycBg",
+      "img": {
+        "url": "https://i.ytimg.com/vi/Hxja4crycBg/mqdefault.jpg",
+        "width": 320,
+        "height": 180
+      },
+      "duration": "23:38",
+      "view_count": {
+        "abs": "1249",
+        "str": "1.25k"
+      },
+      "like_count": {
+        "abs": "87",
+        "str": 87
+      },
+      "comment_count": {
+        "abs": "12",
+        "str": 12
+      }
+    },
+    {
+      "title": "Distributed Transactions: Two-Phase Commit Protocol",
+      "published_at": "31 Mar, 2022",
+      "video_id": "7FgU1D4EnpQ",
+      "img": {
+        "url": "https://i.ytimg.com/vi/7FgU1D4EnpQ/mqdefault.jpg",
+        "width": 320,
+        "height": 180
+      },
+      "duration": "21:21",
+      "view_count": {
+        "abs": "2190",
+        "str": "2.19k"
+      },
+      "like_count": {
+        "abs": "95",
+        "str": 95
+      },
+      "comment_count": {
+        "abs": "23",
+        "str": 23
+      }
+    },
+    {
+      "title": "Implementing Distributed Transactions using Two Phase Commit Protocol",
+      "published_at": "31 Mar, 2022",
+      "video_id": "oMhESvU87jM",
+      "img": {
+        "url": "https://i.ytimg.com/vi/oMhESvU87jM/mqdefault.jpg",
+        "width": 320,
+        "height": 180
+      },
+      "duration": "39:24",
+      "view_count": {
+        "abs": "352",
+        "str": 352
+      },
+      "like_count": {
+        "abs": "26",
+        "str": 26
+      },
+      "comment_count": {
+        "abs": "1",
+        "str": 1
+      }
+    }
+  ],
   "total_essays": 16,
   "essays": [
     {
