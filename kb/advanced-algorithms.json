@@ -1,7 +1,7 @@
 {
   "topic": "Advanced Algorithms",
   "videos": [],
-  "total_essays": 20,
+  "total_essays": 21,
   "essays": [
     {
       "id": "genetic-knapsack",
@@ -52,27 +52,32 @@
       "total_views": 609
     },
     {
-      "id": "fully-persistent-arrays",
-      "title": "Fully Persistent Arrays",
-      "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want. In this essay, we take a detailed look into the implementation of Fully Persistent Arrays.",
-      "image": "https://user-images.githubusercontent.com/4745789/107943189-55d7cd00-6fb2-11eb-9e03-a1da3870e718.png",
-      "gif": "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
+      "id": "fork-bomb",
+      "title": "Fork Bomb",
+      "description": "In this essay, we explore a simple yet effective DoS attack called Fork Bomb, also called Rabbit Virus. This attack forks out processes infinitely, starving them for any resources.",
+      "image": "https://user-images.githubusercontent.com/4745789/121253160-69db6d80-c8c6-11eb-8b05-202ec958324e.png",
+      "gif": "https://media.giphy.com/media/l0HeiaW8q9B6tqoHS/giphy.gif",
+      "yt_video_id": "",
       "categories": [
-        "data structures",
         "advanced algorithms"
       ],
       "tags": [
-        "persistent data structures",
-        "fully persistent arrays"
+        "dos attack",
+        "fork bomb",
+        "understanding fork bomb",
+        "understanding fork bomb bash",
+        "linux fork bomb",
+        "windows fork bomb",
+        ":() { :|:& };:"
       ],
-      "published_at": "2021-02-14",
+      "published_at": "2021-06-09",
       "similar": [
-        "phi-accrual",
-        "persistent-data-structures-introduction",
-        "copy-on-write",
-        "lfu"
+        "bayesian-average",
+        "mongodb-cursor-skip-is-slow",
+        "inheritance-c",
+        "super-long-integers"
       ],
-      "total_views": 618
+      "total_views": 425
     },
     {
       "id": "flajolet-martin",
@@ -128,8 +133,7 @@
       "image": "https://user-images.githubusercontent.com/4745789/99261379-a9ffd380-2842-11eb-8f50-36b36ed42a95.png",
       "gif": "https://media.giphy.com/media/xT5LMTf2CRdBhetWPC/giphy.gif",
       "categories": [
-        "advanced algorithms",
-        "python"
+        "advanced algorithms"
       ],
       "tags": [
         "advanced algorithms",
@@ -353,6 +357,25 @@
       "total_views": 466
     },
     {
+      "id": "fsm",
+      "title": "Building Finite State Machines with Python Coroutines",
+      "description": "The most intuitive way of building and implementing Finite State Machines is by using Python Coroutines and in this article, we find how and why.",
+      "image": "https://user-images.githubusercontent.com/4745789/79684359-3ebf3600-824e-11ea-97cc-0f06c2919aeb.png",
+      "gif": "https://media.giphy.com/media/KhdQ2Ia3FJuKs/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [],
+      "published_at": "2020-04-19",
+      "similar": [
+        "recursion-visualizer",
+        "constant-folding-python",
+        "python-prompts",
+        "python-iterable-integers"
+      ],
+      "total_views": 7625
+    },
+    {
       "id": "bayesian-average",
       "title": "Better Ranking using Bayesian Average",
       "description": "Ranking a list of movies, products, books or even restaurants is tricky and in this article, we find what works for such a rating system and the math behind it.",
@@ -435,8 +458,7 @@
       "image": "https://user-images.githubusercontent.com/4745789/73280907-34743980-4215-11ea-89f0-eac4a71df6e5.png",
       "gif": "https://media.giphy.com/media/xGdvlOVSWaDvi/giphy.gif",
       "categories": [
-        "advanced algorithms",
-        "python"
+        "advanced algorithms"
       ],
       "tags": [
         "advanced algorithms",

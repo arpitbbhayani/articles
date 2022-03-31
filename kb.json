@@ -15,8 +15,8 @@
           },
           "duration": "39:24",
           "view_count": {
-            "abs": "405",
-            "str": 405
+            "abs": "414",
+            "str": 414
           },
           "like_count": {
             "abs": "27",
@@ -39,7 +39,7 @@
           },
           "duration": "21:21",
           "view_count": {
-            "abs": "2250",
+            "abs": "2255",
             "str": "2.25k"
           },
           "like_count": {
@@ -76,7 +76,7 @@
           }
         }
       ],
-      "total_essays": 25,
+      "total_essays": 24,
       "essays": [
         {
           "id": "indexing-on-partitioned-data",
@@ -201,8 +201,8 @@
           },
           "duration": "22:6",
           "view_count": {
-            "abs": "933",
-            "str": 933
+            "abs": "934",
+            "str": 934
           },
           "like_count": {
             "abs": "66",
@@ -225,7 +225,7 @@
           },
           "duration": "23:25",
           "view_count": {
-            "abs": "1657",
+            "abs": "1658",
             "str": "1.66k"
           },
           "like_count": {
@@ -238,7 +238,7 @@
           }
         }
       ],
-      "total_essays": 21,
+      "total_essays": 25,
       "essays": [
         {
           "id": "indexing-on-partitioned-data",
@@ -339,7 +339,7 @@
           },
           "duration": "24:34",
           "view_count": {
-            "abs": "1078",
+            "abs": "1084",
             "str": "1.08k"
           },
           "like_count": {
@@ -395,8 +395,8 @@
           },
           "duration": "39:24",
           "view_count": {
-            "abs": "405",
-            "str": 405
+            "abs": "414",
+            "str": 414
           },
           "like_count": {
             "abs": "27",
@@ -419,7 +419,7 @@
           },
           "duration": "21:21",
           "view_count": {
-            "abs": "2250",
+            "abs": "2255",
             "str": "2.25k"
           },
           "like_count": {
@@ -443,8 +443,8 @@
           },
           "duration": "23:38",
           "view_count": {
-            "abs": "1255",
-            "str": "1.25k"
+            "abs": "1258",
+            "str": "1.26k"
           },
           "like_count": {
             "abs": "88",
@@ -545,7 +545,7 @@
     {
       "topic": "Advanced Algorithms",
       "videos": [],
-      "total_essays": 20,
+      "total_essays": 21,
       "essays": [
         {
           "id": "genetic-knapsack",
@@ -596,27 +596,32 @@
           "total_views": 609
         },
         {
-          "id": "fully-persistent-arrays",
-          "title": "Fully Persistent Arrays",
-          "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want. In this essay, we take a detailed look into the implementation of Fully Persistent Arrays.",
-          "image": "https://user-images.githubusercontent.com/4745789/107943189-55d7cd00-6fb2-11eb-9e03-a1da3870e718.png",
-          "gif": "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
+          "id": "fork-bomb",
+          "title": "Fork Bomb",
+          "description": "In this essay, we explore a simple yet effective DoS attack called Fork Bomb, also called Rabbit Virus. This attack forks out processes infinitely, starving them for any resources.",
+          "image": "https://user-images.githubusercontent.com/4745789/121253160-69db6d80-c8c6-11eb-8b05-202ec958324e.png",
+          "gif": "https://media.giphy.com/media/l0HeiaW8q9B6tqoHS/giphy.gif",
+          "yt_video_id": "",
           "categories": [
-            "data structures",
             "advanced algorithms"
           ],
           "tags": [
-            "persistent data structures",
-            "fully persistent arrays"
+            "dos attack",
+            "fork bomb",
+            "understanding fork bomb",
+            "understanding fork bomb bash",
+            "linux fork bomb",
+            "windows fork bomb",
+            ":() { :|:& };:"
           ],
-          "published_at": "2021-02-14",
+          "published_at": "2021-06-09",
           "similar": [
-            "phi-accrual",
-            "persistent-data-structures-introduction",
-            "copy-on-write",
-            "lfu"
+            "bayesian-average",
+            "mongodb-cursor-skip-is-slow",
+            "inheritance-c",
+            "super-long-integers"
           ],
-          "total_views": 618
+          "total_views": 425
         }
       ],
       "id": "advanced-algorithms"
@@ -697,7 +702,7 @@
           }
         }
       ],
-      "total_essays": 8,
+      "total_essays": 9,
       "essays": [
         {
           "id": "chained-operators-python",
@@ -707,7 +712,6 @@
           "gif": "https://media.giphy.com/media/LpLd2NGvpaiys/giphy.gif",
           "yt_video_id": "zz2Lu5ht_jA",
           "categories": [
-            "python",
             "python internals"
           ],
           "tags": [
@@ -732,8 +736,7 @@
           "gif": "https://media.giphy.com/media/SbIJjAaist696ywQXx/giphy.gif",
           "yt_video_id": "rWb7VYz1q1U",
           "categories": [
-            "python internals",
-            "python"
+            "python internals"
           ],
           "tags": [
             "python internals",
@@ -757,8 +760,7 @@
           "image": "https://user-images.githubusercontent.com/4745789/104118331-23e9a000-534e-11eb-9ec8-8369cdae40b1.png",
           "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
           "categories": [
-            "python internals",
-            "python"
+            "python internals"
           ],
           "tags": [
             "compiler optimization",

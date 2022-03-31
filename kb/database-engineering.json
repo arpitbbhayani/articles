@@ -37,8 +37,8 @@
       },
       "duration": "22:6",
       "view_count": {
-        "abs": "933",
-        "str": 933
+        "abs": "934",
+        "str": 934
       },
       "like_count": {
         "abs": "66",
@@ -61,7 +61,7 @@
       },
       "duration": "23:25",
       "view_count": {
-        "abs": "1657",
+        "abs": "1658",
         "str": "1.66k"
       },
       "like_count": {
@@ -122,7 +122,7 @@
       }
     }
   ],
-  "total_essays": 21,
+  "total_essays": 25,
   "essays": [
     {
       "id": "indexing-on-partitioned-data",
@@ -648,6 +648,30 @@
       "total_views": 1705
     },
     {
+      "id": "bitcask",
+      "title": "Bitcask - A Log-Structured Fast KV Store",
+      "description": "Bitcask is a Key-Value store that persists its data in append-only log files and still reaps super-performant read-write throughputs. In this essay, we take a detailed look into Bitcask, its design, and find the secret sauce that makes it so performant.",
+      "image": "https://user-images.githubusercontent.com/4745789/87868516-144b5900-c9b4-11ea-91e3-2de14e80817b.png",
+      "gif": "https://media.giphy.com/media/l0NwF1dnk7GRz3pK0/giphy.gif",
+      "categories": [
+        "database engineering"
+      ],
+      "tags": [
+        "database",
+        "embedded database",
+        "key value store",
+        "log structured database"
+      ],
+      "published_at": "2020-07-19",
+      "similar": [
+        "durability",
+        "persistent-data-structures-introduction",
+        "isolation",
+        "atomicity"
+      ],
+      "total_views": 574
+    },
+    {
       "id": "mysql-cache",
       "title": "Midpoint Insertion Strategy in MySQL LRU Cache",
       "description": "The MySQL InnoDB Storage engine uses LRU cache but it suffers from a notorious problem. In this article, we find how by using Midpoint Insertion Strategy and changing one aspect of LRU, MySQL becomes scan resistant and super performant.",
@@ -666,6 +690,86 @@
         "copy-on-write"
       ],
       "total_views": 466
+    },
+    {
+      "id": "fast-and-efficient-pagination-in-mongodb",
+      "title": "Fast and Efficient Pagination in MongoDB",
+      "description": "MongoDB is a document based data store and hence pagination is one of the most common use case of it. Find out how you can paginate the results ...",
+      "image": "https://user-images.githubusercontent.com/4745789/63153080-1336dc80-c02b-11e9-931f-0c7552a63ebc.png",
+      "gif": "https://media.giphy.com/media/lRnUWhmllPI9a/giphy.gif",
+      "categories": [
+        "database engineering"
+      ],
+      "tags": [
+        "mongodb",
+        "scalability",
+        "pagination",
+        "fast",
+        "scale",
+        "mongodb skip limit",
+        "mongodb skip limit fast pagination"
+      ],
+      "published_at": "2017-06-06",
+      "similar": [
+        "efficient-way-to-stop-an-iterating-loop",
+        "morris-counter",
+        "jaccard-minhash",
+        "bayesian-average"
+      ],
+      "total_views": 3898
+    },
+    {
+      "id": "benchmark-and-compare-pagination-approach-in-mongodb",
+      "title": "Benchmark Pagination Strategies in MongoDB",
+      "description": "Benchmark results for two pagination approaches for MongoDB.",
+      "image": "https://user-images.githubusercontent.com/4745789/63220759-d514f680-c1ab-11e9-8a38-7b1828946b74.png",
+      "gif": "https://media.giphy.com/media/c5eqVJN7oNLTq/giphy.gif",
+      "categories": [
+        "database engineering"
+      ],
+      "tags": [
+        "mongodb",
+        "scalability",
+        "pagination",
+        "fast",
+        "scale",
+        "mongodb skip limit",
+        "mongodb skip limit fast pagination",
+        "benchmark results"
+      ],
+      "published_at": "2017-06-02",
+      "similar": [
+        "udemy-sql-taxonomy",
+        "multiple-mysql-on-same-server-using-docker",
+        "better-programmer",
+        "sliding-window-ratelimiter"
+      ],
+      "total_views": 3538
+    },
+    {
+      "id": "mongodb-cursor-skip-is-slow",
+      "title": "Why MongoDB's cursor.skip() is Slow?",
+      "description": "MongoDB's cursor.skip() is very inefficient, why is that? Even though it is slow and inefficient,  team MongoDB wants to continue keeping it. Find out why ...",
+      "image": "https://user-images.githubusercontent.com/4745789/63220620-4d2ded00-c1a9-11e9-8eea-11766291e06f.png",
+      "gif": "https://media.giphy.com/media/nqIuAIxYebIt2/giphy.gif",
+      "categories": [
+        "database engineering"
+      ],
+      "tags": [
+        "mongodb",
+        "cursor",
+        "slow",
+        "mongodb cursor slow",
+        "mongodb skip limit"
+      ],
+      "published_at": "2017-06-04",
+      "similar": [
+        "inheritance-c",
+        "fork-bomb",
+        "idf",
+        "copy-on-write"
+      ],
+      "total_views": 2088
     }
   ],
   "id": "database-engineering"

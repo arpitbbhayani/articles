@@ -218,7 +218,7 @@
       }
     }
   ],
-  "total_essays": 8,
+  "total_essays": 9,
   "essays": [
     {
       "id": "chained-operators-python",
@@ -228,7 +228,6 @@
       "gif": "https://media.giphy.com/media/LpLd2NGvpaiys/giphy.gif",
       "yt_video_id": "zz2Lu5ht_jA",
       "categories": [
-        "python",
         "python internals"
       ],
       "tags": [
@@ -253,8 +252,7 @@
       "gif": "https://media.giphy.com/media/SbIJjAaist696ywQXx/giphy.gif",
       "yt_video_id": "rWb7VYz1q1U",
       "categories": [
-        "python internals",
-        "python"
+        "python internals"
       ],
       "tags": [
         "python internals",
@@ -278,8 +276,7 @@
       "image": "https://user-images.githubusercontent.com/4745789/104118331-23e9a000-534e-11eb-9ec8-8369cdae40b1.png",
       "gif": "https://media.giphy.com/media/mMCXtwz1DM3xPKgkOB/giphy.gif",
       "categories": [
-        "python internals",
-        "python"
+        "python internals"
       ],
       "tags": [
         "compiler optimization",
@@ -303,8 +300,7 @@
       "gif": "https://media.giphy.com/media/KRNBl0iSS8gg0/giphy.gif",
       "yt_video_id": "QpGK69LzfpY",
       "categories": [
-        "python internals",
-        "python"
+        "python internals"
       ],
       "tags": [
         "compiler optimization",
@@ -327,7 +323,6 @@
       "image": "https://user-images.githubusercontent.com/4745789/84585100-bf06af80-ae29-11ea-8797-16c70aee5cc4.png",
       "gif": "https://media.giphy.com/media/k4ta29T68xlfi/giphy.gif",
       "categories": [
-        "python",
         "python internals"
       ],
       "tags": [],
@@ -347,7 +342,6 @@
       "image": "https://user-images.githubusercontent.com/4745789/82141979-a620d380-9856-11ea-9a4a-32399c0c01b8.png",
       "gif": "https://media.giphy.com/media/l378kmO7gdbXaesXS/giphy.gif",
       "categories": [
-        "python",
         "python internals"
       ],
       "tags": [],
@@ -361,13 +355,39 @@
       "total_views": 1824
     },
     {
+      "id": "function-overloading",
+      "title": "Function Overloading in Python",
+      "description": "Python natively does not support function overloading - having multiple functions with the same name. Today we see how we can implement and add this functionality to Python by using common language constructs like decorators and dictionaries.",
+      "image": "https://user-images.githubusercontent.com/4745789/73909201-04423000-48d2-11ea-8bd0-d7c25f6435c1.png",
+      "gif": "https://media.giphy.com/media/WtCHRSPCuqS8E/giphy.gif",
+      "categories": [
+        "python internals"
+      ],
+      "tags": [
+        "python",
+        "function overloading",
+        "language constructs",
+        "decorator",
+        "function",
+        "namespace",
+        "advanced python"
+      ],
+      "published_at": "2020-02-07",
+      "similar": [
+        "python-iterable-integers",
+        "recursion-visualizer",
+        "fsm",
+        "string-interning"
+      ],
+      "total_views": 12359
+    },
+    {
       "id": "super-long-integers",
       "title": "Super Long Integers in Python",
       "description": "Python must be doing something beautiful internally to support super long integers and today we find out what's under the hood. The article goes in-depth to explain design, storage, and operations on super long integers as implemented by Python.",
       "image": "https://user-images.githubusercontent.com/4745789/72040055-55f49c00-32cd-11ea-9190-8f5a67c2f3d9.png",
       "gif": "https://media.giphy.com/media/SKGo6OYe24EBG/giphy.gif",
       "categories": [
-        "python",
         "python internals"
       ],
       "tags": [
@@ -401,7 +421,6 @@
       "image": "https://user-images.githubusercontent.com/4745789/71662123-60b3ac00-2d76-11ea-8018-f558cef93a59.png",
       "gif": "https://media.giphy.com/media/aZ5wedD7Jtazm/giphy.gif",
       "categories": [
-        "python",
         "python internals"
       ],
       "tags": [
