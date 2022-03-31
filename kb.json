@@ -11,7 +11,11 @@
             "url": "https://i.ytimg.com/vi/oMhESvU87jM/mqdefault.jpg",
             "width": 320,
             "height": 180
-          }
+          },
+          "duration": "39:24",
+          "view_count": "350",
+          "like_count": "23",
+          "comment_count": "1"
         },
         {
           "title": "Distributed Transactions: Two-Phase Commit Protocol",
@@ -21,7 +25,11 @@
             "url": "https://i.ytimg.com/vi/7FgU1D4EnpQ/mqdefault.jpg",
             "width": 320,
             "height": 180
-          }
+          },
+          "duration": "21:21",
+          "view_count": "2174",
+          "like_count": "95",
+          "comment_count": "23"
         },
         {
           "title": "What are Embedded Databases?",
@@ -31,7 +39,11 @@
             "url": "https://i.ytimg.com/vi/xELqRiovEcI/mqdefault.jpg",
             "width": 320,
             "height": 180
-          }
+          },
+          "duration": "15:57",
+          "view_count": "1162",
+          "like_count": "51",
+          "comment_count": "14"
         }
       ],
       "total_essays": 25,
