@@ -11,9 +11,18 @@
         "height": 180
       },
       "duration": "39:24",
-      "view_count": "350",
-      "like_count": "23",
-      "comment_count": "1"
+      "view_count": {
+        "abs": "350",
+        "str": 350
+      },
+      "like_count": {
+        "abs": "24",
+        "str": 24
+      },
+      "comment_count": {
+        "abs": "1",
+        "str": 1
+      }
     },
     {
       "title": "Distributed Transactions: Two-Phase Commit Protocol",
@@ -25,9 +34,18 @@
         "height": 180
       },
       "duration": "21:21",
-      "view_count": "2174",
-      "like_count": "95",
-      "comment_count": "23"
+      "view_count": {
+        "abs": "2174",
+        "str": "2.17k"
+      },
+      "like_count": {
+        "abs": "95",
+        "str": 95
+      },
+      "comment_count": {
+        "abs": "23",
+        "str": 23
+      }
     },
     {
       "title": "What are Embedded Databases?",
@@ -39,9 +57,18 @@
         "height": 180
       },
       "duration": "15:57",
-      "view_count": "1162",
-      "like_count": "51",
-      "comment_count": "14"
+      "view_count": {
+        "abs": "1162",
+        "str": "1.16k"
+      },
+      "like_count": {
+        "abs": "51",
+        "str": 51
+      },
+      "comment_count": {
+        "abs": "14",
+        "str": 14
+      }
     },
     {
       "title": "How does the database guarantee reliability using write-ahead logging?",
@@ -53,9 +80,18 @@
         "height": 180
       },
       "duration": "22:6",
-      "view_count": "929",
-      "like_count": "66",
-      "comment_count": "5"
+      "view_count": {
+        "abs": "929",
+        "str": 929
+      },
+      "like_count": {
+        "abs": "66",
+        "str": 66
+      },
+      "comment_count": {
+        "abs": "5",
+        "str": 5
+      }
     },
     {
       "title": "Handling timeouts in a microservice architecture",
@@ -67,9 +103,18 @@
         "height": 180
       },
       "duration": "23:38",
-      "view_count": "1249",
-      "like_count": "87",
-      "comment_count": "12"
+      "view_count": {
+        "abs": "1249",
+        "str": "1.25k"
+      },
+      "like_count": {
+        "abs": "87",
+        "str": 87
+      },
+      "comment_count": {
+        "abs": "12",
+        "str": 12
+      }
     },
     {
       "title": "How do indexes make databases read faster?",
@@ -81,9 +126,18 @@
         "height": 180
       },
       "duration": "23:25",
-      "view_count": "1652",
-      "like_count": "128",
-      "comment_count": "22"
+      "view_count": {
+        "abs": "1652",
+        "str": "1.65k"
+      },
+      "like_count": {
+        "abs": "128",
+        "str": 128
+      },
+      "comment_count": {
+        "abs": "22",
+        "str": 22
+      }
     },
     {
       "title": "How to handle database outages?",
@@ -95,9 +149,18 @@
         "height": 180
       },
       "duration": "30:38",
-      "view_count": "1229",
-      "like_count": "93",
-      "comment_count": "10"
+      "view_count": {
+        "abs": "1229",
+        "str": "1.23k"
+      },
+      "like_count": {
+        "abs": "93",
+        "str": 93
+      },
+      "comment_count": {
+        "abs": "10",
+        "str": 10
+      }
     },
     {
       "title": "Scaling Taxonomy Service and Database",
@@ -109,9 +172,18 @@
         "height": 180
       },
       "duration": "8:38",
-      "view_count": "809",
-      "like_count": "23",
-      "comment_count": "1"
+      "view_count": {
+        "abs": "809",
+        "str": 809
+      },
+      "like_count": {
+        "abs": "23",
+        "str": 23
+      },
+      "comment_count": {
+        "abs": "1",
+        "str": 1
+      }
     },
     {
       "title": "Designing Taxonomy on SQL",
@@ -123,9 +195,18 @@
         "height": 180
       },
       "duration": "35:15",
-      "view_count": "1483",
-      "like_count": "56",
-      "comment_count": "5"
+      "view_count": {
+        "abs": "1483",
+        "str": "1.48k"
+      },
+      "like_count": {
+        "abs": "56",
+        "str": 56
+      },
+      "comment_count": {
+        "abs": "5",
+        "str": 5
+      }
     },
     {
       "title": "End-to-end Message Encryption",
@@ -137,9 +218,18 @@
         "height": 180
       },
       "duration": "15:57",
-      "view_count": "3218",
-      "like_count": "153",
-      "comment_count": "10"
+      "view_count": {
+        "abs": "3218",
+        "str": "3.22k"
+      },
+      "like_count": {
+        "abs": "153",
+        "str": 153
+      },
+      "comment_count": {
+        "abs": "10",
+        "str": 10
+      }
     },
     {
       "title": "Scaling Notifications | How Instagram manages notifications at scale? | System Design",
@@ -151,9 +241,18 @@
         "height": 180
       },
       "duration": "37:18",
-      "view_count": "12088",
-      "like_count": "294",
-      "comment_count": "31"
+      "view_count": {
+        "abs": "12088",
+        "str": "12.09k"
+      },
+      "like_count": {
+        "abs": "294",
+        "str": 294
+      },
+      "comment_count": {
+        "abs": "31",
+        "str": 31
+      }
     }
   ],
   "total_essays": 25,

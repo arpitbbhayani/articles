@@ -13,9 +13,18 @@
             "height": 180
           },
           "duration": "39:24",
-          "view_count": "350",
-          "like_count": "23",
-          "comment_count": "1"
+          "view_count": {
+            "abs": "350",
+            "str": 350
+          },
+          "like_count": {
+            "abs": "24",
+            "str": 24
+          },
+          "comment_count": {
+            "abs": "1",
+            "str": 1
+          }
         },
         {
           "title": "Distributed Transactions: Two-Phase Commit Protocol",
@@ -27,9 +36,18 @@
             "height": 180
           },
           "duration": "21:21",
-          "view_count": "2174",
-          "like_count": "95",
-          "comment_count": "23"
+          "view_count": {
+            "abs": "2174",
+            "str": "2.17k"
+          },
+          "like_count": {
+            "abs": "95",
+            "str": 95
+          },
+          "comment_count": {
+            "abs": "23",
+            "str": 23
+          }
         },
         {
           "title": "What are Embedded Databases?",
@@ -41,9 +59,18 @@
             "height": 180
           },
           "duration": "15:57",
-          "view_count": "1162",
-          "like_count": "51",
-          "comment_count": "14"
+          "view_count": {
+            "abs": "1162",
+            "str": "1.16k"
+          },
+          "like_count": {
+            "abs": "51",
+            "str": 51
+          },
+          "comment_count": {
+            "abs": "14",
+            "str": 14
+          }
         }
       ],
       "total_essays": 25,
