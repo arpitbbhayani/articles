@@ -15,16 +15,16 @@
           },
           "duration": "39:24",
           "view_count": {
-            "abs": "352",
-            "str": 352
+            "abs": "405",
+            "str": 405
           },
           "like_count": {
-            "abs": "26",
-            "str": 26
+            "abs": "27",
+            "str": 27
           },
           "comment_count": {
-            "abs": "1",
-            "str": 1
+            "abs": "2",
+            "str": 2
           }
         },
         {
@@ -39,12 +39,12 @@
           },
           "duration": "21:21",
           "view_count": {
-            "abs": "2190",
-            "str": "2.19k"
+            "abs": "2250",
+            "str": "2.25k"
           },
           "like_count": {
-            "abs": "95",
-            "str": 95
+            "abs": "96",
+            "str": 96
           },
           "comment_count": {
             "abs": "23",
@@ -63,8 +63,8 @@
           },
           "duration": "15:57",
           "view_count": {
-            "abs": "1162",
-            "str": "1.16k"
+            "abs": "1165",
+            "str": "1.17k"
           },
           "like_count": {
             "abs": "51",
@@ -177,8 +177,8 @@
           },
           "duration": "15:57",
           "view_count": {
-            "abs": "1162",
-            "str": "1.16k"
+            "abs": "1165",
+            "str": "1.17k"
           },
           "like_count": {
             "abs": "51",
@@ -201,8 +201,8 @@
           },
           "duration": "22:6",
           "view_count": {
-            "abs": "930",
-            "str": 930
+            "abs": "933",
+            "str": 933
           },
           "like_count": {
             "abs": "66",
@@ -225,8 +225,8 @@
           },
           "duration": "23:25",
           "view_count": {
-            "abs": "1653",
-            "str": "1.65k"
+            "abs": "1657",
+            "str": "1.66k"
           },
           "like_count": {
             "abs": "128",
@@ -339,12 +339,12 @@
           },
           "duration": "24:34",
           "view_count": {
-            "abs": "1059",
-            "str": "1.06k"
+            "abs": "1078",
+            "str": "1.08k"
           },
           "like_count": {
-            "abs": "92",
-            "str": 92
+            "abs": "94",
+            "str": 94
           },
           "comment_count": {
             "abs": "24",
@@ -363,7 +363,7 @@
           },
           "duration": "26:",
           "view_count": {
-            "abs": "2306",
+            "abs": "2310",
             "str": "2.31k"
           },
           "like_count": {
@@ -395,16 +395,16 @@
           },
           "duration": "39:24",
           "view_count": {
-            "abs": "352",
-            "str": 352
+            "abs": "405",
+            "str": 405
           },
           "like_count": {
-            "abs": "26",
-            "str": 26
+            "abs": "27",
+            "str": 27
           },
           "comment_count": {
-            "abs": "1",
-            "str": 1
+            "abs": "2",
+            "str": 2
           }
         },
         {
@@ -419,12 +419,12 @@
           },
           "duration": "21:21",
           "view_count": {
-            "abs": "2190",
-            "str": "2.19k"
+            "abs": "2250",
+            "str": "2.25k"
           },
           "like_count": {
-            "abs": "95",
-            "str": 95
+            "abs": "96",
+            "str": 96
           },
           "comment_count": {
             "abs": "23",
@@ -443,12 +443,12 @@
           },
           "duration": "23:38",
           "view_count": {
-            "abs": "1249",
+            "abs": "1255",
             "str": "1.25k"
           },
           "like_count": {
-            "abs": "87",
-            "str": 87
+            "abs": "88",
+            "str": 88
           },
           "comment_count": {
             "abs": "12",
@@ -543,6 +543,85 @@
       "id": "distributed-systems"
     },
     {
+      "topic": "Advanced Algorithms",
+      "videos": [],
+      "total_essays": 20,
+      "essays": [
+        {
+          "id": "genetic-knapsack",
+          "title": "Genetic Algorithm to solve the Knapsack Problem",
+          "description": "The 0/1 Knapsack Problem has a pseudo-polynomial run-time complexity. In this essay, we look at an approximation algorithm inspired by genetics that finds a high-quality solution to it in polynomial time.",
+          "image": "https://user-images.githubusercontent.com/4745789/156910296-48167efc-dc08-4f26-88b8-7037fdfc6ae3.png",
+          "gif": "https://media.giphy.com/media/3orieTU2tBje4i5SzS/giphy.gif",
+          "yt_video_id": "",
+          "categories": [
+            "advanced algorithms"
+          ],
+          "tags": [
+            "genetic algorithm",
+            "the 0/1 knapsack problem",
+            "approximation algorithm for knapsack problem"
+          ],
+          "published_at": "2022-03-07",
+          "similar": [
+            "fractional-cascading",
+            "rule-30",
+            "flajolet-martin",
+            "1d-terrain"
+          ],
+          "total_views": 441
+        },
+        {
+          "id": "lfsr",
+          "title": "Pseudorandom Number Generation using LFSR",
+          "description": "This essay takes a detailed look into pseudorandom number generation using LFSR, a widely adopted technique to generate random numbers on hardware and on software.",
+          "image": "https://user-images.githubusercontent.com/4745789/154754358-c1bbd5ff-2a0b-4028-b1ec-05cf90300d83.png",
+          "gif": "https://media.giphy.com/media/3orieLKAOlnwdqkTCg/giphy.gif",
+          "yt_video_id": "",
+          "categories": [
+            "advanced algorithms"
+          ],
+          "tags": [
+            "lfsr",
+            "linear feedback shift registers",
+            "pseudorandom number generation algorithm"
+          ],
+          "published_at": "2022-02-21",
+          "similar": [
+            "publish-python-package-on-pypi",
+            "efficient-way-to-stop-an-iterating-loop",
+            "the-weird-walrus",
+            "jaccard-minhash"
+          ],
+          "total_views": 609
+        },
+        {
+          "id": "fully-persistent-arrays",
+          "title": "Fully Persistent Arrays",
+          "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want. In this essay, we take a detailed look into the implementation of Fully Persistent Arrays.",
+          "image": "https://user-images.githubusercontent.com/4745789/107943189-55d7cd00-6fb2-11eb-9e03-a1da3870e718.png",
+          "gif": "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
+          "categories": [
+            "data structures",
+            "advanced algorithms"
+          ],
+          "tags": [
+            "persistent data structures",
+            "fully persistent arrays"
+          ],
+          "published_at": "2021-02-14",
+          "similar": [
+            "phi-accrual",
+            "persistent-data-structures-introduction",
+            "copy-on-write",
+            "lfu"
+          ],
+          "total_views": 618
+        }
+      ],
+      "id": "advanced-algorithms"
+    },
+    {
       "topic": "Python Internals",
       "videos": [
         {
@@ -605,8 +684,8 @@
           },
           "duration": "20:34",
           "view_count": {
-            "abs": "204",
-            "str": 204
+            "abs": "208",
+            "str": 208
           },
           "like_count": {
             "abs": "8",

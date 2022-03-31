@@ -1,0 +1,491 @@
+{
+  "topic": "Advanced Algorithms",
+  "videos": [],
+  "total_essays": 20,
+  "essays": [
+    {
+      "id": "genetic-knapsack",
+      "title": "Genetic Algorithm to solve the Knapsack Problem",
+      "description": "The 0/1 Knapsack Problem has a pseudo-polynomial run-time complexity. In this essay, we look at an approximation algorithm inspired by genetics that finds a high-quality solution to it in polynomial time.",
+      "image": "https://user-images.githubusercontent.com/4745789/156910296-48167efc-dc08-4f26-88b8-7037fdfc6ae3.png",
+      "gif": "https://media.giphy.com/media/3orieTU2tBje4i5SzS/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "genetic algorithm",
+        "the 0/1 knapsack problem",
+        "approximation algorithm for knapsack problem"
+      ],
+      "published_at": "2022-03-07",
+      "similar": [
+        "fractional-cascading",
+        "rule-30",
+        "flajolet-martin",
+        "1d-terrain"
+      ],
+      "total_views": 441
+    },
+    {
+      "id": "lfsr",
+      "title": "Pseudorandom Number Generation using LFSR",
+      "description": "This essay takes a detailed look into pseudorandom number generation using LFSR, a widely adopted technique to generate random numbers on hardware and on software.",
+      "image": "https://user-images.githubusercontent.com/4745789/154754358-c1bbd5ff-2a0b-4028-b1ec-05cf90300d83.png",
+      "gif": "https://media.giphy.com/media/3orieLKAOlnwdqkTCg/giphy.gif",
+      "yt_video_id": "",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "lfsr",
+        "linear feedback shift registers",
+        "pseudorandom number generation algorithm"
+      ],
+      "published_at": "2022-02-21",
+      "similar": [
+        "publish-python-package-on-pypi",
+        "efficient-way-to-stop-an-iterating-loop",
+        "the-weird-walrus",
+        "jaccard-minhash"
+      ],
+      "total_views": 609
+    },
+    {
+      "id": "fully-persistent-arrays",
+      "title": "Fully Persistent Arrays",
+      "description": "Persistent Data Structures allow us to hold multiple versions of a data structure at any given instant of time. This enables us to go back in 'time' and access any version that we want. In this essay, we take a detailed look into the implementation of Fully Persistent Arrays.",
+      "image": "https://user-images.githubusercontent.com/4745789/107943189-55d7cd00-6fb2-11eb-9e03-a1da3870e718.png",
+      "gif": "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
+      "categories": [
+        "data structures",
+        "advanced algorithms"
+      ],
+      "tags": [
+        "persistent data structures",
+        "fully persistent arrays"
+      ],
+      "published_at": "2021-02-14",
+      "similar": [
+        "phi-accrual",
+        "persistent-data-structures-introduction",
+        "copy-on-write",
+        "lfu"
+      ],
+      "total_views": 618
+    },
+    {
+      "id": "flajolet-martin",
+      "title": "Approximate Count-Distinct using Flajolet Martin Algorithm",
+      "description": "Measuring distinct elements from a stream of values is one of the most common utilities that finds its application across the spectrum. Most of these use cases do not expect accurate count-distinct rather they expect it to be computed very quickly and efficiently. In this essay, we deep dive into one of the first Count-Distinct approximation algorithm called Flajlet-Martin Algorithm.",
+      "image": "https://user-images.githubusercontent.com/4745789/101244544-31977e80-372d-11eb-9ab4-d9e879496d39.png",
+      "gif": "https://media.giphy.com/media/cRMgB2wjHhVN2tDD2z/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "approximation algorithms",
+        "count-distinct approximation",
+        "flajolet algorithms",
+        "fm algorithms"
+      ],
+      "published_at": "2020-12-06",
+      "similar": [
+        "slowsort",
+        "1d-terrain",
+        "isolation-forest",
+        "morris-counter"
+      ],
+      "total_views": 3131
+    },
+    {
+      "id": "2q-cache",
+      "title": "2Q Cache Management Algorithm",
+      "description": "LRU is one of the most widely used cache eviction algorithms suffers from a bunch of limitations especially when used for managing caches in disk-backed databases. 2Q remediates the limitations and improves upon it by adding multiple parallel buffers.",
+      "image": "https://user-images.githubusercontent.com/4745789/100538603-bf1f2e00-3256-11eb-87dc-32594b25ae30.png",
+      "gif": "https://media.giphy.com/media/cfuL5gqFDreXxkWQ4o/giphy.gif",
+      "categories": [
+        "advanced algorithms",
+        "database engineering"
+      ],
+      "tags": [
+        "postgres internals",
+        "cache management algorithms"
+      ],
+      "published_at": "2020-11-29",
+      "similar": [
+        "mysql-cache",
+        "israeli-queues",
+        "ts-smoothing",
+        "phi-accrual"
+      ],
+      "total_views": 1705
+    },
+    {
+      "id": "1d-terrain",
+      "title": "1D Procedural Terrain Generation",
+      "description": "Terrains are at the heart of every Computer Game - be it Counter-Strike, Age of Empires, or even Minecraft. The virtual world that these games generate is the key to a great gaming experience. Generating terrain, manually, requires a ton of effort and hence it makes sense to auto-generate a pseudorandom terrain using some procedure. In this essay, we take a detailed look into generating pseudorandom one-dimensional terrain that is very close to real ones.",
+      "image": "https://user-images.githubusercontent.com/4745789/99261379-a9ffd380-2842-11eb-8f50-36b36ed42a95.png",
+      "gif": "https://media.giphy.com/media/xT5LMTf2CRdBhetWPC/giphy.gif",
+      "categories": [
+        "advanced algorithms",
+        "python"
+      ],
+      "tags": [
+        "advanced algorithms",
+        "terrain generation",
+        "perlin noise",
+        "random terrain generation"
+      ],
+      "published_at": "2020-11-16",
+      "similar": [
+        "slowsort",
+        "flajolet-martin",
+        "jaccard-minhash",
+        "idf"
+      ],
+      "total_views": 1062
+    },
+    {
+      "id": "jaccard-minhash",
+      "title": "Set Similarity using Jaccard Similarity Coefficient and MinHash",
+      "description": "Set similarity measure finds its application spanning the Computer Science spectrum; some applications being - user segmentation, finding near-duplicate webpages/documents, clustering, recommendation generation, sequence alignment, and many more. In this essay, we take a detailed look into a set-similarity measure called - Jaccard's Similarity Coefficient and how its computation can be optimized using a neat technique called MinHash.",
+      "image": "https://user-images.githubusercontent.com/4745789/98465225-c4580280-21ed-11eb-9f1f-6508ed229925.png",
+      "gif": "https://media.giphy.com/media/yvXWADxQxRMkQ4eEID/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "set similarity",
+        "jaccard similarity coefficient",
+        "jaccard index",
+        "minhash",
+        "minhash signature"
+      ],
+      "published_at": "2020-11-08",
+      "similar": [
+        "idf",
+        "constant-folding-python",
+        "publish-python-package-on-pypi",
+        "rule-30"
+      ],
+      "total_views": 1481
+    },
+    {
+      "id": "ts-smoothing",
+      "title": "Time Series Smoothing - Making Aberrations Stand Out",
+      "description": "Time Series smoothing algorithms removes short-term irregularities from the plot while preserving long-term trends. But as an observer, it is important that such smoothing techniques or irregularities do not mask anomalies that need attention. In this essay, we take a look at a smoothing algorithm that smooths out a time series plot while making aberrations and anomalies standout.",
+      "image": "https://user-images.githubusercontent.com/4745789/97785060-cbb55580-1bc8-11eb-9d6d-91ff16cc2ddc.png",
+      "gif": "https://media.giphy.com/media/3orieVe5VYqTdT16qk/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "time series smoothing",
+        "statistics",
+        "kurtosis smoothing"
+      ],
+      "published_at": "2020-11-01",
+      "similar": [
+        "better-programmer",
+        "mysql-cache",
+        "2q-cache",
+        "atomicity"
+      ],
+      "total_views": 499
+    },
+    {
+      "id": "lfu",
+      "title": "Constant Time LFU",
+      "description": "The most popular implementation of the LFU Cache Eviction Scheme, using a min-heap, implements all three operations with running time complexity of O(log n) and this makes LFU sub-optimal. In this essay, we take a detailed look at a clever algorithm that implements LFU such that all the operations happen with O(1) running time complexity.",
+      "image": "https://user-images.githubusercontent.com/4745789/89711582-cf11ba00-d9a8-11ea-9173-c7069b1537b5.png",
+      "gif": "https://media.giphy.com/media/fWqGY1AC4HVIN3lRyB/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "caching",
+        "lfu",
+        "least frequently used",
+        "cache eviction algorithms",
+        "least frequently used",
+        "constant time"
+      ],
+      "published_at": "2020-08-23",
+      "similar": [
+        "fully-persistent-arrays",
+        "isolation-forest",
+        "flajolet-martin",
+        "consistent-hashing"
+      ],
+      "total_views": 6035
+    },
+    {
+      "id": "morris-counter",
+      "title": "Morris's Algorithm for Approximate Counting",
+      "description": "Morris' Algorithm counts a large number of events using a very small space O(log log n). The algorithm uses probabilistic techniques to increment the counter and in this essay, we take a detailed look at Morris' Algorithm and the math behind it.",
+      "image": "https://user-images.githubusercontent.com/4745789/89116441-b9d0f300-d4b1-11ea-99e5-cca7c4cef5fb.png",
+      "gif": "https://media.giphy.com/media/uWXxbGPMbFkxsni3tc/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "approximate counting",
+        "morris counter",
+        "hyperloglog",
+        "morris algorithms"
+      ],
+      "published_at": "2020-08-02",
+      "similar": [
+        "israeli-queues",
+        "slowsort",
+        "fast-and-efficient-pagination-in-mongodb",
+        "phi-accrual"
+      ],
+      "total_views": 2120
+    },
+    {
+      "id": "slowsort",
+      "title": "Slowsort - A Pessimal Sorting Algorithm",
+      "description": "Slowsort is a pessimal sorting algorithm based on the Multiply and Surrender paradigm. The algorithm is designed to be deterministically sub-optimal and it could easily be the worst way anyone could sort an array.",
+      "image": "https://user-images.githubusercontent.com/4745789/88473025-fabb8b80-cf36-11ea-8390-a807fcd57d93.png",
+      "gif": "https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif",
+      "yt_video_id": "TzxLYTC8HL8",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "slowsort",
+        "pessimal algorithms",
+        "slowsort vs bogosort",
+        "worst sorting algorithms",
+        "multiply and surrender"
+      ],
+      "published_at": "2020-07-26",
+      "similar": [
+        "flajolet-martin",
+        "1d-terrain",
+        "morris-counter",
+        "isolation-forest"
+      ],
+      "total_views": 6485
+    },
+    {
+      "id": "phi-accrual",
+      "title": "Phi \u03c6 Accrual Failure Detection",
+      "description": "Phi \u03c6 Accrual Failure Detection algorithm, unlike conventional algorithms, is an adaptive failure detection algorithm that instead of providing output as a boolean (system being up or down), outputs the suspicion information (level) on a continuous scale.",
+      "image": "https://user-images.githubusercontent.com/4745789/87240958-c5de0d80-c43b-11ea-8e1b-2a7c70586b9b.png",
+      "gif": "https://media.giphy.com/media/gLoMzjGQB2tQlQtB9P/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "distributed systems",
+        "heartbeat algorithms",
+        "failure detection"
+      ],
+      "published_at": "2020-07-12",
+      "similar": [
+        "israeli-queues",
+        "copy-on-write",
+        "2q-cache",
+        "morris-counter"
+      ],
+      "total_views": 478
+    },
+    {
+      "id": "consistent-hashing",
+      "title": "Consistent Hashing",
+      "description": "Consistent Hashing is one of the most sought after techniques when it comes to designing highly scalable distributed systems. In this article, we dive deep into the need for Consistent Hashing, the internals of it, and more importantly along the way implement it using arrays and binary search.",
+      "image": "https://user-images.githubusercontent.com/4745789/82760647-92efa400-9e12-11ea-9533-5003bc3c46df.png",
+      "gif": "https://media.giphy.com/media/3ofSBqzxwsiN0npCak/giphy.gif",
+      "categories": [
+        "advanced algorithms",
+        "system design"
+      ],
+      "tags": [],
+      "published_at": "2020-05-24",
+      "similar": [
+        "fully-persistent-arrays",
+        "lfu",
+        "leaderless-replication",
+        "persistent-data-structures-introduction"
+      ],
+      "total_views": 1262
+    },
+    {
+      "id": "fractional-cascading",
+      "title": "Fractional Cascading - Speeding up Binary Searches",
+      "description": "The performance of binary search when applied on k lists independently can be improved using bridges and the technique is called Fractional Cascading. Fractional Cascading also sees its application in Geometric Data Structures, Segment Trees, and Databases.",
+      "image": "https://user-images.githubusercontent.com/4745789/82142043-352deb80-9857-11ea-9801-878d771248da.png",
+      "gif": "https://media.giphy.com/media/1k5k3J5K3BywQOrpNA/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [],
+      "published_at": "2020-05-10",
+      "similar": [
+        "genetic-knapsack",
+        "flajolet-martin",
+        "slowsort",
+        "1d-terrain"
+      ],
+      "total_views": 486
+    },
+    {
+      "id": "mysql-cache",
+      "title": "Midpoint Insertion Strategy in MySQL LRU Cache",
+      "description": "The MySQL InnoDB Storage engine uses LRU cache but it suffers from a notorious problem. In this article, we find how by using Midpoint Insertion Strategy and changing one aspect of LRU, MySQL becomes scan resistant and super performant.",
+      "image": "https://user-images.githubusercontent.com/4745789/80304802-0ed7db80-87d6-11ea-98db-bc5d4afe965b.png",
+      "gif": "https://media.giphy.com/media/daUOBsa1OztxC/giphy.gif",
+      "categories": [
+        "database engineering",
+        "advanced algorithms"
+      ],
+      "tags": [],
+      "published_at": "2020-04-26",
+      "similar": [
+        "2q-cache",
+        "ts-smoothing",
+        "israeli-queues",
+        "copy-on-write"
+      ],
+      "total_views": 466
+    },
+    {
+      "id": "bayesian-average",
+      "title": "Better Ranking using Bayesian Average",
+      "description": "Ranking a list of movies, products, books or even restaurants is tricky and in this article, we find what works for such a rating system and the math behind it.",
+      "image": "https://user-images.githubusercontent.com/4745789/78990379-ebfdc400-7b53-11ea-88b7-cd64e39eabf6.png",
+      "gif": "https://media.giphy.com/media/dJ4vNQ7r72pb4nDhN5/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [],
+      "published_at": "2020-04-12",
+      "similar": [
+        "fork-bomb",
+        "fast-and-efficient-pagination-in-mongodb",
+        "efficient-way-to-stop-an-iterating-loop",
+        "the-weird-walrus"
+      ],
+      "total_views": 526
+    },
+    {
+      "id": "idf",
+      "title": "Inverse Document Frequency",
+      "description": "TF-IDF is extensively used in search engines and in various document classification and clustering techniques. Instead of taking the formula by the word, we take a detour and dive deep into the better half of it and find its connection with Probability, the role it plays in document relevance and the intuition behind it.",
+      "image": "https://user-images.githubusercontent.com/4745789/76207579-10e4db80-6224-11ea-91ba-b67359125156.png",
+      "gif": "https://media.giphy.com/media/3ornjWIRSzXEw61KH6/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "tfidf",
+        "idf",
+        "inverse document frequency",
+        "term frequency inverse document frequency",
+        "term frequency",
+        "understanding tfidf",
+        "understanding idf",
+        "math behind tfidf",
+        "math behind idf",
+        "idf as probability"
+      ],
+      "published_at": "2020-03-06",
+      "similar": [
+        "jaccard-minhash",
+        "inheritance-c",
+        "recursion-visualizer",
+        "constant-folding-python"
+      ],
+      "total_views": 417
+    },
+    {
+      "id": "rule-30",
+      "title": "Pseudorandom Number Generation using Cellular Automata - Rule 30",
+      "description": "Generating pseudorandom numbers is an interesting problem in Computer Science. In this article, we dive deep into an algorithm for generating pseudorandom numbers using Rule 30 of Cellular Automaton.",
+      "image": "https://user-images.githubusercontent.com/4745789/74463952-b07aac80-4eb8-11ea-8d8e-6f286767ec7e.png",
+      "gif": "https://media.giphy.com/media/26uflDxU6cEhrhmUg/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "advanced algorithms",
+        "cellular automata",
+        "rule 30",
+        "pseudorandom number generator",
+        "random numbers",
+        "elementary cellular automata",
+        "1d cellular automata"
+      ],
+      "published_at": "2020-02-14",
+      "similar": [
+        "efficient-way-to-stop-an-iterating-loop",
+        "publish-python-package-on-pypi",
+        "jaccard-minhash",
+        "fast-and-efficient-pagination-in-mongodb"
+      ],
+      "total_views": 1011
+    },
+    {
+      "id": "isolation-forest",
+      "title": "Isolation Forest Algorithm for Anomaly Detection",
+      "description": "Anomaly detection is an age-old problem and in this article, we dive deep into an unsupervised algorithm, Isolation Forest, that beautifully exploits the characteristics of anomalies. Instead of profiling normal points and labeling others as anomalies, the algorithm is actually is tuned to detect anomalies.",
+      "image": "https://user-images.githubusercontent.com/4745789/73280907-34743980-4215-11ea-89f0-eac4a71df6e5.png",
+      "gif": "https://media.giphy.com/media/xGdvlOVSWaDvi/giphy.gif",
+      "categories": [
+        "advanced algorithms",
+        "python"
+      ],
+      "tags": [
+        "advanced algorithms",
+        "machine learning",
+        "anomaly detection",
+        "data science",
+        "artificial intelligence",
+        "ml",
+        "ds",
+        "ai",
+        "unsupervised algorithms",
+        "fast anomaly detection",
+        "efficient anomaly detection"
+      ],
+      "published_at": "2020-01-28",
+      "similar": [
+        "slowsort",
+        "flajolet-martin",
+        "phi-accrual",
+        "morris-counter"
+      ],
+      "total_views": 1134
+    },
+    {
+      "id": "how-sleepsort-helped-me-understand-concurrency-in-golang",
+      "title": "Sleepsort and Concurrency in Golang",
+      "description": "Understanding concurrency in any programming language is tricky let alone Golang; hence to get my hands dirty the first thing I usually implement is sleepsort.",
+      "image": "https://user-images.githubusercontent.com/4745789/63222328-203b0380-c1c4-11e9-9dd0-34c4bd9d1c6b.png",
+      "gif": "https://media.giphy.com/media/QmJ3e9So5M9NdNkOGo/giphy.gif",
+      "categories": [
+        "advanced algorithms"
+      ],
+      "tags": [
+        "golang",
+        "programming",
+        "concurrency",
+        "sleepsort",
+        "concurrency in golang",
+        "sleepsort in golang"
+      ],
+      "published_at": "2017-07-16",
+      "similar": [
+        "setting-up-graphite-grafana-using-nginx-on-ubuntu",
+        "udemy-sql-taxonomy",
+        "setting-up-graphite-using-nginx-on-ubuntu",
+        "the-weird-walrus"
+      ],
+      "total_views": 460
+    }
+  ],
+  "id": "advanced-algorithms"
+}
