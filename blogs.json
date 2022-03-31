@@ -580,7 +580,7 @@
   "gif": "https://media.giphy.com/media/l0HeiaW8q9B6tqoHS/giphy.gif",
   "yt_video_id": "",
   "categories": [
-    "security"
+    "advanced algorithms"
   ],
   "tags": [
     "dos attack",
@@ -682,8 +682,7 @@
   "image": "https://user-images.githubusercontent.com/4745789/107943189-55d7cd00-6fb2-11eb-9e03-a1da3870e718.png",
   "gif": "https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif",
   "categories": [
-    "data structures",
-    "advanced algorithms"
+    "data structures"
   ],
   "tags": [
     "persistent data structures",
@@ -1015,7 +1014,7 @@
   "image": "https://user-images.githubusercontent.com/4745789/87868516-144b5900-c9b4-11ea-91e3-2de14e80817b.png",
   "gif": "https://media.giphy.com/media/l0NwF1dnk7GRz3pK0/giphy.gif",
   "categories": [
-    "databases"
+    "database engineering"
   ],
   "tags": [
     "database",
@@ -1223,8 +1222,7 @@
   "image": "https://user-images.githubusercontent.com/4745789/80913860-73121680-8d65-11ea-87f8-d02460f05a22.png",
   "gif": "https://media.giphy.com/media/GIrIC3g657AYg/giphy.gif",
   "categories": [
-    "data structures",
-    "system design"
+    "data structures"
   ],
   "tags": [],
   "published_at": "2020-05-03",
@@ -1350,7 +1348,7 @@
   "image": "https://user-images.githubusercontent.com/4745789/75548769-0cfecf80-5a54-11ea-8dd2-1e452ba1298b.png",
   "gif": "https://media.giphy.com/media/14gQ5vtwD050LC/giphy.gif",
   "categories": [
-    "productivity"
+    "growth and leadership"
   ],
   "tags": [
     "better programmer",
@@ -1675,7 +1673,7 @@
   "image": "https://user-images.githubusercontent.com/4745789/63220620-4d2ded00-c1a9-11e9-8eea-11766291e06f.png",
   "gif": "https://media.giphy.com/media/nqIuAIxYebIt2/giphy.gif",
   "categories": [
-    "databases"
+    "database engineering"
   ],
   "tags": [
     "mongodb",
@@ -1750,7 +1748,7 @@
   "image": "https://user-images.githubusercontent.com/4745789/63222993-74e27c80-c1cc-11e9-8229-dd7e5d4f1173.png",
   "gif": "https://media.giphy.com/media/GIrIC3g657AYg/giphy.gif",
   "categories": [
-    "databases"
+    "explorations"
   ],
   "tags": [
     "devops",
