@@ -15,12 +15,12 @@
           },
           "duration": "39:24",
           "view_count": {
-            "abs": 483,
-            "str": 483
+            "abs": 519,
+            "str": 519
           },
           "like_count": {
-            "abs": 30,
-            "str": 30
+            "abs": 32,
+            "str": 32
           },
           "comment_count": {
             "abs": 2,
@@ -39,16 +39,16 @@
           },
           "duration": "21:21",
           "view_count": {
-            "abs": 2461,
-            "str": "2.46k"
+            "abs": 2491,
+            "str": "2.49k"
           },
           "like_count": {
             "abs": 101,
             "str": 101
           },
           "comment_count": {
-            "abs": 23,
-            "str": 23
+            "abs": 22,
+            "str": 22
           }
         },
         {
@@ -63,12 +63,12 @@
           },
           "duration": "15:57",
           "view_count": {
-            "abs": 1176,
-            "str": "1.18k"
+            "abs": 1186,
+            "str": "1.19k"
           },
           "like_count": {
-            "abs": 51,
-            "str": 51
+            "abs": 52,
+            "str": 52
           },
           "comment_count": {
             "abs": 14,
@@ -177,12 +177,12 @@
           },
           "duration": "15:57",
           "view_count": {
-            "abs": 1176,
-            "str": "1.18k"
+            "abs": 1186,
+            "str": "1.19k"
           },
           "like_count": {
-            "abs": 51,
-            "str": 51
+            "abs": 52,
+            "str": 52
           },
           "comment_count": {
             "abs": 14,
@@ -201,8 +201,8 @@
           },
           "duration": "22:6",
           "view_count": {
-            "abs": 948,
-            "str": 948
+            "abs": 957,
+            "str": 957
           },
           "like_count": {
             "abs": 66,
@@ -225,8 +225,8 @@
           },
           "duration": "23:25",
           "view_count": {
-            "abs": 1677,
-            "str": "1.68k"
+            "abs": 1690,
+            "str": "1.69k"
           },
           "like_count": {
             "abs": 129,
@@ -339,16 +339,16 @@
           },
           "duration": "20:17",
           "view_count": {
-            "abs": 2,
-            "str": 2
+            "abs": 270,
+            "str": 270
           },
           "like_count": {
-            "abs": 0,
-            "str": 0
+            "abs": 24,
+            "str": 24
           },
           "comment_count": {
-            "abs": 0,
-            "str": 0
+            "abs": 4,
+            "str": 4
           }
         },
         {
@@ -363,12 +363,12 @@
           },
           "duration": "24:34",
           "view_count": {
-            "abs": 1134,
-            "str": "1.13k"
+            "abs": 1146,
+            "str": "1.15k"
           },
           "like_count": {
-            "abs": 95,
-            "str": 95
+            "abs": 96,
+            "str": 96
           },
           "comment_count": {
             "abs": 24,
@@ -387,12 +387,12 @@
           },
           "duration": "26:",
           "view_count": {
-            "abs": 2333,
-            "str": "2.33k"
+            "abs": 2341,
+            "str": "2.34k"
           },
           "like_count": {
-            "abs": 147,
-            "str": 147
+            "abs": 149,
+            "str": 149
           },
           "comment_count": {
             "abs": 20,
@@ -419,12 +419,12 @@
           },
           "duration": "39:24",
           "view_count": {
-            "abs": 483,
-            "str": 483
+            "abs": 519,
+            "str": 519
           },
           "like_count": {
-            "abs": 30,
-            "str": 30
+            "abs": 32,
+            "str": 32
           },
           "comment_count": {
             "abs": 2,
@@ -443,16 +443,16 @@
           },
           "duration": "21:21",
           "view_count": {
-            "abs": 2461,
-            "str": "2.46k"
+            "abs": 2491,
+            "str": "2.49k"
           },
           "like_count": {
             "abs": 101,
             "str": 101
           },
           "comment_count": {
-            "abs": 23,
-            "str": 23
+            "abs": 22,
+            "str": 22
           }
         },
         {
@@ -467,7 +467,7 @@
           },
           "duration": "23:38",
           "view_count": {
-            "abs": 1271,
+            "abs": 1274,
             "str": "1.27k"
           },
           "like_count": {
@@ -853,11 +853,6 @@
       "id": "system-design-masterclass",
       "name": "System Design Masterclass",
       "url": "/masterclass"
-    },
-    {
-      "id": "all-things-redis",
-      "name": "All Things Redis",
-      "url": "/all-things-redis"
     }
   ]
 }
