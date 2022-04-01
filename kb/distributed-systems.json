@@ -13,15 +13,15 @@
       },
       "duration": "39:24",
       "view_count": {
-        "abs": "414",
-        "str": 414
+        "abs": 483,
+        "str": 483
       },
       "like_count": {
-        "abs": "27",
-        "str": 27
+        "abs": 30,
+        "str": 30
       },
       "comment_count": {
-        "abs": "2",
+        "abs": 2,
         "str": 2
       }
     },
@@ -37,15 +37,15 @@
       },
       "duration": "21:21",
       "view_count": {
-        "abs": "2255",
-        "str": "2.25k"
+        "abs": 2450,
+        "str": "2.45k"
       },
       "like_count": {
-        "abs": "96",
-        "str": 96
+        "abs": 101,
+        "str": 101
       },
       "comment_count": {
-        "abs": "23",
+        "abs": 23,
         "str": 23
       }
     },
@@ -61,15 +61,15 @@
       },
       "duration": "23:38",
       "view_count": {
-        "abs": "1258",
-        "str": "1.26k"
+        "abs": 1270,
+        "str": "1.27k"
       },
       "like_count": {
-        "abs": "88",
-        "str": 88
+        "abs": 89,
+        "str": 89
       },
       "comment_count": {
-        "abs": "12",
+        "abs": 12,
         "str": 12
       }
     }
