@@ -39,8 +39,8 @@
           },
           "duration": "21:21",
           "view_count": {
-            "abs": 2450,
-            "str": "2.45k"
+            "abs": 2461,
+            "str": "2.46k"
           },
           "like_count": {
             "abs": 101,
@@ -225,12 +225,12 @@
           },
           "duration": "23:25",
           "view_count": {
-            "abs": 1676,
+            "abs": 1677,
             "str": "1.68k"
           },
           "like_count": {
-            "abs": 128,
-            "str": 128
+            "abs": 129,
+            "str": 129
           },
           "comment_count": {
             "abs": 22,
@@ -328,6 +328,30 @@
       "topic": "Outage Dissections",
       "videos": [
         {
+          "title": "Dissecting Google Maps Outage: Bad Rollout and Cascading Failures",
+          "published_at_iso": "2022-04-01T04:30:03Z",
+          "published_at": "01 Apr, 2022",
+          "video_id": "6oJaZbQKnJE",
+          "img": {
+            "url": "https://i.ytimg.com/vi/6oJaZbQKnJE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "duration": "20:17",
+          "view_count": {
+            "abs": 2,
+            "str": 2
+          },
+          "like_count": {
+            "abs": 0,
+            "str": 0
+          },
+          "comment_count": {
+            "abs": 0,
+            "str": 0
+          }
+        },
+        {
           "title": "Dissecting GitHub Outage: ID column reaching the max value 2147483647",
           "published_at_iso": "2022-03-23T04:30:05Z",
           "published_at": "23 Mar, 2022",
@@ -339,7 +363,7 @@
           },
           "duration": "24:34",
           "view_count": {
-            "abs": 1133,
+            "abs": 1134,
             "str": "1.13k"
           },
           "like_count": {
@@ -363,7 +387,7 @@
           },
           "duration": "26:",
           "view_count": {
-            "abs": 2332,
+            "abs": 2333,
             "str": "2.33k"
           },
           "like_count": {
@@ -419,8 +443,8 @@
           },
           "duration": "21:21",
           "view_count": {
-            "abs": 2450,
-            "str": "2.45k"
+            "abs": 2461,
+            "str": "2.46k"
           },
           "like_count": {
             "abs": 101,
@@ -443,7 +467,7 @@
           },
           "duration": "23:38",
           "view_count": {
-            "abs": 1270,
+            "abs": 1271,
             "str": "1.27k"
           },
           "like_count": {
