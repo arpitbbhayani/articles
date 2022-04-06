@@ -2,6 +2,30 @@
   "topic": "System Design",
   "videos": [
     {
+      "title": "Implementing Idempotence in a Payments Microservice",
+      "published_at_iso": "2022-04-06T04:30:11Z",
+      "published_at": "06 Apr, 2022",
+      "video_id": "m6DtqSb1BDM",
+      "img": {
+        "url": "https://i.ytimg.com/vi/m6DtqSb1BDM/mqdefault.jpg",
+        "width": 320,
+        "height": 180
+      },
+      "duration": "16:36",
+      "view_count": {
+        "abs": 17,
+        "str": "17"
+      },
+      "like_count": {
+        "abs": 2,
+        "str": "2"
+      },
+      "comment_count": {
+        "abs": 1,
+        "str": "1"
+      }
+    },
+    {
       "title": "Sending payload in an HTTP GET request",
       "published_at_iso": "2022-04-04T04:30:01Z",
       "published_at": "04 Apr, 2022",
@@ -13,16 +37,16 @@
       },
       "duration": "12:",
       "view_count": {
-        "abs": 2068,
-        "str": "2.07k"
+        "abs": 2142,
+        "str": "2.14k"
       },
       "like_count": {
-        "abs": 90,
-        "str": "90"
+        "abs": 93,
+        "str": "93"
       },
       "comment_count": {
-        "abs": 14,
-        "str": "14"
+        "abs": 16,
+        "str": "16"
       }
     },
     {
@@ -37,8 +61,8 @@
       },
       "duration": "39:24",
       "view_count": {
-        "abs": 679,
-        "str": "679"
+        "abs": 687,
+        "str": "687"
       },
       "like_count": {
         "abs": 41,
@@ -61,8 +85,8 @@
       },
       "duration": "21:21",
       "view_count": {
-        "abs": 2574,
-        "str": "2.57k"
+        "abs": 2589,
+        "str": "2.59k"
       },
       "like_count": {
         "abs": 109,
@@ -85,7 +109,7 @@
       },
       "duration": "15:57",
       "view_count": {
-        "abs": 1258,
+        "abs": 1263,
         "str": "1.26k"
       },
       "like_count": {
@@ -109,7 +133,7 @@
       },
       "duration": "22:6",
       "view_count": {
-        "abs": 1016,
+        "abs": 1018,
         "str": "1.02k"
       },
       "like_count": {
@@ -133,8 +157,8 @@
       },
       "duration": "23:38",
       "view_count": {
-        "abs": 1364,
-        "str": "1.36k"
+        "abs": 1375,
+        "str": "1.38k"
       },
       "like_count": {
         "abs": 92,
@@ -157,7 +181,7 @@
       },
       "duration": "23:25",
       "view_count": {
-        "abs": 1789,
+        "abs": 1794,
         "str": "1.79k"
       },
       "like_count": {
@@ -181,8 +205,8 @@
       },
       "duration": "30:38",
       "view_count": {
-        "abs": 1330,
-        "str": "1.33k"
+        "abs": 1337,
+        "str": "1.34k"
       },
       "like_count": {
         "abs": 102,
@@ -205,8 +229,8 @@
       },
       "duration": "8:38",
       "view_count": {
-        "abs": 816,
-        "str": "816"
+        "abs": 818,
+        "str": "818"
       },
       "like_count": {
         "abs": 23,
@@ -229,7 +253,7 @@
       },
       "duration": "35:15",
       "view_count": {
-        "abs": 1512,
+        "abs": 1514,
         "str": "1.51k"
       },
       "like_count": {
@@ -253,12 +277,12 @@
       },
       "duration": "15:57",
       "view_count": {
-        "abs": 3330,
-        "str": "3.33k"
+        "abs": 3342,
+        "str": "3.34k"
       },
       "like_count": {
-        "abs": 160,
-        "str": "160"
+        "abs": 161,
+        "str": "161"
       },
       "comment_count": {
         "abs": 10,
@@ -277,8 +301,8 @@
       },
       "duration": "37:18",
       "view_count": {
-        "abs": 12492,
-        "str": "12.49k"
+        "abs": 12517,
+        "str": "12.52k"
       },
       "like_count": {
         "abs": 303,

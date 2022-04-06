@@ -4,6 +4,30 @@
       "topic": "System Design",
       "videos": [
         {
+          "title": "Implementing Idempotence in a Payments Microservice",
+          "published_at_iso": "2022-04-06T04:30:11Z",
+          "published_at": "06 Apr, 2022",
+          "video_id": "m6DtqSb1BDM",
+          "img": {
+            "url": "https://i.ytimg.com/vi/m6DtqSb1BDM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "duration": "16:36",
+          "view_count": {
+            "abs": 17,
+            "str": "17"
+          },
+          "like_count": {
+            "abs": 2,
+            "str": "2"
+          },
+          "comment_count": {
+            "abs": 1,
+            "str": "1"
+          }
+        },
+        {
           "title": "Sending payload in an HTTP GET request",
           "published_at_iso": "2022-04-04T04:30:01Z",
           "published_at": "04 Apr, 2022",
@@ -15,16 +39,16 @@
           },
           "duration": "12:",
           "view_count": {
-            "abs": 2068,
-            "str": "2.07k"
+            "abs": 2142,
+            "str": "2.14k"
           },
           "like_count": {
-            "abs": 90,
-            "str": "90"
+            "abs": 93,
+            "str": "93"
           },
           "comment_count": {
-            "abs": 14,
-            "str": "14"
+            "abs": 16,
+            "str": "16"
           }
         },
         {
@@ -39,8 +63,8 @@
           },
           "duration": "39:24",
           "view_count": {
-            "abs": 679,
-            "str": "679"
+            "abs": 687,
+            "str": "687"
           },
           "like_count": {
             "abs": 41,
@@ -49,30 +73,6 @@
           "comment_count": {
             "abs": 9,
             "str": "9"
-          }
-        },
-        {
-          "title": "Distributed Transactions: Two-Phase Commit Protocol",
-          "published_at_iso": "2022-03-28T04:30:03Z",
-          "published_at": "28 Mar, 2022",
-          "video_id": "7FgU1D4EnpQ",
-          "img": {
-            "url": "https://i.ytimg.com/vi/7FgU1D4EnpQ/mqdefault.jpg",
-            "width": 320,
-            "height": 180
-          },
-          "duration": "21:21",
-          "view_count": {
-            "abs": 2574,
-            "str": "2.57k"
-          },
-          "like_count": {
-            "abs": 109,
-            "str": "109"
-          },
-          "comment_count": {
-            "abs": 23,
-            "str": "23"
           }
         }
       ],
@@ -177,7 +177,7 @@
           },
           "duration": "15:57",
           "view_count": {
-            "abs": 1258,
+            "abs": 1263,
             "str": "1.26k"
           },
           "like_count": {
@@ -201,7 +201,7 @@
           },
           "duration": "22:6",
           "view_count": {
-            "abs": 1016,
+            "abs": 1018,
             "str": "1.02k"
           },
           "like_count": {
@@ -225,7 +225,7 @@
           },
           "duration": "23:25",
           "view_count": {
-            "abs": 1789,
+            "abs": 1794,
             "str": "1.79k"
           },
           "like_count": {
@@ -339,8 +339,8 @@
           },
           "duration": "20:17",
           "view_count": {
-            "abs": 655,
-            "str": "655"
+            "abs": 660,
+            "str": "660"
           },
           "like_count": {
             "abs": 37,
@@ -363,7 +363,7 @@
           },
           "duration": "24:34",
           "view_count": {
-            "abs": 1215,
+            "abs": 1219,
             "str": "1.22k"
           },
           "like_count": {
@@ -387,16 +387,16 @@
           },
           "duration": "26:",
           "view_count": {
-            "abs": 2391,
-            "str": "2.39k"
+            "abs": 2401,
+            "str": "2.4k"
           },
           "like_count": {
             "abs": 152,
             "str": "152"
           },
           "comment_count": {
-            "abs": 22,
-            "str": "22"
+            "abs": 25,
+            "str": "25"
           }
         }
       ],
@@ -419,8 +419,8 @@
           },
           "duration": "39:24",
           "view_count": {
-            "abs": 679,
-            "str": "679"
+            "abs": 687,
+            "str": "687"
           },
           "like_count": {
             "abs": 41,
@@ -443,8 +443,8 @@
           },
           "duration": "21:21",
           "view_count": {
-            "abs": 2574,
-            "str": "2.57k"
+            "abs": 2589,
+            "str": "2.59k"
           },
           "like_count": {
             "abs": 109,
@@ -467,8 +467,8 @@
           },
           "duration": "23:38",
           "view_count": {
-            "abs": 1364,
-            "str": "1.36k"
+            "abs": 1375,
+            "str": "1.38k"
           },
           "like_count": {
             "abs": 92,
