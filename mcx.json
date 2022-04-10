@@ -1,5 +1,5 @@
 {
-  "seats_available": 36,
+  "seats_available": 31,
   "total_taught": "500+",
   "total_cohorts": "7",
   "total_countries": "9",
@@ -354,13 +354,13 @@
           "title": "Week 1",
           "body": "The first week is about learning the macro and micro components of System Design.",
           "topics": [
-              "How to approach System Design",
-              "Designing Online/Offline indicator",
-              "Designing a Blogging Platform",
-              "Scaling and Caching strategy for Blog",
-              "Delegation and Async Processing",
-              "Supporting million concurrent users",
-              "Designing communication paradigm"
+              { "topic": "How to approach System Design", "is_new": false },
+              { "topic": "Designing Online/Offline indicator", "is_new": false },
+              { "topic": "Designing a Blogging Platform", "is_new": false },
+              { "topic": "Scaling and Caching strategy for Blog", "is_new": false },
+              { "topic": "Delegation and Async Processing", "is_new": false },
+              { "topic": "Supporting million concurrent users", "is_new": false },
+              { "topic": "Designing communication paradigm", "is_new": false }
           ]
       },
       {
@@ -368,13 +368,13 @@
           "title": "Week 2",
           "body": "This week, we learn everything about databases, from SQL to NoSQL to Embedded, learn how to scale them.",
           "topics": [
-              "SQL Transactions",
-              "Database Indexes and Locking",
-              "Designing Airline Check-in System",
-              "Designing SQL backed KV Store",
-              "Scaling relational databases",
-              "NoSQL databases: when, where and why?",
-              "Designing Google Firestore"
+              { "topic": "SQL Transactions", "is_new": false },
+              { "topic": "Database Indexes and Locking", "is_new": false },
+              { "topic": "Designing Airline Check-in System", "is_new": false },
+              { "topic": "Designing SQL backed KV Store", "is_new": false },
+              { "topic": "Scaling relational databases", "is_new": false },
+              { "topic": "NoSQL databases: when, where and why?", "is_new": false },
+              { "topic": "Designing: Slack's Realtime Communication", "is_new": true }
           ]
       },
       {
@@ -382,11 +382,11 @@
           "title": "Week 3",
           "body": "The third week will be about understanding Distributed Systems and the challenges that come while building them.",
           "topics": [
-              "Key to a good distributed system",
-              "Designing Load Balancers",
-              "Remote and distributed locks",
-              "Designing ID Generators",
-              "Open QnA and Doubt Resolution"
+              { "topic": "Key to a good distributed system", "is_new": false },
+              { "topic": "Designing Load Balancers", "is_new": false },
+              { "topic": "Remote and distributed locks", "is_new": false },
+              { "topic": "Designing ID Generators", "is_new": false },
+              { "topic": "Open QnA and Doubt Resolution", "is_new": false }
           ]
       },
       {
@@ -394,11 +394,10 @@
           "title": "Week 4",
           "body": "This is when we start modeling and building real-world systems, and we start with Social Networks.",
           "topics": [
-              "Day 0 Tech Stack",
-              "Designing Image uploader service",
-              "Designing HashTag extractor service",
-              "Designing User Affinity service",
-              "Designing Message Indicators, and 4 more"
+              { "topic": "Day 0 Tech Stack", "is_new": false },
+              { "topic": "Designing Image uploader service", "is_new": false },
+              { "topic": "Designing HashTag extractor service", "is_new": false },
+              { "topic": "Designing Message Indicators, and 4 more", "is_new": false }
           ]
       },
       {
@@ -406,10 +405,10 @@
           "title": "Week 5",
           "body": "This week will be about building ephemeral, persistent, reliable and durable storage engines.",
           "topics": [
-              "Designing Distributed Caches",
-              "Consistent Hashing: Application and Implementation",
-              "Designing a Word Dictionary",
-              "Designing Log-Structured KV Store"
+              { "topic": "Designing Distributed Caches", "is_new": false },
+              { "topic": "Consistent Hashing: Application and Implementation", "is_new": false },
+              { "topic": "Designing a Word Dictionary", "is_new": false },
+              { "topic": "Designing Log-Structured KV Store", "is_new": false }
           ]
       },
       {
@@ -417,10 +416,10 @@
           "title": "Week 6",
           "body": "This week, we level-up and build systems that are heavily concurrent and required to deliver very high throughput.",
           "topics": [
-              "Designing S3",
-              "Designing LSM Trees",
-              "Designing Video Processing Pipeline",
-              "Designing Flash Sale"
+              { "topic": "Designing S3", "is_new": false },
+              { "topic": "Designing LSM Trees", "is_new": false },
+              { "topic": "Designing Video Processing Pipeline", "is_new": false },
+              { "topic": "Designing Flash Sale", "is_new": false }
           ]
       },
       {
@@ -428,11 +427,11 @@
           "title": "Week 7",
           "body": "This week is about understanding Information Retrieval Systems and discuss some interesting adhoc systems.",
           "topics": [
-              "Designing Search Engines",
-              "Designing Realtime Recommendation System",
-              "Distributed Task Scheduler",
-              "Designing Message Brokers like SQS",
-              "Open QnA and Doubt Resolution"
+              { "topic": "Designing Search Engines", "is_new": false },
+              { "topic": "Designing Recent Searches System", "is_new": false },
+              { "topic": "Distributed Task Scheduler", "is_new": false },
+              { "topic": "Designing Message Brokers like SQS", "is_new": false },
+              { "topic": "Designing Cricbuzz's Text Commentary", "is_new": false }
           ]
       },
       {
@@ -440,11 +439,9 @@
           "title": "Week 8",
           "body": "The final week will be about exploring systems that are driven by a super-clever algorithm.",
           "topics": [
-              "API Rate Limiter",
-              "Algorithm behind File Sync",
-              "Algorithm behind Tinder",
-              "Approximation Algorithms",
-              "Algorithm for place locator"
+              { "topic": "Algorithm behind File Sync", "is_new": false },
+              { "topic": "Algorithm behind Tinder", "is_new": false },
+              { "topic": "Designing User Affinity Service", "is_new": false }
           ]
       }
   ],
