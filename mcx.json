@@ -1,702 +1,839 @@
 {
-  "seats_available": 7,
-  "total_taught": "500+",
-  "total_cohorts": "7",
-  "total_countries": "9",
-  "payment_page": "https://rzp.io/l/arpit-systemdesign-masterclass",
-  "worldmap": "https://user-images.githubusercontent.com/4745789/150691848-810b04e7-bee8-45d4-9234-513660f42254.png",
-  "what_worked": [
-      "structured and well organised",
-      "quality and non-repetitive content",
-      "could ask question any time",
-      "open ended discussion",
-      "learning community",
-      "much more than blogs we find",
-      "lego blocks",
-      "notes",
-      "working through problems as a group"
-  ],
-  "testimonials": [
-    {
-      "name": "Saurav Shaw",
-      "message": "I will highly recommended taking System Design masterclass by Arpit, on the very beginning you  will realize  how fun it can be to learn such  a advance topic in such a organized manner,  and Arpit is the only bhaiya you should follow if u want to learn #asliengineering.",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Parvinder Singh",
-      "message": "I found Arpit through linkedin posts, where he shares technical insights about db, architecture and system scalability. Later I get to know about his system design course and I want to join that immediately as I already had some idea about his knowledge depth and passion for teaching. After joining the course I'm exposed to many new concepts which I didn't know previously also the passionate way of teaching kept the whole batch engaged and helps us all to gain in-depth knowledge of system design.\n\nI would recommend this course to any tech enthusiast who has interest in system design. Thanks Arpit for such a great time.",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Anmol Singh Jaggi",
-      "message": "One of the most useful courses I have ever taken as a software engineer.\n\nThere are a lot of system design resources out there but I found all of them to be lacking depth. This course had both breadth as well as depth.\n\nI feel much more confident while designing real-life systems, both at my job, and for interviews. This course improved my intuition on what design patterns and technologies to use for a problem that might appear repeatedly in different systems.\n\nImpressed with the passion and energy Arpit brings to the sessions consistently. Lastly, grateful to be a part of a cohort that shared lots of creative insights and ideas. Beware that the course is quite fast-paced and a few years of experience would help you absorb it in a far better way. I will definitely need to revisit the recordings once :)",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Ronak Mutha",
-      "message": "Arpit's enthusiasm for teaching is contagious. It's not a course, but it gives you a glimpse into the realm of system design. It gets better every week, and it's brilliantly curated. It was one of the most memorable experiences of my life.\n\nThere will be no slides or presentations, but there will be effective whiteboarding sessions. It helped me have a better knowledge of system design patterns. It's not every day that you get to learn from engineers like Arpit, so I consider myself fortunate.\n\nArpit is a rare find. If you haven't already signed up for this masterclass, please do so right now.",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Ankit",
-      "message": "Finally a course that's not obssessed with cracking interviews and is about actually building something. My biggest learning from this course is that it introduced me to engineering blogs and the ocean of information that's lying in there.",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Abhishek Kumar",
-      "message": "I will highly recommend everyone to Arpit's System Design master class and I feel that it was one of my best decision in my life to attend his master class.",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Dharan Aditya",
-      "message": "I am in my early stage of my career, i took a bet on this cohort just our curiosity and desire to learn how to make things work at scale. Trust me, It is a gem a of course, worth investing your time and money. It is not like any any other course out there, reason Arpit. Aprit has simplified and presented the concepts in such a way, improved understanding concepts & whitest covering design complexities. It has broaden my understanding to approach design problems at scale. It's not everyday you get to meet and learn from Engineers like Arpit, i am glad that i meet and learned from.",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Alok",
-      "message": "Really great course. Highly recommended specially for people starting out to learn system design.The course is well structured and covers many major concepts in great detail.Also, Arpit is awsome at expaling stuff.",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Nikhil Neela",
-      "message": "Arpit's passion towards teaching and depth is designing systems is simply amazing. His teaching and way of presenting concepts always brought an 'Aha' moment. The course is so nicely organized and linking concepts from earlier sessions into future sessions helps to  correlate and augment learning. I would 100% bet my time and money on this course anytime.",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Swapnil Gupta",
-      "message": "I have worked and also learnt from Arpit in the past, and have always enjoyed it. \n\nI wanted to refresh my knowledge and learn more about system design and I am very happy with my decision. Even though I had a busy travel schedule, I would always tune in somehow to join in the live class to feel the team discussion vibe again. \n\nI love the energy he has, and the attitude towards problem solving. \n\nQuestions and discussions are highly encouraged and the ecosystem he has built towards this community is amazing. \n\n8 weeks of intense master class - covering so many different aspects of system designs, something rarely most of us get to touch in real life even with years of experience. \n\nHighly recommented. This is #AsliEngineering.\n\nMaza aaya. **insert Rahul Gandhi meme here**",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Mohammed Kashif",
-      "message": "I will start from the beginning. I have been following Arpit on LinkedIn, reading his blogs and YouTube videos, etc., since quite some time. What really struck out to me was the fact in every video he was covering topics that were not usually covered by people who were targetting for interviews. Just take a look at his CPython tutorials on YouTube and you will undestand what I mean. You could see genuine interest for engineering and breaking things apart to understand how they work only to put it back together and build it again from the scratch. This is what really caught my interest. You don't see that interest usually in other engineering or CS related blogs. This course was no different. \n\nRight from the beginning he made it pretty clear this is not some course you would use for your interview prep but rather expand upon your software engineering understanding. Even before day 1, he shared topics and reading material saying that you should come prepared after reading these topics in order to understand whats going to be discussed in the classes. The best part that I liked about his classes were, that he approached every system design problem with a Day 0 approach and then build upon the scaling part. I mean, it was not like \"Hey, this is the most optimal solution with some jargon thrown around\", but rather, \"This is our problem, lets build the most basic solution possible, and then try to scale it up and understand concepts while we do that.\". His energy is downright contagious when he is explaining difficult topics. I have seen him answer the most basic questions and go to extreme lengths to explain rather difficult topics in a very basic manner. My favourite lecture by far was Distributed ID Generators. Such a simple concept, such a simple design and he just nails every concept in the head. You would genuinely be amazed at his ability to spark that curiosity inside of you to search for the solution yourself.\n\nAdditionally, he takes effort to make the class as engaging as possible. It's not like, he will go on blabbering for 2-3 hours continuously and take questions or queries in the end. No, he makes sure that people are engaged, he keeps asking questions about the solution, poking holes and making us question the design ourselves. You must have heard about some Physics/Chemistry/Maths teachers who make the class so interesting and genuinely develop curiosity for those subjects in the students mind. Arpit, does exactly that for system design. He genuinely has a passion for teaching. \n\nI really enjoyed my time in this course. There are lot of things that I have to learn from my end to fully grasp the concepts and implement the concepts that I learned, and thanks to Arpit, I know where to look for them now :D \n\nTo summarize, 12/10 would highly recommend this course :D.",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Dhiren Mathur",
-      "message": "The course makes you go back to basics and learn the foundational concepts of how systems work. It teaches you how to approach system design in a manner that makes it seem natural. I can definitely say that it's helped me develop an \"intuition\" for designing systems at scale. Especially designing systems with compliance/analytics in mind, and understanding the kind of tradeoffs that could be made at different levels of scale (startup vs enterprise) etc. The learning from rabbit holes you fall into while reading about something you heard in class is a \"feature\" in itself. ",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Kiran Raj S R",
-      "message": "TLDR - Arpit's enthusiasm!\n\nHowever, if you want my detailed testimonial it is below.\n\nTop to bottom approach based learning - Instead of learning what cache is, what load balancer is. He picks a problem, designs a solution that is acceptable for Day 0, then introduces failures using scale/reliability/... and introduces these components to solve the failures.\n\nArpit neither spoon feeds you nor gives you just an overview of things. He explains concepts that are theoretical (for example: log based file system) and pushes you to experiment few things to learn yourself (for example: reservation systems using different kinds of locks). Arpit wants you to feel the same magic he felt when implementing these systems.\n\nEvery problem feels like a typical interview question and answer, but he has some gotchas or wow moments which make you realize this is so cool (from his past experience). And best part is he tries to push everyone in this direction and make them answer instead of giving the answer away.\n\nArpit also explains the philosophical side of engineering, why you shouldn't over engineer things on Day 0, how technology inspires from real-world (he explained how flash sale happens offline and how it mimics the similar behavior) and makes it fun throughout.\n\nThough Arpit does 90% of the things, you still need to do 10% which will help you in long run,\n1. Read the pre-reads that he shares every week.\n2. Ask questions - Arpit loves answering them even if it is dumb. Also, one question doesn't have one correct answer. Express your thoughts about the problem/solution, Arpit will listen, learn and improvise it for next cohort. He added at least 2 new cool stuff based on learning from the past cohorts.\n3. Take note of keywords or new concepts and explore them later. 40 hours is never enough for Arpit to teach you everything.\n4. Try to implement whatever is possible.\n5. Schedule 1:1 with him anytime to discuss more.",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Deepankar Roy",
-      "message": "Truly a ‘Masterclass’ in Systems Design. Arpit is very passionate about the subject and it has been awesome learning from him. Highly Recommended!",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Rahul",
-      "message": "The course is amazing. I had a lot of doubts about designing system and most of there were solved. Arpit is amazing in taking time to address the doubts. He has given a good thought in creating the structure of course. This course is one of the best investment for a software engineer to upgrade his system design skills.",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Ruchika Salwan",
-      "message": "This course is a gem!  Arpit's way to telling complex concepts in an intuitive and simple way is sign of an amazing teacher! The brainstorm discussions are such a good learning time! every class discussion was like an aha moment! You would get to know such complex system being built using the same patterns as building blocks.  The course helped in building my confidence and technical depth :)",
-      "cohort": "Jan 2022"
-    },
-    {
-      "name": "Shivam Srivastava",
-      "message": "I encountered Arpit’s course in November and enrolled in January cohort. I was really hyped about this course as I had previously seen his “How to scale notifications”. The best part about the course is the first principles thinking, the intuition behind why a particular decision is taken in designing the system. Finally a course which doesn’t black box anything, and gets into the depth of each and everything. Highly recommend!",
-      "cohort": "Jan 2022"
-    },
-    {
-          "name": "Shubham",
-          "message": "Given the flood of courses on system design, I was quite cynical of another system design course and investing time in it. Arpit was quick to debunk that this wasnt a course but a cohort, this wouldnt be a course that aims to equip you to better at interviews but looks at the fundamentals of systems and teases out patterns that could be applied everywhere.\n\nTrue to his pitch, the cohort went into deep details of why systems behave the way they do & how to develop a framework for building these systems. There are lots of engineers who know a lot of tech, but only a handful who can articulate it and even few who can weave a story and a structure out of it - Arpit evidently is part of the latter. His ability to connect the dots, probe on the blind sides and massage the concepts out of the pain points spoken in discussion is quite marvellous.",
-          "cohort": "November 2021"
-      },
-      {
-          "name": "Manoranjith",
-          "message": "One of the best learning experiences I ever had.\n\nIn the the 8 weeks, Arpit takes the cohort through a series of discussions starting from fundamental ideas around system design and explains how to apply them in a various contexts.\n\nEach week was only better than the previous. The discussions usually started with a clear description of the problem to be solved, followed by an open ended discussion and then an extensive discussion of the optimal solution. The best thing about this approach is that, it helped me understand the thinking that could have possibly gone behind designing a particular system, rather than just understanding how it was designed.\n\nAnother aspect is that, most resources on the internet either focused on the high level ideas on designing a system or on the specifics of how to implement a system/feature using a particular product. But, in these course, Arpit blends both these aspects very well. It helped me gain a holistic understanding of the high level design, what products can be used, why and how to use them.\n\nOn a personal note, Arpit is a truly curious engineer and a passionate teacher. He is genuinely interested in sharing the knowledge and insights he has gained over the past few years and takes a lot of effort in doing it in the best possible way.",
-          "cohort": "November 2021"
-      },
-      {
-          "name": "Rakshit Tiwari",
-          "message": "The course structure for this CBC is curated in a fantastic way. Cherry on top of that is Arpit's passion while teaching (even any complex topic like algorithmic systems) which really helps generate more curiosity while going in depth and brainstorming about anything.\n\nUnlike most videos on YT or essays/blogs which people generally follow for system design, this course contains discussion of very specific systems and goes in depth of what can break at scale and how one should build with these problems in mind. Be it topics like designing your own S3, load balancer, your own search engine, it has been quite a journey to learn how to build such massive systems with first principles.\n\nAnother great thing is the community of people attending this course which makes the discussions 10x better. There are very experienced senior engineers attending this course alongside who have built stuff for a huge scale and its pretty amazing not to learn just from Arpit but also their collective experience.",
-          "cohort": "November 2021"
-      },
-      {
-          "name": "Abhishek",
-          "message": "The course is so crisp and detailed. It was a terrific experience to be join this course.\n\nArpit has really put out a lot of efforts in creating this course and knows in-depth of each system. It covers each design in a great depth with multiple solutions for each case and thats the best part of it.\n\nThe way Arpit first creates a base and then puts everthing on top of it which makes a design intuitive for everyone and very easy to understand. Concepts is focused here so that later when some new requirements come, there will be a way to figure out on own about how to design it. ",
-          "cohort": "November 2021"
-      },
-      {
-          "name": "Atul Nene",
-          "message": "Arpit’s cohort involves\n\n- A collection of current and highly relevant software design issues of scale, in the industry\n\n- Problem solving from simple to more complex takes students through all nuances and gives deep understanding\n\n- Brainstorming sessions where everyone participates with their thoughts with enough space for questions and clarifications \n\n- Arpit’s enthusiasm and his conversational style that is friendly and encourages participation\n\n- Both online as well as offline modes are super convenient for busy, working students\n\nA rare course that contributes to engineering maturity in the tech space. Highly recommended, especially for experienced techies! It is one of the best re-learning decisions I made in the recent past.",
-          "cohort": "November 2021"
-      },
-      {
-          "name": "Akshay",
-          "message": "Being form non-CS background and having worked for 6 years in semiconductor domain, I did not have any prior experience of designing/working on large scale systems. When I switched domain, I also decided to take this course and I have enjoyed it throughout the span of 2 months.\n\nIt's not just the content of the course but also the way Arpit delivers it. He always starts from day 0 architecture and gradually builds on top of it. There are no buzzwords thrown around or random assumptions made. You will not only learn new things but also get some of your preconceived notions corrected. Also there were many \"wow\" moments during the course which are invaluable. There are tonnes of YouTube videos on system design but none of them come remotely close to this cohort.\n\nThe only negative feedback I have about the course is that it ends.",
-          "cohort": "November 2021"
-      },
-      {
-          "name": "Mahendhar",
-          "message": "Arpit is a brilliant and passionate engineer who will help you with building the intuition behind each and every system design he discusses. He makes sure everyone understands the problem and also the live brainstorming sessions have good participation. His cohort is attended by brilliant and well accomplished people themselves which makes this cohort all the more valuable.\n\nI can confidently say I lost the fear of system design now because of this cohort.",
-          "cohort": "November 2021"
-      },
-      {
-          "name": "Jay Vasant",
-          "message": "You might ask, is it HLD, LLD, or the internals of all major systems? It's real engineering at its best, thanks to the precise problem statements which artfully places foundational topics at the core of scalable systems. As a whole it covers all the standard practices along with extensive discussions about approaches so that no doubt remains unresolved.\n\nThanks to these discussions, I now have a clearer picture of thinking about and observing the recurring patterns in scaling systems better than ever, along with memories of interactions with peers having years of experience and wisdom.",
-          "cohort": "November 2021"
-      },
-      {
-          "name": "Vaibhav",
-          "message": "One of the best courses i have ever attended. Arpit's knowledge in system design is commendable and his research and composition in this course material is concise and to the point that it provokes several parallel thoughts and gives you a ready to use tool-kit to tackle any types of system.\n\nMost of the system design courses out there mostly talk about company driven architecture such as how Netflix tackled this problem vs how Google handled this. But the beauty of this course is that every class starts with one basic problem statement,  common design pattern, different area of concerns( front end, backend, caching, DB), separation of concerns, then deep dive into one of the most relevant and problematic areas you could face in that type of system, how to solve them and then finally go to details about how this use-case could be applicable to these many systems.\n\nThis gives you a building blocks to handle any system based on the need rather than sticking to the pre-defined approach about how one leading company did it.\n\nAnother best part of this course is the classroom discussions:- 30-40 highly skilled and driven engineers are coming together in one forum, asking questions, sharing their knowledge and discussing system design problems which can not get any better.",
-          "cohort": "November 2021"
-      },
-      {
-          "name": "Gaurav Jaiswal",
-          "message": "One of the best courses out there on system design. I really liked Arpit’s way of explaining complex problems in simple way. Course Structure is well organised , alongSide you get to learn with amazing set of people. Course Certainly made me a better engineer.  I am already using Arpit's teachings at my work.\n\nAnd the cherry on top - I was able to crack SDE 2 interview at Walmart, Apna, Swiggy, BukuWarung, DealShare.\n\nMy best investment ever :)",
-          "cohort": "May 2021"
-      },
-      {
-          "name": "Kushal Mahajan",
-          "message": "Arpit is a gold standard as an instructor. The discussions are on-ground and will discuss the things which are beyond 101. I have been directly able to map a few lectures ( read use cases ) to my job. I am a frontend engineer and most things are a learning to me. But having experience of system design implementations with me peers, it will surely take an edge.\n\nMore than the courses, you will be overwhelmed by his enthusiasm, clarity with breadth and depth. I believe, I have found the person I can look upto and have a chat about the things which actually improve the internet. I will invest anytime in a person which shapes the thinking patterns than just delivering the knowledge. ",
-          "cohort": "September 2021"
-      },
-      {
-          "name": "Kishor Pawar",
-          "message": "First time had the great experience with someone providing online education. Live class interaction really helped. Not only learned from you Arpit, but almost everyone in the class. Not only you learn the concepts from Arpit, but you also learn the way he learns, and it's contagious. One of the best decision I had taken to join Arpit's cohort. ",
-          "cohort": "May 2021"
-      },
-      {
-          "name": "Bhargav",
-          "message": "The system design course by Arpit is a great one for a number of reasons. It covers a wide range of topics, design paradigms and building blocks necessary to build a distributed system. For every system design topic discussed in the sessions, it is built from ground up starting with a simple model (which everyone brainstorms together) which is then iteratively enhanced to overcome limitations until the end design meets all the requirements such as scalability, availability etc. This exercise in my opinion is the most useful thing that I got from the course as it builds such a great intuition when you have to design a complex system from ground up and when you look at some popular distributed systems in use, you will know how they were built or what design patterns might have been used.\n\nSince this is a cohort, you benefit greatly from the discussions that happen during the brainstorming segment of the class where you learn from other people’s diverse experiences and of course the 1:1 sessions with Arpit are invaluable.\n\nOverall, I would highly recommend this course to anyone, at any stage in their careers who is interested in learning how to design distributed systems. This is indeed a fun course.",
-          "cohort": "September 2021"
-      },
-      {
-          "name": "Preeti Pranayeta",
-          "message": "Course was an eye opening for me with lots of real world experiences that we face while implementing systems.Every session need to be revisited so as to understand effectively.Arpit makes sure to walkthrough the science behind building the system design.I simply loved the course and this implants a curiosity of learning everyday within us.",
-          "cohort": "September 2021"
-      },
-      {
-          "name": "Harshit Agarwal",
-          "message": "I had initially registered for the 2nd cohort, but did not end up going through with making the payment as I thought it was too expensive. Now, after having finished the course as part of 4th cohort - I think this was probably the best investments I have made in my life !\n\nThis course taught me to think of system design from a first principles perspective. It taught me about how to use smaller simple systems as reusable building blocks for larger systems. Arpit's enthusiasm is infectious and he's an excellent teacher. I learnt a lot from not just him but also from other people in the cohort. 👌🏾",
-          "cohort": "September 2021"
-      },
-      {
-          "name": "Jimit Gandhi",
-          "message": "The breadth of the systems covered as part of Cohort is really amazing. I learned so many systems which I didn't have much clue about earlier like Stream processing, Log Structured storage and many more. The enthusiasm with which Arpit conducts the sessions helps create curiosity.\n\nThe most important part is that  Arpit helps build the intuition to learn system design and uses building blocks to build systems gradually. This cohort is a value addition for experienced professionals to build Large scale systems and develop know-how for making trade-offs for design choices.",
-          "cohort": "September 2021"
-      },
-      {
-          "name": "Sai Subramanyam Chittilla",
-          "message": "Arpit is a passionate individual who teaches one of best system design course, his explanation comes from real implementation and exposure to the problem. He makes sure that individuals in his cohort develop critical thinking when approaching system design.\n\nI would highly recommend his course for any one who tries to build systems to scale.",
-          "cohort": "September 2021"
-      },
-      {
-          "name": "Naman Bhalla",
-          "message": "The way Arpit delivers his content shows his experience, enthusiasm and love for the topics he is teaching. He shares his experience over multiple years of career and reading multiple blogs, papers etc. with everyone. The problem statements discussed are very practical and cover advanced topics related to large scale system design very well.\n\nHe takes a pragmatic approach to the problems and comes to the solution via foundational principles. The assignments are quite challenging so be ready for a lot of fun building them!",
-          "cohort": "September 2021"
-      },
-      {
-          "name": "Anshul Saxena",
-          "message": "Taking this course has turned out to be one of the best things I've ever done in my software engineering career.\n\nArpit has changed everything for me and helped me to develop intuitions for designing the systems at scale. This course was a perfect mixture of theory that we needs to know for understanding and designing massive systems, and real world examples for implementing those concepts.\n\nThis course is not like any other courses out there, its not one way video based communication as it is cohort based, it provides the experience of solving the problem in real world like a team of 45 engineers working together to solve a problem which in itself was a  awesome experience .It was a great learning experience for me and would recommend the course to everyone who wants to develop understanding of how massive systems functions.",
-          "cohort": "September 2021"
-      },
-      {
-          "name": "Shashank Tiwari",
-          "message": "In this course, you will learn topics and building blocks that will help you design any system. Along with this, you will also get to know the trade-offs of one component over the others.\n\nThere is always something new to learn things like Live streaming using CDN, implementing the KV store using MySql, and building a word dictionary were eye-opening for me.\n\nThe two best parts about the course are the discussion and brainstorming between the amazing folks of Cohorts and the 1:1 mentorship from Arpit.\n\nOverall if you are prepping for interviews you will get an amazing head start. Or if you want to get better at system design in general this is the best thing you have got.\n\nAbsolutely, worth the money and time, highly recommended \ud83d\ude42.",
-          "cohort": "September 2021"
-      },
-      {
-          "name": "Karan Kapoor",
-          "message": "I had come across the essays written by Arpit in his blog and the system design videos on his YouTube channel, which were quite detailed and offered a crisp explanation, due to which I decided to join the cohort. The entire cohort is designed in a way that the concepts learned during the initial few weeks get used in the later parts. I loved Arpit's methodology of not just approaching a system from a bird's eye view but instead going into details of how it could be implemented as well, and trying to dissect every aspect of what can go wrong, and brainstorming over how it could be dealt with.\n\nEven in a problem that seemed simple at the surface, there was always something new to learn. The cohort structure enabled a great community of folks to come together and collaborative learning happened. The mechanism of teaching is very different from several other courses or content that I have gone through in the past. It was ensured that none of the questions were left unanswered, even if that meant stretching the session by an hour. Going the extra mile made a lot of difference in the overall experience. The part I loved the most was having thorough discussions with the entire cohort about a single topic or problem, which made the overall experience quite fun.\n\nThe entire session was surely challenging with all the assignments. You would learn a lot of new concepts and get several rabbit holes to explore, which would catalyze the learning journey.",
-          "cohort": "September 2021"
-      },
-      {
-          "name": "Sandeep",
-          "message": "The course is very intensive, some sessions need to watch 2-3 times to get good understanding of the topic.\n\nArpit made the sessions beautiful with all the experience he had in building large scale systems. 1. Loved the brainstorming sessions that happened for an application and pros and cons discussion of every decision by an individual done by Arpit is really Good. 2. Some sessions are like iterative building blocks of an app from scratch is eye opener on many concepts. ex: building  word dictionary. 3.Its not bounded only to curriculum mentioned but new system designs has come into picture and session went for 3hrs. Content Worth the price!!",
-          "cohort": "July 2021"
-      },
-      {
-          "name": "Shivam",
-          "message": "The biggest selling point of the course is Arpit's genuine love and enthusiasm towards designing systems , I feel like I've become a better engineer.",
-          "cohort": "July 2021"
-      },
-      {
-          "name": "Sanjith Joseph",
-          "message": "Arpit has great working experience with distributed systems and he brings out his experience in very engaging discussions. He actively encourages collaboration during class to help us think on our feet. He is quite generous with time and often veers off the planned route for impromptu discussions.",
-          "cohort": "July 2021"
-      },
-      {
-          "name": "Chandan Nayak",
-          "message": "After watching many YouTube videos and going through the available materials ,I wanted to strengthen my knowledge pertaining to system design, then came across this amazing course, which helped me to think better when it comes to scalable system and touched upon many missing points of YouTube videos, Hands down the best system design course I have encountered.",
-          "cohort": "July 2021"
-      },
-      {
-          "name": "Manav Desai",
-          "message": "Arpit's masterclass for engineers is like cartoons for kids. You JUST CANT MISS IT ! You'll be surprised every single week by how real systems are built. The knowledge this guy has, you're missing out if you aren't picking his brains. Totally recommended.",
-          "cohort": "July 2021"
-      },
-      {
-          "name": "Sarthak Sahu",
-          "message": "Enrolling in this course was one of the best decisions I have taken in my life. As the name suggests this truly is a 'Masterclass'. The content is crisp, very engaging and the discussions are fun and of very high quality. The breadth and depth of topics covered would definitely help in work as well as interviews.\n\nI had the chance to take few 1:1 mentorship sessions as well and collected some valuable wisdom from those sessions. Very few courses out there leave such an impact and this one definitely made me a better engineer.\n\nAnd the cherry on top - I was able to crack SDE 2 interview at Coinbase :)",
-          "cohort": "July 2021"
-      },
-      {
-          "name": "Umang",
-          "message": "One of the best courses out there on system design, not to mention the learning alongside the amazing set of people who have been a part of the course.\n\nThe one best thing about the course is the cohort based approach which ignites discussion when different people dives into with their real world experiences and pitches in their solutions, adding more depth to every system design.\n\nEven if someone has watched all the system design videos out there, there would be moments of amazement and would help connect the dots to various pieces of puzzles out there in production systems.\n\nThe final cheery on top is the Mentorship session which Arpit provides for any abstract discussions outside the course content as well. Its was not just about learning designing a 'xyz' system but to build an intuition, and the building blocks needed to tackle a problem statement one might come across leveraging the content and experience which Arpit provides and eventually target to be a better Software Engineer.",
-          "cohort": "July 2021"
-      },
-      {
-          "name": "Nubra Jarial",
-          "message": "The course was very enriching and made me think about software design in unexpected ways. There are so many systems that we take for granted and don't look into - load balancers , cloud storages, database engines etc. even though they're often the ones doing the heavy lifting in enterprise applications.\n\nArpit provides great insight into why things are the way they are and also introduces some neat spinoffs! Completely worth both the time and money!",
-          "cohort": "May 2021"
-      },
-      {
-          "name": "Akanksha Singh",
-          "message": "The course was like a roller coaster ride. At start Arpit will be explaining basics, and at the very next moment you'll realize he is making you answer high level concepts. Arpit is delivering his years of experience and research in this course.\n\nAt start of course, even after reading/watching so many resources , I wasn't sure of system design. By the end of this course I have already started implementing system design's lego blocks and have so many  ideas which i want to implement and test myself.",
-          "cohort": "May 2021"
-      },
-      {
-          "name": "Ujjwal",
-          "message": "Wish this cohort never ended. The enthusiasm with which Arpit teaches, his engineering adventures with large scale systems and his patience to handle even the most fundamental doubts makes this cohort special !",
-          "cohort": "May 2021"
-      },
-      {
-          "name": "Abhijit Jain",
-          "message": "I appreciate not only the depth and breadth of topics covered but also Arpit's friendly teaching style and patience. The topics covered in class were non-trivial but were introduced perfectly like they were lego blocks - smaller components adding up to bigger and better systems.\n\nWhat sets this masterclass apart is the focus on designing systems the way a real company would do (think companies you admire, eg FANG). This is a course that'll improve your design thinking, empower you to ask the right questions and help you make the right tradeoffs for your system. Highly recommend!",
-          "cohort": "May 2021"
-      },
-      {
-          "name": "Saurav Daruka",
-          "message": "System Design Masterclass was a very immersive, interesting and a completely unique asset to learn System Design. The course structure was clear, logical and effective. Arpit is an expert Technologist and has obviously put a lot of thought and expertise into designing the course. But it wasn\u2019t just about the knowledge. Additional benefits came from doing assignments, receiving individual feedback and interacting with Arpit and other participants.\n\nMy perspective has been changed in the way I look at Systems now. I didn\u2019t just learn \"how\" to design systems \u2013 \"what\" and \"why\" also became much clearer. Investment of time, effort and money on this course is a value add to my skills and it made me a better Software Engineer!",
-          "cohort": "May 2021"
-      },
-      {
-          "name": "Shitiz Bhutani",
-          "message": "I found this course useful as it provided me with a lot of breadth in System Design with appropriate depth. I really liked Arpit\u2019s way of explaining complex problems in a neat and simple way. The course structure is organized in such a way that you can easily connect the dots. I highly recommend it.",
-          "cohort": "May 2021"
-      },
-      {
-          "name": "Nityananda Gohain",
-          "message": "One thing I can guarantee that after this course you can read any kind of system design book/blog with confidence and you will be able to relate to Arpits classes in someway or the other, also Arpit designed the course in such a way that you will be able to relate to previous classes and bring out patters in solving problems. My best investment ever :)",
-          "cohort": "May 2021"
-      },
-      {
-          "name": "NY",
-          "message": "The kind of concepts which Arpit taught were really impressive and it helped me to understand the building blocks for different kinds of systems, making trade offs while choosing one component over the others. Arpit also encourages everyone to participate in the discussions. Arpit possesses incredible knowledge, energy and enthusiasm. He explains the concepts in simple yet effective manner.",
-          "cohort": "May 2021"
-      },
-      {
-          "name": "Ganesh Iyer",
-          "message": "Course is awesome! Lots of incredible stuff packed in 8 weeks. Helped me crack Principal Engineer interview at Microsoft.",
-          "cohort": "March 2021"
-      },
-      {
-          "name": "Aman Agarwal",
-          "message": "A true masterclass with flavors of evolving solutions, interesting peer discussions. A great learning experience not just for interviews but for real. The openness to speak our minds out is the best part. #PaisaWasoolExperience",
-          "cohort": "March 2021"
-      },
-      {
-          "name": "Tejas Agrawal",
-          "message": "Had a super fun in learning how to learn and think system design. I am already using Arpit's teachings at my work, and I don't think anything more needs to be said.",
-          "cohort": "March 2021"
-      },
-      {
-          "name": "Rohan Chougule",
-          "message": "It's easy to throw jargons and assume that a system can be built. But then keeping things simple and starting from the basics, the approach to be taken, taking baby steps, and then heading towards a direction is indeed best taught by Arpit. Plus, his enthusiasm!",
-          "cohort": "March 2021"
-      },
-      {
-          "name": "Vineet Mago",
-          "message": "Arpit has done a wonderful job wading through complex design issues faced for designing systems at scale. Personally, for me, I loved interacting with the members of the cohort, understanding how each one of us approached the problem at hand. And then, in the end , Arpit would explain the right trade-offs to make and finalize a solution. I loved it, highly recommend it for folks who are looking at expanding their horizons on system design.",
-          "cohort": "March 2021"
-      }
-  ],
-  "benefits_cohort": [
-      {
-          "title": "Small and Focussed Group",
-          "body": "Each cohort will have close to ~70 people ensuring you have a richer learning experience."
-      },
-      {
-          "title": "Thrive Together",
-          "body": "Unlike MOOCs where the information flow is unidirectional, the cohort here will thrive on interactions and collaborations."
-      },
-      {
-          "title": "Discuss and Learn",
-          "body": "Learning happens when we discuss, and hence everyone is encouraged to speak, put forth opinions, and discuss."
-      }
-  ],
-  "benefits": [
-      {
-          "title": "Design systems like a pro",
-          "body": "The course will make you comfortable at designing any system, no matter how stringent the requirements are."
-      },
-      {
-          "title": "Know the unknowns",
-          "body": "Learn some of the most interesting concepts, super-clever algorithms, and sophisticated architectures. You are bound to have mind-blown moments."
-      },
-      {
-          "title": "1:1 Mentorship",
-          "body": "When in a dilemma about an architectural decision, engineering challenges, career advice, or general mentorship, get your doubts cleared during your 1:1s with Arpit."
-      },
-      {
-          "title": "Crack the interview",
-          "body": "Be it FAANG or your dream startup, you would be at ease while designing systems in the interview round."
-      },
-      {
-          "title": "Upskill and level-up",
-          "body": "Learn the designing paradigms and upskill yourself to accelerate your career growth and stand out."
-      },
-      {
-          "title": "Network and Community",
-          "body": "Perhaps the most interesting takeaway will be your new network, friends, and a lot of memories."
-      }
-  ],
-  "outline": [
-      {
-          "section": "Foundation",
-          "title": "Week 1",
-          "body": "The first week is about learning the macro and micro components of System Design.",
-          "topics": [
-              { "topic": "How to approach System Design", "is_new": false },
-              { "topic": "Designing Online/Offline indicator", "is_new": false },
-              { "topic": "Designing a Blogging Platform", "is_new": false },
-              { "topic": "Scaling and Caching strategy for Blog", "is_new": false },
-              { "topic": "Delegation and Async Processing", "is_new": false },
-              { "topic": "Supporting million concurrent users", "is_new": false },
-              { "topic": "Designing communication paradigm", "is_new": false }
-          ]
-      },
-      {
-          "section": "Databases",
-          "title": "Week 2",
-          "body": "This week, we learn everything about databases, from SQL to NoSQL to Embedded, learn how to scale them.",
-          "topics": [
-              { "topic": "SQL Transactions", "is_new": false },
-              { "topic": "Database Indexes and Locking", "is_new": false },
-              { "topic": "Designing Airline Check-in System", "is_new": false },
-              { "topic": "Designing SQL backed KV Store", "is_new": false },
-              { "topic": "Scaling relational databases", "is_new": false },
-              { "topic": "NoSQL databases: when, where and why?", "is_new": false },
-              { "topic": "Designing: Slack's Realtime Communication", "is_new": true }
-          ]
-      },
-      {
-          "section": "Going Distributed",
-          "title": "Week 3",
-          "body": "The third week will be about understanding Distributed Systems and the challenges that come while building them.",
-          "topics": [
-              { "topic": "Key to a good distributed system", "is_new": false },
-              { "topic": "Designing Load Balancers", "is_new": false },
-              { "topic": "Remote and distributed locks", "is_new": false },
-              { "topic": "Designing ID Generators", "is_new": false },
-              { "topic": "Open QnA and Doubt Resolution", "is_new": false }
-          ]
-      },
-      {
-          "section": "Building Social Networks",
-          "title": "Week 4",
-          "body": "This is when we start modeling and building real-world systems, and we start with Social Networks.",
-          "topics": [
-              { "topic": "Day 0 Tech Stack", "is_new": false },
-              { "topic": "Designing Image uploader service", "is_new": false },
-              { "topic": "Designing HashTag extractor service", "is_new": false },
-              { "topic": "Designing Message Indicators, and 4 more", "is_new": false }
-          ]
-      },
-      {
-          "section": "Building Storages",
-          "title": "Week 5",
-          "body": "This week will be about building ephemeral, persistent, reliable and durable storage engines.",
-          "topics": [
-              { "topic": "Designing Distributed Caches", "is_new": false },
-              { "topic": "Consistent Hashing: Application and Implementation", "is_new": false },
-              { "topic": "Designing a Word Dictionary", "is_new": false },
-              { "topic": "Designing Log-Structured KV Store", "is_new": false }
-          ]
-      },
-      {
-          "section": "Building High Throughput Systems",
-          "title": "Week 6",
-          "body": "This week, we level-up and build systems that are heavily concurrent and required to deliver very high throughput.",
-          "topics": [
-              { "topic": "Designing S3", "is_new": false },
-              { "topic": "Designing LSM Trees", "is_new": false },
-              { "topic": "Designing Video Processing Pipeline", "is_new": false },
-              { "topic": "Designing Flash Sale", "is_new": false }
-          ]
-      },
-      {
-          "section": "IR Systems and Adhoc Designs",
-          "title": "Week 7",
-          "body": "This week is about understanding Information Retrieval Systems and discuss some interesting adhoc systems.",
-          "topics": [
-              { "topic": "Designing Search Engines", "is_new": false },
-              { "topic": "Designing Recent Searches System", "is_new": false },
-              { "topic": "Distributed Task Scheduler", "is_new": false },
-              { "topic": "Designing Message Brokers like SQS", "is_new": false },
-              { "topic": "Designing Cricbuzz's Text Commentary", "is_new": false }
-          ]
-      },
-      {
-          "section": "Building Algorithmic Systems",
-          "title": "Week 8",
-          "body": "The final week will be about exploring systems that are driven by a super-clever algorithm.",
-          "topics": [
-              { "topic": "Algorithm behind File Sync", "is_new": false },
-              { "topic": "Algorithm behind Tinder", "is_new": false },
-              { "topic": "Designing User Affinity Service", "is_new": false }
-          ]
-      }
-  ],
-  "value_proposition": [
-      "40 hours of Live Classes on Weekends IST",
-      "1:1 Mentorship Sessions",
-      "Lifetime access to all the Recordings",
-      "Lifetime access to the Network and Community",
-      "Open forums and interaction with the cohort",
-      "Doubt resolution during and post our live sessions"
-  ],
-  "faqs": [
-      {
-          "title": "Is this course right for me?",
-          "body": "This course is for any engineer who wants to learn System Design. The program is most suited to someone who has some industry experience, at least 6 months."
-      },
-      {
-          "title": "Will you be giving teaching for the entire duration?",
-          "body": "Yes. I will be teaching the entire course online and live over Zoom and will be providing feedback and 1:1 mentorship."
-      },
-      {
-          "title": "Will there be a class every day?",
-          "body": "The Live Classes will happen on Saturdays and Sundays as per the time mentioned on the webite with a possible extension of 30/45 mins."
-      },
-      {
-          "title": "Can I get this course reimbursed from my company?",
-          "body": "Talk to your manager and check if they can sponsor this course. The invoice that will be issued is a legally valid and sound invoice that can be used for any kind of reimbursement."
-      },
-      {
-          "title": "Will there be reserved slots for 1:1 mentorship?",
-          "body": "1:1 mentorship calls will happen on-demand, just drop me a message a day prior, and I will get our call scheduled."
-      },
-      {
-          "title": "Will there be assignments and hands-on projects?",
-          "body": "No. I would recommend you implement the core of every single system we discuss ensuring you apply what you learn. I highly encourage you to implement seek help during 1:1 sessions."
-      },
-      {
-          "title": "Will the course cover LLD?",
-          "body": "The course will cover some aspects of Database Design and its internals, but it will not cover writing and designing classes, and low-level design patterns. The course is typically aimed at covering the massive spectrum of System Design and Software Architecture."
-      },
-      {
-          "title": "Are assignments and projects mandatory?",
-          "body": "No. But it is advisable that you complete them to get a better understanding of the system, algorithm, and business logic."
-      },
-      {
-          "title": "Will we also implement and see the systems in action?",
-          "body": "Due to time constraints, it is not possible to implement every system; it is recommended that you self-implement the system and understand the low-level details. The course will definitely cover systems from every aspect."
-      },
-      {
-          "title": "Will there be a recording available for future reference?",
-          "body": "Every single Live Class will be recorded, and you will be given lifetime access to it."
-      },
-      {
-          "title": "Is there a refund policy?",
-          "body": "14 days (from the course commencement) is the window within which you can claim a full refund (excluding GST) for the Live Course. GST paid will not be refunded. All refunds will be processed on the 14th day from the course commencement date. The fees paid for the course with only recorded content ('Learn at your own pace') is non-refundable."
-      },
-      {
-          "title": "Where are the classes conducted?",
-          "body": "All Live Classes will be online, over Zoom, and all you need is an internet connection to attend the live sessions."
-      },
-      {
-          "title": "Will you be the only one teaching this course?",
-          "body": "The entire course including Live Classes will be conducted by me, Arpit Bhayani, no external TAs, mentors, etc. You will get to learn everything from the horse's mouth."
-      },
-      {
-          "title": "What are the programming pre-requisites?",
-          "body": "It would help if you had to have work experience of 6 months, plus a basic understanding of one of the cloud providers like AWS, GCP, plus some basic understanding of high-level system design by watching already available YouTube videos. You can also find a few videos on this ppage that I would recommend you through."
-      },
-      {
-          "title": "How is this course different from free videos on YouTube?",
-          "body": "This cohort-based course aims to be live, intense, and interactive. Traditional MOOCs (existing videos on the internet) cannot offer these benefits as they are unidirectional and optimizes for one-to-many. With this course being taught live, you can get instant resolution to your doubts. The discussion, collaboration, and networking will have a major impact on your overall learning as there will be cross-pollination of information."
-      },
-      {
-          "title": "If I have already watched System Design videos on YouTube, is this course still helpful?",
-          "body": "Yes. The kind of depth which is touched in this System Design is unmatched. Even if you have watched all the System Design videos out there, you will still have moments that will blow your mind."
-      },
-      {
-          "title": "Will I be getting an invoice of Payment?",
-          "body": "Yes. An invoice will be issued to you with all the legal and necessary details. This means your employer can choose to process this invoice and provide reimbursement."
-      },
-      {
-          "title": "Will you issue a course completion certificate?",
-          "body": "I do not generate the certificate for every candidate, but if you need it, just drop me a message, and I will issue one right away."
-      },
-      {
-          "title": "Can I use my Credit Card or avail EMI to make the payment?",
-          "body": "Yes, we support Credit Card, Debit Card, UPI, and Credit Card based EMIs having a duration of 3 months, 6 months, 12 months, and 24 months as offered by Razorpay."
-      },
-      {
-          "title": "Will I get access to videos and resources of past cohort?",
-          "body": "No. You will get access to all the live sessions happened in your enrolled cohort only."
-      }
-  ],
-  "organizations": [
-      {
-          "name": "Tesla",
-          "logo": "https://user-images.githubusercontent.com/4745789/115353876-a64bf080-a1d6-11eb-8abd-da1e948c289d.png",
-          "url": "https://www.tesla.com"
-      },
-      {
-          "name": "Google",
-          "logo": "https://user-images.githubusercontent.com/4745789/131295363-04dc4fdf-4674-49f7-a453-90a42ec581f9.png",
-          "url": "https://www.google.com"
-      },
-      {
-          "name": "Microsoft",
-          "logo": "https://user-images.githubusercontent.com/4745789/131295468-f8f52c8a-0bc1-4765-baa6-009490eb808e.png",
-          "url": "https://www.microsoft.com"
-      },
-      {
-          "name": "Amazon",
-          "logo": "https://user-images.githubusercontent.com/4745789/115350867-40119e80-a1d3-11eb-8ed1-3d689b2bf9b2.png",
-          "url": "https://www.amazon.com/"
-      },
-      {
-          "name": "GitHub",
-          "logo": "https://user-images.githubusercontent.com/4745789/131295948-fe68928f-69de-476e-a1e5-bd0843d91e8c.png",
-          "url": "https://www.github.com/"
-      },
-      {
-          "name": "Flipkart",
-          "logo": "https://user-images.githubusercontent.com/4745789/115350183-684ccd80-a1d2-11eb-9891-620ff043bcfa.png",
-          "url": "https://www.flipkart.com"
-      },
-      {
-          "name": "PayTM",
-          "logo": "https://user-images.githubusercontent.com/4745789/123135938-0299ed80-d470-11eb-823a-54c0fc9647dd.png",
-          "url": "https://www.paytm.com/"
-      },
-      {
-          "name": "OYO",
-          "logo": "https://user-images.githubusercontent.com/4745789/131298059-a0c027bc-0076-437a-9c05-cd274a564aea.png",
-          "url": "https://www.oyo.com/"
-      },
-      {
-          "name": "PayPal",
-          "logo": "https://user-images.githubusercontent.com/4745789/131295708-22a60122-645f-41bc-a810-265a8b4a2bd0.png",
-          "url": "https://www.paypal.com/"
-      },
-      {
-          "name": "Grab",
-          "logo": "https://user-images.githubusercontent.com/4745789/131296241-97d9a0b9-e4c2-477e-8cbd-badb9289a5b5.png",
-          "url": "https://www.grab.com/"
-      },
-      {
-          "name": "MakeMyTrip",
-          "logo": "https://user-images.githubusercontent.com/4745789/131296448-35521312-94d1-43f7-9648-331cac056ad1.png",
-          "url": "https://www.makemytrip.com/"
-      },
-      {
-          "name": "Dream11",
-          "logo": "https://user-images.githubusercontent.com/4745789/131296736-5735286e-811f-4d3f-a95c-9280bd063b93.png",
-          "url": "https://www.dream11.com/"
-      },
-      {
-          "name": "Unacademy",
-          "logo": "https://user-images.githubusercontent.com/4745789/131297119-59302b5d-2375-428e-ad80-9230a06a9b67.png",
-          "url": "https://www.unacademy.com/"
-      },
-      {
-          "name": "BrowserStack",
-          "logo": "https://user-images.githubusercontent.com/4745789/115350976-5f103080-a1d3-11eb-812d-99568d38e3e3.png",
-          "url": "https://www.browserstack.com/"
-      },
-      {
-          "name": "Practo",
-          "logo": "https://user-images.githubusercontent.com/4745789/123136405-8358e980-d470-11eb-8889-7d34e1c9e11e.png",
-          "url": "https://www.yelp.com/"
-      },
-      {
-          "name": "Yelp",
-          "logo": "https://user-images.githubusercontent.com/4745789/115351392-d47c0100-a1d3-11eb-8418-ae0a4e344d9f.png",
-          "url": "https://www.yelp.com/"
-      },
-      {
-          "name": "Gojek",
-          "logo": "https://user-images.githubusercontent.com/4745789/143415343-8dc38908-401f-4f69-a15f-563c04ee2841.png",
-          "url": "https://www.gojek.io/"
-      },
-      {
-          "name": "Scaler",
-          "logo": "https://user-images.githubusercontent.com/4745789/143414790-6c4d69d6-fc3b-4129-b64e-2f6eb46f7e21.png",
-          "url": "https://www.scaler.com/"
-      }
-  ],
-  "prerequisites": [
-      {
-          "id": "sCR3SAVdyCc",
-          "url": "http://youtu.be/sCR3SAVdyCc",
-          "title": "What is a Load Balancer?"
-      },
-      {
-          "id": "hWRRdICvMNs",
-          "url": "http://youtu.be/hWRRdICvMNs",
-          "title": "What is an API Gateway?"
-      },
-      {
-          "id": "aj9CDZm0Glc",
-          "url": "http://youtu.be/aj9CDZm0Glc",
-          "title": "What is Kafka?"
-      },
-      {
-          "id": "CdBtNQZH8a4",
-          "url": "http://youtu.be/CdBtNQZH8a4",
-          "title": "What are Microservices?"
-      },
-      {
-          "id": "lsMQRaeKNDk",
-          "url": "http://youtu.be/lsMQRaeKNDk",
-          "title": "What is a REST API?"
-      },
-      {
-          "id": "vxJobGtqKVM",
-          "url": "http://youtu.be/vxJobGtqKVM",
-          "title": "What is Serverless?"
-      },
-      {
-          "id": "k4tK2ttdSDg",
-          "url": "http://youtu.be/k4tK2ttdSDg",
-          "title": "What is a Data Warehouse?"
-      },
-      {
-          "id": "muqiHwa8UvQ",
-          "url": "http://youtu.be/muqiHwa8UvQ",
-          "title": "What is Redis?"
-      },
-      {
-          "id": "_I14_sXHO8U",
-          "url": "http://youtu.be/_I14_sXHO8U",
-          "title": "Introduction to Amazon S3"
-      },
-      {
-          "id": "AT-nHW3_SVI",
-          "url": "http://youtu.be/AT-nHW3_SVI",
-          "title": "Introduction to Amazon CloudFront"
-      },
-      {
-          "id": "sI-zciHAh-4",
-          "url": "http://youtu.be/sI-zciHAh-4",
-          "title": "What is Amazon DynamoDB?"
-      },
-      {
-          "id": "_qKm6o1zK3U",
-          "url": "http://youtu.be/_qKm6o1zK3U",
-          "title": "Introduction to Data Warehousing on AWS with Amazon Redshift"
-      },
-      {
-          "id": "RGWgfhZByAI",
-          "url": "http://youtu.be/RGWgfhZByAI",
-          "title": "Amazon Route 53"
-      },
-      {
-          "id": "XrX7rb6M3jw",
-          "url": "http://youtu.be/XrX7rb6M3jw",
-          "title": "Introducing Amazon Simple Queue Service (SQS) FIFO Queues \u2013 Messaging on AWS"
-      }
-  ]
+	"seats_available": 7,
+	"total_taught": "500+",
+	"total_cohorts": "7",
+	"total_countries": "9",
+	"payment_page": "https://rzp.io/l/arpit-systemdesign-masterclass",
+	"worldmap": "https://user-images.githubusercontent.com/4745789/150691848-810b04e7-bee8-45d4-9234-513660f42254.png",
+	"what_worked": [
+		"structured and well organised",
+		"quality and non-repetitive content",
+		"could ask question any time",
+		"open ended discussion",
+		"learning community",
+		"much more than blogs we find",
+		"lego blocks",
+		"notes",
+		"working through problems as a group"
+	],
+	"testimonials": [{
+			"name": "Abhishek",
+			"message": "This course was the highlight of my weekends for the past two months. I’ve been exploring system design content for quite some time and after going through a lot of content, I must say Arpit does full justice to the time people invest in his course. Arpit does not shy about going to a detailed analysis of any system, he makes sure that every possible doubt that comes into your mind is resolved during the session and later in the open forum session. I found this very useful as Arpit’s extensive background in industry and academia gives him the ability to go as in-depth as you want when answering your questions. Be it databases’ internal implementation, operating system quirks or hardcore computer architecture question, Arpit knows his stuff really well.\n\nSmall cohort size and interactive brainstorming sessions helped me to get quick feedback on my design decisions. This made sure that the session was not just a one-sided lecture but an exchange of ideas amongst the peers. The cohort had people form different domains and varying experience - I used to search for the technologies and jargons people floated in the discussion which gave me an amazing exposure.\n\nInitially, I joined this course to become comfortable in system design interviews but later I realised that the main intention of the course is core engineering and detailed analysis of systems, which you might miss if you’re simply studying system design for interview purposes. Cracking interviews is a favourable byproduct of this course and not the sole intention. Thanks Arpit, I thoroughly enjoyed this course.",
+			"cohort": "March 2022"
+		},
+		{
+			"name": "Hardik Somani",
+			"message": "The course lives upto the hashtag #AsliEngineering, and not just cracking interviews. The depth and nuances that Arpit covers in each system that we design is worth the time spent on the course. The add-on benefits of a great community and networking is also great.",
+			"cohort": "March 2022"
+		},
+		{
+			"name": "Amulya Holla",
+			"message": "This course definitely lived up to its name - VERY LEGIT - \"#AsliEngineering\". These classes became the highlights of my weekends.\n\nArpit has designed the course in such a way that you will be able to relate the content of every class to its next one. He wouldn't straight up give you a solution with random jargon nor would he recommend using one technology over other without proper reasoning. He rather conducts brainstorming sessions where he nudges us to come up with solution. While doing so, he discusses the tradeoffs, he encourages to see the patterns and reuse the solutions discussed/built in the previous classes.\n\nI highly recommend taking this course. It is a course worth investing your money and time on.",
+			"cohort": "March 2022"
+		},
+		{
+			"name": "Ankit Sanghvi",
+			"message": "This course challenged my fundamental understanding of systems designing & made me appreciate the beauty, intricacy & logic of software at scale. Arpit is a natural teacher & passionate tech evangelist who will start from the ground-up & then refine your concepts with this hands-on-engineering journey.",
+			"cohort": "March 2022"
+		},
+		{
+			"name": "Vaibhav Jain",
+			"message": "To start with, this has been one of my best decisions in life to join Arpit's cohort. Despite there being \"too many sources for system design on the Internet\" as people say, I haven't seen a single course or educator talk about an in-depth dissection of a given system and questioning different alternatives for even small micro-decisions, which are very critical and which Arpit covers in great depth for all the problem statements.\n\nThe aim throughout the course is to build intuition and a strong foundation. With a cohort-based model, learning increases multiple folds and it feels like a day-to-day technical discussion that you have with senior folks at work, which makes it the most fun part of all.\n\nThere are people with varied experiences here, and you get to learn from their experiences as well as get to connect with them, which is an added advantage. The \"cost - driven development\" mantra, as Arpit says in every design discussion, is an aspect that I have seen no one touch upon, and it is something that leads to very exciting discussions and approaches.\n\nArpit's energy and passion for computer science are infectious and something that rubs off on everyone in the cohort, leading to great brainstorming sessions. I would personally recommend this course to anyone who loves backend engineering and computer science in general to be a part of great technical discussions, not just for the sake of interview preparation, but to learn and have fun while building systems!\n\nAt least I did for the same reason :)",
+			"cohort": "March 2022"
+		},
+		{
+			"name": "Rakshith Shetty",
+			"message": "Arpit has the knack of breaking down a very complex problem into simpler and smaller  understandable components. The problem statement followed by the solution is communicated very clearly and in a structured way. The live sessions unfold so beautifully that you don't realize that you have been listening to someone for 2.5 hours straight.\n\nOne of the nicest attributes about Arpit other than being brilliant at his field is that he shares the knowledge without being condescending. My approach to work has certainly changed after the cohort. Thanks for the knowledge, keep up the great work.",
+			"cohort": "March 2022"
+		},
+		{
+			"name": "Shrey Batra",
+			"message": "Honestly, this is one of the best courses I have been in till date. I thought I would probably know like 60% of the topics, but as and when we are completing this, I can be sure that I knew no more than 30% of topics discussed.\n\nSome topics, systems, designs are so fabulous, using the same things we use everyday, and seeing them work and make our systems fault tolerant were mind blowing.\n\nThe delivery of the lectures, making it interactive, the efforts in building the notes, discussing all the points and also teach us more than engineering - How to be a \"better\" engineer and ask the right questions, think on the right lines is what motivated me the most and I got from this cohort.\n\nThis I feel would make me go a long way in my personal career space, just because of the \"mode\" of content delivery. Seeing youtube videos / reading articles or theory doesn't make sense till the time you actually solve a problem. Even if these were on calls, they looked like actual Product Development calls we have in office where we design something from scratch, thinking about everything.\n\nThanks for the efforts you put in and helped me and the community. :)",
+			"cohort": "March 2022"
+		},
+		{
+			"name": "Saurav Shaw",
+			"message": "I will highly recommended taking System Design masterclass by Arpit, on the very beginning you  will realize  how fun it can be to learn such  a advance topic in such a organized manner,  and Arpit is the only bhaiya you should follow if u want to learn #asliengineering.",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Parvinder Singh",
+			"message": "I found Arpit through linkedin posts, where he shares technical insights about db, architecture and system scalability. Later I get to know about his system design course and I want to join that immediately as I already had some idea about his knowledge depth and passion for teaching. After joining the course I'm exposed to many new concepts which I didn't know previously also the passionate way of teaching kept the whole batch engaged and helps us all to gain in-depth knowledge of system design.\n\nI would recommend this course to any tech enthusiast who has interest in system design. Thanks Arpit for such a great time.",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Anmol Singh Jaggi",
+			"message": "One of the most useful courses I have ever taken as a software engineer.\n\nThere are a lot of system design resources out there but I found all of them to be lacking depth. This course had both breadth as well as depth.\n\nI feel much more confident while designing real-life systems, both at my job, and for interviews. This course improved my intuition on what design patterns and technologies to use for a problem that might appear repeatedly in different systems.\n\nImpressed with the passion and energy Arpit brings to the sessions consistently. Lastly, grateful to be a part of a cohort that shared lots of creative insights and ideas. Beware that the course is quite fast-paced and a few years of experience would help you absorb it in a far better way. I will definitely need to revisit the recordings once :)",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Ronak Mutha",
+			"message": "Arpit's enthusiasm for teaching is contagious. It's not a course, but it gives you a glimpse into the realm of system design. It gets better every week, and it's brilliantly curated. It was one of the most memorable experiences of my life.\n\nThere will be no slides or presentations, but there will be effective whiteboarding sessions. It helped me have a better knowledge of system design patterns. It's not every day that you get to learn from engineers like Arpit, so I consider myself fortunate.\n\nArpit is a rare find. If you haven't already signed up for this masterclass, please do so right now.",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Ankit",
+			"message": "Finally a course that's not obssessed with cracking interviews and is about actually building something. My biggest learning from this course is that it introduced me to engineering blogs and the ocean of information that's lying in there.",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Abhishek Kumar",
+			"message": "I will highly recommend everyone to Arpit's System Design master class and I feel that it was one of my best decision in my life to attend his master class.",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Dharan Aditya",
+			"message": "I am in my early stage of my career, i took a bet on this cohort just our curiosity and desire to learn how to make things work at scale. Trust me, It is a gem a of course, worth investing your time and money. It is not like any any other course out there, reason Arpit. Aprit has simplified and presented the concepts in such a way, improved understanding concepts & whitest covering design complexities. It has broaden my understanding to approach design problems at scale. It's not everyday you get to meet and learn from Engineers like Arpit, i am glad that i meet and learned from.",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Alok",
+			"message": "Really great course. Highly recommended specially for people starting out to learn system design.The course is well structured and covers many major concepts in great detail.Also, Arpit is awsome at expaling stuff.",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Nikhil Neela",
+			"message": "Arpit's passion towards teaching and depth is designing systems is simply amazing. His teaching and way of presenting concepts always brought an 'Aha' moment. The course is so nicely organized and linking concepts from earlier sessions into future sessions helps to  correlate and augment learning. I would 100% bet my time and money on this course anytime.",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Swapnil Gupta",
+			"message": "I have worked and also learnt from Arpit in the past, and have always enjoyed it. \n\nI wanted to refresh my knowledge and learn more about system design and I am very happy with my decision. Even though I had a busy travel schedule, I would always tune in somehow to join in the live class to feel the team discussion vibe again. \n\nI love the energy he has, and the attitude towards problem solving. \n\nQuestions and discussions are highly encouraged and the ecosystem he has built towards this community is amazing. \n\n8 weeks of intense master class - covering so many different aspects of system designs, something rarely most of us get to touch in real life even with years of experience. \n\nHighly recommented. This is #AsliEngineering.\n\nMaza aaya. **insert Rahul Gandhi meme here**",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Mohammed Kashif",
+			"message": "I will start from the beginning. I have been following Arpit on LinkedIn, reading his blogs and YouTube videos, etc., since quite some time. What really struck out to me was the fact in every video he was covering topics that were not usually covered by people who were targetting for interviews. Just take a look at his CPython tutorials on YouTube and you will undestand what I mean. You could see genuine interest for engineering and breaking things apart to understand how they work only to put it back together and build it again from the scratch. This is what really caught my interest. You don't see that interest usually in other engineering or CS related blogs. This course was no different. \n\nRight from the beginning he made it pretty clear this is not some course you would use for your interview prep but rather expand upon your software engineering understanding. Even before day 1, he shared topics and reading material saying that you should come prepared after reading these topics in order to understand whats going to be discussed in the classes. The best part that I liked about his classes were, that he approached every system design problem with a Day 0 approach and then build upon the scaling part. I mean, it was not like \"Hey, this is the most optimal solution with some jargon thrown around\", but rather, \"This is our problem, lets build the most basic solution possible, and then try to scale it up and understand concepts while we do that.\". His energy is downright contagious when he is explaining difficult topics. I have seen him answer the most basic questions and go to extreme lengths to explain rather difficult topics in a very basic manner. My favourite lecture by far was Distributed ID Generators. Such a simple concept, such a simple design and he just nails every concept in the head. You would genuinely be amazed at his ability to spark that curiosity inside of you to search for the solution yourself.\n\nAdditionally, he takes effort to make the class as engaging as possible. It's not like, he will go on blabbering for 2-3 hours continuously and take questions or queries in the end. No, he makes sure that people are engaged, he keeps asking questions about the solution, poking holes and making us question the design ourselves. You must have heard about some Physics/Chemistry/Maths teachers who make the class so interesting and genuinely develop curiosity for those subjects in the students mind. Arpit, does exactly that for system design. He genuinely has a passion for teaching. \n\nI really enjoyed my time in this course. There are lot of things that I have to learn from my end to fully grasp the concepts and implement the concepts that I learned, and thanks to Arpit, I know where to look for them now :D \n\nTo summarize, 12/10 would highly recommend this course :D.",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Dhiren Mathur",
+			"message": "The course makes you go back to basics and learn the foundational concepts of how systems work. It teaches you how to approach system design in a manner that makes it seem natural. I can definitely say that it's helped me develop an \"intuition\" for designing systems at scale. Especially designing systems with compliance/analytics in mind, and understanding the kind of tradeoffs that could be made at different levels of scale (startup vs enterprise) etc. The learning from rabbit holes you fall into while reading about something you heard in class is a \"feature\" in itself. ",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Kiran Raj S R",
+			"message": "TLDR - Arpit's enthusiasm!\n\nHowever, if you want my detailed testimonial it is below.\n\nTop to bottom approach based learning - Instead of learning what cache is, what load balancer is. He picks a problem, designs a solution that is acceptable for Day 0, then introduces failures using scale/reliability/... and introduces these components to solve the failures.\n\nArpit neither spoon feeds you nor gives you just an overview of things. He explains concepts that are theoretical (for example: log based file system) and pushes you to experiment few things to learn yourself (for example: reservation systems using different kinds of locks). Arpit wants you to feel the same magic he felt when implementing these systems.\n\nEvery problem feels like a typical interview question and answer, but he has some gotchas or wow moments which make you realize this is so cool (from his past experience). And best part is he tries to push everyone in this direction and make them answer instead of giving the answer away.\n\nArpit also explains the philosophical side of engineering, why you shouldn't over engineer things on Day 0, how technology inspires from real-world (he explained how flash sale happens offline and how it mimics the similar behavior) and makes it fun throughout.\n\nThough Arpit does 90% of the things, you still need to do 10% which will help you in long run,\n1. Read the pre-reads that he shares every week.\n2. Ask questions - Arpit loves answering them even if it is dumb. Also, one question doesn't have one correct answer. Express your thoughts about the problem/solution, Arpit will listen, learn and improvise it for next cohort. He added at least 2 new cool stuff based on learning from the past cohorts.\n3. Take note of keywords or new concepts and explore them later. 40 hours is never enough for Arpit to teach you everything.\n4. Try to implement whatever is possible.\n5. Schedule 1:1 with him anytime to discuss more.",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Deepankar Roy",
+			"message": "Truly a ‘Masterclass’ in Systems Design. Arpit is very passionate about the subject and it has been awesome learning from him. Highly Recommended!",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Rahul",
+			"message": "The course is amazing. I had a lot of doubts about designing system and most of there were solved. Arpit is amazing in taking time to address the doubts. He has given a good thought in creating the structure of course. This course is one of the best investment for a software engineer to upgrade his system design skills.",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Ruchika Salwan",
+			"message": "This course is a gem!  Arpit's way to telling complex concepts in an intuitive and simple way is sign of an amazing teacher! The brainstorm discussions are such a good learning time! every class discussion was like an aha moment! You would get to know such complex system being built using the same patterns as building blocks.  The course helped in building my confidence and technical depth :)",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Shivam Srivastava",
+			"message": "I encountered Arpit’s course in November and enrolled in January cohort. I was really hyped about this course as I had previously seen his “How to scale notifications”. The best part about the course is the first principles thinking, the intuition behind why a particular decision is taken in designing the system. Finally a course which doesn’t black box anything, and gets into the depth of each and everything. Highly recommend!",
+			"cohort": "Jan 2022"
+		},
+		{
+			"name": "Shubham",
+			"message": "Given the flood of courses on system design, I was quite cynical of another system design course and investing time in it. Arpit was quick to debunk that this wasnt a course but a cohort, this wouldnt be a course that aims to equip you to better at interviews but looks at the fundamentals of systems and teases out patterns that could be applied everywhere.\n\nTrue to his pitch, the cohort went into deep details of why systems behave the way they do & how to develop a framework for building these systems. There are lots of engineers who know a lot of tech, but only a handful who can articulate it and even few who can weave a story and a structure out of it - Arpit evidently is part of the latter. His ability to connect the dots, probe on the blind sides and massage the concepts out of the pain points spoken in discussion is quite marvellous.",
+			"cohort": "November 2021"
+		},
+		{
+			"name": "Manoranjith",
+			"message": "One of the best learning experiences I ever had.\n\nIn the the 8 weeks, Arpit takes the cohort through a series of discussions starting from fundamental ideas around system design and explains how to apply them in a various contexts.\n\nEach week was only better than the previous. The discussions usually started with a clear description of the problem to be solved, followed by an open ended discussion and then an extensive discussion of the optimal solution. The best thing about this approach is that, it helped me understand the thinking that could have possibly gone behind designing a particular system, rather than just understanding how it was designed.\n\nAnother aspect is that, most resources on the internet either focused on the high level ideas on designing a system or on the specifics of how to implement a system/feature using a particular product. But, in these course, Arpit blends both these aspects very well. It helped me gain a holistic understanding of the high level design, what products can be used, why and how to use them.\n\nOn a personal note, Arpit is a truly curious engineer and a passionate teacher. He is genuinely interested in sharing the knowledge and insights he has gained over the past few years and takes a lot of effort in doing it in the best possible way.",
+			"cohort": "November 2021"
+		},
+		{
+			"name": "Rakshit Tiwari",
+			"message": "The course structure for this CBC is curated in a fantastic way. Cherry on top of that is Arpit's passion while teaching (even any complex topic like algorithmic systems) which really helps generate more curiosity while going in depth and brainstorming about anything.\n\nUnlike most videos on YT or essays/blogs which people generally follow for system design, this course contains discussion of very specific systems and goes in depth of what can break at scale and how one should build with these problems in mind. Be it topics like designing your own S3, load balancer, your own search engine, it has been quite a journey to learn how to build such massive systems with first principles.\n\nAnother great thing is the community of people attending this course which makes the discussions 10x better. There are very experienced senior engineers attending this course alongside who have built stuff for a huge scale and its pretty amazing not to learn just from Arpit but also their collective experience.",
+			"cohort": "November 2021"
+		},
+		{
+			"name": "Abhishek",
+			"message": "The course is so crisp and detailed. It was a terrific experience to be join this course.\n\nArpit has really put out a lot of efforts in creating this course and knows in-depth of each system. It covers each design in a great depth with multiple solutions for each case and thats the best part of it.\n\nThe way Arpit first creates a base and then puts everthing on top of it which makes a design intuitive for everyone and very easy to understand. Concepts is focused here so that later when some new requirements come, there will be a way to figure out on own about how to design it. ",
+			"cohort": "November 2021"
+		},
+		{
+			"name": "Atul Nene",
+			"message": "Arpit’s cohort involves\n\n- A collection of current and highly relevant software design issues of scale, in the industry\n\n- Problem solving from simple to more complex takes students through all nuances and gives deep understanding\n\n- Brainstorming sessions where everyone participates with their thoughts with enough space for questions and clarifications \n\n- Arpit’s enthusiasm and his conversational style that is friendly and encourages participation\n\n- Both online as well as offline modes are super convenient for busy, working students\n\nA rare course that contributes to engineering maturity in the tech space. Highly recommended, especially for experienced techies! It is one of the best re-learning decisions I made in the recent past.",
+			"cohort": "November 2021"
+		},
+		{
+			"name": "Akshay",
+			"message": "Being form non-CS background and having worked for 6 years in semiconductor domain, I did not have any prior experience of designing/working on large scale systems. When I switched domain, I also decided to take this course and I have enjoyed it throughout the span of 2 months.\n\nIt's not just the content of the course but also the way Arpit delivers it. He always starts from day 0 architecture and gradually builds on top of it. There are no buzzwords thrown around or random assumptions made. You will not only learn new things but also get some of your preconceived notions corrected. Also there were many \"wow\" moments during the course which are invaluable. There are tonnes of YouTube videos on system design but none of them come remotely close to this cohort.\n\nThe only negative feedback I have about the course is that it ends.",
+			"cohort": "November 2021"
+		},
+		{
+			"name": "Mahendhar",
+			"message": "Arpit is a brilliant and passionate engineer who will help you with building the intuition behind each and every system design he discusses. He makes sure everyone understands the problem and also the live brainstorming sessions have good participation. His cohort is attended by brilliant and well accomplished people themselves which makes this cohort all the more valuable.\n\nI can confidently say I lost the fear of system design now because of this cohort.",
+			"cohort": "November 2021"
+		},
+		{
+			"name": "Jay Vasant",
+			"message": "You might ask, is it HLD, LLD, or the internals of all major systems? It's real engineering at its best, thanks to the precise problem statements which artfully places foundational topics at the core of scalable systems. As a whole it covers all the standard practices along with extensive discussions about approaches so that no doubt remains unresolved.\n\nThanks to these discussions, I now have a clearer picture of thinking about and observing the recurring patterns in scaling systems better than ever, along with memories of interactions with peers having years of experience and wisdom.",
+			"cohort": "November 2021"
+		},
+		{
+			"name": "Vaibhav",
+			"message": "One of the best courses i have ever attended. Arpit's knowledge in system design is commendable and his research and composition in this course material is concise and to the point that it provokes several parallel thoughts and gives you a ready to use tool-kit to tackle any types of system.\n\nMost of the system design courses out there mostly talk about company driven architecture such as how Netflix tackled this problem vs how Google handled this. But the beauty of this course is that every class starts with one basic problem statement,  common design pattern, different area of concerns( front end, backend, caching, DB), separation of concerns, then deep dive into one of the most relevant and problematic areas you could face in that type of system, how to solve them and then finally go to details about how this use-case could be applicable to these many systems.\n\nThis gives you a building blocks to handle any system based on the need rather than sticking to the pre-defined approach about how one leading company did it.\n\nAnother best part of this course is the classroom discussions:- 30-40 highly skilled and driven engineers are coming together in one forum, asking questions, sharing their knowledge and discussing system design problems which can not get any better.",
+			"cohort": "November 2021"
+		},
+		{
+			"name": "Gaurav Jaiswal",
+			"message": "One of the best courses out there on system design. I really liked Arpit’s way of explaining complex problems in simple way. Course Structure is well organised , alongSide you get to learn with amazing set of people. Course Certainly made me a better engineer.  I am already using Arpit's teachings at my work.\n\nAnd the cherry on top - I was able to crack SDE 2 interview at Walmart, Apna, Swiggy, BukuWarung, DealShare.\n\nMy best investment ever :)",
+			"cohort": "May 2021"
+		},
+		{
+			"name": "Kushal Mahajan",
+			"message": "Arpit is a gold standard as an instructor. The discussions are on-ground and will discuss the things which are beyond 101. I have been directly able to map a few lectures ( read use cases ) to my job. I am a frontend engineer and most things are a learning to me. But having experience of system design implementations with me peers, it will surely take an edge.\n\nMore than the courses, you will be overwhelmed by his enthusiasm, clarity with breadth and depth. I believe, I have found the person I can look upto and have a chat about the things which actually improve the internet. I will invest anytime in a person which shapes the thinking patterns than just delivering the knowledge. ",
+			"cohort": "September 2021"
+		},
+		{
+			"name": "Kishor Pawar",
+			"message": "First time had the great experience with someone providing online education. Live class interaction really helped. Not only learned from you Arpit, but almost everyone in the class. Not only you learn the concepts from Arpit, but you also learn the way he learns, and it's contagious. One of the best decision I had taken to join Arpit's cohort. ",
+			"cohort": "May 2021"
+		},
+		{
+			"name": "Bhargav",
+			"message": "The system design course by Arpit is a great one for a number of reasons. It covers a wide range of topics, design paradigms and building blocks necessary to build a distributed system. For every system design topic discussed in the sessions, it is built from ground up starting with a simple model (which everyone brainstorms together) which is then iteratively enhanced to overcome limitations until the end design meets all the requirements such as scalability, availability etc. This exercise in my opinion is the most useful thing that I got from the course as it builds such a great intuition when you have to design a complex system from ground up and when you look at some popular distributed systems in use, you will know how they were built or what design patterns might have been used.\n\nSince this is a cohort, you benefit greatly from the discussions that happen during the brainstorming segment of the class where you learn from other people’s diverse experiences and of course the 1:1 sessions with Arpit are invaluable.\n\nOverall, I would highly recommend this course to anyone, at any stage in their careers who is interested in learning how to design distributed systems. This is indeed a fun course.",
+			"cohort": "September 2021"
+		},
+		{
+			"name": "Preeti Pranayeta",
+			"message": "Course was an eye opening for me with lots of real world experiences that we face while implementing systems.Every session need to be revisited so as to understand effectively.Arpit makes sure to walkthrough the science behind building the system design.I simply loved the course and this implants a curiosity of learning everyday within us.",
+			"cohort": "September 2021"
+		},
+		{
+			"name": "Harshit Agarwal",
+			"message": "I had initially registered for the 2nd cohort, but did not end up going through with making the payment as I thought it was too expensive. Now, after having finished the course as part of 4th cohort - I think this was probably the best investments I have made in my life !\n\nThis course taught me to think of system design from a first principles perspective. It taught me about how to use smaller simple systems as reusable building blocks for larger systems. Arpit's enthusiasm is infectious and he's an excellent teacher. I learnt a lot from not just him but also from other people in the cohort. 👌🏾",
+			"cohort": "September 2021"
+		},
+		{
+			"name": "Jimit Gandhi",
+			"message": "The breadth of the systems covered as part of Cohort is really amazing. I learned so many systems which I didn't have much clue about earlier like Stream processing, Log Structured storage and many more. The enthusiasm with which Arpit conducts the sessions helps create curiosity.\n\nThe most important part is that  Arpit helps build the intuition to learn system design and uses building blocks to build systems gradually. This cohort is a value addition for experienced professionals to build Large scale systems and develop know-how for making trade-offs for design choices.",
+			"cohort": "September 2021"
+		},
+		{
+			"name": "Sai Subramanyam Chittilla",
+			"message": "Arpit is a passionate individual who teaches one of best system design course, his explanation comes from real implementation and exposure to the problem. He makes sure that individuals in his cohort develop critical thinking when approaching system design.\n\nI would highly recommend his course for any one who tries to build systems to scale.",
+			"cohort": "September 2021"
+		},
+		{
+			"name": "Naman Bhalla",
+			"message": "The way Arpit delivers his content shows his experience, enthusiasm and love for the topics he is teaching. He shares his experience over multiple years of career and reading multiple blogs, papers etc. with everyone. The problem statements discussed are very practical and cover advanced topics related to large scale system design very well.\n\nHe takes a pragmatic approach to the problems and comes to the solution via foundational principles. The assignments are quite challenging so be ready for a lot of fun building them!",
+			"cohort": "September 2021"
+		},
+		{
+			"name": "Anshul Saxena",
+			"message": "Taking this course has turned out to be one of the best things I've ever done in my software engineering career.\n\nArpit has changed everything for me and helped me to develop intuitions for designing the systems at scale. This course was a perfect mixture of theory that we needs to know for understanding and designing massive systems, and real world examples for implementing those concepts.\n\nThis course is not like any other courses out there, its not one way video based communication as it is cohort based, it provides the experience of solving the problem in real world like a team of 45 engineers working together to solve a problem which in itself was a  awesome experience .It was a great learning experience for me and would recommend the course to everyone who wants to develop understanding of how massive systems functions.",
+			"cohort": "September 2021"
+		},
+		{
+			"name": "Shashank Tiwari",
+			"message": "In this course, you will learn topics and building blocks that will help you design any system. Along with this, you will also get to know the trade-offs of one component over the others.\n\nThere is always something new to learn things like Live streaming using CDN, implementing the KV store using MySql, and building a word dictionary were eye-opening for me.\n\nThe two best parts about the course are the discussion and brainstorming between the amazing folks of Cohorts and the 1:1 mentorship from Arpit.\n\nOverall if you are prepping for interviews you will get an amazing head start. Or if you want to get better at system design in general this is the best thing you have got.\n\nAbsolutely, worth the money and time, highly recommended \ud83d\ude42.",
+			"cohort": "September 2021"
+		},
+		{
+			"name": "Karan Kapoor",
+			"message": "I had come across the essays written by Arpit in his blog and the system design videos on his YouTube channel, which were quite detailed and offered a crisp explanation, due to which I decided to join the cohort. The entire cohort is designed in a way that the concepts learned during the initial few weeks get used in the later parts. I loved Arpit's methodology of not just approaching a system from a bird's eye view but instead going into details of how it could be implemented as well, and trying to dissect every aspect of what can go wrong, and brainstorming over how it could be dealt with.\n\nEven in a problem that seemed simple at the surface, there was always something new to learn. The cohort structure enabled a great community of folks to come together and collaborative learning happened. The mechanism of teaching is very different from several other courses or content that I have gone through in the past. It was ensured that none of the questions were left unanswered, even if that meant stretching the session by an hour. Going the extra mile made a lot of difference in the overall experience. The part I loved the most was having thorough discussions with the entire cohort about a single topic or problem, which made the overall experience quite fun.\n\nThe entire session was surely challenging with all the assignments. You would learn a lot of new concepts and get several rabbit holes to explore, which would catalyze the learning journey.",
+			"cohort": "September 2021"
+		},
+		{
+			"name": "Sandeep",
+			"message": "The course is very intensive, some sessions need to watch 2-3 times to get good understanding of the topic.\n\nArpit made the sessions beautiful with all the experience he had in building large scale systems. 1. Loved the brainstorming sessions that happened for an application and pros and cons discussion of every decision by an individual done by Arpit is really Good. 2. Some sessions are like iterative building blocks of an app from scratch is eye opener on many concepts. ex: building  word dictionary. 3.Its not bounded only to curriculum mentioned but new system designs has come into picture and session went for 3hrs. Content Worth the price!!",
+			"cohort": "July 2021"
+		},
+		{
+			"name": "Shivam",
+			"message": "The biggest selling point of the course is Arpit's genuine love and enthusiasm towards designing systems , I feel like I've become a better engineer.",
+			"cohort": "July 2021"
+		},
+		{
+			"name": "Sanjith Joseph",
+			"message": "Arpit has great working experience with distributed systems and he brings out his experience in very engaging discussions. He actively encourages collaboration during class to help us think on our feet. He is quite generous with time and often veers off the planned route for impromptu discussions.",
+			"cohort": "July 2021"
+		},
+		{
+			"name": "Chandan Nayak",
+			"message": "After watching many YouTube videos and going through the available materials ,I wanted to strengthen my knowledge pertaining to system design, then came across this amazing course, which helped me to think better when it comes to scalable system and touched upon many missing points of YouTube videos, Hands down the best system design course I have encountered.",
+			"cohort": "July 2021"
+		},
+		{
+			"name": "Manav Desai",
+			"message": "Arpit's masterclass for engineers is like cartoons for kids. You JUST CANT MISS IT ! You'll be surprised every single week by how real systems are built. The knowledge this guy has, you're missing out if you aren't picking his brains. Totally recommended.",
+			"cohort": "July 2021"
+		},
+		{
+			"name": "Sarthak Sahu",
+			"message": "Enrolling in this course was one of the best decisions I have taken in my life. As the name suggests this truly is a 'Masterclass'. The content is crisp, very engaging and the discussions are fun and of very high quality. The breadth and depth of topics covered would definitely help in work as well as interviews.\n\nI had the chance to take few 1:1 mentorship sessions as well and collected some valuable wisdom from those sessions. Very few courses out there leave such an impact and this one definitely made me a better engineer.\n\nAnd the cherry on top - I was able to crack SDE 2 interview at Coinbase :)",
+			"cohort": "July 2021"
+		},
+		{
+			"name": "Umang",
+			"message": "One of the best courses out there on system design, not to mention the learning alongside the amazing set of people who have been a part of the course.\n\nThe one best thing about the course is the cohort based approach which ignites discussion when different people dives into with their real world experiences and pitches in their solutions, adding more depth to every system design.\n\nEven if someone has watched all the system design videos out there, there would be moments of amazement and would help connect the dots to various pieces of puzzles out there in production systems.\n\nThe final cheery on top is the Mentorship session which Arpit provides for any abstract discussions outside the course content as well. Its was not just about learning designing a 'xyz' system but to build an intuition, and the building blocks needed to tackle a problem statement one might come across leveraging the content and experience which Arpit provides and eventually target to be a better Software Engineer.",
+			"cohort": "July 2021"
+		},
+		{
+			"name": "Nubra Jarial",
+			"message": "The course was very enriching and made me think about software design in unexpected ways. There are so many systems that we take for granted and don't look into - load balancers , cloud storages, database engines etc. even though they're often the ones doing the heavy lifting in enterprise applications.\n\nArpit provides great insight into why things are the way they are and also introduces some neat spinoffs! Completely worth both the time and money!",
+			"cohort": "May 2021"
+		},
+		{
+			"name": "Akanksha Singh",
+			"message": "The course was like a roller coaster ride. At start Arpit will be explaining basics, and at the very next moment you'll realize he is making you answer high level concepts. Arpit is delivering his years of experience and research in this course.\n\nAt start of course, even after reading/watching so many resources , I wasn't sure of system design. By the end of this course I have already started implementing system design's lego blocks and have so many  ideas which i want to implement and test myself.",
+			"cohort": "May 2021"
+		},
+		{
+			"name": "Ujjwal",
+			"message": "Wish this cohort never ended. The enthusiasm with which Arpit teaches, his engineering adventures with large scale systems and his patience to handle even the most fundamental doubts makes this cohort special !",
+			"cohort": "May 2021"
+		},
+		{
+			"name": "Abhijit Jain",
+			"message": "I appreciate not only the depth and breadth of topics covered but also Arpit's friendly teaching style and patience. The topics covered in class were non-trivial but were introduced perfectly like they were lego blocks - smaller components adding up to bigger and better systems.\n\nWhat sets this masterclass apart is the focus on designing systems the way a real company would do (think companies you admire, eg FANG). This is a course that'll improve your design thinking, empower you to ask the right questions and help you make the right tradeoffs for your system. Highly recommend!",
+			"cohort": "May 2021"
+		},
+		{
+			"name": "Saurav Daruka",
+			"message": "System Design Masterclass was a very immersive, interesting and a completely unique asset to learn System Design. The course structure was clear, logical and effective. Arpit is an expert Technologist and has obviously put a lot of thought and expertise into designing the course. But it wasn\u2019t just about the knowledge. Additional benefits came from doing assignments, receiving individual feedback and interacting with Arpit and other participants.\n\nMy perspective has been changed in the way I look at Systems now. I didn\u2019t just learn \"how\" to design systems \u2013 \"what\" and \"why\" also became much clearer. Investment of time, effort and money on this course is a value add to my skills and it made me a better Software Engineer!",
+			"cohort": "May 2021"
+		},
+		{
+			"name": "Shitiz Bhutani",
+			"message": "I found this course useful as it provided me with a lot of breadth in System Design with appropriate depth. I really liked Arpit\u2019s way of explaining complex problems in a neat and simple way. The course structure is organized in such a way that you can easily connect the dots. I highly recommend it.",
+			"cohort": "May 2021"
+		},
+		{
+			"name": "Nityananda Gohain",
+			"message": "One thing I can guarantee that after this course you can read any kind of system design book/blog with confidence and you will be able to relate to Arpits classes in someway or the other, also Arpit designed the course in such a way that you will be able to relate to previous classes and bring out patters in solving problems. My best investment ever :)",
+			"cohort": "May 2021"
+		},
+		{
+			"name": "NY",
+			"message": "The kind of concepts which Arpit taught were really impressive and it helped me to understand the building blocks for different kinds of systems, making trade offs while choosing one component over the others. Arpit also encourages everyone to participate in the discussions. Arpit possesses incredible knowledge, energy and enthusiasm. He explains the concepts in simple yet effective manner.",
+			"cohort": "May 2021"
+		},
+		{
+			"name": "Ganesh Iyer",
+			"message": "Course is awesome! Lots of incredible stuff packed in 8 weeks. Helped me crack Principal Engineer interview at Microsoft.",
+			"cohort": "March 2021"
+		},
+		{
+			"name": "Aman Agarwal",
+			"message": "A true masterclass with flavors of evolving solutions, interesting peer discussions. A great learning experience not just for interviews but for real. The openness to speak our minds out is the best part. #PaisaWasoolExperience",
+			"cohort": "March 2021"
+		},
+		{
+			"name": "Tejas Agrawal",
+			"message": "Had a super fun in learning how to learn and think system design. I am already using Arpit's teachings at my work, and I don't think anything more needs to be said.",
+			"cohort": "March 2021"
+		},
+		{
+			"name": "Rohan Chougule",
+			"message": "It's easy to throw jargons and assume that a system can be built. But then keeping things simple and starting from the basics, the approach to be taken, taking baby steps, and then heading towards a direction is indeed best taught by Arpit. Plus, his enthusiasm!",
+			"cohort": "March 2021"
+		},
+		{
+			"name": "Vineet Mago",
+			"message": "Arpit has done a wonderful job wading through complex design issues faced for designing systems at scale. Personally, for me, I loved interacting with the members of the cohort, understanding how each one of us approached the problem at hand. And then, in the end , Arpit would explain the right trade-offs to make and finalize a solution. I loved it, highly recommend it for folks who are looking at expanding their horizons on system design.",
+			"cohort": "March 2021"
+		}
+	],
+	"benefits_cohort": [{
+			"title": "Small and Focussed Group",
+			"body": "Each cohort will have close to ~70 people ensuring you have a richer learning experience."
+		},
+		{
+			"title": "Thrive Together",
+			"body": "Unlike MOOCs where the information flow is unidirectional, the cohort here will thrive on interactions and collaborations."
+		},
+		{
+			"title": "Discuss and Learn",
+			"body": "Learning happens when we discuss, and hence everyone is encouraged to speak, put forth opinions, and discuss."
+		}
+	],
+	"benefits": [{
+			"title": "Design systems like a pro",
+			"body": "The course will make you comfortable at designing any system, no matter how stringent the requirements are."
+		},
+		{
+			"title": "Know the unknowns",
+			"body": "Learn some of the most interesting concepts, super-clever algorithms, and sophisticated architectures. You are bound to have mind-blown moments."
+		},
+		{
+			"title": "1:1 Mentorship",
+			"body": "When in a dilemma about an architectural decision, engineering challenges, career advice, or general mentorship, get your doubts cleared during your 1:1s with Arpit."
+		},
+		{
+			"title": "Crack the interview",
+			"body": "Be it FAANG or your dream startup, you would be at ease while designing systems in the interview round."
+		},
+		{
+			"title": "Upskill and level-up",
+			"body": "Learn the designing paradigms and upskill yourself to accelerate your career growth and stand out."
+		},
+		{
+			"title": "Network and Community",
+			"body": "Perhaps the most interesting takeaway will be your new network, friends, and a lot of memories."
+		}
+	],
+	"outline": [{
+			"section": "Foundation",
+			"title": "Week 1",
+			"body": "The first week is about learning the macro and micro components of System Design.",
+			"topics": [{
+					"topic": "How to approach System Design",
+					"is_new": false
+				},
+				{
+					"topic": "Designing Online/Offline indicator",
+					"is_new": false
+				},
+				{
+					"topic": "Designing a Blogging Platform",
+					"is_new": false
+				},
+				{
+					"topic": "Scaling and Caching strategy for Blog",
+					"is_new": false
+				},
+				{
+					"topic": "Delegation and Async Processing",
+					"is_new": false
+				},
+				{
+					"topic": "Supporting million concurrent users",
+					"is_new": false
+				},
+				{
+					"topic": "Designing communication paradigm",
+					"is_new": false
+				}
+			]
+		},
+		{
+			"section": "Databases",
+			"title": "Week 2",
+			"body": "This week, we learn everything about databases, from SQL to NoSQL to Embedded, learn how to scale them.",
+			"topics": [{
+					"topic": "SQL Transactions",
+					"is_new": false
+				},
+				{
+					"topic": "Database Indexes and Locking",
+					"is_new": false
+				},
+				{
+					"topic": "Designing Airline Check-in System",
+					"is_new": false
+				},
+				{
+					"topic": "Designing SQL backed KV Store",
+					"is_new": false
+				},
+				{
+					"topic": "Scaling relational databases",
+					"is_new": false
+				},
+				{
+					"topic": "NoSQL databases: when, where and why?",
+					"is_new": false
+				},
+				{
+					"topic": "Designing: Slack's Realtime Communication",
+					"is_new": true
+				}
+			]
+		},
+		{
+			"section": "Going Distributed",
+			"title": "Week 3",
+			"body": "The third week will be about understanding Distributed Systems and the challenges that come while building them.",
+			"topics": [{
+					"topic": "Key to a good distributed system",
+					"is_new": false
+				},
+				{
+					"topic": "Designing Load Balancers",
+					"is_new": false
+				},
+				{
+					"topic": "Remote and distributed locks",
+					"is_new": false
+				},
+				{
+					"topic": "Designing ID Generators",
+					"is_new": false
+				},
+				{
+					"topic": "Open QnA and Doubt Resolution",
+					"is_new": false
+				}
+			]
+		},
+		{
+			"section": "Building Social Networks",
+			"title": "Week 4",
+			"body": "This is when we start modeling and building real-world systems, and we start with Social Networks.",
+			"topics": [{
+					"topic": "Day 0 Tech Stack",
+					"is_new": false
+				},
+				{
+					"topic": "Designing Image uploader service",
+					"is_new": false
+				},
+				{
+					"topic": "Designing HashTag extractor service",
+					"is_new": false
+				},
+				{
+					"topic": "Designing Message Indicators, and 4 more",
+					"is_new": false
+				}
+			]
+		},
+		{
+			"section": "Building Storages",
+			"title": "Week 5",
+			"body": "This week will be about building ephemeral, persistent, reliable and durable storage engines.",
+			"topics": [{
+					"topic": "Designing Distributed Caches",
+					"is_new": false
+				},
+				{
+					"topic": "Consistent Hashing: Application and Implementation",
+					"is_new": false
+				},
+				{
+					"topic": "Designing a Word Dictionary",
+					"is_new": false
+				},
+				{
+					"topic": "Designing Log-Structured KV Store",
+					"is_new": false
+				}
+			]
+		},
+		{
+			"section": "Building High Throughput Systems",
+			"title": "Week 6",
+			"body": "This week, we level-up and build systems that are heavily concurrent and required to deliver very high throughput.",
+			"topics": [{
+					"topic": "Designing S3",
+					"is_new": false
+				},
+				{
+					"topic": "Designing LSM Trees",
+					"is_new": false
+				},
+				{
+					"topic": "Designing Video Processing Pipeline",
+					"is_new": false
+				},
+				{
+					"topic": "Designing Flash Sale",
+					"is_new": false
+				}
+			]
+		},
+		{
+			"section": "IR Systems and Adhoc Designs",
+			"title": "Week 7",
+			"body": "This week is about understanding Information Retrieval Systems and discuss some interesting adhoc systems.",
+			"topics": [{
+					"topic": "Designing Search Engines",
+					"is_new": false
+				},
+				{
+					"topic": "Designing Recent Searches System",
+					"is_new": false
+				},
+				{
+					"topic": "Distributed Task Scheduler",
+					"is_new": false
+				},
+				{
+					"topic": "Designing Message Brokers like SQS",
+					"is_new": false
+				},
+				{
+					"topic": "Designing Cricbuzz's Text Commentary",
+					"is_new": false
+				}
+			]
+		},
+		{
+			"section": "Building Algorithmic Systems",
+			"title": "Week 8",
+			"body": "The final week will be about exploring systems that are driven by a super-clever algorithm.",
+			"topics": [{
+					"topic": "Algorithm behind File Sync",
+					"is_new": false
+				},
+				{
+					"topic": "Algorithm behind Tinder",
+					"is_new": false
+				},
+				{
+					"topic": "Designing User Affinity Service",
+					"is_new": false
+				}
+			]
+		}
+	],
+	"value_proposition": [
+		"40 hours of Live Classes on Weekends IST",
+		"1:1 Mentorship Sessions",
+		"Lifetime access to all the Recordings",
+		"Lifetime access to the Network and Community",
+		"Open forums and interaction with the cohort",
+		"Doubt resolution during and post our live sessions"
+	],
+	"faqs": [{
+			"title": "Is this course right for me?",
+			"body": "This course is for any engineer who wants to learn System Design. The program is most suited to someone who has some industry experience, at least 6 months."
+		},
+		{
+			"title": "Will you be giving teaching for the entire duration?",
+			"body": "Yes. I will be teaching the entire course online and live over Zoom and will be providing feedback and 1:1 mentorship."
+		},
+		{
+			"title": "Will there be a class every day?",
+			"body": "The Live Classes will happen on Saturdays and Sundays as per the time mentioned on the webite with a possible extension of 30/45 mins."
+		},
+		{
+			"title": "Can I get this course reimbursed from my company?",
+			"body": "Talk to your manager and check if they can sponsor this course. The invoice that will be issued is a legally valid and sound invoice that can be used for any kind of reimbursement."
+		},
+		{
+			"title": "Will there be reserved slots for 1:1 mentorship?",
+			"body": "1:1 mentorship calls will happen on-demand, just drop me a message a day prior, and I will get our call scheduled."
+		},
+		{
+			"title": "Will there be assignments and hands-on projects?",
+			"body": "No. I would recommend you implement the core of every single system we discuss ensuring you apply what you learn. I highly encourage you to implement seek help during 1:1 sessions."
+		},
+		{
+			"title": "Will the course cover LLD?",
+			"body": "The course will cover some aspects of Database Design and its internals, but it will not cover writing and designing classes, and low-level design patterns. The course is typically aimed at covering the massive spectrum of System Design and Software Architecture."
+		},
+		{
+			"title": "Are assignments and projects mandatory?",
+			"body": "No. But it is advisable that you complete them to get a better understanding of the system, algorithm, and business logic."
+		},
+		{
+			"title": "Will we also implement and see the systems in action?",
+			"body": "Due to time constraints, it is not possible to implement every system; it is recommended that you self-implement the system and understand the low-level details. The course will definitely cover systems from every aspect."
+		},
+		{
+			"title": "Will there be a recording available for future reference?",
+			"body": "Every single Live Class will be recorded, and you will be given lifetime access to it."
+		},
+		{
+			"title": "Is there a refund policy?",
+			"body": "14 days (from the course commencement) is the window within which you can claim a full refund (excluding GST) for the Live Course. GST paid will not be refunded. All refunds will be processed on the 14th day from the course commencement date. The fees paid for the course with only recorded content ('Learn at your own pace') is non-refundable."
+		},
+		{
+			"title": "Where are the classes conducted?",
+			"body": "All Live Classes will be online, over Zoom, and all you need is an internet connection to attend the live sessions."
+		},
+		{
+			"title": "Will you be the only one teaching this course?",
+			"body": "The entire course including Live Classes will be conducted by me, Arpit Bhayani, no external TAs, mentors, etc. You will get to learn everything from the horse's mouth."
+		},
+		{
+			"title": "What are the programming pre-requisites?",
+			"body": "It would help if you had to have work experience of 6 months, plus a basic understanding of one of the cloud providers like AWS, GCP, plus some basic understanding of high-level system design by watching already available YouTube videos. You can also find a few videos on this ppage that I would recommend you through."
+		},
+		{
+			"title": "How is this course different from free videos on YouTube?",
+			"body": "This cohort-based course aims to be live, intense, and interactive. Traditional MOOCs (existing videos on the internet) cannot offer these benefits as they are unidirectional and optimizes for one-to-many. With this course being taught live, you can get instant resolution to your doubts. The discussion, collaboration, and networking will have a major impact on your overall learning as there will be cross-pollination of information."
+		},
+		{
+			"title": "If I have already watched System Design videos on YouTube, is this course still helpful?",
+			"body": "Yes. The kind of depth which is touched in this System Design is unmatched. Even if you have watched all the System Design videos out there, you will still have moments that will blow your mind."
+		},
+		{
+			"title": "Will I be getting an invoice of Payment?",
+			"body": "Yes. An invoice will be issued to you with all the legal and necessary details. This means your employer can choose to process this invoice and provide reimbursement."
+		},
+		{
+			"title": "Will you issue a course completion certificate?",
+			"body": "I do not generate the certificate for every candidate, but if you need it, just drop me a message, and I will issue one right away."
+		},
+		{
+			"title": "Can I use my Credit Card or avail EMI to make the payment?",
+			"body": "Yes, we support Credit Card, Debit Card, UPI, and Credit Card based EMIs having a duration of 3 months, 6 months, 12 months, and 24 months as offered by Razorpay."
+		},
+		{
+			"title": "Will I get access to videos and resources of past cohort?",
+			"body": "No. You will get access to all the live sessions happened in your enrolled cohort only."
+		}
+	],
+	"organizations": [{
+			"name": "Tesla",
+			"logo": "https://user-images.githubusercontent.com/4745789/115353876-a64bf080-a1d6-11eb-8abd-da1e948c289d.png",
+			"url": "https://www.tesla.com"
+		},
+		{
+			"name": "Google",
+			"logo": "https://user-images.githubusercontent.com/4745789/131295363-04dc4fdf-4674-49f7-a453-90a42ec581f9.png",
+			"url": "https://www.google.com"
+		},
+		{
+			"name": "Microsoft",
+			"logo": "https://user-images.githubusercontent.com/4745789/131295468-f8f52c8a-0bc1-4765-baa6-009490eb808e.png",
+			"url": "https://www.microsoft.com"
+		},
+		{
+			"name": "Amazon",
+			"logo": "https://user-images.githubusercontent.com/4745789/115350867-40119e80-a1d3-11eb-8ed1-3d689b2bf9b2.png",
+			"url": "https://www.amazon.com/"
+		},
+		{
+			"name": "GitHub",
+			"logo": "https://user-images.githubusercontent.com/4745789/131295948-fe68928f-69de-476e-a1e5-bd0843d91e8c.png",
+			"url": "https://www.github.com/"
+		},
+		{
+			"name": "Flipkart",
+			"logo": "https://user-images.githubusercontent.com/4745789/115350183-684ccd80-a1d2-11eb-9891-620ff043bcfa.png",
+			"url": "https://www.flipkart.com"
+		},
+		{
+			"name": "PayTM",
+			"logo": "https://user-images.githubusercontent.com/4745789/123135938-0299ed80-d470-11eb-823a-54c0fc9647dd.png",
+			"url": "https://www.paytm.com/"
+		},
+		{
+			"name": "OYO",
+			"logo": "https://user-images.githubusercontent.com/4745789/131298059-a0c027bc-0076-437a-9c05-cd274a564aea.png",
+			"url": "https://www.oyo.com/"
+		},
+		{
+			"name": "PayPal",
+			"logo": "https://user-images.githubusercontent.com/4745789/131295708-22a60122-645f-41bc-a810-265a8b4a2bd0.png",
+			"url": "https://www.paypal.com/"
+		},
+		{
+			"name": "Grab",
+			"logo": "https://user-images.githubusercontent.com/4745789/131296241-97d9a0b9-e4c2-477e-8cbd-badb9289a5b5.png",
+			"url": "https://www.grab.com/"
+		},
+		{
+			"name": "MakeMyTrip",
+			"logo": "https://user-images.githubusercontent.com/4745789/131296448-35521312-94d1-43f7-9648-331cac056ad1.png",
+			"url": "https://www.makemytrip.com/"
+		},
+		{
+			"name": "Dream11",
+			"logo": "https://user-images.githubusercontent.com/4745789/131296736-5735286e-811f-4d3f-a95c-9280bd063b93.png",
+			"url": "https://www.dream11.com/"
+		},
+		{
+			"name": "Unacademy",
+			"logo": "https://user-images.githubusercontent.com/4745789/131297119-59302b5d-2375-428e-ad80-9230a06a9b67.png",
+			"url": "https://www.unacademy.com/"
+		},
+		{
+			"name": "BrowserStack",
+			"logo": "https://user-images.githubusercontent.com/4745789/115350976-5f103080-a1d3-11eb-812d-99568d38e3e3.png",
+			"url": "https://www.browserstack.com/"
+		},
+		{
+			"name": "Practo",
+			"logo": "https://user-images.githubusercontent.com/4745789/123136405-8358e980-d470-11eb-8889-7d34e1c9e11e.png",
+			"url": "https://www.yelp.com/"
+		},
+		{
+			"name": "Yelp",
+			"logo": "https://user-images.githubusercontent.com/4745789/115351392-d47c0100-a1d3-11eb-8418-ae0a4e344d9f.png",
+			"url": "https://www.yelp.com/"
+		},
+		{
+			"name": "Gojek",
+			"logo": "https://user-images.githubusercontent.com/4745789/143415343-8dc38908-401f-4f69-a15f-563c04ee2841.png",
+			"url": "https://www.gojek.io/"
+		},
+		{
+			"name": "Scaler",
+			"logo": "https://user-images.githubusercontent.com/4745789/143414790-6c4d69d6-fc3b-4129-b64e-2f6eb46f7e21.png",
+			"url": "https://www.scaler.com/"
+		}
+	],
+	"prerequisites": [{
+			"id": "sCR3SAVdyCc",
+			"url": "http://youtu.be/sCR3SAVdyCc",
+			"title": "What is a Load Balancer?"
+		},
+		{
+			"id": "hWRRdICvMNs",
+			"url": "http://youtu.be/hWRRdICvMNs",
+			"title": "What is an API Gateway?"
+		},
+		{
+			"id": "aj9CDZm0Glc",
+			"url": "http://youtu.be/aj9CDZm0Glc",
+			"title": "What is Kafka?"
+		},
+		{
+			"id": "CdBtNQZH8a4",
+			"url": "http://youtu.be/CdBtNQZH8a4",
+			"title": "What are Microservices?"
+		},
+		{
+			"id": "lsMQRaeKNDk",
+			"url": "http://youtu.be/lsMQRaeKNDk",
+			"title": "What is a REST API?"
+		},
+		{
+			"id": "vxJobGtqKVM",
+			"url": "http://youtu.be/vxJobGtqKVM",
+			"title": "What is Serverless?"
+		},
+		{
+			"id": "k4tK2ttdSDg",
+			"url": "http://youtu.be/k4tK2ttdSDg",
+			"title": "What is a Data Warehouse?"
+		},
+		{
+			"id": "muqiHwa8UvQ",
+			"url": "http://youtu.be/muqiHwa8UvQ",
+			"title": "What is Redis?"
+		},
+		{
+			"id": "_I14_sXHO8U",
+			"url": "http://youtu.be/_I14_sXHO8U",
+			"title": "Introduction to Amazon S3"
+		},
+		{
+			"id": "AT-nHW3_SVI",
+			"url": "http://youtu.be/AT-nHW3_SVI",
+			"title": "Introduction to Amazon CloudFront"
+		},
+		{
+			"id": "sI-zciHAh-4",
+			"url": "http://youtu.be/sI-zciHAh-4",
+			"title": "What is Amazon DynamoDB?"
+		},
+		{
+			"id": "_qKm6o1zK3U",
+			"url": "http://youtu.be/_qKm6o1zK3U",
+			"title": "Introduction to Data Warehousing on AWS with Amazon Redshift"
+		},
+		{
+			"id": "RGWgfhZByAI",
+			"url": "http://youtu.be/RGWgfhZByAI",
+			"title": "Amazon Route 53"
+		},
+		{
+			"id": "XrX7rb6M3jw",
+			"url": "http://youtu.be/XrX7rb6M3jw",
+			"title": "Introducing Amazon Simple Queue Service (SQS) FIFO Queues \u2013 Messaging on AWS"
+		}
+	]
 }
