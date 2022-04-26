@@ -1,5 +1,5 @@
 {
-	"seats_available": 4,
+	"seats_available": 2,
 	"total_taught": "500+",
 	"total_cohorts": "7",
 	"total_countries": "10",
@@ -586,9 +586,10 @@
 		}
 	],
 	"value_proposition": [
-		"40 hours of Live Classes on Weekends IST",
-		"1:1 Mentorship Sessions",
-		"Lifetime access to all the Recordings",
+		"40+ hours of Live Classes on Weekends IST",
+		"3 1:1 Mentorship Sessions",
+		"Lifetime access to all the cohort recordings",
+		"Access to all the systems discussed across all cohorts",
 		"Lifetime access to the Network and Community",
 		"Open forums and interaction with the cohort",
 		"Doubt resolution during and post our live sessions"
@@ -635,7 +636,7 @@
 		},
 		{
 			"title": "Is there a refund policy?",
-			"body": "14 days (from the course commencement) is the window within which you can claim a full refund (excluding GST) for the Live Course. GST paid will not be refunded. All refunds will be processed on the 14th day from the course commencement date. The fees paid for the course with only recorded content ('Learn at your own pace') is non-refundable."
+			"body": "Both the offerings are non-refundable."
 		},
 		{
 			"title": "Where are the classes conducted?",
@@ -671,7 +672,7 @@
 		},
 		{
 			"title": "Will I get access to videos and resources of past cohort?",
-			"body": "No. You will get access to all the live sessions happened in your enrolled cohort only."
+			"body": "Yes. You will be getting access to all the unique questions we ever covered during any cohort - past or future."
 		}
 	],
 	"organizations": [{
