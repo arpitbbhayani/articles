@@ -505,8 +505,8 @@
 					"is_new": false
 				},
 				{
-					"topic": "Consistent Hashing: Application and Implementation",
-					"is_new": false
+					"topic": "Designing Tiered Storages",
+					"is_new": true
 				},
 				{
 					"topic": "Designing a Word Dictionary",
