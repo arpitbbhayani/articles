@@ -35,7 +35,7 @@ In Mongo Shell your pagination code looks something like this
     db.students.find().skip(5).limit(5)
 
     // Page 3
-    db.students.find().skip(5).limit(5)
+    db.students.find().skip(10).limit(5)
 ```
 
 `.find()` will return a cursor pointing to all documents of the collection and then for each page we skip some and consume some. Through continuous skip and limit we get pagination in MongoDB.
